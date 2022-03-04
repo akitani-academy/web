@@ -1,0 +1,97 @@
+summary {
+  cursor: pointer;
+  display: block;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.spOnly {
+  @include MQ(xl) {
+    display: none;
+  }
+}
+.pcOnly {
+  @include MQ() {
+    display: none;
+  }
+}
+.Gmap {
+  @include MQ() {
+    width: 100%;
+  }
+}
+.p-country-name,.honeypot {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Shippori Mincho', serif;
+}
+
+body {
+  color: $c_1;
+  background: $c_0;
+}
+h1,h2,h3,h4,h5,h6,strong {
+  color: #000;
+  font-weight: bold;
+}
+p {
+  font-size: 15px;
+}
+a {
+  &:hover {
+    opacity: .7;
+    * {
+      opacity: .7;
+    }
+}
+}
+main {
+  max-width: 900px;
+  margin: auto;
+  margin-top: 80px;
+  padding: 4vw;
+  display: flex;
+  >article {
+    width: 100%;
+    >*:first-child {
+      margin-top: 0;
+    }
+    h1,h2,h3,h4,h5,h6 {
+      letter-spacing: .05em;
+      &+.LinkList{
+        margin-top: -3rem;
+      }
+      &::before {
+        letter-spacing: .3em;
+        font-size: .5em;
+        color: $c_3;
+        display: block;
+        content: attr(data-subtitle);
+      }
+    }
+    h1 {
+      color: $c_2;
+      font-size: 1.875rem;
+      margin-bottom: .3em;
+    }
+    h2 {
+      font-size: 1.25rem;
+      margin-top: 1.25em;
+      margin-bottom: .7em;
+    }
+    p {
+      letter-spacing: .05em;
+      line-height: 1.7em;
+      margin-bottom: 1.3em;
+    }
+    a {
+      color: $c_3;
+      border-bottom: dashed 1px $c_3;
+      padding: 0 .05em;
+    }
+  }
+}

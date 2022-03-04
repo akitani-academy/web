@@ -1,0 +1,15 @@
+$breakpoints: (
+  'sm': 'screen and (max-width: 600px)',
+  'xl': 'screen and (min-width: 600px)',
+) !default;
+@mixin MQ($breakpoint: sm) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+$c_0: #FBFBFB;
+$c_1: #333333;
+$c_2: #AE2724;
+$c_3: #688096;
+$c_4: #3B4773;

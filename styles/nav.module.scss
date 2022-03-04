@@ -1,0 +1,29 @@
+.nav {
+    font-family: sans-serif;
+    min-width: fit-content;
+    max-width: 70vw;
+    text-align: right;
+    background: $c_0;
+    position: sticky;
+    height: fit-content;
+    margin-left: .7rem;
+    top: calc(80px + 3vw);
+    @mixin MQ() {
+        position: fixed;
+        top: 0;
+    }
+    ul {
+        margin-bottom: 1.75rem;
+    }
+    li {
+        margin-bottom: .1rem;
+        a {
+        border: solid 1px $c_1;
+        line-height: 1em;
+        padding: .4em .5em;
+        height: 1.8em;
+        overflow: hidden;
+        display: inline-block;
+        }
+    }
+}

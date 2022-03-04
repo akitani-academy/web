@@ -1,7 +1,14 @@
-import '../styles/globals.css'
+import "the-new-css-reset/css/reset.css";
+import "../styles/globals.scss";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import Layout from "/components/layout";
+
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
+  );
 }
-
-export default MyApp

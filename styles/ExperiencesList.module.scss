@@ -1,0 +1,26 @@
+.ExperiencesList {
+    overflow: scroll;
+    max-height: 300px;
+    display: flex;
+    flex-flow: column;
+    gap: .7rem;
+    line-height: 1.3em;
+    li {
+        display: flex;
+        gap: .5rem
+    }
+    time {
+        display: block;
+        min-width: fit-content;
+    }
+    .meta {
+        width: 100%;
+    }
+    span {
+        display: block;
+        a{
+            color: $c_2;
+            border-color: $c_2;
+        }
+    }
+}

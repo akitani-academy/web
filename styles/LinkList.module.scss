@@ -1,0 +1,17 @@
+.LinkList {
+    width: 90%;
+    font-size: .9rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .3em .7em;
+    margin-bottom: 1.5rem;
+    li {
+    //   margin-right: .7rem;
+      a{
+        &::before {
+            content: ">";
+            margin-right: .2em;
+        }
+      }
+    }
+  }
