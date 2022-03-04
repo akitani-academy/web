@@ -14,7 +14,7 @@ export default function Page({ data }) {
     <>
       <ul className={css.ExperiencesList}>
         {data.post.map((e, i) => (
-          <li>
+          <li key={i}>
             <time>{e.date}</time>
             <div className={css.meta}>
               <span>{e.student}</span>

@@ -16,6 +16,9 @@ class MyDocument extends Document {
             rel="stylesheet"
           ></link>
           <meta name="robots" content="noindex"></meta>
+          <meta name="robots" content="noarchive"></meta>
+          <meta name="robots" content="none"></meta>
+          <meta name="robots" content="nofollow"></meta>
         </Head>
         <body>
           <Main />
