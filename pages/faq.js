@@ -21,7 +21,7 @@ export default function Page({ faq }) {
 }
 export async function getStaticProps() {
   const faq = await fetch(
-    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/faq"
+    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/faq?per_page=100&"
   ).then((res) => res.json());
 
   return {

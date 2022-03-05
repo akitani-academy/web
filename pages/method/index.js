@@ -61,7 +61,8 @@ export async function getStaticProps() {
 
 async function getPost(catID) {
   var data = await fetch(
-    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/posts?categories=" + catID
+    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/posts?per_page=100&categories=" +
+      catID
   ).then((res) => res.json());
   data = data.map((e, i) => [e.listTitle, "/method/" + e.slug]);
   return data;
