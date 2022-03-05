@@ -30,7 +30,7 @@ function Page() {
               {e1.content.map((e2, i2) => (
                 <li key={i2}>
                   <Link href={e2[1]}>
-                    <a>{e2[0]} </a>
+                    <a>{e2[0]}</a>
                   </Link>
                 </li>
               ))}

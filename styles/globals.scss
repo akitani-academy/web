@@ -24,6 +24,14 @@ summary::-webkit-details-marker {
 .p-country-name,.honeypot {
   display: none;
 }
+.nav_course {
+  a {
+    border-color: $c_2 !important;
+  }
+}
+h6.nav_course {
+  color: $c_2;
+}
 
 html {
   scroll-behavior: smooth;
@@ -50,7 +58,7 @@ a {
 }
 }
 main {
-  max-width: 900px;
+  max-width: 950px;
   margin: auto;
   margin-top: 80px;
   padding: 4vw;
@@ -71,6 +79,9 @@ main {
         color: $c_3;
         display: block;
         content: attr(data-subtitle);
+        // ジャンプリンク位置調整
+        padding-top: 10rem;
+        margin-top: -10rem;
       }
     }
     h1 {
