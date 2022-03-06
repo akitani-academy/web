@@ -67,7 +67,9 @@ function Page() {
                   <a className={css.contact}>資料請求</a>
                 </Link>
               </li>
-              <li className={css.spMENU}>MENU</li>
+              <li className={css.spMENU}>
+                <span>MENU</span>
+              </li>
             </ul>
           </section>
           {url[1] == "method" && url[2] && (
