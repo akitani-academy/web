@@ -48,7 +48,6 @@ function Page() {
         <section className={css.inner}>
           {siteTitle(url)}
           <section className={css.menu}>
-            {" "}
             <Link href={"/access"}>
               <a>
                 <ul className={css.addr}>
@@ -65,10 +64,10 @@ function Page() {
             <ul className={css.meta}>
               <li>
                 <Link href={"/contact"}>
-                  <a className="contact">資料請求</a>
+                  <a className={css.contact}>資料請求</a>
                 </Link>
               </li>
-              <li className="spOnly sp-menu">MENU</li>
+              <li className={css.spMENU}>MENU</li>
             </ul>
           </section>
           {url[1] == "method" && url[2] && (

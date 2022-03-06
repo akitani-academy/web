@@ -25,9 +25,9 @@ export default function Page({ data }) {
                 <h3 id={e.slug} key={i}>
                   {e.name}
                   {e.description && <small>{e.description}</small>}
-                      </h3>
-                      過去1年：{e.yearCount}名<br />
-                      累計：{e.count}名
+                </h3>
+                過去1年：{e.yearCount}名<br />
+                累計：{e.count}名
               </div>
               <ExperiencesList data={e} />
             </>

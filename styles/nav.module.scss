@@ -3,16 +3,31 @@
     font-family: sans-serif;
     font-weight: bold;
     min-width: fit-content;
-    max-width: 70vw;
+    * {
+        max-width: 70vw;
+    }
+    overflow: scroll;
     text-align: right;
     background: $c_0;
-    position: sticky;
     height: fit-content;
     margin-left: .7rem;
     top: calc(80px + 3vw);
-    @mixin MQ() {
+    position: sticky;
+    display: flex;
+    @media (max-width: 600px) {
+        width: 100vw;
+        height: calc(100vh - 79px);
         position: fixed;
-        top: 0;
+        top: calc(79px);
+        right: 0;
+        background: rgba(#000,.5);
+        backdrop-filter: blur(2px);
+        .inner {
+            margin-left: auto;
+            overflow: scroll;
+            background: $c_0;
+            padding: 3vw;
+        }
     }
     ul {
         margin-bottom: 1.75rem;
@@ -21,9 +36,9 @@
         margin-bottom: .1rem;
         a {
         border: solid 1px $c_1;
-        line-height: 1em;
-        padding: .4em .5em;
-        height: 1.8em;
+        line-height: 1.2em;
+        padding: .3em .5em .1em;
+        // height: 1.8em;
         overflow: hidden;
         display: inline-block;
         }

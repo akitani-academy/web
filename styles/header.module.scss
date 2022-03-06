@@ -1,6 +1,8 @@
 .header {
     width: 100vw;
-    padding: min(3vw,.7rem) 3vw;
+    @media (min-width: 600px) {
+        padding: min(3vw,.7rem);
+    }
     background-color: #fff;
     position: fixed;
     top: 0;
@@ -11,10 +13,15 @@
 .inner {
     max-width: 1000px;
     min-height: 30px;
+    @media (max-width: 600px) {
+        // min-height: 60px;
+    }
     // padding: 3vw 4vw;
     margin: auto;
     display: flex;
+    @media (min-width: 600px) {
     align-items: center;
+    }
     justify-content:space-between;
     h1,h2 {
         font-size: 1.375rem;
@@ -26,10 +33,14 @@
             display: block;
         }
     }
+    h1 {
+        display: flex;
+  justify-content: center;
+  align-items: center;
+    }
 }
 .menu {
     display: flex;
-    align-items: center;
     font-family: sans-serif;
     font-weight: bold;
 }
@@ -54,15 +65,31 @@
     }
 }
 .meta {
+    color: $c_0;
     display: flex;
+    justify-content: space-between;
+    li {
+        a {
+            padding: 0 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
     .contact {
-        @include MQ(xl) {
+        background: $c_1;
+        height: 100%;
+        @media(min-width: 900px) {
             &::after {
-              content: " / お問い合わせ";
+                margin-left: .5em;
+              content: "/ お問い合わせ";
             }
         }
     }
-    .sp-menu {
+    .spMENU {
+        @include MQ(xl) {
+            display: none;
+        }
         background: #000;
     }
 }
