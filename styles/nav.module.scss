@@ -11,14 +11,15 @@
     background: $c_0;
     height: fit-content;
     margin-left: .7rem;
-    top: calc(80px + 3vw);
+
     position: sticky;
     display: flex;
+    top: calc(80px + 3vw);
     @media (max-width: 600px) {
+        top: 57px;
         width: 100vw;
-        height: calc(100vh - 79px);
+        height: calc(100vh - 57px);
         position: fixed;
-        top: calc(79px);
         right: 0;
         background: rgba(#000,.5);
         backdrop-filter: blur(2px);
@@ -41,6 +42,27 @@
         // height: 1.8em;
         overflow: hidden;
         display: inline-block;
+        }
+    }
+    .addr {
+        display: none;
+        margin-top: .5em;
+        margin-bottom: .6em;
+        @media (max-width: 600px) {
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: .6rem;
+        }
+        a {
+            border: none;
+            padding: 0;
+            line-height: 1.4em;
+        }
+        .tel {
+            color: $c_2;
+            font-size: 1.2em;
+            width: fit-content;
         }
     }
 }

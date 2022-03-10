@@ -4,18 +4,23 @@ let _V = require("./_V.js");
 
 import css from "styles/nav.module.scss";
 
+function close() {
+  alert("ete");
+}
+
 function Page() {
   return (
     <>
       <nav className={css.nav}>
         <section className={css.inner}>
-          <ul className="spOnly">
+          <ul className={css.addr}>
             {_V.access.map((e, i) => (
               <li key={i}>
-                <span>{e.name}</span>
-                <br />
-                <a href={"tel:" + e.tel} className="tel">
-                  {e.tel}
+                <a href={"tel:" + e.tel}>
+                  {e.name}
+                  <br />
+                  <span className={css.tel}>
+                  {e.tel}</span>
                 </a>
               </li>
             ))}

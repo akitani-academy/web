@@ -39,7 +39,7 @@ export default function Page({ post }) {
 export async function getStaticPaths() {
   // 外部APIエンドポイントを呼び出して記事を取得します。
   const res = await fetch(
-    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/posts"
+    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/posts?per_page=100"
   );
   const posts = await res.json();
 

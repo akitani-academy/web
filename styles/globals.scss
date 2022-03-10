@@ -49,14 +49,19 @@ h1,h2,h3,h4,h5,h6,strong {
 p {
   font-size: 15px;
 }
-a {
+a,summary,label,input,select {
   &:hover {
     opacity: .7;
     * {
       opacity: .7;
     }
+  }
 }
+input,select,label {
+  cursor: pointer;
 }
+
+
 main {
   max-width: 950px;
   margin: auto;
