@@ -87,6 +87,7 @@ main {
         // ジャンプリンク位置調整
         padding-top: 10rem;
         margin-top: -10rem;
+        pointer-events: none;
       }
     }
     h1 {

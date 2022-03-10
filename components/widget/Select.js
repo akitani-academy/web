@@ -1,6 +1,8 @@
 import { useRouter } from "next/router";
 import Router from "next/router";
 
+import css from "styles/Select.module.scss";
+
 function Page({ data, name }) {
   const router = useRouter();
   function pushQuery(e) {
@@ -14,36 +16,38 @@ function Page({ data, name }) {
   }
   return (
     <>
-      <select onChange={pushQuery} name={name + "S"}>
-        <option disabled selected>
-          選択する
-        </option>
-        {data.map((e, i) => (
-          <option
-            value={e.title}
-            key={i}
-            selected={router.query[name] == e.title ? true : false}
-          >
-            {e.title}
+      <div className={css.main}>
+        <select onChange={pushQuery} name={name + "S"}>
+          <option disabled selected>
+            選択する
           </option>
-        ))}
-      </select>
-      <ul>
-        {data.map((e, i) => (
-          <>
-            <input
-              id={e.id}
-              type="radio"
-              name={name + "R"}
+          {data.map((e, i) => (
+            <option
               value={e.title}
-              onChange={pushQuery}
-            />
-            <label htmlFor={e.id} key={i}>
+              key={i}
+              selected={router.query[name] == e.title ? true : false}
+            >
               {e.title}
-            </label>
-          </>
-        ))}
-      </ul>
+            </option>
+          ))}
+        </select>
+        <ul>
+          {data.map((e, i) => (
+            <li>
+              <input
+                id={e.id}
+                type="radio"
+                name={name + "R"}
+                value={e.title}
+                onChange={pushQuery}
+              />
+              <label htmlFor={e.id} key={i}>
+                {e.title}
+              </label>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }

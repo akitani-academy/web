@@ -5,6 +5,8 @@ import Link from "next/link";
 import View from "components/widget/View";
 import Select from "components/widget/Select";
 
+import css from "styles/course_and_classtype.module.scss";
+
 export default function Page({ courseData, classtypeData }) {
   return (
     <>
@@ -12,8 +14,11 @@ export default function Page({ courseData, classtypeData }) {
       <p>
         　万人に当てはまるカリキュラムはありません。秋谷アカデミィでは入塾の際、塾長が面談を行い、お一人お一人に合った最適な授業をコーディネート致します。
       </p>
-      <Select data={courseData} name={"course"} />
-      <Select data={classtypeData} name={"classtype"} />
+      <section className={css.slect}>
+        <Select data={courseData} name={"course"} />
+        <img src="x.svg" width={"26px"} height={"26px"} />
+        <Select data={classtypeData} name={"classtype"} />
+      </section>
       <View data={courseData} name={"course"} />
       <View data={classtypeData} name={"classtype"} />
     </>

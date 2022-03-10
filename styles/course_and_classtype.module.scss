@@ -1,0 +1,46 @@
+.slect {
+    background: #fff;
+    padding: 1.7rem 1.3rem;
+    display: flex;
+    gap: 1.3rem;
+    font-weight: bold;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .1rem .3rem;
+        font-size: .9em;
+    }
+    select {
+        width: 40%;
+        text-align: center;
+        line-height: 1em;
+        height: 1em;
+        box-sizing: content-box;
+        padding: .7rem;
+        border: solid 2px $c_1;
+        margin-bottom: .3rem;
+    }
+    >* {
+        &:first-child {
+            text-align: right;
+            ul {
+                justify-content: flex-end
+            }
+            select {
+                border-color: #be2522;
+            }
+            ul {
+                color: #be2522;
+            }
+        }
+        &:last-child {
+            ul {
+                color: #688096;
+                justify-content:flex-start
+            }
+            select {
+                border-color: #688096;
+            }
+        }
+    }
+}
