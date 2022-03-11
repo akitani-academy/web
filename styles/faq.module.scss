@@ -1,0 +1,14 @@
+.ol {
+    display: flex;
+    flex-flow: column;
+    gap: .8em;
+    details[open] summary {
+        color: $c_2;
+        font-weight: bold;
+    }
+    .body {
+        margin: .5rem;
+        padding: 1rem;
+        border-left: solid $c_2 .4rem;
+    }
+}

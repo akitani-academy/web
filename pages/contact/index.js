@@ -5,6 +5,8 @@ import Script from "next/script";
 
 let _V = require("/components/_V.js");
 
+import LinkList from "components/widget/LinkList";
+
 export default function Page({ faq }) {
   return (
     <>
@@ -19,6 +21,15 @@ export default function Page({ faq }) {
         <br />
         勉強する際にご活用ください。
       </p>
+      <LinkList
+        data={[
+          ["英検", "/method"],
+          ["大学受験", "/method"],
+          ["TOEIC", "/method"],
+          ["TOEFL", "/method"],
+          ["その他", "/method"],
+        ]}
+      />
       <h2>電話でのお問い合わせ</h2>
       <ul>
         {_V.access.map((e, i) => (
@@ -41,11 +52,11 @@ export default function Page({ faq }) {
           value="cd44d1ef-1716-4e8d-ae9f-79e80a97692f"
         />
         <h3>お名前</h3>
-        <input type="text" name="name" />
+        <input type="text" name="name" required />
         <h3>メールアドレス</h3>
-        <input type="text" name="email" />
+        <input type="text" name="email" required />
         <h3>お電話番号</h3>
-        <input type="text" name="phone" />
+        <input type="text" name="phone" required />
         <h3>ご住所</h3>
         <span className="p-country-name">Japan</span>
         〒
@@ -54,11 +65,13 @@ export default function Page({ faq }) {
           name="$郵便番号"
           className="p-postal-code"
           maxLength="9"
+          required
         />
         <input
           type="text"
           name="$住所"
           className="p-region p-locality p-street-address p-extended-address"
+          required
         />
         <h3>学年</h3>
         <select name="$学年">
@@ -97,16 +110,19 @@ export default function Page({ faq }) {
         <h3>問い合わせ</h3>
         {(() => {
           let items = [];
-          ["面談・訪問の予約", "資料請求", "当アカデミーへのご質問"].map(
-            (e, i) => {
-              items.push(
-                <>
-                  <input type="checkbox" id={e} name={"$" + e} key={i} />
-                  <label htmlFor={e}>{e}</label>
-                </>
-              );
-            }
-          );
+          [
+            "面談・訪問の予約",
+            "資料請求",
+            "当アカデミーへのご質問",
+            "その他",
+          ].map((e, i) => {
+            items.push(
+              <>
+                <input type="checkbox" id={e} name={"$" + e} key={i} />
+                <label htmlFor={e}>{e}</label>
+              </>
+            );
+          });
           return <>{items}</>;
         })()}
         <textarea name="$問い合わせ"></textarea>
@@ -121,15 +137,4 @@ export default function Page({ faq }) {
       </form>
     </>
   );
-}
-export async function getStaticProps() {
-  const faq = await fetch(
-    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/faq?per_page=100&"
-  ).then((res) => res.json());
-
-  return {
-    props: {
-      faq,
-    },
-  };
 }

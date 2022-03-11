@@ -2,3 +2,10 @@
     display: flex;
     gap: 1rem;
 }
+.title {
+    line-height: 1em;
+    height: 1em;
+    box-sizing: content-box;
+    padding: .7rem;
+    border: solid 2px $c_2;
+}

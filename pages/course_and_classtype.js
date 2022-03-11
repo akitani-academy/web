@@ -26,7 +26,7 @@ export default function Page({ courseData, classtypeData }) {
 }
 export async function getStaticProps() {
   const courseData = await fetch(
-    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/course?per_page=100&"
+    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/course?per_page=100"
   ).then((res) => res.json());
   const classtypeData = await fetch(
     "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/class_type?per_page=100&"
@@ -34,8 +34,8 @@ export async function getStaticProps() {
 
   return {
     props: {
-      courseData,
-      classtypeData,
+      courseData: courseData.reverse(),
+      classtypeData: classtypeData.reverse(),
     },
   };
 }

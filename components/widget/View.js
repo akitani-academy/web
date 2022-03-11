@@ -15,10 +15,10 @@ function Page({ data, name }) {
     });
     return (
       <>
-        <h2 id={name}>{data.title}</h2>
+        <h2 className={css.title} id={name}>{data.title}</h2>
         <section className={css.flex}>
           <article className={css.article}>
-            {data.menu && (
+            {data.menu.length > 0 && (
               <>
                 <h3>より具体的な合格対策</h3>
                 <LinkList
@@ -42,7 +42,7 @@ function Page({ data, name }) {
               </ul>
             )}
           </article>
-          {data.post && (
+          {data.post.length > 0 && (
             <section>
               <h4>体験記</h4>
               <ul>

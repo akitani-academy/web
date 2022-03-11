@@ -1,10 +1,30 @@
+html {
+  scroll-behavior: smooth;
+}
+iframe {
+  border: none;
+}
 summary {
-  cursor: pointer;
   display: block;
 }
 summary::-webkit-details-marker {
   display: none;
 }
+input[type="radio"],select,label,summary {
+  cursor: pointer;
+}
+a,summary,label,input,select {
+  &:hover {
+    opacity: .7;
+    * {
+      opacity: .7;
+    }
+  }
+}
+h1,h2,h3,h4,h5,h6,strong {
+  font-weight: bold;
+}
+
 
 .spOnly {
   @include MQ(xl) {
@@ -34,33 +54,18 @@ h6.nav_course {
 }
 
 html {
-  scroll-behavior: smooth;
   font-family: 'Shippori Mincho', serif;
 }
-
 body {
   color: $c_1;
   background: $c_0;
 }
 h1,h2,h3,h4,h5,h6,strong {
   color: #000;
-  font-weight: bold;
 }
 p {
   font-size: 15px;
 }
-a,summary,label,input,select {
-  &:hover {
-    opacity: .7;
-    * {
-      opacity: .7;
-    }
-  }
-}
-input,select,label {
-  cursor: pointer;
-}
-
 
 main {
   max-width: 950px;
