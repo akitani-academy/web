@@ -1,3 +1,4 @@
+import { formatWithValidation } from "next/dist/shared/lib/utils";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -38,9 +39,11 @@ export default function Page({ faq }) {
   );
 }
 export async function getStaticProps() {
-  const faq = await fetch(
+  let faq = await fetch(
     "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/teacher?per_page=100"
   ).then((res) => res.json());
+
+  faq = faq.sort((a, b) => a.infoCount - b.infoCount).reverse();
 
   return {
     props: {
