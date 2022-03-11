@@ -33,7 +33,7 @@ function Page({ data, name }) {
         </select>
         <ul>
           {data.map((e, i) => (
-            <li>
+            <li key={i}>
               <input
                 id={e.id}
                 type="radio"
@@ -41,9 +41,7 @@ function Page({ data, name }) {
                 value={e.title}
                 onChange={pushQuery}
               />
-              <label htmlFor={e.id} key={i}>
-                {e.title}
-              </label>
+              <label htmlFor={e.id}>{e.title}</label>
             </li>
           ))}
         </ul>
