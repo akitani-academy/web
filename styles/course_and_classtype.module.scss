@@ -1,13 +1,14 @@
 .slect {
     background: #fff;
     padding: 1.7rem 3rem;
+    margin: auto;
     display: flex;
     gap: 1.3rem;
     font-weight: bold;
     ul {
         display: flex;
         flex-wrap: wrap;
-        gap: .1rem .3rem;
+        gap: .1rem .9rem;
         font-size: .9em;
     }
     select {

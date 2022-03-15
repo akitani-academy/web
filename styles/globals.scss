@@ -67,6 +67,12 @@ p {
   font-size: 15px;
 }
 
+*[id]::after {
+  display: block;
+  height: 8rem;
+  margin-top: -8rem;
+  content: "";
+}
 main {
   max-width: 950px;
   margin: auto;
@@ -89,9 +95,6 @@ main {
         color: $c_3;
         display: block;
         content: attr(data-subtitle);
-        // ジャンプリンク位置調整
-        padding-top: 10rem;
-        margin-top: -10rem;
         pointer-events: none;
       }
     }
@@ -115,5 +118,12 @@ main {
       border-bottom: dashed 1px $c_3;
       padding: 0 .05em;
     }
+  }
+}
+
+.nav_course_and_classtype {
+  position: unset !important;
+  .nav_course {
+    visibility: hidden;
   }
 }

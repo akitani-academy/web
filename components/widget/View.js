@@ -15,50 +15,72 @@ function Page({ data, name }) {
     });
     return (
       <>
-        <h2 className={css.title} id={name}>{data.title}</h2>
-        <section className={css.flex}>
-          <article className={css.article}>
-            {data.menu.length > 0 && (
-              <>
-                <h3>より具体的な合格対策</h3>
-                <LinkList
-                  data={data.menu.map((e, i) => [e.title, "/method/" + e.slug])}
-                />
-              </>
-            )}
-            <div dangerouslySetInnerHTML={{ __html: data.content }} />
-            {data.gallery && (
-              <ul>
-                {data.gallery.map((e, i) => (
-                  <li key={i}>
-                    <Image
-                      src={e.img}
-                      width={"200"}
-                      height={"170"}
-                      objectFit={"fill"}
-                    />
-                  </li>
-                ))}
-              </ul>
-            )}
-          </article>
-          {data.post.length > 0 && (
-            <section>
-              <h4>体験記</h4>
-              <ul>
-                {data.post.map((e, i) => (
-                  <li key={i}>
-                    <Link href={"/experiences/" + e.id}>
-                      <a>
-                        {e.title}
-                        <span>{e.student}</span>
+        <section className={css.View}>
+          <h2
+            className={css.title}
+            id={name}
+            data-subtitle={name == "course" ? "コース" : "授業形態"}
+          >
+            <span>{data.title}</span>
+          </h2>
+          <section className={css.flex}>
+            <article className={css.article}>
+              <h3>コースの説明</h3>
+              <div dangerouslySetInnerHTML={{ __html: data.content }} />
+              {data.gallery && (
+                <ul>
+                  {data.gallery.map((e, i) => (
+                    <li key={i}>
+                      <Image
+                        src={e.img}
+                        width={"200"}
+                        height={"170"}
+                        objectFit={"fill"}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {data.menu.length > 0 && (
+                <>
+                  <h3>より具体的な合格対策</h3>
+                  <LinkList
+                    data={data.menu.map((e, i) => [
+                      e.title,
+                      "/method/" + e.slug,
+                    ])}
+                  />
+                </>
+              )}
+            </article>
+            {data.post.length > 0 && (
+              <section className={css.taikenki}>
+                <div className={css.inner}>
+                  <h4>体験記</h4>
+                  <ul>
+                    {data.post.map((e, i) => (
+                      <li key={i}>
+                        <Link href={"/experiences/" + e.id}>
+                          <a>
+                            <span className={css.taikenki_title}>
+                              {e.title}
+                            </span>
+                            <br />
+                            <span>{e.student}</span>
+                          </a>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                    <Link href={"/experiences"}>
+                      <a className={css.more}>
+                        <span>もっと見る</span>
                       </a>
                     </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
+                </div>
+              </section>
+            )}
+          </section>
         </section>
       </>
     );

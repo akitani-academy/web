@@ -5,6 +5,8 @@ import Link from "next/link";
 import List from "components/widget/LinkList";
 import ExperiencesList from "components/widget/ExperiencesList";
 
+import css from "styles/View.module.scss";
+
 export default function Page({ data }) {
   return (
     <>
@@ -12,24 +14,39 @@ export default function Page({ data }) {
       <List data={data.map((e, i) => [e.name, "#" + e.slug])} />
       {data.map((e, i) => (
         <>
-          <h2 id={e.slug} key={i}>
+          <h2 id={e.slug} key={i} className={css.h2}>
             {e.name}
             {e.description && <small>{e.description}</small>}
           </h2>
           {1 < e.child_list.length && (
             <List data={e.child_list.map((e, i) => [e.name, "#" + e.slug])} />
           )}
-          {e.child_list.map((e, i) => (
+          {e.child_list.map((e1, i) => (
             <>
-              <div>
-                <h3 id={e.slug} key={i}>
-                  {e.name}
-                  {e.description && <small>{e.description}</small>}
-                </h3>
-                過去1年：{e.yearCount}名<br />
-                累計：{e.count}名
-              </div>
-              <ExperiencesList data={e} />
+              <section id={e1.slug}>
+                <div className={css.experiences}>
+                  <div className={css.shortTitle}>
+                    <div className={css.experiencesTitle}>
+                      <img src="/aa.svg" alt="" className={css.aa} />
+                      <h3 key={i}>
+                        {e1.name}
+                        {e1.description && (
+                          <>
+                            <br />
+                            <small>{e1.description}</small>
+                          </>
+                        )}
+                      </h3>
+                      <img src="/aa.svg" alt="" className={css.aa2} />
+                    </div>
+                    <div className={css.data}>
+                      過去1年：{e1.yearCount}名<br />
+                      累計：{e1.count}名
+                    </div>
+                  </div>
+                  <ExperiencesList data={e1} />
+                </div>
+              </section>
             </>
           ))}
         </>

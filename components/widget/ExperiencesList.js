@@ -12,23 +12,25 @@ export default function Page({ data }) {
   };
   return (
     <>
-      <ul className={css.ExperiencesList}>
-        {data.post.map((e, i) => (
-          <li key={i}>
-            <time>{e.date}</time>
-            <div className={css.meta}>
-              <span>{e.student}</span>
-              {e.title && (
-                <span>
-                  <Link href={"/experiences/" + e.id}>
-                    <a>体験記：{e.title}</a>
-                  </Link>
-                </span>
-              )}
-            </div>
-          </li>
-        ))}
-      </ul>
+      <div className={css.ExperiencesList}>
+        <ul>
+          {data.post.map((e, i) => (
+            <li key={i}>
+              <time>{e.date}</time>
+              <div className={css.meta}>
+                <span>{e.student}</span>
+                {e.title && (
+                  <span>
+                    <Link href={"/experiences/" + e.id}>
+                      <a>体験記：{e.title}</a>
+                    </Link>
+                  </span>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }

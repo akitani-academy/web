@@ -1,7 +1,7 @@
+import { useRouter } from "next/router";
 import Link from "next/link";
 
 let _V = require("./_V.js");
-
 import css from "styles/nav.module.scss";
 
 function close() {
@@ -9,9 +9,12 @@ function close() {
 }
 
 function Page() {
+  const router = useRouter();
+  let url = router.pathname.split("/");
+
   return (
     <>
-      <nav className={css.nav}>
+      <nav className={css.nav + " nav_" + url[1]}>
         <section className={css.inner}>
           <ul className={css.addr}>
             {_V.access.map((e, i) => (
@@ -19,8 +22,7 @@ function Page() {
                 <a href={"tel:" + e.tel}>
                   {e.name}
                   <br />
-                  <span className={css.tel}>
-                  {e.tel}</span>
+                  <span className={css.tel}>{e.tel}</span>
                 </a>
               </li>
             ))}

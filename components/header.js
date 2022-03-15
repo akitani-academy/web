@@ -44,7 +44,7 @@ function Page() {
 
   return (
     <>
-      <header className={css.header + " " + url[1]}>
+      <header className={css.header + " header_" + url[1]}>
         <section className={css.inner}>
           {siteTitle(url)}
           <section className={css.menu}>

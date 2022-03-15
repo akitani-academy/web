@@ -31,7 +31,7 @@ export async function getStaticPaths() {
 
   // ビルド時にこれらのパスだけをプリレンダリングします。
   // { fallback: false } は他のルートが404になることを意味します。
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 }
 
 // ビルド時にも呼び出されます。
