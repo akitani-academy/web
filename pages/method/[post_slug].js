@@ -63,8 +63,6 @@ export async function getStaticProps({ params }) {
       params.post_slug
   ).then((res) => res.json());
 
-  console.log(params.post_slug);
-
   // 記事データをprops経由でページに渡します。
   return { props: { post: post[0] } };
 }
