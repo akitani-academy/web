@@ -3,30 +3,29 @@
     font-family: sans-serif;
     font-weight: bold;
     min-width: fit-content;
-    * {
-        max-width: 70vw;
-    }
     overflow: scroll;
     text-align: right;
-    background: $c_0;
     height: fit-content;
     margin-left: .7rem;
-
     position: sticky;
-    display: flex;
     top: calc(80px + 3vw);
     @media (max-width: 600px) {
         top: 57px;
         width: 100vw;
         height: calc(100vh - 57px);
         position: fixed;
-        right: 0;
-        background: rgba(#000,.5);
-        backdrop-filter: blur(2px);
+        right: -100%;
+        transition: transform .3s;
+        overflow: scroll;
         .inner {
+            display: flex;
+            min-height: 100vh;
+        }
+        .main {
+            background-attachment: scroll;
             margin-left: auto;
-            overflow: scroll;
             background: $c_0;
+            // height: in;
             padding: 3vw;
         }
     }
@@ -56,6 +55,7 @@
             gap: .6rem;
         }
         a {
+            background: transparent;
             border: none;
             padding: 0;
             line-height: 1.4em;

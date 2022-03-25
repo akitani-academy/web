@@ -1,18 +1,26 @@
 .slect {
     background: #fff;
     padding: 1.7rem 3rem;
+    @media (max-width: 600px) {
+        padding: 1.5rem 1rem;
+        width: 100vw;
+        margin: 0 calc(50% - 50vw);
+    }
     margin: auto;
     display: flex;
     gap: 1.3rem;
     font-weight: bold;
     ul {
+        font-size: .9em;
+        @media (max-width: 600px) {
+            font-size: .7em;
+        }
         display: flex;
         flex-wrap: wrap;
-        gap: .1rem .9rem;
-        font-size: .9em;
+        gap: .1em .9em;
     }
     select {
-        width: 8.6em;
+        max-width: 8.6em;
         text-align: center;
         line-height: 1em;
         height: 1em;

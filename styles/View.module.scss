@@ -7,8 +7,10 @@
     }
 }
 .flex {
+    @media (min-width: 600px) {
     display: flex;
     gap: 1rem;
+    }
 }
 .title {
     span {
@@ -29,8 +31,10 @@
     }
 }
 .article {
+    @media (min-width: 600px) {
     margin-left: 2rem;
     width: 85%;
+    }
 }
 .taikenki {
     position: relative;

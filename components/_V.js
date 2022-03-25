@@ -37,7 +37,7 @@ module.exports.menu = [
     content: [
       ["大学受験", "/course_and_classtype?course=大学受験"],
       ["英検合格", "/course_and_classtype?course=英検合格"],
-      ["内進・教科書", "/course_and_classtype?course=内進・教科書"],
+      ["学校成績UP", "/course_and_classtype?course=学校成績UP"],
       ["帰国子女", "/course_and_classtype?course=帰国子女"],
       [
         "TOEIC・ビジネス英語",

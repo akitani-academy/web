@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
+import useSWR from "swr";
 
 let _V = require("./_V.js");
 
@@ -29,6 +30,17 @@ const siteTitle = function (url) {
   }
 };
 
+function navSate() {
+  const { data, mutate } = useSWR("state", () => window.count);
+  return {
+    data: data || false,
+    mutate: (count) => {
+      window.count = count;
+      mutate();
+    },
+  };
+}
+
 function Page() {
   const router = useRouter();
   let url = router.pathname.split("/");
@@ -41,6 +53,9 @@ function Page() {
       router.back();
     }
   };
+
+  const { data, mutate } = navSate();
+  const handleInc = () => mutate(!data);
 
   return (
     <>
@@ -67,7 +82,7 @@ function Page() {
                   <a className={css.contact}>資料請求</a>
                 </Link>
               </li>
-              <li className={css.spMENU}>
+              <li className={css.spMENU} onClick={handleInc}>
                 <span>MENU</span>
               </li>
             </ul>

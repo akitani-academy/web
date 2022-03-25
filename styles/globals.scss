@@ -122,8 +122,28 @@ main {
 }
 
 .nav_course_and_classtype {
+  @media (min-width: 600px) {
   position: unset !important;
+  }
   .nav_course {
     visibility: hidden;
+    height: 0;
+  }
+}
+
+.navClose {
+  flex: 1;
+  background: rgba(#000,.5);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity .1s;
+  cursor: pointer;
+}
+.nav_true {
+  @media (max-width: 600px) {
+    transform:translateX(-100%);
+    .navClose {
+      opacity: 1 !important;
+    }
   }
 }
