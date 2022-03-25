@@ -30,16 +30,16 @@ const siteTitle = function (url) {
   }
 };
 
-function navSate() {
-  const { data, mutate } = useSWR("state", () => window.count);
-  return {
-    data: data || false,
-    mutate: (count) => {
-      window.count = count;
-      mutate();
-    },
-  };
-}
+// function navSate() {
+//   const { data, mutate } = useSWR("state", () => window.count);
+//   return {
+//     data: data || false,
+//     mutate: (count) => {
+//       window.count = count;
+//       mutate();
+//     },
+//   };
+// }
 
 function Page() {
   const router = useRouter();
@@ -54,8 +54,8 @@ function Page() {
     }
   };
 
-  const { data, mutate } = navSate();
-  const handleInc = () => mutate(!data);
+  // const { data, mutate } = navSate();
+  // const handleInc = () => mutate(!data);
 
   return (
     <>
