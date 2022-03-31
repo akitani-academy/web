@@ -1,28 +1,28 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import useSWR from "swr";
+import UseSWR from "swr";
 
 let _V = require("./_V.js");
 import css from "styles/nav.module.scss";
 
-// function navSate() {
-//   const { data, mutate } = useSWR("state", () => window.count);
+function navSate() {
+  const { data, mutate } = UseSWR("state", () => window.count);
 
-//   return {
-//     data: data || false,
-//     mutate: (count) => {
-//       window.count = count;
-//       mutate();
-//     },
-//   };
-// }
+  return {
+    data: data || false,
+    mutate: (count) => {
+      window.count = count;
+      mutate();
+    },
+  };
+}
 
 function Page() {
   const router = useRouter();
   let url = router.pathname.split("/");
 
-  // const { data, mutate } = navSate();
-  // const handleInc = () => mutate(!data);
+  const { data, mutate } = navSate();
+  const handleInc = () => mutate(!data);
 
   return (
     <>
