@@ -67,13 +67,19 @@ p {
   font-size: 15px;
 }
 
-*[id]::after {
-  display: block;
-  height: 8rem;
-  margin-top: -8rem;
-  content: "";
-}
 main {
+  // ジャンプリンクずれ修正
+  *[id] {
+    // display: flex;
+    // flex-flow: column;
+    &::before {
+      display: block;
+      height: 10rem;
+      margin-top: -10rem;
+      content: "";
+      order:0;
+    }
+  }
   max-width: 950px;
   margin: auto;
   margin-top: 80px;

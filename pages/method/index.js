@@ -23,7 +23,7 @@ export default function Page({
       <List data={toeic} />
       <h2>TOEFLの対策</h2>
       <List data={toefl} />
-      <h2>学校成績UP</h2>
+      <h2>学校成績UPの対策</h2>
       <List data={gakko} />
       <h2>その他の対策</h2>
     </>

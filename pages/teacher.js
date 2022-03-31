@@ -13,6 +13,17 @@ export default function Page({ faq }) {
         {faq.map((e, i) => (
           <li key={i}>
             <h2>{e.name}</h2>
+            {e.img && (
+              <div className={css.img}>
+                <Image
+                  src={e.img}
+                  alt={e.name + "先生の写真"}
+                  layout="responsive"
+                  width={6240}
+                  height={4160}
+                ></Image>
+              </div>
+            )}
             {e.license}
             {e.message && (
               <>
