@@ -12,7 +12,6 @@ export default function Page({
   gakko,
   other,
 }) {
-  //   console.log(eiken);
   return (
     <>
       <h1>合格へのHow To</h1>
