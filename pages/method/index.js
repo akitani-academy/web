@@ -9,6 +9,7 @@ export default function Page({
   UniversityEntranceExams,
   toeic,
   toefl,
+  gakko,
   other,
 }) {
   //   console.log(eiken);
