@@ -1,5 +1,5 @@
 import { formatWithValidation } from "next/dist/shared/lib/utils";
-import Head from "next/head";
+import Head from "components/head";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,6 +8,7 @@ import css from "styles/teacher.module.scss";
 export default function Page({ faq }) {
   return (
     <>
+      <Head title="講師紹介" />
       <h1>講師紹介</h1>
       <ul className={css.teacherList}>
         {faq.map((e, i) => (

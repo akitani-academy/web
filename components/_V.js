@@ -1,3 +1,6 @@
+module.exports.meta = {
+  siteTitle: "秋谷光子アカデミィ",
+};
 module.exports.access = [
   {
     id: "tsunashima",

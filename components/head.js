@@ -1,22 +1,44 @@
 import Head from "next/head";
+const _V = require("./_V.js");
 
-function Page({ title, description, keyword, image, url }) {
+function Page({ title, description, ogp, url }) {
+  if (title) {
+    var title = title + "｜" + _V.meta.siteTitle;
+  } else {
+    var title = _V.meta.siteTitle;
+  }
   return (
     <Head>
-      <title>{title}</title>
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
       <meta property="og:type" content="blog" />
-      <meta property="og:url" content={url} />
-      <meta property="og:image" content={image} />
-      <meta property="og:site_name" content={title} />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@tcr_jp" />
-      <meta name="twitter:url" content={image} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
-      <link rel="canonical" href={url} />
+      {_V.meta.siteTitle && (
+        <>
+          <meta property="og:site_name" content={_V.meta.siteTitle} />
+        </>
+      )}
+      {title && (
+        <>
+          <title>{title}</title>
+          <meta property="og:title" content={title} />
+        </>
+      )}
+      {ogp && (
+        <>
+          <meta property="og:image" content={ogp} />
+        </>
+      )}
+      {url && (
+        <>
+          <meta property="og:url" content={url} />
+          <link rel="canonical" href={url} />
+        </>
+      )}
+      {description && (
+        <>
+          <meta property="og:description" content={description} />
+        </>
+      )}
     </Head>
   );
 }
