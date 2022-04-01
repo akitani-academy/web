@@ -4,9 +4,15 @@ import Link from "next/link";
 
 import css from "styles/index.module.scss";
 
-export default function Page({ news, experiences }) {
+export default function Page({ top, news, experiences }) {
   return (
     <>
+      {top.feature.map((e, i) => (
+        <>
+          <h2 dangerouslySetInnerHTML={{ __html: e.title }} key={i}></h2>
+          <article dangerouslySetInnerHTML={{ __html: e.body }}></article>
+        </>
+      ))}
       {/* {experiences.map((e, i) => (
         <>
           <h2 id={e.slug} key={i} className={css.h2}>
@@ -50,7 +56,7 @@ export default function Page({ news, experiences }) {
       <Link href={"/news"}>
         <a>詳しくはこちら</a>
       </Link> */}
-      <h2>
+      {/* <h2>
         30年間の英語専門塾で、
         <br />
         あらゆる分野で圧倒的な実績。
@@ -88,7 +94,7 @@ export default function Page({ news, experiences }) {
       <h2 className={css.h2_blue}>最上級の学習空間</h2>
       <p>
         全教室に換気用の窓があり3人机に1人が着席。全室床暖房とヤマハの防音設備を備え、素材と質感にこだわった室内と建具、緑豊かな観葉植物等、最高の環境で受講できます。1対1個別指導は個室で行い、オンライン受講も可能。自習室完備。
-      </p>
+      </p> */}
       <style jsx>{`
         h2 {
           font-size: 1.875rem;
@@ -100,6 +106,9 @@ export default function Page({ news, experiences }) {
 export async function getStaticProps() {
   return {
     props: {
+      top: await fetch(
+        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages/7284"
+      ).then((res) => res.json()),
       news: await fetch(
         "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages/6797"
       ).then((res) => res.json()),

@@ -34,7 +34,7 @@ export default function Page({ faq }) {
             )}
             {e.career && (
               <>
-                <h3>当塾での指導実績・得意分野</h3>
+                <h3>指導実績・得意分野</h3>
                 <p>{e.career}</p>
               </>
             )}
