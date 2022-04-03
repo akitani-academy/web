@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import Router from "next/router";
+import { useEffect } from "react";
 
 import css from "styles/Select.module.scss";
 
@@ -14,6 +15,9 @@ function Page({ data, name }) {
       { scroll: false, shallow: true }
     );
   }
+  // useEffect(() => {
+  //   console.log("hello~~");
+  // }, [router]);
   return (
     <>
       <div className={css.main}>

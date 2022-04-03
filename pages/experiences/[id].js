@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from "components/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -10,6 +10,7 @@ let _V = require("/components/_V.js");
 export default function Page({ post }) {
   return (
     <>
+      <Head title={post.title} />
       <h1 data-subTitle="秋田光子アカデミィの">{post.title}</h1>
       <article dangerouslySetInnerHTML={{ __html: post.content }}></article>
     </>
@@ -19,10 +20,18 @@ export default function Page({ post }) {
 // この関数はビルド時に呼び出されます。
 export async function getStaticPaths() {
   // 外部APIエンドポイントを呼び出して記事を取得します。
-  const res = await fetch(
-    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/results?per_page=100"
-  );
-  const posts = await res.json();
+  const rest_url =
+    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/results?per_page=100&_fields=id";
+
+  const res = await fetch(rest_url);
+  const totalpages = await res.headers.get("x-wp-totalpages");
+  var posts = await res.json();
+
+  for (let i = 1; i <= totalpages; i++) {
+    let resData = await fetch(rest_url + "&page=" + i);
+    let postsData = await resData.json();
+    posts = posts.concat(postsData);
+  }
 
   // 記事に基づいてプリレンダリングしたいパスを取得します
   const paths = posts.map((post) => ({

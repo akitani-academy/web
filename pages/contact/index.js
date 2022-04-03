@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from "components/head";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
@@ -7,13 +7,17 @@ let _V = require("/components/_V.js");
 
 import LinkList from "components/widget/LinkList";
 
+import * as AutoKana from "vanilla-autokana";
+
 export default function Page({ faq }) {
+  const { kana, setKanaSource } = useKana();
   return (
     <>
       <Script
         src="https://yubinbango.github.io/yubinbango/yubinbango.js"
         strategy="beforeInteractive"
       />
+      <Head title="資料請求/お問い合わせ" />
       <h1>資料請求 / お問い合わせ</h1>
       <h2>合格へのHow To</h2>
       <p>
@@ -52,25 +56,46 @@ export default function Page({ faq }) {
           value="cd44d1ef-1716-4e8d-ae9f-79e80a97692f"
         />
         <h3>お名前</h3>
-        <input type="text" name="name" required />
+        <input
+          type="text"
+          name="name"
+          placeholder="田中 太郎"
+          onChange={(e) => setKanaSource(e.target.value)}
+          required
+        />
+        <h3>ふりがな</h3>
+        <input
+          type="text"
+          name="$ふりがな"
+          placeholder="たなか たろう"
+          value={kana}
+          required
+        />
         <h3>メールアドレス</h3>
-        <input type="text" name="email" required />
+        <input
+          type="text"
+          name="email"
+          placeholder="mail@example.com"
+          required
+        />
         <h3>お電話番号</h3>
-        <input type="text" name="phone" required />
-        <h3>ご住所</h3>
-        <span className="p-country-name">Japan</span>
-        〒
+        <input type="text" name="phone" placeholder="01-2345-6789" required />
+        <h3>郵便番号</h3>
         <input
           type="text"
           name="$郵便番号"
           className="p-postal-code"
           maxLength="9"
+          placeholder="100-8111"
           required
         />
+        <h3>ご住所</h3>
+        <span className="p-country-name">Japan</span>
         <input
           type="text"
           name="$住所"
           className="p-region p-locality p-street-address p-extended-address"
+          placeholder="東京都千代田区千代田1-1"
           required
         />
         <h3>学年</h3>
@@ -125,7 +150,10 @@ export default function Page({ faq }) {
           });
           return <>{items}</>;
         })()}
-        <textarea name="$問い合わせ"></textarea>
+        <textarea
+          name="$問い合わせ"
+          placeholder="ご自由にご記入ください。"
+        ></textarea>
         <input type="text" name="honeypot" className="honeypot" />
         <input type="hidden" name="replyTo" value="@" />
         <input

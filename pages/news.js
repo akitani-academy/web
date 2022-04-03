@@ -1,10 +1,11 @@
-import Head from "next/head";
+import Head from "components/head";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Page({ wpDATA }) {
   return (
     <>
+      <Head title={wpDATA.subTitle} />
       <h1 data-subtitle={wpDATA.subTitle}>{wpDATA.title}</h1>
       <article dangerouslySetInnerHTML={{ __html: wpDATA.content }} />
     </>

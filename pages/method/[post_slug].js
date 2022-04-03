@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from "components/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -10,6 +10,7 @@ let _V = require("/components/_V.js");
 export default function Page({ post }) {
   return (
     <>
+      <Head title={post.title} />
       <h1 data-subTitle="秋田光子アカデミィの">{post.title}</h1>
       <List data={[["その他の合格対策", "/method"]]} />
 

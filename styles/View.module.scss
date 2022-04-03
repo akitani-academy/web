@@ -97,6 +97,8 @@
     transform: scale(-1, 1);
 }
 .experiencesTitle {
+    width: 115px;
+    min-width: 115px;
     display: flex;
     align-items: center;
     justify-content:space-between;
@@ -113,16 +115,28 @@
     }
 }
 .experiences {
-    display: flex;
+    @include MQ (xl) {
+        display: flex;
+    }
     margin-bottom: 2rem;
     .shortTitle {
-        width: 19%;
-        min-width: 19%;
         margin-right: 1.5rem;
         text-align: center;
+        @include MQ () {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: .7rem;
+            margin-left: -.3rem;
+        }
     }
     .data {
-        margin-top: .3rem;
+        @include MQ (xl) {
+            margin-top: .3rem;
+        }
+        @include MQ () {
+            text-align: left;
+        }
         font-size: .8rem;
         line-height: 1rem;
     }

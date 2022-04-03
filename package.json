@@ -9,14 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "budoux": "^0.1.0",
     "next": "12.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-use-kana": "^2.4.0",
     "sass": "^1.49.9",
     "scroll-behavior-polyfill": "^2.0.13",
     "smoothscroll-polyfill": "^0.4.4",
     "swr": "^1.2.2",
-    "the-new-css-reset": "^1.5.1"
+    "the-new-css-reset": "^1.5.1",
+    "vanilla-autokana": "^1.3.0"
   },
   "devDependencies": {
     "eslint": "8.9.0",

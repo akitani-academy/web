@@ -1,16 +1,29 @@
-import Head from "next/head";
+import Head from "components/head";
 import Image from "next/image";
 import Link from "next/link";
 
 import css from "styles/index.module.scss";
 
+import { loadDefaultJapaneseParser } from "budoux";
+const parser = loadDefaultJapaneseParser();
+
 export default function Page({ top, news, experiences }) {
   return (
     <>
+      <Head />
       {top.feature.map((e, i) => (
         <>
-          <h2 dangerouslySetInnerHTML={{ __html: e.title }} key={i}></h2>
-          <article dangerouslySetInnerHTML={{ __html: e.body }}></article>
+          <h2
+            dangerouslySetInnerHTML={{
+              __html: parser.translateHTMLString(e.title),
+            }}
+            key={i}
+          ></h2>
+          <article
+            dangerouslySetInnerHTML={{
+              __html: parser.translateHTMLString(e.body),
+            }}
+          ></article>
         </>
       ))}
       {/* {experiences.map((e, i) => (
@@ -98,6 +111,14 @@ export default function Page({ top, news, experiences }) {
       <style jsx>{`
         h2 {
           font-size: 1.875rem;
+        }
+        h2 span {
+          display: inline-block;
+        }
+        @media (max-width: 600px) {
+          h2 {
+            font-size: 1.5rem;
+          }
         }
       `}</style>
     </>

@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from "components/head";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,6 +7,7 @@ import css from "styles/faq.module.scss";
 export default function Page({ faq }) {
   return (
     <>
+      <Head title="よくある質問" />
       <h1>よくある質問</h1>
       <ol className={css.ol}>
         {faq.map((e, i) => (

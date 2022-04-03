@@ -52,7 +52,10 @@ function Page() {
                   {e1.content.map((e2, i2) => (
                     <li key={i2}>
                       <Link href={e2[1]}>
-                        <a dangerouslySetInnerHTML={{ __html: e2[0] }}></a>
+                        <a
+                          dangerouslySetInnerHTML={{ __html: e2[0] }}
+                          onClick={handleInc}
+                        ></a>
                       </Link>
                     </li>
                   ))}

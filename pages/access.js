@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from "components/head";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,6 +12,7 @@ export default function Page({ faq }) {
   }
   return (
     <>
+      <Head title="アクセス" />
       <h1>アクセス</h1>
       <List data={_V.access.map((e, i) => [e.name, "#" + e.id])} />
       {_V.access.map((e, i) => (
@@ -19,7 +20,7 @@ export default function Page({ faq }) {
           <h2 id={e.id} key={i}>
             {e.name}
           </h2>
-          {e.address}
+          {e.address}<br/>
           <a href={"tel:" + e.tel} className="tel">
             {e.tel}
           </a>
@@ -28,7 +29,6 @@ export default function Page({ faq }) {
             className="Gmap"
             src={e.Gmap}
             width="600"
-            height="450"
             allowFullScreen
             loading="lazy"
           ></iframe>

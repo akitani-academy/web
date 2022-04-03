@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from "components/head";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
@@ -10,7 +10,8 @@ import List from "components/widget/LinkList";
 export default function Page({ faq }) {
   return (
     <>
-      <h1>お問合せありがとうございます。</h1>
+      <Head title="資料請求/お問い合わせ - 完了" />
+      <h1>資料請求/お問合せありがとうございます。</h1>
       <p>後日、当アカデミーからご連絡させていただきます。</p>
       <List data={[["トップページに戻る", "/"]]} />
     </>

@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from "components/head";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,6 +10,7 @@ import css from "styles/course_and_classtype.module.scss";
 export default function Page({ courseData, classtypeData }) {
   return (
     <>
+      <Head title="コースと授業形態" />
       <h1>コース と 授業形態</h1>
       <p>
         万人に当てはまるカリキュラムはありません。秋谷アカデミィでは入塾の際、塾長が面談を行い、お一人お一人に合った最適な授業をコーディネート致します。

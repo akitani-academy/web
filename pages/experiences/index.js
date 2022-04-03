@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from "components/head";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,6 +10,7 @@ import css from "styles/View.module.scss";
 export default function Page({ data }) {
   return (
     <>
+      <Head title="合格実績と体験記" />
       <h1>合格実績 と 体験記</h1>
       <List data={data.map((e, i) => [e.name, "#" + e.slug])} />
       {data.map((e, i) => (
