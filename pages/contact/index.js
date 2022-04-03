@@ -7,10 +7,7 @@ let _V = require("/components/_V.js");
 
 import LinkList from "components/widget/LinkList";
 
-import * as AutoKana from "vanilla-autokana";
-
 export default function Page({ faq }) {
-  const { kana, setKanaSource } = useKana();
   return (
     <>
       <Script
@@ -56,19 +53,12 @@ export default function Page({ faq }) {
           value="cd44d1ef-1716-4e8d-ae9f-79e80a97692f"
         />
         <h3>お名前</h3>
-        <input
-          type="text"
-          name="name"
-          placeholder="田中 太郎"
-          onChange={(e) => setKanaSource(e.target.value)}
-          required
-        />
+        <input type="text" name="name" placeholder="田中 太郎" required />
         <h3>ふりがな</h3>
         <input
           type="text"
           name="$ふりがな"
           placeholder="たなか たろう"
-          value={kana}
           required
         />
         <h3>メールアドレス</h3>
