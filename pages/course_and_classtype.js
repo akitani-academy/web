@@ -8,6 +8,20 @@ import Select from "components/widget/Select";
 import css from "styles/course_and_classtype.module.scss";
 
 export default function Page({ courseData, classtypeData }) {
+  if (process.browser) {
+    window.addEventListener("resize", resize);
+    function resize() {
+      if (440 > window.innerWidth) {
+        document.querySelector(".selectArea").style.transform =
+          "scale(" + window.innerWidth / 440 + ")";
+        document.querySelector(".selectArea").style.width =
+          100 * (440 / window.innerWidth) + "vw";
+      } else {
+        document.querySelector(".selectArea").style.transform = "";
+      }
+    }
+    resize();
+  }
   return (
     <>
       <Head title="コースと授業形態" />
@@ -15,7 +29,7 @@ export default function Page({ courseData, classtypeData }) {
       <p>
         万人に当てはまるカリキュラムはありません。秋谷アカデミィでは入塾の際、塾長が面談を行い、お一人お一人に合った最適な授業をコーディネート致します。
       </p>
-      <section className={css.slect}>
+      <section className={css.slect + " selectArea"}>
         <Select data={courseData} name={"course"} />
         <img src="x.svg" width={"26px"} height={"26px"} />
         <Select data={classtypeData} name={"classtype"} />
