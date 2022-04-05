@@ -26,7 +26,10 @@ function Page({ data, name }) {
           <section className={css.flex}>
             <article className={css.article}>
               <h3>コースの説明</h3>
-              <div className={css.courseBody} dangerouslySetInnerHTML={{ __html: data.content }} />
+              <div
+                className={css.courseBody}
+                dangerouslySetInnerHTML={{ __html: data.content }}
+              />
               {data.gallery && (
                 <ul>
                   {data.gallery.map((e, i) => (
@@ -72,11 +75,11 @@ function Page({ data, name }) {
                       </li>
                     ))}
                   </ul>
-                    <Link href={"/experiences"}>
-                      <a className={css.more}>
-                        <span>もっと見る</span>
-                      </a>
-                    </Link>
+                  <Link href={"/experiences"}>
+                    <a className={css.more}>
+                      <span>もっと見る</span>
+                    </a>
+                  </Link>
                 </div>
               </section>
             )}

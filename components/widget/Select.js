@@ -7,6 +7,7 @@ import css from "styles/Select.module.scss";
 function Page({ data, name }) {
   const router = useRouter();
   function pushQuery(e) {
+    Router.push("#" + [name]);
     Router.push(
       {
         query: { ...router.query, [name]: e.target.value },
