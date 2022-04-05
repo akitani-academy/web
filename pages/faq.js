@@ -25,6 +25,12 @@ export default function Page({ faq }) {
     </>
   );
 }
+
+import Layout from "/components/layout";
+Page.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
+
 export async function getStaticProps() {
   let faq = await fetch(
     "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/faq?per_page=100&"

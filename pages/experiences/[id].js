@@ -17,6 +17,11 @@ export default function Page({ post }) {
   );
 }
 
+import Layout from "/components/layout";
+Page.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
+
 // この関数はビルド時に呼び出されます。
 export async function getStaticPaths() {
   // 外部APIエンドポイントを呼び出して記事を取得します。

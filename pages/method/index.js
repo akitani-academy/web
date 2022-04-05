@@ -31,6 +31,11 @@ export default function Page({
   );
 }
 
+import Layout from "/components/layout";
+Page.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
+
 export async function getStaticProps() {
   return {
     props: {

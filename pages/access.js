@@ -20,7 +20,8 @@ export default function Page({ faq }) {
           <h2 id={e.id} key={i}>
             {e.name}
           </h2>
-          {e.address}<br/>
+          {e.address}
+          <br />
           <a href={"tel:" + e.tel} className="tel">
             {e.tel}
           </a>
@@ -37,3 +38,8 @@ export default function Page({ faq }) {
     </>
   );
 }
+
+import Layout from "/components/layout";
+Page.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};

@@ -156,3 +156,8 @@ export default function Page({ faq }) {
     </>
   );
 }
+
+import Layout from "/components/layout";
+Page.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};

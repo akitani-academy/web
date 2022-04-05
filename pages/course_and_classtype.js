@@ -39,6 +39,12 @@ export default function Page({ courseData, classtypeData }) {
     </>
   );
 }
+
+import Layout from "/components/layout";
+Page.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
+
 export async function getStaticProps() {
   const courseData = await fetch(
     "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/course?per_page=100"

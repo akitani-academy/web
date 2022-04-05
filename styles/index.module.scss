@@ -4,3 +4,50 @@
 .h2_blue {
     color: $c_4;
 }
+.main {
+    margin-top: 0;
+}
+.top {
+    margin-top: 80px;
+    text-align: center;
+}
+.topImg {
+    h2,h3 {
+        color: #fff;
+        text-shadow:rgba(#000,.7) 1px 1px 10px, 
+                    rgba(#000,.7) -1px 1px 10px,
+                    rgba(#000,.7) 1px -1px 10px,
+                    rgba(#000,.7) -1px -1px 10px;;
+    }
+    height: 400px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+}
+.news {
+    display: flex;
+    color: $c_2;
+    background-color: rgba($c_2,.1);
+    height: 2em;
+    place-items: center;
+    h6 {
+        height: 100%;
+        display: grid;
+        place-items: center;
+        padding: 0 .8em;
+        background-color: $c_2;
+        color: #fff;
+    }
+    a {
+        padding-left: .8em;
+    }
+}

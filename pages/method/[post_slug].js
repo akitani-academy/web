@@ -10,7 +10,7 @@ let _V = require("/components/_V.js");
 export default function Page({ post }) {
   return (
     <>
-      <Head title={post.title} />
+      <Head title="講師紹介" />
       <h1 data-subTitle="秋田光子アカデミィの">{post.title}</h1>
       <List data={[["その他の合格対策", "/method"]]} />
 
@@ -35,6 +35,11 @@ export default function Page({ post }) {
     </>
   );
 }
+
+import Layout from "/components/layout";
+Page.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
 
 // この関数はビルド時に呼び出されます。
 export async function getStaticPaths() {
