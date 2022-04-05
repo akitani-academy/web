@@ -20,7 +20,7 @@ export default function Page({ courseData, classtypeData }) {
         document.querySelector(".selectArea").style.transform = "";
       }
     }
-    resize();
+    document.addEventListener("DOMContentLoaded", resize);
   }
   return (
     <>
