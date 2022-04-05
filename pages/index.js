@@ -21,9 +21,22 @@ export default function Page({ top, news, experiences }) {
             ></Image>
           </div>
           <div>
-            <h2>英検に合格しながら、大学合格を果たす英語塾。</h2>
+            <h2 className={css.messageH2}>
+              英検に <wbr />
+              合格しながら、
+              <wbr />
+              大学合格を果たす
+              <wbr />
+              英語塾。
+            </h2>
             <h3>
-              社会人をはじめ、小学校で3級、中学校で2級、高校で準1級も多数合格。
+              社会人をはじめ、
+              <wbr />
+              小学校で3級、
+              <wbr />
+              中学校で2級、
+              <wbr />
+              高校で準1級も多数合格。
             </h3>
           </div>
         </section>
