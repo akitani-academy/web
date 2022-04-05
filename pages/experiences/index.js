@@ -27,19 +27,30 @@ export default function Page({ data }) {
               <section id={e1.slug}>
                 <div className={css.experiences}>
                   <div className={css.shortTitle}>
-                    <div className={css.experiencesTitle}>
-                      <img src="/aa.svg" alt="" className={css.aa} />
-                      <h3 key={i}>
-                        {e1.name}
+                    {e1.img ? (
+                      <div className={css.titleImg}>
+                        <img src={e1.img} alt="" />
                         {e1.description && (
                           <>
-                            <br />
                             <small>{e1.description}</small>
                           </>
                         )}
-                      </h3>
-                      <img src="/aa.svg" alt="" className={css.aa2} />
-                    </div>
+                      </div>
+                    ) : (
+                      <div className={css.experiencesTitle}>
+                        <img src="/aa.svg" alt="" className={css.aa} />
+                        <h3 key={i}>
+                          {e1.name}
+                          {e1.description && (
+                            <>
+                              <br />
+                              <small>{e1.description}</small>
+                            </>
+                          )}
+                        </h3>
+                        <img src="/aa.svg" alt="" className={css.aa2} />
+                      </div>
+                    )}
                     <div className={css.data}>
                       過去1年：{e1.yearCount}名<br />
                       累計：{e1.count}名

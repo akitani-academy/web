@@ -36,6 +36,13 @@
     width: 85%;
     }
 }
+.gallery {
+    overflow: scroll;
+    ul {
+        display: flex;
+        gap: .7rem;
+    }
+}
 .courseBody {
     margin-bottom: 1.5rem;
 }
@@ -113,6 +120,19 @@
         small {
             font-size: .9rem;
         }
+    }
+}
+.titleImg {
+    width: 115px;
+    min-width: 115px;
+    display: flex;
+    flex-flow: column;
+    place-items: center;
+    img {
+        width: 90px;
+    }
+    small {
+        margin-top: .3em;
     }
 }
 .experiences {

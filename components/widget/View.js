@@ -30,20 +30,6 @@ function Page({ data, name }) {
                 className={css.courseBody}
                 dangerouslySetInnerHTML={{ __html: data.content }}
               />
-              {data.gallery && (
-                <ul>
-                  {data.gallery.map((e, i) => (
-                    <li key={i}>
-                      <Image
-                        src={e.img}
-                        width={"200"}
-                        height={"170"}
-                        objectFit={"fill"}
-                      />
-                    </li>
-                  ))}
-                </ul>
-              )}
               {data.menu.length > 0 && (
                 <>
                   <h3>より具体的な合格対策</h3>
@@ -54,6 +40,22 @@ function Page({ data, name }) {
                     ])}
                   />
                 </>
+              )}
+              {data.gallery && (
+                <div className={css.gallery}>
+                  <ul>
+                    {data.gallery.map((e, i) => (
+                      <li key={i}>
+                        <Image
+                          src={e.img}
+                          width={"180"}
+                          height={"120"}
+                          objectFit={"cover"}
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               )}
             </article>
             {data.post.length > 0 && (
