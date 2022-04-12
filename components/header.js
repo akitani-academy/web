@@ -88,8 +88,8 @@ function Page() {
             </ul>
           </section>
           {url[1] == "method" && url[2] && (
-            <Link href="/course_and_system">
-              <a>コース説明にもどる</a>
+            <Link href={"/course_and_system"}>
+              <a className={css.backButton}>コース説明にもどる</a>
             </Link>
           )}
         </section>

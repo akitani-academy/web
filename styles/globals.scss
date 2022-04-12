@@ -125,6 +125,7 @@ main {
       letter-spacing: .05em;
       line-height: 1.7em;
       margin-bottom: 1.3em;
+      // text-indent: 1em;
     }
     a {
       color: $c_3;
@@ -176,4 +177,8 @@ textarea {
 }
 #skip-silence-bar {
   display: none;
+}
+
+.header_method {
+  border-color: $c_2 !important;
 }
