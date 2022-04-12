@@ -27,6 +27,7 @@ export default function Page({
       <h2>学校成績UPの対策</h2>
       <List data={gakko} />
       <h2>その他の対策</h2>
+      <List data={other} />
     </>
   );
 }
@@ -44,7 +45,7 @@ export async function getStaticProps() {
       toeic: await getPost("18"),
       toefl: await getPost("20"),
       gakko: await getPost("22"),
-      other: await getPost("16"),
+      other: await getPost("81"),
     },
   };
 }

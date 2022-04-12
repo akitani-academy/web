@@ -51,10 +51,14 @@ export default function Page({ data }) {
                         <img src="/aa.svg" alt="" className={css.aa2} />
                       </div>
                     )}
-                    <div className={css.data}>
-                      過去1年：{e1.yearCount}名<br />
-                      累計：{e1.count}名
-                    </div>
+                    {e1.countView && (
+                      <>
+                        <div className={css.data}>
+                          過去1年：{e1.yearCount}名<br />
+                          累計：{e1.count}名
+                        </div>
+                      </>
+                    )}
                   </div>
                   <ExperiencesList data={e1} />
                 </div>

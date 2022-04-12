@@ -57,7 +57,7 @@ export default function Page({ top, news, experiences }) {
                 dangerouslySetInnerHTML={{
                   __html: parser.translateHTMLString(e.title),
                 }}
-                key={i}
+                key={i}y
               ></h2>
               <article
                 dangerouslySetInnerHTML={{
