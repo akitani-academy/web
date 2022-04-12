@@ -9,6 +9,7 @@ function Page() {
   let fA = [
     ["/", "トップページ"],
     ["/contact", "お問い合わせ"],
+    ["/recruit", "採用情報"],
   ];
   return (
     <>
