@@ -7,6 +7,8 @@ let _V = require("/components/_V.js");
 
 import LinkList from "components/widget/LinkList";
 
+import css from "styles/contact.module.scss";
+
 export default function Page({ faq }) {
   return (
     <>
@@ -45,32 +47,27 @@ export default function Page({ faq }) {
       <form
         action="https://api.staticforms.xyz/submit"
         method="post"
-        className="h-adr"
+        className={"h-adr " + css.contact}
       >
-        <input
-          type="hidden"
-          name="accessKey"
-          value="cd44d1ef-1716-4e8d-ae9f-79e80a97692f"
-        />
-        <h3>お名前</h3>
+        <h6>お名前</h6>
         <input type="text" name="name" placeholder="田中 太郎" required />
-        <h3>ふりがな</h3>
+        <h6>ふりがな</h6>
         <input
           type="text"
           name="$ふりがな"
           placeholder="たなか たろう"
           required
         />
-        <h3>メールアドレス</h3>
+        <h6>メールアドレス</h6>
         <input
           type="text"
           name="email"
           placeholder="mail@example.com"
           required
         />
-        <h3>お電話番号</h3>
+        <h6>お電話番号</h6>
         <input type="text" name="phone" placeholder="01-2345-6789" required />
-        <h3>郵便番号</h3>
+        <h6>郵便番号</h6>
         <input
           type="text"
           name="$郵便番号"
@@ -79,7 +76,7 @@ export default function Page({ faq }) {
           placeholder="100-8111"
           required
         />
-        <h3>ご住所</h3>
+        <h6>ご住所</h6>
         <span className="p-country-name">Japan</span>
         <input
           type="text"
@@ -88,61 +85,65 @@ export default function Page({ faq }) {
           placeholder="東京都千代田区千代田1-1"
           required
         />
-        <h3>学年</h3>
-        <select name="$学年">
-          {(() => {
-            let items = [];
-            [
-              ["学生ではない"],
-              ["小学", 6],
-              ["中学", 3],
-              ["高校", 3],
-              ["大学受験生"],
-              ["専門学校生"],
-              ["大学生"],
-              ["大学院生"],
-            ].map((e, i) => {
-              if (e[1]) {
-                for (let step = 1; step <= e[1]; step++) {
+        <h6>学年</h6>
+        <div className={css.select}>
+          <select name="$学年">
+            <option disabled selected>
+              選択する
+            </option>
+            {(() => {
+              let items = [];
+              [
+                ["学生ではない"],
+                ["小学", 6],
+                ["中学", 3],
+                ["高校", 3],
+                ["大学受験生"],
+                ["専門学校生"],
+                ["大学生"],
+                ["大学院生"],
+              ].map((e, i) => {
+                if (e[1]) {
+                  for (let step = 1; step <= e[1]; step++) {
+                    items.push(
+                      <option value={e[0]} key={i + "_" + step}>
+                        {e[0]}
+                        {step}年生
+                      </option>
+                    );
+                  }
+                } else {
                   items.push(
-                    <option value={e[0]} key={i + "_" + step}>
+                    <option value={e[0]} key={i}>
                       {e[0]}
-                      {step}年生
                     </option>
                   );
                 }
-              } else {
+              });
+              return <>{items}</>;
+            })()}
+          </select>
+        </div>
+        <h6>問い合わせ</h6>
+        <div className={css.contactCheck}>
+          {(() => {
+            let items = [];
+            ["面談・訪問の予約", "資料請求", "当アカデミーへのご質問"].map(
+              (e, i) => {
                 items.push(
-                  <option value={e[0]} key={i}>
-                    {e[0]}
-                  </option>
+                  <>
+                    <input type="checkbox" id={e} name={"$" + e} key={i} />
+                    <label htmlFor={e}>{e}</label>
+                  </>
                 );
               }
-            });
+            );
             return <>{items}</>;
           })()}
-        </select>
-        <h3>問い合わせ</h3>
-        {(() => {
-          let items = [];
-          [
-            "面談・訪問の予約",
-            "資料請求",
-            "当アカデミーへのご質問",
-            "その他",
-          ].map((e, i) => {
-            items.push(
-              <>
-                <input type="checkbox" id={e} name={"$" + e} key={i} />
-                <label htmlFor={e}>{e}</label>
-              </>
-            );
-          });
-          return <>{items}</>;
-        })()}
+        </div>
         <textarea
           name="$問い合わせ"
-          placeholder="ご自由にご記入ください。"
+          placeholder="その他、ご自由にご記入ください。"
         ></textarea>
         <input type="text" name="honeypot" className="honeypot" />
         <input type="hidden" name="replyTo" value="@" />
@@ -150,6 +151,11 @@ export default function Page({ faq }) {
           type="hidden"
           name="redirectTo"
           value="https://www.akitani-academy.jp/"
+        />
+        <input
+          type="hidden"
+          name="accessKey"
+          value="cd44d1ef-1716-4e8d-ae9f-79e80a97692f"
         />
         <input type="submit" value="Submit" />
       </form>

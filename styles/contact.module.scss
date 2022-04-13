@@ -1,0 +1,64 @@
+.contact {
+    background-color: #fff;
+    margin: 0 -1.5rem;
+    padding: 1.5rem;
+    @include MQ(xl) {
+        width: fit-content;
+        min-width: 95%;
+        // margin: auto;
+        padding: 2rem;
+    }
+    h5 {
+        margin-top: 1.6rem;
+    }
+    *+h6 {
+        margin-top: .8rem;
+    }
+    h6 {
+        color: $c_2;
+        font-family: sans-serif;
+        font-size: 0.8125rem;
+        margin-bottom: -.3rem;
+    }
+}
+.select {
+    width: 10rem;
+    border-bottom: $c_3 solid 1px;
+    padding: .2em 0;
+    position: relative;
+    &::after {
+        content: "";
+        width: .6rem;
+        height: .6rem;
+        border-top: .1rem solid $c_3;
+        border-right: .1rem solid $c_3;
+        transform: rotate(135deg) translate(.33rem,-.33rem);
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 5%;
+        pointer-events: none;
+    }
+    select {
+        width: 100%;
+    }
+}
+.contactCheck {
+    font-size: .9em;
+    display: flex;
+    gap: .2rem;
+    flex-wrap: wrap;
+    margin: .3em 0;
+    input {
+        display: none;
+        &:checked + label {
+                color: #fff;
+                background-color: $c_3;
+        }
+    }
+    label {
+        border: 1px solid $c_3;
+        padding: .2em .5em;
+        display: block;
+    }
+}

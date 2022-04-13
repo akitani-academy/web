@@ -10,7 +10,7 @@ summary {
 summary::-webkit-details-marker {
   display: none;
 }
-input[type="radio"],select,label,summary {
+input[type="radio"],input[type="submit"],select,label,summary {
   cursor: pointer;
 }
 a,summary,label,input,select {
@@ -169,6 +169,12 @@ input {
   &[type="text"] {
     border-bottom: $c_3 solid 1px;
     padding: .2em 0;
+  }
+  &[type="submit"] {
+    margin-top: .5rem;
+    color: #fff;
+    padding: .2em .5rem;
+    background-color: $c_2;
   }
 }
 textarea {
