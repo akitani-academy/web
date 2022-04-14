@@ -13,7 +13,25 @@ import course_and_classtype from "styles/course_and_classtype.module.scss";
 
 import Logo from "/public/curriculum.svg";
 
+import { useEffect } from "react";
+
 export default function Page({ top, news, courseData, classtypeData }) {
+  useEffect(() => {
+    window.addEventListener("resize", resize);
+    function resize() {
+      if (450 > window.innerWidth) {
+        document.querySelector(".selectArea").style.transform =
+          "scale(" + window.innerWidth / 450 + ")";
+        document.querySelector(".selectArea").style.width =
+          100 * (450 / window.innerWidth) + "vw";
+      } else {
+        document.querySelector(".selectArea").style.transform = "";
+        document.querySelector(".selectArea").style.width = "";
+      }
+    }
+    document.addEventListener("DOMContentLoaded", resize);
+  }, []);
+
   return (
     <>
       <Head />
