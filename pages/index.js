@@ -7,7 +7,13 @@ import css from "styles/index.module.scss";
 import { loadDefaultJapaneseParser } from "budoux";
 const parser = loadDefaultJapaneseParser();
 
-export default function Page({ top, news, experiences }) {
+import Select from "components/widget/Select";
+
+import course_and_classtype from "styles/course_and_classtype.module.scss";
+
+import Logo from "/public/curriculum.svg";
+
+export default function Page({ top, news, courseData, classtypeData }) {
   return (
     <>
       <Head />
@@ -57,51 +63,78 @@ export default function Page({ top, news, experiences }) {
                 dangerouslySetInnerHTML={{
                   __html: parser.translateHTMLString(e.title),
                 }}
-                key={i}y
+                key={i}
               ></h2>
               <article
                 dangerouslySetInnerHTML={{
                   __html: parser.translateHTMLString(e.body),
                 }}
               ></article>
+              {e.option == "course_and_classtype" && (
+                <Link href={"/course_and_classtype"}>
+                  <a className={css.courseAndClasstype}>
+                    <section
+                      className={
+                        course_and_classtype.slect +
+                        " " +
+                        css.wrap +
+                        " selectArea"
+                      }
+                    >
+                      <div className={course_and_classtype.child}>
+                        <div className={course_and_classtype.main}>
+                          <h5>コース</h5>
+                          <Select data={courseData} name={"course"} />
+                        </div>
+                        <ul>
+                          {courseData.map((e, i) => (
+                            <li key={i}>
+                              <input
+                                id={e.id}
+                                type="radio"
+                                name={"courseR"}
+                                value={e.title}
+                              />
+                              <label htmlFor={e.id}>{e.title}</label>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <img src="x.svg" width={"26px"} height={"26px"} />
+                      <div className={course_and_classtype.child}>
+                        <div className={course_and_classtype.main}>
+                          <h5>授業形態</h5>
+                          <Select data={classtypeData} name={"classtype"} />
+                        </div>
+                        <ul>
+                          {classtypeData.map((e, i) => (
+                            <li key={i}>
+                              <input
+                                id={e.id}
+                                type="radio"
+                                name={"classtypeR"}
+                                value={e.title}
+                              />
+                              <label htmlFor={e.id}>{e.title}</label>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </section>
+                  </a>
+                </Link>
+              )}
+              {e.option == "curriculum" && (
+                <Link href={"/レベル別カリキュラム.pdf"}>
+                  <a target="_blank">
+                    <div className={css.curriculum}>
+                      <Logo />
+                    </div>
+                  </a>
+                </Link>
+              )}
             </>
           ))}
-          {/* {experiences.map((e, i) => (
-        <>
-          <h2 id={e.slug} key={i} className={css.h2}>
-            {e.name}
-            {e.description && <small>{e.description}</small>}
-          </h2>
-          {e.child_list.map((e1, i) => (
-            <>
-              <section id={e1.slug}>
-                <div className={css.experiences}>
-                  <div className={css.shortTitle}>
-                    <div className={css.experiencesTitle}>
-                      <img src="/aa.svg" alt="" className={css.aa} />
-                      <h3 key={i}>
-                        {e1.name}
-                        {e1.description && (
-                          <>
-                            <br />
-                            <small>{e1.description}</small>
-                          </>
-                        )}
-                      </h3>
-                      <img src="/aa.svg" alt="" className={css.aa2} />
-                    </div>
-                    <div className={css.data}>
-                      過去1年：{e1.yearCount}名<br />
-                      累計：{e1.count}名
-                    </div>
-                  </div>
-                  <ExperiencesList data={e1} />
-                </div>
-              </section>
-            </>
-          ))}
-        </>
-      ))} */}
         </article>
         <Nav />
       </main>
@@ -136,6 +169,12 @@ Page.getLayout = function getLayout(children) {
 };
 
 export async function getStaticProps() {
+  const courseData = await fetch(
+    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/course?per_page=100"
+  ).then((res) => res.json());
+  const classtypeData = await fetch(
+    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/class_type?per_page=100&"
+  ).then((res) => res.json());
   return {
     props: {
       top: await fetch(
@@ -147,6 +186,8 @@ export async function getStaticProps() {
       experiences: await fetch(
         "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
       ).then((res) => res.json()),
+      courseData: courseData.reverse(),
+      classtypeData: classtypeData.reverse(),
     },
   };
 }

@@ -157,7 +157,7 @@ export default function Page({ faq }) {
           name="accessKey"
           value="cd44d1ef-1716-4e8d-ae9f-79e80a97692f"
         />
-        <input type="submit" value="Submit" />
+        <input type="submit" value="送信" />
       </form>
     </>
   );

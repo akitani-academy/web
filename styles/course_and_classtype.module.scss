@@ -1,18 +1,18 @@
 .slect {
-    transform-origin: 0% 0%;
-    background: #fff;
-    padding: 1.7rem 3rem;
-    @media (max-width: 600px) {
-        padding: 1.5rem 1rem;
-        width: 100vw;
-        margin: 0 calc(50% - 50vw);
-    }
     margin: auto;
     display: flex;
     gap: 1.3rem;
     font-weight: bold;
+    transform-origin: 0% 0%;
+    background: #fff;
+    padding: 1.7rem;
+    @media (max-width: 685px) {
+        padding: 1.5rem 1rem;
+        width: 100vw;
+        margin: 0 calc(50% - 50vw);
+    }
     ul {
-        font-size: .9em;
+        font-size: .84em;
         @media (max-width: 600px) {
             font-size: .7em;
         }
@@ -20,8 +20,26 @@
         flex-wrap: wrap;
         gap: .1em .9em;
     }
+    h5 {
+        // max-width: 8.6em;
+        font-family: sans-serif;
+        font-size: 0.8125rem;
+    }
+    .child {
+        width: calc(50% - 26px);
+        display: flex;
+        flex-flow: column;
+        .main {
+            width: 10rem;
+        }
+        &:first-child {
+
+            align-items: flex-end
+        }
+    }
     select {
-        max-width: 8.6em;
+        color: $c_1;
+        max-width: calc(100% - 1.4rem - 4px);
         text-align: center;
         line-height: 1em;
         height: 1em;
@@ -31,24 +49,28 @@
         margin-bottom: .3rem;
     }
     img {
-        margin-top: .5em;
+        margin-top: 1.7em;
     }
     >* {
         &:first-child {
-            text-align: right;
+            .child {
+                align-items: flex-end
+            }
+            h5,ul {
+                color: $c_2;
+            }
             ul {
                 justify-content: flex-end
             }
             select {
-                border-color: #be2522;
-            }
-            ul {
-                color: #be2522;
+                border-color: $c_2;
             }
         }
         &:last-child {
+            h5,ul {
+                color: $c_3;
+            }
             ul {
-                color: #688096;
                 justify-content:flex-start
             }
             select {

@@ -36,7 +36,7 @@ function Page({ data, name }) {
             </option>
           ))}
         </select>
-        <ul>
+        {/* <ul>
           {data.map((e, i) => (
             <li key={i}>
               <input
@@ -49,7 +49,7 @@ function Page({ data, name }) {
               <label htmlFor={e.id}>{e.title}</label>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </div>
     </>
   );
