@@ -5,10 +5,20 @@ import Link from "next/link";
 import { loadDefaultJapaneseParser } from "budoux";
 const parser = loadDefaultJapaneseParser();
 
+import css from "styles/greeting.module.scss";
+
 export default function Page({ wpDATA }) {
   return (
     <>
       <Head title={wpDATA.subTitle} />
+      <div className={css.tmb}>
+        <Image
+          src={"/292A1489.jpg"}
+          width={"2048"}
+          height={"1365"}
+          objectFit={"cover"}
+        />
+      </div>
       <h1
         data-subtitle={wpDATA.subTitle}
         dangerouslySetInnerHTML={{

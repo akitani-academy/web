@@ -30,6 +30,9 @@ h1,h2,h3,h4,h5,h6,strong {
 textarea {
   display: block;
 }
+input,textarea {
+  max-width: 100%;
+}
 
 
 .spOnly {
@@ -76,7 +79,7 @@ p {
 
 main {
   // ジャンプリンクずれ修正
-  *[id] {
+  *[id]:not(.splide,.splide__slide,.splide__list,.splide__track) {
     // display: flex;
     // flex-flow: column;
     &::before {

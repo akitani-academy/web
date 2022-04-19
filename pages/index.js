@@ -15,6 +15,10 @@ import Logo from "/public/curriculum.svg";
 
 import { useEffect } from "react";
 
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+// import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+import "@splidejs/react-splide/css";
+
 export default function Page({ top, news, courseData, classtypeData }) {
   useEffect(() => {
     window.addEventListener("resize", resize);
@@ -150,6 +154,43 @@ export default function Page({ top, news, courseData, classtypeData }) {
                     </div>
                   </a>
                 </Link>
+              )}
+              {e.gallery && (
+                <Splide
+                  className={css.gallery}
+                  aria-label="お気に入りの写真"
+                  tag="section"
+                  options={{
+                    perPage: 2,
+                    type: "loop",
+                    autoplay: true,
+                    gap: "1rem",
+                    padding: "15% ",
+                  }}
+                >
+                  {Object.entries(e.gallery).map((e1, i) => (
+                    <SplideSlide key={i}>
+                      <div className={css.gallery_img}>
+                        <Image
+                          src={e1[1].img}
+                          layout="fill"
+                          objectFit="cover"
+                        ></Image>
+                      </div>
+                    </SplideSlide>
+                  ))}
+                </Splide>
+                // <ul className={css.gallery}>
+                //   {e.gallery.map((e1, i) => (
+                //     <li key={i}>
+                //       <Image
+                //         src={e1.img}
+                //         layout="fill"
+                //         objectFit="cover"
+                //       ></Image>
+                //     </li>
+                //   ))}
+                // </ul>
               )}
             </>
           ))}

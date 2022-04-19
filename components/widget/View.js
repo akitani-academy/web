@@ -25,7 +25,7 @@ function Page({ data, name }) {
           </h2>
           <section className={css.flex}>
             <article className={css.article}>
-              <h3>コースの説明</h3>
+              {/* <h3>コースの説明</h3> */}
               <div
                 className={css.courseBody}
                 dangerouslySetInnerHTML={{ __html: data.content }}
