@@ -16,10 +16,24 @@ import Logo from "/public/curriculum.svg";
 import { useEffect } from "react";
 
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-// import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/react-splide/css";
 
+import UseSWR from "swr";
+function lbState() {
+  const { lbData, lbMutate } = UseSWR("lb_state", () => window.count);
+  return {
+    lbData: lbData || false,
+    lbMutate: (count) => {
+      window.count = count;
+      lbMutate();
+    },
+  };
+}
+
 export default function Page({ top, news, courseData, classtypeData }) {
+  const { lbData, lbMutate } = lbState();
+  const handleIncFC = () => lbMutate(!lbData);
+
   useEffect(() => {
     window.addEventListener("resize", resize);
     function resize() {
@@ -33,8 +47,15 @@ export default function Page({ top, news, courseData, classtypeData }) {
         document.querySelector(".selectArea").style.width = "";
       }
     }
-    document.addEventListener("DOMContentLoaded", resize);
+    document.addEventListener("load", resize);
   }, []);
+
+  const nowImg =
+    "https://akitani-academy.vercel.app/_next/image?url=https%3A%2F%2Fyoshikitam.wpx.jp%2Fakitani%2Fwp-content%2Fuploads%2F2022%2F04%2F292A1543.jpg&w=1920&q=75";
+  const imgList = [
+    "https://akitani-academy.vercel.app/_next/image?url=https%3A%2F%2Fyoshikitam.wpx.jp%2Fakitani%2Fwp-content%2Fuploads%2F2022%2F04%2F292A1543.jpg&w=1920&q=75",
+    "https://akitani-academy.vercel.app/_next/image?url=https%3A%2F%2Fyoshikitam.wpx.jp%2Fakitani%2Fwp-content%2Fuploads%2F2022%2F04%2F292A1663.jpg&w=1920&q=75",
+  ];
 
   return (
     <>
@@ -170,7 +191,7 @@ export default function Page({ top, news, courseData, classtypeData }) {
                 >
                   {Object.entries(e.gallery).map((e1, i) => (
                     <SplideSlide key={i}>
-                      <div className={css.gallery_img}>
+                      <div className={css.gallery_img} onClick={handleIncFC}>
                         <Image
                           src={e1[1].img}
                           layout="fill"
@@ -180,23 +201,26 @@ export default function Page({ top, news, courseData, classtypeData }) {
                     </SplideSlide>
                   ))}
                 </Splide>
-                // <ul className={css.gallery}>
-                //   {e.gallery.map((e1, i) => (
-                //     <li key={i}>
-                //       <Image
-                //         src={e1.img}
-                //         layout="fill"
-                //         objectFit="cover"
-                //       ></Image>
-                //     </li>
-                //   ))}
-                // </ul>
               )}
             </>
           ))}
         </article>
         <Nav />
       </main>
+      {lbData == "true" && (
+        <section className={lbState + " lb_" + String(lbData)}>
+          <div>
+            <Image src={nowImg} layout="fill" objectFit="cover"></Image>
+          </div>
+          <ul>
+            {imgList.map((e, i) => (
+              <li key={i}>
+                <Image src={imgList[i]} layout="fill" objectFit="cover"></Image>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       <style jsx>{`
         h2 {
           font-size: 1.875rem;

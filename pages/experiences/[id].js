@@ -11,7 +11,7 @@ export default function Page({ post }) {
   return (
     <>
       <Head title={post.title} />
-      <h1 data-subTitle="秋田光子アカデミィの">{post.title}</h1>
+      <h1 data-subTitle="秋谷光子アカデミィの">{post.title}</h1>
       <article dangerouslySetInnerHTML={{ __html: post.content }}></article>
     </>
   );

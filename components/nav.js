@@ -7,7 +7,6 @@ import css from "styles/nav.module.scss";
 
 function navSate() {
   const { data, mutate } = UseSWR("state", () => window.count);
-
   return {
     data: data || false,
     mutate: (count) => {

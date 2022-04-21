@@ -15,7 +15,10 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&display=swap"
             rel="stylesheet"
           ></link>
-          <meta name="robots" content="noindex, noarchive, none, nofollow"></meta>
+          <meta
+            name="robots"
+            content="noindex, noarchive, none, nofollow"
+          ></meta>
         </Head>
         <body>
           <Main />
