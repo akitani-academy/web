@@ -8,7 +8,10 @@ const parser = loadDefaultJapaneseParser();
 export default function Page({ wpDATA }) {
   return (
     <>
-      <Head title={wpDATA.subTitle} />
+      <Head
+        title={wpDATA.subTitle}
+        breadcrumb={[[wpDATA.subTitle, "/recruit"]]}
+      />
       <h1
         dangerouslySetInnerHTML={{
           __html: parser.translateHTMLString(wpDATA.subTitle),

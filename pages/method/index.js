@@ -14,7 +14,10 @@ export default function Page({
 }) {
   return (
     <>
-      <Head title="合格へのHow To" />
+      <Head
+        title="合格へのHow To"
+        breadcrumb={[["合格へのHowTo", "/method"]]}
+      />
       <h1>合格へのHow To</h1>
       <h2>英検の合格対策</h2>
       <List data={eiken} />

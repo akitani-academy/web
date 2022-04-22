@@ -11,9 +11,9 @@ function Page({ title, description, ogp, url, breadcrumb }) {
   if (breadcrumb) {
     breadcrumb = breadcrumb.map((e, i) => ({
       "@type": "ListItem",
-      position: i,
+      position: i + 1,
       name: e[0],
-      item: e[1],
+      item: _V.meta.baseURL + e[1],
     }));
     breadcrumb = {
       "@context": "https://schema.org",
@@ -21,6 +21,7 @@ function Page({ title, description, ogp, url, breadcrumb }) {
       itemListElement: breadcrumb,
     };
   }
+  // console.log(breadcrumb);
 
   return (
     <Head>

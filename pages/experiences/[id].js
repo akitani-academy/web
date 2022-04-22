@@ -1,16 +1,23 @@
 import Head from "components/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 import List from "components/widget/LinkList";
 
 let _V = require("/components/_V.js");
+import { useRouter } from "next/router";
 
 export default function Page({ post }) {
+  const router = useRouter();
   return (
     <>
-      <Head title={post.title} />
+      <Head
+        title={post.title}
+        breadcrumb={[
+          ["実績", "/experiences"],
+          [post.title, router.asPath],
+        ]}
+      />
       <h1 data-subTitle="秋谷光子アカデミィの">{post.title}</h1>
       <article dangerouslySetInnerHTML={{ __html: post.content }}></article>
     </>

@@ -41,9 +41,38 @@ export default function Page({ courseData, classtypeData }) {
     );
   }
 
+  var selectTitle = "コースと授業形態";
+  var breadcrumb = [["コースと授業形態", "/course_and_classtype"]];
+  if (router.query) {
+    selectTitle = "";
+    if (router.query.course && router.query.classtype) {
+      selectTitle =
+        "[" + router.query.course + "] x" + " [" + router.query.classtype + "]";
+      breadcrumb = [
+        ["コースと授業形態", "/course_and_classtype"],
+        [selectTitle, router.asPath],
+      ];
+    } else {
+      if (router.query.course) {
+        selectTitle = "コース [" + router.query.course + "]";
+        breadcrumb = [
+          ["コース", "/course_and_classtype"],
+          [router.query.course, router.asPath],
+        ];
+      }
+      if (router.query.classtype) {
+        selectTitle = "授業形態 [" + router.query.classtype + "]";
+        breadcrumb = [
+          ["授業形態", "/course_and_classtype"],
+          [router.query.course, router.asPath],
+        ];
+      }
+    }
+  }
+
   return (
     <>
-      <Head title="コースと授業形態" />
+      <Head title={selectTitle} breadcrumb={breadcrumb} />
       <h1>コース と 授業形態</h1>
       <p>
         万人に当てはまるカリキュラムはありません。秋谷アカデミィでは入塾の際、塾長が面談を行い、お一人お一人に合った最適な授業をコーディネート致します。

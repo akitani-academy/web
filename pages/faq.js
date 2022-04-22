@@ -7,7 +7,7 @@ import css from "styles/faq.module.scss";
 export default function Page({ faq }) {
   return (
     <>
-      <Head title="よくある質問" />
+      <Head title="よくある質問" breadcrumb={[["よくある質問", "/faq"]]} />
       <h1>よくある質問</h1>
       <ol className={css.ol}>
         {faq.map((e, i) => (

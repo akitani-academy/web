@@ -10,7 +10,10 @@ import css from "styles/greeting.module.scss";
 export default function Page({ wpDATA }) {
   return (
     <>
-      <Head title={wpDATA.subTitle} />
+      <Head
+        title={wpDATA.subTitle}
+        breadcrumb={[[wpDATA.subTitle, "/greeting"]]}
+      />
       <div className={css.tmb}>
         <Image
           src={"/292A1489.jpg"}

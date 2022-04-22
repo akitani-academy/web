@@ -12,7 +12,7 @@ export default function Page({ faq }) {
   }
   return (
     <>
-      <Head title="アクセス" />
+      <Head title="アクセス" breadcrumb={[["アクセス", "/access"]]} />
       <h1>アクセス</h1>
       <List data={_V.access.map((e, i) => [e.name, "#" + e.id])} />
       {_V.access.map((e, i) => (

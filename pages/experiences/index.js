@@ -7,10 +7,13 @@ import ExperiencesList from "components/widget/ExperiencesList";
 
 import css from "styles/View.module.scss";
 
+import { useRouter } from "next/router";
+
 export default function Page({ data }) {
+  const router = useRouter();
   return (
     <>
-      <Head title="合格実績と体験記" />
+      <Head title="合格実績と体験記" breadcrumb={[["実績", "/experiences"]]} />
       <h1>合格実績 と 体験記</h1>
       <List data={data.map((e, i) => [e.name, "#" + e.slug])} />
       {data.map((e, i) => (

@@ -1,7 +1,6 @@
 import Head from "components/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 import List from "components/widget/LinkList";
 
@@ -9,17 +8,20 @@ let _V = require("/components/_V.js");
 
 import css from "styles/contact.module.scss";
 
+import { useRouter } from "next/router";
+
 export default function Page({ post }) {
+  const router = useRouter();
   return (
     <>
       <Head
-        title="講師紹介"
+        title={post.title}
         breadcrumb={[
           ["合格へのHowTo", "/method"],
-          [post.title, "/method"],
+          [post.title, router.asPath],
         ]}
       />
-      <h1 data-subTitle="秋田光子アカデミィの">{post.title}</h1>
+      <h1 data-subTitle="秋谷光子アカデミィの">{post.title}</h1>
       <List data={[["その他の合格対策", "/method"]]} />
 
       <article dangerouslySetInnerHTML={{ __html: post.content }}></article>

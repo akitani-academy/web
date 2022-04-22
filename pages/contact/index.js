@@ -16,7 +16,10 @@ export default function Page({ faq }) {
         src="https://yubinbango.github.io/yubinbango/yubinbango.js"
         strategy="beforeInteractive"
       />
-      <Head title="資料請求/お問い合わせ" />
+      <Head
+        title="資料請求/お問い合わせ"
+        breadcrumb={[["お問合せ", "/contact"]]}
+      />
       <h1>資料請求 / お問い合わせ</h1>
       <h2>合格へのHow To</h2>
       <p>
