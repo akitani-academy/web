@@ -12,7 +12,13 @@ import css from "styles/contact.module.scss";
 export default function Page({ post }) {
   return (
     <>
-      <Head title="講師紹介" />
+      <Head
+        title="講師紹介"
+        breadcrumb={[
+          ["合格へのHowTo", "/method"],
+          [post.title, "/method"],
+        ]}
+      />
       <h1 data-subTitle="秋田光子アカデミィの">{post.title}</h1>
       <List data={[["その他の合格対策", "/method"]]} />
 
@@ -117,25 +123,21 @@ export default function Page({ post }) {
           </div>
           <h6>問い合わせ</h6>
           <div className={css.contactCheck}>
-          {(() => {
-            let items = [];
-            [
-              "面談・訪問の予約",
-              "資料請求",
-              "当アカデミーへのご質問",
-            ].map((e, i) => {
-              items.push(
-                <>
-                  <input type="checkbox" id={e} name={"$" + e} key={i} />
-                  <label htmlFor={e}>
-                    {e}
-                  </label>
-                </>
+            {(() => {
+              let items = [];
+              ["面談・訪問の予約", "資料請求", "当アカデミーへのご質問"].map(
+                (e, i) => {
+                  items.push(
+                    <>
+                      <input type="checkbox" id={e} name={"$" + e} key={i} />
+                      <label htmlFor={e}>{e}</label>
+                    </>
+                  );
+                }
               );
-            });
-            return <>{items}</>;
-          })()}
-        </div>
+              return <>{items}</>;
+            })()}
+          </div>
           <textarea
             name="$問い合わせ"
             placeholder="ご自由にご記入ください。"

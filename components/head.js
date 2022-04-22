@@ -1,12 +1,27 @@
 import Head from "next/head";
 const _V = require("./_V.js");
 
-function Page({ title, description, ogp, url }) {
+function Page({ title, description, ogp, url, breadcrumb }) {
   if (title) {
     var title = title + "｜" + _V.meta.siteTitle;
   } else {
     var title = _V.meta.siteTitle;
   }
+
+  if (breadcrumb) {
+    breadcrumb = breadcrumb.map((e, i) => ({
+      "@type": "ListItem",
+      position: i,
+      name: e[0],
+      item: e[1],
+    }));
+    breadcrumb = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: breadcrumb,
+    };
+  }
+
   return (
     <Head>
       <meta property="og:type" content="blog" />
@@ -37,6 +52,14 @@ function Page({ title, description, ogp, url }) {
       {description && (
         <>
           <meta property="og:description" content={description} />
+        </>
+      )}
+      {breadcrumb && (
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+          />
         </>
       )}
     </Head>
