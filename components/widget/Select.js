@@ -5,38 +5,39 @@ import { useEffect } from "react";
 import css from "styles/Select.module.scss";
 
 function Page({ data, name }) {
-  const router = useRouter();
-  function pushQuery(e) {
-    Router.push("#" + [name]);
-    Router.push(
-      {
-        query: { ...router.query, [name]: e.target.value },
-      },
-      undefined,
-      { scroll: false, shallow: true }
-    );
-  }
-  // useEffect(() => {
-  //   console.log("hello~~");
-  // }, [router]);
-  return (
-    <>
-      <div className={css.main}>
-        <select onChange={pushQuery} name={name + "S"}>
-          <option disabled selected>
-            選択する
-          </option>
-          {data.map((e, i) => (
-            <option
-              value={e.title}
-              key={i}
-              selected={router.query[name] == e.title ? true : false}
-            >
-              {e.title}
-            </option>
-          ))}
-        </select>
-        {/* <ul>
+	const router = useRouter();
+	function pushQuery(e) {
+		Router.push("#" + [name]);
+		Router.push(
+			{
+				query: { ...router.query, [name]: e.target.value },
+			},
+			undefined,
+			{ scroll: false, shallow: true }
+		);
+		Router.push("#" + [name]);
+	}
+	// useEffect(() => {
+	//   console.log("hello~~");
+	// }, [router]);
+	return (
+		<>
+			<div className={css.main}>
+				<select onChange={pushQuery} name={name + "S"}>
+					<option disabled selected>
+						選択する
+					</option>
+					{data.map((e, i) => (
+						<option
+							value={e.slug}
+							key={i}
+							selected={router.query[name] == e.slug ? true : false}
+						>
+							{e.title}
+						</option>
+					))}
+				</select>
+				{/* <ul>
           {data.map((e, i) => (
             <li key={i}>
               <input
@@ -50,9 +51,9 @@ function Page({ data, name }) {
             </li>
           ))}
         </ul> */}
-      </div>
-    </>
-  );
+			</div>
+		</>
+	);
 }
 
 export default Page;

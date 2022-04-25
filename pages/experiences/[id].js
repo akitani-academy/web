@@ -19,6 +19,7 @@ export default function Page({ post }) {
         ]}
       />
       <h1 data-subTitle="秋谷光子アカデミィの">{post.title}</h1>
+      <h2>{post.student}</h2>
       <article dangerouslySetInnerHTML={{ __html: post.content }}></article>
     </>
   );
