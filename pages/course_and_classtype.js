@@ -81,7 +81,7 @@ export default function Page({ courseData, classtypeData }) {
 			<Head title={selectTitle} breadcrumb={breadcrumb} />
 			<h1>コース と 授業形態</h1>
 			<p>
-				万人に当てはまるカリキュラムはありません。秋谷アカデミィでは入塾の際、塾長が面談を行い、お一人お一人に合った最適な授業をコーディネート致します。
+				入塾の際、塾長が面談を行い、お一人お一人に合った最適な授業をコーディネート致します。
 			</p>
 			<section className={css.slect + " selectArea"}>
 				<div className={css.child}>

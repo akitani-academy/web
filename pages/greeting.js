@@ -30,9 +30,7 @@ export default function Page({ wpDATA }) {
 			></h1>
 			<article
 				dangerouslySetInnerHTML={{
-					__html: parser.translateHTMLString(
-						"<article>" + wpDATA.content + "</article>"
-					),
+					__html: wpDATA.content,
 				}}
 			/>
 		</>
