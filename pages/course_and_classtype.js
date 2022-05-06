@@ -14,7 +14,12 @@ import { useEffect } from "react";
 
 export default function Page({ courseData, classtypeData }) {
 	useEffect(() => {
-		window.addEventListener("resize", resize);
+		if (document.readyState === "complete") {
+			resize();
+		} else {
+			window.addEventListener("resize", resize);
+			document.addEventListener("load", resize);
+		}
 		function resize() {
 			if (450 > window.innerWidth) {
 				document.querySelector(".selectArea").style.transform =
@@ -26,7 +31,6 @@ export default function Page({ courseData, classtypeData }) {
 				document.querySelector(".selectArea").style.width = "";
 			}
 		}
-		document.addEventListener("load", resize);
 	});
 
 	const router = useRouter();
