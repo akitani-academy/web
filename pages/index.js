@@ -13,8 +13,6 @@ import course_and_classtype from "styles/course_and_classtype.module.scss";
 
 import Logo from "/public/curriculum.svg";
 
-import { useEffect } from "react";
-
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
@@ -30,17 +28,15 @@ function lbState() {
 	};
 }
 
+import { useLayoutEffect, useEffect } from "react";
 export default function Page({ top, news, courseData, classtypeData }) {
 	const { lbData, lbMutate } = lbState();
 	const handleIncFC = () => lbMutate(!lbData);
 
-	useEffect(() => {
-		if (document.readyState === "complete") {
-			resize();
-		} else {
-			window.addEventListener("resize", resize);
-			document.addEventListener("load", resize);
-		}
+	useLayoutEffect(() => {
+		resize();
+		window.addEventListener("resize", resize);
+		document.addEventListener("load", resize);
 		function resize() {
 			if (450 > window.innerWidth) {
 				document.querySelector(".selectArea").style.transform =
