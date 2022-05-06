@@ -26,7 +26,7 @@ export default function Page({ courseData, classtypeData }) {
 				document.querySelector(".selectArea").style.width = "";
 			}
 		}
-		document.addEventListener("DOMContentLoaded", resize);
+		document.addEventListener("load", resize);
 	});
 
 	const router = useRouter();
