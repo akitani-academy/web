@@ -90,7 +90,9 @@ main {
       order:0;
     }
   }
-  overflow: hidden;
+  @mixin MQ() {
+    overflow: hidden;
+  }
   max-width: 950px;
   margin: auto;
   margin-top: 80px;
