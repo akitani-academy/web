@@ -11,15 +11,11 @@ import Select from "components/widget/Select";
 import css from "styles/course_and_classtype.module.scss";
 
 import { useEffect } from "react";
-
 export default function Page({ courseData, classtypeData }) {
 	useEffect(() => {
-		if (document.readyState === "complete") {
-			resize();
-		} else {
-			window.addEventListener("resize", resize);
-			document.addEventListener("load", resize);
-		}
+		resize();
+		window.addEventListener("resize", resize);
+		// document.addEventListener("load", resize);
 		function resize() {
 			if (450 > window.innerWidth) {
 				document.querySelector(".selectArea").style.transform =

@@ -28,15 +28,15 @@ function lbState() {
 	};
 }
 
-import { useLayoutEffect, useEffect } from "react";
+import { useEffect } from "react";
 export default function Page({ top, news, courseData, classtypeData }) {
 	const { lbData, lbMutate } = lbState();
 	const handleIncFC = () => lbMutate(!lbData);
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		resize();
 		window.addEventListener("resize", resize);
-		document.addEventListener("load", resize);
+		// document.addEventListener("load", resize);
 		function resize() {
 			if (450 > window.innerWidth) {
 				document.querySelector(".selectArea").style.transform =
@@ -106,7 +106,8 @@ export default function Page({ top, news, courseData, classtypeData }) {
 								dangerouslySetInnerHTML={{
 									__html: parser.translateHTMLString(e.title),
 								}}
-								key={i}
+                key={i}
+                id={i}
 							></h2>
 							<article
 								dangerouslySetInnerHTML={{
