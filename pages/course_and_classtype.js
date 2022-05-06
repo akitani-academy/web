@@ -27,7 +27,7 @@ export default function Page({ courseData, classtypeData }) {
 			}
 		}
 		document.addEventListener("DOMContentLoaded", resize);
-	}, []);
+	});
 
 	const router = useRouter();
 	function pushQuery(e) {

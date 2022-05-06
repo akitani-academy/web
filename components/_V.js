@@ -1,6 +1,6 @@
 module.exports.meta = {
 	siteTitle: "秋谷光子アカデミィ",
-	baseURL: "https://akitani-academy.vercel.app",
+	baseURL: "https://akitani-academy.jp",
 };
 module.exports.access = [
 	{

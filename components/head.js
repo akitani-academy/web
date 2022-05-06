@@ -25,9 +25,9 @@ function Page({ title, description, ogp, url, breadcrumb }) {
 
 	return (
 		<Head>
-			<meta property="og:type" content="blog" />
-			<meta name="twitter:card" content="summary" />
-			<meta name="twitter:site" content="@tcr_jp" />
+			<meta property="og:type" content="article" />
+			<meta name="twitter:card" content="summary_large_image" />
+			{/* <meta name="twitter:site" content="@tcr_jp" /> */}
 			{_V.meta.siteTitle && (
 				<>
 					<meta property="og:site_name" content={_V.meta.siteTitle} />

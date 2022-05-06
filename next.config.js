@@ -4,7 +4,11 @@ module.exports = {
 	swcMinify: true,
 	reactStrictMode: true,
 	images: {
-		domains: ["yoshikitam.wpx.jp", "akitani-academy.vercel.app"],
+		domains: [
+			"yoshikitam.wpx.jp",
+			"akitani-academy.vercel.app",
+			"akitani-academy.jp",
+		],
 		formats: ["image/avif", "image/webp"],
 	},
 	sassOptions: {
