@@ -5,7 +5,7 @@ function Page({ title, description, ogp, url, breadcrumb }) {
 	if (title) {
 		var title = title + "｜" + _V.meta.siteTitle;
 	} else {
-		var title = _V.meta.siteTitle;
+		var title = "英語専門塾" + _V.meta.siteTitle;
 	}
 
 	if (breadcrumb) {
