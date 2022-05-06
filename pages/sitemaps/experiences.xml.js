@@ -24,7 +24,7 @@ function sitemapXML(posts) {
 	posts.forEach((post) => {
 		xml += `
 			<url>
-				<loc>https://www.akitani-academy.jp/experiences/${post.id}</loc>
+				<loc>https://akitani-academy.jp/experiences/${post.id}</loc>
 				<lastmod>${post.date}</lastmod>
 			</url>
 			`;
