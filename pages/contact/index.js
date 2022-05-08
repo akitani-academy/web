@@ -151,7 +151,7 @@ export default function Page({ faq }) {
 				<input
 					type="hidden"
 					name="redirectTo"
-					value="https://akitani-academy.jp/"
+					value="https://akitani-academy.jp/contact/done"
 				/>
 				<input
 					type="hidden"
