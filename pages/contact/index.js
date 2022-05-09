@@ -156,7 +156,7 @@ export default function Page({ faq }) {
 				<input
 					type="hidden"
 					name="accessKey"
-					value="cd44d1ef-1716-4e8d-ae9f-79e80a97692f"
+					value="8a391357-1cc5-48c1-a8d0-0771ffb6732a"
 				/>
 				<input type="submit" value="送信" />
 			</form>
