@@ -9,6 +9,8 @@ import LinkList from "components/widget/LinkList";
 
 import css from "styles/contact.module.scss";
 
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
+// const recaptchaRef = React.createRef();
 export default function Page({ faq }) {
 	return (
 		<>
@@ -152,6 +154,12 @@ export default function Page({ faq }) {
 					name="$問い合わせ"
 					placeholder="その他、ご自由にご記入ください。"
 				></textarea>
+				<GoogleReCaptchaProvider
+					// ref={recaptchaRef}
+					size="invisible"
+					sitekey="6LeRFNkfAAAAABuAD9cwj08_XwWcOWn6HqO3NN-D"
+					// onChange={onReCAPTCHAChange}
+				/>
 				<input type="text" name="honeypot" className="honeypot" />
 				<input type="hidden" name="replyTo" value="@" />
 				<input
