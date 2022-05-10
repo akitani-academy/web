@@ -133,7 +133,13 @@ export default function Page({ faq }) {
 							(e, i) => {
 								items.push(
 									<>
-										<input type="checkbox" id={e} name={"$" + e} key={i} />
+										<input
+											type="checkbox"
+											id={e}
+											name={"$" + e}
+											key={i}
+											value={e}
+										/>
 										<label htmlFor={e}>{e}</label>
 									</>
 								);
