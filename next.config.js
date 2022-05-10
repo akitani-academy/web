@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 
 module.exports = {
+	smcLoader: true,
 	swcMinify: true,
+	cpus: 4,
 	reactStrictMode: true,
 	images: {
 		domains: [
