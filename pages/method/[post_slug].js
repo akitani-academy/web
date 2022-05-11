@@ -32,7 +32,7 @@ export default function Page({ post }) {
 					{_V.access.map((e, i) => (
 						<li key={i}>
 							<a href={"tel:" + e.tel}>
-								<span>{e.name}</span>：<span>{e.tel}</span>（13:00-16:00）
+								<span>{e.name}</span>：<span>{e.tel}</span>（15:00-21:00）
 							</a>
 						</li>
 					))}
