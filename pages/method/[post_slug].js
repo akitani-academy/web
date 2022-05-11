@@ -46,7 +46,7 @@ export default function Page({ post }) {
 					<input
 						type="hidden"
 						name="accessKey"
-						value="cd44d1ef-1716-4e8d-ae9f-79e80a97692f"
+						value="6LeRFNkfAAAAABuAD9cwj08_XwWcOWn6HqO3NN-D"
 					/>
 					<h6>お名前</h6>
 					<input type="text" name="name" placeholder="田中 太郎" required />
@@ -149,7 +149,7 @@ export default function Page({ post }) {
 					<input
 						type="hidden"
 						name="redirectTo"
-						value="https://akitani-academy.jp/"
+						value="https://akitani-academy.jp/contact/done"
 					/>
 					<input type="submit" value="送信" />
 				</form>
