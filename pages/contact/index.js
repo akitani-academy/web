@@ -140,7 +140,7 @@ export default function Page({ faq }) {
 											id={e}
 											name={"$" + e}
 											key={i}
-											value={e}
+											value={"問い合わせ項目：" + e}
 										/>
 										<label htmlFor={e}>{e}</label>
 									</>
