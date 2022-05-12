@@ -44,14 +44,14 @@ function sitemapXML(posts, getCourseData, getClasstypeData) {
 			getCourseData.forEach((course) => {
 				xml += `
 						<url>
-							<loc>https://akitani-academy.jp/course_and_classtyp?course=${course.slug}</loc>
+							<loc>https://akitani-academy.jp/course_and_classtype?course=${course.slug}</loc>
 							<lastmod>${post.dateSitemap}</lastmod>
 						</url>
 						`;
 				getClasstypeData.forEach((classtype) => {
 					xml += `
 							<url>
-								<loc>https://akitani-academy.jp/course_and_classtyp?course=${course.slug}&amp;classtype=${classtype.slug}</loc>
+								<loc>https://akitani-academy.jp/course_and_classtype?course=${course.slug}&amp;classtype=${classtype.slug}</loc>
 								<lastmod>${post.dateSitemap}</lastmod>
 							</url>
 							`;
@@ -60,7 +60,7 @@ function sitemapXML(posts, getCourseData, getClasstypeData) {
 			getClasstypeData.forEach((classtype) => {
 				xml += `
 						<url>
-							<loc>https://akitani-academy.jp/course_and_classtyp?classtype=${classtype.slug}</loc>
+							<loc>https://akitani-academy.jp/course_and_classtype?classtype=${classtype.slug}</loc>
 							<lastmod>${post.dateSitemap}</lastmod>
 						</url>
 						`;
