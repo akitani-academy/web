@@ -109,7 +109,7 @@ export default function Page({ faq }) {
 								if (e[1]) {
 									for (let step = 1; step <= e[1]; step++) {
 										items.push(
-											<option value={e[0]} key={i + "_" + step}>
+											<option value={e[0] + step + "年生"} key={i + "_" + step}>
 												{e[0]}
 												{step}年生
 											</option>
