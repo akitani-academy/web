@@ -1,177 +1,173 @@
 .h2_red {
-    color: $c_2;
+	color: $c_2;
 }
 
 .h2_blue {
-    color: $c_4;
+	color: $c_4;
 }
 
 .main {
-    margin-top: 0;
+	margin-top: 0;
 }
 
 .top {
-    margin-top: 79px;
+	margin-top: 79px;
 
-    @include MQ(xl) {
-        text-align: center;
-    }
+	@include MQ(xl) {
+		text-align: center;
+	}
 
-    @include MQ() {
-        margin-top: 10vh;
-    }
+	@include MQ() {
+		margin-top: 10vh;
+	}
 }
 
 .topImg {
+	h2,
+	h3 {
+		@include MQ() {
+			padding-left: 1rem;
+		}
 
-    h2,
-    h3 {
-        @include MQ() {
-            padding-left: 1rem;
-        }
+		word-break: keep-all;
+		overflow-wrap: break-word;
+		color: #fff;
+		text-shadow: rgba(#000, 0.7) 1px 1px 10px, rgba(#000, 0.7) -1px 1px 10px,
+			rgba(#000, 0.7) 1px -1px 10px, rgba(#000, 0.7) -1px -1px 10px;
+	}
 
-        word-break: keep-all;
-        overflow-wrap: break-word;
-        color: #fff;
-        text-shadow:rgba(#000, .7) 1px 1px 10px,
-        rgba(#000, .7) -1px 1px 10px,
-        rgba(#000, .7) 1px -1px 10px,
-        rgba(#000, .7) -1px -1px 10px;
-        ;
-    }
+	h3 {
+		font-weight: normal;
+	}
 
-    h3 {
-        font-weight: normal;
-    }
+	.messageH2 {
+		font-size: 2em;
+	}
 
-    .messageH2 {
-        font-size: 2em;
-    }
+	height: 400px;
 
-    height: 400px;
+	@include MQ() {
+		height: 330px;
+	}
 
-    @include MQ() {
-        height: 330px;
-    }
+	display: grid;
+	place-items: center;
+	position: relative;
 
-    display: grid;
-    place-items: center;
-    position: relative;
-
-    .bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-    }
+	.bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: -1;
+	}
 }
 
 .news {
-    width: 100vw;
-    // margin: 0 calc(50% - 475px);
-    padding: 0 calc(50vw - 475px);
-    display: flex;
-    color: $c_2;
-    background-color: rgba($c_2, .1);
-    height: 2em;
-    min-height: fit-content;
-    place-items: center;
+	width: 100vw;
+	// margin: 0 calc(50% - 475px);
+	padding: 0 calc(50vw - 475px);
+	display: flex;
+	color: $c_2;
+	background-color: rgba($c_2, 0.1);
+	height: 2em;
+	min-height: fit-content;
+	place-items: center;
 
-    h6 {
-        height: 100%;
-        display: grid;
-        place-items: center;
-        padding: 0 .8em;
-        background-color: $c_2;
-        color: #fff;
-    }
+	h6 {
+		height: 100%;
+		display: grid;
+		place-items: center;
+		padding: 0 0.8em;
+		background-color: $c_2;
+		color: #fff;
+	}
 
-    a {
-        width: 100%;
-        padding-left: .8em;
-        text-align: left;
-    }
+	a {
+		width: 100%;
+		padding-left: 0.8em;
+		text-align: left;
+	}
 }
 
 .courseAndClasstype {
-    .wrap {
-        position: relative;
-        &::after {
-            font-family: sans-serif;
-            font-size: 0.8125rem;
-            line-height: 1em;
-            content: "> あなたの組み合わせを見る";
-            color: #fff;
-            background-color: $c_2;
-            padding: .45em .6em;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            display: block;
-        }
-    }
-    &:hover {
-        * {
-            opacity: 1;
-        }
-        .wrap {
-            position: relative;
-            &::after {
-                opacity: .5;
-            }
-        }
-    }
-    select {
-        pointer-events: none;
-    }
+	.wrap {
+		position: relative;
+		&::after {
+			font-family: sans-serif;
+			font-size: 0.8125rem;
+			line-height: 1em;
+			content: "> あなたの組み合わせを見る";
+			color: #fff;
+			background-color: $c_2;
+			padding: 0.45em 0.6em;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			display: block;
+		}
+	}
+	&:hover {
+		* {
+			opacity: 1;
+		}
+		.wrap {
+			position: relative;
+			&::after {
+				opacity: 0.5;
+			}
+		}
+	}
+	select {
+		pointer-events: none;
+	}
 }
 .curriculum {
-    background-color: #fff;
-    padding: 1vw;
-    position: relative;
-    @include MQ() {
-        padding: .5rem;
-        padding-bottom: 1.3rem;
-        width: 100vw;
-        margin: 0 calc(50% - 50vw);
-        // padding: 0 calc(50vw - 50%);
-    }
-    svg {
-        font-family: sans-serif;
-    }
-    &::after {
-        font-weight: bold;
-        font-family: sans-serif;
-        font-size: 0.8125rem;
-        line-height: 1em;
-        content: "> レベル別カリキュラム(PDF)を見る";
-        color: #fff;
-        background-color: $c_2;
-        padding: .45em .6em;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        display: block;
-    }
-    &:hover {
-            opacity: 1;
-        
-        &::after {
-            opacity: .7;
-        }
-    }
+	background-color: #fff;
+	padding: 1vw;
+	position: relative;
+	@include MQ() {
+		padding: 0.5rem;
+		padding-bottom: 1.3rem;
+		width: 100vw;
+		margin: 0 calc(50% - 50vw);
+		// padding: 0 calc(50vw - 50%);
+	}
+	svg {
+		font-family: sans-serif;
+	}
+	&::after {
+		font-weight: bold;
+		font-family: sans-serif;
+		font-size: 0.8125rem;
+		line-height: 1em;
+		content: "> レベル別カリキュラム(PDF)を見る";
+		color: #fff;
+		background-color: $c_2;
+		padding: 0.45em 0.6em;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		display: block;
+	}
+	&:hover {
+		opacity: 1;
+
+		&::after {
+			opacity: 0.7;
+		}
+	}
 }
 .gallery {
-    // width: 100vw;
-    // margin: 0 calc(50% - 50vw);
-    margin-top: 1rem;
-    // padding: 0 calc(50vw - 50%);
-    .gallery_img {
-            height: 8rem;
-            object-fit: cover;
-            cursor: pointer;
-    }
+	// width: 100vw;
+	// margin: 0 calc(50% - 50vw);
+	margin-top: 1rem;
+	// padding: 0 calc(50vw - 50%);
+	.gallery_img {
+		height: 8rem;
+		object-fit: cover;
+		cursor: pointer;
+	}
 }

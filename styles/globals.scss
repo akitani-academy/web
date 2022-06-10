@@ -82,6 +82,7 @@ main {
   *[id]:not(.splide,.splide__slide,.splide__list,.splide__track) {
     // display: flex;
     // flex-flow: column;
+      pointer-events: none;
     &::before {
       display: block;
       height: 10rem;
