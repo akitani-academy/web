@@ -1,36 +1,61 @@
 html {
   scroll-behavior: smooth;
 }
+
 iframe {
   border: none;
 }
+
 summary {
   display: block;
 }
+
 summary::-webkit-details-marker {
   display: none;
 }
-input[type="radio"],input[type="submit"],select,label,summary {
+
+input[type="radio"],
+input[type="submit"],
+select,
+label,
+summary {
   cursor: pointer;
 }
-a,summary,label,input,select {
+
+a,
+summary,
+label,
+input,
+select {
   &:hover {
     opacity: .7;
+
     * {
       opacity: .7;
     }
   }
 }
-h1,h2,h3,h4,h5,h6,strong {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
   font-weight: bold;
 }
+
 ::placeholder {
-    opacity: .4;
-  }
+  opacity: .4;
+}
+
 textarea {
   display: block;
 }
-input,textarea {
+
+input,
+textarea {
   max-width: 100%;
 }
 
@@ -40,25 +65,32 @@ input,textarea {
     display: none;
   }
 }
+
 .pcOnly {
   @include MQ() {
     display: none;
   }
 }
+
 .Gmap {
   aspect-ratio: 8 / 5;
+
   @include MQ() {
     width: 100%;
   }
 }
-.p-country-name,.honeypot {
+
+.p-country-name,
+.honeypot {
   display: none;
 }
+
 .nav_course {
   a {
     border-color: $c_2 !important;
   }
 }
+
 h6.nav_course {
   color: $c_2;
 }
@@ -66,49 +98,72 @@ h6.nav_course {
 html {
   font-family: 'Shippori Mincho', serif;
 }
+
 body {
   color: $c_1;
   background: $c_0;
 }
-h1,h2,h3,h4,h5,h6,strong {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
   color: #000;
 }
+
 p {
   font-size: 15px;
 }
 
 main {
+
   // ジャンプリンクずれ修正
-  *[id]:not(.splide,.splide__slide,.splide__list,.splide__track) {
+  *[id]:not(.splide, .splide__slide, .splide__list, .splide__track) {
+
     // display: flex;
     // flex-flow: column;
-      pointer-events: none;
     &::before {
+      pointer-events: none;
       display: block;
       height: 10rem;
       margin-top: -10rem;
       content: "";
-      order:0;
+      order: 0;
     }
   }
+
   @mixin MQ() {
     overflow: hidden;
   }
+
   max-width: 950px;
   margin: auto;
   margin-top: 80px;
   padding: 4vw;
   display: flex;
+
   >article {
     width: 100%;
+
     >*:first-child {
       margin-top: 0;
     }
-    h1,h2,h3,h4,h5,h6 {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       letter-spacing: .05em;
-      &+.LinkList{
+
+      &+.LinkList {
         margin-top: -3rem;
       }
+
       &::before {
         letter-spacing: .3em;
         font-size: .5em;
@@ -118,22 +173,26 @@ main {
         pointer-events: none;
       }
     }
+
     h1 {
       color: $c_2;
       font-size: 1.875rem;
       margin-bottom: .3em;
     }
+
     h2 {
       font-size: 1.25rem;
       margin-top: 1.25em;
       margin-bottom: .7em;
     }
+
     p {
       letter-spacing: .05em;
       line-height: 1.7em;
       margin-bottom: 1.3em;
       // text-indent: 1em;
     }
+
     a {
       color: $c_3;
       border-bottom: dashed 1px $c_3;
@@ -144,8 +203,9 @@ main {
 
 .nav_course_and_classtype {
   @media (min-width: 600px) {
-  position: unset !important;
+    position: unset !important;
   }
+
   .nav_course {
     visibility: hidden;
     height: 0;
@@ -154,15 +214,17 @@ main {
 
 .navClose {
   flex: 1;
-  background: rgba(#000,.5);
+  background: rgba(#000, .5);
   backdrop-filter: blur(2px);
   opacity: 0;
   transition: opacity .1s;
   cursor: pointer;
 }
+
 .nav_true {
   @media (max-width: 600px) {
-    transform:translateX(-100%);
+    transform: translateX(-100%);
+
     .navClose {
       opacity: 1 !important;
     }
@@ -172,11 +234,13 @@ main {
 h3 {
   margin-top: .7em;
 }
+
 input {
   &[type="text"] {
     border-bottom: $c_3 solid 1px;
     padding: .2em 0;
   }
+
   &[type="submit"] {
     margin-top: .5rem;
     color: #fff;
@@ -184,10 +248,12 @@ input {
     background-color: $c_2;
   }
 }
+
 textarea {
   border: $c_3 solid 1px;
   padding: .3em;
 }
+
 #skip-silence-bar {
   display: none;
 }
