@@ -11,7 +11,7 @@ import Select from "components/widget/Select";
 import css from "styles/course_and_classtype.module.scss";
 
 import { useEffect } from "react";
-export default function Page({ courseData, classtypeData }) {
+export default function Page({ description, courseData, classtypeData }) {
 	useEffect(() => {
 		resize();
 		window.addEventListener("resize", resize);
@@ -80,9 +80,10 @@ export default function Page({ courseData, classtypeData }) {
 		<>
 			<Head title={selectTitle} breadcrumb={breadcrumb} />
 			<h1>コース と 授業形態</h1>
-			<p>
+			<div dangerouslySetInnerHTML={{ __html: String(description) }} />
+			{/* <p>
 				入塾の際、塾長が面談を行い、お一人お一人に合った最適な授業をコーディネート致します。
-			</p>
+			</p> */}
 			<section className={css.slect + " selectArea"}>
 				<div className={css.child}>
 					<div className={css.main}>
@@ -138,6 +139,9 @@ Page.getLayout = function getLayout(page) {
 };
 
 export async function getStaticProps() {
+	const description = await fetch(
+		"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages?slug=course_and_classtype"
+	).then((res) => res.json());
 	const courseData = await fetch(
 		"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/course?per_page=100"
 	).then((res) => res.json());
@@ -147,6 +151,7 @@ export async function getStaticProps() {
 
 	return {
 		props: {
+			description: description[0].wp_body,
 			courseData: courseData.reverse(),
 			classtypeData: classtypeData.reverse(),
 		},

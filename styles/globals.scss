@@ -261,3 +261,14 @@ textarea {
 .header_method {
   border-color: $c_2 !important;
 }
+
+
+.news {
+  h2 {
+    background-color: rgba($c_3, .1);
+    margin: .3em -.5em;
+    padding: .3em .5em;
+    width: fit-content;
+    margin-top: 1.3em;
+  }
+}

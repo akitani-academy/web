@@ -7,7 +7,7 @@ export default function Page({ wpDATA }) {
     <>
       <Head title={wpDATA.subTitle} breadcrumb={[[wpDATA.subTitle, "/news"]]} />
       <h1 data-subtitle={wpDATA.subTitle}>{wpDATA.title}</h1>
-      <article dangerouslySetInnerHTML={{ __html: wpDATA.content }} />
+      <article className="news" dangerouslySetInnerHTML={{ __html: wpDATA.content }} />
     </>
   );
 }
