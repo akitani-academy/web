@@ -106,8 +106,8 @@ export default function Page({ top, news, courseData, classtypeData }) {
 								dangerouslySetInnerHTML={{
 									__html: parser.translateHTMLString(e.title),
 								}}
-                key={i}
-                id={i}
+								key={i}
+								id={i}
 							></h2>
 							<article
 								dangerouslySetInnerHTML={{
@@ -259,11 +259,14 @@ export async function getStaticProps() {
 	const classtypeData = await fetch(
 		"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/class_type?per_page=100&"
 	).then((res) => res.json());
+
+	let top = await fetch(
+		"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages/7284"
+	).then((res) => res.json());
+	top.feature = Object.values(top.feature);
 	return {
 		props: {
-			top: await fetch(
-				"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages/7284"
-			).then((res) => res.json()),
+			top,
 			news: await fetch(
 				"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages/6797"
 			).then((res) => res.json()),
