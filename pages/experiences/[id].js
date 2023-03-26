@@ -1,10 +1,4 @@
 import Head from "components/head";
-import Image from "next/image";
-import Link from "next/link";
-
-import List from "components/widget/LinkList";
-
-let _V = require("/components/_V.js");
 import { useRouter } from "next/router";
 
 export default function Page({ post }) {

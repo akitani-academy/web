@@ -15,7 +15,7 @@ export default function Page({ post }) {
 	return (
 		<>
 			<Head
-				title={post.title}
+				title={"横浜・自由が丘 英語専門塾 秋谷アカデミィの" + post.title}
 				breadcrumb={[
 					["合格へのHowTo", "/method"],
 					[post.title, router.asPath],
@@ -188,7 +188,7 @@ export async function getStaticProps({ params }) {
 	// ルートが/posts/1のような時、params.id は1です。
 	const post = await fetch(
 		"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/posts?slug=" +
-			params.post_slug
+		params.post_slug
 	).then((res) => res.json());
 
 	// 記事データをprops経由でページに渡します。
