@@ -3,7 +3,7 @@ const _V = require("./_V.js");
 
 function Page({ title, description, ogp, url, breadcrumb }) {
 	if (title) {
-		if (title.includes("アカデミィ")) {
+		if (!title.includes("アカデミィ")) {
 			var title = title + "｜" + _V.meta.siteTitle;
 		}
 	} else {
