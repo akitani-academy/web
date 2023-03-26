@@ -15,7 +15,7 @@ export default function Page({ post }) {
 	return (
 		<>
 			<Head
-				title={"英語専門塾 秋谷アカデミィの" + post.title + "｜横浜・自由が丘"}
+				title={post.title}
 				breadcrumb={[
 					["合格へのHowTo", "/method"],
 					[post.title, router.asPath],
