@@ -1,5 +1,5 @@
 module.exports.meta = {
-	siteTitle: "横浜・自由が丘 英語専門塾 秋谷アカデミィ",
+	siteTitle: "英語専門塾 秋谷アカデミィ｜横浜・自由が丘",
 	baseURL: "https://akitani-academy.jp",
 };
 module.exports.access = [
