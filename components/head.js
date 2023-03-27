@@ -27,6 +27,7 @@ function Page({ title, description, ogp, url, breadcrumb }) {
 
 	return (
 		<Head>
+			<meta name="robots" content="index, follow" />
 			<meta property="og:type" content="article" />
 			<meta name="twitter:card" content="summary_large_image" />
 			{/* <meta name="twitter:site" content="@tcr_jp" /> */}
