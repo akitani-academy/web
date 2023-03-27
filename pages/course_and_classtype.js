@@ -70,7 +70,7 @@ export default function Page({ description, courseData, classtypeData }) {
 				selectTitle = classtype.title;
 				breadcrumb = [
 					["授業形態", "/course_and_classtype"],
-					[classtype.title, router.asPath],
+					[classtype.title, router.asPath]
 				];
 			}
 		}
