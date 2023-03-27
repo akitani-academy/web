@@ -53,21 +53,21 @@ export default function Page({ description, courseData, classtypeData }) {
 			return e.slug === router.query.classtype;
 		});
 		if (router.query.course && router.query.classtype) {
-			selectTitle = "[" + course.title + "] x" + " [" + classtype.title + "]";
+			selectTitle = classtype.title + "での" + course.title;
 			breadcrumb = [
 				["コースと授業形態", "/course_and_classtype"],
 				[selectTitle, router.asPath],
 			];
 		} else {
 			if (router.query.course) {
-				selectTitle = "コース [" + course.title + "]";
+				selectTitle = course.title + "コース";
 				breadcrumb = [
 					["コース", "/course_and_classtype"],
 					[course.title, router.asPath],
 				];
 			}
 			if (router.query.classtype) {
-				selectTitle = "授業形態 [" + classtype.title + "]";
+				selectTitle = classtype.title;
 				breadcrumb = [
 					["授業形態", "/course_and_classtype"],
 					[classtype.title, router.asPath],
