@@ -6,7 +6,7 @@ export default function Page({ post }) {
   return (
     <>
       <Head
-        title={post.title}
+        title={"合格体験記「" + post.title + "」"}
         breadcrumb={[
           ["実績", "/experiences"],
           [post.title, router.asPath],
