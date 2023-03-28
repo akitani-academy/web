@@ -5,7 +5,11 @@ import Link from "next/link";
 export default function Page({ wpDATA }) {
   return (
     <>
-      <Head title={wpDATA.title + "｜NEWS"} breadcrumb={[[wpDATA.subTitle, "/news"]]} />
+      <Head
+        title={wpDATA.title + "｜NEWS"}
+        description={wpDATA.summary}
+        breadcrumb={[[wpDATA.subTitle, "/news"]]}
+      />
       <h1 data-subtitle={wpDATA.subTitle}>{wpDATA.title}</h1>
       <article className="news" dangerouslySetInnerHTML={{ __html: wpDATA.content }} />
     </>

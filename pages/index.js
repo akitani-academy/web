@@ -59,7 +59,9 @@ export default function Page({ top, news, courseData, classtypeData }) {
 
 	return (
 		<>
-			<Head />
+			<Head
+				description={top.description}
+			/>
 			<section className={css.top}>
 				<section className={css.topImg}>
 					<div className={css.bg}>

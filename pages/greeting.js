@@ -12,6 +12,7 @@ export default function Page({ wpDATA }) {
 		<>
 			<Head
 				title={wpDATA.subTitle}
+				description={wpDATA.summary}
 				breadcrumb={[[wpDATA.subTitle, "/greeting"]]}
 			/>
 			<div className={css.tmb}>
