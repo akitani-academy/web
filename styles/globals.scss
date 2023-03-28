@@ -57,8 +57,11 @@ textarea {
 input,
 textarea {
   max-width: 100%;
-  width:100%;
 }
+
+// input:not([type="submit"]) {
+//   width: 15em;
+// }
 
 
 .spOnly {
@@ -265,6 +268,7 @@ textarea {
 
 
 .news {
+
   h2,
   h3 {
     margin: .3em -.5em;

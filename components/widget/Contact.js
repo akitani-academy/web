@@ -1,36 +1,51 @@
-import Head from "components/head";
 import Script from "next/script";
 let _V = require("/components/_V.js");
 import LinkList from "components/widget/LinkList";
 import css from "styles/contact.module.scss";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
-export default function Page() {
+export default function Page({ short }) {
+	short = JSON.parse(short)
 	return (
 		<>
 			<Script
 				src="https://yubinbango.github.io/yubinbango/yubinbango.js"
 				strategy="beforeInteractive"
 			/>
-			<Head
-				title="資料請求/お問い合わせ"
-				breadcrumb={[["お問合せ", "/contact"]]}
-			/>
-			<h1>資料請求・お問い合わせ</h1>
-			<h2>合格へのHow To</h2>
-			<p>
-				秋谷光子アカデミィの各対策と勉強方法を公開していますので、ご活用ください。
-			</p>
-			<LinkList
-				data={[
-					["英検", "/method"],
-					["大学受験", "/method"],
-					["TOEIC", "/method"],
-					["TOEFL", "/method"],
-					["その他", "/method"],
-				]}
-			/>
-			<h2>資料請求 / お問い合わせ</h2>
+
+			{!short && (<>
+				<h2>合格へのHow To</h2>
+				<p>
+					秋谷光子アカデミィの各対策と勉強方法を公開していますので、ご活用ください。
+				</p>
+				<LinkList
+					data={[
+						["英検", "/method"],
+						["大学受験", "/method"],
+						["TOEIC", "/method"],
+						["TOEFL", "/method"],
+						["その他", "/method"],
+					]}
+				/>
+
+				<h2>電話でのお問い合わせ</h2>
+				<ul>
+					{_V.access.map((e, i) => (
+						<li key={i}>
+							<span>{e.name}</span>：<a href={"tel:" + e.tel}>
+								<span>{e.tel}</span>（15:00-21:00）
+							</a>
+						</li>
+					))}
+				</ul>
+			</>
+			)}
+
+			{!short ? (
+				<h2>資料請求 / お問い合わせ</h2>
+			) : (
+				<h2 data-subTitle="秋谷光子アカデミィへの">資料請求 / お問い合わせ</h2>
+			)}
 			<form
 				action="https://api.staticforms.xyz/submit"
 				method="post"
@@ -38,13 +53,16 @@ export default function Page() {
 			>
 				<h6>お名前</h6>
 				<input type="text" name="name" placeholder="田中 太郎" required />
-				<h6>ふりがな</h6>
-				<input
-					type="text"
-					name="$ふりがな"
-					placeholder="たなか たろう"
-					required
-				/>
+				{!short && (<>
+					<h6>ふりがな</h6>
+					<input
+						type="text"
+						name="$ふりがな"
+						placeholder="たなか たろう"
+						required
+					/>
+				</>)}
+
 				<h6>メールアドレス</h6>
 				<input
 					type="text"
@@ -52,26 +70,30 @@ export default function Page() {
 					placeholder="mail@example.com"
 					required
 				/>
+
 				<h6>お電話番号</h6>
 				<input type="text" name="phone" placeholder="01-2345-6789" required />
-				<h6>郵便番号</h6>
-				<input
-					type="text"
-					name="$郵便番号"
-					className="p-postal-code"
-					maxLength="9"
-					placeholder="100-8111"
-					required
-				/>
-				<h6>ご住所</h6>
-				<span className="p-country-name">Japan</span>
-				<input
-					type="text"
-					name="$住所"
-					className="p-region p-locality p-street-address p-extended-address"
-					placeholder="東京都千代田区千代田1-1"
-					required
-				/>
+				{!short && (<>
+					<h6>郵便番号</h6>
+					<input
+						type="text"
+						name="$郵便番号"
+						className="p-postal-code"
+						maxLength="9"
+						placeholder="100-8111"
+						required
+					/>
+					<h6>ご住所</h6>
+					<span className="p-country-name">Japan</span>
+					<input
+						type="text"
+						name="$住所"
+						className="p-region p-locality p-street-address p-extended-address"
+						placeholder="東京都千代田区千代田1-1"
+						required
+					/>
+				</>)}
+
 				<h6>学年</h6>
 				<div className={css.select}>
 					<select name="$学年">
@@ -111,6 +133,7 @@ export default function Page() {
 						})()}
 					</select>
 				</div>
+
 				<h6>問い合わせ</h6>
 				<div className={css.contactCheck}>
 					{(() => {
@@ -138,6 +161,7 @@ export default function Page() {
 					name="$問い合わせ"
 					placeholder="その他、ご自由にご記入ください。"
 				></textarea>
+
 				<GoogleReCaptchaProvider
 					// ref={recaptchaRef}
 					size="invisible"
@@ -158,16 +182,6 @@ export default function Page() {
 				/>
 				<input type="submit" value="送信" />
 			</form>
-			<h2>電話でのお問い合わせ</h2>
-			<ul>
-				{_V.access.map((e, i) => (
-					<li key={i}>
-						<span>{e.name}</span>：<a href={"tel:" + e.tel}>
-							<span>{e.tel}</span>（15:00-21:00）
-						</a>
-					</li>
-				))}
-			</ul>
 		</>
 	);
 }
