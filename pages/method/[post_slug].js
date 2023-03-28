@@ -22,7 +22,7 @@ export default function Page({ post }) {
 				]}
 			/>
 			<h1 data-subTitle="秋谷光子アカデミィの">{post.title}</h1>
-			<List data={[["その他の合格対策", "/method"]]} />
+			<List data={[["その他の合格対策を見る", "/method"]]} />
 
 			<article dangerouslySetInnerHTML={{ __html: post.content }}></article>
 			<aside className={css.contact}>

@@ -12,7 +12,11 @@ export default function Page({ post }) {
           [post.title, router.asPath],
         ]}
       />
-      <h1 data-subTitle="秋谷光子アカデミィの">{post.title}</h1>
+      <h1 data-subTitle="合格体験記">{post.title}</h1>
+      <p>
+        秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計173人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。圧倒的な実績に合わせて合格体験記を数多く掲載しております。
+      </p>
+      <List data={[["その他の合格体験記を見る", "/method"]]} />
       <h2>{post.student}</h2>
       <article dangerouslySetInnerHTML={{ __html: post.content }}></article>
     </>
