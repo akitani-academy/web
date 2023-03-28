@@ -1,5 +1,6 @@
 import Head from "components/head";
 import { useRouter } from "next/router";
+import List from "components/widget/LinkList";
 
 export default function Page({ post }) {
   const router = useRouter();
