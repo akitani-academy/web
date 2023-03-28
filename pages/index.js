@@ -64,6 +64,7 @@ export default function Page({ top, news, courseData, classtypeData }) {
 				<section className={css.topImg}>
 					<div className={css.bg}>
 						<Image
+							alt="秋谷光子アカデミィの建物の写真"
 							src="/miniDSC_1875.jpg"
 							layout="fill"
 							objectFit="cover"
@@ -194,6 +195,7 @@ export default function Page({ top, news, courseData, classtypeData }) {
 										<SplideSlide key={i}>
 											<div className={css.gallery_img} onClick={handleIncFC}>
 												<Image
+													alt={"秋谷光子アカデミィの"+i+"番目の内装の写真"}
 													src={e1[1].img}
 													layout="fill"
 													objectFit="cover"

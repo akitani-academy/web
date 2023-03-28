@@ -105,7 +105,7 @@ export default function Page({ description, courseData, classtypeData }) {
 						))}
 					</ul>
 				</div>
-				<img src="x.svg" width={"26px"} height={"26px"} />
+				<img alt="掛け算アイコン" src="x.svg" width={"26px"} height={"26px"} />
 				<div className={css.child}>
 					<div className={css.main}>
 						<h5>授業形態</h5>
