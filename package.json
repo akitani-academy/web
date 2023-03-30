@@ -18,7 +18,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-google-recaptcha-v3": "^1.9.7",
-    "sass": "^1.49.9",
+    "sass": "^1.60.0",
     "scroll-behavior-polyfill": "^2.0.13",
     "smoothscroll-polyfill": "^0.4.4",
     "swr": "^1.2.2",
