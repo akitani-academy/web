@@ -18,6 +18,8 @@ import Logo from "/public/curriculum.svg";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
+import Slideshow from "components/widget/Slideshow"
+
 import UseSWR from "swr";
 function lbState() {
 	const { lbData, lbMutate } = UseSWR("lb_state", () => window.count);
@@ -67,12 +69,14 @@ export default function Page({ top, news, courseData, classtypeData }) {
 			<section className={css.top}>
 				<section className={css.topImg}>
 					<div className={css.bg}>
-						<Image
-							alt="秋谷光子アカデミィの建物の写真"
-							src="/miniDSC_1875.jpg"
-							layout="fill"
-							objectFit="cover"
-						></Image>
+						<Slideshow images={[
+							["/miniDSC_1875.jpg", "秋谷光子アカデミィの田園調布校の写真"],
+							["https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/02/292A1372.jpg", "秋谷光子アカデミィの講師による授業風景"],
+							["https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/02/292A1785.jpg", "秋谷光子アカデミィの講師による中学生の授業風景"],
+							["https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/02/292A1558.jpg", "秋谷光子アカデミィの講師による先生の授業風景"],
+							["https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/02/292A1398.jpg", "秋谷光子アカデミィの講師による大学生の授業風景"],
+							["https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/04/292A1543.jpg", "秋谷光子アカデミィの綱島校の写真"]
+						]} seconds={5} />
 					</div>
 					<div>
 						<h2 className={css.messageH2}>

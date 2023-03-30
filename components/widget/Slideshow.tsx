@@ -1,12 +1,18 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import classNames from 'classnames';
+
+import styles from "styles/Slideshow.module.scss";
 
 type Props = {
-    images: string[];
+    images: [string, string][];
     seconds: number;
 };
 
 export default function Slideshow({ images, seconds }: Props) {
+
+    // images.reverse();
+
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
@@ -18,12 +24,22 @@ export default function Slideshow({ images, seconds }: Props) {
     }, [seconds, images.length]);
 
     return (
-        <ul>
-            {images.map((image, index) => (
-                <li key={index} className={index === currentIndex ? 'active' : ''}>
-                    <Image src={image} alt={`Image ${index}`} width={800} height={600} />
-                </li>
+        <div className={styles.slideshow}>
+            {images.map(([url, alt], index) => (
+                <div
+                    key={index}
+                    className={classNames(
+                        styles.slide,
+                        { [styles.hidden]: index == currentIndex }
+                    )}
+                >
+                    <Image
+                        src={url} alt={alt}
+                        layout="fill"
+                        objectFit="cover"
+                    />
+                </div>
             ))}
-        </ul>
+        </div>
     );
 };
