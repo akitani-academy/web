@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "@splidejs/react-splide": "^0.7.5",
-    "@splidejs/splide-extension-auto-scroll": "^0.4.2",
-    "@svgr/webpack": "^6.2.1",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+    "@svgr/webpack": "^7.0.0",
     "@types/react-google-recaptcha": "^2.1.5",
-    "budoux": "^0.1.0",
+    "budoux": "^0.5.0",
     "next": "^13.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -21,14 +21,14 @@
     "sass": "^1.60.0",
     "scroll-behavior-polyfill": "^2.0.13",
     "smoothscroll-polyfill": "^0.4.4",
-    "swr": "^1.2.2",
+    "swr": "^2.1.1",
     "the-new-css-reset": "^1.5.1"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.31",
-    "eslint": "8.9.0",
-    "eslint-config-next": "12.1.0",
+    "eslint": "8.37.0",
+    "eslint-config-next": "13.2.4",
     "typescript": "^5.0.2"
   }
 }
