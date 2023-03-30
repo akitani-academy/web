@@ -11,6 +11,9 @@ const nextConfig = {
 		formats: ["image/avif", "image/webp"],
 	},
 	reactStrictMode: true,
+	sassOptions: {
+		prependData: '@import "styles/_V.scss";',
+	},
 	webpack(config) {
 		config.module.rules.push({
 			test: /\.svg$/,
