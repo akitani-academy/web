@@ -12,6 +12,7 @@ const nextConfig = {
 	},
 	reactStrictMode: true,
 	sassOptions: {
+		fiber: false,
 		prependData: '@import "styles/_V.scss";',
 	},
 	webpack(config) {
