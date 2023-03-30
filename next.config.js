@@ -1,10 +1,7 @@
 /** @type {import('next').NextConfig} */
 
-module.exports = {
-	smcLoader: true,
+const nextConfig = {
 	swcMinify: true,
-	cpus: 4,
-	reactStrictMode: true,
 	images: {
 		domains: [
 			"yoshikitam.wpx.jp",
@@ -13,13 +10,9 @@ module.exports = {
 		],
 		formats: ["image/avif", "image/webp"],
 	},
+	reactStrictMode: true,
 	sassOptions: {
 		prependData: '@import "styles/_V.scss";',
-	},
-	experimental: {
-		// concurrentFeatures: true,
-		// serverComponents: true,
-		// urlImports: ["https://yubinbango.github.io"],
 	},
 	webpack(config) {
 		config.module.rules.push({
@@ -148,3 +141,5 @@ module.exports = {
 		];
 	},
 };
+
+module.exports = nextConfig

@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unknown-property */
+
 import Head from "components/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -94,7 +96,7 @@ export default function Page({ top, news, courseData, classtypeData }) {
 				</section>
 				<section className={css.news}>
 					<h6>NEWS</h6>
-					<Link href={"/news"}>
+					<Link legacyBehavior href={"/news"}>
 						<a>
 							{news.title}（<date>{news.date}</date>）
 						</a>
@@ -118,7 +120,7 @@ export default function Page({ top, news, courseData, classtypeData }) {
 								}}
 							></article>
 							{e.option == "course_and_classtype" && (
-								<Link href={"/course_and_classtype"}>
+								<Link legacyBehavior href={"/course_and_classtype"}>
 									<a className={css.courseAndClasstype}>
 										<section
 											className={
@@ -172,7 +174,7 @@ export default function Page({ top, news, courseData, classtypeData }) {
 								</Link>
 							)}
 							{e.option == "curriculum" && (
-								<Link href={"/レベル別カリキュラム.pdf"}>
+								<Link legacyBehavior href={"/レベル別カリキュラム.pdf"}>
 									<a target="_blank">
 										<div className={css.curriculum}>
 											<Logo />
@@ -197,7 +199,7 @@ export default function Page({ top, news, courseData, classtypeData }) {
 										<SplideSlide key={i}>
 											<div className={css.gallery_img} onClick={handleIncFC}>
 												<Image
-													alt={"秋谷光子アカデミィの"+i+"番目の内装の写真"}
+													alt={"秋谷光子アカデミィの" + i + "番目の内装の写真"}
 													src={e1[1].img}
 													layout="fill"
 													objectFit="cover"

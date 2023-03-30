@@ -10,7 +10,7 @@ const siteTitle = function (url) {
   if (url[1] == "") {
     return (
       <h1>
-        <Link href={"/"}>
+        <Link legacyBehavior href={"/"}>
           <a>
             <small>英語専門塾</small>秋谷光子アカデミィ
           </a>
@@ -20,7 +20,7 @@ const siteTitle = function (url) {
   } else {
     return (
       <h2>
-        <Link href={"/"}>
+        <Link legacyBehavior href={"/"}>
           <a>
             <small>英語専門塾</small>秋谷光子アカデミィ
           </a>
@@ -63,7 +63,7 @@ function Page() {
         <section className={css.inner}>
           {siteTitle(url)}
           <section className={css.menu}>
-            <Link href={"/access"}>
+            <Link legacyBehavior href={"/access"}>
               <a>
                 <ul className={css.addr}>
                   {_V.access.map((e, i) => (
@@ -78,7 +78,7 @@ function Page() {
             </Link>
             <ul className={css.meta}>
               <li>
-                <Link href={"/contact"}>
+                <Link legacyBehavior href={"/contact"}>
                   <a className={css.contact}>資料請求</a>
                 </Link>
               </li>
@@ -88,7 +88,7 @@ function Page() {
             </ul>
           </section>
           {url[1] == "method" && url[2] && (
-            <Link href={"/course_and_classtype"}>
+            <Link legacyBehavior href={"/course_and_classtype"}>
               <a className={css.backButton}>コース説明にもどる</a>
             </Link>
           )}

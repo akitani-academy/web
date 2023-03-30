@@ -65,7 +65,7 @@ function Page({ data, name }) {
 									<ul>
 										{data.post.map((e, i) => (
 											<li key={i}>
-												<Link href={"/experiences/" + e.id}>
+												<Link legacyBehavior href={"/experiences/" + e.id}>
 													<a>
 														<span className={css.taikenki_title}>
 															{e.title}
@@ -77,7 +77,7 @@ function Page({ data, name }) {
 											</li>
 										))}
 									</ul>
-									<Link href={"/experiences"}>
+									<Link legacyBehavior href={"/experiences"}>
 										<a className={css.more}>
 											<span>もっと見る</span>
 										</a>

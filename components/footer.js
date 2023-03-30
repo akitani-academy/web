@@ -23,7 +23,7 @@ function Page() {
               <ul className={css.menu}>
                 {fA.map((e, i) => (
                   <li key={i}>
-                    <Link href={e[0]}>
+                    <Link legacyBehavior href={e[0]}>
                       <a>{e[1]}</a>
                     </Link>
                   </li>

@@ -9,11 +9,11 @@ function linkList({ data }) {
         {data.map((e, i) => (
           <li key={i}>
             {e[1].slice(0, 1) == "#" ? (
-              <Link href={String(e[1])}>
+              <Link legacyBehavior href={String(e[1])}>
                 <a>{e[0]}</a>
               </Link>
             ) : (
-              <Link href={String(e[1])}>
+              <Link legacyBehavior href={String(e[1])}>
                 <a>{e[0]}</a>
               </Link>
             )}

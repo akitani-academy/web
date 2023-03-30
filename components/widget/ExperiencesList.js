@@ -21,7 +21,7 @@ export default function Page({ data }) {
                 <span>{e.student}</span>
                 {e.title && (
                   <span>
-                    <Link href={"/experiences/" + e.id}>
+                    <Link legacyBehavior href={"/experiences/" + e.id}>
                       <a>体験記：{e.title}</a>
                     </Link>
                   </span>
