@@ -2,14 +2,19 @@
 	@include MQ(xl) {
 		width: 80%;
 	}
+
 	font-size: 0.9rem;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.3em 0.7em;
 	margin-bottom: 1.5rem;
+
 	li {
+
 		//   margin-right: .7rem;
 		a {
+			color: $c_3 ;
+
 			&::before {
 				content: ">";
 				margin-right: 0.2em;
