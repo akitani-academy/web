@@ -79,7 +79,7 @@ function Page() {
             <ul className={css.meta}>
               <li>
                 <Link legacyBehavior href={"/contact"}>
-                  <a className={css.contact}>資料請求</a>
+                  <a className={css.contact}>資料請求<br />問い合わせ</a>
                 </Link>
               </li>
               <li className={css.spMENU} onClick={handleInc}>

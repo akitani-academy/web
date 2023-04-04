@@ -109,8 +109,8 @@
             padding: 0 1rem;
 
             @media (max-width: 600px) {
-                width: 5em;
-                padding: 0;
+                width: fit-content;
+                padding: 0 0.5rem;
             }
 
             display: flex;
@@ -120,15 +120,17 @@
     }
 
     .contact {
+        text-align: center;
         background: $c_2;
         height: 100%;
 
-        @media(min-width: 900px) {
-            &::after {
-                margin-left: .5em;
-                content: "/ お問い合わせ";
-            }
-        }
+        // br {
+        //     display: block;
+
+        //     @media(min-width: 900px) {
+        //         display: none;
+        //     }
+        // }
     }
 
     .spMENU {
