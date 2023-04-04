@@ -124,7 +124,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 						<h2 data-subTitle={`NEWS｜${news.date}`}>{news.title}</h2>
 						<p
 							dangerouslySetInnerHTML={{
-								__html: news.summary,
+								__html: parser.translateHTMLString(news.summary),
 							}}>
 						</p>
 						<div className={css.more}>
