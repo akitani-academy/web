@@ -144,17 +144,20 @@ main {
     }
   }
 
-  @mixin MQ() {
-    overflow: hidden;
-  }
+  // width: 100vw;
 
   max-width: 950px;
-  width: fit-content;
+  // width: fit-content;
   margin: auto;
   margin-top: 80px;
   padding: 4vw;
   display: flex;
   gap: 3vw;
+
+  // @mixin MQ() {
+  //   max-width: 100vw;
+  //   // overflow: hidden;
+  // }
 
   >article {
     width: 100%;
