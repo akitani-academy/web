@@ -203,7 +203,7 @@ main {
     p {
       letter-spacing: .05em;
       line-height: 1.7em;
-      margin-bottom: 1.3em;
+      margin-bottom: .8em;
       // text-indent: 1em;
     }
 
@@ -277,21 +277,21 @@ textarea {
 }
 
 
-.news {
+// .news {
 
-  h2,
-  h3 {
-    margin: .3em -.5em;
-    padding: .3em .5em;
-    width: fit-content;
-  }
+//   h2,
+//   h3 {
+//     margin: .3em -.5em;
+//     padding: .3em .5em;
+//     width: fit-content;
+//   }
 
-  h2 {
-    background-color: rgba($c_2, .1);
-    color: $c_2;
-  }
+//   h2 {
+//     background-color: rgba($c_2, .1);
+//     color: $c_2;
+//   }
 
-  h3 {
-    background-color: rgba($c_3, .1);
-  }
-}
+//   h3 {
+//     background-color: rgba($c_3, .1);
+//   }
+// }

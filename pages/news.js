@@ -1,6 +1,7 @@
 import Head from "components/head";
-import Image from "next/image";
-import Link from "next/link";
+
+import css_contact from "styles/contact.module.scss";
+import Contact from "components/widget/Contact"
 
 export default function Page({ wpDATA }) {
   return (
@@ -12,6 +13,9 @@ export default function Page({ wpDATA }) {
       />
       <h1 data-subtitle={wpDATA.subTitle}>{wpDATA.title}</h1>
       <article className="news" dangerouslySetInnerHTML={{ __html: wpDATA.content }} />
+      <aside className={css_contact.contact}>
+        <Contact short="true" />
+      </aside>
     </>
   );
 }
