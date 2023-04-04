@@ -2,17 +2,28 @@
     background-color: #fff;
     margin: 0 -1.5rem;
     padding: 1.5rem;
+    margin-top: 2rem;
 
     @include MQ(xl) {
-        width: fit-content;
-        min-width: 95%;
+        // width: fit-content;
+        // min-width: 95%;
         // margin: auto;
-        margin: 0 -2rem;
+        margin-right: -2rem;
+        margin-left: -2rem;
         padding: 2rem;
     }
 
     h2 {
-        margin-top: 0;
+        &:first-child {
+            margin-top: 0;
+        }
+
+    }
+
+    h3 {
+        font-size: 1.5ewm;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     h5 {

@@ -13,7 +13,7 @@ export default function Page({ short }) {
 				strategy="beforeInteractive"
 			/>
 
-			{!short && (<>
+			{/* {!short && (<>
 				<h2>合格へのHow To</h2>
 				<p>
 					秋谷光子アカデミィの各対策と勉強方法を公開していますので、ご活用ください。
@@ -39,13 +39,22 @@ export default function Page({ short }) {
 					))}
 				</ul>
 			</>
-			)}
+			)} */}
 
-			{!short ? (
-				<h2>資料請求 / お問い合わせ</h2>
-			) : (
-				<h2 data-subTitle="秋谷光子アカデミィへの">資料請求 / お問い合わせ</h2>
-			)}
+			{/* <h2 data-subTitle="秋谷光子アカデミィへの">資料請求 / お問い合わせ</h2> */}
+
+			<h2>電話でのお問い合わせ</h2>
+			<ul>
+				{_V.access.map((e, i) => (
+					<li key={i}>
+						<span>{e.name}</span>：<a href={"tel:" + e.tel}>
+							<span>{e.tel}</span>（15:00-21:00）
+						</a>
+					</li>
+				))}
+			</ul>
+
+			<h2>メールでのお問い合わせ</h2>
 			<form
 				action="https://api.staticforms.xyz/submit"
 				method="post"
@@ -182,6 +191,20 @@ export default function Page({ short }) {
 				/>
 				<input type="submit" value="送信" />
 			</form>
+
+			<h2>合格へのHowTo</h2>
+			<p>
+				秋谷光子アカデミィの各対策と勉強方法を公開していますので、ご活用ください。
+			</p>
+			<LinkList
+				data={[
+					["英検", "/method"],
+					["大学受験", "/method"],
+					["TOEIC", "/method"],
+					["TOEFL", "/method"],
+					["その他", "/method"],
+				]}
+			/>
 		</>
 	);
 }
