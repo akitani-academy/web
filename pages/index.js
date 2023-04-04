@@ -281,7 +281,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 								<LoopCarousel>
 									<ul className={css.gallery}>
 										{Object.entries(e.gallery).map((e1, i) => (
-											<li>
+											<li key={i}>
 												<Image
 													alt={"秋谷光子アカデミィの" + i + "番目の内装の写真"}
 													src={e1[1].img}
