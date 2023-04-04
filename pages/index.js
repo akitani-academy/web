@@ -19,6 +19,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
 import Slideshow from "components/widget/Slideshow"
+import LinkList from "components/widget/LinkList";
 
 import UseSWR from "swr";
 function lbState() {
@@ -68,6 +69,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 	let teacherListOdd = teacherList.filter(num => Number(num) % 2 !== 0);
 	let teacherListEven = teacherList.filter(num => Number(num) % 2 === 0);
 	// console.log(news)
+
 
 	return (
 		<>
@@ -126,9 +128,9 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 							}}>
 						</p>
 						<div className={css.more}>
-							<Link legacyBehavior href={"/news"}>
-								<a>詳しく見る</a>
-							</Link>
+							<LinkList data={[
+								["詳しく見る", "/news"],
+							]} />
 						</div>
 					</section>
 
@@ -292,6 +294,15 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 										</SplideSlide>
 									))}
 								</Splide>
+							)}
+							{e.LinkList && (
+								<div className={css.more}>
+									<LinkList
+										data={e.LinkList.map(item => [
+											item.Link.text,
+											item.Link.url
+										])} />
+								</div>
 							)}
 						</>
 					))}

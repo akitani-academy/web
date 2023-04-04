@@ -15,7 +15,21 @@
 	}
 
 	.more {
-		text-align: right;
+		ul {
+			width: 100%;
+			display: flex;
+			justify-content: flex-end;
+			flex-wrap: wrap;
+			margin-bottom: .2rem;
+
+			li {
+				font-size: 1rem;
+
+				a {
+					color: $c_2;
+				}
+			}
+		}
 	}
 }
 
