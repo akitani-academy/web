@@ -33,7 +33,10 @@ function lbState() {
 }
 
 import { useEffect } from "react";
-export default function Page({ top, news, courseData, classtypeData }) {
+
+import LoopCarousel from 'components/widget/LoopCarousel';
+import styles from 'styles/LoopCarousel.module.scss';
+export default function Page({ top, news, courseData, classtypeData, teacherList }) {
 	const { lbData, lbMutate } = lbState();
 	const handleIncFC = () => lbMutate(!lbData);
 
@@ -60,6 +63,11 @@ export default function Page({ top, news, courseData, classtypeData }) {
 		"https://akitani-academy.jp/_next/image?url=https%3A%2F%2Fyoshikitam.wpx.jp%2Fakitani%2Fwp-content%2Fuploads%2F2022%2F04%2F292A1543.jpg&w=1920&q=75",
 		"https://akitani-academy.jp/_next/image?url=https%3A%2F%2Fyoshikitam.wpx.jp%2Fakitani%2Fwp-content%2Fuploads%2F2022%2F04%2F292A1663.jpg&w=1920&q=75",
 	];
+
+	// console.log(teacherList)
+	let teacherListOdd = teacherList.filter(num => Number(num) % 2 !== 0);
+	let teacherListEven = teacherList.filter(num => Number(num) % 2 === 0);
+	// console.log(news)
 
 	return (
 		<>
@@ -98,17 +106,33 @@ export default function Page({ top, news, courseData, classtypeData }) {
 						</h3>
 					</div>
 				</section>
-				<section className={css.news}>
-					<h6>NEWS</h6>
+				{/* <section className={css.news}>
+					<h2 data-subTitle="NEWS">{news.title}</h2>
 					<Link legacyBehavior href={"/news"}>
 						<a>
 							{news.title}（<date>{news.date}</date>）
 						</a>
 					</Link>
-				</section>
+				</section> */}
 			</section>
 			<main className={css.main}>
 				<article>
+
+					<section className={css.news}>
+						<h2 data-subTitle={`NEWS｜${news.date}`}>{news.title}</h2>
+						<p
+							dangerouslySetInnerHTML={{
+								__html: news.summary,
+							}}>
+						</p>
+						<div className={css.more}>
+							<Link legacyBehavior href={"/news"}>
+								<a>詳しく見る</a>
+							</Link>
+						</div>
+					</section>
+
+
 					{top.feature.map((e, i) => (
 						<>
 							<h2
@@ -186,6 +210,62 @@ export default function Page({ top, news, courseData, classtypeData }) {
 									</a>
 								</Link>
 							)}
+							{/* {e.option == "teacher" && (
+								<>
+									<LoopCarousel>
+										<div className={css.teacherList}>
+											<ul>
+												{teacherListOdd.map((e, i) => (
+													<li key={i} className={css.teacher}>
+														{e.img && (
+															<div>
+																<Image
+																	src={e.img}
+																	alt={e.name + "先生の写真"}
+																	layout="responsive"
+																	width={6240}
+																	height={4160}
+																></Image>
+															</div>
+														)}
+														<div>{e.name}</div>
+														{e.license}
+														{e.other && (
+															<>
+																<p>{e.other}</p>
+															</>
+														)}
+													</li>
+												))}
+											</ul>
+											<ul>
+												{teacherListEven.map((e, i) => (
+													<li key={i} className={css.teacher}>
+														{e.img && (
+															<div>
+																<Image
+																	src={e.img}
+																	alt={e.name + "先生の写真"}
+																	layout="responsive"
+																	width={6240}
+																	height={4160}
+																></Image>
+															</div>
+														)}
+														<div>{e.name}</div>
+														{e.license}
+														{e.other && (
+															<>
+																<p>{e.other}</p>
+															</>
+														)}
+													</li>
+												))}
+											</ul>
+										</div>
+									</LoopCarousel>
+								</>
+							)} */}
 							{e.gallery && (
 								<Splide
 									className={css.gallery}
@@ -274,6 +354,12 @@ export async function getStaticProps() {
 		"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages/7284"
 	).then((res) => res.json());
 	top.feature = Object.values(top.feature);
+
+	let teacherList = await fetch(
+		"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/teacher?per_page=100"
+	).then((res) => res.json());
+	teacherList = teacherList.sort((a, b) => a.infoCount - b.infoCount).reverse();
+
 	return {
 		props: {
 			top,
@@ -285,6 +371,7 @@ export async function getStaticProps() {
 			).then((res) => res.json()),
 			courseData: courseData.reverse(),
 			classtypeData: classtypeData.reverse(),
+			teacherList
 		},
 	};
 }

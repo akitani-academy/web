@@ -8,6 +8,15 @@
 
 .main {
 	margin-top: 0;
+
+	article {
+		max-width: 35rem;
+		margin-right: 3rem;
+	}
+
+	.more {
+		text-align: right;
+	}
 }
 
 .top {
@@ -43,10 +52,6 @@
 		font-weight: normal;
 	}
 
-	a {
-		
-	}
-
 	.messageH2 {
 		font-size: 2em;
 	}
@@ -73,15 +78,25 @@
 }
 
 .news {
-	width: 100vw;
+	// width: 100vw;
 	// margin: 0 calc(50% - 475px);
-	padding: 0 calc(50vw - 475px);
-	display: flex;
-	color: $c_2;
+	padding: 2.5rem;
+	margin: 0 -2.5rem;
+	// display: flex;
+	// color: $c_2;
 	background-color: rgba($c_2, 0.1);
-	height: 2em;
-	min-height: fit-content;
-	place-items: center;
+	// height: 2em;
+	// min-height: fit-content;
+	// place-items: center;
+
+	h2 {
+		margin-top: 0;
+
+		&::before {
+			color: $c_2;
+			margin-bottom: .1em;
+		}
+	}
 
 	h6 {
 		height: 100%;
@@ -90,12 +105,6 @@
 		padding: 0 0.8em;
 		background-color: $c_2;
 		color: #fff;
-	}
-
-	a {
-		width: 100%;
-		padding-left: 0.8em;
-		text-align: left;
 	}
 }
 
@@ -174,6 +183,23 @@
 
 		&::after {
 			opacity: 0.7;
+		}
+	}
+}
+
+.teacherList {
+	// display: inline-block;
+
+	ul {
+		display: flex;
+		// flex-wrap: wrap;
+		// flex-direction: column;
+		gap: 1rem;
+		height: 13rem;
+
+		.teacher {
+			flex-shrink: 0;
+			width: 180px;
 		}
 	}
 }
