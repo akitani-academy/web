@@ -13,9 +13,9 @@
         width: fit-content;
         height: 100%;
 
-        // >div {
-        //     flex-shrink: 0;
-        // }
+        >div {
+            min-height: 100%;
+        }
     }
 }
 

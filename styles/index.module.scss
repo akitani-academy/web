@@ -233,14 +233,13 @@
 }
 
 .gallery {
-	// width: 100vw;
-	// margin: 0 calc(50% - 50vw);
 	margin-top: 1rem;
+	display: flex;
+	gap: 1rem;
 
-	// padding: 0 calc(50vw - 50%);
-	.gallery_img {
-		height: 8rem;
-		object-fit: cover;
-		cursor: pointer;
+	li {
+		img {
+			min-width: 200px;
+		}
 	}
 }

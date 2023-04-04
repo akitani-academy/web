@@ -268,33 +268,6 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 									</LoopCarousel>
 								</>
 							)} */}
-							{e.gallery && (
-								<Splide
-									className={css.gallery}
-									aria-label="お気に入りの写真"
-									tag="section"
-									options={{
-										perPage: 2,
-										type: "loop",
-										autoplay: true,
-										gap: "1rem",
-										padding: "15% ",
-									}}
-								>
-									{Object.entries(e.gallery).map((e1, i) => (
-										<SplideSlide key={i}>
-											<div className={css.gallery_img} onClick={handleIncFC}>
-												<Image
-													alt={"秋谷光子アカデミィの" + i + "番目の内装の写真"}
-													src={e1[1].img}
-													layout="fill"
-													objectFit="cover"
-												></Image>
-											</div>
-										</SplideSlide>
-									))}
-								</Splide>
-							)}
 							{e.LinkList && (
 								<div className={css.more}>
 									<LinkList
@@ -303,6 +276,50 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 											item.Link.url
 										])} />
 								</div>
+							)}
+							{e.gallery && (
+								<LoopCarousel>
+									<ul className={css.gallery}>
+										{Object.entries(e.gallery).map((e1, i) => (
+											<li>
+												<Image
+													alt={"秋谷光子アカデミィの" + i + "番目の内装の写真"}
+													src={e1[1].img}
+													width={"400"}
+													height={"300"}
+												// layout="fill"
+												// objectFit="cover"
+												></Image>
+											</li>
+										))}
+									</ul>
+								</LoopCarousel>
+
+								// <Splide
+								// 	className={css.gallery}
+								// 	aria-label="お気に入りの写真"
+								// 	tag="section"
+								// 	options={{
+								// 		perPage: 2,
+								// 		type: "loop",
+								// 		autoplay: true,
+								// 		gap: "1rem",
+								// 		padding: "15% ",
+								// 	}}
+								// >
+								// 	{Object.entries(e.gallery).map((e1, i) => (
+								// 		<SplideSlide key={i}>
+								// 			<div className={css.gallery_img} onClick={handleIncFC}>
+								// 				<Image
+								// 					alt={"秋谷光子アカデミィの" + i + "番目の内装の写真"}
+								// 					src={e1[1].img}
+								// 					layout="fill"
+								// 					objectFit="cover"
+								// 				></Image>
+								// 			</div>
+								// 		</SplideSlide>
+								// 	))}
+								// </Splide>
 							)}
 						</>
 					))}

@@ -1,9 +1,13 @@
-import Head from "components/head";
 
+import Image from "next/image";
+
+import Head from "components/head";
 import css_contact from "styles/contact.module.scss";
 import Contact from "components/widget/Contact"
 
 export default function Page({ wpDATA }) {
+
+  console.log(wpDATA)
   return (
     <>
       <Head
@@ -11,6 +15,16 @@ export default function Page({ wpDATA }) {
         description={wpDATA.summary}
         breadcrumb={[[wpDATA.subTitle, "/news"]]}
       />
+      <div className="thumbnail" >
+        <Image
+          alt={"秋谷光子アカデミィの生徒のの写真"}
+          src={wpDATA.thumbnail}
+          // width={"400"}
+          // height={"300"}
+          layout="fill"
+          objectFit="cover"
+        ></Image>
+      </div>
       <h1 data-subtitle={wpDATA.subTitle}>{wpDATA.title}</h1>
       <article className="news" dangerouslySetInnerHTML={{ __html: wpDATA.content }} />
       <aside className={css_contact.contact}>
