@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 iframe {
@@ -153,6 +154,7 @@ main {
   margin-top: 80px;
   padding: 4vw;
   display: flex;
+  gap: 3vw;
 
   >article {
     width: 100%;
