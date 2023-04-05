@@ -4,15 +4,7 @@ import classNames from 'classnames';
 
 import styles from "styles/Slideshow.module.scss";
 
-type Props = {
-    images: [string, string][];
-    seconds: number;
-};
-
 export default function Slideshow({ images, seconds }: Props) {
-
-    // images.reverse();
-
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
@@ -25,7 +17,7 @@ export default function Slideshow({ images, seconds }: Props) {
 
     return (
         <div className={styles.slideshow}>
-            {images.map(([url, alt], index) => (
+            {images.map((e, index) => (
                 <div
                     key={index}
                     className={classNames(
@@ -34,9 +26,10 @@ export default function Slideshow({ images, seconds }: Props) {
                     )}
                 >
                     <Image
-                        src={url} alt={alt}
-                        layout="fill"
-                        objectFit="cover"
+                        src={e.image.src}
+                        alt={e.image.alt}
+                        width={1080}
+                        height={1080 * e.image.height / e.image.width}
                     />
                 </div>
             ))}

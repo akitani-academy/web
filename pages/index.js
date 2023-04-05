@@ -80,13 +80,56 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 				<section className={css.topImg}>
 					<div className={css.bg}>
 						<Slideshow images={[
-							["/miniDSC_1875.jpg", "秋谷光子アカデミィの田園調布校の写真"],
-							["https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/02/292A1372.jpg", "秋谷光子アカデミィの講師による授業風景"],
-							["https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/02/292A1785.jpg", "秋谷光子アカデミィの講師による中学生の授業風景"],
-							["https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/02/292A1558.jpg", "秋谷光子アカデミィの講師による先生の授業風景"],
-							["https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/02/292A1398.jpg", "秋谷光子アカデミィの講師による大学生の授業風景"],
-							["https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/04/292A1543.jpg", "秋谷光子アカデミィの綱島校の写真"],
-							["https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2023/04/DSC01268のコピー.jpg", "秋谷光子アカデミィの中高生の授業風景"]
+							{
+								alt: "秋谷光子アカデミィの田園調布校の写真",
+								image: {
+									src: "/miniDSC_1875.jpg",
+									width: 2100,
+									height: 1395
+								}
+							}, {
+								alt: "秋谷光子アカデミィの講師による授業風景",
+								image: {
+									src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/02/292A1372.jpg",
+									width: 2048,
+									height: 1365
+								}
+							}, {
+								alt: "秋谷光子アカデミィの講師による中学生の授業風景",
+								image: {
+									src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/02/292A1785.jpg",
+									width: 2048,
+									height: 1365
+								}
+							}, {
+								alt: "秋谷光子アカデミィの講師による先生の授業風景",
+								image: {
+									src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/02/292A1558.jpg",
+									width: 2048,
+									height: 1365
+								}
+							}, {
+								alt: "秋谷光子アカデミィの講師による大学生の授業風景",
+								image: {
+									src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/02/292A1398.jpg",
+									width: 2048,
+									height: 1365
+								}
+							}, {
+								alt: "秋谷光子アカデミィの綱島校の写真",
+								image: {
+									src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/04/292A1543.jpg",
+									width: 2048,
+									height: 1365
+								}
+							}, {
+								alt: "秋谷光子アカデミィの中高生の授業風景",
+								image: {
+									src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2023/04/DSC01268のコピー.jpg",
+									width: 2048,
+									height: 1365
+								}
+							}
 						]} seconds={5} />
 					</div>
 					<div>

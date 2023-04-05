@@ -7,7 +7,7 @@ import Contact from "components/widget/Contact"
 
 export default function Page({ wpDATA }) {
 
-  console.log(wpDATA)
+  // console.log(wpDATA)
   return (
     <>
       <Head
