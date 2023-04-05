@@ -26,10 +26,10 @@ export default function Slideshow({ images, seconds }) {
                     )}
                 >
                     <Image
-                        src={e.image.src}
-                        alt={e.image.alt}
+                        src={e.src}
+                        alt={e.alt}
                         width={1080}
-                        height={1080 * e.image.height / e.image.width}
+                        height={1080 * e.height / e.width}
                     />
                 </div>
             ))}
