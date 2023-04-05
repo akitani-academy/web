@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import styles from "styles/Slideshow.module.scss";
 
-export default function Slideshow({ images, seconds }: Props) {
+export default function Slideshow({ images, seconds }) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
