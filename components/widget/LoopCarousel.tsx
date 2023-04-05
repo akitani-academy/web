@@ -50,8 +50,7 @@ const LoopScroll = ({ children, width }) => {
     }, [firstItemInView]);
     useEffect(() => {
         if (lastItemInView) {
-            carouselRef.current.scrollLeft =
-                containerRef.current.scrollWidth / 3 - containerRef.current.offsetWidth;
+            carouselRef.current.scrollLeft = containerRef.current.scrollWidth / 3 - carouselRef.current.offsetWidth;
         }
     }, [lastItemInView]);
 
