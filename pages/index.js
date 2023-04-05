@@ -364,7 +364,14 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 					<ul>
 						{imgList.map((e, i) => (
 							<li key={i}>
-								<Image src={imgList[i]} layout="fill" objectFit="cover" alt={`秋谷光子アカデミィの校内の写真${i}`} />
+								<Image
+									src={imgList[i]}
+									layout="fill"
+									objectFit="cover"
+									alt={`秋谷光子アカデミィの校内の写真${i}`}
+									fill
+									sizes="33vw"
+								/>
 							</li>
 						))}
 					</ul>
