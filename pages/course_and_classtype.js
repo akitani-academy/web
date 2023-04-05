@@ -1,16 +1,14 @@
-import Head from "components/head";
-import Image from "next/image";
-import Link from "next/link";
-
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Router from "next/router";
 
+import Head from "components/head";
 import View from "components/widget/View";
 import Select from "components/widget/Select";
+import Contact from "components/widget/Contact"
 
 import css from "styles/course_and_classtype.module.scss";
-
-import { useEffect } from "react";
+import css_contact from "styles/contact.module.scss";
 export default function Page({ description, courseData, classtypeData }) {
 	useEffect(() => {
 		resize();
@@ -129,6 +127,9 @@ export default function Page({ description, courseData, classtypeData }) {
 			</section>
 			<View data={courseData} name={"course"} />
 			<View data={classtypeData} name={"classtype"} />
+			<aside className={css_contact.contact}>
+				<Contact short="true" />
+			</aside>
 		</>
 	);
 }

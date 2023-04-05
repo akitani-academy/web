@@ -13,7 +13,7 @@ function Page({ data, name }) {
 		data = data.find(function (e) {
 			return e.slug === now;
 		});
-		console.log(data.post)
+		// console.log(data.post)
 		return (
 			<>
 				<section className={css.View}>
@@ -22,7 +22,7 @@ function Page({ data, name }) {
 						id={name}
 						data-subtitle={name == "course" ? "コース" : "授業形態"}
 					>
-						<span>{data.title}</span>
+						<span>{data.title}</span>{name == "course" ? "コース" : ""}
 					</h2>
 					<section className={css.flex}>
 						<article className={css.article}>

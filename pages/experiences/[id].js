@@ -2,6 +2,7 @@ import Head from "components/head";
 import { useRouter } from "next/router";
 import List from "components/widget/LinkList";
 
+import css_experiences from "styles/experiences.module.scss";
 import css_contact from "styles/contact.module.scss";
 import Contact from "components/widget/Contact"
 export default function Page({ post }) {
@@ -20,12 +21,14 @@ export default function Page({ post }) {
         秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計173人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。圧倒的な実績に合わせて合格体験記を数多く掲載しております。
       </p>
       <List data={[["その他の合格体験記を見る", "/experiences"]]} />
-      <h1>{post.title}</h1>
-      <h2>{post.student}</h2>
-      <article dangerouslySetInnerHTML={{ __html: post.content }}></article>
-			<aside className={css_contact.contact}>
-				<Contact short="true" />
-			</aside>
+      <article className={css_experiences.article}>
+        <h1>{post.title}</h1>
+        <h2>{post.student}</h2>
+        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      </article>
+      <aside className={css_contact.contact}>
+        <Contact short="true" />
+      </aside>
     </>
   );
 }

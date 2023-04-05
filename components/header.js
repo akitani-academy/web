@@ -87,11 +87,11 @@ function Page() {
               </li>
             </ul>
           </section>
-          {url[1] == "method" && url[2] && (
+          {/* {url[1] == "method" && url[2] && (
             <Link legacyBehavior href={"/course_and_classtype"}>
               <a className={css.backButton}>コース説明にもどる</a>
             </Link>
-          )}
+          )} */}
         </section>
       </header>
     </>

@@ -166,7 +166,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 
 
 					{top.feature.map((e, i) => (
-						<>
+						<div>
 							<h2
 								dangerouslySetInnerHTML={{
 									__html: parser.translateHTMLString(e.title),
@@ -174,11 +174,11 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 								key={i}
 								id={i}
 							></h2>
-							<article
+							<div
 								dangerouslySetInnerHTML={{
 									__html: parser.translateHTMLString(e.body),
 								}}
-							></article>
+							></div>
 							{e.option == "course_and_classtype" && (
 								<Link legacyBehavior href={"/course_and_classtype"}>
 									<a className={css.courseAndClasstype}>
@@ -325,7 +325,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 									</ul>
 								</LoopCarousel>
 							)}
-						</>
+						</div>
 					))}
 				</article>
 				<Nav />

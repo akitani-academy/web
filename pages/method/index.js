@@ -19,6 +19,9 @@ export default function Page({
         breadcrumb={[["合格へのHowTo", "/method"]]}
       />
       <h1>合格へのHow To</h1>
+      <p>
+        秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計173人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。圧倒的な実績をもとにノウハウを合格のHowToとして公開しています。
+      </p>
       <h2>英検の合格対策</h2>
       <List data={eiken} />
       <h2>大学受験の合格対策</h2>
@@ -56,7 +59,7 @@ export async function getStaticProps() {
 async function getPost(catID) {
   var data = await fetch(
     "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/posts?per_page=100&categories=" +
-      catID
+    catID
   ).then((res) => res.json());
   data = data.map((e, i) => [e.listTitle, "/method/" + e.slug]).reverse();
   return data;
