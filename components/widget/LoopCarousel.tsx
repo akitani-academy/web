@@ -19,18 +19,28 @@ const LoopScroll = ({ children, width }) => {
 
     useEffect(() => {
         let requestId: number;
+        let lastTimestamp: number;
+        let timeDelta: number;
 
-        const autoScroll = () => {
+        const autoScroll = (timestamp: number) => {
             if (!isHovering && carouselRef.current) {
-                carouselRef.current.scrollLeft = carouselRef.current.scrollLeft + 1;
+                if (lastTimestamp) {
+                    timeDelta = timestamp - lastTimestamp;
+                    if (30 < timeDelta) {
+                        carouselRef.current.scrollLeft += 1;
+                        lastTimestamp = timestamp
+                    }
+                } else {
+                    lastTimestamp = timestamp;
+                }
             }
             requestId = requestAnimationFrame(autoScroll);
-        }
+        };
         requestId = requestAnimationFrame(autoScroll);
 
         return () => {
             cancelAnimationFrame(requestId);
-        }
+        };
     }, [isHovering]);
 
     useEffect(() => {
