@@ -56,24 +56,26 @@ const LoopScroll = ({ children, width }) => {
     }, [lastItemInView]);
 
     return (
-        <div
-            className={styles.carousel}
-            ref={carouselRef}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onTouchStart={handleMouseEnter}
-            onTouchEnd={handleMouseLeave}
-        >
-            <div className={styles.container} ref={containerRef}>
-                <div ref={firstItemRef}></div>
-                {[...Array(3)].map((_, i) => (
-                    <div className={styles.items} key={i}>
-                        {children}
-                    </div>
-                ))}
-                <div ref={lastItemRef}></div>
-            </div>
-        </div >
+        <div className={styles.gradation}>
+            <div
+                className={styles.carousel}
+                ref={carouselRef}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onTouchStart={handleMouseEnter}
+                onTouchEnd={handleMouseLeave}
+            >
+                <div className={styles.container} ref={containerRef}>
+                    <div ref={firstItemRef}></div>
+                    {[...Array(3)].map((_, i) => (
+                        <div className={styles.items} key={i}>
+                            {children}
+                        </div>
+                    ))}
+                    <div ref={lastItemRef}></div>
+                </div>
+            </div >
+        </div>
     );
 };
 

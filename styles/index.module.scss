@@ -11,7 +11,10 @@
 
 	article {
 		max-width: 35rem;
-		// margin-right: 3rem;
+
+		p {
+			margin-bottom: .5rem;
+		}
 	}
 
 	.more {
@@ -135,6 +138,7 @@
 		background-color: $c_2;
 		color: #fff;
 	}
+
 }
 
 .courseAndClasstype {
