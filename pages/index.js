@@ -85,7 +85,8 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 							["https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/02/292A1785.jpg", "秋谷光子アカデミィの講師による中学生の授業風景"],
 							["https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/02/292A1558.jpg", "秋谷光子アカデミィの講師による先生の授業風景"],
 							["https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/02/292A1398.jpg", "秋谷光子アカデミィの講師による大学生の授業風景"],
-							["https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/04/292A1543.jpg", "秋谷光子アカデミィの綱島校の写真"]
+							["https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/04/292A1543.jpg", "秋谷光子アカデミィの綱島校の写真"],
+							["https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2023/04/DSC01268のコピー.jpg", "秋谷光子アカデミィの中高生の授業風景"]
 						]} seconds={5} />
 					</div>
 					<div>
@@ -162,7 +163,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 										>
 											<div className={course_and_classtype.child}>
 												<div className={course_and_classtype.main}>
-													<h5>コース</h5>
+													<div className={course_and_classtype.inputTitle}>コース</div>
 													<Select data={courseData} name={"course"} />
 												</div>
 												<ul>
@@ -179,10 +180,10 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 													))}
 												</ul>
 											</div>
-											<img src="x.svg" width={"26px"} height={"26px"} />
+											<img src="x.svg" width={"26px"} height={"26px"} alt="掛け算のアイコン" />
 											<div className={course_and_classtype.child}>
 												<div className={course_and_classtype.main}>
-													<h5>授業形態</h5>
+													<div className={course_and_classtype.inputTitle}>授業形態</div>
 													<Select data={classtypeData} name={"classtype"} />
 												</div>
 												<ul>
@@ -205,7 +206,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 							)}
 							{e.option == "curriculum" && (
 								<Link legacyBehavior href={"/レベル別カリキュラム.pdf"}>
-									<a target="_blank">
+									<a target="_blank" aria-label="秋谷光子アカデミィのレベル別カリキュラムについて">
 										<div className={css.curriculum}>
 											<Logo />
 										</div>
