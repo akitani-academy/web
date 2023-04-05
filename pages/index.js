@@ -166,7 +166,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 
 
 					{top.feature.map((e, i) => (
-						<div>
+						<div key={i}>
 							<h2
 								dangerouslySetInnerHTML={{
 									__html: parser.translateHTMLString(e.title),
