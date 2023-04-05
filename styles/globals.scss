@@ -111,6 +111,10 @@ html {
 body {
   color: $c_1;
   background: $c_0;
+
+  @media (min-width: 600px) {
+    overflow-x: hidden;
+  }
 }
 
 h1,
