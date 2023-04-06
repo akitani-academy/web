@@ -81,15 +81,15 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 					<div className={css.bg}>
 						<Slideshow images={[
 							{
-								alt: "秋谷光子アカデミィの田園調布校の写真",
-								src: "/miniDSC_1875.jpg",
-								width: 2100,
-								height: 1395
-							}, {
 								alt: "秋谷光子アカデミィの講師による授業風景",
 								src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/02/292A1372.jpg",
 								width: 2048,
 								height: 1365
+							}, {
+								alt: "秋谷光子アカデミィの田園調布校の写真",
+								src: "/miniDSC_1875.jpg",
+								width: 2100,
+								height: 1395
 							}, {
 								alt: "秋谷光子アカデミィの講師による中学生の授業風景",
 								src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/02/292A1785.jpg",
