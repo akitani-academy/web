@@ -30,7 +30,7 @@ export default function Slideshow({ images, seconds }) {
                         alt={e.alt}
                         width={1000}
                         height={1000 * e.height / e.width}
-                        sizes="(max-width: 708px) 100vw, 1000px"
+                        sizes="(max-width: 1000px) 100vw, 1000px"
                     />
                 </div>
             ))}
