@@ -340,11 +340,9 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 							<li key={i}>
 								<Image
 									src={imgList[i]}
-									layout="fill"
-									objectFit="cover"
 									alt={`秋谷光子アカデミィの校内の写真${i}`}
 									fill
-									sizes="33vw"
+									sizes="200px"
 								/>
 							</li>
 						))}
