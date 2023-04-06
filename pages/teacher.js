@@ -22,6 +22,7 @@ export default function Page({ faq }) {
                   layout="responsive"
                   width={6240}
                   height={4160}
+                  sizes="272px"
                 ></Image>
               </div>
             )}

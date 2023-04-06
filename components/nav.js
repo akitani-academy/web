@@ -44,7 +44,7 @@ function Page() {
               <>
                 {(() => {
                   if (e1.title) {
-                    return <h6 className={e1.class}>{e1.title}</h6>;
+                    return <div className={e1.class}>{e1.title}</div>;
                   }
                 })()}
                 <ul key={i1} className={e1.class}>
