@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import Router from "next/router";
-import { useEffect } from "react";
 
 import css from "styles/Select.module.scss";
 
@@ -17,9 +16,6 @@ function Page({ data, name }) {
 		);
 		Router.push("#" + [name]);
 	}
-	// useEffect(() => {
-	//   console.log("hello~~");
-	// }, [router]);
 	return (
 		<>
 			<div className={css.main}>

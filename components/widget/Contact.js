@@ -1,6 +1,8 @@
+const _V = require("/components/_V.js");
 import Script from "next/script";
-let _V = require("/components/_V.js");
+
 import LinkList from "components/widget/LinkList";
+
 import css from "styles/contact.module.scss";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
@@ -172,10 +174,8 @@ export default function Page({ short }) {
 				></textarea>
 
 				<GoogleReCaptchaProvider
-					// ref={recaptchaRef}
 					size="invisible"
 					sitekey="6LeRFNkfAAAAABuAD9cwj08_XwWcOWn6HqO3NN-D"
-				// onChange={onReCAPTCHAChange}
 				/>
 				<input type="text" name="honeypot" className="honeypot" />
 				<input type="hidden" name="replyTo" value="@" />

@@ -1,5 +1,5 @@
-import Head from "next/head";
 const _V = require("./_V.js");
+import Head from "next/head";
 
 function Page({ title, description, ogp, url, breadcrumb }) {
 	if (title) {
@@ -23,7 +23,6 @@ function Page({ title, description, ogp, url, breadcrumb }) {
 			itemListElement: breadcrumb,
 		};
 	}
-	// console.log(breadcrumb);
 
 	return (
 		<Head>

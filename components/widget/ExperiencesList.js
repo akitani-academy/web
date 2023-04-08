@@ -1,8 +1,4 @@
-import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
-
-import List from "components/widget/LinkList";
 
 import css from "styles/ExperiencesList.module.scss";
 

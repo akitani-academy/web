@@ -1,7 +1,7 @@
-import { formatWithValidation } from "next/dist/shared/lib/utils";
-import Head from "components/head";
 import Image from "next/image";
-import Link from "next/link";
+
+import Layout from "components/layout";
+import Head from "components/head";
 
 import css from "styles/teacher.module.scss";
 
@@ -52,7 +52,6 @@ export default function Page({ faq }) {
   );
 }
 
-import Layout from "/components/layout";
 Page.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;
 };

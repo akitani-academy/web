@@ -1,13 +1,8 @@
+import Layout from "components/layout";
 import Head from "components/head";
-import Image from "next/image";
-import Link from "next/link";
-import Script from "next/script";
-
-let _V = require("/components/_V.js");
-
 import List from "components/widget/LinkList";
 
-export default function Page({ faq }) {
+export default function Page() {
   return (
     <>
       <Head
@@ -24,7 +19,6 @@ export default function Page({ faq }) {
   );
 }
 
-import Layout from "/components/layout";
 Page.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;
 };

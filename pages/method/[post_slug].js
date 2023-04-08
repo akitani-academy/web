@@ -1,14 +1,11 @@
+import { useRouter } from "next/router";
+import Layout from "components/layout";
 import Head from "components/head";
-
 import List from "components/widget/LinkList";
-
-let _V = require("/components/_V.js");
-
-import css_index from "styles/index.module.scss";
-import css from "styles/contact.module.scss";
 import Contact from "components/widget/Contact"
 
-import { useRouter } from "next/router";
+import css_index from "styles/index.module.scss";
+import css_contact from "styles/contact.module.scss";
 
 export default function Page({ post }) {
 	const router = useRouter();
@@ -33,46 +30,35 @@ export default function Page({ post }) {
 				<div dangerouslySetInnerHTML={{ __html: post.content }} />
 			</article>
 
-			<aside className={css.contact}>
+			<aside className={css_contact.contact}>
 				<Contact short="true" />
 			</aside>
 		</>
 	);
 }
 
-import Layout from "/components/layout";
 Page.getLayout = function getLayout(page) {
 	return <Layout>{page}</Layout>;
 };
 
-// この関数はビルド時に呼び出されます。
 export async function getStaticPaths() {
-	// 外部APIエンドポイントを呼び出して記事を取得します。
 	const res = await fetch(
 		"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/posts?per_page=100"
 	);
 	const posts = await res.json();
 
-	// 記事に基づいてプリレンダリングしたいパスを取得します
 	const paths = posts.map((post) => ({
 		params: { post_slug: post.slug },
 	}));
-	// console.log(paths);
 
-	// ビルド時にこれらのパスだけをプリレンダリングします。
-	// { fallback: false } は他のルートが404になることを意味します。
 	return { paths, fallback: false };
 }
 
-// ビルド時にも呼び出されます。
 export async function getStaticProps({ params }) {
-	// paramsは記事の`id`を含みます。
-	// ルートが/posts/1のような時、params.id は1です。
 	const post = await fetch(
 		"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/posts?slug=" +
 		params.post_slug
 	).then((res) => res.json());
 
-	// 記事データをprops経由でページに渡します。
 	return { props: { post: post[0] } };
 }

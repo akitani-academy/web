@@ -1,8 +1,7 @@
+const _V = require("./_V.js");
 import { useRouter } from "next/router";
 import Link from "next/link";
 import UseSWR from "swr";
-
-let _V = require("./_V.js");
 
 import css from "styles/header.module.scss";
 

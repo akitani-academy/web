@@ -1,7 +1,7 @@
-import Head from "components/head";
-import Image from "next/image";
-import Link from "next/link";
+import classNames from "classnames";
 
+import Layout from "components/layout";
+import Head from "components/head";
 import List from "components/widget/LinkList";
 import ExperiencesList from "components/widget/ExperiencesList";
 
@@ -78,8 +78,6 @@ export default function Page({ data }) {
 	);
 }
 
-import Layout from "/components/layout";
-import classNames from "classnames";
 Page.getLayout = function getLayout(page) {
 	return <Layout>{page}</Layout>;
 };

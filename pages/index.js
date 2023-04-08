@@ -46,6 +46,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 		"https://akitani-academy.jp/_next/image?url=https%3A%2F%2Fyoshikitam.wpx.jp%2Fakitani%2Fwp-content%2Fuploads%2F2022%2F04%2F292A1663.jpg&w=1920&q=75",
 	];
 
+	// TASK: 先生のカードリストのオートスクロールを実装予定
 	// let teacherListOdd = teacherList.filter(num => Number(num) % 2 !== 0);
 	// let teacherListEven = teacherList.filter(num => Number(num) % 2 === 0);
 

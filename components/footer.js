@@ -1,8 +1,7 @@
+const _V = require("./_V.js");
+
 import Link from "next/link";
 
-let _V = require("./_V.js");
-
-import base from "styles/base.module.scss";
 import css from "styles/footer.module.scss";
 
 function Page() {

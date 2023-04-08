@@ -1,15 +1,13 @@
-import Head from "components/head";
-import Image from "next/image";
-import Link from "next/link";
 
+const _V = require("components/_V.js");
+import Head from "components/head";
 import List from "components/widget/LinkList";
 
-let _V = require("components/_V.js");
-
-export default function Page({ faq }) {
-  if (process.browser) {
-    // import "https://yubinbango.github.io/yubinbango/yubinbango.js";
-  }
+export default function Page() {
+  // TASK: 住所自動入力
+  // if (process.browser) {
+  //   import "https://yubinbango.github.io/yubinbango/yubinbango.js";
+  // }
   return (
     <>
       <Head title="アクセス" breadcrumb={[["アクセス", "/access"]]} />

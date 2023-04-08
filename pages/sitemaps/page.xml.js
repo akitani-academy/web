@@ -27,6 +27,7 @@ export default Sitemap;
 function sitemapXML(posts, getCourseData, getClasstypeData) {
 	let xml = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
 
+	console.log(posts)
 	posts.forEach((post) => {
 		let slug = "/" + post.slug;
 		if (slug == "/index") {
@@ -35,7 +36,7 @@ function sitemapXML(posts, getCourseData, getClasstypeData) {
 
 		xml += `
 			<url>
-				<loc>https://akitani-academy.jp${slug}</loc>
+				<loc>${_V.meta.baseURL}${slug}</loc>
 				<lastmod>${post.dateSitemap}</lastmod>
 			</url>
 			`;
@@ -44,14 +45,14 @@ function sitemapXML(posts, getCourseData, getClasstypeData) {
 			getCourseData.forEach((course) => {
 				xml += `
 						<url>
-							<loc>https://akitani-academy.jp/course_and_classtype?course=${course.slug}</loc>
+							<loc>${_V.meta.baseURL}/course_and_classtype?course=${course.slug}</loc>
 							<lastmod>${post.dateSitemap}</lastmod>
 						</url>
 						`;
 				getClasstypeData.forEach((classtype) => {
 					xml += `
 							<url>
-								<loc>https://akitani-academy.jp/course_and_classtype?course=${course.slug}&amp;classtype=${classtype.slug}</loc>
+								<loc>${_V.meta.baseURL}/course_and_classtype?course=${course.slug}&amp;classtype=${classtype.slug}</loc>
 								<lastmod>${post.dateSitemap}</lastmod>
 							</url>
 							`;
@@ -60,7 +61,7 @@ function sitemapXML(posts, getCourseData, getClasstypeData) {
 			getClasstypeData.forEach((classtype) => {
 				xml += `
 						<url>
-							<loc>https://akitani-academy.jp/course_and_classtype?classtype=${classtype.slug}</loc>
+							<loc>${_V.meta.baseURL}/course_and_classtype?classtype=${classtype.slug}</loc>
 							<lastmod>${post.dateSitemap}</lastmod>
 						</url>
 						`;
@@ -70,12 +71,4 @@ function sitemapXML(posts, getCourseData, getClasstypeData) {
 
 	xml += `</urlset>`;
 	return xml;
-}
-function url(e) {
-	return `
-		<url>
-			<loc>https://akitani-academy.jp${slug}</loc>
-			<lastmod>${post.dateSitemap}</lastmod>
-		</url>
-		`;
 }

@@ -12,6 +12,7 @@ class MyDocument extends Document {
 						href="https://fonts.gstatic.com"
 						crossOrigin="true"
 					/>
+					{/* TASK: font-optimization実装 */}
 					<link
 						href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&display=swap"
 						rel="stylesheet"

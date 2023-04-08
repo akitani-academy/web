@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+
 import styles from 'styles/LoopCarousel.module.scss';
 
 const LoopScroll = ({ children, width }) => {

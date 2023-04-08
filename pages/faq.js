@@ -1,7 +1,6 @@
 import Head from "components/head";
-import Image from "next/image";
-import Link from "next/link";
 
+import Layout from "components/layout";
 import css from "styles/faq.module.scss";
 
 export default function Page({ faq }) {
@@ -28,7 +27,6 @@ export default function Page({ faq }) {
 	);
 }
 
-import Layout from "/components/layout";
 Page.getLayout = function getLayout(page) {
 	return <Layout>{page}</Layout>;
 };

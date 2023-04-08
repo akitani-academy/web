@@ -14,12 +14,12 @@ export default function MyApp({ Component, pageProps }) {
 			/>
 			<Script id="google-analytics" strategy="afterInteractive">
 				{`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-NWLCNYE48X');
-          gtag('config', 'UA-222170888-1');
-        `}
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){window.dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', 'G-NWLCNYE48X');
+				gtag('config', 'UA-222170888-1');
+				`}
 			</Script>
 			<Component {...pageProps} />
 		</>

@@ -1,14 +1,14 @@
 import Head from "components/head";
 import Image from "next/image";
-import Link from "next/link";
 
 import { loadDefaultJapaneseParser } from "budoux";
 const parser = loadDefaultJapaneseParser();
 
-import css from "styles/greeting.module.scss";
-
-import css_contact from "styles/contact.module.scss";
+import Layout from "components/layout";
 import Contact from "components/widget/Contact"
+
+import css from "styles/greeting.module.scss";
+import css_contact from "styles/contact.module.scss";
 
 export default function Page({ wpDATA }) {
 	return (
@@ -23,7 +23,7 @@ export default function Page({ wpDATA }) {
 					src={"/292A1489.jpg"}
 					width={"2048"}
 					height={"1365"}
-					objectFit={"cover"}
+					sizes={"560"}
 				/>
 			</div>
 			<h1
@@ -44,7 +44,6 @@ export default function Page({ wpDATA }) {
 	);
 }
 
-import Layout from "/components/layout";
 Page.getLayout = function getLayout(page) {
 	return <Layout>{page}</Layout>;
 };

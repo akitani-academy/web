@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Router from "next/router";
 
+import Layout from "components/layout";
 import Head from "components/head";
 import View from "components/widget/View";
 import Select from "components/widget/Select";
@@ -79,9 +80,6 @@ export default function Page({ description, courseData, classtypeData }) {
 			<Head title={selectTitle} breadcrumb={breadcrumb} />
 			<h1>コース と 授業形態</h1>
 			<div dangerouslySetInnerHTML={{ __html: String(description) }} />
-			{/* <p>
-				入塾の際、塾長が面談を行い、お一人お一人に合った最適な授業をコーディネート致します。
-			</p> */}
 			<section className={css.slect + " selectArea"}>
 				<div className={css.child}>
 					<div className={css.main}>
@@ -134,7 +132,6 @@ export default function Page({ description, courseData, classtypeData }) {
 	);
 }
 
-import Layout from "/components/layout";
 Page.getLayout = function getLayout(page) {
 	return <Layout>{page}</Layout>;
 };
