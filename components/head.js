@@ -29,6 +29,7 @@ function Page({ title, description, ogp, url, breadcrumb }) {
 			<meta name="robots" content="index, follow" />
 			<meta property="og:type" content="article" />
 			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="theme-color" content="#be2522" />
 			{/* <meta name="twitter:site" content="@tcr_jp" /> */}
 			{_V.meta.siteTitle && (
 				<>

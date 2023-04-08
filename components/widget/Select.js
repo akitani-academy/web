@@ -1,8 +1,6 @@
 import { useRouter } from "next/router";
 import Router from "next/router";
 
-import css from "styles/Select.module.scss";
-
 function Page({ data, name }) {
 	const router = useRouter();
 	function pushQuery(e) {
@@ -18,7 +16,7 @@ function Page({ data, name }) {
 	}
 	return (
 		<>
-			<div className={css.main}>
+			<div>
 				<select onChange={pushQuery} name={name + "S"}>
 					<option disabled selected>
 						選択する

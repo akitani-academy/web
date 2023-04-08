@@ -5,12 +5,9 @@
     margin-top: 2rem;
 
     @include MQ(xl) {
-        // width: fit-content;
-        // min-width: 95%;
-        // margin: auto;
-    padding: 2rem 2.5rem;
-    margin-right: -2.5rem;
-    margin-left:  -2.5rem;
+        padding: 2rem 2.5rem;
+        margin-right: -2.5rem;
+        margin-left: -2.5rem;
     }
 
     h2 {
