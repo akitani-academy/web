@@ -1,10 +1,11 @@
 
 import Image from "next/image";
 
+import Layout from "/components/layout";
 import Head from "components/head";
-import css_contact from "styles/contact.module.scss";
 import Contact from "components/widget/Contact"
 
+import css_contact from "styles/contact.module.scss";
 export default function Page({ wpDATA }) {
 
   // console.log(wpDATA)
@@ -34,7 +35,6 @@ export default function Page({ wpDATA }) {
   );
 }
 
-import Layout from "/components/layout";
 Page.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;
 };

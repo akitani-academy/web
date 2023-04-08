@@ -1,7 +1,4 @@
 import Head from "components/head";
-import Image from "next/image";
-import Link from "next/link";
-
 import List from "components/widget/LinkList";
 
 export default function Page({

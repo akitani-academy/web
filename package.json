@@ -9,8 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@splidejs/react-splide": "^0.7.5",
-    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@svgr/webpack": "^7.0.0",
     "@types/react-google-recaptcha": "^2.1.5",
     "budoux": "^0.5.0",
@@ -28,9 +26,9 @@
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
-    "@types/react": "^18.0.31",
+    "@types/react": "^18.0.33",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.4"
   }
 }

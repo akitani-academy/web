@@ -1,50 +1,31 @@
 /* eslint-disable react/no-unknown-property */
 
-import Head from "components/head";
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
-import css from "styles/index.module.scss";
 
 import { loadDefaultJapaneseParser } from "budoux";
 const parser = loadDefaultJapaneseParser();
 
+import Head from "components/head";
+import Header from "components/header";
+import Footer from "components/footer";
+import Nav from "components/nav";
+import LinkList from "components/widget/LinkList";
 import Select from "components/widget/Select";
+import Slideshow from "components/widget/Slideshow"
+import LoopCarousel from 'components/widget/LoopCarousel';
 
+import css from "styles/index.module.scss";
 import course_and_classtype from "styles/course_and_classtype.module.scss";
-
+// import styles from 'styles/LoopCarousel.module.scss';
 import Logo from "/public/curriculum.svg";
 
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/react-splide/css";
-
-import Slideshow from "components/widget/Slideshow"
-import LinkList from "components/widget/LinkList";
-
-import UseSWR from "swr";
-function lbState() {
-	const { lbData, lbMutate } = UseSWR("lb_state", () => window.count);
-	return {
-		lbData: lbData || false,
-		lbMutate: (count) => {
-			window.count = count;
-			lbMutate();
-		},
-	};
-}
-
-import { useEffect } from "react";
-
-import LoopCarousel from 'components/widget/LoopCarousel';
-import styles from 'styles/LoopCarousel.module.scss';
 export default function Page({ top, news, courseData, classtypeData, teacherList }) {
-	const { lbData, lbMutate } = lbState();
-	const handleIncFC = () => lbMutate(!lbData);
 
 	useEffect(() => {
 		resize();
 		window.addEventListener("resize", resize);
-		// document.addEventListener("load", resize);
 		function resize() {
 			if (450 > window.innerWidth) {
 				document.querySelector(".selectArea").style.transform =
@@ -56,7 +37,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 				document.querySelector(".selectArea").style.width = "";
 			}
 		}
-	});
+	}, []);
 
 	const nowImg =
 		"https://akitani-academy.jp/_next/image?url=https%3A%2F%2Fyoshikitam.wpx.jp%2Fakitani%2Fwp-content%2Fuploads%2F2022%2F04%2F292A1543.jpg&w=1920&q=75";
@@ -65,11 +46,8 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 		"https://akitani-academy.jp/_next/image?url=https%3A%2F%2Fyoshikitam.wpx.jp%2Fakitani%2Fwp-content%2Fuploads%2F2022%2F04%2F292A1663.jpg&w=1920&q=75",
 	];
 
-	// console.log(teacherList)
-	let teacherListOdd = teacherList.filter(num => Number(num) % 2 !== 0);
-	let teacherListEven = teacherList.filter(num => Number(num) % 2 === 0);
-	// console.log(news)
-
+	// let teacherListOdd = teacherList.filter(num => Number(num) % 2 !== 0);
+	// let teacherListEven = teacherList.filter(num => Number(num) % 2 === 0);
 
 	return (
 		<>
@@ -138,14 +116,6 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 						</h3>
 					</div>
 				</section>
-				{/* <section className={css.news}>
-					<h2 data-subTitle="NEWS">{news.title}</h2>
-					<Link legacyBehavior href={"/news"}>
-						<a>
-							{news.title}（<date>{news.date}</date>）
-						</a>
-					</Link>
-				</section> */}
 			</section>
 			<main className={css.main}>
 				<article>
@@ -163,7 +133,6 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 							]} />
 						</div>
 					</section>
-
 
 					{top.feature.map((e, i) => (
 						<div key={i}>
@@ -197,7 +166,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 												</div>
 												<ul>
 													{courseData.map((e, i) => (
-														<li key={i}>
+														<li key={`${e}-${i}`}>
 															<input
 																id={e.id}
 																type="radio"
@@ -317,8 +286,6 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 													src={e1[1].img}
 													width={"400"}
 													height={"300"}
-												// layout="fill"
-												// objectFit="cover"
 												></Image>
 											</li>
 										))}
@@ -330,25 +297,6 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 				</article>
 				<Nav />
 			</main>
-			{lbData == "true" && (
-				<section className={lbState + " lb_" + String(lbData)}>
-					<div>
-						<Image src={nowImg} layout="fill" objectFit="cover"></Image>
-					</div>
-					<ul>
-						{imgList.map((e, i) => (
-							<li key={i}>
-								<Image
-									src={imgList[i]}
-									alt={`秋谷光子アカデミィの校内の写真${i}`}
-									fill
-									sizes="200px"
-								/>
-							</li>
-						))}
-					</ul>
-				</section>
-			)}
 			<style jsx>{`
 				h2 {
 					font-size: 1.875rem;
@@ -366,9 +314,6 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 	);
 }
 
-import Header from "components/header";
-import Footer from "components/footer";
-import Nav from "components/nav";
 Page.getLayout = function getLayout(children) {
 	return (
 		<>
@@ -392,10 +337,10 @@ export async function getStaticProps() {
 	).then((res) => res.json());
 	top.feature = Object.values(top.feature);
 
-	let teacherList = await fetch(
-		"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/teacher?per_page=100"
-	).then((res) => res.json());
-	teacherList = teacherList.sort((a, b) => a.infoCount - b.infoCount).reverse();
+	// let teacherList = await fetch(
+	// 	"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/teacher?per_page=100"
+	// ).then((res) => res.json());
+	// teacherList = teacherList.sort((a, b) => a.infoCount - b.infoCount).reverse();
 
 	return {
 		props: {
@@ -408,7 +353,7 @@ export async function getStaticProps() {
 			).then((res) => res.json()),
 			courseData: courseData.reverse(),
 			classtypeData: classtypeData.reverse(),
-			teacherList
+			// teacherList
 		},
 	};
 }
