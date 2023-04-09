@@ -27,8 +27,8 @@ const nextConfig = {
 	async redirects() {
 		return [
 			{
-				source: "/course_and_classtype?course=schoolup",
-				destination: "/course_and_classtype?course=junior-high",
+				source: "/course_and_classtype",
+				destination: "/course_and_classtype",
 				query: { course: 'junior-high' },
 				permanent: true,
 			}, {
