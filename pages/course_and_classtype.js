@@ -26,7 +26,7 @@ export default function Page({ description, courseData, classtypeData }) {
 				document.querySelector(".selectArea").style.width = "";
 			}
 		}
-	});
+	}, []);
 
 	const router = useRouter();
 	function pushQuery(e) {
