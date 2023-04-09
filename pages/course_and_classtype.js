@@ -63,7 +63,7 @@ export default function Page({ description, courseData, classtypeData }) {
 			return e.slug === router.query.classtype;
 		});
 		if (router.query.course && router.query.classtype) {
-			selectTitle = classtype.title + "での" + course.title;
+			selectTitle = `${course.title}コースの${classtype.title}`;
 			breadcrumb = [
 				["コースと授業形態", "/course_and_classtype"],
 				[selectTitle, router.asPath],
