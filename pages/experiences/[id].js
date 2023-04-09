@@ -41,7 +41,7 @@ Page.getLayout = function getLayout(page) {
 
 export async function getStaticPaths() {
   const rest_url =
-    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/results?per_page=100&_fields=id";
+    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/results?per_page=100&_fields=id,title";
 
   const res = await fetch(rest_url);
   const totalpages = await res.headers.get("x-wp-totalpages");
@@ -52,6 +52,8 @@ export async function getStaticPaths() {
     let postsData = await resData.json();
     posts = posts.concat(postsData);
   }
+
+  posts = posts.filter(item => item.title !== "");
 
   const paths = posts.map((post) => ({
     params: { id: String(post.id) },
