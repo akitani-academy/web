@@ -39,8 +39,8 @@ module.exports.menu = [
 		class: "nav_course",
 		title: "コース",
 		content: [
-			["中学生", "/course_and_classtype?course=schoolup"],
-			["高校生", "/course_and_classtype?course=college"],
+			["中学生", "/course_and_classtype?course=junior-high"],
+			["高校生", "/course_and_classtype?course=senior-high"],
 			["大学受験", "/course_and_classtype?course=college"],
 			["英検合格", "/course_and_classtype?course=eikenn-pass"],
 			["TOEFL", "/course_and_classtype?course=toefl"],
