@@ -29,8 +29,9 @@ const nextConfig = {
 			{
 				source: "/course_and_classtype?course=schoolup",
 				destination: "/course_and_classtype?course=junior-high",
+				query: { course: 'junior-high' },
 				permanent: true,
-			},{
+			}, {
 				source: "/about-us/",
 				destination: "/",
 				permanent: true,
