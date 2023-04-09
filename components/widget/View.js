@@ -13,7 +13,6 @@ function Page({ data, name }) {
 		data = data.find(function (e) {
 			return e.slug === now;
 		});
-		console.log(data)
 		return (
 			<>
 				<section className={css.View}>

@@ -39,9 +39,10 @@ module.exports.menu = [
 		class: "nav_course",
 		title: "コース",
 		content: [
-			["英検合格", "/course_and_classtype?course=eikenn-pass"],
+			["中学生", "/course_and_classtype?course=schoolup"],
+			["高校生", "/course_and_classtype?course=college"],
 			["大学受験", "/course_and_classtype?course=college"],
-			["学校成績UP", "/course_and_classtype?course=schoolup"],
+			["英検合格", "/course_and_classtype?course=eikenn-pass"],
 			["TOEFL", "/course_and_classtype?course=toefl"],
 			["IELTS", "/course_and_classtype?course=ielts"],
 			["GTEC", "/course_and_classtype?course=gtec"],
