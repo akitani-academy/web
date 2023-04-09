@@ -5,13 +5,23 @@ function Page({ data, name }) {
 	const router = useRouter();
 	function pushQuery(e) {
 		Router.push("#" + [name]);
-		Router.push(
-			{
-				query: { ...router.query, [name]: e.target.value },
-			},
-			undefined,
-			{ scroll: false, shallow: true }
-		);
+		if (e.target.value == "schoolup") {
+			Router.push(
+				{
+					query: { ...router.query, [name]: "junior-high" },
+				},
+				undefined,
+				{ scroll: false, shallow: true }
+			);
+		} else {
+			Router.push(
+				{
+					query: { ...router.query, [name]: e.target.value },
+				},
+				undefined,
+				{ scroll: false, shallow: true }
+			);
+		}
 		Router.push("#" + [name]);
 	}
 	return (

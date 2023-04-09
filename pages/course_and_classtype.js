@@ -96,7 +96,7 @@ export default function Page({ description, courseData, classtypeData }) {
 									value={e.slug}
 									onChange={pushQuery}
 								/>
-								<label htmlFor={e.id}>{e.title}</label>
+								<label htmlFor={e.id} value={e.slug}>{e.title}</label>
 							</li>
 						))}
 					</ul>
