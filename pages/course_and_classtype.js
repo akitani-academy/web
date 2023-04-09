@@ -44,6 +44,17 @@ export default function Page({ description, courseData, classtypeData }) {
 	var selectTitle = "コースと授業形態";
 	var breadcrumb = [["コースと授業形態", "/course_and_classtype"]];
 	if (router.query) {
+
+		if (router.query.course == "schoolup") {
+			Router.push(
+				{
+					query: { ...router.query, "course": "junior-high" },
+				},
+				undefined,
+				{ scroll: false, shallow: true }
+			);
+		}
+
 		selectTitle = "";
 		let course = courseData.find(function (e) {
 			return e.slug === router.query.course;

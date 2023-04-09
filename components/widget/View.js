@@ -10,9 +10,6 @@ function Page({ data, name }) {
 	let router = useRouter();
 	let now = router.query[name];
 	if (now) {
-		if (now == "schoolup") {
-			now = "junior-high";
-		}
 		data = data.find(function (e) {
 			return e.slug === now;
 		});
