@@ -55,7 +55,7 @@ function Page({ title, description, ogp, url, breadcrumb }) {
 			)}
 			{description && (
 				<>
-					<meta property="og:description" content={description} />
+					<meta property="description" content={description} />
 				</>
 			)}
 			{breadcrumb && (
