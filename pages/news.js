@@ -10,7 +10,7 @@ export default function Page({ wpDATA }) {
     <>
       <Head
         title={wpDATA.title + "｜NEWS"}
-        description={wpDATA.summary}
+        description={wpDATA.summary.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '')}
         breadcrumb={[[wpDATA.subTitle, "/news"]]}
       />
       <div className="thumbnail" >

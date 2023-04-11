@@ -15,6 +15,7 @@ export default function Page({
       <Head
         title="合格へのHow To"
         breadcrumb={[["合格へのHowTo", "/method"]]}
+        description="秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計173人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。圧倒的な実績をもとにノウハウを合格のHowToとして公開しています。"
       />
       <h1>合格へのHow To</h1>
       <p>
