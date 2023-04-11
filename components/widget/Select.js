@@ -31,20 +31,6 @@ function Page({ data, name }) {
 						</option>
 					))}
 				</select>
-				{/* <ul>
-          {data.map((e, i) => (
-            <li key={i}>
-              <input
-                id={e.id}
-                type="radio"
-                name={name + "R"}
-                value={e.title}
-                onChange={pushQuery}
-              />
-              <label htmlFor={e.id}>{e.title}</label>
-            </li>
-          ))}
-        </ul> */}
 			</div>
 		</>
 	);

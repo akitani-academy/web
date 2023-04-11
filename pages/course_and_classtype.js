@@ -14,7 +14,6 @@ export default function Page({ description, courseData, classtypeData }) {
 	useEffect(() => {
 		resize();
 		window.addEventListener("resize", resize);
-		// document.addEventListener("load", resize);
 		function resize() {
 			if (450 > window.innerWidth) {
 				document.querySelector(".selectArea").style.transform =
@@ -29,22 +28,24 @@ export default function Page({ description, courseData, classtypeData }) {
 	}, []);
 
 	const router = useRouter();
-	function pushQuery(e) {
-		Router.push("#" + [name]);
+	function pushQuery(query, slug) {
+		Router.push("#" + query);
 		Router.push(
 			{
-				query: { ...router.query, [name]: e.target.value },
+				query: { ...router.query, [query]: slug },
 			},
 			undefined,
 			{ scroll: false, shallow: true }
 		);
-		Router.push("#" + [name]);
+		Router.push("#" + query);
 	}
 
 	var selectTitle = "コースと授業形態";
 	var breadcrumb = [["コースと授業形態", "/course_and_classtype"]];
+	// var description = ""
 	if (router.query) {
 
+		// 過去のリダイレクト処理
 		if (router.query.course == "schoolup") {
 			Router.push(
 				{
@@ -75,6 +76,7 @@ export default function Page({ description, courseData, classtypeData }) {
 					["コース", "/course_and_classtype"],
 					[course.title, router.asPath],
 				];
+				description = data.content.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '');
 			}
 			if (router.query.classtype) {
 				selectTitle = classtype.title;
@@ -88,7 +90,10 @@ export default function Page({ description, courseData, classtypeData }) {
 
 	return (
 		<>
-			<Head title={selectTitle} breadcrumb={breadcrumb} />
+			<Head
+				title={selectTitle}
+				breadcrumb={breadcrumb}
+			/>
 			<h1>コース と 授業形態</h1>
 			<div dangerouslySetInnerHTML={{ __html: String(description) }} />
 			<section className={css.slect + " selectArea"}>
@@ -99,15 +104,11 @@ export default function Page({ description, courseData, classtypeData }) {
 					</div>
 					<ul>
 						{courseData.map((e, i) => (
-							<li key={i}>
-								<input
-									id={e.id}
-									type="radio"
-									name={"courseR"}
-									value={e.slug}
-									onChange={pushQuery}
-								/>
-								<label htmlFor={e.id} value={e.slug}>{e.title}</label>
+							<li
+								key={i}
+								onClick={() => (pushQuery("course", e.slug))}
+							>
+								{e.title}
 							</li>
 						))}
 					</ul>
@@ -120,15 +121,11 @@ export default function Page({ description, courseData, classtypeData }) {
 					</div>
 					<ul>
 						{classtypeData.map((e, i) => (
-							<li key={i}>
-								<input
-									id={e.id}
-									type="radio"
-									name={"classtypeR"}
-									value={e.slug}
-									onChange={pushQuery}
-								/>
-								<label htmlFor={e.id}>{e.title}</label>
+							<li
+								key={i}
+								onClick={() => (pushQuery("classtype", e.slug))}
+							>
+								{e.title}
 							</li>
 						))}
 					</ul>

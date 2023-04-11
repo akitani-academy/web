@@ -39,13 +39,6 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 		}
 	}, []);
 
-	const nowImg =
-		"https://akitani-academy.jp/_next/image?url=https%3A%2F%2Fyoshikitam.wpx.jp%2Fakitani%2Fwp-content%2Fuploads%2F2022%2F04%2F292A1543.jpg&w=1920&q=75";
-	const imgList = [
-		"https://akitani-academy.jp/_next/image?url=https%3A%2F%2Fyoshikitam.wpx.jp%2Fakitani%2Fwp-content%2Fuploads%2F2022%2F04%2F292A1543.jpg&w=1920&q=75",
-		"https://akitani-academy.jp/_next/image?url=https%3A%2F%2Fyoshikitam.wpx.jp%2Fakitani%2Fwp-content%2Fuploads%2F2022%2F04%2F292A1663.jpg&w=1920&q=75",
-	];
-
 	// TASK: 先生のカードリストのオートスクロールを実装予定
 	// let teacherListOdd = teacherList.filter(num => Number(num) % 2 !== 0);
 	// let teacherListEven = teacherList.filter(num => Number(num) % 2 === 0);
@@ -53,7 +46,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 	return (
 		<>
 			<Head
-				description={top.description}
+				description={top.cfs.description}
 			/>
 			<section className={css.top}>
 				<section className={css.topImg}>

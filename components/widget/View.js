@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
+import Head from "components/head";
 import LinkList from "components/widget/LinkList";
 
 import css from "styles/View.module.scss";
@@ -21,7 +22,7 @@ function Page({ data, name }) {
 						id={name}
 						data-subtitle={name == "course" ? "コース" : "授業形態"}
 					>
-						<span>{data.title}</span>{name == "course" ? "コース" : ""}
+						<span>{data.title}</span>{name == "course" && "コース"}
 					</h2>
 					<section className={css.flex}>
 						<article className={css.article}>
@@ -41,7 +42,7 @@ function Page({ data, name }) {
 									</ul>
 								</div>
 							)}
-							<h3>コースの説明</h3>
+							<h3>{name == "course" ? "コース" : "授業形態"}の説明</h3>
 							<div
 								className={css.courseBody}
 								dangerouslySetInnerHTML={{ __html: data.content }}

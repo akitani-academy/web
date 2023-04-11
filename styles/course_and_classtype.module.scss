@@ -23,6 +23,10 @@
         display: flex;
         flex-wrap: wrap;
         gap: .1em .9em;
+
+        li {
+            cursor: pointer;
+        }
     }
 
     .inputTitle {
