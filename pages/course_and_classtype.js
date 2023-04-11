@@ -76,7 +76,7 @@ export default function Page({ description, courseData, classtypeData }) {
 					["コース", "/course_and_classtype"],
 					[course.title, router.asPath],
 				];
-				description = data.content.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '');
+				// description = data.content.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '');
 			}
 			if (router.query.classtype) {
 				selectTitle = classtype.title;
