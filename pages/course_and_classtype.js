@@ -10,7 +10,7 @@ import Contact from "components/widget/Contact"
 
 import css from "styles/course_and_classtype.module.scss";
 import css_contact from "styles/contact.module.scss";
-export default function Page({ description, courseData, classtypeData }) {
+export default function Page({ descriptionHTML, courseData, classtypeData }) {
 	useEffect(() => {
 		resize();
 		window.addEventListener("resize", resize);
@@ -42,7 +42,7 @@ export default function Page({ description, courseData, classtypeData }) {
 
 	var selectTitle = "コースと授業形態";
 	var breadcrumb = [["コースと授業形態", "/course_and_classtype"]];
-	// var description = ""
+	var description = descriptionHTML.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '')
 	if (router.query) {
 
 		// 過去のリダイレクト処理
@@ -76,7 +76,7 @@ export default function Page({ description, courseData, classtypeData }) {
 					["コース", "/course_and_classtype"],
 					[course.title, router.asPath],
 				];
-				// description = data.content.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '');
+				description = course.content.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '')
 			}
 			if (router.query.classtype) {
 				selectTitle = classtype.title;
@@ -84,6 +84,7 @@ export default function Page({ description, courseData, classtypeData }) {
 					["授業形態", "/course_and_classtype"],
 					[classtype.title, router.asPath]
 				];
+				description = classtype.content.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '')
 			}
 		}
 	}
@@ -93,9 +94,10 @@ export default function Page({ description, courseData, classtypeData }) {
 			<Head
 				title={selectTitle}
 				breadcrumb={breadcrumb}
+				description={description}
 			/>
 			<h1>コース と 授業形態</h1>
-			<div dangerouslySetInnerHTML={{ __html: String(description) }} />
+			<div dangerouslySetInnerHTML={{ __html: String(descriptionHTML) }} />
 			<section className={css.slect + " selectArea"}>
 				<div className={css.child}>
 					<div className={css.main}>
@@ -145,7 +147,7 @@ Page.getLayout = function getLayout(page) {
 };
 
 export async function getStaticProps() {
-	const description = await fetch(
+	const descriptionHTML = await fetch(
 		"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages?slug=course_and_classtype"
 	).then((res) => res.json());
 	const courseData = await fetch(
@@ -157,7 +159,7 @@ export async function getStaticProps() {
 
 	return {
 		props: {
-			description: description[0].wp_body,
+			descriptionHTML: descriptionHTML[0].wp_body,
 			courseData: courseData.reverse(),
 			classtypeData: classtypeData.reverse(),
 		},
