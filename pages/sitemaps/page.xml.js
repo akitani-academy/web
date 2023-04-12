@@ -27,7 +27,6 @@ export default Sitemap;
 function sitemapXML(posts, getCourseData, getClasstypeData) {
 	let xml = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
 
-	console.log(posts)
 	posts.forEach((post) => {
 		let slug = "/" + post.slug;
 		if (slug == "/index") {

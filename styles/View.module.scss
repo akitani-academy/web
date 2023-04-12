@@ -120,24 +120,8 @@
 }
 
 .title {
-    // span {
-    //     line-height: 1em;
-    //     height: 1em;
-    //     box-sizing: content-box;
-    //     padding: .7rem 1.5rem;
-    //     border: solid 2px $c_2;
-    //     display: inline-block;
-
-    //     background: #fff;
-    // }
-
     font-size: 1.7rem;
     margin-bottom: 1.7rem;
-
-    // color: $c_2;
-    // span{
-    //     color: $c_2;
-    // }
 
     &::before {
         content: attr(data-subtitle);
