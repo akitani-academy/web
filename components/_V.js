@@ -1,11 +1,11 @@
 module.exports.meta = {
-	siteTitle: "英語専門塾 秋谷アカデミィ｜横浜・自由が丘",
+	siteTitle: "英語専門塾 秋谷光子アカデミィ｜横浜,綱島,自由が丘,田園調布",
 	baseURL: "https://akitani-academy.jp",
 };
 module.exports.access = [
 	{
 		id: "tsunashima",
-		name: "綱島本部校",
+		name: "横浜・綱島本部校",
 		address: "〒223-0053 横浜市港北区 綱島西2-1-7 マック綱島コート２Ｆ",
 		tel: "045-544-6756",
 		description: "東急東横線綱島駅西口より徒歩１分",
@@ -13,7 +13,7 @@ module.exports.access = [
 	},
 	{
 		id: "denenchofu",
-		name: "田園調布校",
+		name: "自由が丘・田園調布校",
 		address: "〒145-0071 東京都大田区田園調布3-24-2",
 		tel: "03-5483-5025",
 		description: "田園調布駅より徒歩１分",
@@ -52,7 +52,7 @@ module.exports.menu = [
 	},
 	{
 		class: "nav_features spOnly",
-		title: "秋谷アカデミィの特徴",
+		title: "秋谷光子アカデミィの特徴",
 		content: [
 			["英検1級合格累計168人<br/>全ての英語資格で圧倒的な実績", "/#0"],
 			[
