@@ -176,8 +176,9 @@ main {
         margin-top: -3rem;
       }
 
-      &::before {
-        letter-spacing: .3em;
+      &::before,
+      .subTitle {
+        letter-spacing: .2em;
         font-size: .5em;
         color: $c_3;
         display: block;

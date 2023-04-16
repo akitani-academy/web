@@ -20,6 +20,7 @@ import css from "styles/index.module.scss";
 import course_and_classtype from "styles/course_and_classtype.module.scss";
 // import styles from 'styles/LoopCarousel.module.scss';
 import Logo from "/public/curriculum.svg";
+import classNames from "classnames";
 
 export default function Page({ top, news, courseData, classtypeData, teacherList }) {
 
@@ -114,7 +115,10 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 			<main className={css.main}>
 				<article>
 
-					<section className={css.news}>
+					<section className={classNames(
+						css.news,
+						// css.card
+					)}>
 						<h2 data-subTitle={`NEWS｜${news.date}`}>{news.title}</h2>
 						<p
 							dangerouslySetInnerHTML={{
@@ -129,14 +133,26 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 					</section>
 
 					{top.feature.map((e, i) => (
-						<div key={i}>
+						<div
+							key={i}
+						// className={css.card}
+						>
 							<h2
-								dangerouslySetInnerHTML={{
-									__html: parser.translateHTMLString(e.title),
-								}}
 								key={i}
 								id={i}
-							></h2>
+							>
+								<div
+									className={css.subTitle}
+									dangerouslySetInnerHTML={{
+										__html: parser.translateHTMLString(e.subTitle),
+									}}
+								/>
+								<div
+									dangerouslySetInnerHTML={{
+										__html: parser.translateHTMLString(e.title),
+									}}
+								/>
+							</h2>
 							<div
 								dangerouslySetInnerHTML={{
 									__html: parser.translateHTMLString(e.body),
