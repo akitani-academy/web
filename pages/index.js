@@ -115,7 +115,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 			<main className={css.main}>
 				<article>
 
-					<section className={classNames(
+					{/* <section className={classNames(
 						css.news,
 						// css.card
 					)}>
@@ -130,98 +130,107 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 								["詳しく見る", "/news"],
 							]} />
 						</div>
-					</section>
+					</section> */}
 
 					{top.feature.map((e, i) => (
 						<div
+							id={i}
 							key={i}
-						// className={css.card}
+							className={classNames(
+								css.card,
+								{ [css.bg]: e.title },
+								{ [css.news]: e.option == "news" }
+							)}
 						>
-							<h2
-								key={i}
-								id={i}
-							>
-								<div
-									className={css.subTitle}
-									dangerouslySetInnerHTML={{
-										__html: parser.translateHTMLString(e.subTitle),
-									}}
-								/>
-								<div
-									dangerouslySetInnerHTML={{
-										__html: parser.translateHTMLString(e.title),
-									}}
-								/>
-							</h2>
 							<div
-								dangerouslySetInnerHTML={{
-									__html: parser.translateHTMLString(e.body),
-								}}
-							></div>
-							{e.option == "course_and_classtype" && (
-								<Link legacyBehavior href={"/course_and_classtype"}>
-									<a className={css.courseAndClasstype}>
-										<section
-											className={
-												course_and_classtype.slect +
-												" " +
-												css.wrap +
-												" selectArea"
-											}
-										>
-											<div className={course_and_classtype.child}>
-												<div className={course_and_classtype.main}>
-													<div className={course_and_classtype.inputTitle}>コース</div>
-													<Select data={courseData} name={"course"} />
+								className={css.box}
+							>
+								{e.title && (
+									<h2
+										key={i}
+									>
+										<div
+											className={css.subTitle}
+											dangerouslySetInnerHTML={{
+												__html: parser.translateHTMLString(e.subTitle),
+											}}
+										/>
+										<div
+											dangerouslySetInnerHTML={{
+												__html: parser.translateHTMLString(e.title),
+											}}
+										/>
+									</h2>
+								)}
+								<div
+									dangerouslySetInnerHTML={{
+										__html: parser.translateHTMLString(e.body),
+									}}
+								></div>
+								{e.option == "course_and_classtype" && (
+									<Link legacyBehavior href={"/course_and_classtype"}>
+										<a className={css.courseAndClasstype}>
+											<section
+												className={
+													course_and_classtype.slect +
+													" " +
+													css.wrap +
+													" selectArea"
+												}
+											>
+												<div className={course_and_classtype.child}>
+													<div className={course_and_classtype.main}>
+														<div className={course_and_classtype.inputTitle}>コース</div>
+														<Select data={courseData} name={"course"} />
+													</div>
+													<ul>
+														{courseData.map((e, i) => (
+															<li key={`${e}-${i}`}>
+																<input
+																	id={e.id}
+																	type="radio"
+																	name={"courseR"}
+																	value={e.title}
+																/>
+																<label htmlFor={e.id}>{e.title}</label>
+															</li>
+														))}
+													</ul>
 												</div>
-												<ul>
-													{courseData.map((e, i) => (
-														<li key={`${e}-${i}`}>
-															<input
-																id={e.id}
-																type="radio"
-																name={"courseR"}
-																value={e.title}
-															/>
-															<label htmlFor={e.id}>{e.title}</label>
-														</li>
-													))}
-												</ul>
-											</div>
-											<img src="x.svg" width={"26px"} height={"26px"} alt="掛け算のアイコン" />
-											<div className={course_and_classtype.child}>
-												<div className={course_and_classtype.main}>
-													<div className={course_and_classtype.inputTitle}>授業形態</div>
-													<Select data={classtypeData} name={"classtype"} />
+												<img src="x.svg" width={"26px"} height={"26px"} alt="掛け算のアイコン" />
+												<div className={course_and_classtype.child}>
+													<div className={course_and_classtype.main}>
+														<div className={course_and_classtype.inputTitle}>授業形態</div>
+														<Select data={classtypeData} name={"classtype"} />
+													</div>
+													<ul>
+														{classtypeData.map((e, i) => (
+															<li key={i}>
+																<input
+																	id={e.id}
+																	type="radio"
+																	name={"classtypeR"}
+																	value={e.title}
+																/>
+																<label htmlFor={e.id}>{e.title}</label>
+															</li>
+														))}
+													</ul>
 												</div>
-												<ul>
-													{classtypeData.map((e, i) => (
-														<li key={i}>
-															<input
-																id={e.id}
-																type="radio"
-																name={"classtypeR"}
-																value={e.title}
-															/>
-															<label htmlFor={e.id}>{e.title}</label>
-														</li>
-													))}
-												</ul>
+											</section>
+										</a>
+									</Link>
+								)}
+								{e.option == "curriculum" && (
+									<Link legacyBehavior href={"/レベル別カリキュラム.pdf"}>
+										<a target="_blank" aria-label="秋谷光子アカデミィのレベル別カリキュラムについて">
+											<div className={css.curriculum}>
+												<Logo />
 											</div>
-										</section>
-									</a>
-								</Link>
-							)}
-							{e.option == "curriculum" && (
-								<Link legacyBehavior href={"/レベル別カリキュラム.pdf"}>
-									<a target="_blank" aria-label="秋谷光子アカデミィのレベル別カリキュラムについて">
-										<div className={css.curriculum}>
-											<Logo />
-										</div>
-									</a>
-								</Link>
-							)}
-							{/* {e.option == "teacher" && (
+										</a>
+									</Link>
+								)}
+								{/* {e.option == "teacher" && (
 								<>
 									<LoopCarousel>
 										<div className={css.teacherList}>
@@ -277,31 +286,32 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 									</LoopCarousel>
 								</>
 							)} */}
-							{e.LinkList && (
-								<div className={css.more}>
-									<LinkList
-										data={e.LinkList.map(item => [
-											item.Link.text,
-											item.Link.url
-										])} />
-								</div>
-							)}
-							{e.gallery && (
-								<LoopCarousel>
-									<ul className={css.gallery}>
-										{Object.entries(e.gallery).map((e1, i) => (
-											<li key={i}>
-												<Image
-													alt={"秋谷光子アカデミィの" + i + "番目の内装の写真"}
-													src={e1[1].img}
-													width={"400"}
-													height={"300"}
-												></Image>
-											</li>
-										))}
-									</ul>
-								</LoopCarousel>
-							)}
+								{e.LinkList && (
+									<div className={css.more}>
+										<LinkList
+											data={e.LinkList.map(item => [
+												item.Link.text,
+												item.Link.url
+											])} />
+									</div>
+								)}
+								{e.gallery && (
+									<LoopCarousel>
+										<ul className={css.gallery}>
+											{Object.entries(e.gallery).map((e1, i) => (
+												<li key={i}>
+													<Image
+														alt={"秋谷光子アカデミィの" + i + "番目の内装の写真"}
+														src={e1[1].img}
+														width={"400"}
+														height={"300"}
+													></Image>
+												</li>
+											))}
+										</ul>
+									</LoopCarousel>
+								)}
+							</div>
 						</div>
 					))}
 				</article>
