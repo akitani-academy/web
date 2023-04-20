@@ -24,7 +24,7 @@ export default function Page({ data }) {
 			{data.map((e, i) => (
 				<>
 					<h2 id={e.slug} key={i} className={css.h2}>
-						{e.name}
+						{e.name} 実績
 						{e.description && <small>{e.description}</small>}
 					</h2>
 					{2 < e.child_list.length && (
