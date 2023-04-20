@@ -102,8 +102,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 						<h3>
 							小学校で3級、<wbr />
 							中学校で2級、<wbr />
-							高校で準1級に<wbr />
-							多数合格。<wbr />
+							高校で準1級に多数合格。<wbr />
 							社会人も在籍。
 						</h3>
 					</div>

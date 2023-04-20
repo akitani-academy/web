@@ -47,47 +47,6 @@
     margin-bottom: 1.5rem;
 }
 
-.experiencesTitle {
-    width: 115px;
-    min-width: 115px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    img {
-        margin-bottom: .2em;
-    }
-
-    h3 {
-        font-size: 1.2rem;
-        line-height: 1.2rem;
-        text-align: center;
-        margin: 0;
-
-        small {
-            font-size: .9rem;
-        }
-    }
-}
-
-.titleImg {
-    width: 115px;
-    min-width: 115px;
-    display: flex;
-    flex-flow: column;
-    place-items: center;
-
-    img {
-        width: 90px;
-    }
-
-    small {
-        font-size: .8rem;
-        margin-top: .3rem;
-        margin-bottom: 1rem;
-    }
-}
-
 .article {
     height: fit-content;
 }

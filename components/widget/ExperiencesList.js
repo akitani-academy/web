@@ -20,7 +20,7 @@ export default function Page({ data, responsive = true }) {
         )}>
           <div className={css_ExperiencesList.shortTitle}>
             {data.img ? (
-              <div className={css_View.titleImg}>
+              <div className={css_ExperiencesList.titleImg}>
                 <img src={data.img} alt="" />
                 {data.description && (
                   <>
@@ -29,7 +29,7 @@ export default function Page({ data, responsive = true }) {
                 )}
               </div>
             ) : (
-              <div className={css_View.experiencesTitle}>
+              <div className={css_ExperiencesList.experiencesTitle}>
                 <img src="/aa.svg" alt="" className={css_ExperiencesList.laureltree_left} />
                 <h3>
                   {data.name}

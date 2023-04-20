@@ -104,6 +104,23 @@
     }
 }
 
+.titleImg {
+    width: 130px;
+    display: flex;
+    flex-flow: column;
+    place-items: center;
+
+    img {
+        width: 90px;
+    }
+
+    small {
+        font-size: .8rem;
+        margin-top: .3rem;
+        margin-bottom: 1rem;
+    }
+}
+
 .laureltree_left {
     width: 1.5rem;
     height: 3rem;
@@ -113,4 +130,26 @@
     width: 1.5rem;
     height: 3rem;
     transform: scale(-1, 1);
+}
+
+.experiencesTitle {
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+        margin-bottom: .2em;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        text-align: center;
+        margin: 0;
+
+        small {
+            font-size: .9rem;
+        }
+    }
 }
