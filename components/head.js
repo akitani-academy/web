@@ -1,4 +1,4 @@
-const _V = require("./_V.js");
+const _V = require("components/_V.js");
 import Head from "next/head";
 
 function Page({ title, description, ogp = "", url, breadcrumb }) {
