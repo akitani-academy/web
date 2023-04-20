@@ -288,8 +288,13 @@
 	// width: 80%;
 	margin: auto;
 	display: flex;
-    justify-content:center;
+	justify-content: center;
 	flex-wrap: wrap;
 	gap: 1rem;
 	padding: 1.5rem;
+
+	@include MQ() {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }

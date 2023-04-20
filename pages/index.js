@@ -111,23 +111,6 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 			<main className={css.main}>
 				<article>
 
-					{/* <section className={classNames(
-						css.news,
-						// css.card
-					)}>
-						<h2 data-subTitle={`NEWS｜${news.date}`}>{news.title}</h2>
-						<p
-							dangerouslySetInnerHTML={{
-								__html: parser.translateHTMLString(news.summary),
-							}}>
-						</p>
-						<div className={css.more}>
-							<LinkList data={[
-								["詳しく見る", "/news"],
-							]} />
-						</div>
-					</section> */}
-
 					{top.feature.map((e, i) => (
 						<div
 							id={i}
