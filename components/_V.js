@@ -28,11 +28,7 @@ module.exports.menu = [
 			["トップページ", "/"],
 			["塾長ご挨拶", "/greeting"],
 			// ["コースと授業形態", "/course_and_classtype"],
-			["講師紹介", "/teacher"],
-			["実績 / 体験記", "/experiences"],
-			["合格へのHow To", "/method"],
-			["よくある質問", "/faq"],
-			["アクセス", "/access"],
+			["講師紹介", "/teacher"]
 		],
 	},
 	{
@@ -63,6 +59,15 @@ module.exports.menu = [
 			["6人までのグループ指導", "/#3"],
 			["英検1級講師の個人指導", "/#4"],
 			["最上級の学習空間", "/#5"],
+		],
+	},
+	{
+		class: "nav_main",
+		content: [
+			["実績 / 体験記", "/experiences"],
+			["当塾の指導方針", "/method"],
+			["よくある質問", "/faq"],
+			["アクセス", "/access"],
 		],
 	},
 ];
