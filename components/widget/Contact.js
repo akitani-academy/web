@@ -4,7 +4,6 @@ import Script from "next/script";
 import LinkList from "components/widget/LinkList";
 
 import css from "styles/contact.module.scss";
-import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
 export default function Page({ short }) {
 	short = JSON.parse(short)
@@ -44,17 +43,6 @@ export default function Page({ short }) {
 			)} */}
 
 			{/* <h2 data-subTitle="秋谷光子アカデミィへの">資料請求 / お問い合わせ</h2> */}
-
-			<h2>電話でのお問い合わせ</h2>
-			<ul>
-				{_V.access.map((e, i) => (
-					<li key={i}>
-						<span>{e.name}</span>：<a href={"tel:" + e.tel}>
-							<span>{e.tel}</span>（15:00-21:00）
-						</a>
-					</li>
-				))}
-			</ul>
 
 			<h2>メールでのお問い合わせ</h2>
 			<form
@@ -173,10 +161,6 @@ export default function Page({ short }) {
 					placeholder="その他、ご自由にご記入ください。"
 				></textarea>
 
-				<GoogleReCaptchaProvider
-					size="invisible"
-					sitekey="6LeRFNkfAAAAABuAD9cwj08_XwWcOWn6HqO3NN-D"
-				/>
 				<input type="text" name="honeypot" className="honeypot" />
 				<input type="hidden" name="replyTo" value="@" />
 				<input
@@ -191,6 +175,17 @@ export default function Page({ short }) {
 				/>
 				<input type="submit" value="送信" />
 			</form>
+
+			<h2>電話でのお問い合わせ</h2>
+			<ul>
+				{_V.access.map((e, i) => (
+					<li key={i}>
+						<span>{e.name}</span>：<a href={"tel:" + e.tel}>
+							<span>{e.tel}</span>（15:00-21:00）
+						</a>
+					</li>
+				))}
+			</ul>
 
 			<h2>合格へのHowTo</h2>
 			<p>
