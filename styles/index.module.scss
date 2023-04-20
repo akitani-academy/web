@@ -152,6 +152,7 @@
 	&.news {
 
 		background-color: rgba($c_2, 0.07);
+		margin-bottom: 2rem;
 
 		// padding: 2rem 2.5rem;
 		// margin-right: -2.5rem;
@@ -296,5 +297,18 @@
 	@include MQ() {
 		padding-left: 0;
 		padding-right: 0;
+	}
+}
+
+.experiencesBox {
+	display: flex;
+	font-size: .6rem;
+	gap: 1rem;
+
+	.experienceBox {
+		min-width: 400px;
+	}
+	ul {
+		max-height: 25em;
 	}
 }

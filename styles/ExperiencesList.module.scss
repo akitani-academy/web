@@ -17,16 +17,16 @@
         width: 100%;
         display: flex;
         flex-flow: column;
-        gap: .7rem;
+        gap: .7em;
         line-height: 1.3em;
-        padding-right: .7rem;
-        padding-bottom: 3rem;
+        padding-right: .7em;
+        padding-bottom: 3em;
         overflow-y: scroll;
         transform: scale(-1, 1);
 
         &::-webkit-scrollbar {
             -webkit-appearance: none;
-            width: 10px;
+            width: .5em;
         }
 
         &::-webkit-scrollbar-track {
@@ -40,7 +40,7 @@
         li {
             transform: scale(-1, 1);
             display: flex;
-            gap: .7rem
+            gap: .7em
         }
 
         time {
@@ -61,4 +61,56 @@
             }
         }
     }
+}
+
+.experiences {
+    display: flex;
+
+    .responsive {
+        @include MQ () {
+            display: block;
+        }
+    }
+
+    margin-bottom: 2rem;
+
+    .shortTitle {
+        margin-right: 1.5rem;
+        text-align: center;
+
+        .responsive {
+            @include MQ () {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: .7rem;
+                margin-left: -.3rem;
+            }
+        }
+    }
+
+    .data {
+        margin-top: .3rem;
+
+        .responsive {
+            @include MQ () {
+                margin-top: 0;
+                text-align: left;
+            }
+        }
+
+        font-size: .8rem;
+        line-height: 1rem;
+    }
+}
+
+.laureltree_left {
+    width: 1.5rem;
+    height: 3rem;
+}
+
+.laureltree_right {
+    width: 1.5rem;
+    height: 3rem;
+    transform: scale(-1, 1);
 }

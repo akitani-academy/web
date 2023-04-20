@@ -47,17 +47,6 @@
     margin-bottom: 1.5rem;
 }
 
-.aa {
-    width: 1.5rem;
-    height: 3rem;
-}
-
-.aa2 {
-    width: 1.5rem;
-    height: 3rem;
-    transform: scale(-1, 1);
-}
-
 .experiencesTitle {
     width: 115px;
     min-width: 115px;
@@ -99,40 +88,6 @@
     }
 }
 
-.experiences {
-    @include MQ (xl) {
-        display: flex;
-    }
-
-    margin-bottom: 2rem;
-
-    .shortTitle {
-        margin-right: 1.5rem;
-        text-align: center;
-
-        @include MQ () {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: .7rem;
-            margin-left: -.3rem;
-        }
-    }
-
-    .data {
-        @include MQ (xl) {
-            margin-top: .3rem;
-        }
-
-        @include MQ () {
-            text-align: left;
-        }
-
-        font-size: .8rem;
-        line-height: 1rem;
-    }
-}
-
 .article {
     height: fit-content;
 }
@@ -147,6 +102,7 @@
     @media (min-width: 600px) {
         overflow: hidden;
     }
+
     @media (max-width: 601px) {
         width: 100vw;
         margin: 0 calc(50% - 50vw);
@@ -209,6 +165,7 @@
                 margin: 0 calc(50% - 50vw);
 
                 display: flex;
+
                 .space {
                     min-width: .5rem;
                 }

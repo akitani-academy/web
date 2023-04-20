@@ -16,6 +16,7 @@ import Select from "components/widget/Select";
 import Slideshow from "components/widget/Slideshow"
 import LoopCarousel from 'components/widget/LoopCarousel';
 import Button from "components/Button/Button"
+import ExperiencesList from "components/widget/ExperiencesList";
 
 import css from "styles/index.module.scss";
 import course_and_classtype from "styles/course_and_classtype.module.scss";
@@ -23,7 +24,7 @@ import course_and_classtype from "styles/course_and_classtype.module.scss";
 import Logo from "/public/curriculum.svg";
 import classNames from "classnames";
 
-export default function Page({ top, news, courseData, classtypeData, teacherList }) {
+export default function Page({ top, news, courseData, classtypeData, teacherList, experiencesData }) {
 
 	// useEffect(() => {
 	// 	resize();
@@ -124,6 +125,27 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 							<div
 								className={css.box}
 							>
+
+								{e.option == "experiences" && (
+									<>
+										<LoopCarousel>
+											<div className={css.experiencesBox}>
+												{experiencesData.map((e, i) => (
+													<>
+														{e.child_list.map(
+															(e1, i) => (10 < e1.post.length) && (
+																<div className={css.experienceBox}>
+																	<ExperiencesList data={e1} responsive={false} />
+																</div>
+															)
+														)}
+													</>
+												))}
+											</div>
+										</LoopCarousel>
+									</>
+								)}
+
 								{e.title && (
 									<h2
 										key={i}
@@ -349,6 +371,10 @@ export async function getStaticProps() {
 	).then((res) => res.json());
 	top.feature = Object.values(top.feature);
 
+	let experiencesData = await fetch(
+		"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
+	).then((res) => res.json());
+
 	// let teacherList = await fetch(
 	// 	"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/teacher?per_page=100"
 	// ).then((res) => res.json());
@@ -365,6 +391,7 @@ export async function getStaticProps() {
 			).then((res) => res.json()),
 			courseData: courseData.reverse(),
 			classtypeData: classtypeData.reverse(),
+			experiencesData
 			// teacherList
 		},
 	};
