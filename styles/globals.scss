@@ -157,7 +157,6 @@ main {
   gap: 3vw;
 
   >article {
-    max-width: 35rem;
     width: 100%;
 
     >*:first-child {
@@ -284,4 +283,8 @@ textarea {
   height: 300px;
   position: relative;
   margin-bottom: 1.5rem;
+}
+
+.bg {
+  background-color: #fff;
 }

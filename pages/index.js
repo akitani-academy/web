@@ -15,6 +15,7 @@ import LinkList from "components/widget/LinkList";
 import Select from "components/widget/Select";
 import Slideshow from "components/widget/Slideshow"
 import LoopCarousel from 'components/widget/LoopCarousel';
+import Button from "components/Button/Button"
 
 import css from "styles/index.module.scss";
 import course_and_classtype from "styles/course_and_classtype.module.scss";
@@ -24,21 +25,21 @@ import classNames from "classnames";
 
 export default function Page({ top, news, courseData, classtypeData, teacherList }) {
 
-	useEffect(() => {
-		resize();
-		window.addEventListener("resize", resize);
-		function resize() {
-			if (450 > window.innerWidth) {
-				document.querySelector(".selectArea").style.transform =
-					"scale(" + window.innerWidth / 450 + ")";
-				document.querySelector(".selectArea").style.width =
-					100 * (450 / window.innerWidth) + "vw";
-			} else {
-				document.querySelector(".selectArea").style.transform = "";
-				document.querySelector(".selectArea").style.width = "";
-			}
-		}
-	}, []);
+	// useEffect(() => {
+	// 	resize();
+	// 	window.addEventListener("resize", resize);
+	// 	function resize() {
+	// 		if (450 > window.innerWidth) {
+	// 			document.querySelector(".selectArea").style.transform =
+	// 				"scale(" + window.innerWidth / 450 + ")";
+	// 			document.querySelector(".selectArea").style.width =
+	// 				100 * (450 / window.innerWidth) + "vw";
+	// 		} else {
+	// 			document.querySelector(".selectArea").style.transform = "";
+	// 			document.querySelector(".selectArea").style.width = "";
+	// 		}
+	// 	}
+	// }, []);
 
 	// TASK: 先生のカードリストのオートスクロールを実装予定
 	// let teacherListOdd = teacherList.filter(num => Number(num) % 2 !== 0);
@@ -168,58 +169,71 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 									}}
 								></div>
 								{e.option == "course_and_classtype" && (
-									<Link legacyBehavior href={"/course_and_classtype"}>
-										<a className={css.courseAndClasstype}>
-											<section
-												className={
-													course_and_classtype.slect +
-													" " +
-													css.wrap +
-													" selectArea"
-												}
-											>
-												<div className={course_and_classtype.child}>
-													<div className={course_and_classtype.main}>
-														<div className={course_and_classtype.inputTitle}>コース</div>
-														<Select data={courseData} name={"course"} />
+									<>
+										<div
+											className={css.courseBox}
+										>
+											{courseData.map((e, i) => (
+												<Button href={`/course/${e.slug}`} key={i}>
+													{e.title}コース
+												</Button>
+											))}
+										</div>
+
+
+										{/* <Link legacyBehavior href={"/course_and_classtype"}>
+											<a className={css.courseAndClasstype}>
+												<section
+													className={
+														course_and_classtype.slect +
+														" " +
+														css.wrap +
+														" selectArea"
+													}
+												>
+													<div className={course_and_classtype.child}>
+														<div className={course_and_classtype.main}>
+															<div className={course_and_classtype.inputTitle}>コース</div>
+															<Select data={courseData} name={"course"} />
+														</div>
+														<ul>
+															{courseData.map((e, i) => (
+																<li key={`${e}-${i}`}>
+																	<input
+																		id={e.id}
+																		type="radio"
+																		name={"courseR"}
+																		value={e.title}
+																	/>
+																	<label htmlFor={e.id}>{e.title}</label>
+																</li>
+															))}
+														</ul>
 													</div>
-													<ul>
-														{courseData.map((e, i) => (
-															<li key={`${e}-${i}`}>
-																<input
-																	id={e.id}
-																	type="radio"
-																	name={"courseR"}
-																	value={e.title}
-																/>
-																<label htmlFor={e.id}>{e.title}</label>
-															</li>
-														))}
-													</ul>
-												</div>
-												<img src="x.svg" width={"26px"} height={"26px"} alt="掛け算のアイコン" />
-												<div className={course_and_classtype.child}>
-													<div className={course_and_classtype.main}>
-														<div className={course_and_classtype.inputTitle}>授業形態</div>
-														<Select data={classtypeData} name={"classtype"} />
+													<img src="x.svg" width={"26px"} height={"26px"} alt="掛け算のアイコン" />
+													<div className={course_and_classtype.child}>
+														<div className={course_and_classtype.main}>
+															<div className={course_and_classtype.inputTitle}>授業形態</div>
+															<Select data={classtypeData} name={"classtype"} />
+														</div>
+														<ul>
+															{classtypeData.map((e, i) => (
+																<li key={i}>
+																	<input
+																		id={e.id}
+																		type="radio"
+																		name={"classtypeR"}
+																		value={e.title}
+																	/>
+																	<label htmlFor={e.id}>{e.title}</label>
+																</li>
+															))}
+														</ul>
 													</div>
-													<ul>
-														{classtypeData.map((e, i) => (
-															<li key={i}>
-																<input
-																	id={e.id}
-																	type="radio"
-																	name={"classtypeR"}
-																	value={e.title}
-																/>
-																<label htmlFor={e.id}>{e.title}</label>
-															</li>
-														))}
-													</ul>
-												</div>
-											</section>
-										</a>
-									</Link>
+												</section>
+											</a>
+										</Link> */}
+									</>
 								)}
 								{e.option == "curriculum" && (
 									<Link legacyBehavior href={"/レベル別カリキュラム.pdf"}>
