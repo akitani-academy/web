@@ -1,3 +1,4 @@
+const _V = require("./_V.js");
 import { useRouter } from 'next/router';
 import Link from "next/link";
 import Image from "next/image";
@@ -23,8 +24,9 @@ export default function Page({ data }) {
         <>
             <Head
                 title={`${data.title}コース`}
-                breadcrumb={[["コースと授業形態", slug]]}
-                // description={data.content.replace(/(<([^>]+)>)/gi, '')}
+                breadcrumb={[[`${data.title}コース`, slug]]}
+                description={data.description ? data.description : ""}
+                url={`${_V.meta.baseURL}/${slug}`}
             />
             <Header />
             <main>

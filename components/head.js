@@ -1,7 +1,7 @@
 const _V = require("./_V.js");
 import Head from "next/head";
 
-function Page({ title, description, ogp, url, breadcrumb }) {
+function Page({ title, description, ogp = "", url, breadcrumb }) {
 	if (title) {
 		if (!title.includes("アカデミィ")) {
 			title = title + "｜" + _V.meta.siteTitle;
