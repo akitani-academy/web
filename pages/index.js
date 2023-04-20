@@ -134,7 +134,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 													<>
 														{e.child_list.map(
 															(e1, i) => (10 < e1.post.length) && (
-																<div className={css.experienceBox}>
+																<div className={css.experienceBox} key={i}>
 																	<ExperiencesList data={e1} responsive={false} />
 																</div>
 															)

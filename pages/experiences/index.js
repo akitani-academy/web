@@ -30,7 +30,7 @@ export default function Page({ data }) {
 					{e.child_list.map(
 						(e1, i) =>
 							0 < e1.post.length && (
-								<ExperiencesList data={e1} />
+								<ExperiencesList data={e1} key={i} />
 							)
 					)}
 				</>
