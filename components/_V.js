@@ -64,7 +64,7 @@ module.exports.menu = [
 	{
 		class: "nav_main",
 		content: [
-			["実績 / 体験記", "/experiences"],
+			["実績と体験記", "/experiences"],
 			["当塾の指導方針", "/method"],
 			["よくある質問", "/faq"],
 			["アクセス", "/access"],
