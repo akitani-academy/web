@@ -1,5 +1,5 @@
 const _V = require("components/_V");
-import { sitemapGET } from "lib/sitemapGET";
+import { sitemapsListGET } from "lib/sitemapGET";
 
 const Sitemap = () => {
 	return null;
@@ -8,7 +8,7 @@ const Sitemap = () => {
 export const getServerSideProps = async ({ res }) => {
 	res.setHeader("Content-Type", "text/xml");
 	res.setHeader("Cache-Control", "s-maxage=86400, stale-while-revalidate"); // 24時間のキャッシュ
-	res.write(sitemapXML(sitemapGET()));
+	res.write(sitemapXML(sitemapsListGET()));
 	res.end();
 
 	return {
