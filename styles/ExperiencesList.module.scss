@@ -19,22 +19,25 @@
         flex-flow: column;
         gap: .7em;
         line-height: 1.3em;
-        padding-right: .7em;
         padding-bottom: 3em;
         overflow-y: scroll;
         transform: scale(-1, 1);
 
-        &::-webkit-scrollbar {
-            -webkit-appearance: none;
-            width: .5em;
-        }
+        @supports (-webkit-appearance:none) {
+            padding-right: .7em;
 
-        &::-webkit-scrollbar-track {
-            background-color: rgba($c_3, .1);
-        }
+            &::-webkit-scrollbar {
+                -webkit-appearance: none;
+                width: .5em;
+            }
 
-        &::-webkit-scrollbar-thumb {
-            background-color: $c_2;
+            &::-webkit-scrollbar-track {
+                background-color: rgba($c_3, .1);
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: $c_2;
+            }
         }
 
         li {
@@ -65,14 +68,17 @@
 
 .experiences {
     display: flex;
+    background: #fff;
+    padding: 1.5em 2em;
+    margin-right: -2em;
+    margin-left: -2em;
+    margin-bottom: 1.2em;
 
     .responsive {
         @include MQ () {
             display: block;
         }
     }
-
-    margin-bottom: 2rem;
 
     .shortTitle {
         margin-right: 1.5rem;

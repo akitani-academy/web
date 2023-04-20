@@ -3,8 +3,6 @@ import Link from "next/link";
 import classNames from "classnames";
 
 import css_ExperiencesList from "styles/ExperiencesList.module.scss";
-import css_View from "styles/View.module.scss";
-import css_experiences from "styles/experiences.module.scss";
 
 export default function Page({ data, responsive = true }) {
   let option = {
@@ -15,7 +13,6 @@ export default function Page({ data, responsive = true }) {
       <section id={data.slug}>
         <div className={classNames(
           css_ExperiencesList.experiences,
-          css_experiences.list,
           { [css_ExperiencesList.responsive]: responsive }
         )}>
           <div className={css_ExperiencesList.shortTitle}>
