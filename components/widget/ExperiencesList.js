@@ -12,10 +12,10 @@ export default function Page({ data, responsive = true }) {
     <>
       <section id={data.slug}>
         <div className={classNames(
-          css_ExperiencesList.experiences,
+          css_ExperiencesList.ExperiencesListArea,
           { [css_ExperiencesList.responsive]: responsive }
         )}>
-          <div className={css_ExperiencesList.shortTitle}>
+          <div className={css_ExperiencesList.titleArea}>
             {data.img ? (
               <div className={css_ExperiencesList.titleImg}>
                 <img src={data.img} alt="" />
@@ -26,7 +26,7 @@ export default function Page({ data, responsive = true }) {
                 )}
               </div>
             ) : (
-              <div className={css_ExperiencesList.experiencesTitle}>
+              <div className={css_ExperiencesList.title}>
                 <img src="/aa.svg" alt="" className={css_ExperiencesList.laureltree_left} />
                 <h3>
                   {data.name}

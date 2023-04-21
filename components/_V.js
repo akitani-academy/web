@@ -27,7 +27,7 @@ module.exports.menu = [
 		content: [
 			["トップページ", "/"],
 			["塾長ご挨拶", "/greeting"],
-			// ["コースと授業形態", "/course_and_classtype"],
+			// ["当塾の特徴", "/course_and_classtype"],
 			["講師紹介", "/teacher"]
 		],
 	},
@@ -47,6 +47,15 @@ module.exports.menu = [
 		],
 	},
 	{
+		class: "nav_main",
+		content: [
+			["実績と体験記", "/experiences"],
+			["当塾の指導方針", "/method"],
+			["よくある質問", "/faq"],
+			["アクセス", "/access"],
+		],
+	},
+	{
 		class: "nav_features spOnly",
 		title: "秋谷光子アカデミィの特徴",
 		content: [
@@ -59,15 +68,6 @@ module.exports.menu = [
 			["6人までのグループ指導", "/#3"],
 			["英検1級講師の個人指導", "/#4"],
 			["最上級の学習空間", "/#5"],
-		],
-	},
-	{
-		class: "nav_main",
-		content: [
-			["実績と体験記", "/experiences"],
-			["当塾の指導方針", "/method"],
-			["よくある質問", "/faq"],
-			["アクセス", "/access"],
 		],
 	},
 ];

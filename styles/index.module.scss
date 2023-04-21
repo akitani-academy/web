@@ -281,15 +281,11 @@
 
 .experiencesBox {
 	display: flex;
-	font-size: .6rem;
-	gap: 1rem;
+	font-size: .8rem;
+	gap: 2.5rem;
 
 	.experienceBox {
 		margin-top: -10px;
-		min-width: 400px;
-	}
-
-	ul {
-		max-height: 25em;
+		min-width: 430px;
 	}
 }
