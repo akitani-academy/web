@@ -10,7 +10,6 @@ import Nav from "components/nav";
 import Contact from "components/widget/Contact"
 import LinkList from "components/widget/LinkList";
 
-import css from "styles/course_and_classtype.module.scss";
 import css_contact from "styles/contact.module.scss";
 import css_view from "styles/View.module.scss";
 import classNames from "classnames";

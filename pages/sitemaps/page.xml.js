@@ -1,5 +1,5 @@
 const _V = require("components/_V");
-import { getPages, getCourseData, getClasstypeData } from "lib/sitemapGET";
+import { getPages } from "lib/sitemapGET";
 
 const Sitemap = () => {
 	return null;
@@ -8,13 +8,7 @@ const Sitemap = () => {
 export const getServerSideProps = async ({ res }) => {
 	res.setHeader("Content-Type", "text/xml");
 	res.setHeader("Cache-Control", "s-maxage=86400, stale-while-revalidate"); // 24時間のキャッシュ
-	res.write(
-		sitemapXML(
-			await getPages(),
-			await getCourseData(),
-			await getClasstypeData()
-		)
-	);
+	res.write(sitemapXML(await getPages()));
 	res.end();
 
 	return {
@@ -24,23 +18,20 @@ export const getServerSideProps = async ({ res }) => {
 
 export default Sitemap;
 
-function sitemapXML(posts, getCourseData, getClasstypeData) {
+function sitemapXML(posts) {
 	let xml = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
 
 	posts.forEach((post) => {
 		if (post.slug != "course_and_classtype") {
-
-			let slug = "/" + post.slug;
-			if (slug == "/index") {
-				slug = "";
+			if (post.slug == "index") {
+				post.slug = "";
 			}
 			xml += `
 			<url>
-				<loc>${_V.meta.baseURL}${slug}</loc>
+				<loc>${_V.meta.baseURL}/${slug}</loc>
 				<lastmod>${post.dateSitemap}</lastmod>
 			</url>
 			`;
-			
 		}
 	});
 

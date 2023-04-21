@@ -8,6 +8,7 @@ export default function Page({ data, responsive = true }) {
   let option = {
     date: true,
   };
+  // console.log(data)
   return (
     <>
       <section id={data.slug}>

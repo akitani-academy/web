@@ -16,7 +16,7 @@ export const getServerSideProps = async ({ res }) => {
 
 	const sitemaps = [
 		'https://www.google.com/ping?sitemap=',
-		'https://www.bing.com/ping?sitemap=',
+		'https://www.bing.com/indexnow?url=http://www.example.com/product.html&key=fcfe89ccc4c04cb598c32cf6c6edc79e',
 	];
 
 	const sitemapUrls = sitemaps.map(sitemap => {
