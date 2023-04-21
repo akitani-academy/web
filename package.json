@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && curl http://www.google.com/ping?sitemap=https://akitani-academy.jp/sitemaps/index.xml",
     "start": "next start",
     "lint": "next lint"
   },
