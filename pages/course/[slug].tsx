@@ -26,7 +26,7 @@ export default function Page({ data }) {
                 title={`${data.title}コース`}
                 breadcrumb={[[`${data.title}コース`, slug]]}
                 description={data.description ? data.description : ""}
-                url={`${_V.meta.baseURL}/${slug}`}
+                url={`${_V.meta.baseURL}/course/${slug}`}
             />
             <Header />
             <main>
