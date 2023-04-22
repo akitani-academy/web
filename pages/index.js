@@ -133,7 +133,8 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 							className={classNames(
 								css.card,
 								{ [css.bg]: e.title },
-								{ [css.news]: e.option == "news" }
+								{ [css.news]: e.option == "news" },
+								{ [css.marginBottom]: ["news", "experiences", "experiences2", "experiences3"].includes(e.option) }
 							)}
 						>
 							<div
@@ -166,10 +167,36 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 								)}
 								{e.option == "experiences2" && (
 									<div className={css.experiencesArea}>
+										<Link href={"/experiences#college"} className={css.experiencesLink}>
+											{/* <LoopCarousel> */}
+											<div className={css.experiencesBox}>
+												{experiencesData.filter(item => ['college'].includes(item.slug)).map((e, i) => (
+													<>
+														{e.child_list.map(
+															(e1, i) => (10 < e1.post.length) && (
+																<div className={css.experienceBox} key={i}>
+																	<ExperiencesList title={e.name} data={e1} responsive={false} />
+																</div>
+															)
+														)}
+													</>
+												))}
+											</div>
+											{/* </LoopCarousel> */}
+											<div className={css.experiencesLinkArea}>
+												<div className={css.experiencesButton}>
+													すべての「 大学受験の合格実績 」をみる
+												</div>
+											</div>
+										</Link>
+									</div>
+								)}
+								{e.option == "experiences3" && (
+									<div className={css.experiencesArea}>
 										<Link href={"/experiences"} className={css.experiencesLink}>
 											<LoopCarousel>
 												<div className={css.experiencesBox}>
-													{experiencesData.filter(item => ['college', 'student', "highschool"].includes(item.slug)).map((e, i) => (
+													{experiencesData.filter(item => ['student', "highschool", 'child_eiken'].includes(item.slug)).map((e, i) => (
 														<>
 															{e.child_list.map(
 																(e1, i) => (10 < e1.post.length) && (
