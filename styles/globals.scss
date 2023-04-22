@@ -156,52 +156,52 @@ main {
   justify-content: center;
   gap: 3vw;
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: .05em;
+
+    &+.LinkList {
+      margin-top: -3rem;
+    }
+
+    &::before,
+    .subTitle {
+      letter-spacing: .2em;
+      font-size: .5em;
+      color: $c_3;
+      display: block;
+      content: attr(data-subtitle);
+      pointer-events: none;
+    }
+  }
+
+  h1 {
+    color: $c_2;
+    font-size: 1.875rem;
+    margin-bottom: .3em;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.5em;
+    margin-bottom: .7em;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+  }
+
   >article {
     width: 100%;
 
     >*:first-child {
       margin-top: 0;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      letter-spacing: .05em;
-
-      &+.LinkList {
-        margin-top: -3rem;
-      }
-
-      &::before,
-      .subTitle {
-        letter-spacing: .2em;
-        font-size: .5em;
-        color: $c_3;
-        display: block;
-        content: attr(data-subtitle);
-        pointer-events: none;
-      }
-    }
-
-    h1 {
-      color: $c_2;
-      font-size: 1.875rem;
-      margin-bottom: .3em;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      margin-top: 1.5em;
-      margin-bottom: .7em;
-    }
-
-    h3 {
-      font-size: 1.2rem;
-      margin-top: 1.5em;
-      margin-bottom: 1em;
     }
 
     p {
