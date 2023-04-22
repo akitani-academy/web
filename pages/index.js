@@ -46,8 +46,6 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 	// let teacherListOdd = teacherList.filter(num => Number(num) % 2 !== 0);
 	// let teacherListEven = teacherList.filter(num => Number(num) % 2 === 0);
 
-	console.log(experiencesData.filter(item => ['eiken', 'college'].includes(item.slug)))
-
 	return (
 		<>
 			<Head
@@ -147,7 +145,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 										<Link href={"/experiences"} className={css.experiencesLink}>
 											<LoopCarousel>
 												<div className={css.experiencesBox}>
-													{experiencesData.map((e, i) => (
+													{experiencesData.filter(item => ['eiken', 'child_eiken'].includes(item.slug)).map((e, i) => (
 														e.child_list.map(
 															(e1, i) => (10 < e1.post.length) && (
 																<div className={css.experienceBox} key={i}>
@@ -171,8 +169,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 										<Link href={"/experiences"} className={css.experiencesLink}>
 											<LoopCarousel>
 												<div className={css.experiencesBox}>
-													{experiencesData
-														.filter(item => ['eiken', 'college'].includes(item.slug)).map((e, i) => (
+													{experiencesData.filter(item => ['college', 'student', "highschool"].includes(item.slug)).map((e, i) => (
 														<>
 															{e.child_list.map(
 																(e1, i) => (10 < e1.post.length) && (
