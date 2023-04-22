@@ -91,9 +91,10 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 					</div>
 					<div>
 						<h2 className={css_index.messageH2}>
-							英検合格と<wbr />
-							大学合格を果たす<wbr />
-							英語塾
+							英検１級講師<wbr />
+							42名による<wbr />
+							圧倒的な<wbr />
+							英検合格実績
 						</h2>
 						<h3>
 							小学校で3級、<wbr />
