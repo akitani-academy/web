@@ -1,9 +1,8 @@
 /* eslint-disable react/no-unknown-property */
-
-import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import classNames from "classnames";
 import { loadDefaultJapaneseParser } from "budoux";
 const parser = loadDefaultJapaneseParser();
 
@@ -12,35 +11,17 @@ import Header from "components/header";
 import Footer from "components/footer";
 import Nav from "components/nav";
 import LinkList from "components/widget/LinkList";
-import Select from "components/widget/Select";
 import Slideshow from "components/widget/Slideshow"
 import LoopCarousel from 'components/widget/LoopCarousel';
 import Button from "components/Button/Button"
 import ExperiencesList from "components/widget/ExperiencesList";
 
-import css from "styles/index.module.scss";
-import course_and_classtype from "styles/course_and_classtype.module.scss";
-// import styles from 'styles/LoopCarousel.module.scss';
+import css_index from "styles/index.module.scss";
+
 import Logo from "/public/curriculum.svg";
-import classNames from "classnames";
 
-export default function Page({ top, news, courseData, classtypeData, teacherList, experiencesData }) {
+export default function Page({ top, courseData, classtypeData, teacherList, experiencesData }) {
 
-	// useEffect(() => {
-	// 	resize();
-	// 	window.addEventListener("resize", resize);
-	// 	function resize() {
-	// 		if (450 > window.innerWidth) {
-	// 			document.querySelector(".selectArea").style.transform =
-	// 				"scale(" + window.innerWidth / 450 + ")";
-	// 			document.querySelector(".selectArea").style.width =
-	// 				100 * (450 / window.innerWidth) + "vw";
-	// 		} else {
-	// 			document.querySelector(".selectArea").style.transform = "";
-	// 			document.querySelector(".selectArea").style.width = "";
-	// 		}
-	// 	}
-	// }, []);
 
 	// TASK: 先生のカードリストのオートスクロールを実装予定
 	// let teacherListOdd = teacherList.filter(num => Number(num) % 2 !== 0);
@@ -51,9 +32,9 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 			<Head
 				description={top.cfs.description}
 			/>
-			<section className={css.top}>
-				<section className={css.topImg}>
-					<div className={css.bg}>
+			<section className={css_index.top}>
+				<section className={css_index.topImg}>
+					<div className={css_index.bg}>
 						<Slideshow images={[
 							{
 								alt: "グループ指導による中高学生の英語受験勉強",
@@ -109,7 +90,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 						]} seconds={3} />
 					</div>
 					<div>
-						<h2 className={css.messageH2}>
+						<h2 className={css_index.messageH2}>
 							英検合格と<wbr />
 							大学合格を果たす<wbr />
 							英語塾
@@ -123,7 +104,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 					</div>
 				</section>
 			</section>
-			<main className={css.main}>
+			<main className={css_index.main}>
 				<article>
 
 					{top.feature.map((e, i) => (
@@ -131,25 +112,25 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 							id={i}
 							key={i}
 							className={classNames(
-								css.card,
-								{ [css.bg]: e.title },
-								{ [css.news]: e.option == "news" },
-								{ [css.marginBottom]: ["news", "experiences", "experiences2", "experiences3"].includes(e.option) }
+								css_index.card,
+								{ [css_index.bg]: e.title },
+								{ [css_index.news]: e.option == "news" },
+								{ [css_index.marginBottom]: ["news", "experiences", "experiences2", "experiences3"].includes(e.option) }
 							)}
 						>
 							<div
-								className={css.box}
+								className={css_index.box}
 							>
 
 								{e.option == "experiences" && (
-									<div className={css.experiencesArea}>
-										<Link href={"/experiences"} className={css.experiencesLink}>
+									<div className={css_index.experiencesArea}>
+										<Link href={"/experiences"} className={css_index.experiencesLink}>
 											<LoopCarousel>
-												<div className={css.experiencesBox}>
+												<div className={css_index.experiencesBox}>
 													{experiencesData.filter(item => ['eiken', 'child_eiken'].includes(item.slug)).map((e, i) => (
 														e.child_list.map(
 															(e1, i) => (10 < e1.post.length) && (
-																<div className={css.experienceBox} key={i}>
+																<div className={css_index.experienceBox} key={i}>
 																	<ExperiencesList title={e.name} data={e1} responsive={false} />
 																</div>
 															)
@@ -157,8 +138,8 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 													))}
 												</div>
 											</LoopCarousel>
-											<div className={css.experiencesLinkArea}>
-												<div className={css.experiencesButton}>
+											<div className={css_index.experiencesLinkArea}>
+												<div className={css_index.experiencesButton}>
 													すべての「 実績と体験記 」をみる
 												</div>
 											</div>
@@ -166,15 +147,15 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 									</div>
 								)}
 								{e.option == "experiences2" && (
-									<div className={css.experiencesArea}>
-										<Link href={"/experiences#college"} className={css.experiencesLink}>
+									<div className={css_index.experiencesArea}>
+										<Link href={"/experiences#college"} className={css_index.experiencesLink}>
 											{/* <LoopCarousel> */}
-											<div className={css.experiencesBox}>
+											<div className={css_index.experiencesBox}>
 												{experiencesData.filter(item => ['college'].includes(item.slug)).map((e, i) => (
 													<>
 														{e.child_list.map(
 															(e1, i) => (10 < e1.post.length) && (
-																<div className={css.experienceBox} key={i}>
+																<div className={css_index.experienceBox} key={i}>
 																	<ExperiencesList title={e.name} data={e1} responsive={false} />
 																</div>
 															)
@@ -183,8 +164,8 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 												))}
 											</div>
 											{/* </LoopCarousel> */}
-											<div className={css.experiencesLinkArea}>
-												<div className={css.experiencesButton}>
+											<div className={css_index.experiencesLinkArea}>
+												<div className={css_index.experiencesButton}>
 													すべての「 大学受験の合格実績 」をみる
 												</div>
 											</div>
@@ -192,15 +173,15 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 									</div>
 								)}
 								{e.option == "experiences3" && (
-									<div className={css.experiencesArea}>
-										<Link href={"/experiences"} className={css.experiencesLink}>
+									<div className={css_index.experiencesArea}>
+										<Link href={"/experiences"} className={css_index.experiencesLink}>
 											<LoopCarousel>
-												<div className={css.experiencesBox}>
+												<div className={css_index.experiencesBox}>
 													{experiencesData.filter(item => ['student', "highschool", 'child_eiken'].includes(item.slug)).map((e, i) => (
 														<>
 															{e.child_list.map(
 																(e1, i) => (10 < e1.post.length) && (
-																	<div className={css.experienceBox} key={i}>
+																	<div className={css_index.experienceBox} key={i}>
 																		<ExperiencesList title={e.name} data={e1} responsive={false} />
 																	</div>
 																)
@@ -209,8 +190,8 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 													))}
 												</div>
 											</LoopCarousel>
-											<div className={css.experiencesLinkArea}>
-												<div className={css.experiencesButton}>
+											<div className={css_index.experiencesLinkArea}>
+												<div className={css_index.experiencesButton}>
 													すべての「 実績と体験記 」をみる
 												</div>
 											</div>
@@ -223,7 +204,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 										key={i}
 									>
 										<div
-											className={css.subTitle}
+											className={css_index.subTitle}
 											dangerouslySetInnerHTML={{
 												__html: parser.translateHTMLString(e.subTitle),
 											}}
@@ -243,7 +224,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 								{e.option == "course_and_classtype" && (
 									<>
 										<div
-											className={css.courseBox}
+											className={css_index.courseBox}
 										>
 											{courseData.map((e, i) => (
 												<Button href={`/course/${e.slug}`} key={i}>
@@ -254,12 +235,12 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 
 
 										{/* <Link legacyBehavior href={"/course_and_classtype"}>
-											<a className={css.courseAndClasstype}>
+											<a className={css_index.courseAndClasstype}>
 												<section
 													className={
 														course_and_classtype.slect +
 														" " +
-														css.wrap +
+														css_index.wrap +
 														" selectArea"
 													}
 												>
@@ -310,7 +291,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 								{e.option == "curriculum" && (
 									<Link legacyBehavior href={"/レベル別カリキュラム.pdf"}>
 										<a target="_blank" aria-label="秋谷光子アカデミィのレベル別カリキュラムについて">
-											<div className={css.curriculum}>
+											<div className={css_index.curriculum}>
 												<Logo />
 											</div>
 										</a>
@@ -319,10 +300,10 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 								{/* {e.option == "teacher" && (
 								<>
 									<LoopCarousel>
-										<div className={css.teacherList}>
+										<div className={css_index.teacherList}>
 											<ul>
 												{teacherListOdd.map((e, i) => (
-													<li key={i} className={css.teacher}>
+													<li key={i} className={css_index.teacher}>
 														{e.img && (
 															<div>
 																<Image
@@ -346,7 +327,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 											</ul>
 											<ul>
 												{teacherListEven.map((e, i) => (
-													<li key={i} className={css.teacher}>
+													<li key={i} className={css_index.teacher}>
 														{e.img && (
 															<div>
 																<Image
@@ -373,7 +354,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 								</>
 							)} */}
 								{e.LinkList && (
-									<div className={css.more}>
+									<div className={css_index.more}>
 										<LinkList
 											data={e.LinkList.map(item => [
 												item.Link.text,
@@ -383,7 +364,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 								)}
 								{e.gallery && (
 									<LoopCarousel>
-										<ul className={css.gallery}>
+										<ul className={css_index.gallery}>
 											{Object.entries(e.gallery).map((e1, i) => (
 												<li key={i}>
 													<Image
@@ -434,9 +415,10 @@ export async function getStaticProps() {
 	const courseData = await fetch(
 		"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/course?per_page=100"
 	).then((res) => res.json());
-	const classtypeData = await fetch(
-		"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/class_type?per_page=100&"
-	).then((res) => res.json());
+
+	// const classtypeData = await fetch(
+	// 	"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/class_type?per_page=100&"
+	// ).then((res) => res.json());
 
 	let top = await fetch(
 		"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages/7284"
@@ -457,14 +439,11 @@ export async function getStaticProps() {
 	return {
 		props: {
 			top,
-			news: await fetch(
-				"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages/6797"
-			).then((res) => res.json()),
-			experiences: await fetch(
-				"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
-			).then((res) => res.json()),
+			// experiences: await fetch(
+			// 	"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
+			// ).then((res) => res.json()),
 			courseData: courseData.reverse(),
-			classtypeData: classtypeData.reverse(),
+			// classtypeData: classtypeData.reverse(),
 			experiencesData
 			// teacherList
 		},

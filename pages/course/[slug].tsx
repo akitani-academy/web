@@ -29,7 +29,8 @@ export default function Page({ data }) {
             />
             <Header />
             <main>
-                <article className={css_view.View}>
+
+                <div className={css_view.View}>
 
                     <h2 data-subTitle="秋谷光子アカデミィの">コース別学習</h2>
                     <p>
@@ -117,7 +118,7 @@ export default function Page({ data }) {
                     <aside className={css_contact.contact}>
                         <Contact short="true" />
                     </aside>
-                </article>
+                </div>
                 <Nav />
             </main>
             <Footer />
