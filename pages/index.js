@@ -46,6 +46,8 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 	// let teacherListOdd = teacherList.filter(num => Number(num) % 2 !== 0);
 	// let teacherListEven = teacherList.filter(num => Number(num) % 2 === 0);
 
+	console.log(experiencesData.filter(item => ['eiken', 'college'].includes(item.slug)))
+
 	return (
 		<>
 			<Head
@@ -141,23 +143,55 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 							>
 
 								{e.option == "experiences" && (
-									<>
-										<LoopCarousel>
-											<div className={css.experiencesBox}>
-												{experiencesData.map((e, i) => (
-													<>
-														{e.child_list.map(
+									<div className={css.experiencesArea}>
+										<Link href={"/experiences"} className={css.experiencesLink}>
+											<LoopCarousel>
+												<div className={css.experiencesBox}>
+													{experiencesData.map((e, i) => (
+														e.child_list.map(
 															(e1, i) => (10 < e1.post.length) && (
 																<div className={css.experienceBox} key={i}>
 																	<ExperiencesList title={e.name} data={e1} responsive={false} />
 																</div>
 															)
-														)}
-													</>
-												))}
+														)
+													))}
+												</div>
+											</LoopCarousel>
+											<div className={css.experiencesLinkArea}>
+												<div className={css.experiencesButton}>
+													すべての「 実績と体験記 」をみる
+												</div>
 											</div>
-										</LoopCarousel>
-									</>
+										</Link>
+									</div>
+								)}
+								{e.option == "experiences2" && (
+									<div className={css.experiencesArea}>
+										<Link href={"/experiences"} className={css.experiencesLink}>
+											<LoopCarousel>
+												<div className={css.experiencesBox}>
+													{experiencesData
+														.filter(item => ['eiken', 'college'].includes(item.slug)).map((e, i) => (
+														<>
+															{e.child_list.map(
+																(e1, i) => (10 < e1.post.length) && (
+																	<div className={css.experienceBox} key={i}>
+																		<ExperiencesList title={e.name} data={e1} responsive={false} />
+																	</div>
+																)
+															)}
+														</>
+													))}
+												</div>
+											</LoopCarousel>
+											<div className={css.experiencesLinkArea}>
+												<div className={css.experiencesButton}>
+													すべての「 実績と体験記 」をみる
+												</div>
+											</div>
+										</Link>
+									</div>
 								)}
 
 								{e.title && (
@@ -388,6 +422,8 @@ export async function getStaticProps() {
 	let experiencesData = await fetch(
 		"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
 	).then((res) => res.json());
+
+	// console.log(experiencesData)
 
 	// let teacherList = await fetch(
 	// 	"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/teacher?per_page=100"

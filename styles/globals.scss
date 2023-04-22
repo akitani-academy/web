@@ -29,11 +29,11 @@ label,
 input,
 select {
   &:hover {
-    opacity: .7;
+    opacity: .6;
 
-    * {
-      opacity: .7;
-    }
+    // * {
+    //   opacity: .7;
+    // }
   }
 }
 
