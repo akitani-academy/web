@@ -6,6 +6,7 @@ import Contact from "components/widget/Contact"
 
 import css_index from "styles/index.module.scss";
 import css_contact from "styles/contact.module.scss";
+import classNames from "classnames";
 
 export default function Page({ post }) {
 	const router = useRouter();
@@ -25,7 +26,7 @@ export default function Page({ post }) {
 			</p>
 			<List data={[["その他の合格対策を見る", "/method"]]} />
 
-			<article className={css_index.card}>
+			<article className={classNames(css_index.card, css_index.bg)}>
 				<h1 data-subTitle="秋谷光子アカデミィの">{post.title}</h1>
 				<div dangerouslySetInnerHTML={{ __html: post.content }} />
 			</article>
