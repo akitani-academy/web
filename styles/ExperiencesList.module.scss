@@ -49,14 +49,26 @@
         min-width: fit-content;
         width: fit-content;
 
+        h3 {
+            margin: 0;
+        }
+
+        .titleCategory {
+            font-size: .8rem;
+            line-height: 1.1em;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
         .titleImg {
-            width: fit-content;
             display: flex;
             flex-flow: column;
 
             img {
                 min-width: 90px;
                 width: 90px;
+                margin: auto;
             }
 
             small {
@@ -88,7 +100,7 @@
                 margin-bottom: .2em;
             }
 
-            h3 {
+            .h3 {
                 min-width: fit-content;
                 font-size: 1.2rem;
                 line-height: 1.2rem;

@@ -97,7 +97,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 								height: 682.5
 							}, {
 								alt: "完全個人指導による中学生の定期テスト対策",
-								src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/02/292A1695-e1682091882246.jpg",
+								src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2022/02/292A1695-e1682140353629.jpg",
 								width: 2449,
 								height: 682.5
 							}, {
@@ -149,7 +149,7 @@ export default function Page({ top, news, courseData, classtypeData, teacherList
 														{e.child_list.map(
 															(e1, i) => (10 < e1.post.length) && (
 																<div className={css.experienceBox} key={i}>
-																	<ExperiencesList data={e1} responsive={false} />
+																	<ExperiencesList title={e.name} data={e1} responsive={false} />
 																</div>
 															)
 														)}

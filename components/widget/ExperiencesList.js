@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 import css_ExperiencesList from "styles/ExperiencesList.module.scss";
 
-export default function Page({ data, responsive = true }) {
+export default function Page({ title, data, responsive = true }) {
   let option = {
     date: true,
   };
@@ -17,30 +17,38 @@ export default function Page({ data, responsive = true }) {
           { [css_ExperiencesList.responsive]: responsive }
         )}>
           <div className={css_ExperiencesList.titleArea}>
-            {data.img ? (
-              <div className={css_ExperiencesList.titleImg}>
-                <img src={data.img} alt="" />
-                {data.description && (
-                  <>
-                    <small>{data.description}</small>
-                  </>
-                )}
-              </div>
-            ) : (
-              <div className={css_ExperiencesList.title}>
-                <img src="/aa.svg" alt="" className={css_ExperiencesList.laureltree_left} />
-                <h3>
-                  {data.name}
+            <h3>
+              {title && (
+                <div className={css_ExperiencesList.titleCategory}
+                  dangerouslySetInnerHTML={{
+                    __html: title.replace(/ /g, "<br/>"),
+                  }} />
+              )}
+              {data.img ? (
+                <div className={css_ExperiencesList.titleImg}>
+                  <img src={data.img} alt="" />
                   {data.description && (
                     <>
-                      <br />
                       <small>{data.description}</small>
                     </>
                   )}
-                </h3>
-                <img src="/aa.svg" alt="" className={css_ExperiencesList.laureltree_right} />
-              </div>
-            )}
+                </div>
+              ) : (
+                <div className={css_ExperiencesList.title}>
+                  <img src="/aa.svg" alt="" className={css_ExperiencesList.laureltree_left} />
+                  <div className={css_ExperiencesList.h3}>
+                    {data.name}
+                    {data.description && (
+                      <>
+                        <br />
+                        <small>{data.description}</small>
+                      </>
+                    )}
+                  </div>
+                  <img src="/aa.svg" alt="" className={css_ExperiencesList.laureltree_right} />
+                </div>
+              )}
+            </h3>
             {0 < data.countView && (
               <>
                 <div className={css_ExperiencesList.data}>
