@@ -175,7 +175,7 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 								)}
 								{e.option == "experiences3" && (
 									<div className={css_index.experiencesArea}>
-										<Link href={"/experiences"} className={css_index.experiencesLink}>
+										<Link href={"/experiences#student"} className={css_index.experiencesLink}>
 											<LoopCarousel>
 												<div className={css_index.experiencesBox}>
 													{experiencesData.filter(item => ['student', "highschool", 'child_eiken'].includes(item.slug)).map((e, i) => (
