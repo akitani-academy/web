@@ -44,7 +44,10 @@ function sitemapXML(urls) {
 				<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
 
 	urls.forEach((url) => {
-		xml += `<sitemap><loc>${url}</loc></sitemap>`;
+		xml +=
+			`<sitemap>
+			<loc>${url}</loc>
+		</sitemap>`;
 	});
 
 	xml += `</sitemapindex>`;

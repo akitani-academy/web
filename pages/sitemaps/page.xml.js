@@ -25,10 +25,12 @@ function sitemapXML(posts) {
 		if (post.slug != "course_and_classtype") {
 			if (post.slug == "index") {
 				post.slug = "";
+			} else {
+				post.slug = `/${post.slug}`;
 			}
 			xml += `
 			<url>
-				<loc>${_V.meta.baseURL}/${slug}</loc>
+				<loc>${_V.meta.baseURL}${post.slug}</loc>
 				<lastmod>${post.dateSitemap}</lastmod>
 			</url>
 			`;
