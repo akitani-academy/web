@@ -11,7 +11,7 @@ const siteTitle = function (url) {
       <h1>
         <Link legacyBehavior href={"/"}>
           <a>
-            <small>英語専門塾</small>秋谷光子アカデミィ
+            <small>英語専門予備校</small>秋谷光子アカデミィ
           </a>
         </Link>
       </h1>
@@ -21,7 +21,7 @@ const siteTitle = function (url) {
       <h2>
         <Link legacyBehavior href={"/"}>
           <a>
-            <small>英語専門塾</small>秋谷光子アカデミィ
+            <small>英語専門予備校</small>秋谷光子アカデミィ
           </a>
         </Link>
       </h2>
