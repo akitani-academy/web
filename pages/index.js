@@ -125,7 +125,7 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 
 								{e.option == "experiences" && (
 									<div className={css_index.experiencesArea}>
-										<Link href={"/experiences"} className={css_index.experiencesLink}>
+										<Link href={"/experiences#eiken"} className={css_index.experiencesLink}>
 											<LoopCarousel>
 												<div className={css_index.experiencesBox}>
 													{experiencesData.filter(item => ['eiken', 'child_eiken'].includes(item.slug)).map((e, i) => (
@@ -141,7 +141,7 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 											</LoopCarousel>
 											<div className={css_index.experiencesLinkArea}>
 												<div className={css_index.experiencesButton}>
-													すべての「 実績と体験記 」をみる
+													すべての「 英検合格実績 」をみる
 												</div>
 											</div>
 										</Link>
@@ -167,7 +167,7 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 											{/* </LoopCarousel> */}
 											<div className={css_index.experiencesLinkArea}>
 												<div className={css_index.experiencesButton}>
-													すべての「 大学受験の合格実績 」をみる
+													すべての「 大学合格実績 」をみる
 												</div>
 											</div>
 										</Link>
@@ -193,7 +193,7 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 											</LoopCarousel>
 											<div className={css_index.experiencesLinkArea}>
 												<div className={css_index.experiencesButton}>
-													すべての「 実績と体験記 」をみる
+													すべての「 小中学生の実績 」をみる
 												</div>
 											</div>
 										</Link>
