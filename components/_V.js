@@ -28,7 +28,8 @@ module.exports.menu = [
 			["トップページ", "/"],
 			["塾長ご挨拶", "/greeting"],
 			// ["当塾の特徴", "/course_and_classtype"],
-			["講師紹介", "/teacher"]
+			["講師紹介", "/teacher"],
+			["当塾の授業方針", "/method"],
 		],
 	},
 	{
@@ -50,7 +51,6 @@ module.exports.menu = [
 		class: "nav_main",
 		content: [
 			["実績と体験記", "/experiences"],
-			["当塾の指導方針", "/method"],
 			["よくある質問", "/faq"],
 			["アクセス", "/access"],
 		],
