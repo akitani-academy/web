@@ -1,3 +1,5 @@
+const _V = require("components/_V");
+
 import Image from "next/image";
 
 import Layout from "components/layout";
@@ -9,6 +11,7 @@ export default function Page({ faq }) {
   return (
     <>
       <Head
+        url={`/teacher`}
         title="講師紹介"
         breadcrumb={[
           ["トップページ", ""],

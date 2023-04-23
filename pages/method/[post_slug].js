@@ -13,6 +13,7 @@ export default function Page({ post }) {
 	return (
 		<>
 			<Head
+				url={router.asPath}
 				title={"秋谷アカデミィの" + post.title + "｜横浜・自由が丘"}
 				breadcrumb={[
 					["トップページ", ""],

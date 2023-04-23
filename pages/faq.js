@@ -7,6 +7,7 @@ export default function Page({ faq }) {
 	return (
 		<>
 			<Head
+				url={"/faq"}
 				title="よくある質問"
 				breadcrumb={[
 					["トップページ", ""],

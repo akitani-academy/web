@@ -6,7 +6,7 @@ function Page({
 	title,
 	description,
 	ogp = "",
-	url,
+	url = undefined,
 	breadcrumb
 }) {
 
@@ -53,12 +53,10 @@ function Page({
 					<meta property="og:image" content={ogp} />
 				</>
 			)}
-			{url && (
-				<>
-					<meta property="og:url" content={url} />
-					<link rel="canonical" href={url} />
-				</>
-			)}
+			{url !== undefined && (<>
+				<meta property="og:url" href={_V.meta.baseURL + url} />
+				<link rel="canonical" href={_V.meta.baseURL + url} />
+			</>)}
 			{description && (
 				<>
 					<meta name="description" content={description} />

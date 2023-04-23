@@ -12,6 +12,7 @@ export default function Page({ post }) {
   return (
     <>
       <Head
+        url={router.asPath}
         title={`${post.title}｜合格体験記`}
         breadcrumb={[
           ["トップページ", ""],

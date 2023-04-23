@@ -11,6 +11,7 @@ export default function Page({ wpDATA }) {
 	return (
 		<>
 			<Head
+				url={"/recruit"}
 				title={wpDATA.subTitle}
 				breadcrumb={[
 					["トップページ", ""],

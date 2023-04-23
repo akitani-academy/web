@@ -1,4 +1,6 @@
 /* eslint-disable react/no-unknown-property */
+const _V = require("components/_V");
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -30,6 +32,7 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 	return (
 		<>
 			<Head
+				url=""
 				description={top.cfs.description}
 				breadcrumb={[
 					["トップページ", ""]

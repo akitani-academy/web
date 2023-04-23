@@ -14,6 +14,7 @@ export default function Page({ wpDATA }) {
 	return (
 		<>
 			<Head
+				url={"/greeting"}
 				title={wpDATA.subTitle}
 				description={wpDATA.summary}
 				breadcrumb={[

@@ -5,6 +5,7 @@ export default function Page() {
 	return (
 		<>
 			<Head
+				url={`/contact`}
 				title="資料請求/お問い合わせ"
 				breadcrumb={[
 					["トップページ", ""],

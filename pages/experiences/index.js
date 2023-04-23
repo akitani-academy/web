@@ -9,6 +9,7 @@ export default function Page({ data }) {
 	return (
 		<>
 			<Head
+				url={`/experiences`}
 				title="合格実績と体験記"
 				breadcrumb={[
 					["トップページ", ""],

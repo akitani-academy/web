@@ -10,6 +10,7 @@ export default function Page({ wpDATA }) {
   return (
     <>
       <Head
+        url={"/news"}
         title={wpDATA.title + "｜NEWS"}
         description={wpDATA.summary.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '')}
         breadcrumb={[

@@ -7,6 +7,7 @@ export default function Page() {
     <>
       <Head
         robots="noindex,nofollow"
+        url={`/contact/done`}
         title="資料請求/お問い合わせ - 完了"
         breadcrumb={[
           ["トップページ", ""],

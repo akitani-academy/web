@@ -15,6 +15,7 @@ export default function Page() {
   return (
     <>
       <Head
+        url={"/access"}
         title="アクセス"
         breadcrumb={[
           ["トップページ", ""],

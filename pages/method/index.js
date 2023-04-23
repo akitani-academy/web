@@ -18,6 +18,7 @@ export default function Page({
   return (
     <>
       <Head
+        url={"/method"}
         title="当塾の指導方針"
         breadcrumb={[
           ["トップページ", ""],
