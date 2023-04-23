@@ -197,17 +197,17 @@ main {
     margin-bottom: 1em;
   }
 
+  p {
+    letter-spacing: .05em;
+    line-height: 1.7em;
+    margin-bottom: .8em;
+  }
+
   >article {
     width: 100%;
 
     >*:first-child {
       margin-top: 0;
-    }
-
-    p {
-      letter-spacing: .05em;
-      line-height: 1.7em;
-      margin-bottom: .8em;
     }
 
     a {

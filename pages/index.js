@@ -31,6 +31,9 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 		<>
 			<Head
 				description={top.cfs.description}
+				breadcrumb={[
+					["トップページ", ""]
+				]}
 			/>
 			<section className={css_index.top}>
 				<section className={css_index.topImg}>

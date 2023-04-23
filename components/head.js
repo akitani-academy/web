@@ -1,7 +1,15 @@
 const _V = require("components/_V.js");
 import Head from "next/head";
 
-function Page({ title, description, ogp = "", url, breadcrumb }) {
+function Page({
+	robots = "index, follow",
+	title,
+	description,
+	ogp = "",
+	url,
+	breadcrumb
+}) {
+
 	if (title) {
 		if (!title.includes("アカデミィ")) {
 			title = title + "｜" + _V.meta.siteTitle;
@@ -26,22 +34,20 @@ function Page({ title, description, ogp = "", url, breadcrumb }) {
 
 	return (
 		<Head>
-			<meta name="robots" content="index, follow" />
 			<meta property="og:type" content="article" />
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="theme-color" content="#be2522" />
 			{/* <meta name="twitter:site" content="@tcr_jp" /> */}
+			{_V.meta.robots && (
+				<meta name="robots" content={robots} />
+			)}
 			{_V.meta.siteTitle && (
-				<>
-					<meta property="og:site_name" content={_V.meta.siteTitle} />
-				</>
+				<meta property="og:site_name" content={_V.meta.siteTitle} />
 			)}
-			{title && (
-				<>
-					<title>{title}</title>
-					<meta property="og:title" content={title} />
-				</>
-			)}
+			{title && (<>
+				<title>{title}</title>
+				<meta property="og:title" content={title} />
+			</>)}
 			{ogp && (
 				<>
 					<meta property="og:image" content={ogp} />

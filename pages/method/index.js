@@ -19,7 +19,10 @@ export default function Page({
     <>
       <Head
         title="当塾の指導方針"
-        breadcrumb={[["当塾の指導方針", "/method"]]}
+        breadcrumb={[
+          ["トップページ", ""],
+          ["当塾の指導方針", "/method"]
+        ]}
         description="秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計173人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。圧倒的な実績をもとにノウハウを合格への当塾の指導方針を公開しています。"
       />
       <article className={classNames(css_index.card, css_index.bg)}>

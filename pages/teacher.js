@@ -8,7 +8,13 @@ import css from "styles/teacher.module.scss";
 export default function Page({ faq }) {
   return (
     <>
-      <Head title="講師紹介" breadcrumb={[["講師紹介", "/teacher"]]} />
+      <Head
+        title="講師紹介"
+        breadcrumb={[
+          ["トップページ", ""],
+          ["講師紹介", "/teacher"]
+        ]}
+      />
       <h1>講師紹介</h1>
       <ul className={css.teacherList}>
         {faq.map((e, i) => (

@@ -12,7 +12,10 @@ export default function Page({ wpDATA }) {
 		<>
 			<Head
 				title={wpDATA.subTitle}
-				breadcrumb={[[wpDATA.subTitle, "/recruit"]]}
+				breadcrumb={[
+					["トップページ", ""],
+					[wpDATA.subTitle, "/recruit"]
+				]}
 			/>
 			<h1
 				dangerouslySetInnerHTML={{

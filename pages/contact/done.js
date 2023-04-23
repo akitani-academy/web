@@ -6,8 +6,10 @@ export default function Page() {
   return (
     <>
       <Head
+        robots="noindex,nofollow"
         title="資料請求/お問い合わせ - 完了"
         breadcrumb={[
+          ["トップページ", ""],
           ["お問合せ", "/contact"],
           ["完了", "/contact/done"],
         ]}

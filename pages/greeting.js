@@ -16,7 +16,10 @@ export default function Page({ wpDATA }) {
 			<Head
 				title={wpDATA.subTitle}
 				description={wpDATA.summary}
-				breadcrumb={[[wpDATA.subTitle, "/greeting"]]}
+				breadcrumb={[
+					["トップページ", ""],
+					[wpDATA.subTitle, "/greeting"]
+				]}
 			/>
 			<div className={css.tmb}>
 				<Image

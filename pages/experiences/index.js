@@ -10,7 +10,10 @@ export default function Page({ data }) {
 		<>
 			<Head
 				title="合格実績と体験記"
-				breadcrumb={[["実績", "/experiences"]]}
+				breadcrumb={[
+					["トップページ", ""],
+					["実績", "/experiences"]
+				]}
 				description="秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計173人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。圧倒的な実績に合わせて合格体験記を数多く掲載しております。"
 			/>
 			<h1>合格実績 と 体験記</h1>

@@ -12,7 +12,10 @@ export default function Page({ wpDATA }) {
       <Head
         title={wpDATA.title + "｜NEWS"}
         description={wpDATA.summary.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '')}
-        breadcrumb={[[wpDATA.subTitle, "/news"]]}
+        breadcrumb={[
+          ["トップページ", ""],
+          [wpDATA.subTitle, "/news"]
+        ]}
       />
       <article className={css_global.card}>
         <div className="thumbnail" >

@@ -6,7 +6,10 @@ export default function Page() {
 		<>
 			<Head
 				title="資料請求/お問い合わせ"
-				breadcrumb={[["お問合せ", "/contact"]]}
+				breadcrumb={[
+					["トップページ", ""],
+					["お問合せ", "/contact"]
+				]}
 			/>
 			<h1>資料請求・お問い合わせ</h1>
 			<Contact short="false" />

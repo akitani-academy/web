@@ -14,7 +14,13 @@ export default function Page() {
   // }
   return (
     <>
-      <Head title="アクセス" breadcrumb={[["アクセス", "/access"]]} />
+      <Head
+        title="アクセス"
+        breadcrumb={[
+          ["トップページ", ""],
+          ["アクセス", "/access"]
+        ]}
+      />
 
       <h1>アクセス</h1>
       <List data={_V.access.map((e, i) => [e.name, "#" + e.id])} />
