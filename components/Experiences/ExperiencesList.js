@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import classNames from "classnames";
 
-import css_ExperiencesList from "styles/ExperiencesList.module.scss";
+import css_ExperiencesList from "./ExperiencesList.module.scss";
 
 export default function Page({ title, data, responsive = true }) {
   let option = {

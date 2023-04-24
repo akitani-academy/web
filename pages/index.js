@@ -16,7 +16,8 @@ import LinkList from "components/widget/LinkList";
 import Slideshow from "components/widget/Slideshow"
 import LoopCarousel from 'components/widget/LoopCarousel';
 import Button from "components/Button/Button"
-import ExperiencesList from "components/widget/ExperiencesList";
+import ExperiencesList from "components/Experiences/ExperiencesList";
+import ExperiencesListBox from "components/Experiences/ExperiencesListBox";
 
 import css_index from "styles/index.module.scss";
 
@@ -130,80 +131,34 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 							>
 
 								{e.option == "experiences" && (
-									<div className={css_index.experiencesArea}>
-										<Link href={"/experiences#eiken"} className={css_index.experiencesLink}>
-											<LoopCarousel>
-												<div className={css_index.experiencesBox}>
-													{experiencesData.filter(item => ['eiken', 'child_eiken'].includes(item.slug)).map((e, i) => (
-														e.child_list.map(
-															(e1, i) => (10 < e1.post.length) && (
-																<div className={css_index.experienceBox} key={i}>
-																	<ExperiencesList title={e.name} data={e1} responsive={false} />
-																</div>
-															)
-														)
-													))}
-												</div>
-											</LoopCarousel>
-											<div className={css_index.experiencesLinkArea}>
-												<div className={css_index.experiencesButton}>
-													すべての「 英検合格実績 」をみる
-												</div>
-											</div>
-										</Link>
-									</div>
+									<ExperiencesListBox
+										data={experiencesData}
+										filter={['eiken', 'child_eiken']}
+										button={{
+											text: "すべての「 英検合格実績 」をみる",
+											link: "/experiences#eiken"
+										}}
+									/>
 								)}
 								{e.option == "experiences2" && (
-									<div className={css_index.experiencesArea}>
-										<Link href={"/experiences#college"} className={css_index.experiencesLink}>
-											{/* <LoopCarousel> */}
-											<div className={css_index.experiencesBox}>
-												{experiencesData.filter(item => ['college'].includes(item.slug)).map((e, i) => (
-													<>
-														{e.child_list.map(
-															(e1, i) => (10 < e1.post.length) && (
-																<div className={css_index.experienceBox} key={i}>
-																	<ExperiencesList title={e.name} data={e1} responsive={false} />
-																</div>
-															)
-														)}
-													</>
-												))}
-											</div>
-											{/* </LoopCarousel> */}
-											<div className={css_index.experiencesLinkArea}>
-												<div className={css_index.experiencesButton}>
-													すべての「 大学合格実績 」をみる
-												</div>
-											</div>
-										</Link>
-									</div>
+									<ExperiencesListBox
+										data={experiencesData}
+										filter={['college']}
+										button={{
+											text: "すべての「 大学合格実績 」をみる",
+											link: "/experiences#college"
+										}}
+									/>
 								)}
 								{e.option == "experiences3" && (
-									<div className={css_index.experiencesArea}>
-										<Link href={"/experiences#student"} className={css_index.experiencesLink}>
-											<LoopCarousel>
-												<div className={css_index.experiencesBox}>
-													{experiencesData.filter(item => ['student', "highschool", 'child_eiken'].includes(item.slug)).map((e, i) => (
-														<>
-															{e.child_list.map(
-																(e1, i) => (10 < e1.post.length) && (
-																	<div className={css_index.experienceBox} key={i}>
-																		<ExperiencesList title={e.name} data={e1} responsive={false} />
-																	</div>
-																)
-															)}
-														</>
-													))}
-												</div>
-											</LoopCarousel>
-											<div className={css_index.experiencesLinkArea}>
-												<div className={css_index.experiencesButton}>
-													すべての「 小中学生の実績 」をみる
-												</div>
-											</div>
-										</Link>
-									</div>
+									<ExperiencesListBox
+										data={experiencesData}
+										filter={['student', "highschool", 'child_eiken']}
+										button={{
+											text: "すべての「 小中学生の実績 」をみる",
+											link: "/experiences#student"
+										}}
+									/>
 								)}
 
 								{e.title && (
@@ -234,7 +189,7 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 											className={css_index.courseBox}
 										>
 											{courseData.map((e, i) => (
-												<Button href={`/course/${e.slug}`} key={i}>
+												<Button href={`/course/${e.slug}#content`} key={i}>
 													{e.title}<span>コース</span>
 												</Button>
 											))}

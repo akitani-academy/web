@@ -1,7 +1,7 @@
 import Layout from "components/layout";
 import Head from "components/head";
 import List from "components/widget/LinkList";
-import ExperiencesList from "components/widget/ExperiencesList";
+import ExperiencesList from "components/Experiences/ExperiencesList";
 
 import css_View from "styles/View.module.scss";
 

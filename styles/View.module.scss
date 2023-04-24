@@ -1,4 +1,7 @@
 .View {
+    width: 100%;
+    flex: 1;
+
     h3,
     h4 {
         color: $c_1;
@@ -8,24 +11,37 @@
     }
 }
 
-.flex {
+.card {
+    // width: 900px;
     background-color: #fff;
+    margin-right: -2.5rem;
+    margin-left: -2.5rem;
+    padding: 1.5rem 2.5rem;
+}
+
+.flex {
+    // background-color: #fff;
 
     @media (min-width: 600px) {
         display: flex;
         gap: 1rem;
     }
 
-    margin-right: -2.5rem;
-    margin-left: -2.5rem;
-    padding: 1.5rem 2.5rem;
+    // margin-right: -2.5rem;
+    // margin-left: -2.5rem;
+    // padding: 1.5rem 2.5rem;
 
-    margin-top: 2rem;
+    // margin-top: 2rem;
+}
+
+.experiences {
+    margin-top: 1rem;
 }
 
 .title {
     font-size: 1.7rem;
     margin-bottom: 1.7rem;
+    // margin-top: 2rem;
 
     &::before {
         content: attr(data-subtitle);
