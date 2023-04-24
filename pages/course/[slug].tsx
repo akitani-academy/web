@@ -20,7 +20,7 @@ export default function Page({ data, experiencesData }) {
     const router = useRouter();
     const { slug } = router.query;
 
-    console.log(data.experiences[0])
+    console.log(data.experiences)
 
     return (
         <>
@@ -52,7 +52,7 @@ export default function Page({ data, experiencesData }) {
                             <span>{data.title}</span>コース
                         </h1>
 
-                        {(data.experiences[0] !== "") && (
+                        {(!data.experiences) ? (<></>) : (
                             <div className={css_view.experiences}>
                                 <ExperiencesListBox
                                     data={experiencesData}
