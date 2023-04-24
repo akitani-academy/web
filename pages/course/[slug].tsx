@@ -34,7 +34,7 @@ export default function Page({ data, experiencesData }) {
                     [`${data.title}コース`, slug]
                 ]}
                 description={data.description ? data.description : ""}
-                url={`${_V.meta.baseURL}/course/${slug}`}
+                url={`/course/${slug}`}
             />
             <Header />
 
