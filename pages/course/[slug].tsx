@@ -20,7 +20,7 @@ export default function Page({ data, experiencesData }) {
     const router = useRouter();
     const { slug } = router.query;
 
-    // console.log(data)
+    console.log(data)
 
     return (
         <>

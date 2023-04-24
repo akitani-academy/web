@@ -9,6 +9,7 @@ import Contact from "components/widget/Contact"
 
 import css from "styles/greeting.module.scss";
 import css_contact from "styles/contact.module.scss";
+import css_global from "styles/global.module.scss";
 
 export default function Page({ wpDATA }) {
 	return (
@@ -22,25 +23,27 @@ export default function Page({ wpDATA }) {
 					[wpDATA.subTitle, "/greeting"]
 				]}
 			/>
-			<div className={css.tmb}>
-				<Image
-					src={"/292A1489.jpg"}
-					width={"2048"}
-					height={"1365"}
-					sizes={"560"}
+			<article className={css_global.card}>
+				<div className={css.tmb}>
+					<Image
+						src={"/292A1489.jpg"}
+						width={"2048"}
+						height={"1365"}
+						sizes={"560"}
+					/>
+				</div>
+				<h1
+					data-subtitle={wpDATA.subTitle}
+					dangerouslySetInnerHTML={{
+						__html: parser.translateHTMLString(wpDATA.title),
+					}}
+				></h1>
+				<div
+					dangerouslySetInnerHTML={{
+						__html: wpDATA.content,
+					}}
 				/>
-			</div>
-			<h1
-				data-subtitle={wpDATA.subTitle}
-				dangerouslySetInnerHTML={{
-					__html: parser.translateHTMLString(wpDATA.title),
-				}}
-			></h1>
-			<article
-				dangerouslySetInnerHTML={{
-					__html: wpDATA.content,
-				}}
-			/>
+			</article>
 			<aside className={css_contact.contact}>
 				<Contact short="true" />
 			</aside>
