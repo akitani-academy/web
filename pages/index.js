@@ -16,7 +16,6 @@ import LinkList from "components/widget/LinkList";
 import Slideshow from "components/widget/Slideshow"
 import LoopCarousel from 'components/widget/LoopCarousel';
 import Button from "components/Button/Button"
-import ExperiencesList from "components/Experiences/ExperiencesList";
 import ExperiencesListBox from "components/Experiences/ExperiencesListBox";
 
 import css_index from "styles/index.module.scss";
