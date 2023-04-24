@@ -17,7 +17,7 @@ function Page() {
           <section>
             <div className={css.header}>
               <h6>
-                <small>英語専門塾</small>秋谷光子アカデミィ
+                <small>英語専門予備校</small>秋谷光子アカデミィ
               </h6>
               <ul className={css.menu}>
                 {fA.map((e, i) => (
