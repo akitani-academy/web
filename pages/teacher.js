@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import Layout from "components/layout";
 import Head from "components/head";
+import ContactButton from "components/ContactButton/ContactButton"
 
 import css from "styles/teacher.module.scss";
 
@@ -57,6 +58,7 @@ export default function Page({ faq }) {
           </li>
         ))}
       </ul>
+      <ContactButton />
     </>
   );
 }

@@ -6,6 +6,7 @@ const parser = loadDefaultJapaneseParser();
 
 import Layout from "components/layout";
 import Contact from "components/widget/Contact"
+import ContactButton from "components/ContactButton/ContactButton"
 
 import css from "styles/greeting.module.scss";
 import css_contact from "styles/contact.module.scss";
@@ -47,6 +48,7 @@ export default function Page({ wpDATA }) {
 			<aside className={css_contact.contact}>
 				<Contact short="true" />
 			</aside>
+			<ContactButton />
 		</>
 	);
 }

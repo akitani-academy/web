@@ -13,6 +13,7 @@ import Contact from "components/widget/Contact"
 import LinkList from "components/widget/LinkList";
 import ExperiencesListBox from "components/Experiences/ExperiencesListBox";
 import Slideshow from "components/widget/Slideshow"
+import ContactButton from "components/ContactButton/ContactButton"
 
 import css_contact from "styles/contact.module.scss";
 import css_view from "styles/View.module.scss";
@@ -224,6 +225,7 @@ export default function Page({ data, experiencesData }) {
                 </div>
                 <Nav />
             </main>
+            <ContactButton />
             <Footer />
         </>
     );

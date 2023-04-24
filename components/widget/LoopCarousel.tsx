@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer';
 
 import styles from 'styles/LoopCarousel.module.scss';
 
-const LoopScroll = ({ children }) => {
+const LoopScroll = ({ children, width }) => {
     const carouselRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
 

@@ -1,6 +1,10 @@
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  // overflow-x: hidden;
+}
+
+body {
+  scroll-behavior: smooth;
 }
 
 iframe {
@@ -122,8 +126,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-strong {
+h6 {
   color: #000;
 }
 
@@ -289,3 +292,7 @@ textarea {
     order: 0;
   }
 }
+
+// *{
+//   min-width: 0; //flexアイテムがはみ出さないように
+// }

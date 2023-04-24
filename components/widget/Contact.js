@@ -44,7 +44,7 @@ export default function Page({ short }) {
 
 			{/* <h2 data-subTitle="秋谷光子アカデミィへの">資料請求 / お問い合わせ</h2> */}
 
-			<h2>メールでのお問い合わせ</h2>
+			<h2 id="contact">メールでのお問い合わせ</h2>
 			<form
 				action="https://api.staticforms.xyz/submit"
 				method="post"

@@ -1,7 +1,3 @@
-
-const _V = require("components/_V.js");
-import Head from "components/head";
-import List from "components/widget/LinkList";
 import css_Button from "components/Button/Button.module.scss";
 import Link from "next/link";
 

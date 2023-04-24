@@ -1,6 +1,7 @@
 import Layout from "components/layout";
 import Head from "components/head";
 import LinkList from "components/widget/LinkList";
+import ContactButton from "components/ContactButton/ContactButton"
 
 import { loadDefaultJapaneseParser } from "budoux";
 const parser = loadDefaultJapaneseParser();
@@ -65,6 +66,7 @@ export default function Page({ wpDATA }) {
 							></article>
 						</>
 					))}
+					<ContactButton />
 				</>
 			))}
 		</>

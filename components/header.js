@@ -44,14 +44,14 @@ function Page() {
   const router = useRouter();
   let url = router.pathname.split("/");
 
-  const pageBack = () => {
-    const currentPath = router.pathname;
-    if (!document.referrer) {
-      router.push("/");
-    } else {
-      router.back();
-    }
-  };
+  // const pageBack = () => {
+  //   const currentPath = router.pathname;
+  //   if (!document.referrer) {
+  //     router.push("/");
+  //   } else {
+  //     router.back();
+  //   }
+  // };
 
   const { data, mutate } = navSate();
   const handleInc = () => mutate(!data);
@@ -76,11 +76,11 @@ function Page() {
               </a>
             </Link>
             <ul className={css.meta}>
-              <li>
+              {/* <li>
                 <Link legacyBehavior href={"/contact"}>
                   <a className={css.contact}>資料請求<br />問い合わせ</a>
                 </Link>
-              </li>
+              </li> */}
               <li className={css.spMENU} onClick={handleInc}>
                 <span>MENU</span>
               </li>

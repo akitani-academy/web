@@ -3,6 +3,7 @@ import Layout from "components/layout";
 import Head from "components/head";
 import List from "components/widget/LinkList";
 import Contact from "components/widget/Contact"
+import ContactButton from "components/ContactButton/ContactButton"
 
 import css_index from "styles/index.module.scss";
 import css_contact from "styles/contact.module.scss";
@@ -36,6 +37,7 @@ export default function Page({ post }) {
 			<aside className={css_contact.contact}>
 				<Contact short="true" />
 			</aside>
+			<ContactButton />
 		</>
 	);
 }

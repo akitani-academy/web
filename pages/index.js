@@ -17,6 +17,7 @@ import Slideshow from "components/widget/Slideshow"
 import LoopCarousel from 'components/widget/LoopCarousel';
 import Button from "components/Button/Button"
 import ExperiencesListBox from "components/Experiences/ExperiencesListBox";
+import ContactButton from "components/ContactButton/ContactButton"
 
 import css_index from "styles/index.module.scss";
 
@@ -345,6 +346,9 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 				</article>
 				<Nav />
 			</main>
+
+			<ContactButton />
+
 			<style jsx>{`
 				h2 {
 					font-size: 1.875rem;

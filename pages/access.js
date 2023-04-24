@@ -4,6 +4,7 @@ const _V = require("components/_V.js");
 import Head from "components/head";
 import List from "components/widget/LinkList";
 import LoopCarousel from 'components/widget/LoopCarousel';
+import ContactButton from "components/ContactButton/ContactButton"
 
 import css from "styles/index.module.scss";
 
@@ -43,6 +44,7 @@ export default function Page() {
             allowFullScreen
             loading="lazy"
           ></iframe>
+          <ContactButton />
         </>
       ))}
     </>

@@ -4,6 +4,7 @@ import classNames from "classnames";
 import Layout from "components/layout";
 import Head from "components/head";
 import List from "components/widget/LinkList";
+import ContactButton from "components/ContactButton/ContactButton"
 
 import css_index from "styles/index.module.scss";
 
@@ -44,6 +45,7 @@ export default function Page({
         <h2>その他の対策</h2>
         <List data={other} />
       </article>
+      <ContactButton />
     </>
   );
 }

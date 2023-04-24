@@ -2,6 +2,7 @@ import Layout from "components/layout";
 import Head from "components/head";
 import List from "components/widget/LinkList";
 import ExperiencesList from "components/Experiences/ExperiencesList";
+import ContactButton from "components/ContactButton/ContactButton"
 
 import css_View from "styles/View.module.scss";
 
@@ -39,6 +40,7 @@ export default function Page({ data }) {
 					)}
 				</>
 			))}
+			<ContactButton />
 		</>
 	);
 }
