@@ -22,9 +22,14 @@ function sitemapXML(posts) {
 	let xml = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
 
 	posts.forEach((post) => {
+
+		let link = `${_V.meta.baseURL}/course/${post.slug}`;
+		
+		`https://www.bing.com/indexnow?url=${link}&key=fcfe89ccc4c04cb598c32cf6c6edc79e`
+
 		xml += `
 			<url>
-				<loc>${_V.meta.baseURL}/course/${post.slug}</loc>
+				<loc>${link}</loc>
 				<lastmod>${post.modified}</lastmod>
 			</url>
 			`;
