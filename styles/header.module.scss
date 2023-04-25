@@ -73,6 +73,7 @@
         margin-right: .4rem;
         flex-flow: column;
         justify-content:center;
+        align-items: flex-end;
         line-height: 1em;
     }
 
@@ -131,6 +132,7 @@
             display: none;
         }
 
+        width: 15vw;
         display: flex;
         flex-flow: column;
         justify-content: center;
