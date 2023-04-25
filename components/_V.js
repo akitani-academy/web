@@ -29,7 +29,7 @@ module.exports.menu = [
 			["塾長ご挨拶", "/greeting"],
 			// ["当塾の特徴", "/course_and_classtype"],
 			["講師紹介", "/teacher"],
-			["当塾の授業方針", "/method"],
+			["合格への授業方針", "/method"],
 		],
 	},
 	{

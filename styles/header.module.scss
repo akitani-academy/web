@@ -28,8 +28,9 @@
 
     justify-content:space-between;
 
-    h1,
-    h2 {
+    .title {
+        color: #000;
+        font-weight: bold;
         font-size: 1.375em;
         line-height: 1em;
         margin-right: 1rem;

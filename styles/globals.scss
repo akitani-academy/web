@@ -145,12 +145,19 @@ main {
   justify-content: center;
   gap: 3vw;
 
+  &.marginTop0 {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
   h1,
   h2,
+  .h2,
   h3,
   h4,
   h5,
   h6 {
+    font-weight: bold;
     letter-spacing: .05em;
 
     &+.LinkList {
@@ -158,6 +165,7 @@ main {
     }
 
     &::before,
+    small,
     .subTitle {
       letter-spacing: .2em;
       font-size: .5em;
@@ -165,6 +173,10 @@ main {
       display: block;
       content: attr(data-subtitle);
       pointer-events: none;
+    }
+
+    &.marginTop0 {
+      margin-top: 0;
     }
   }
 
@@ -174,7 +186,8 @@ main {
     margin-bottom: .3em;
   }
 
-  h2 {
+  h2,
+  .h2 {
     font-size: 1.4rem;
     margin-top: 1.5em;
     margin-bottom: .7em;
@@ -279,17 +292,17 @@ textarea {
 }
 
 // ジャンプリンクずれ修正
-*[id]:not(.splide, .splide__slide, .splide__list, .splide__track) {
+* {
 
-  // display: flex;
-  // flex-flow: column;
-  &::before {
-    pointer-events: none;
-    display: block;
-    height: 10rem;
-    margin-top: -10rem;
-    content: "";
-    order: 0;
+  &[id]:not(.splide, .splide__slide, .splide__list, .splide__track) {
+    &::before {
+      pointer-events: none;
+      display: block;
+      height: 10rem;
+      margin-top: -10rem;
+      content: "";
+      order: 0;
+    }
   }
 }
 

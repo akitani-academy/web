@@ -8,23 +8,25 @@ import css from "styles/header.module.scss";
 const siteTitle = function (url) {
   if (url[1] == "") {
     return (
-      <h1>
+      <h1 className={css.title}>
         <Link legacyBehavior href={"/"}>
           <a>
-            <small>英語専門予備校</small>秋谷光子アカデミィ
+            <small>英語専門予備校</small>
+            秋谷光子アカデミィ
           </a>
         </Link>
       </h1>
     );
   } else {
     return (
-      <h2>
+      <div className={css.title}>
         <Link legacyBehavior href={"/"}>
           <a>
-            <small>英語専門予備校</small>秋谷光子アカデミィ
+            <small>英語専門予備校</small>
+            秋谷光子アカデミィ
           </a>
         </Link>
-      </h2>
+      </div>
     );
   }
 };
