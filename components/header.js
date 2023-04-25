@@ -84,7 +84,13 @@ function Page() {
                 </Link>
               </li> */}
               <li className={css.spMENU} onClick={handleInc}>
-                <span>MENU</span>
+                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.74023 12.3747H21.7402" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M3.74023 6.37471H21.7402" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M3.74023 18.3747H21.7402" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                <div>MENU</div>
               </li>
             </ul>
           </section>

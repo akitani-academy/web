@@ -33,9 +33,9 @@ export default function Page({ post }) {
 			<main className="marginTop0">
 
 				<section>
-					<div data-subTitle="秋谷光子アカデミィの" className={classNames("h2","marginTop0")}>
+					<h2 data-subTitle="秋谷光子アカデミィの" className={classNames("h2", "marginTop0")}>
 						合格への授業方針
-					</div>
+					</h2>
 					<p>
 						秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計173人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。圧倒的な実績をもとにノウハウを合格のHowToとして公開しています。
 					</p>

@@ -46,7 +46,9 @@ export default function Page({ data, experiencesData }) {
 
                 <div className={css_view.View}>
 
-                    <h2 data-subTitle="秋谷光子アカデミィの">コース別学習</h2>
+                    <h2 data-subTitle="秋谷光子アカデミィの" className={classNames("h2", "marginTop0")}>
+                        コース別学習
+                    </h2>
                     <p>
                         秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計173人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。
                     </p>
