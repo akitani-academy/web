@@ -72,6 +72,6 @@ async function getPost(catID) {
     "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/posts?per_page=100&categories=" +
     catID
   ).then((res) => res.json());
-  data = data.map((e, i) => [e.listTitle, "/method/" + e.slug]).reverse();
+  data = data.map((e, i) => [e.listTitle, "/method/" + e.slug + "#content"]).reverse();
   return data;
 }

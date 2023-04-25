@@ -33,7 +33,11 @@ export default function Page({ post }) {
 			<main className="marginTop0">
 
 				<section>
-					<h2 data-subTitle="秋谷光子アカデミィの" className={classNames("h2", "marginTop0")}>
+					<h2
+						id="content"
+						data-subTitle="秋谷光子アカデミィの"
+						className={classNames("h2", "marginTop0")}
+					>
 						合格への授業方針
 					</h2>
 					<p>
