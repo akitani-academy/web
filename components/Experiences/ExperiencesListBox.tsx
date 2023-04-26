@@ -5,9 +5,11 @@ import css_index from "styles/index.module.scss";
 import ExperiencesList from "components/Experiences/ExperiencesList";
 import LoopCarousel from 'components/widget/LoopCarousel';
 
-export default function Button({ data, filter, button }) {
+export default function Button({ data, filter="", button }) {
 
-    data = data.filter(item => filter.includes(item.slug));
+    if(filter){
+        data = data.filter(item => filter.includes(item.slug));
+    }
 
     return (
         <div className={css_index.experiencesArea}>

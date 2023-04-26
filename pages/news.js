@@ -4,10 +4,11 @@ import Layout from "components/layout";
 import Head from "components/head";
 import Contact from "components/widget/Contact"
 import ContactButton from "components/ContactButton/ContactButton"
+import ExperiencesListBox from "components/Experiences/ExperiencesListBox";
 
 import css_global from "styles/global.module.scss";
 import css_contact from "styles/contact.module.scss";
-export default function Page({ wpDATA }) {
+export default function Page({ wpDATA,experiencesData }) {
   return (
     <>
       <Head
@@ -32,6 +33,17 @@ export default function Page({ wpDATA }) {
         </div>
         <h1 data-subtitle={wpDATA.subTitle}>{wpDATA.title}</h1>
         <div className="news" dangerouslySetInnerHTML={{ __html: wpDATA.content }} />
+        <h2>当塾の実績</h2>
+        <p>
+        秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計173人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。
+        </p>
+        <ExperiencesListBox
+                                    data={experiencesData}
+                                    button={{
+                                        text: "すべての「 実績と体験記 」をみる",
+                                        link: "/experiences"
+                                    }}
+                                />
       </article>
       <aside className={css_contact.contact}>
         <Contact short="true" />
@@ -51,9 +63,13 @@ export async function getStaticProps() {
   ).then((res) => res.json());
   wpDATA = wpDATA[0];
 
+  let experiencesData = await fetch(
+    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
+).then((res) => res.json());
+
   return {
     props: {
-      wpDATA,
+      wpDATA,experiencesData
     },
   };
 }
