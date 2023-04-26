@@ -90,7 +90,7 @@ export default function Page({ data, experiencesData }) {
                                 />
                                 {data.menu.length > 0 && (
                                     <>
-                                        <h3>より具体的な合格対策</h3>
+                                        <h3>さらに具体的な合格対策</h3>
                                         <LinkList
                                             data={data.menu.map((e, i) => [
                                                 e.title,
