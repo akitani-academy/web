@@ -1,5 +1,5 @@
 module.exports.meta = {
-	siteTitle: "英語専門予備校 秋谷光子アカデミィ - 英検1級173人合格,圧倒的な実績｜横浜,綱島,自由が丘,田園調布",
+	siteTitle: "英語専門予備校 秋谷光子アカデミィ - 英検1級173人合格の圧倒的な実績｜横浜,綱島,自由が丘,田園調布",
 	baseURL: "https://akitani-academy.jp",
 };
 module.exports.access = [
