@@ -43,24 +43,18 @@ export default function Page({ faq }) {
               </div>
             )}
             {e.license}
-            {e.message && (
-              <>
+            {e.message && (<>
                 <h3>講師のメッセージ</h3>
                 <p>{e.message}</p>
-              </>
-            )}
-            {e.career && (
-              <>
+              </>)}
+            {e.career && (<>
                 <h3>指導実績・得意分野</h3>
                 <p>{e.career}</p>
-              </>
-            )}
-            {e.other && (
-              <>
+              </>)}
+            {e.other && (<>
                 <h3>その他</h3>
                 <p>{e.other}</p>
-              </>
-            )}
+              </>)}
           </li>
         ))}
       </ul>

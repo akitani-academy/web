@@ -1,3 +1,6 @@
+import { loadDefaultJapaneseParser } from "budoux";
+const parser = loadDefaultJapaneseParser();
+
 import Image from "next/image";
 
 import Layout from "components/layout";
@@ -31,8 +34,8 @@ export default function Page({ wpDATA,experiencesData }) {
             objectFit="cover"
           ></Image>
         </div>
-        <h1 data-subtitle={wpDATA.subTitle}>{wpDATA.title}</h1>
-        <div className="news" dangerouslySetInnerHTML={{ __html: wpDATA.content }} />
+        <h1 data-subtitle={wpDATA.subTitle}>{parser.translateHTMLString(wpDATA.title)}</h1>
+        <div className="news" dangerouslySetInnerHTML={{ __html: parser.translateHTMLString(wpDATA.content) }} />
         <h2>当塾の実績</h2>
         <p>
         秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計173人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。

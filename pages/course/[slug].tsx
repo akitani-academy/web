@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 import classNames from "classnames";
+import { loadDefaultJapaneseParser } from "budoux";
+const parser = loadDefaultJapaneseParser();
 
 import Head from "components/head";
 import Header from "components/header";
@@ -86,7 +88,7 @@ export default function Page({ data, experiencesData }) {
                                 <h3>コースの説明</h3>
                                 <div
                                     className={css_view.courseBody}
-                                    dangerouslySetInnerHTML={{ __html: data.content }}
+                                    dangerouslySetInnerHTML={{ __html: parser.translateHTMLString(data.content) }}
                                 />
                                 {data.menu.length > 0 && (
                                     <>

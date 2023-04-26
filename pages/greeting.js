@@ -41,7 +41,7 @@ export default function Page({ wpDATA }) {
 				></h1>
 				<div
 					dangerouslySetInnerHTML={{
-						__html: wpDATA.content,
+						__html: parser.translateHTMLString(wpDATA.content),
 					}}
 				/>
 			</article>

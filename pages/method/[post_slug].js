@@ -1,4 +1,8 @@
 import { useRouter } from "next/router";
+
+import { loadDefaultJapaneseParser } from "budoux";
+const parser = loadDefaultJapaneseParser();
+
 import Header from "components/header";
 import Footer from "components/footer";
 import Nav from "components/nav";
@@ -50,7 +54,7 @@ export default function Page({ post }) {
 							<small>英語専門予備校の</small>
 							{post.title}
 						</h1>
-						<div dangerouslySetInnerHTML={{ __html: post.content }} />
+						<div dangerouslySetInnerHTML={{ __html: parser.translateHTMLString(post.content) }} />
 					</article>
 					<aside className={css_contact.contact}>
 						<Contact short="true" />

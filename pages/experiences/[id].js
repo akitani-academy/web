@@ -1,5 +1,8 @@
 import { useRouter } from "next/router";
 
+import { loadDefaultJapaneseParser } from "budoux";
+const parser = loadDefaultJapaneseParser();
+
 import Layout from "components/layout";
 import Head from "components/head";
 import LinkList from "components/widget/LinkList";
@@ -29,7 +32,7 @@ export default function Page({ post }) {
       <article className={css_experiences.article}>
         <h1>{post.title}</h1>
         <h2>{post.student}</h2>
-        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+        <div dangerouslySetInnerHTML={{ __html: parser.translateHTMLString(post.content) }} />
       </article>
       <aside className={css_contact.contact}>
         <Contact short="true" />
