@@ -11,7 +11,7 @@ export default function Page({ data }) {
 		<>
 			<Head
 				url={`/experiences`}
-				title="合格実績と体験記"
+				title="英検1級173人/東大早慶上智9割以上の合格実績と体験記"
 				breadcrumb={[
 					["トップページ", ""],
 					["実績", "/experiences"]
