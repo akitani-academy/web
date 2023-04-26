@@ -37,6 +37,13 @@ function sitemapXML(posts) {
 		}
 	});
 
+	xml += `
+			<url>
+				<loc>${_V.meta.baseURL}/access</loc>
+				<lastmod>2023-04-23</lastmod>
+			</url>
+			`;
+
 	xml += `</urlset>`;
 	return xml;
 }
