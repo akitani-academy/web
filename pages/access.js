@@ -17,7 +17,7 @@ export default function Page() {
     <>
       <Head
         url={"/access"}
-        title="横浜,綱島,自由が丘,田園調布の英語専門予備校"
+        title="駅から徒歩1分のアクセス"
         breadcrumb={[
           ["トップページ", ""],
           ["アクセス", "/access"]
