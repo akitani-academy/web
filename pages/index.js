@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-const _V = require("components/_V");
+// const _V = require("components/_V");
 
 import Image from "next/image";
 import Link from "next/link";

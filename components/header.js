@@ -4,6 +4,7 @@ import Link from "next/link";
 import UseSWR from "swr";
 
 import css from "styles/header.module.scss";
+import classNames from "classnames";
 
 const siteTitle = function (url) {
   if (url[1] == "") {
@@ -78,19 +79,33 @@ function Page() {
               </a>
             </Link>
             <ul className={css.meta}>
-              {/* <li>
-                <Link legacyBehavior href={"/contact"}>
-                  <a className={css.contact}>資料請求<br />問い合わせ</a>
-                </Link>
-              </li> */}
-              <li className={css.spMENU} onClick={handleInc}>
-                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3.74023 12.3747H21.7402" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M3.74023 6.37471H21.7402" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M3.74023 18.3747H21.7402" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+              <li className={classNames(
+                css.spMENU,
+                { [css.close]: data }
+              )}
+                onClick={handleInc}
+              >
 
-                <div>MENU</div>
+                {!data ? (
+                  <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.74023 12.3747H21.7402" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M3.74023 6.37471H21.7402" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M3.74023 18.3747H21.7402" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                ) : (
+                  <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.541 6.72656L6.54102 18.7266" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M6.54102 6.72656L18.541 18.7266" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                )}
+
+                <div>
+                  {!data ? (
+                    <>MENU</>
+                  ) : (
+                    <>CLOSE</>
+                  )}
+                </div>
               </li>
             </ul>
           </section>

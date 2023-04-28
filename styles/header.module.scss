@@ -106,9 +106,6 @@
 
         >* {
             font-size: .8em;
-            // height: 100%;
-            // width: 100%;
-            // padding: 0 1rem;
 
             @media (max-width: 600px) {
                 width: fit-content;
@@ -137,7 +134,12 @@
         flex-flow: column;
         justify-content: center;
         align-items: center;
-        background: #000;
+        background: $c_2;
+        transition: .15s background;
+
+        &.close {
+            background: $c_1;
+        }
 
         svg {
             width: 80%;
