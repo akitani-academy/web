@@ -63,10 +63,11 @@ export default function Button() {
                 </div>
                 <div>
                     <h2 className={css.messageH2}>
-                        英検１級講師<wbr />
+                        英検１級 講師<wbr />
                         42名による<wbr />
                         圧倒的な<wbr />
-                        英検合格実績
+                        英検合格実績<br />
+                        英検１級 合格累計173人
                     </h2>
                     <h3>
                         小学校で3級、<wbr />
