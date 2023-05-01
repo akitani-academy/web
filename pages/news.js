@@ -11,7 +11,7 @@ import ExperiencesListBox from "components/Experiences/ExperiencesListBox";
 
 import css_global from "styles/global.module.scss";
 import css_contact from "styles/contact.module.scss";
-export default function Page({ wpDATA,experiencesData }) {
+export default function Page({ wpDATA, experiencesData }) {
   return (
     <>
       <Head
@@ -34,19 +34,19 @@ export default function Page({ wpDATA,experiencesData }) {
             objectFit="cover"
           ></Image>
         </div>
-        <h1 data-subtitle={wpDATA.subTitle}>{parser.translateHTMLString(wpDATA.title)}</h1>
+        <h1 data-subtitle={wpDATA.subTitle} dangerouslySetInnerHTML={{ __html: parser.translateHTMLString(wpDATA.title) }} />
         <div className="news" dangerouslySetInnerHTML={{ __html: parser.translateHTMLString(wpDATA.content) }} />
         <h2>当塾の実績</h2>
         <p>
-        秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計173人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。
+          秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計173人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。
         </p>
         <ExperiencesListBox
-                                    data={experiencesData}
-                                    button={{
-                                        text: "すべての「 実績と体験記 」をみる",
-                                        link: "/experiences"
-                                    }}
-                                />
+          data={experiencesData}
+          button={{
+            text: "すべての「 実績と体験記 」をみる",
+            link: "/experiences"
+          }}
+        />
       </article>
       <aside className={css_contact.contact}>
         <Contact short="true" />
@@ -68,11 +68,11 @@ export async function getStaticProps() {
 
   let experiencesData = await fetch(
     "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
-).then((res) => res.json());
+  ).then((res) => res.json());
 
   return {
     props: {
-      wpDATA,experiencesData
+      wpDATA, experiencesData
     },
   };
 }

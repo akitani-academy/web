@@ -30,6 +30,7 @@ module.exports.menu = [
 			// ["当塾の特徴", "/course_and_classtype"],
 			["講師紹介", "/teacher"],
 			["合格への授業方針", "/method"],
+			["料金について", "/pricing"],
 		],
 	},
 	{
