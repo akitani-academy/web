@@ -42,7 +42,7 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 			/>
 
 			<TopSlideshow />
-			
+
 			<main className={css_index.main}>
 				<article>
 
@@ -60,7 +60,28 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 							<div
 								className={css_index.box}
 							>
-
+								{e.title && (
+									<h2
+										key={i}
+									>
+										<div
+											className={css_index.subTitle}
+											dangerouslySetInnerHTML={{
+												__html: parser.translateHTMLString(e.subTitle),
+											}}
+										/>
+										<div
+											dangerouslySetInnerHTML={{
+												__html: parser.translateHTMLString(e.title),
+											}}
+										/>
+									</h2>
+								)}
+								<div
+									dangerouslySetInnerHTML={{
+										__html: parser.translateHTMLString(e.body),
+									}}
+								></div>
 								{e.option == "experiences" && (
 									<ExperiencesListBox
 										data={experiencesData}
@@ -91,29 +112,6 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 										}}
 									/>
 								)}
-
-								{e.title && (
-									<h2
-										key={i}
-									>
-										<div
-											className={css_index.subTitle}
-											dangerouslySetInnerHTML={{
-												__html: parser.translateHTMLString(e.subTitle),
-											}}
-										/>
-										<div
-											dangerouslySetInnerHTML={{
-												__html: parser.translateHTMLString(e.title),
-											}}
-										/>
-									</h2>
-								)}
-								<div
-									dangerouslySetInnerHTML={{
-										__html: parser.translateHTMLString(e.body),
-									}}
-								></div>
 								{e.option == "course_and_classtype" && (
 									<>
 										<div
