@@ -56,8 +56,8 @@ export default function Page({ data, experiencesData }) {
                     </p>
                     <p>
                         圧倒的な実績をもとに入塾の際に塾長が面談を行い、現在の英語力を正確に把握して学習のスタートラインを設定いたします。最短距離で目標を達成するには、合格（目標達成）から逆算した指導カリキュラムを立て、目標とする英語力に対する現在のご本人の英語力とのGapや、不足している苦手な部分を明確に把握することが不可欠です。
-                        </p>
-                        <p>学習目的やご要望を伺いながら、グループ指導・個人指導・個別指導・オンライン個人指導の中から、最も効率良くマスターできるカリキュラムをご提案いたします。</p>
+                    </p>
+                    <p>学習目的やご要望を伺いながら、グループ指導・個人指導・個別指導・オンライン個人指導の中から、最も効率良くマスターできるカリキュラムをご提案いたします。</p>
 
 
                     <div className={css_view.card}>
@@ -85,7 +85,7 @@ export default function Page({ data, experiencesData }) {
                                     css_view.article
                                 )}
                             >
-                                <h3>コースの説明</h3>
+                                {/* <h3>コースの説明</h3> */}
                                 <div
                                     className={css_view.courseBody}
                                     dangerouslySetInnerHTML={{ __html: parser.translateHTMLString(data.content) }}
