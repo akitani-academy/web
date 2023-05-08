@@ -38,7 +38,7 @@ function Page({
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="theme-color" content="#be2522" />
 			{/* <meta name="twitter:site" content="@tcr_jp" /> */}
-			{_V.meta.robots && (
+			{robots && (
 				<meta name="robots" content={robots} />
 			)}
 			{_V.meta.siteTitle && (
