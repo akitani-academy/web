@@ -16,7 +16,7 @@ export default function Page({ wpDATA, experiencesData }) {
         <>
             <Head
                 url={"/pricing"}
-                title={wpDATA.title + "｜NEWS"}
+                title={wpDATA.title}
                 description={wpDATA.summary.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '')}
                 breadcrumb={[
                     ["トップページ", ""],
