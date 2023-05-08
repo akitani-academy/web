@@ -15,7 +15,7 @@ export default function Page({ wpDATA, experiencesData }) {
     return (
         <>
             <Head
-                url={"/news"}
+                url={"/pricing"}
                 title={wpDATA.title + "｜NEWS"}
                 description={wpDATA.summary.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '')}
                 breadcrumb={[
