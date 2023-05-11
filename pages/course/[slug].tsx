@@ -26,7 +26,7 @@ export default function Page({ data, experiencesData }) {
     const router = useRouter();
     const { slug } = router.query;
 
-    // console.log(data.experiences)
+    // console.log(data.content)
 
     return (
         <>

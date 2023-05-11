@@ -273,9 +273,9 @@ textarea {
   padding: .3em;
 }
 
-#skip-silence-bar {
-  display: none;
-}
+// #skip-silence-bar {
+//   display: none;
+// }
 
 .header_method {
   border-color: $c_2 !important;
@@ -294,7 +294,7 @@ textarea {
 // ジャンプリンクずれ修正
 * {
 
-  &[id]:not(.splide, .splide__slide, .splide__list, .splide__track) {
+  &[id]:not(.splide, .splide__slide, .splide__list, .splide__track, #skip-silence-bar) {
     &::before {
       pointer-events: none;
       display: block;
@@ -306,6 +306,6 @@ textarea {
   }
 }
 
-*{
+* {
   min-width: 0; //flexアイテムがはみ出さないように
 }

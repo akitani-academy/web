@@ -82,6 +82,15 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 										__html: parser.translateHTMLString(e.body),
 									}}
 								></div>
+								{e.LinkList && (
+									<div className={css_index.more}>
+										<LinkList
+											data={e.LinkList.map(item => [
+												item.Link.text,
+												item.Link.url
+											])} />
+									</div>
+								)}
 								{e.option == "experiences" && (
 									<ExperiencesListBox
 										data={experiencesData}
@@ -244,15 +253,6 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 									</LoopCarousel>
 								</>
 							)} */}
-								{e.LinkList && (
-									<div className={css_index.more}>
-										<LinkList
-											data={e.LinkList.map(item => [
-												item.Link.text,
-												item.Link.url
-											])} />
-									</div>
-								)}
 								{e.gallery && (
 									<LoopCarousel>
 										<ul className={css_index.gallery}>
