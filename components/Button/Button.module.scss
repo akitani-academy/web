@@ -8,13 +8,44 @@
     border-radius: 20px;
     border: $c_2 solid 2px;
 
+    background-color: #fff;
+
+    &.fill {
+        width: 100%;
+        max-width: 200px;
+        background: linear-gradient(to bottom, $c_2 , darken($c_2, 5%));
+        margin-bottom: 1.5rem;
+        margin-left: auto;
+        border: none;
+        border-radius: 0;
+
+        a {
+            color: #fff;
+        }
+
+        font-size: .7em;
+        font-weight: normal;
+
+        span {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        svg {
+            path {
+                stroke: #fff;
+                stroke-width: 2px;
+            }
+        }
+    }
+
     @include MQ() {
         width: calc(50% - .5rem);
         padding-top: .5rem;
         padding-bottom: .5rem;
         padding-left: 1rem;
 
-        span {
+        small {
             display: none;
         }
     }

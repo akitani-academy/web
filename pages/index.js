@@ -128,7 +128,7 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 										>
 											{courseData.map((e, i) => (
 												<Button href={`/course/${e.slug}#content`} key={i}>
-													{e.title}<span>コース</span>
+													{e.title}<small>コース</small>
 												</Button>
 											))}
 										</div>

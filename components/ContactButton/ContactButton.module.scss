@@ -1,6 +1,6 @@
 .button {
     color: #fff;
-    background-color: $c_2;
+    background: linear-gradient(to bottom, $c_2 , darken($c_2, 5%));
     padding: .5rem 1rem;
     border-radius: 999px;
     display: flex;

@@ -1,9 +1,13 @@
+import classNames from "classnames";
 import css_Button from "components/Button/Button.module.scss";
 import Link from "next/link";
 
-export default function Button({ children, href }) {
+export default function Button({ children, href, fill = false }) {
     return (
-        <div className={css_Button.button}>
+        <div className={classNames(
+            css_Button.button, {
+            [css_Button.fill]: fill
+        })}>
             <Link href={href}>
                 <div>{children}</div>
                 <div className={css_Button.right}>
