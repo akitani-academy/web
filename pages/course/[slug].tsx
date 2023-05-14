@@ -21,7 +21,7 @@ import css_contact from "styles/contact.module.scss";
 import css_view from "styles/View.module.scss";
 import css_index from "styles/index.module.scss";
 
-export default function Page({ data, experiencesData }) {
+export default function Page({ data, experiencesData, description }) {
 
     const router = useRouter();
     const { slug } = router.query;
@@ -51,13 +51,10 @@ export default function Page({ data, experiencesData }) {
                     <h2 data-subTitle="秋谷光子アカデミィの" className={classNames("h2", "marginTop0")}>
                         コース別学習
                     </h2>
-                    <p>
-                        秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計173人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。
-                    </p>
-                    <p>
-                        圧倒的な実績をもとに入塾の際に塾長が面談を行い、現在の英語力を正確に把握して学習のスタートラインを設定いたします。最短距離で目標を達成するには、合格（目標達成）から逆算した指導カリキュラムを立て、目標とする英語力に対する現在のご本人の英語力とのGapや、不足している苦手な部分を明確に把握することが不可欠です。
-                    </p>
-                    <p>学習目的やご要望を伺いながら、グループ指導・個人指導・個別指導・オンライン個人指導の中から、最も効率良くマスターできるカリキュラムをご提案いたします。</p>
+                    <div
+                        className={css_view.courseBody}
+                        dangerouslySetInnerHTML={{ __html: parser.translateHTMLString(description[0].wp_body) }}
+                    />
 
 
                     <div className={css_view.card}>
@@ -189,10 +186,15 @@ export async function getStaticProps({ params }) {
         "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
     ).then((res) => res.json());
 
+    const description = await fetch(
+        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages?slug=course_and_classtype"
+    ).then((res) => res.json());
+
     return {
         props: {
             data: post[0],
-            experiencesData
+            experiencesData,
+            description
         }
     };
 }
