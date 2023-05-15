@@ -37,6 +37,10 @@
     font-size: 0.8125em;
     display: flex;
 
+    @include MQ() {
+        flex-flow: column;
+    }
+
     li {
         margin-right: 1em;
 
