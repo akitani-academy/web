@@ -8,7 +8,16 @@ module.exports.access = [
 		name: "横浜・綱島本部校",
 		address: "〒223-0053 横浜市港北区 綱島西2-1-7 マック綱島コート２Ｆ",
 		tel: "045-544-6756",
-		description: "東急東横線綱島駅西口より徒歩１分",
+		description: `
+		<p>
+		東急東横線 綱島駅西口より徒歩1分<br/>
+		綱島駅西口を出て左折。右手に三井住友・りそな銀行を通り過ぎ、直進して横断歩道を渡り、左手の横浜銀行の先。
+		</p>
+		<p>
+		東急新横浜線 新綱島駅より徒歩5分<br/>
+		新綱島駅南口を出て綱島街道を渡る。直進して東急東横線の線路下を通り、横断歩道を左に渡る。左手の横浜銀行の先。
+		</p>
+		`,
 		Gmap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3246.7447071077345!2d139.6314469511101!3d35.535305980131554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185f16c0014351%3A0xde8eb46e6d163758!2z56eL6LC35YWJ5a2Q44Ki44Kr44OH44Of44KjIOe2seWztuacrOmDqOagoQ!5e0!3m2!1sja!2sjp!4v1646297552069!5m2!1sja!2sjp",
 	},
 	{
@@ -16,7 +25,12 @@ module.exports.access = [
 		name: "自由が丘・田園調布校",
 		address: "〒145-0071 東京都大田区田園調布3-24-2",
 		tel: "03-5483-5025",
-		description: "田園調布駅より徒歩１分",
+		description: `
+		<p>
+		東急東横線・目黒線 田園調布駅より徒歩1分<br/>
+		田園調布駅改札を出て左手階段上がる。ロータリーからケンタッキーを過ぎ、三菱UFJ銀行の斜め向かいの建物。
+		</p>
+		`,
 		Gmap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3244.254539715009!2d139.6642714799756!3d35.59678728031105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f516c42ab6df%3A0xfc211c6ee5dd3fb7!2z56eL6LC35YWJ5a2Q44Ki44Kr44OH44Of44KjIOeUsOWckuiqv-W4g-agoQ!5e0!3m2!1sja!2sjp!4v1646302277152!5m2!1sja!2sjp",
 	},
 ];
@@ -30,7 +44,6 @@ module.exports.menu = [
 			// ["当塾の特徴", "/course_and_classtype"],
 			["講師紹介", "/teacher"],
 			["合格への授業方針", "/method"],
-			["料金について", "/pricing"],
 		],
 	},
 	{
@@ -51,9 +64,10 @@ module.exports.menu = [
 	{
 		class: "nav_main",
 		content: [
-			["実績と体験記", "/experiences"],
-			["よくある質問", "/faq"],
+			// ["実績と体験記", "/experiences"],
 			["アクセス", "/access"],
+			["よくある質問", "/faq"],
+			["料金について", "/pricing"],
 		],
 	},
 	{

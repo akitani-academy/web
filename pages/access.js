@@ -36,7 +36,9 @@ export default function Page() {
           <a href={"tel:" + e.tel} className="tel">
             {e.tel}
           </a>
-          <p>{e.description}</p>
+          <p dangerouslySetInnerHTML={{
+						__html: e.description
+            }}/>
           <iframe
             className="Gmap"
             src={e.Gmap}
