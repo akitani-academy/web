@@ -50,6 +50,7 @@ module.exports.menu = [
 		class: "nav_course",
 		title: "コース",
 		content: [
+			["小学生", "/course/elementary"],
 			["中学生", "/course/junior-high"],
 			["高校生", "/course/senior-high"],
 			["大学受験", "/course/college"],
