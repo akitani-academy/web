@@ -7,7 +7,7 @@ import LoopCarousel from 'components/widget/LoopCarousel';
 
 export default function Button({ data, filter="", button }) {
 
-const filteredData = data.filter(d => filter.includes(d.child_list[0].slug));
+data = data.filter(item => item.child_list.some(child => filter.includes(child.slug)));
 
     // data = data.map(item => item.child_list).flat();
 
