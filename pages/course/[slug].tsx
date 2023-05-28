@@ -57,7 +57,8 @@ export default function Page({ data, experiencesData, description }) {
                     />
 
 
-                    <div className={css_view.card} id="content">
+                    <div className={css_view.card} >
+                        <div id="content" />
 
                         {(data.category.length > 1) && (
                             <div className={css_view.experiences}>

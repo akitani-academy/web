@@ -6,12 +6,14 @@ import ExperiencesList from "components/Experiences/ExperiencesList";
 import LoopCarousel from 'components/widget/LoopCarousel';
 
 export default function Button({ data, filter="", button }) {
-    
-    data = data.map(item => item.child_list).flat();
 
-    if(filter){
-        data = data.filter(item => filter.includes(item.slug));
-    }
+const filteredData = data.filter(d => filter.includes(d.child_list[0].slug));
+
+    // data = data.map(item => item.child_list).flat();
+
+    // if(filter){
+    //     data = data.filter(item => filter.includes(item.slug));
+    // }
 
     return (
         <div className={css_index.experiencesArea}>
@@ -20,26 +22,26 @@ export default function Button({ data, filter="", button }) {
                     <LoopCarousel>
                         <div className={css_index.experiencesBox}>
                             {data.map((e, i) => (
-                                // e.child_list.map(
-                                //     (e1, i) => (10 < e1.post.length) && (
+                                e.child_list.map(
+                                    (e1, i) => (10 < e1.post.length) && (
                                         <div className={css_index.experienceBox} key={i}>
-                                            <ExperiencesList title={e.name} data={e} responsive={false} />
+                                            <ExperiencesList title={e.name} data={e1} responsive={false} />
                                         </div>
-                                //     )
-                                // )
+                                    )
+                                )
                             ))}
                         </div>
                     </LoopCarousel>
                 ) : (
                     <div className={css_index.experiencesBox}>
                         {data.map((e, i) => (
-                            // e.child_list.map(
-                            //     (e1, i) => (9 < e1.post.length) && (
+                            e.child_list.map(
+                                (e1, i) => (9 < e1.post.length) && (
                                     <div className={css_index.experienceBox} key={i}>
-                                        <ExperiencesList title={e.name} data={e} responsive={false} />
+                                        <ExperiencesList title={e.name} data={e1} responsive={false} />
                                     </div>
-                            //     )
-                            // )
+                                )
+                            )
                         ))}
                     </div>
                 ))}

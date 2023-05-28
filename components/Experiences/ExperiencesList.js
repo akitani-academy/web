@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 import css_ExperiencesList from "./ExperiencesList.module.scss";
 
-export default function Page({ title, data, responsive = true }) {
+export default function Page({ title="", data, responsive = true }) {
   let option = {
     date: true,
   };
