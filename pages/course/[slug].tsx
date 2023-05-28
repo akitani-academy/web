@@ -57,17 +57,13 @@ export default function Page({ data, experiencesData, description }) {
                     />
 
 
-                    <div className={css_view.card}>
+                    <div className={css_view.card} id="content">
 
-                        <h1 id="content">
-                            <span>{data.title}</span>コース
-                        </h1>
-
-                        {(!data.experiences) ? (<></>) : (
+                        {(data.category.length > 1) && (
                             <div className={css_view.experiences}>
                                 <ExperiencesListBox
                                     data={experiencesData}
-                                    filter={data.experiences}
+                                    filter={data.category}
                                     button={{
                                         text: "すべての「 実績と体験記 」をみる",
                                         link: "/experiences"
@@ -82,6 +78,10 @@ export default function Page({ data, experiencesData, description }) {
                                     css_view.article
                                 )}
                             >
+
+                                <h1>
+                                    <span>{data.title}</span>コース
+                                </h1>
                                 {/* <h3>コースの説明</h3> */}
                                 <div
                                     className={css_view.courseBody}
