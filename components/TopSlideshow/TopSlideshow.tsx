@@ -59,7 +59,7 @@ export default function Button() {
                             width: 2449,
                             height: 682.5
                         },
-                    ]} seconds={3} />
+                    ]} seconds={4} />
                 </div>
                 <div>
                     <h2 className={css.messageH2}>
