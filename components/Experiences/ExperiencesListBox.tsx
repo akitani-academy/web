@@ -6,20 +6,21 @@ import ExperiencesList from "components/Experiences/ExperiencesList";
 import LoopCarousel from 'components/widget/LoopCarousel';
 
 
-export default function Button({ data, filter = "", button }) {
+export default function Button({ data, filter = [] as any, button }) {
 
-    try {
+    if (Array.isArray(filter)) {
         data = data.filter(item => item.child_list.some(child => filter.includes(child.slug)));
-    } catch (error) {
+    }
+    if (typeof filter === 'object' && 'parent' in filter) {
         data = data.filter(item => filter.parent.includes(item.slug));
     }
 
     return (<>
         {(hasNineOrMorePosts(data)) && (<>
-            
+
             <div className={css_index.experiencesArea}>
                 <Link href={button.link} className={css_index.experiencesLink}>
-                    
+
                     {((data.length > 1) ? (
                         <LoopCarousel>
                             <div className={css_index.experiencesBox}>
