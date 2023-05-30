@@ -5,52 +5,68 @@ import css_index from "styles/index.module.scss";
 import ExperiencesList from "components/Experiences/ExperiencesList";
 import LoopCarousel from 'components/widget/LoopCarousel';
 
-export default function Button({ data, filter="", button }) {
 
-data = data.filter(item => item.child_list.some(child => filter.includes(child.slug)));
+export default function Button({ data, filter = "", button }) {
 
-    // data = data.map(item => item.child_list).flat();
+    try {
+        data = data.filter(item => item.child_list.some(child => filter.includes(child.slug)));
+    } catch (error) {
+        data = data.filter(item => filter.parent.includes(item.slug));
+    }
 
-    // if(filter){
-    //     data = data.filter(item => filter.includes(item.slug));
-    // }
-
-    return (
-        <div className={css_index.experiencesArea}>
-            <Link href={button.link} className={css_index.experiencesLink}>
-                {((data.length > 1) ? (
-                    <LoopCarousel>
-                        <div className={css_index.experiencesBox}>
-                            {data.map((e, i) => (
-                                e.child_list.map(
-                                    (e1, i) => (10 < e1.post.length) && (
-                                        <div className={css_index.experienceBox} key={i}>
-                                            <ExperiencesList title={e.name} data={e1} responsive={false} />
-                                        </div>
+    return (<>
+        {(hasNineOrMorePosts(data)) && (<>
+            
+            <div className={css_index.experiencesArea}>
+                <Link href={button.link} className={css_index.experiencesLink}>
+                    
+                    {((data.length > 1) ? (
+                        <LoopCarousel>
+                            <div className={css_index.experiencesBox}>
+                                {data.map((e, i) => (
+                                    e.child_list.map(
+                                        (e1, i) => (10 < e1.post.length) && (
+                                            <div className={css_index.experienceBox} key={i}>
+                                                <ExperiencesList title={e.name} data={e1} responsive={false} />
+                                            </div>
+                                        )
                                     )
-                                )
-                            ))}
-                        </div>
-                    </LoopCarousel>
-                ) : (
-                    <div className={css_index.experiencesBox}>
-                        {data.map((e, i) => (
-                            e.child_list.map(
-                                (e1, i) => (9 < e1.post.length) && (
+                                ))}
+                            </div>
+                        </LoopCarousel>
+                    ) : (
+                        <div className={css_index.experiencesBox}>
+                            {(data[0].child_list.map(
+                                (e, i) => (9 < e.post.length) && (
                                     <div className={css_index.experienceBox} key={i}>
-                                        <ExperiencesList title={e.name} data={e1} responsive={false} />
+                                        <ExperiencesList title={data[0].name} data={e} responsive={false} />
                                     </div>
-                                )
-                            )
-                        ))}
+                                ))
+                            )}
+                        </div>
+                    ))}
+
+                    <div className={css_index.experiencesLinkArea}>
+                        <div className={css_index.experiencesButton}>
+                            {button.text}
+                        </div>
                     </div>
-                ))}
-                <div className={css_index.experiencesLinkArea}>
-                    <div className={css_index.experiencesButton}>
-                        {button.text}
-                    </div>
-                </div>
-            </Link>
-        </div>
-    );
+
+                </Link>
+            </div>
+        </>)}
+    </>);
+}
+
+function hasNineOrMorePosts(data) {
+    for (let i = 0; i < data.length; i++) {
+        const child_list = data[i].child_list;
+        for (let j = 0; j < child_list.length; j++) {
+            const post = child_list[j].post;
+            if (post.length >= 9) {
+                return true;
+            }
+        }
+    }
+    return false;
 }

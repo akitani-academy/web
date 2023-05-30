@@ -94,7 +94,7 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 								{e.option == "experiences" && (
 									<ExperiencesListBox
 										data={experiencesData}
-										filter={['eiken', 'child_eiken']}
+										filter={{ parent: ['eiken', 'child_eiken'] }}
 										button={{
 											text: "すべての「 英検合格実績 」をみる",
 											link: "/experiences#eiken"
@@ -104,7 +104,7 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 								{e.option == "experiences2" && (
 									<ExperiencesListBox
 										data={experiencesData}
-										filter={['college']}
+										filter={{ parent: ['college'] }}
 										button={{
 											text: "すべての「 大学合格実績 」をみる",
 											link: "/experiences#college"
@@ -114,7 +114,7 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 								{e.option == "experiences3" && (
 									<ExperiencesListBox
 										data={experiencesData}
-										filter={['student', "highschool", 'child_eiken']}
+										filter={{ parent: ['student', "highschool", 'child_eiken'] }}
 										button={{
 											text: "すべての「 小中学生の実績 」をみる",
 											link: "/experiences#student"
