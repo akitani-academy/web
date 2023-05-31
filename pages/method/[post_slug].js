@@ -22,7 +22,7 @@ export default function Page({ post }) {
 		<>
 			<Head
 				url={router.asPath}
-				title={"英語専門予備校の" + post.title}
+				title={"英語専門塾の" + post.title}
 				breadcrumb={[
 					["トップページ", ""],
 					["合格への授業方針", "/method"],
@@ -51,7 +51,7 @@ export default function Page({ post }) {
 
 					<article className={classNames(css_index.card, css_index.bg)}>
 						<h1>
-							<small>英語専門予備校の</small>
+							<small>英語専門塾の</small>
 							{post.title}
 						</h1>
 						<div dangerouslySetInnerHTML={{ __html: parser.translateHTMLString(post.content) }} />

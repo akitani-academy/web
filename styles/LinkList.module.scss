@@ -3,6 +3,8 @@
 		width: 80%;
 	}
 
+	// font-family: sans-serif;
+	font-weight: bold;
 	display: flex;
 	flex-wrap: wrap;
 	gap: .7em;
@@ -10,11 +12,17 @@
 
 	li {
 		a {
-			color: $c_3 ;
+			color: $c_2 ;
+			display: flex;
+			place-items: center;
+			// gap: .1rem;
 
-			&::before {
-				content: ">";
-				margin-right: 0.2em;
+			svg {
+				height: 1.3em;
+
+				path {
+					stroke: $c_2;
+				}
 			}
 		}
 	}

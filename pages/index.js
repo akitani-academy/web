@@ -33,7 +33,7 @@ export default function Page({ top, courseData, classtypeData, teacherList, expe
 	return (
 		<>
 			<Head
-				title="英語専門予備校 秋谷光子アカデミィ - 英検1級173人合格の圧倒的な実績｜横浜,綱島,自由が丘,田園調布"
+				title="英語専門塾 秋谷光子アカデミィ - 英検1級173人合格の圧倒的な実績｜横浜,綱島,自由が丘,田園調布"
 				url=""
 				description={top.cfs.description}
 				breadcrumb={[

@@ -31,7 +31,7 @@ export default function Page({ data, experiencesData, description }) {
     return (
         <>
             <Head
-                title={(data.seoTitle) ? `${data.seoTitle} 英語専門予備校 秋谷光子アカデミィ｜横浜,綱島,自由が丘,田園調布` : `${data.title}コース`}
+                title={(data.seoTitle) ? `${data.seoTitle} 英語専門塾 秋谷光子アカデミィ｜横浜,綱島,自由が丘,田園調布` : `${data.title}コース`}
                 breadcrumb={[
                     ["トップページ", ""],
                     [`${data.title}コース`, slug]

@@ -1,5 +1,5 @@
 module.exports.meta = {
-	siteTitle: "英語専門予備校 秋谷光子アカデミィ｜横浜,綱島,自由が丘,田園調布",
+	siteTitle: "英語専門塾 秋谷光子アカデミィ｜横浜,綱島,自由が丘,田園調布",
 	baseURL: "https://akitani-academy.jp",
 };
 module.exports.access = [
@@ -10,8 +10,8 @@ module.exports.access = [
 		tel: "045-544-6756",
 		description: `
 		<p>
-		<strong>東急東横線 綱島駅西口より徒歩1分</strong><br/>
-		綱島駅西口を出て左折。右手に三井住友・りそな銀行を通り過ぎ、直進して横断歩道を渡り、左手の横浜銀行の先。
+		<strong>東急新横浜線 新綱島駅より徒歩5分</strong><br/>
+		新綱島駅南口を出て右に進み、綱島街道を渡る（右手がENEOS、左手がハックドラッグストア）。直進して左手に三菱UFJ銀行を通り過ぎ、東急東横線の線路下を通る。横断歩道を左に渡り、横浜銀行の先。
 		</p>
 		<p>
 		<strong>東急新横浜線 新綱島駅より徒歩5分</strong><br/>
@@ -27,8 +27,8 @@ module.exports.access = [
 		tel: "03-5483-5025",
 		description: `
 		<p>
-		東急東横線・目黒線 田園調布駅より徒歩1分<br/>
-		田園調布駅改札を出て左手階段上がる。ロータリーからケンタッキーを過ぎ、三菱UFJ銀行の斜め向かいの建物。
+		<strong>東急東横線・目黒線 田園調布駅より徒歩1分</strong><br/>
+		田園調布駅改札を出て左手階段上がる。ロータリーから二軒目のモカ茶色のレンガタイルの一戸建ての建物（ケンタッキーと田園調布会館の向かい側）。
 		</p>
 		`,
 		Gmap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3244.254539715009!2d139.6642714799756!3d35.59678728031105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f516c42ab6df%3A0xfc211c6ee5dd3fb7!2z56eL6LC35YWJ5a2Q44Ki44Kr44OH44Of44KjIOeUsOWckuiqv-W4g-agoQ!5e0!3m2!1sja!2sjp!4v1646302277152!5m2!1sja!2sjp",
