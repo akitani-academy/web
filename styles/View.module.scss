@@ -1,12 +1,20 @@
 .View {
     min-width: 0;
 
-    h3,
-    h4 {
-        color: $c_1;
+    h1 {
         font-family: sans-serif;
-        font-size: 0.8125rem;
-        margin-bottom: .3em;
+    }
+
+    h3 {
+        color: $c_1;
+        font-size: 1.6em;
+        margin-bottom: 1em;
+    }
+
+    h4 {
+        font-family: sans-serif;
+        font-size: .8em;
+        margin-bottom: 1em;
     }
 }
 
