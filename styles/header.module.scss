@@ -77,6 +77,11 @@
         line-height: 1em;
     }
 
+    li {
+        display: flex;
+        flex-flow: column;
+    }
+
     .name {
         font-size: 0.75em;
         border: solid 1px #000;
