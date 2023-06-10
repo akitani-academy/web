@@ -39,21 +39,19 @@ module.exports.menu = [
 	{
 		class: "nav_main",
 		content: [
-			["トップページ", "/"],
+			["HOME", "/"],
 			["塾長ご挨拶", "/greeting"],
 			// ["当塾の特徴", "/course_and_classtype"],
 			["講師紹介", "/teacher"],
-			["合格への授業方針", "/method"],
 		],
 	},
 	{
 		class: "nav_course",
-		title: "コース",
 		content: [
-			["小学生", "/course/elementary"],
-			["中学生", "/course/junior-high"],
-			["高校生", "/course/senior-high"],
 			["大学受験", "/course/college"],
+			["高校生", "/course/senior-high"],
+			["中学生", "/course/junior-high"],
+			["小学生", "/course/elementary"],
 			["英検合格", "/course/eikenn-pass"],
 			["TOEFL", "/course/toefl"],
 			["IELTS", "/course/ielts"],

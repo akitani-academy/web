@@ -123,7 +123,7 @@ export default function Page({ data, experiencesData, description }) {
                                         css_view.taikenki
                                     )}>
                                     <div className={css_view.inner}>
-                                        <h4>体験記</h4>
+                                        <h5>体験記</h5>
                                         <div className={css_view.scroll}>
                                             <div className={css_view.space} />
                                             <ul>

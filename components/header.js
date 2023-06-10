@@ -71,7 +71,6 @@ function Page() {
                   {_V.access.map((e, i) => (
                     <li key={i}>
                       <span className={css.name}>{e.name}</span>
-                      <br />
                       <span className={css.tel}>{e.tel}</span>
                     </li>
                   ))}
