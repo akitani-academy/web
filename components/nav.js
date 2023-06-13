@@ -43,7 +43,7 @@ function Page() {
             </ul>
             <Button href={`/experiences`} fill="true">
               <span>実績と体験記</span><br />
-              英検や大学受験など<br />各種実績を掲載中
+              英検や大学受験など<br />合格とスコアUPの声
             </Button>
             {_V.menu.map((e1, i1) => (
               <>

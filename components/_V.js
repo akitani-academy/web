@@ -40,9 +40,9 @@ module.exports.menu = [
 		class: "nav_main",
 		content: [
 			["HOME", "/"],
-			["塾長ご挨拶", "/greeting"],
+			// ["塾長ご挨拶", "/greeting"],
 			// ["当塾の特徴", "/course_and_classtype"],
-			["講師紹介", "/teacher"],
+			// ["講師紹介", "/teacher"],
 		],
 	},
 	{
@@ -63,9 +63,10 @@ module.exports.menu = [
 	{
 		class: "nav_main",
 		content: [
-			// ["実績と体験記", "/experiences"],
-			["アクセス", "/access"],
+			["合格対策一覧", "/method"],
+			["講師紹介", "/teacher"],
 			["よくある質問", "/faq"],
+			["アクセス", "/access"],
 			["料金について", "/pricing"],
 		],
 	},
