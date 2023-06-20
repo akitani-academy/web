@@ -42,7 +42,7 @@ export default function Page({
         <List data={eiken} />
         <h2>大学受験合格対策</h2>
         <List data={UniversityEntranceExams} />
-        <h2>小中高学生の学校成績UP対策</h2>
+        <h2>小中高校生の学校成績UP対策</h2>
         <List data={gakko} />
         <h2>TOEICの対策</h2>
         <List data={toeic} />
