@@ -38,7 +38,7 @@ export default function Page({ wpDATA, experiencesData }) {
         <div className="news" dangerouslySetInnerHTML={{ __html: parser.translateHTMLString(wpDATA.content) }} />
         <h2>当塾の実績</h2>
         <p>
-          秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計173人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。
+          秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計176人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。
         </p>
         <ExperiencesListBox
           data={experiencesData}
