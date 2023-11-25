@@ -40,9 +40,6 @@ module.exports.menu = [
 		class: "nav_main",
 		content: [
 			["HOME", "/"],
-			// ["塾長ご挨拶", "/greeting"],
-			// ["当塾の特徴", "/course_and_classtype"],
-			// ["講師紹介", "/teacher"],
 		],
 	},
 	{
@@ -65,8 +62,15 @@ module.exports.menu = [
 		content: [
 			["合格対策一覧", "/method"],
 			["講師紹介", "/teacher"],
+			["塾長ご挨拶", "/greeting"],
+		],
+	},
+	{
+		class: "nav_main",
+		content: [
+			["横浜・綱島本部校", "/access/tsunashima"],
+			["自由が丘・田園調布校", "/access/denenchofu"],
 			["よくある質問", "/faq"],
-			["アクセス", "/access"],
 			["料金について", "/pricing"],
 		],
 	},

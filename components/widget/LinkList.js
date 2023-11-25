@@ -1,14 +1,18 @@
+import classNames from "classnames";
 import Link from "next/link";
 
 import css from "styles/LinkList.module.scss";
 
-function linkList({ data }) {
+function linkList({ data, vertical = false }) {
   return (
     <>
-      <ul className={css.LinkList}>
+      <ul className={classNames(
+        css.LinkList,
+        { [css.vertical]: vertical }
+      )}>
         {data.map((e, i) => (
           <li key={i}>
-            
+
             <Link legacyBehavior href={String(e[1])}>
               <a>
                 <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">

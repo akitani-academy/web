@@ -13,7 +13,7 @@
 	li {
 		a {
 			color: $c_2 ;
-			display: flex;
+			display: inline-flex;
 			place-items: center;
 			// gap: .1rem;
 
@@ -25,5 +25,9 @@
 				}
 			}
 		}
+	}
+
+	&.vertical {
+		flex-direction: column;
 	}
 }

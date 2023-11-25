@@ -41,22 +41,11 @@ export default function Page({ data, experiencesData, description }) {
             />
 
             <Header />
-            <TopSlideshow />
+            {/* <TopSlideshow /> */}
 
             <main className={css_index.main}>
 
-
                 <div className={css_view.View}>
-
-                    <h2 data-subTitle="秋谷光子アカデミィの" className={classNames("h2", "marginTop0")}>
-                        コース別学習
-                    </h2>
-                    <div
-                        className={css_view.courseBody}
-                        dangerouslySetInnerHTML={{ __html: parser.translateHTMLString(description[0].wp_body) }}
-                    />
-
-
                     <div className={css_view.card} >
                         <div id="content" />
 
@@ -153,6 +142,15 @@ export default function Page({ data, experiencesData, description }) {
                     <aside className={css_contact.contact}>
                         <Contact short="true" />
                     </aside>
+                    <div className={css_index.card}>
+                        <h2 data-subTitle="秋谷光子アカデミィの" className={classNames("h2", "marginTop0")}>
+                            コース別学習
+                        </h2>
+                        <div
+                            className={css_view.courseBody}
+                            dangerouslySetInnerHTML={{ __html: parser.translateHTMLString(description[0].wp_body) }}
+                        />
+                    </div>
                 </div>
                 <Nav />
             </main>

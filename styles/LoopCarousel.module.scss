@@ -27,7 +27,7 @@
 .carousel {
     width: 100%;
     overflow-x: scroll;
-    cursor: pointer;
+    // cursor: pointer;
 
     &:not(:hover)::-webkit-scrollbar {
         display: none;

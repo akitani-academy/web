@@ -55,7 +55,7 @@ function Page() {
                 <ul key={i1} className={e1.class}>
                   {e1.content.map((e2, i2) => (
                     <li key={i2}>
-                      <Link legacyBehavior href={`${e2[1]}#content`}>
+                      <Link legacyBehavior href={`${e2[1]}`}>
                         <a
                           dangerouslySetInnerHTML={{ __html: e2[0] }}
                           onClick={handleInc}
