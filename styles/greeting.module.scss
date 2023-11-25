@@ -1,9 +1,12 @@
 .tmb {
-  width: 100%;
+  min-width: 100%;
+  margin: 0 -2.5rem;
+  margin-bottom: 1.5rem;
+  margin-top: -1.7rem;
+
   height: auto;
   overflow: hidden;
   position: relative;
-  margin-bottom: .8rem;
 
   @include MQ() {
     width: 100vw;
