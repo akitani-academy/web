@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useRouter } from 'next/router';
+import Script from 'next/script'
 
 const _V = require("components/_V.js");
 import Head from "components/head";
@@ -9,29 +10,33 @@ import ContactButton from "components/ContactButton/ContactButton"
 
 import css from "styles/index.module.scss";
 
-
-
 export default function Page() {
 
   const router = useRouter();
   const { slug } = router.query;
 
+  // slugで指定されたidのタイトルを変数に取得
+  const _V_access = _V.access.find(item => item.id === slug);
+  console.log(_V_access.meoScript)
+
   return (
     <>
       <Head
-        url={"/access"}
-        title="駅から徒歩1分のアクセス"
+        url={router.asPath}
         breadcrumb={[
           ["トップページ", ""],
-          ["アクセス", "/access"]
+          ["アクセス", "/access"],
+          [_V_access.name, "/" + slug]
         ]}
-      />
+      >
+        <Script src={_V_access.meoScript} strategy="afterInteractive" />
+      </Head>
 
       <h1>アクセス</h1>
       <List data={_V.access.map((e, i) => [e.name, "/access/" + e.id])} />
       {[_V.access.find(item => item.id === slug)].map((e, i) => (
-        <>
-          <h2 id={e.id} key={i}>
+        <div key={i}>
+          <h2 id={e.id}>
             {e.name}
           </h2>
           {e.address}
@@ -50,7 +55,7 @@ export default function Page() {
             loading="lazy"
           ></iframe>
           <ContactButton />
-        </>
+        </div>
       ))}
     </>
   );

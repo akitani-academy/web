@@ -2,6 +2,7 @@ const _V = require("components/_V.js");
 import Head from "next/head";
 
 function Page({
+	children,
 	robots = "index, follow",
 	title,
 	description,
@@ -9,6 +10,8 @@ function Page({
 	url = undefined,
 	breadcrumb
 }) {
+
+	// console.log(children)
 
 	if (title) {
 		if (!title.includes("アカデミィ")) {
@@ -70,6 +73,7 @@ function Page({
 					/>
 				</>
 			)}
+			{children}
 		</Head>
 	);
 }
