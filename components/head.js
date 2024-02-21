@@ -2,7 +2,7 @@ const _V = require("components/_V.js");
 import Head from "next/head";
 
 function Page({
-	children,
+	children = null,
 	robots = "index, follow",
 	title,
 	description,
