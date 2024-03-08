@@ -1,6 +1,7 @@
 import "the-new-css-reset/css/reset.css";
 import "../styles/globals.scss";
 
+import Document, { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
 
 export default function MyApp({ Component, pageProps }) {
@@ -27,6 +28,7 @@ export default function MyApp({ Component, pageProps }) {
 				})(window, document, "clarity", "script", "gukjpuvvus");
 				`}
 			</Script>
+
 			<Component {...pageProps} />
 		</>
 	);
