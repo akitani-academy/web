@@ -29,7 +29,7 @@ export default function Page() {
           [_V_access.name, "/" + slug]
         ]}
       >
-        <Script src={_V_access.meoScript} strategy="afterInteractive" />
+        <script async src={_V_access.meoScript} />
       </Head>
 
       <h1>アクセス</h1>
