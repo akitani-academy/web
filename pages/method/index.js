@@ -3,10 +3,9 @@ import classNames from "classnames";
 import Layout from "components/layout";
 import Head from "components/head";
 import List from "components/widget/LinkList";
-import ContactButton from "components/ContactButton/ContactButton"
+import ContactButton from "components/ContactButton/ContactButton";
 
 import css_index from "styles/index.module.scss";
-
 
 import { loadDefaultJapaneseParser } from "budoux";
 const parser = loadDefaultJapaneseParser();
@@ -20,7 +19,6 @@ export default function Page({
   gakko,
   other,
 }) {
-
   // console.log(paragraph)
   return (
     <>
@@ -29,15 +27,17 @@ export default function Page({
         title={paragraph.subTitle}
         breadcrumb={[
           ["トップページ", ""],
-          ["合格への授業方針", "/method"]
+          ["合格への授業方針", "/method"],
         ]}
         description="秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計176人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。圧倒的な実績をもとにノウハウを合格への当塾の指導方針を公開しています。"
       />
       <article className={classNames(css_index.card, css_index.bg)}>
         <h1>{paragraph.subTitle}</h1>
-        <div dangerouslySetInnerHTML={{
-          __html: parser.translateHTMLString(paragraph.cfs.header),
-        }} />
+        <div
+          dangerouslySetInnerHTML={{
+            __html: parser.translateHTMLString(paragraph.cfs.header),
+          }}
+        />
         <h2>英検合格対策</h2>
         <List data={eiken} />
         <h2>大学受験合格対策</h2>
@@ -50,9 +50,11 @@ export default function Page({
         <List data={toefl} />
         <h2>その他の対策</h2>
         <List data={other} />
-        <div dangerouslySetInnerHTML={{
-          __html: parser.translateHTMLString(paragraph.cfs.footer),
-        }} />
+        <div
+          dangerouslySetInnerHTML={{
+            __html: parser.translateHTMLString(paragraph.cfs.footer),
+          }}
+        />
       </article>
       <ContactButton />
     </>
@@ -64,8 +66,9 @@ Page.getLayout = function getLayout(page) {
 };
 
 export async function getStaticProps() {
-
-  var paragraph = await fetch("https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages/8291").then((res) => res.json());
+  var paragraph = await fetch(
+    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages/8291"
+  ).then((res) => res.json());
 
   // console.log(paragraph)
   return {
@@ -84,8 +87,8 @@ export async function getStaticProps() {
 async function getPost(catID) {
   var data = await fetch(
     "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/posts?per_page=100&categories=" +
-    catID
+      catID
   ).then((res) => res.json());
-  data = data.map((e, i) => [e.listTitle, "/method/" + e.slug + "#content"]).reverse();
+  data = data.map((e, i) => [e.listTitle, "/method/" + e.slug]).reverse();
   return data;
 }
