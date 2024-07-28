@@ -255,7 +255,7 @@ export default function Page({ wpDATA, experiencesData }) {
               </p>
 
               <div className={css_news.link}>
-                <a href="https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2024/06/%E8%A9%B3%E7%B4%B0%E3%83%BB%E5%8F%97%E8%AC%9B%E6%96%99%E3%83%BB%E7%94%B3%E8%BE%BC%E6%9B%B8.pdf">
+                <a href="/wp-content/uploads/2024/06/詳細・受講料・申込書.pdf">
                   申込書ダウンロード
                 </a>
               </div>
