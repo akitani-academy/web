@@ -60,11 +60,7 @@ main:has(.card) {
   }
 
   .news {
-    padding: 1.7rem 2.5rem;
-
-    @media (max-width: 600px) {
-      padding: 0 20px;
-    }
+    padding: 0 20px;
 
     p {
       font-size: 15px;
@@ -74,13 +70,12 @@ main:has(.card) {
   }
 
   .content {
-    padding: 2rem 2.5rem;
+    padding: 0 20px 42px;
     margin-right: -2.5rem;
     margin-left: -2.5rem;
     background-color: #fff;
 
     @media (max-width: 600px) {
-      padding: 0 20px 42px;
       margin-left: 0;
       margin-right: 0;
     }
