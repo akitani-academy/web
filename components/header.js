@@ -65,7 +65,7 @@ function Page() {
         <section className={css.inner}>
           {siteTitle(url)}
           <section className={css.menu}>
-            <Link legacyBehavior href={"/access"}>
+            {/* <Link legacyBehavior href={"/access"}>
               <a>
                 <ul className={css.addr}>
                   {_V.access.map((e, i) => (
@@ -76,35 +76,78 @@ function Page() {
                   ))}
                 </ul>
               </a>
-            </Link>
+            </Link> */}
             <ul className={css.meta}>
-              <li className={classNames(
-                css.spMENU,
-                { [css.close]: data }
-              )}
+              <li
+                className={classNames(css.spMENU, { [css.close]: data })}
                 onClick={handleInc}
               >
-
                 {!data ? (
-                  <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3.74023 12.3747H21.7402" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M3.74023 6.37471H21.7402" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M3.74023 18.3747H21.7402" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="11"
+                    viewBox="0 0 25 11"
+                  >
+                    <g transform="translate(-12005 6489.5)">
+                      <line
+                        x2="25"
+                        transform="translate(12005 -6489)"
+                        fill="none"
+                        stroke="#fff"
+                        stroke-width="1"
+                      />
+                      <line
+                        x2="25"
+                        transform="translate(12005 -6484)"
+                        fill="none"
+                        stroke="#fff"
+                        stroke-width="1"
+                      />
+                      <line
+                        x2="25"
+                        transform="translate(12005 -6479)"
+                        fill="none"
+                        stroke="#fff"
+                        stroke-width="1"
+                      />
+                    </g>
                   </svg>
                 ) : (
-                  <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18.541 6.72656L6.54102 18.7266" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M6.54102 6.72656L18.541 18.7266" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30.471"
+                    height="16.882"
+                    viewBox="0 0 30.471 16.882"
+                  >
+                    <g transform="translate(-320.265 -23.559)">
+                      <line
+                        x2="30"
+                        y2="16"
+                        transform="translate(320.5 24)"
+                        fill="none"
+                        stroke="#fff"
+                        stroke-width="1"
+                      />
+                      <line
+                        y1="16"
+                        x2="30"
+                        transform="translate(320.5 24)"
+                        fill="none"
+                        stroke="#fff"
+                        stroke-width="1"
+                      />
+                    </g>
                   </svg>
                 )}
-
+                {/* 
                 <div>
                   {!data ? (
                     <>MENU</>
                   ) : (
                     <>CLOSE</>
                   )}
-                </div>
+                </div> */}
               </li>
             </ul>
           </section>

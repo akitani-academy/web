@@ -2,7 +2,7 @@ const _V = require("./_V.js");
 import UseSWR from "swr";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import Button from "components/Button/Button"
+import Button from "components/Button/Button";
 
 import css from "styles/nav.module.scss";
 
@@ -30,7 +30,7 @@ function Page() {
         <section className={css.inner}>
           <div className="navClose" onClick={handleInc}></div>
           <section className={css.main}>
-            <ul className={css.addr}>
+            {/* <ul className={css.addr}>
               {_V.access.map((e, i) => (
                 <li key={i}>
                   <a href={"tel:" + e.tel}>
@@ -40,11 +40,14 @@ function Page() {
                   </a>
                 </li>
               ))}
-            </ul>
-            <Button href={`/experiences`} fill="true">
-              <span>実績と体験記</span><br />
-              英検や大学受験など<br />合格とスコアUPの声
-            </Button>
+            </ul> */}
+            {/* <Button href={`/experiences`} fill="true">
+              <span>実績と体験記</span>
+              <br />
+              英検や大学受験など
+              <br />
+              合格とスコアUPの声
+            </Button> */}
             {_V.menu.map((e1, i1) => (
               <>
                 {(() => {
@@ -66,6 +69,13 @@ function Page() {
                 </ul>
               </>
             ))}
+
+            <div className={css.cta}>
+              <a href={`/contact`}>
+                お問い合わせ・<span>無料体験レッスンを申し込む</span>
+              </a>
+              <a href={`/contact`}>資料を請求する</a>
+            </div>
           </section>
         </section>
       </nav>

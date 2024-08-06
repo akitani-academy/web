@@ -43,6 +43,10 @@ $white_01: #fff;
 
 $blue_01: #263552;
 $blue_02: #e7e9eb;
+$blue_03: #6d8094;
+$blue_04: #546688;
+$blue_05: rgba(38, 53, 82, 0.3);
+$blue_06: #dcdfe2;
 
 $red_01: #af342c;
 
@@ -51,3 +55,79 @@ $yellow_01: #fff6e5;
 $gray_01: #dcdddf;
 
 $black_01: #333333;
+
+$sp_inner: 84%;
+
+.cta {
+  p {
+    text-align: center;
+    margin-bottom: 6px;
+    line-height: 1.18;
+
+    span {
+      &.red_balloon {
+        position: relative;
+        color: $red_01;
+        font-size: 15px;
+        letter-spacing: 0.05em;
+        text-align: center;
+        font-weight: bold;
+
+        &::before,
+        &::after {
+          @include pseudoElement;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 9px;
+          height: 16px;
+          background: center / contain no-repeat url("/img/top/border_red.png");
+        }
+
+        &::before {
+          left: -15px;
+        }
+
+        &::after {
+          right: -15px;
+          transform: translateY(-50%) scaleX(-1);
+        }
+      }
+    }
+  }
+
+  a {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    line-height: 1.35;
+    color: $white_01;
+    background: center / cover no-repeat;
+    padding-left: 15px;
+    padding-right: 40px;
+    position: relative;
+
+    &:first-of-type {
+      background-image: url("/img/top/cta_red.png");
+      margin-bottom: 5px;
+    }
+
+    &:last-child {
+      background-image: url("/img/top/cta_blue.png");
+    }
+
+    &::after {
+      @include pseudoElement;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      width: 23px;
+      height: 3.6px;
+      @include bgImgContain("/img/top/arrow01.png");
+    }
+  }
+}

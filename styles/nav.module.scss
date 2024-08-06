@@ -1,77 +1,87 @@
 .nav {
-    z-index: 9;
-    font-size: .95em;
-    font-family: sans-serif;
-    font-weight: bold;
-    min-width: fit-content;
-    text-align: right;
-    height: fit-content;
-    margin-left: .7rem;
-    position: sticky;
-    top: calc(80px + 3vw);
+  z-index: 9;
+  font-size: 0.95em;
+  font-family: sans-serif;
+  font-weight: bold;
+  //   min-width: fit-content;
+  height: fit-content;
+  margin-left: 0.7rem;
+  position: sticky;
+  top: calc(80px + 3vw);
+  z-index: 9998;
+
+  @media (max-width: 600px) {
+    top: 57px;
+    width: 100vw;
+    height: calc(100vh - 57px);
+    position: fixed;
+    right: -100%;
+    transition: transform 0.3s;
+    overflow-y: scroll;
+
+    .inner {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .main {
+      background-attachment: scroll;
+      width: 100%;
+      background: $c_0;
+      padding: 43px 30px;
+    }
+  }
+
+  ul {
+    margin-bottom: 1.75rem;
+  }
+
+  li {
+    // margin-bottom: .1rem;
+    margin-bottom: 20px;
+    text-align: left;
+    padding-left: 25px;
+    position: relative;
+
+    &::before {
+      @include pseudoElement;
+      width: 16px;
+      height: 14px;
+      @include bgImgContain("/img/nav_list_arrow01.png");
+      top: 5px;
+      left: 0;
+    }
+
+    a {
+      font-size: 16px;
+      letter-spacing: 0.015em;
+      line-height: 1.68;
+    }
+  }
+
+  .addr {
+    display: none;
+    margin-top: 0.5em;
+    margin-bottom: 0.6em;
 
     @media (max-width: 600px) {
-        top: 57px;
-        width: 100vw;
-        height: calc(100vh - 57px);
-        position: fixed;
-        right: -100%;
-        transition: transform .3s;
-        overflow-y: scroll;
-
-        .inner {
-            display: flex;
-            min-height: 100vh;
-        }
-
-        .main {
-            background-attachment: scroll;
-            margin-left: auto;
-            background: $c_0;
-            padding: 3vw;
-        }
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 0.6rem;
     }
 
-    ul {
-        margin-bottom: 1.75rem;
+    a {
+      background: transparent;
+      border: none;
+      padding: 0;
+      line-height: 1.4em;
     }
 
-    li {
-        margin-bottom: .1rem;
-
-        a {
-            background: #fff;
-            border: solid 1px $c_1;
-            line-height: 1.2em;
-            padding: .3em .5em .1em;
-            overflow: hidden;
-            display: inline-block;
-        }
+    .tel {
+      color: $c_2;
+      font-size: 1.2em;
+      width: fit-content;
     }
-
-    .addr {
-        display: none;
-        margin-top: .5em;
-        margin-bottom: .6em;
-
-        @media (max-width: 600px) {
-            display: flex;
-            justify-content: flex-end;
-            flex-wrap: wrap;
-            gap: .6rem;
-        }
-
-        a {
-            background: transparent;
-            border: none;
-            padding: 0;
-            line-height: 1.4em;
-        }
-
-        .tel {
-            color: $c_2;
-            font-size: 1.2em;
-            width: fit-content;
-        }
-    }
+  }
 }
