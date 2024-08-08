@@ -65,10 +65,12 @@ export default function Page({
             </ul>
             <h2>
               志望校合格<span className={css_index.small}>に</span>導く
-              <span className={css_index.block}>大学受験英語塾</span>
+              <br />
+              大学受験英語塾
             </h2>
             <p>
               <span>難関大学合格、内部進学、留学、</span>
+              <br />
               <span>全ての進路を可能にする英語力を育てます。</span>
             </p>
             <div className={css_index.success}>
@@ -100,7 +102,11 @@ export default function Page({
             className={`${css_index.section__inner} ${css_index.section_01__inner}`}
           >
             <h2>
-              東大・早慶・上智大など<span>第一志望校に9割以上合格</span>
+              <span>
+                東大・早慶・上智大など
+                <br className={css_index.sp} />
+                第一志望校に9割以上合格
+              </span>
             </h2>
 
             <h3>
@@ -108,10 +114,10 @@ export default function Page({
             </h3>
 
             <div className={css_index.box}>
-              <h4>国立大学</h4>
               <div
                 className={`${css_index.box__item} ${css_index.box__item_01}`}
               >
+                <h4>国立大学</h4>
                 <ul>
                   <li>
                     <img src="./img/top/medal.png" />
@@ -134,6 +140,7 @@ export default function Page({
               <div
                 className={`${css_index.box__item} ${css_index.box__item_02}`}
               >
+                <h4>私立大学</h4>
                 <ul>
                   <li>
                     <img src="./img/top/medal.png" />
@@ -163,10 +170,9 @@ export default function Page({
             </div>
 
             <p>
-              <span className={css_index.block}>その他多数の方が</span>
-              <span className={css_index.block}>
-                第一志望校に合格しております。
-              </span>
+              その他多数の方が
+              <br className={css_index.sp} />
+              第一志望校に合格しております。
             </p>
           </div>
         </section>
@@ -181,11 +187,11 @@ export default function Page({
             className={`${css_index.section__inner} ${css_index.section_02__inner}`}
           >
             <h3>
-              <span className={css_index.block}>基礎レベルから4技能と</span>
-              <span className={css_index.block}>受験英語をマスターして</span>
-              <span className={css_index.block}>
-                英検上位級・難関大学合格へ
-              </span>
+              基礎レベルから4技能と
+              <br className={css_index.sp} />
+              受験英語をマスターして
+              <br />
+              英検上位級・難関大学合格へ
             </h3>
 
             {/* <TopSwiperSlide /> */}
@@ -231,52 +237,56 @@ export default function Page({
                 <div
                   className={`${css_index.box__item__content} ${css_index.box__item_01__content}`}
                 >
-                  <h5>1級（8名）</h5>
-                  <ul>
-                    <li>横浜市立日吉台西中学校 1年</li>
-                    <li>フェリス女学院高校 1年</li>
-                    <li>桜蔭学園高校 1年</li>
-                    <li>慶応義塾高校 3年</li>
-                  </ul>
-                  <h5>準1級（15名）</h5>
-                  <ul>
-                    <li>雙葉学園小学校 6年</li>
-                    <li>田園調布雙葉中学校 3年</li>
-                  </ul>
+                  <div className={css_index.row_box}>
+                    <h5>1級（8名）</h5>
+                    <ul>
+                      <li>横浜市立日吉台西中学校 1年</li>
+                      <li>フェリス女学院高校 1年</li>
+                      <li>桜蔭学園高校 1年</li>
+                      <li>慶応義塾高校 3年</li>
+                    </ul>
+                  </div>
+                  <div className={css_index.row_box}>
+                    <h5>準1級（15名）</h5>
+                    <ul>
+                      <li>雙葉学園小学校 6年</li>
+                      <li>田園調布雙葉中学校 3年</li>
+                    </ul>
+                  </div>
 
                   <a href={`/course/eikenn-pass`}>さらに見る</a>
                 </div>
               </div>
-            </div>
-            <div className={css_index.box}>
               <div
-                className={`${css_index.box__item} ${css_index.box__item_01}`}
+                className={`${css_index.box__item} ${css_index.box__item_02}`}
               >
                 <h4>2023年大学合格実績</h4>
 
                 <div
                   className={`${css_index.box__item__content} ${css_index.box__item_01__content}`}
                 >
-                  <h5>2023年大学合格実績</h5>
-                  <ul>
-                    <li>東京大学 理科Ⅱ類 合格（開成高校）</li>
-                    <li>東京工業大学 生命理工学院 合格（麻布高校）</li>
-                    <li>一橋大学 法学部 合格（豊島岡女子高校）</li>
-                    <li>横浜国立大学 理工学部 合格（桐光学園高校）</li>
-                  </ul>
-                  <h5>内進を含む主な合格大学</h5>
-                  <ul>
-                    <li>慶応大学 合格（10名）</li>
-                    <li>早稲田大学 合格（2名）</li>
-                  </ul>
+                  <div className={css_index.row_box}>
+                    <h5>2023年大学合格実績</h5>
+                    <ul>
+                      <li>東京大学 理科Ⅱ類 合格（開成高校）</li>
+                      <li>東京工業大学 生命理工学院 合格（麻布高校）</li>
+                      <li>一橋大学 法学部 合格（豊島岡女子高校）</li>
+                      <li>横浜国立大学 理工学部 合格（桐光学園高校）</li>
+                    </ul>
+                  </div>
+                  <div className={css_index.row_box}>
+                    <h5>内進を含む主な合格大学</h5>
+                    <ul>
+                      <li>慶応大学 合格（10名）</li>
+                      <li>早稲田大学 合格（2名）</li>
+                    </ul>
+                  </div>
 
                   <a href={`/course/college`}>さらに見る</a>
                 </div>
               </div>
-            </div>
-            <div className={css_index.box}>
               <div
-                className={`${css_index.box__item} ${css_index.box__item_01}`}
+                className={`${css_index.box__item} ${css_index.box__item_03}`}
               >
                 <h4>
                   TOEFL実績<span>過去2年間</span>
@@ -285,26 +295,28 @@ export default function Page({
                 <div
                   className={`${css_index.box__item__content} ${css_index.box__item_01__content}`}
                 >
-                  <h5>IBT （120点満点）</h5>
-                  <ul>
-                    <li>105 慶応大学2年</li>
-                    <li>102 医師</li>
-                    <li>90 国家公務員</li>
-                    <li>90 慶應義塾高校3年</li>
-                  </ul>
-                  <h5>ITP （677点満点）</h5>
-                  <ul>
-                    <li>610 慶應大学3年</li>
-                    <li>601 横浜国立大学3年</li>
-                  </ul>
+                  <div className={css_index.row_box}>
+                    <h5>IBT （120点満点）</h5>
+                    <ul>
+                      <li>105 慶応大学2年</li>
+                      <li>102 医師</li>
+                      <li>90 国家公務員</li>
+                      <li>90 慶應義塾高校3年</li>
+                    </ul>
+                  </div>
+                  <div className={css_index.row_box}>
+                    <h5>ITP （677点満点）</h5>
+                    <ul>
+                      <li>610 慶應大学3年</li>
+                      <li>601 横浜国立大学3年</li>
+                    </ul>
+                  </div>
 
                   <a href={`/course/toefl`}>さらに見る</a>
                 </div>
               </div>
-            </div>
-            <div className={css_index.box}>
               <div
-                className={`${css_index.box__item} ${css_index.box__item_01}`}
+                className={`${css_index.box__item} ${css_index.box__item_04}`}
               >
                 <h4>
                   TOEIC実績<span>過去2年間</span>
@@ -313,15 +325,17 @@ export default function Page({
                 <div
                   className={`${css_index.box__item__content} ${css_index.box__item_01__content}`}
                 >
-                  <h5>TOEIC （990点満点）</h5>
-                  <ul>
-                    <li>985 メーカー勤務</li>
-                    <li>975 IT企業勤務</li>
-                    <li>960 外資系企業勤務</li>
-                    <li>935 慶応大学3年</li>
-                    <li>905 早稲田大学4年</li>
-                    <li>900 塾講師</li>
-                  </ul>
+                  <div className={css_index.row_box}>
+                    <h5>TOEIC （990点満点）</h5>
+                    <ul>
+                      <li>985 メーカー勤務</li>
+                      <li>975 IT企業勤務</li>
+                      <li>960 外資系企業勤務</li>
+                      <li>935 慶応大学3年</li>
+                      <li>905 早稲田大学4年</li>
+                      <li>900 塾講師</li>
+                    </ul>
+                  </div>
 
                   <a href={`/course/toeic`}>さらに見る</a>
                 </div>
@@ -333,9 +347,11 @@ export default function Page({
         <section className={`${css_index.section} ${css_index.section_03}`}>
           <h2 className={css_index.title_blue}>
             <span>
-              <span className={css_index.block}>難関大学合格を確実にする</span>
-              <span className={css_index.block}>秋谷アカデミィで</span>
-              <span className={css_index.block}>後悔しない塾選びを</span>
+              難関大学合格を確実にする
+              <br className={css_index.sp} />
+              秋谷アカデミィで
+              <br className={css_index.sp} />
+              後悔しない塾選びを
             </span>
           </h2>
 
@@ -378,13 +394,19 @@ export default function Page({
               </li>
             </ul>
 
-            <div className={css_index.box}>
-              <h4>
-                <span>他にもこんな相談を受けております</span>
-              </h4>
+            <h4>
+              <span>他にもこんな相談を受けております</span>
+            </h4>
 
+            <div className={css_index.box}>
               <div className={css_index.box__item}>
-                <img src="./img/top/section03_item01.png" />
+                <picture>
+                  <source
+                    srcset="./img/top/sp/section03_item01.png"
+                    media="(max-width: 600px)"
+                  />
+                  <img src="./img/top/pc/section03_item01.png" />
+                </picture>
                 <p>
                   <span>
                     <span className={css_index.block}>受験失敗を通して、</span>
@@ -446,21 +468,18 @@ export default function Page({
         <section className={`${css_index.section} ${css_index.section_04}`}>
           <h2>
             <span>
-              <span className={css_index.block}>秋谷光子アカデミィでは</span>
-              <span className={css_index.block}>
-                上記のような課題を解決するため
+              秋谷光子アカデミィでは
+              <br className={css_index.sp} />
+              上記のような課題を解決するため
+              <br />
+              <span className={css_index.text_red}>一人ひとり塾長面談</span>
+              を行った上で、
+              <br className={css_index.sp} />
+              <span className={css_index.text_red}>
+                最適なカリキュラムと学習法
               </span>
-              <span className={css_index.block}>
-                <span className={css_index.text_red}>一人ひとり塾長面談</span>
-                を行った上で、
-              </span>
-              <span className={css_index.block}>
-                <span className={css_index.text_red}>
-                  最適なカリキュラムと学習法
-                </span>
-                を
-              </span>
-              <span className={css_index.block}>ご案内します。</span>
+              を<br className={css_index.sp} />
+              ご案内します。
             </span>
           </h2>
           <div
@@ -470,7 +489,7 @@ export default function Page({
               <span>英語塾選びでよくある落とし穴</span>
             </h3>
 
-            <h4>
+            <h4 className={css_index.sp}>
               <span className={css_index.block}>
                 当アカデミィにご相談いただく
               </span>
@@ -527,15 +546,15 @@ export default function Page({
             className={`${css_index.section_04__bottom} ${css_index.section_04__bottom}`}
           >
             <h2>
-              <span className={css_index.block}>秋谷光子アカデミィなら</span>
-              <span className={css_index.block}>
-                上記のような心配はいりません。
-              </span>
-              <span className={css_index.block}>
-                <span className={css_index.text_red}>最高の学習環境</span>と
-                <span className={css_index.text_red}>実績ある講師陣</span>が
-              </span>
-              <span className={css_index.block}>目標達成へ導きます。</span>
+              秋谷光子アカデミィなら
+              <br className={css_index.sp} />
+              上記のような心配はいりません。
+              <br />
+              <span className={css_index.text_red}>最高の学習環境</span>と
+              <span className={css_index.text_red}>実績ある講師陣</span>が
+              <br className={css_index.sp} />
+              目標達成へ導きます。
+              <br />
             </h2>
 
             <div className={`${css_index.box} ${css_index.box_01}`}>
@@ -584,13 +603,14 @@ export default function Page({
         </section>
 
         <section
-          id="/nav_02"
+          id="nav_02"
           className={`${css_index.section} ${css_index.section_05}`}
         >
           <h2 className={css_index.title_blue}>
             <span>
-              <span className={css_index.block}>秋谷光子アカデミィが</span>
-              <span className={css_index.block}>英検や大学受験に強い理由</span>
+              秋谷光子アカデミィが
+              <br className={css_index.sp} />
+              英検や大学受験に強い理由
             </span>
           </h2>
           <div
@@ -604,6 +624,7 @@ export default function Page({
                   <span className={css_index.block}>
                     英検1級講師による6人までの
                   </span>
+                  <br />
                   <span className={css_index.block}>
                     グループ指導と1対1個人指導
                   </span>
@@ -674,7 +695,9 @@ export default function Page({
                   <span className={css_index.block}>
                     レベル別カリキュラムで
                   </span>
+                  <br />
                   <span className={css_index.block}>試験合格だけでなく、</span>
+                  <br />
                   <span className={css_index.block}>
                     社会で使える実用英語へ
                   </span>
@@ -745,9 +768,11 @@ export default function Page({
               <div
                 className={`${css_index.course__item} ${css_index.course__item_03}`}
               >
-                <h3 className={css_index.right}>
+                <h3 className={css_index.left}>
                   <span className={css_index.block}>英検1級講師42名の</span>
+                  <br />
                   <span className={css_index.block}>直接指導による</span>
+                  <br />
                   <span className={css_index.block}>圧倒的な英検合格実績</span>
                 </h3>
 
@@ -832,17 +857,6 @@ export default function Page({
                   <br />
                   リスニング・スピーキングはヤマハの防音設備で他の生徒を気にすることなくレッスンできます。自習室は業務時間内はいつでも利用可。1対1個別指導も1つの教室を専用利用して完全な個室でご指導いたします。
                 </p>
-
-                <div className={`${css_index.center} ${css_index.flex}`}>
-                  <img
-                    src="./img/top/success_01.png"
-                    alt="英検1級合格 累計 178名"
-                  />
-                  <img
-                    src="./img/top/success_02.png"
-                    alt="英検1級合格 合計 42名 在籍"
-                  />
-                </div>
               </div>
             </div>
           </div>
@@ -852,7 +866,7 @@ export default function Page({
           <h2 className={css_index.title_blue}>
             <span>
               大学受験英語も
-              <br />
+              <br className={css_index.sp} />
               合格実績豊富な講師陣
             </span>
           </h2>
@@ -866,7 +880,7 @@ export default function Page({
             </h3>
             <p>
               秋谷光子アカデミィは英語専門塾として開塾37年、英検1級合格累計178人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。
-              <br />
+              <br className={css_index.sp} />
               講師はグループ指導・個別指導ともに、
               <b>英検1級・TOEIC950以上の合格実績豊富なベテラン講師が指導</b>
               いたします。東大卒や東京外語大卒等の各々得意な指導分野と指導実績豊富なバイリンガル講師に、Native講師が英会話・speaking・英文添削・英文監修を担当して合格に導きます。
@@ -906,7 +920,7 @@ export default function Page({
           <h2 className={css_index.title_blue}>
             <span>
               大学受験英語で抱える
-              <br />
+              <br className={css_index.sp} />
               さまざまな悩みを解決
             </span>
           </h2>
@@ -1019,7 +1033,7 @@ export default function Page({
               <br />
               <span className={css_index.red}>効果的な学習方法</span>
               （適切な指導と 定期的な実践・フィードバック）を
-              <br />
+              <br className={css_index.sp} />
               通じて<span className={css_index.red}>克服可能</span>です。
             </p>
           </div>
@@ -1036,7 +1050,11 @@ export default function Page({
             className={`${css_index.section__inner} ${css_index.section_08__inner} ${css_index.section_08__inner_01}`}
           >
             <div className={`${css_index.box}`}>
-              <h3>英語専門塾として開塾36年 あらゆる英語資格試験で圧倒的実績</h3>
+              <h3>
+                英語専門塾として開塾36年
+                <br />
+                あらゆる英語資格試験で圧倒的実績
+              </h3>
               <img
                 src="/img/top/section08_item01.png"
                 alt="英検1級合格 累計178名 東大・早慶・上智大など第一志望校に9割以上合格"
@@ -1049,146 +1067,150 @@ export default function Page({
             <div className={`${css_index.box}`}>
               <h3>
                 レベル別・目的別に最適で
-                <br />
+                <br className={css_index.sp} />
                 特化型のカリキュラムを
                 <br />
                 提供しているため
-                <br />
+                <br className={css_index.sp} />
                 <span className={css_index.red}>
                   より効率的な学習を進められます
                 </span>
               </h3>
 
-              <div className={css_index.card_box}>
-                <h4 className={css_index.blue_slash}>医学部受験対策</h4>
-                <div className={css_index.card_box__inner}>
-                  <img src="/img/top/section08_2_item01.png" />
-                  <p>
-                    <b>医学部合格の決め手は、英語力</b>
-                    であると言われています。しかし医学部受験でも、受験対策は他学部を受験する場合とあまり大きく変わりません。本質的な英語力が求められいているだけです。本校では求められる本質的な英語力を効率良く高めるために、
-                    <b>基本的かつ合理的な対策を徹底</b>
-                    して、スコアアップをはかります。過去問題の中でも比較的平易な問題から導入し、徐々にレベルを上げ、志望医学部以上の難度の問題でも得点できるようにして合格につなげます。
-                  </p>
+              <div className={css_index.flex}>
+                <div className={css_index.card_box}>
+                  <h4 className={css_index.blue_slash}>医学部受験対策</h4>
+                  <div className={css_index.card_box__inner}>
+                    <img src="/img/top/section08_2_item01.png" />
+                    <p>
+                      <b>医学部合格の決め手は、英語力</b>
+                      であると言われています。しかし医学部受験でも、受験対策は他学部を受験する場合とあまり大きく変わりません。本質的な英語力が求められいているだけです。本校では求められる本質的な英語力を効率良く高めるために、
+                      <b>基本的かつ合理的な対策を徹底</b>
+                      して、スコアアップをはかります。過去問題の中でも比較的平易な問題から導入し、徐々にレベルを上げ、志望医学部以上の難度の問題でも得点できるようにして合格につなげます。
+                    </p>
 
-                  <dl>
-                    <dt>主な学習内容</dt>
-                    <dd>英文和訳 / 要約 / 自由英作文</dd>
-                  </dl>
+                    <dl>
+                      <dt>主な学習内容</dt>
+                      <dd>英文和訳 / 要約 / 自由英作文</dd>
+                    </dl>
 
-                  <div className={css_index.center}>
-                    <a href="">詳細をみる</a>
+                    <div className={css_index.center}>
+                      <a href="">詳細をみる</a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className={css_index.card_box}>
-                <h4 className={css_index.blue_slash}>国公立大学受験対策</h4>
-                <div className={css_index.card_box__inner}>
-                  <img src="/img/top/section08_2_item02.png" />
-                  <p>
-                    国公立個別試験は、大学入学共通テストのマーク式問題とは異なり、「
-                    <b>記述力</b>
-                    」が問われます。1000語を超える英文を読んで100語前後にまとめる要旨要約問題、長文読解問題に組み込まれた英文和訳問題、自由英作文など、どれも
-                    <b>本質的な英語力を問う難しい問題</b>ばかりです。
-                  </p>
+                <div className={css_index.card_box}>
+                  <h4 className={css_index.blue_slash}>国公立大学受験対策</h4>
+                  <div className={css_index.card_box__inner}>
+                    <img src="/img/top/section08_2_item02.png" />
+                    <p>
+                      国公立個別試験は、大学入学共通テストのマーク式問題とは異なり、「
+                      <b>記述力</b>
+                      」が問われます。1000語を超える英文を読んで100語前後にまとめる要旨要約問題、長文読解問題に組み込まれた英文和訳問題、自由英作文など、どれも
+                      <b>本質的な英語力を問う難しい問題</b>ばかりです。
+                    </p>
 
-                  <dl>
-                    <dt>主な学習内容</dt>
-                    <dd>長文読解 / ライティング / リスニング</dd>
-                  </dl>
+                    <dl>
+                      <dt>主な学習内容</dt>
+                      <dd>長文読解 / ライティング / リスニング</dd>
+                    </dl>
 
-                  <div className={css_index.center}>
-                    <a href="">詳細をみる</a>
+                    <div className={css_index.center}>
+                      <a href="">詳細をみる</a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className={css_index.card_box}>
-                <h4 className={css_index.blue_slash}>難関私立大学受験対策</h4>
-                <div className={css_index.card_box__inner}>
-                  <img src="/img/top/section08_2_item03.png" />
-                  <p>
-                    私立大学の対策指導では、各大学の個別入試（一般入試）に加え、学校推薦型選抜や総合型選抜（旧AO入試）等の推薦入試対策もいたします。現在では入学者の50%以上が一般入試ではなく推薦入試で入学しています。推薦型が主流になりつつあるので、
-                    <b>
-                      推薦入試で高く評価される英検・TOEIC等のスコアアップも万全の対策指導
-                    </b>
-                    をいたします。出願条件以上のスコアアップを果たして加点も受け、合格を確実にいたします。
-                  </p>
+                <div className={css_index.card_box}>
+                  <h4 className={css_index.blue_slash}>難関私立大学受験対策</h4>
+                  <div className={css_index.card_box__inner}>
+                    <img src="/img/top/section08_2_item03.png" />
+                    <p>
+                      私立大学の対策指導では、各大学の個別入試（一般入試）に加え、学校推薦型選抜や総合型選抜（旧AO入試）等の推薦入試対策もいたします。現在では入学者の50%以上が一般入試ではなく推薦入試で入学しています。推薦型が主流になりつつあるので、
+                      <b>
+                        推薦入試で高く評価される英検・TOEIC等のスコアアップも万全の対策指導
+                      </b>
+                      をいたします。出願条件以上のスコアアップを果たして加点も受け、合格を確実にいたします。
+                    </p>
 
-                  <dl>
-                    <dt>主な学習内容</dt>
-                    <dd>文法・語彙 / 長文読解 / ライティング / リスニング</dd>
-                  </dl>
+                    <dl>
+                      <dt>主な学習内容</dt>
+                      <dd>文法・語彙 / 長文読解 / ライティング / リスニング</dd>
+                    </dl>
 
-                  <div className={css_index.center}>
-                    <a href="">詳細をみる</a>
+                    <div className={css_index.center}>
+                      <a href="">詳細をみる</a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className={css_index.card_box}>
-                <h4 className={css_index.blue_slash}>GMARCH受験対策</h4>
-                <div className={css_index.card_box__inner}>
-                  <img src="/img/top/section08_2_item04.png" />
-                  <p>
-                    GMARCH対策では自分の弱点がどこかをしっかりと見極め、
-                    <b>基礎力の徹底</b>
-                    から始めます。その上で数多くの演習問題を使って、
-                    <b>正しい知識と解き方を定着</b>
-                    させます。英語力は［文法→構文→長文読解→速読→リスニング→英作文」のプロセスで伸びていきます。段階を追って無理なく、論理的に理解・記憶させ、
-                    <b>
-                      習熟度に応じたカリキュラムで不得意単元の克服と、新単元マスターを徹底
-                    </b>
-                    していきます。
-                  </p>
+                <div className={css_index.card_box}>
+                  <h4 className={css_index.blue_slash}>GMARCH受験対策</h4>
+                  <div className={css_index.card_box__inner}>
+                    <img src="/img/top/section08_2_item04.png" />
+                    <p>
+                      GMARCH対策では自分の弱点がどこかをしっかりと見極め、
+                      <b>基礎力の徹底</b>
+                      から始めます。その上で数多くの演習問題を使って、
+                      <b>正しい知識と解き方を定着</b>
+                      させます。英語力は［文法→構文→長文読解→速読→リスニング→英作文」のプロセスで伸びていきます。段階を追って無理なく、論理的に理解・記憶させ、
+                      <b>
+                        習熟度に応じたカリキュラムで不得意単元の克服と、新単元マスターを徹底
+                      </b>
+                      していきます。
+                    </p>
 
-                  <dl>
-                    <dt>主な学習内容</dt>
-                    <dd>文法・語彙 / 長文読解 / ライティング / リスニング</dd>
-                  </dl>
+                    <dl>
+                      <dt>主な学習内容</dt>
+                      <dd>文法・語彙 / 長文読解 / ライティング / リスニング</dd>
+                    </dl>
 
-                  <div className={css_index.center}>
-                    <a href="">詳細をみる</a>
+                    <div className={css_index.center}>
+                      <a href="">詳細をみる</a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className={css_index.card_box}>
-                <h4 className={css_index.blue_slash}>大学入学共通テスト対策</h4>
-                <div className={css_index.card_box__inner}>
-                  <img src="/img/top/section08_2_item05.png" />
-                  <p>
-                    実施された過去問や数多くの予想問題・模擬テストの中から、レベルを上げながらできるだけ多くの問題を解いていきます。多くの英文にあたることによって設問ごとに必要な情報選別力をつけ、
-                    <b>
-                      短い制限時間内でも正確に解答できる時間配分の仕方などを体得
-                    </b>
-                    していきます。
-                  </p>
+                <div className={css_index.card_box}>
+                  <h4 className={css_index.blue_slash}>
+                    大学入学共通テスト対策
+                  </h4>
+                  <div className={css_index.card_box__inner}>
+                    <img src="/img/top/section08_2_item05.png" />
+                    <p>
+                      実施された過去問や数多くの予想問題・模擬テストの中から、レベルを上げながらできるだけ多くの問題を解いていきます。多くの英文にあたることによって設問ごとに必要な情報選別力をつけ、
+                      <b>
+                        短い制限時間内でも正確に解答できる時間配分の仕方などを体得
+                      </b>
+                      していきます。
+                    </p>
 
-                  <dl>
-                    <dt>主な学習内容</dt>
-                    <dd>長文化(5,500語)の読解・筆記対策 / リスニング</dd>
-                  </dl>
+                    <dl>
+                      <dt>主な学習内容</dt>
+                      <dd>長文化(5,500語)の読解・筆記対策 / リスニング</dd>
+                    </dl>
 
-                  <div className={css_index.center}>
-                    <a href="">詳細をみる</a>
+                    <div className={css_index.center}>
+                      <a href="">詳細をみる</a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className={css_index.card_box}>
-                <h4 className={css_index.blue_slash}>高校生コース</h4>
-                <div className={css_index.card_box__inner}>
-                  <img src="/img/top/section08_2_item06.png" />
-                  <p>
-                    高校生コースでは<b>文法と4技能をバランス良く</b>
-                    育て、多読→速読→精読で読解力をさらに強化して、難関大学合格、内部進学、留学など
-                    <b>全ての進路を可能にする英語力</b>
-                    を育てています。高校1年時から学校の英語を着実にマスターして英語基礎学力を育て、高い学校成績を確実にいたします。それと連動して、英検もより上位級の1級・準1級合格につながるようご指導して実績を出しています。
-                  </p>
+                <div className={css_index.card_box}>
+                  <h4 className={css_index.blue_slash}>高校生コース</h4>
+                  <div className={css_index.card_box__inner}>
+                    <img src="/img/top/section08_2_item06.png" />
+                    <p>
+                      高校生コースでは<b>文法と4技能をバランス良く</b>
+                      育て、多読→速読→精読で読解力をさらに強化して、難関大学合格、内部進学、留学など
+                      <b>全ての進路を可能にする英語力</b>
+                      を育てています。高校1年時から学校の英語を着実にマスターして英語基礎学力を育て、高い学校成績を確実にいたします。それと連動して、英検もより上位級の1級・準1級合格につながるようご指導して実績を出しています。
+                    </p>
 
-                  <dl>
-                    <dt>主な学習内容</dt>
-                    <dd>長文化(5,500語)の読解・筆記対策 / リスニング</dd>
-                  </dl>
+                    <dl>
+                      <dt>主な学習内容</dt>
+                      <dd>長文化(5,500語)の読解・筆記対策 / リスニング</dd>
+                    </dl>
 
-                  <div className={css_index.center}>
-                    <a href="">詳細をみる</a>
+                    <div className={css_index.center}>
+                      <a href="">詳細をみる</a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1202,7 +1224,7 @@ export default function Page({
               <span className={css_index.red}>
                 求められる以上のスコアを獲得できる
               </span>
-              <br />
+              <br className={css_index.sp} />
               ご指導をいたします。
             </p>
           </div>
@@ -1222,7 +1244,7 @@ export default function Page({
             <div className={`${css_index.point_row} ${css_index.point_row_01}`}>
               <h3>
                 大学受験専門に特化した
-                <br />
+                <br className={css_index.sp} />
                 コース別学習
               </h3>
               <p>
@@ -1247,89 +1269,91 @@ export default function Page({
               <p>
                 学習目的やご要望を伺い、「グループ指導」「1対1個別指導（オンライン可）」「個別グループ指導」の中から、最も効率良くマスターできるカリキュラムと学習法をご提案いたします。
               </p>
-              <div className={css_index.box}>
-                <h4 className={css_index.blue_slash}>グループ指導</h4>
+              <div className={css_index.flex}>
+                <div className={css_index.box}>
+                  <h4 className={css_index.blue_slash}>グループ指導</h4>
 
-                <div className={css_index.box__inner}>
-                  <img src="/img/top/section09_item01.png" />
+                  <div className={css_index.box__inner}>
+                    <img src="/img/top/section09_item01.png" />
 
-                  <div className={css_index.ac_cont}>
-                    <dl>
-                      <dt>指導内容</dt>
-                      <dd>
-                        学年と習熟度別に6人までの少人数グループに細かくクラス分けをして、英検1級の担任講師が確実にマスターさせていきます。英語の勉強の仕方から、内申点の向上、受験、英検、留学など、学習目的と習熟度に応じてご指導いたします。ネイティブ講師によるフリートークの受講と英作文の添削は無料で受講可能です。
-                      </dd>
-                    </dl>
+                    <div className={css_index.ac_cont}>
+                      <dl>
+                        <dt>指導内容</dt>
+                        <dd>
+                          学年と習熟度別に6人までの少人数グループに細かくクラス分けをして、英検1級の担任講師が確実にマスターさせていきます。英語の勉強の仕方から、内申点の向上、受験、英検、留学など、学習目的と習熟度に応じてご指導いたします。ネイティブ講師によるフリートークの受講と英作文の添削は無料で受講可能です。
+                        </dd>
+                      </dl>
 
-                    <dl>
-                      <dt>指導時間</dt>
-                      <dd>
-                        <dl>
-                          <dt>週1回／月4回</dt>
-                          <dd>
-                            小学生や基礎レベル：70分～
-                            <br />
-                            高校生や英検2級レベル以上：120分
-                            <br />
-                            ※受講クラスは学年とレベルに応じて変わりますのでご相談ください。
-                          </dd>
-                        </dl>
-                      </dd>
-                    </dl>
+                      <dl>
+                        <dt>指導時間</dt>
+                        <dd>
+                          <dl>
+                            <dt>週1回／月4回</dt>
+                            <dd>
+                              小学生や基礎レベル：70分～
+                              <br />
+                              高校生や英検2級レベル以上：120分
+                              <br />
+                              ※受講クラスは学年とレベルに応じて変わりますのでご相談ください。
+                            </dd>
+                          </dl>
+                        </dd>
+                      </dl>
 
-                    <dl>
-                      <dt>振替制度</dt>
-                      <dd>
-                        グループ指導を欠席した場合、振替制度を利用して欠席した授業内容をマスターできます。欠席した単元は、個別に指導する振替時間枠（3～4人対1人で英検1級講師がご指導）を設けておりますのでご相談ください。
-                      </dd>
-                    </dl>
-                  </div>
+                      <dl>
+                        <dt>振替制度</dt>
+                        <dd>
+                          グループ指導を欠席した場合、振替制度を利用して欠席した授業内容をマスターできます。欠席した単元は、個別に指導する振替時間枠（3～4人対1人で英検1級講師がご指導）を設けておりますのでご相談ください。
+                        </dd>
+                      </dl>
+                    </div>
 
-                  <div className={css_index.ac_btn}>
-                    <button>閉じる</button>
+                    <div className={css_index.ac_btn}>
+                      <button>閉じる</button>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className={css_index.box}>
-                <h4 className={css_index.blue_slash}>1対1個人指導</h4>
+                <div className={css_index.box}>
+                  <h4 className={css_index.blue_slash}>1対1個人指導</h4>
 
-                <div className={css_index.box__inner}>
-                  <img src="/img/top/section09_item02.png" />
+                  <div className={css_index.box__inner}>
+                    <img src="/img/top/section09_item02.png" />
 
-                  <div className={css_index.ac_cont}>
-                    <dl>
-                      <dt>指導内容</dt>
-                      <dd>
-                        学年と習熟度別に6人までの少人数グループに細かくクラス分けをして、英検1級の担任講師が確実にマスターさせていきます。英語の勉強の仕方から、内申点の向上、受験、英検、留学など、学習目的と習熟度に応じてご指導いたします。ネイティブ講師によるフリートークの受講と英作文の添削は無料で受講可能です。
-                      </dd>
-                    </dl>
+                    <div className={css_index.ac_cont}>
+                      <dl>
+                        <dt>指導内容</dt>
+                        <dd>
+                          学年と習熟度別に6人までの少人数グループに細かくクラス分けをして、英検1級の担任講師が確実にマスターさせていきます。英語の勉強の仕方から、内申点の向上、受験、英検、留学など、学習目的と習熟度に応じてご指導いたします。ネイティブ講師によるフリートークの受講と英作文の添削は無料で受講可能です。
+                        </dd>
+                      </dl>
 
-                    <dl>
-                      <dt>指導時間</dt>
-                      <dd>
-                        <dl>
-                          <dt>週1回／月4回</dt>
-                          <dd>
-                            小学生や基礎レベル：70分～
-                            <br />
-                            高校生や英検2級レベル以上：120分
-                            <br />
-                            ※受講クラスは学年とレベルに応じて変わりますのでご相談ください。
-                          </dd>
-                        </dl>
-                      </dd>
-                    </dl>
+                      <dl>
+                        <dt>指導時間</dt>
+                        <dd>
+                          <dl>
+                            <dt>週1回／月4回</dt>
+                            <dd>
+                              小学生や基礎レベル：70分～
+                              <br />
+                              高校生や英検2級レベル以上：120分
+                              <br />
+                              ※受講クラスは学年とレベルに応じて変わりますのでご相談ください。
+                            </dd>
+                          </dl>
+                        </dd>
+                      </dl>
 
-                    <dl>
-                      <dt>振替制度</dt>
-                      <dd>
-                        グループ指導を欠席した場合、振替制度を利用して欠席した授業内容をマスターできます。欠席した単元は、個別に指導する振替時間枠（3～4人対1人で英検1級講師がご指導）を設けておりますのでご相談ください。
-                      </dd>
-                    </dl>
-                  </div>
+                      <dl>
+                        <dt>振替制度</dt>
+                        <dd>
+                          グループ指導を欠席した場合、振替制度を利用して欠席した授業内容をマスターできます。欠席した単元は、個別に指導する振替時間枠（3～4人対1人で英検1級講師がご指導）を設けておりますのでご相談ください。
+                        </dd>
+                      </dl>
+                    </div>
 
-                  <div className={css_index.ac_btn}>
-                    <button>閉じる</button>
+                    <div className={css_index.ac_btn}>
+                      <button>閉じる</button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1337,7 +1361,7 @@ export default function Page({
             <div className={`${css_index.point_row} ${css_index.point_row_03}`}>
               <h3>
                 一人ひとりにあった
-                <br />
+                <br className={css_index.sp} />
                 学習プランを提供する
               </h3>
               <p>
@@ -1374,19 +1398,19 @@ export default function Page({
             <div className={css_index.section__inner}>
               <h3>
                 毎年10名前後の
-                <br />
+                <br className={css_index.sp} />
                 英検1級合格者を輩出
               </h3>
               <p>
                 秋谷アカデミィは地元密着型の一私塾ですが、
-                <br />
+                <br className={css_index.sp} />
                 小学生～社会人まで英検1級に
-                <br />
+                <br className={css_index.sp} />
                 毎回多数の生徒さんが合格されています。
-                <br />
+                <br className={css_index.sp} />
                 卒業生の方からは
                 <b>秋谷光子アカデミィを選んで良かった</b>といった嬉しいお声も
-                <br />
+                <br className={css_index.sp} />
                 たくさんいただいております。
               </p>
             </div>
@@ -1397,6 +1421,7 @@ export default function Page({
               <span className={css_index.balloon}>
                 最短距離で目標達成できる
               </span>
+              <br />
               <span className={css_index.block}>カリキュラムをご案内</span>
             </h2>
 
@@ -1418,30 +1443,35 @@ export default function Page({
         <section className={`${css_index.section} ${css_index.section_10}`}>
           <h2 className={css_index.title_blue}>
             <span>
-              <span className={css_index.block}>秋谷光子アカデミィが</span>
-              <span className={css_index.block}>英検や大学受験に強い理由</span>
+              秋谷光子アカデミィが
+              <br className={css_index.sp} />
+              英検や大学受験に強い理由
             </span>
           </h2>
           <div
             className={`${css_index.section__inner} ${css_index.section_10__inner}  ${css_index.section_10__inner_01}`}
           >
-            <h3 className={css_index.left}>
-              <span>充実したカリキュラム</span>
-            </h3>
+            <div className={css_index.table}>
+              <h3 className={css_index.left}>
+                <span>充実したカリキュラム</span>
+              </h3>
 
-            <p>
-              当アカデミィでは大学受験の英語教育に特化したオーダーメイドカリキュラムをオーダーメイドで提供しております。受験英語からアカデミック英語まで幅広く対応しており、最新の受験トレンドに基づいたカリキュラムの更新も随時行っております。
-            </p>
+              <p>
+                当アカデミィでは大学受験の英語教育に特化したオーダーメイドカリキュラムをオーダーメイドで提供しております。受験英語からアカデミック英語まで幅広く対応しており、最新の受験トレンドに基づいたカリキュラムの更新も随時行っております。
+              </p>
+            </div>
 
-            <h3 className={css_index.right}>
-              <span>実績のある指導法</span>
-            </h3>
+            <div className={css_index.table}>
+              <h3 className={css_index.right}>
+                <span>実績のある指導法</span>
+              </h3>
 
-            <p>
-              合格実績豊富な、経験に基づいた指導法で目標達成に導きます。
-              <br />
-              また、独自の学習メソッドで英語力の飛躍的向上をサポートし、クリティカルシンキングやプレゼンテーションスキルなど、アカデミックスキルの習得を重点的に行います。
-            </p>
+              <p>
+                合格実績豊富な、経験に基づいた指導法で目標達成に導きます。
+                <br />
+                また、独自の学習メソッドで英語力の飛躍的向上をサポートし、クリティカルシンキングやプレゼンテーションスキルなど、アカデミックスキルの習得を重点的に行います。
+              </p>
+            </div>
           </div>
 
           <div id="nav_05" className={`${css_index.box}`}>
@@ -1548,7 +1578,9 @@ export default function Page({
                     <dd>
                       <dl>
                         <dt>
-                          2級〜準1級/IELTS GTEC TEAP/TOEIC/TOEIC Bridge/TOEFL
+                          2級〜準1級/IELTS GTEC TEAP/TOEIC
+                          <br />
+                          /TOEIC Bridge/TOEFL
                         </dt>
                         <dd>
                           大学入学共通テストや各大学の個別試験等、変化し続ける受験英語に完璧な対策指導を致します。共通テストはリーディングの総語数が更に増加して長文化し、リスニングは1回読みで解答が求められます。根幹になる正確な速読力をつけて、長文読解、リスニング特訓、英作文や小論文の添削を重ねて合格を確実に致します。学校推薦や総合型選抜対策も万全で、今年も第一志望校に85％以上が合格。
@@ -1561,7 +1593,9 @@ export default function Page({
                     <dd>
                       <dl>
                         <dt>
-                          2級〜準1級/IELTS GTEC TEAP/TOEIC/TOEIC Bridge/TOEFL
+                          2級〜準1級/IELTS GTEC TEAP/TOEIC
+                          <br />
+                          /TOEIC Bridge/TOEFL
                         </dt>
                         <dd>
                           単語・熟語・文法の力をつけながら、多読と精読両面からアプローチして正確に早く読解できるようにします。英語力の土台となる長文読解力をつけてリスニング力も伸ばし、英作文は添削指導を重ねて英検と新入試での大学受験合格力をつけていきます。
@@ -1573,7 +1607,11 @@ export default function Page({
                     <dt>高1生</dt>
                     <dd>
                       <dl>
-                        <dt>準2級〜準1級/GTEC TEAP/TOEIC Bridge/TOEFL</dt>
+                        <dt>
+                          準2級〜準1級/GTEC TEAP/TOEIC Bridge
+                          <br />
+                          /TOEFL
+                        </dt>
                         <dd>
                           高校生の英語は文法→構文→長文読解→多読・速読→リスニング→英作文→英会話のプロセスで力がつきます。学習目的と習熟度に応じたカリキュラムで、不得意単元の克服と新単元マスターを徹底し、新形式の大学入試に対応した力をつけていきます。
                         </dd>
@@ -1665,7 +1703,7 @@ export default function Page({
               <div className={`${css_index.row_box} ${css_index.row_box_01}`}>
                 <h3>お問い合わせ・資料請求</h3>
 
-                <img src="./img/top/section11_item01.png" alt="" />
+                <img src="./img/top/pc/section11_item01.png" alt="" />
 
                 <p>
                   まずは<span>お問い合わせフォーム</span>
@@ -1703,17 +1741,19 @@ export default function Page({
           </div>
 
           <div className={css_index.merit}>
+            <h3>無料体験レッスンのメリット</h3>
+
             <div
               className={`${css_index.section__inner} ${css_index.section_11__inner}`}
             >
-              <h3>
+              <h4>
                 秋谷光子アカデミィ
-                <br />
+                <br className={css_index.sp} />
                 無料体験レッスンを実施中
-              </h3>
+              </h4>
 
               <div className={css_index.box}>
-                <h4>無料体験レッスンのメリット</h4>
+                <h3>無料体験レッスンのメリット</h3>
 
                 <ul>
                   <li>実際の授業が経験できる</li>
@@ -1729,7 +1769,7 @@ export default function Page({
             <div className={css_index.section__inner}>
               <h3 className={css_index.red}>
                 生徒と真剣に向き合い
-                <br />
+                <br className={css_index.sp} />
                 合格へと導く英語塾
               </h3>
 
@@ -1748,6 +1788,7 @@ export default function Page({
               <span className={css_index.balloon}>
                 最短距離で目標達成できる
               </span>
+              <br />
               <span className={css_index.block}>カリキュラムをご案内</span>
             </h2>
 
@@ -1778,7 +1819,7 @@ export default function Page({
           >
             <h3>
               横浜綱島に開塾37年
-              <br />
+              <br className={css_index.sp} />
               最上級の学習環境を提供
             </h3>
 
@@ -1794,7 +1835,7 @@ export default function Page({
 
             <h3>
               試験に合格し
-              <br />
+              <br className={css_index.sp} />
               世界で使える英語力を
             </h3>
 
@@ -1809,7 +1850,7 @@ export default function Page({
 
             <h3>
               アクセスが良く
-              <br />
+              <br className={css_index.sp} />
               学習に専念できる教室
             </h3>
 
@@ -1824,12 +1865,18 @@ export default function Page({
             <div className={css_index.section__inner}>
               <div className={css_index.box__item}>
                 <h3>横浜・綱島本部校</h3>
-                <img src="/img/top/section12_item01.png" />
+                <img src="/img/top/pc/section12_item01.png" />
                 <div className={css_index.text}>
                   <ul>
-                    <li>TEL：045-544-6756</li>
                     <li>
-                      住所：〒223-0053 横浜市港北区
+                      TEL：
+                      <br className={css_index.pc} />
+                      045-544-6756
+                    </li>
+                    <li>
+                      住所：
+                      <br className={css_index.pc} />
+                      〒223-0053 横浜市港北区
                       <br />
                       綱島西2-1-7 マック綱島コート2Ｆ
                     </li>
@@ -1841,7 +1888,9 @@ export default function Page({
                       東急新横浜線 新綱島駅より徒歩5分
                     </li>
                   </ul>
-                  <a href="#">Google Mapで見る</a>
+                  <a href="#" className={css_index.map}>
+                    Google Mapで見る
+                  </a>
                   <a href="#" className={css_index.detail}>
                     詳細をみる
                   </a>
@@ -1864,7 +1913,9 @@ export default function Page({
                       東急東横線・目黒線 田園調布駅より徒歩1分
                     </li>
                   </ul>
-                  <a href="#">Google Mapで見る</a>
+                  <a href="#" className={css_index.map}>
+                    Google Mapで見る
+                  </a>
                   <a href="#" className={css_index.detail}>
                     詳細をみる
                   </a>
@@ -1878,7 +1929,7 @@ export default function Page({
           <h2 className={css_index.title_blue}>
             <span>
               難関大学に多数合格者を輩出する
-              <br />
+              <br className={css_index.sp} />
               秋谷光子アカデミィの特徴
             </span>
           </h2>
@@ -1935,6 +1986,7 @@ export default function Page({
               <span className={css_index.balloon}>
                 最短距離で目標達成できる
               </span>
+              <br />
               <span className={css_index.block}>カリキュラムをご案内</span>
             </h2>
 
@@ -1967,7 +2019,7 @@ export default function Page({
                 試験に合格し
                 <br />
                 世界で使える
-                <br />
+                <br className={css_index.sp} />
                 英語力を。
               </p>
             </div>
@@ -1997,28 +2049,6 @@ export default function Page({
               </strong>
             </p>
           </div>
-
-          <div className={css_index.cta_box}>
-            <h2>
-              <span className={css_index.balloon}>
-                最短距離で目標達成できる
-              </span>
-              <span className={css_index.block}>カリキュラムをご案内</span>
-            </h2>
-
-            <div className={css_index.cta}>
-              <p>
-                まずは
-                <span className={css_index.red_box}>無料体験レッスン</span>
-                <span className={css_index.red_box}>資料請求</span>
-                から
-              </p>
-              <a href={`/contact`}>
-                お問い合わせ・<span>無料体験レッスンを申し込む</span>
-              </a>
-              <a href={`/contact`}>資料を請求する</a>
-            </div>
-          </div>
         </section>
 
         <section className={`${css_index.section} ${css_index.section_15}`}>
@@ -2032,11 +2062,12 @@ export default function Page({
             >
               <h3>
                 最上級の学習環境で指導
-                <br />
+                <br className={css_index.sp} />
                 自習室も完備
               </h3>
               <p>
                 学習効果を上げるには快適な学習環境が不可欠です。床暖房完備でこだわり抜いた素材の校舎や緑豊かな観葉植物など、最上級の学習空間で学習ができます。
+                <br className={css_index.pc} />
                 リスニング・スピーキングはヤマハの防音設備で他の生徒を気にすることなくレッスンできます。自習室は業務時間内はいつでも利用可。1対1個別指導も1つの教室を専用利用して完全な個室でご指導いたします。
               </p>
 
@@ -2074,7 +2105,7 @@ export default function Page({
                   <li>完全個室もあるので他の生徒に気を遣わない</li>
                   <li>
                     周りの生徒も温度感が高いため、
-                    <br />
+                    <br className={css_index.sp} />
                     自ら学習しようと思える
                   </li>
                 </ul>
@@ -2083,7 +2114,7 @@ export default function Page({
               <div className={`${css_index.bottom}`}>
                 <p>
                   <span className={css_index.red}>唯一無二の学習空間</span>で
-                  <br />
+                  <br className={css_index.sp} />
                   <span className={css_index.red}>圧倒的な英語力</span>
                   を身につけよう！
                 </p>
@@ -2098,7 +2129,7 @@ export default function Page({
 
             <h3>
               秋谷光子アカデミィで
-              <br />
+              <br className={css_index.sp} />
               確かな英語力を身につけて
               <br />
               難関を突破しませんか？
@@ -2112,12 +2143,16 @@ export default function Page({
             </p>
 
             <div className={css_index.cta}>
-              <p>学習方法含めてアドバイスをもらう</p>
-              <a href={`/contact`}>
-                お問い合わせ・<span>無料体験レッスンを申し込む</span>
-              </a>
-              <p>塾の概要や料金を知りたい</p>
-              <a href={`/contact`}>資料を請求する</a>
+              <div>
+                <p>学習方法含めてアドバイスをもらう</p>
+                <a href={`/contact`}>
+                  お問い合わせ・<span>無料体験レッスンを申し込む</span>
+                </a>
+              </div>
+              <div>
+                <p>塾の概要や料金を知りたい</p>
+                <a href={`/contact`}>資料を請求する</a>
+              </div>
             </div>
           </div>
         </section>
@@ -2168,11 +2203,17 @@ export default function Page({
 
               <div className={css_index.box}>
                 <ul>
-                  <li>TEL：045-544-6756</li>
                   <li>
-                    住所：〒223-0053 横浜市港北区
+                    TEL：
+                    <br className={css_index.pc} />
+                    045-544-6756
+                  </li>
+                  <li>
+                    住所：
+                    <br className={css_index.pc} />
+                    〒223-0053 横浜市港北区
                     <br />
-                    　　　綱島西2-1-7 マック綱島コート2Ｆ
+                    綱島西2-1-7 マック綱島コート2Ｆ
                   </li>
                   <li>
                     アクセス：
@@ -2205,11 +2246,17 @@ export default function Page({
 
               <div className={css_index.box}>
                 <ul>
-                  <li>TEL：03-5483-5025</li>
                   <li>
-                    住所：〒145-0071
+                    TEL：
+                    <br className={css_index.pc} />
+                    03-5483-5025
+                  </li>
+                  <li>
+                    住所：
+                    <br className={css_index.pc} />
+                    〒145-0071
                     <br />
-                    　　　東京都大田区田園調布3-24-2
+                    東京都大田区田園調布3-24-2
                   </li>
                   <li>
                     アクセス：
