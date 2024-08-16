@@ -26,9 +26,16 @@ function Page() {
 
   return (
     <>
+      <div className="overlay" onClick={handleInc}></div>
       <nav className={css.nav + " nav_" + url[1] + " nav_" + String(data)}>
         <section className={css.inner}>
-          <div className="navClose" onClick={handleInc}></div>
+          <div className="navClose" onClick={handleInc}>
+            <div>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
           <section className={css.main}>
             {/* <ul className={css.addr}>
               {_V.access.map((e, i) => (

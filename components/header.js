@@ -62,9 +62,9 @@ function Page() {
   return (
     <>
       <header className={css.header + " header_" + url[1]}>
-        <section className={css.inner}>
+        <div className={css.inner}>
           {siteTitle(url)}
-          <section className={css.menu}>
+          <div className={css.menu}>
             {/* <Link legacyBehavior href={"/access"}>
               <a>
                 <ul className={css.addr}>
@@ -77,69 +77,24 @@ function Page() {
                 </ul>
               </a>
             </Link> */}
-            <ul className={css.meta}>
-              <li
+            <div className={css.links}>
+              <a>
+                お問い合わせ
+                <br />
+                無料体験レッスン
+              </a>
+              <a>資料を請求</a>
+            </div>
+            <div className={css.meta}>
+              <div
                 className={classNames(css.spMENU, { [css.close]: data })}
                 onClick={handleInc}
               >
-                {!data ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="25"
-                    height="11"
-                    viewBox="0 0 25 11"
-                  >
-                    <g transform="translate(-12005 6489.5)">
-                      <line
-                        x2="25"
-                        transform="translate(12005 -6489)"
-                        fill="none"
-                        stroke="#fff"
-                        stroke-width="1"
-                      />
-                      <line
-                        x2="25"
-                        transform="translate(12005 -6484)"
-                        fill="none"
-                        stroke="#fff"
-                        stroke-width="1"
-                      />
-                      <line
-                        x2="25"
-                        transform="translate(12005 -6479)"
-                        fill="none"
-                        stroke="#fff"
-                        stroke-width="1"
-                      />
-                    </g>
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="30.471"
-                    height="16.882"
-                    viewBox="0 0 30.471 16.882"
-                  >
-                    <g transform="translate(-320.265 -23.559)">
-                      <line
-                        x2="30"
-                        y2="16"
-                        transform="translate(320.5 24)"
-                        fill="none"
-                        stroke="#fff"
-                        stroke-width="1"
-                      />
-                      <line
-                        y1="16"
-                        x2="30"
-                        transform="translate(320.5 24)"
-                        fill="none"
-                        stroke="#fff"
-                        stroke-width="1"
-                      />
-                    </g>
-                  </svg>
-                )}
+                <div>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
                 {/* 
                 <div>
                   {!data ? (
@@ -148,15 +103,15 @@ function Page() {
                     <>CLOSE</>
                   )}
                 </div> */}
-              </li>
-            </ul>
-          </section>
+              </div>
+            </div>
+          </div>
           {/* {url[1] == "method" && url[2] && (
             <Link legacyBehavior href={"/course_and_classtype"}>
               <a className={css.backButton}>コース説明にもどる</a>
             </Link>
           )} */}
-        </section>
+        </div>
       </header>
     </>
   );

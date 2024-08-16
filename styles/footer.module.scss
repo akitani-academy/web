@@ -98,9 +98,16 @@
 
 .page_top {
   position: fixed;
-  right: 10px;
-  bottom: 10px;
-  width: 66px;
-  height: 66px;
+  right: 30px;
+  bottom: 30px;
+  width: 96px;
+  height: 96px;
   z-index: 9997;
+
+  @media (max-width: 600px) {
+    width: 66px;
+    height: 66px;
+    right: 10px;
+    bottom: 10px;
+  }
 }
