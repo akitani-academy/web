@@ -18,10 +18,9 @@ import LinkList from "components/widget/LinkList";
 import TopSwiperSlide from "components/TopSwiperSlide/TopSwiperSlide";
 import LoopCarousel from "components/widget/LoopCarousel";
 import Button from "components/Button/Button";
-import ExperiencesListBox from "components/Experiences/ExperiencesListBox";
 import ContactButton from "components/ContactButton/ContactButton";
 
-import css_index from "styles/index.module.scss";
+import css_index from "styles/top.module.scss";
 
 import Logo from "/public/curriculum.svg";
 
@@ -32,17 +31,28 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-// カルーセルにする画像のソースをリストにします
-// const images = ["/dummy/1.jpg", "/dummy/2.jpg", "/dummy/3.jpg"];
+function Modal({ isOpen, onClose, item }) {
+  if (!isOpen) return null;
 
-const sec15images = [
-  "/img/top/pc/section15_item01.png",
-  "/img/top/pc/section15_item02.png",
-  "/img/top/pc/section15_item03.png",
-  "/img/top/pc/section15_item04.png",
-  "/img/top/pc/section15_item05.png",
-  "/img/top/pc/section15_item06.png",
-];
+  return (
+    <div className={css_index.modal}>
+      <div className={css_index.close} onClick={onClose}>
+        <div>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div className={css_index.modal__inner}>
+        <h3>
+          {item.title}
+          <small>{item.subtitle}</small>
+        </h3>
+        <div className={css_index.box}>{item.modalContent}</div>
+      </div>
+    </div>
+  );
+}
 
 export default function Page({
   top,
@@ -50,6 +60,7 @@ export default function Page({
   classtypeData,
   teacherList,
   experiencesData,
+  experiencesPostData,
 }) {
   // TASK: 先生のカードリストのオートスクロールを実装予定
   // let teacherListOdd = teacherList.filter(num => Number(num) % 2 !== 0);
@@ -71,6 +82,18 @@ export default function Page({
 
   const toggleAccordion03 = (index) => {
     setactiveIndex03(activeIndex03 === index ? null : index);
+  };
+
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleItemClick = (item) => {
+    setSelectedItem(item);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
   };
 
   const accordionData01 = [
@@ -354,6 +377,340 @@ export default function Page({
     },
   ];
 
+  const actuals = [
+    {
+      id: 1,
+      title: "英検合格実績",
+      subtitle: "過去1年間（2022年第3回〜2023年第2回）",
+      content: [
+        <div className={css_index.row_box}>
+          <h5>1級（8名）</h5>
+          <ul>
+            <li>横浜市立日吉台西中学校 1年</li>
+            <li>フェリス女学院高校 1年</li>
+            <li>桜蔭学園高校 1年</li>
+            <li>慶応義塾高校 3年</li>
+          </ul>
+        </div>,
+        <div className={css_index.row_box}>
+          <h5>準1級（15名）</h5>
+          <ul>
+            <li>雙葉学園小学校 6年</li>
+            <li>田園調布雙葉中学校 3年</li>
+          </ul>
+        </div>,
+      ],
+      modalContent: [
+        <div className={css_index.box__item}>
+          <dl>
+            <dt>1級（8名）</dt>
+            <dd>横浜市立日吉台西中学校 1年</dd>
+            <dd>フェリス女学院高校 1年</dd>
+            <dd>桜蔭学園高校 1年</dd>
+            <dd>慶応義塾高校 3年</dd>
+            <dd>慶應大学 3年</dd>
+            <dd>システムエンジニア</dd>
+            <dd>外資系法人勤務</dd>
+            <dd>英語講師</dd>
+          </dl>
+        </div>,
+        <div className={css_index.box__item}>
+          <dl>
+            <dt>準1級（15名）</dt>
+            <dd>雙葉学園小学校 6年</dd>
+            <dd>田園調布雙葉中学校 3年</dd>
+            <dd>慶応湘南藤沢高等部 1年</dd>
+            <dd>神奈川県立神奈川総合高校 2年</dd>
+            <dd>カリタス女子高校 2年</dd>
+            <dd>横浜雙葉高校 2年</dd>
+            <dd>武相高校 2年</dd>
+            <dd>東洋英和女学院高等部 2年</dd>
+            <dd>実践女子学園高校 2年</dd>
+            <dd>東京都立国際高校 2年</dd>
+            <dd>法政大学第二高校 2年</dd>
+            <dd>青陵高校 3年</dd>
+            <dd>山手学院高校 3年</dd>
+            <dd>東京女学館高校 3年</dd>
+            <dd>桐蔭学園高校 卒</dd>
+          </dl>
+        </div>,
+        <div className={css_index.box__item}>
+          <dl>
+            <dt>2級（36名）</dt>
+            <dd>サレジアン国際学園世田谷中学校 2年</dd>
+            <dd>慶応普通部 3年</dd>
+            <dd>学習院中等科 3年</dd>
+            <dd>清泉女学院中学校 3年</dd>
+            <dd>白百合学園中学校 3年</dd>
+            <dd>神奈川県立希望ヶ丘高校 1年</dd>
+            <dd>田園調布学園高等部 1年</dd>
+            <dd>足洗学園高校 1年</dd>
+            <dd>横浜共立学園高校 1年</dd>
+            <dd>東京都立小山台高校 1年</dd>
+            <dd>サレジオ学院高校 2年</dd>
+            <dd>慶応湘南藤沢高等部 3年</dd>
+            <dd>サレジアン国際学園世田谷高校 2年</dd>
+            <dd>神奈川学園高校 3年</dd>
+            <dd>立教女学院高校 3年</dd>
+            <dd>白鸚女子高校 3年</dd>
+            <dd>文教大学附属高校 3年</dd>
+            <dd>清泉女学院高校</dd>
+            <dd>捜真女学校高等部 3年</dd>
+            <dd>青陵高校 卒</dd>
+            <dd>青山学院 1年 他</dd>
+          </dl>
+        </div>,
+      ],
+    },
+    {
+      id: 2,
+      title: "2023年大学合格実績",
+      subtitle: "",
+      content: [
+        <div className={css_index.row_box}>
+          <h5>2023年大学合格実績</h5>
+          <ul>
+            <li>東京大学 理科Ⅱ類 合格（開成高校）</li>
+            <li>東京工業大学 生命理工学院 合格（麻布高校）</li>
+            <li>一橋大学 法学部 合格（豊島岡女子高校）</li>
+            <li>横浜国立大学 理工学部 合格（桐光学園高校）</li>
+          </ul>
+        </div>,
+        <div className={css_index.row_box}>
+          <h5>内進を含む主な合格大学</h5>
+          <ul>
+            <li>慶応大学 合格（10名）</li>
+            <li>早稲田大学 合格（2名）</li>
+          </ul>
+        </div>,
+      ],
+      modalContent: [
+        <div className={css_index.box__item}>
+          <dl>
+            <dt>1級（8名）</dt>
+            <dd>横浜市立日吉台西中学校 1年</dd>
+            <dd>フェリス女学院高校 1年</dd>
+            <dd>桜蔭学園高校 1年</dd>
+            <dd>慶応義塾高校 3年</dd>
+            <dd>慶應大学 3年</dd>
+            <dd>システムエンジニア</dd>
+            <dd>外資系法人勤務</dd>
+            <dd>英語講師</dd>
+          </dl>
+        </div>,
+        <div className={css_index.box__item}>
+          <dl>
+            <dt>準1級（15名）</dt>
+            <dd>雙葉学園小学校 6年</dd>
+            <dd>田園調布雙葉中学校 3年</dd>
+            <dd>慶応湘南藤沢高等部 1年</dd>
+            <dd>神奈川県立神奈川総合高校 2年</dd>
+            <dd>カリタス女子高校 2年</dd>
+            <dd>横浜雙葉高校 2年</dd>
+            <dd>武相高校 2年</dd>
+            <dd>東洋英和女学院高等部 2年</dd>
+            <dd>実践女子学園高校 2年</dd>
+            <dd>東京都立国際高校 2年</dd>
+            <dd>法政大学第二高校 2年</dd>
+            <dd>青陵高校 3年</dd>
+            <dd>山手学院高校 3年</dd>
+            <dd>東京女学館高校 3年</dd>
+            <dd>桐蔭学園高校 卒</dd>
+          </dl>
+        </div>,
+        <div className={css_index.box__item}>
+          <dl>
+            <dt>2級（36名）</dt>
+            <dd>サレジアン国際学園世田谷中学校 2年</dd>
+            <dd>慶応普通部 3年</dd>
+            <dd>学習院中等科 3年</dd>
+            <dd>清泉女学院中学校 3年</dd>
+            <dd>白百合学園中学校 3年</dd>
+            <dd>神奈川県立希望ヶ丘高校 1年</dd>
+            <dd>田園調布学園高等部 1年</dd>
+            <dd>足洗学園高校 1年</dd>
+            <dd>横浜共立学園高校 1年</dd>
+            <dd>東京都立小山台高校 1年</dd>
+            <dd>サレジオ学院高校 2年</dd>
+            <dd>慶応湘南藤沢高等部 3年</dd>
+            <dd>サレジアン国際学園世田谷高校 2年</dd>
+            <dd>神奈川学園高校 3年</dd>
+            <dd>立教女学院高校 3年</dd>
+            <dd>白鸚女子高校 3年</dd>
+            <dd>文教大学附属高校 3年</dd>
+            <dd>清泉女学院高校</dd>
+            <dd>捜真女学校高等部 3年</dd>
+            <dd>青陵高校 卒</dd>
+            <dd>青山学院 1年 他</dd>
+          </dl>
+        </div>,
+      ],
+    },
+    {
+      id: 3,
+      title: "TOEFL実績",
+      subtitle: "過去2年間",
+      content: [
+        <div className={css_index.row_box}>
+          <h5>IBT （120点満点）</h5>
+          <ul>
+            <li>105 慶応大学2年</li>
+            <li>102 医師</li>
+            <li>90 国家公務員</li>
+            <li>90 慶應義塾高校3年</li>
+          </ul>
+        </div>,
+        <div className={css_index.row_box}>
+          <h5>ITP （677点満点）</h5>
+          <ul>
+            <li>610 慶應大学3年</li>
+            <li>601 横浜国立大学3年</li>
+          </ul>
+        </div>,
+      ],
+      modalContent: [
+        <div className={css_index.box__item}>
+          <dl>
+            <dt>1級（8名）</dt>
+            <dd>横浜市立日吉台西中学校 1年</dd>
+            <dd>フェリス女学院高校 1年</dd>
+            <dd>桜蔭学園高校 1年</dd>
+            <dd>慶応義塾高校 3年</dd>
+            <dd>慶應大学 3年</dd>
+            <dd>システムエンジニア</dd>
+            <dd>外資系法人勤務</dd>
+            <dd>英語講師</dd>
+          </dl>
+        </div>,
+        <div className={css_index.box__item}>
+          <dl>
+            <dt>準1級（15名）</dt>
+            <dd>雙葉学園小学校 6年</dd>
+            <dd>田園調布雙葉中学校 3年</dd>
+            <dd>慶応湘南藤沢高等部 1年</dd>
+            <dd>神奈川県立神奈川総合高校 2年</dd>
+            <dd>カリタス女子高校 2年</dd>
+            <dd>横浜雙葉高校 2年</dd>
+            <dd>武相高校 2年</dd>
+            <dd>東洋英和女学院高等部 2年</dd>
+            <dd>実践女子学園高校 2年</dd>
+            <dd>東京都立国際高校 2年</dd>
+            <dd>法政大学第二高校 2年</dd>
+            <dd>青陵高校 3年</dd>
+            <dd>山手学院高校 3年</dd>
+            <dd>東京女学館高校 3年</dd>
+            <dd>桐蔭学園高校 卒</dd>
+          </dl>
+        </div>,
+        <div className={css_index.box__item}>
+          <dl>
+            <dt>2級（36名）</dt>
+            <dd>サレジアン国際学園世田谷中学校 2年</dd>
+            <dd>慶応普通部 3年</dd>
+            <dd>学習院中等科 3年</dd>
+            <dd>清泉女学院中学校 3年</dd>
+            <dd>白百合学園中学校 3年</dd>
+            <dd>神奈川県立希望ヶ丘高校 1年</dd>
+            <dd>田園調布学園高等部 1年</dd>
+            <dd>足洗学園高校 1年</dd>
+            <dd>横浜共立学園高校 1年</dd>
+            <dd>東京都立小山台高校 1年</dd>
+            <dd>サレジオ学院高校 2年</dd>
+            <dd>慶応湘南藤沢高等部 3年</dd>
+            <dd>サレジアン国際学園世田谷高校 2年</dd>
+            <dd>神奈川学園高校 3年</dd>
+            <dd>立教女学院高校 3年</dd>
+            <dd>白鸚女子高校 3年</dd>
+            <dd>文教大学附属高校 3年</dd>
+            <dd>清泉女学院高校</dd>
+            <dd>捜真女学校高等部 3年</dd>
+            <dd>青陵高校 卒</dd>
+            <dd>青山学院 1年 他</dd>
+          </dl>
+        </div>,
+      ],
+    },
+    {
+      id: 4,
+      title: "TOEIC実績",
+      subtitle: "過去2年間",
+      content: [
+        <div className={css_index.row_box}>
+          <h5>TOEIC （990点満点）</h5>
+          <ul>
+            <li>985 メーカー勤務</li>
+            <li>975 IT企業勤務</li>
+            <li>960 外資系企業勤務</li>
+            <li>935 慶応大学3年</li>
+            <li>905 早稲田大学4年</li>
+            <li>900 塾講師</li>
+          </ul>
+        </div>,
+      ],
+      modalContent: [
+        <div className={css_index.box__item}>
+          <dl>
+            <dt>1級（8名）</dt>
+            <dd>横浜市立日吉台西中学校 1年</dd>
+            <dd>フェリス女学院高校 1年</dd>
+            <dd>桜蔭学園高校 1年</dd>
+            <dd>慶応義塾高校 3年</dd>
+            <dd>慶應大学 3年</dd>
+            <dd>システムエンジニア</dd>
+            <dd>外資系法人勤務</dd>
+            <dd>英語講師</dd>
+          </dl>
+        </div>,
+        <div className={css_index.box__item}>
+          <dl>
+            <dt>準1級（15名）</dt>
+            <dd>雙葉学園小学校 6年</dd>
+            <dd>田園調布雙葉中学校 3年</dd>
+            <dd>慶応湘南藤沢高等部 1年</dd>
+            <dd>神奈川県立神奈川総合高校 2年</dd>
+            <dd>カリタス女子高校 2年</dd>
+            <dd>横浜雙葉高校 2年</dd>
+            <dd>武相高校 2年</dd>
+            <dd>東洋英和女学院高等部 2年</dd>
+            <dd>実践女子学園高校 2年</dd>
+            <dd>東京都立国際高校 2年</dd>
+            <dd>法政大学第二高校 2年</dd>
+            <dd>青陵高校 3年</dd>
+            <dd>山手学院高校 3年</dd>
+            <dd>東京女学館高校 3年</dd>
+            <dd>桐蔭学園高校 卒</dd>
+          </dl>
+        </div>,
+        <div className={css_index.box__item}>
+          <dl>
+            <dt>2級（36名）</dt>
+            <dd>サレジアン国際学園世田谷中学校 2年</dd>
+            <dd>慶応普通部 3年</dd>
+            <dd>学習院中等科 3年</dd>
+            <dd>清泉女学院中学校 3年</dd>
+            <dd>白百合学園中学校 3年</dd>
+            <dd>神奈川県立希望ヶ丘高校 1年</dd>
+            <dd>田園調布学園高等部 1年</dd>
+            <dd>足洗学園高校 1年</dd>
+            <dd>横浜共立学園高校 1年</dd>
+            <dd>東京都立小山台高校 1年</dd>
+            <dd>サレジオ学院高校 2年</dd>
+            <dd>慶応湘南藤沢高等部 3年</dd>
+            <dd>サレジアン国際学園世田谷高校 2年</dd>
+            <dd>神奈川学園高校 3年</dd>
+            <dd>立教女学院高校 3年</dd>
+            <dd>白鸚女子高校 3年</dd>
+            <dd>文教大学附属高校 3年</dd>
+            <dd>清泉女学院高校</dd>
+            <dd>捜真女学校高等部 3年</dd>
+            <dd>青陵高校 卒</dd>
+            <dd>青山学院 1年 他</dd>
+          </dl>
+        </div>,
+      ],
+    },
+  ];
+
   return (
     <>
       <Head
@@ -525,54 +882,45 @@ export default function Page({
               spaceBetween={60}
               centeredSlides={true}
               loop={true}
-              // loopedSlides={2}
               speed={1500}
               autoplay={{
                 delay: 3000,
-                // disableOnInteraction: false,
               }}
               navigation
               className={css_index.swiper_wrapper}
             >
-              <SwiperSlide className={css_index.college}>
-                <h4>慶応義塾高等学校3年 K.N</h4>
-                <h3>
-                  慶応大学医学部 内部推薦 <span>合格</span>
-                </h3>
-                <p>
-                  入塾したのは高校一年の時でした。慶応大学への内部進学で医学部の推薦をもらうためには、定期試験で高い成績を修める必要がありました。担当してくださった先生は、僕の苦手な所を中心に、とても的確に分かりやすく教えてくださいました。当初は、英語の試験として学校でも取り入れられている
-                  TOEIC Bridge
-                  を使い、当時特に苦手だったリスニング、ライティングを中心に教えて頂きました。
-                  夏休みなどの長期休暇期間では英語の小説の読解や、TOEFL
-                  を利用した英単語の学習など、普段とはベクトルの異なる授業を楽しく指導して頂きました。高校三年間、丁寧にご指導頂き、なんとか大学の医学部への内部推薦を頂くことができました。
-                </p>
-              </SwiperSlide>
-              <SwiperSlide className={css_index.college}>
-                <h4>慶応義塾高等学校3年 K.N</h4>
-                <h3>
-                  慶応大学医学部 内部推薦 <span>合格</span>
-                </h3>
-                <p>
-                  入塾したのは高校一年の時でした。慶応大学への内部進学で医学部の推薦をもらうためには、定期試験で高い成績を修める必要がありました。担当してくださった先生は、僕の苦手な所を中心に、とても的確に分かりやすく教えてくださいました。当初は、英語の試験として学校でも取り入れられている
-                  TOEIC Bridge
-                  を使い、当時特に苦手だったリスニング、ライティングを中心に教えて頂きました。
-                  夏休みなどの長期休暇期間では英語の小説の読解や、TOEFL
-                  を利用した英単語の学習など、普段とはベクトルの異なる授業を楽しく指導して頂きました。高校三年間、丁寧にご指導頂き、なんとか大学の医学部への内部推薦を頂くことができました。
-                </p>
-              </SwiperSlide>
-              <SwiperSlide className={css_index.college}>
-                <h4>慶応義塾高等学校3年 K.N</h4>
-                <h3>
-                  慶応大学医学部 内部推薦 <span>合格</span>
-                </h3>
-                <p>
-                  入塾したのは高校一年の時でした。慶応大学への内部進学で医学部の推薦をもらうためには、定期試験で高い成績を修める必要がありました。担当してくださった先生は、僕の苦手な所を中心に、とても的確に分かりやすく教えてくださいました。当初は、英語の試験として学校でも取り入れられている
-                  TOEIC Bridge
-                  を使い、当時特に苦手だったリスニング、ライティングを中心に教えて頂きました。
-                  夏休みなどの長期休暇期間では英語の小説の読解や、TOEFL
-                  を利用した英単語の学習など、普段とはベクトルの異なる授業を楽しく指導して頂きました。高校三年間、丁寧にご指導頂き、なんとか大学の医学部への内部推薦を頂くことができました。
-                </p>
-              </SwiperSlide>
+              {experiencesPostData
+                // .filter((data) => data.title)
+                .map((e, i) => (
+                  <SwiperSlide id={i} key={i} className={css_index.college}>
+                    {e.title && (
+                      <h4>
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: parser.translateHTMLString(e.title),
+                          }}
+                        />
+                      </h4>
+                    )}
+                    {e.student && (
+                      <h3>
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: parser.translateHTMLString(e.student),
+                          }}
+                        />
+                        {/* <span>合格</span> */}
+                      </h3>
+                    )}
+                    {e.experience && (
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: parser.translateHTMLString(e.experience),
+                        }}
+                      />
+                    )}
+                  </SwiperSlide>
+                ))}
             </Swiper>
           </div>
 
@@ -580,119 +928,27 @@ export default function Page({
             className={`${css_index.section__inner} ${css_index.section_02__inner}`}
           >
             <div className={css_index.box}>
-              <div
-                className={`${css_index.box__item} ${css_index.box__item_01}`}
-              >
-                <h4>
-                  英検合格実績<span>過去1年間（2022年第3回〜2023年第2回）</span>
-                </h4>
-
+              {actuals.map((item, index) => (
                 <div
-                  className={`${css_index.box__item__content} ${css_index.box__item_01__content}`}
+                  key={item.id}
+                  className={`${css_index.box__item} ${css_index.box__item_01}`}
                 >
-                  <div className={css_index.row_box}>
-                    <h5>1級（8名）</h5>
-                    <ul>
-                      <li>横浜市立日吉台西中学校 1年</li>
-                      <li>フェリス女学院高校 1年</li>
-                      <li>桜蔭学園高校 1年</li>
-                      <li>慶応義塾高校 3年</li>
-                    </ul>
+                  <h4>
+                    {item.title}
+                    <span>{item.subtitle}</span>
+                  </h4>
+
+                  <div
+                    className={`${css_index.box__item__content} ${css_index.box__item_01__content}`}
+                  >
+                    {item.content}
                   </div>
-                  <div className={css_index.row_box}>
-                    <h5>準1級（15名）</h5>
-                    <ul>
-                      <li>雙葉学園小学校 6年</li>
-                      <li>田園調布雙葉中学校 3年</li>
-                    </ul>
-                  </div>
+
+                  <button onClick={() => handleItemClick(item)}>
+                    さらに見る
+                  </button>
                 </div>
-
-                <a href={`/course/eikenn-pass`}>さらに見る</a>
-              </div>
-              <div
-                className={`${css_index.box__item} ${css_index.box__item_02}`}
-              >
-                <h4>2023年大学合格実績</h4>
-
-                <div
-                  className={`${css_index.box__item__content} ${css_index.box__item_01__content}`}
-                >
-                  <div className={css_index.row_box}>
-                    <h5>2023年大学合格実績</h5>
-                    <ul>
-                      <li>東京大学 理科Ⅱ類 合格（開成高校）</li>
-                      <li>東京工業大学 生命理工学院 合格（麻布高校）</li>
-                      <li>一橋大学 法学部 合格（豊島岡女子高校）</li>
-                      <li>横浜国立大学 理工学部 合格（桐光学園高校）</li>
-                    </ul>
-                  </div>
-                  <div className={css_index.row_box}>
-                    <h5>内進を含む主な合格大学</h5>
-                    <ul>
-                      <li>慶応大学 合格（10名）</li>
-                      <li>早稲田大学 合格（2名）</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <a href={`/course/college`}>さらに見る</a>
-              </div>
-              <div
-                className={`${css_index.box__item} ${css_index.box__item_03}`}
-              >
-                <h4>
-                  TOEFL実績<span>過去2年間</span>
-                </h4>
-
-                <div
-                  className={`${css_index.box__item__content} ${css_index.box__item_01__content}`}
-                >
-                  <div className={css_index.row_box}>
-                    <h5>IBT （120点満点）</h5>
-                    <ul>
-                      <li>105 慶応大学2年</li>
-                      <li>102 医師</li>
-                      <li>90 国家公務員</li>
-                      <li>90 慶應義塾高校3年</li>
-                    </ul>
-                  </div>
-                  <div className={css_index.row_box}>
-                    <h5>ITP （677点満点）</h5>
-                    <ul>
-                      <li>610 慶應大学3年</li>
-                      <li>601 横浜国立大学3年</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <a href={`/course/toefl`}>さらに見る</a>
-              </div>
-              <div
-                className={`${css_index.box__item} ${css_index.box__item_04}`}
-              >
-                <h4>
-                  TOEIC実績<span>過去2年間</span>
-                </h4>
-
-                <div
-                  className={`${css_index.box__item__content} ${css_index.box__item_01__content}`}
-                >
-                  <div className={css_index.row_box}>
-                    <h5>TOEIC （990点満点）</h5>
-                    <ul>
-                      <li>985 メーカー勤務</li>
-                      <li>975 IT企業勤務</li>
-                      <li>960 外資系企業勤務</li>
-                      <li>935 慶応大学3年</li>
-                      <li>905 早稲田大学4年</li>
-                      <li>900 塾講師</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <a href={`/course/toeic`}>さらに見る</a>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -1021,12 +1277,9 @@ export default function Page({
                     <dl>
                       <dt>1対1個人指導</dt>
                       <dd>
-                        <span className={css_index.block}>
-                          個別マンツーマンの
-                        </span>
-                        <span className={css_index.block}>
-                          オリジナルカリキュラム
-                        </span>
+                        個別マンツーマンの
+                        <br />
+                        オリジナルカリキュラム
                       </dd>
                     </dl>
                   </div>
@@ -1065,7 +1318,7 @@ export default function Page({
                 </div>
 
                 <div className={css_index.center}>
-                  <a href="#">コース一覧はこちら</a>
+                  <a href="#course">コース一覧はこちら</a>
                 </div>
               </div>
 
@@ -1136,7 +1389,7 @@ export default function Page({
                 </div>
 
                 <div className={css_index.center}>
-                  <a href="#">
+                  <a href="#curriculum">
                     レベル別カリキュラムを
                     <br />
                     詳しく見る
@@ -1376,140 +1629,50 @@ export default function Page({
                 navigation
                 className={`${css_index.swiper_wrapper} ${css_index.teacher}`}
               >
-                <SwiperSlide className={css_index.teacher__item}>
-                  <h4>齊藤 美智</h4>
-                  <div className={css_index.box}>
-                    <div className={css_index.image}>
-                      <picture>
-                        <source
-                          srcset="./img/top/sp/section06_item01.png"
-                          media="(max-width: 600px)"
-                        />
-                        <img src="./img/top/pc/section06_item01.png" />
-                      </picture>
+                {teacherList.map((e, i) => (
+                  <SwiperSlide className={css_index.teacher__item}>
+                    <h4>
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: parser.translateHTMLString(e.name),
+                        }}
+                      />
+                    </h4>
+                    <div className={css_index.box}>
+                      {e.img && (
+                        <div className={css_index.image}>
+                          <img src={e.img} />
+                        </div>
+                      )}
+
+                      {e.license && (
+                        <dl>
+                          <dt>● 経歴</dt>
+                          <dd>
+                            <div
+                              dangerouslySetInnerHTML={{
+                                __html: parser.translateHTMLString(e.license),
+                              }}
+                            />
+                          </dd>
+                        </dl>
+                      )}
+
+                      {e.career && (
+                        <dl>
+                          <dt>● 指導実績</dt>
+                          <dd>
+                            <div
+                              dangerouslySetInnerHTML={{
+                                __html: parser.translateHTMLString(e.career),
+                              }}
+                            />
+                          </dd>
+                        </dl>
+                      )}
                     </div>
-                    <dl>
-                      <dt>● 経歴</dt>
-                      <dd>
-                        英検1級、TOEIC 980、TOEFL iBT
-                        109、東京外国語大学英米語学科卒。
-                      </dd>
-                    </dl>
-                    <dl>
-                      <dt>● 指導実績</dt>
-                      <dd>
-                        英検指導、中高生の文法指導が得意分野です。レベルは入門から大学・各種検定受験まで対応できます。多くの英検1級合格者を出しています。
-                      </dd>
-                    </dl>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className={css_index.teacher__item}>
-                  <h4>Christopher Minton</h4>
-                  <div className={css_index.box}>
-                    <div className={css_index.image}>
-                      <picture>
-                        <source
-                          srcset="./img/top/sp/section06_item02.png"
-                          media="(max-width: 600px)"
-                        />
-                        <img src="./img/top/pc/section06_item02.png" />
-                      </picture>
-                    </div>
-                    <dl>
-                      <dt>● 経歴</dt>
-                      <dd>University of YORK卒。</dd>
-                    </dl>
-                    <dl>
-                      <dt>● 指導実績</dt>
-                      <dd>
-                        母国英国の高校で5年間英語：国語を指導後、日本で20年以上、一橋大学やテンプル大学でAcademic
-                        Englishを指導しています。Akitani
-                        Academyでは多くの生徒のspeaking・writing力を論理的・合理的に強化して下さっている頼もしいNative先生です。英検とIELTSの試験Examinerも勤めています。
-                      </dd>
-                    </dl>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className={css_index.teacher__item}>
-                  <h4>安永 光希</h4>
-                  <div className={css_index.box}>
-                    <div className={css_index.image}>
-                      <picture>
-                        <source
-                          srcset="./img/top/sp/section06_item03.png"
-                          media="(max-width: 600px)"
-                        />
-                        <img src="./img/top/pc/section06_item03.png" />
-                      </picture>
-                    </div>
-                    <dl>
-                      <dt>● 経歴</dt>
-                      <dd>
-                        英検1級（ほぼ満点で合格）、TOEIC960、慶應義塾大学経済学部卒、現在東京大学に研究者を志望して復学中。
-                      </dd>
-                    </dl>
-                    <dl>
-                      <dt>● 指導実績</dt>
-                      <dd>
-                        大学／大学院入試、英検、TOEIC、TOEFL、IELTS、会話
-                        積極的で熱心な指導で、多くの生徒さんからご指名を受け、実績を伸ばしている講師です。
-                      </dd>
-                    </dl>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className={css_index.teacher__item}>
-                  <h4>黒宮 幸子</h4>
-                  <div className={css_index.box}>
-                    <div className={css_index.image}>
-                      <picture>
-                        <source
-                          srcset="./img/top/sp/section06_item04.png"
-                          media="(max-width: 600px)"
-                        />
-                        <img src="./img/top/pc/section06_item04.png" />
-                      </picture>
-                    </div>
-                    <dl>
-                      <dt>● 経歴</dt>
-                      <dd>
-                        英検１級、TOEIC975、TOEFL ITP
-                        610、東京女子大学卒、カリフォルニア州立大学修士号取得。
-                      </dd>
-                    </dl>
-                    <dl>
-                      <dt>● 指導実績</dt>
-                      <dd>
-                        英会話初級～あらゆるレベルの方への会話指導、TOEIC、英検などの資格対策、中高生への学校成績UP・定期テスト対策等、初心者の方の導入から最難関レベルのスコアUPまで、多数の実績があります。
-                      </dd>
-                    </dl>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className={css_index.teacher__item}>
-                  <h4>栗田由貴子</h4>
-                  <div className={css_index.box}>
-                    <div className={css_index.image}>
-                      <picture>
-                        <source
-                          srcset="./img/top/sp/section06_item05.png"
-                          media="(max-width: 600px)"
-                        />
-                        <img src="./img/top/pc/section06_item05.png" />
-                      </picture>
-                    </div>
-                    <dl>
-                      <dt>● 経歴</dt>
-                      <dd>
-                        英検１級、TOEIC975、TOEFL ITP
-                        610、東京女子大学卒、カリフォルニア州立大学修士号取得。
-                      </dd>
-                    </dl>
-                    <dl>
-                      <dt>● 指導実績</dt>
-                      <dd>
-                        英会話初級～あらゆるレベルの方への会話指導、TOEIC、英検などの資格対策、中高生への学校成績UP・定期テスト対策等、初心者の方の導入から最難関レベルのスコアUPまで、多数の実績があります。
-                      </dd>
-                    </dl>
-                  </div>
-                </SwiperSlide>
+                  </SwiperSlide>
+                ))}
               </Swiper>
             </div>
           </div>
@@ -1670,6 +1833,7 @@ export default function Page({
             </div>
           </div>
           <div
+            id="curriculum"
             className={`${css_index.section__inner} ${css_index.section_08__inner} ${css_index.section_08__inner_02}`}
           >
             <div className={`${css_index.box}`}>
@@ -1710,7 +1874,7 @@ export default function Page({
                       </dl>
 
                       <div className={css_index.center}>
-                        <a href="">詳細をみる</a>
+                        <a href="./method/medical-school">詳細をみる</a>
                       </div>
                     </div>
                   </div>
@@ -1739,7 +1903,7 @@ export default function Page({
                       </dl>
 
                       <div className={css_index.center}>
-                        <a href="">詳細をみる</a>
+                        <a href="./method/national-uni">詳細をみる</a>
                       </div>
                     </div>
                   </div>
@@ -1771,7 +1935,7 @@ export default function Page({
                       </dl>
 
                       <div className={css_index.center}>
-                        <a href="">詳細をみる</a>
+                        <a href="./method/prestigious-uni">詳細をみる</a>
                       </div>
                     </div>
                   </div>
@@ -1807,7 +1971,7 @@ export default function Page({
                       </dl>
 
                       <div className={css_index.center}>
-                        <a href="">詳細をみる</a>
+                        <a href="./method/gmarch">詳細をみる</a>
                       </div>
                     </div>
                   </div>
@@ -1839,7 +2003,9 @@ export default function Page({
                       </dl>
 
                       <div className={css_index.center}>
-                        <a href="">詳細をみる</a>
+                        <a href="./method/common-first-stage-test">
+                          詳細をみる
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -1868,7 +2034,7 @@ export default function Page({
                       </dl>
 
                       <div className={css_index.center}>
-                        <a href="">詳細をみる</a>
+                        <a href="./method/high">詳細をみる</a>
                       </div>
                     </div>
                   </div>
@@ -2369,7 +2535,10 @@ export default function Page({
                       東急新横浜線 新綱島駅より徒歩5分
                     </li>
                   </ul>
-                  <a href="#" className={css_index.map}>
+                  <a
+                    href="https://maps.app.goo.gl/KuYMWDhQv9mjAf2v8"
+                    className={css_index.map}
+                  >
                     Google Mapで見る
                   </a>
                   <a href="#" className={css_index.detail}>
@@ -2837,6 +3006,12 @@ export default function Page({
           </div>
         </section>
         <Nav />
+
+        <Modal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          item={selectedItem}
+        />
       </main>
 
       {/* <ContactButton /> */}
@@ -2886,12 +3061,14 @@ export async function getStaticProps() {
     "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
   ).then((res) => res.json());
 
-  // console.log(experiencesData)
+  let experiencesPostData = await fetch(
+    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/results?categories=29"
+  ).then((res) => res.json());
 
-  // let teacherList = await fetch(
-  // 	"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/teacher?per_page=100"
-  // ).then((res) => res.json());
-  // teacherList = teacherList.sort((a, b) => a.infoCount - b.infoCount).reverse();
+  let teacherList = await fetch(
+    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/teacher?per_page=100"
+  ).then((res) => res.json());
+  teacherList = teacherList.sort((a, b) => a.infoCount - b.infoCount).reverse();
 
   return {
     props: {
@@ -2902,7 +3079,8 @@ export async function getStaticProps() {
       courseData: courseData.reverse(),
       // classtypeData: classtypeData.reverse(),
       experiencesData,
-      // teacherList
+      experiencesPostData,
+      teacherList,
     },
   };
 }
