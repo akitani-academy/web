@@ -1,15 +1,3 @@
-.h2_red {
-  color: $c_2;
-}
-
-.h2_blue {
-  color: $c_4;
-}
-
-.block {
-  // display: block !important;
-}
-
 .red {
   color: $red_01;
 }
@@ -29,15 +17,23 @@
 .pc {
   display: block;
 
-  @media (max-width: 600px) {
+  @include MQ(sm) {
     display: none;
+  }
+}
+
+.tab {
+  display: none;
+
+  @include MQ(tab) {
+    display: block;
   }
 }
 
 .sp {
   display: none;
 
-  @media (max-width: 600px) {
+  @include MQ(sm) {
     display: block;
   }
 }
@@ -86,7 +82,7 @@
     width: 60px;
     height: 60px;
 
-    @media (max-width: 600px) {
+    @include MQ(sm) {
       display: flex;
     }
 
@@ -134,7 +130,7 @@
     margin: 0 auto;
     background-color: $white_01;
 
-    @media (max-width: 600px) {
+    @include MQ(sm) {
       width: 84%;
       height: 88.9%;
     }
@@ -153,7 +149,7 @@
       justify-content: center;
       flex-direction: column;
 
-      @media (max-width: 600px) {
+      @include MQ(sm) {
         height: 62px;
         font-size: 18px;
         line-height: 1.66;
@@ -169,7 +165,7 @@
         line-height: 1.57;
         margin-top: 3px;
 
-        @media (max-width: 600px) {
+        @include MQ(sm) {
           font-size: 12px;
           line-height: 1.66;
           margin-top: 2px;
@@ -182,7 +178,7 @@
       overflow-y: scroll;
       height: calc(100% - 70px);
 
-      @media (max-width: 600px) {
+      @include MQ(sm) {
         padding: 30px 15px;
         height: calc(100% - 62px);
       }
@@ -193,7 +189,7 @@
           flex-wrap: wrap;
           margin-bottom: 43px;
 
-          @media (max-width: 600px) {
+          @include MQ(sm) {
             display: block;
             margin-bottom: 28px;
           }
@@ -214,7 +210,7 @@
             margin-bottom: 15px;
             border-bottom: 1px solid $blue_05;
 
-            @media (max-width: 600px) {
+            @include MQ(sm) {
               font-size: 16px;
               line-height: 1.68;
             }
@@ -225,7 +221,7 @@
             font-size: 14px;
             line-height: 1.64;
 
-            @media (max-width: 600px) {
+            @include MQ(sm) {
               width: 100%;
               font-size: 13px;
               line-height: 1.76;
@@ -244,8 +240,9 @@
   padding: 0;
   margin-top: 80px;
   overflow-x: hidden;
+  background-color: $white_01;
 
-  @media (max-width: 600px) {
+  @include MQ(sm) {
     margin-top: 18vw;
   }
 
@@ -269,7 +266,7 @@
       // transform: translate(-50%, -50%);
       transform: translateX(-50%);
 
-      @media (max-width: 600px) {
+      @include MQ(tab) {
         top: calc(50% + 20px);
         transform: translate(-50%, -50%);
       }
@@ -286,7 +283,7 @@
     [class^="swiper-button-prev"] {
       left: calc(50% - 163px);
 
-      @media (max-width: 600px) {
+      @include MQ(tab) {
         left: 15px;
       }
 
@@ -298,7 +295,7 @@
     [class^="swiper-button-next"] {
       left: calc(50% + 163px);
 
-      @media (max-width: 600px) {
+      @include MQ(tab) {
         left: auto;
         right: -10px;
       }
@@ -335,7 +332,7 @@
     padding: 60px 0;
     text-align: center;
 
-    @media (max-width: 600px) {
+    @include MQ(sm) {
       padding-top: 30px;
       padding-bottom: 24px;
       margin-bottom: 20px;
@@ -347,7 +344,7 @@
       font-weight: bold;
       font-family: $font_02;
 
-      @media (max-width: 600px) {
+      @include MQ(tab) {
         font-size: 18px;
         line-height: 1.66;
       }
@@ -367,7 +364,7 @@
     margin-bottom: 20px;
     position: relative;
 
-    @media (max-width: 600px) {
+    @include MQ(tab) {
       padding: 30px 15px 17px;
     }
 
@@ -386,7 +383,7 @@
       line-height: 1.05;
       margin-bottom: 30px;
 
-      @media (max-width: 600px) {
+      @include MQ(sm) {
         margin-bottom: 0;
       }
 
@@ -396,7 +393,7 @@
         margin-bottom: -3px;
         font-size: 40px;
 
-        @media (max-width: 600px) {
+        @include MQ(sm) {
           font-size: 28px;
           line-height: 1.28;
         }
@@ -407,7 +404,7 @@
           position: relative;
           font-family: $font_01;
 
-          @media (max-width: 600px) {
+          @include MQ(sm) {
             font-size: 16px;
           }
 
@@ -420,7 +417,7 @@
             transform: translateY(-50%);
             @include bgImgContain("/img/top/border_white.png");
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               width: 12px;
               height: 18px;
             }
@@ -429,7 +426,7 @@
           &::before {
             left: -38px;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               left: -17px;
             }
           }
@@ -438,7 +435,7 @@
             right: -38px;
             transform: scaleX(-1) translateY(-50%);
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               right: -17px;
             }
           }
@@ -452,7 +449,7 @@
       display: inline-flex;
       width: 790px;
 
-      @media (max-width: 600px) {
+      @include MQ(tab) {
         display: block;
         padding: 30px 15px 27px;
         width: 100%;
@@ -466,7 +463,7 @@
         font-weight: bold;
         display: inline-block;
 
-        @media (max-width: 600px) {
+        @include MQ(tab) {
           font-size: 13px;
           display: block;
         }
@@ -481,7 +478,7 @@
             padding: 3px 28px;
             margin-left: 5px;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               font-size: 14px;
               padding: 4px;
             }
@@ -504,9 +501,10 @@
     overflow: hidden;
     padding-left: 7.6%;
 
-    @media (max-width: 600px) {
+    @include MQ(tab) {
       padding-top: 159px;
       padding-left: 30px;
+      background-size: cover;
     }
 
     &::before {
@@ -518,7 +516,7 @@
       width: 655px;
       height: 422px;
 
-      @media (max-width: 600px) {
+      @include MQ(tab) {
         width: 92%;
         height: 174px;
         top: 0;
@@ -534,7 +532,7 @@
       bottom: -64px;
       z-index: 0;
 
-      @media (max-width: 600px) {
+      @include MQ(tab) {
         @include bgImgContain("/img/top/sp/fv_label-sp.png");
         width: 57px;
         height: 630px;
@@ -552,7 +550,7 @@
     &__inner {
       margin-bottom: 34px;
 
-      @media (max-width: 600px) {
+      @include MQ(tab) {
         padding: 0 15px;
         margin-bottom: 0;
       }
@@ -567,7 +565,7 @@
           padding: 6px 17px;
           font-family: $font_01;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             font-size: 16px;
             padding: 5px 13px;
           }
@@ -586,7 +584,7 @@
         margin-top: 7px;
         margin-bottom: 20px;
 
-        @media (max-width: 600px) {
+        @include MQ(tab) {
           font-size: 34px;
         }
 
@@ -612,14 +610,18 @@
           letter-spacing: 0.015em;
           line-height: 1.94;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             font-size: 14px;
+          }
+
+          @include MQ(sp_sm) {
+            font-size: 13px;
           }
         }
       }
 
       .success {
-        img {
+        picture {
           width: 221px;
 
           &:first-child {
@@ -629,13 +631,58 @@
       }
     }
 
-    .cta {
-      margin-top: 70px;
+    // .cta {
+    //   margin-top: 70px;
+    //   width: 730px;
+    //   margin-left: auto;
+    //   margin-right: auto;
 
-      @media (max-width: 600px) {
-        margin-top: 17px;
-      }
-    }
+    //   @include MQ(tab) {
+    //     margin-top: 17px;
+    //   }
+
+    //   p {
+    //     span {
+    //       font-size: 25px;
+    //       letter-spacing: -0.05em;
+    //       line-height: 1.84;
+
+    //       &::before,
+    //       &::after {
+    //         @include MQ(pc) {
+    //           width: 14px;
+    //           height: 25px;
+    //         }
+    //       }
+
+    //       &::before {
+    //         @include MQ(pc) {
+    //           left: -35px;
+    //         }
+    //       }
+
+    //       &::after {
+    //         @include MQ(pc) {
+    //           right: -35px;
+    //         }
+    //       }
+    //     }
+    //   }
+
+    //   .flex {
+    //     @include MQ(tab) {
+    //       display: block;
+    //     }
+
+    //     a {
+    //       @include MQ(pc) {
+    //         &:first-child {
+    //           margin-right: 30px;
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
   }
 
   .cta {
@@ -644,8 +691,7 @@
     flex-wrap: wrap;
     justify-content: center;
 
-    @media (max-width: 600px) {
-      display: block;
+    @include MQ(tab) {
       margin-bottom: 26px;
     }
 
@@ -655,7 +701,7 @@
       font-size: 25px;
       letter-spacing: -0.05em;
 
-      @media (max-width: 600px) {
+      @include MQ(sm) {
         margin-bottom: 7px;
         font-size: 15px;
         line-height: 1.26;
@@ -668,7 +714,7 @@
       letter-spacing: 0.02em;
       line-height: 1.33;
 
-      @media (max-width: 600px) {
+      @include MQ(sm) {
         width: 100%;
         font-size: 17px;
         line-height: 1.35;
@@ -677,7 +723,7 @@
       &:first-of-type {
         margin-right: 30px;
 
-        @media (max-width: 600px) {
+        @include MQ(tab) {
           margin-right: 0;
         }
       }
@@ -697,7 +743,11 @@
         margin: 0;
         font-family: $font_01;
 
-        @media (max-width: 600px) {
+        @include MQ(tab) {
+          font-size: 25px;
+        }
+
+        @include MQ(sm) {
           font-size: 20px;
         }
 
@@ -711,7 +761,7 @@
           border: 1px solid rgba(157, 127, 68, 0.3);
           padding: 40px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             padding: 18px 0 16px;
           }
         }
@@ -729,13 +779,14 @@
     &__inner {
       width: 83.7%;
       margin: 0 auto;
+      max-width: 1154px;
     }
 
     &_01 {
       background-color: $yellow_01;
       padding: 45px 0 80px;
 
-      @media (max-width: 600px) {
+      @include MQ(sm) {
         padding: 44px 0 30px;
       }
 
@@ -744,7 +795,7 @@
         flex-wrap: wrap;
         justify-content: center;
 
-        @media (max-width: 600px) {
+        @include MQ(sm) {
           display: block;
         }
 
@@ -757,7 +808,7 @@
           margin-bottom: 50px;
           width: 100%;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             line-height: 1.4;
             margin-bottom: 27px;
             width: auto;
@@ -767,7 +818,7 @@
             position: relative;
             padding: 0 43px;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               font-size: 20px;
               padding: 0;
             }
@@ -785,7 +836,7 @@
               @include bgImgContain("/img/top/leaf_left.png");
               left: 0;
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
                 left: -40px;
               }
             }
@@ -794,7 +845,7 @@
               @include bgImgContain("/img/top/leaf_right.png");
               right: 0;
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
                 right: -40px;
               }
             }
@@ -808,7 +859,7 @@
           margin-bottom: 30px;
           width: 100%;
 
-          @media (max-width: 600px) {
+          @include MQ(sm) {
             margin-bottom: 10px;
             width: auto;
           }
@@ -823,7 +874,7 @@
             z-index: 0;
             transform: translate(-50%, -50%);
 
-            @media (max-width: 600px) {
+            @include MQ(sm) {
               width: 100%;
               top: calc(50% + 3px);
             }
@@ -840,7 +891,11 @@
             letter-spacing: 0.025em;
             line-height: 1.59;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
+              font-size: 20px;
+            }
+
+            @include MQ(sm) {
               padding-left: 10px;
               padding-right: 10px;
               font-size: 15px;
@@ -852,7 +907,7 @@
           display: flex;
           justify-content: center;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             display: block;
           }
 
@@ -869,7 +924,7 @@
             font-family: $font_01;
             display: block;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               font-size: 12px;
             }
           }
@@ -879,14 +934,14 @@
             border: 1px solid $red_01;
             width: calc(50% - 100px);
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               width: 100%;
             }
 
             &:not(:last-child) {
               margin-right: 16px;
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
                 margin-bottom: 5px;
                 margin-right: auto;
               }
@@ -914,7 +969,7 @@
                 li {
                   width: calc(33.333% - 15px);
 
-                  @media (max-width: 600px) {
+                  @include MQ(tab) {
                     width: calc(33.333% - 13px);
                   }
 
@@ -922,13 +977,13 @@
                   &:nth-child(5) {
                     width: calc(50% - 15px);
 
-                    @media (max-width: 600px) {
+                    @include MQ(tab) {
                       width: auto;
                       margin-top: 5px;
                     }
                   }
 
-                  @media (max-width: 600px) {
+                  @include MQ(tab) {
                     &:nth-child(-n + 2) {
                       margin-right: 19px;
                     }
@@ -993,7 +1048,7 @@
           font-weight: bold;
           width: 100%;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             width: auto;
             margin-top: 20px;
             font-size: 18px;
@@ -1005,7 +1060,7 @@
     &_02 {
       padding-bottom: 15px;
 
-      @media (min-width: 601px) {
+      @include MQ(xl) {
         background-color: $white_01;
       }
 
@@ -1022,7 +1077,11 @@
         font-size: 28px;
         letter-spacing: 0.05em;
 
-        @media (max-width: 600px) {
+        @include MQ(tab) {
+          font-size: 22px;
+        }
+
+        @include MQ(sm) {
           letter-spacing: 0.025em;
           font-size: 18px;
           line-height: 1.5;
@@ -1035,14 +1094,14 @@
         position: relative;
         padding-bottom: 60px;
 
-        @media (max-width: 600px) {
+        @include MQ(tab) {
           padding-bottom: 30px;
         }
 
         .swiper_wrapper {
           padding: 20px 47px 42px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             padding: 20px 30px 0;
           }
         }
@@ -1052,7 +1111,7 @@
           padding-top: 45px;
           border: 1px solid $blue_01;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             padding: 30px 15px;
           }
 
@@ -1065,7 +1124,7 @@
             left: 0;
             transform: translateX(-50%);
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               width: 83px;
               height: 91px;
               left: 30px;
@@ -1084,7 +1143,7 @@
             background-color: $blue_01;
             padding: 7px 30px;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               font-size: 12px;
               line-height: 1.66;
               padding: 5px 15px;
@@ -1099,7 +1158,7 @@
             padding-bottom: 20px;
             border-bottom: 1px solid $blue_05;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               padding: 0 50px 5px;
               word-break: keep-all;
               line-height: 1.38;
@@ -1114,7 +1173,7 @@
           p {
             padding: 30px;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               padding: 0;
               padding-top: 15px;
               font-size: 13px;
@@ -1137,13 +1196,13 @@
             border: 1px solid $blue_01;
             padding-bottom: 71px;
 
-            @media (min-width: 601px) {
+            @include MQ(pc) {
               &:nth-child(odd) {
                 margin-right: 30px;
               }
             }
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               width: 100%;
               margin-bottom: 15px;
             }
@@ -1162,7 +1221,7 @@
               flex-wrap: wrap;
               line-height: 1;
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
                 height: auto;
                 padding: 7px 0 12px;
                 line-height: 1.66;
@@ -1176,7 +1235,7 @@
                 width: 100%;
                 margin-top: 3px;
 
-                @media (max-width: 600px) {
+                @include MQ(tab) {
                   margin-top: 0;
                 }
               }
@@ -1186,7 +1245,7 @@
               position: relative;
               padding: 12px 15px 25px;
 
-              @media (min-width: 601px) {
+              @include MQ(xl) {
                 display: flex;
                 flex-wrap: wrap;
                 padding: 27px 36px 20px;
@@ -1195,14 +1254,14 @@
               .row_box {
                 width: calc(50% - 15px);
 
-                @media (max-width: 600px) {
+                @include MQ(tab) {
                   width: 100%;
                 }
 
                 &:first-child {
                   margin-right: 30px;
 
-                  @media (max-width: 600px) {
+                  @include MQ(tab) {
                     margin-right: 0;
                   }
                 }
@@ -1218,7 +1277,7 @@
                 font-size: 18px;
                 font-family: $font_01;
 
-                @media (max-width: 600px) {
+                @include MQ(tab) {
                   font-size: 16px;
                   margin-top: 18px;
                   margin-bottom: 15px;
@@ -1230,7 +1289,7 @@
                   font-size: 14px;
                   line-height: 1.64;
 
-                  @media (max-width: 600px) {
+                  @include MQ(tab) {
                     font-size: 13px;
                     line-height: 1.76;
                   }
@@ -1257,7 +1316,7 @@
               white-space: nowrap;
               font-family: $font_01;
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
                 padding: 11px;
                 width: 240px;
                 margin-top: 25px;
@@ -1278,12 +1337,12 @@
       background-color: $blue_02;
       padding-bottom: 80px;
 
-      @media (max-width: 600px) {
+      @include MQ(sm) {
         padding-bottom: 20px;
       }
 
       &__inner {
-        @media (min-width: 601px) {
+        @include MQ(xl) {
           // width: 78.9%;
         }
 
@@ -1296,7 +1355,7 @@
           margin-top: 80px;
           margin-bottom: 60px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             font-size: 18px;
             letter-spacing: 0.006em;
             line-height: 1.66;
@@ -1327,13 +1386,13 @@
             padding-top: 23px;
             padding-bottom: 21px;
 
-            @media (min-width: 601px) {
+            @include MQ(pc) {
               &:not(:nth-child(3n)) {
                 margin-right: 33px;
               }
             }
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               width: calc(50% - 5px);
               height: 93px;
               line-height: 1.76;
@@ -1358,7 +1417,7 @@
           margin-top: 33px;
           margin-bottom: 30px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             margin-top: 9px;
             font-size: 15px;
           }
@@ -1368,9 +1427,13 @@
             background-color: $blue_01;
             padding: 5px 30px 6px;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               width: 95%;
               padding: 4px 19px 5px;
+            }
+
+            @include MQ(sp_sm) {
+              width: 100%;
             }
           }
         }
@@ -1382,7 +1445,7 @@
           display: flex;
           margin-top: 60px;
 
-          @media (max-width: 600px) {
+          @include MQ(pc_sm) {
             width: 95.2%;
             display: block;
             margin-top: auto;
@@ -1394,13 +1457,13 @@
             margin-bottom: 13px;
             width: 25%;
 
-            @media (min-width: 601px) {
+            @include MQ(pc) {
               &:not(:last-child) {
                 margin-right: 66px;
               }
             }
 
-            @media (max-width: 600px) {
+            @include MQ(pc_sm) {
               width: 100%;
               padding-top: 17px;
             }
@@ -1415,7 +1478,7 @@
               box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.16);
               overflow: hidden;
 
-              @media (max-width: 600px) {
+              @include MQ(pc_sm) {
                 left: 0;
                 width: 129px;
                 height: 83px;
@@ -1441,14 +1504,17 @@
               padding: 125px 30px 28px;
               height: 100%;
 
-              @media (max-width: 600px) {
+              @include MQ(pc_sm) {
                 padding: 9px 14px;
+              }
+
+              @include MQ(tab) {
                 font-size: 13px;
                 line-height: 1.53;
               }
             }
 
-            @media (max-width: 600px) {
+            @include MQ(pc_sm) {
               &:nth-child(odd) {
                 p {
                   padding-left: 104px;
@@ -1500,7 +1566,7 @@
         letter-spacing: 0.05em;
         line-height: 1.61;
 
-        @media (max-width: 600px) {
+        @include MQ(tab) {
           padding: 20px;
           font-size: 18px;
           line-height: 1.66;
@@ -1513,6 +1579,12 @@
       }
 
       &__inner {
+        width: 100%;
+
+        @include MQ(pc) {
+          width: 960px;
+        }
+
         h3 {
           font-size: 25px;
           letter-spacing: 0.025em;
@@ -1524,7 +1596,11 @@
           margin-top: 84px;
           margin-bottom: 60px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
+            font-size: 20px;
+          }
+
+          @include MQ(sm) {
             font-size: 15px;
             line-height: 1.8;
             margin-top: 50px;
@@ -1540,7 +1616,7 @@
             transform: translate(-50%, -50%);
             background-color: $blue_01;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               width: calc(100% - 30px);
             }
           }
@@ -1552,7 +1628,7 @@
             z-index: 1;
             padding: 0 20px;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               padding: 0 6px;
             }
           }
@@ -1574,8 +1650,12 @@
           justify-content: center;
           margin-bottom: 20px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             margin-bottom: 0;
+          }
+
+          @include MQ(sp_sm) {
+            display: block;
           }
 
           &__item {
@@ -1587,48 +1667,41 @@
             // border: 1px solid $blue_01;
             @include bgImgContain("/img/top/pc/section04_border.png");
 
-            @media (max-width: 600px) {
-              @include bgImgCover("/img/top/sp/section04_border.png");
+            @include MQ(sm) {
+              @include bgImgContain("/img/top/sp/section04_border.png");
               background-position: center bottom;
               width: 153px;
               height: 148px;
-            }
-
-            // &::before,
-            // &::after {
-            //   @include pseudoElement;
-            //   border-top: 24px solid transparent;
-            //   border-bottom: 24px solid transparent;
-            //   border-left: 23px solid;
-            //   top: 100%;
-            //   left: 50%;
-            //   transform: translate(-50%, -50%);
-            // }
-
-            // &::before {
-            //   top: calc(100% + 1px);
-            //   border-left: 23px solid $blue_01;
-            // }
-
-            // &::after {
-            //   border-left-color: $white_01;
-            // }
-
-            &:not(:nth-child(3)) {
-              margin-right: 30px;
-
-              @media (max-width: 600px) {
-                margin-right: 0;
-              }
-            }
-
-            @media (max-width: 600px) {
-              width: calc(50% - 3px);
               margin-bottom: 13px;
 
               &:nth-child(odd) {
                 margin-right: 6px;
+
+                @include MQ(sp_sm) {
+                  margin-right: auto;
+                }
               }
+            }
+
+            @include MQ(pc) {
+              &:not(:nth-child(3)) {
+                margin-right: 30px;
+              }
+            }
+
+            @include MQ(tab) {
+              &:nth-child(even) {
+                margin-left: 15px;
+
+                @include MQ(sp_sm) {
+                  margin-left: auto;
+                }
+              }
+            }
+
+            @include MQ(sp_sm) {
+              margin-left: auto;
+              margin-right: auto;
             }
 
             h5 {
@@ -1647,7 +1720,7 @@
               height: 76px;
               font-family: $font_01;
 
-              @media (max-width: 600px) {
+              @include MQ(sm) {
                 height: 54px;
               }
 
@@ -1665,11 +1738,12 @@
               position: relative;
               padding: 30px;
 
-              @media (max-width: 600px) {
+              @include MQ(sm) {
                 padding: 8px 5px 10px;
                 // height: 24vw;
                 font-size: 13px;
-                line-height: 1.38;
+                line-height: 1.2;
+                font-feature-settings: "palt";
               }
             }
           }
@@ -1682,7 +1756,7 @@
         padding-top: 160px;
         padding-bottom: 80px;
 
-        @media (max-width: 600px) {
+        @include MQ(sm) {
           padding: 50px 0 30px;
         }
 
@@ -1695,7 +1769,7 @@
           border-left: 50vw solid transparent;
           border-right: 50vw solid transparent;
 
-          @media (max-width: 600px) {
+          @include MQ(sm) {
             border-top-width: 30px;
           }
         }
@@ -1704,7 +1778,11 @@
           margin-bottom: 60px;
           font-size: 26px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
+            font-size: 20px;
+          }
+
+          @include MQ(sm) {
             font-size: 18px;
             margin-bottom: 26px;
           }
@@ -1725,7 +1803,7 @@
               letter-spacing: 0.025em;
               line-height: 1.59;
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
                 font-size: 16px;
                 line-height: 1.56;
               }
@@ -1735,7 +1813,7 @@
               background-color: $white_01;
               padding: 30px;
 
-              @media (max-width: 600px) {
+              @include MQ(sm) {
                 padding: 30px 15px 22px;
               }
 
@@ -1749,7 +1827,7 @@
                   display: inline-block;
                   margin-right: 30px;
 
-                  @media (max-width: 600px) {
+                  @include MQ(tab) {
                     display: block;
                   }
 
@@ -1773,7 +1851,7 @@
       position: relative;
       padding-bottom: 80px;
 
-      @media (max-width: 600px) {
+      @include MQ(tab) {
         padding-bottom: 28px;
       }
 
@@ -1782,7 +1860,7 @@
         margin-top: 40px;
         padding-top: 58px;
 
-        @media (max-width: 600px) {
+        @include MQ(tab) {
           margin-top: 30px;
           padding-top: 0;
         }
@@ -1790,20 +1868,22 @@
         &__item {
           margin-bottom: 60px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             margin-bottom: 30px;
           }
 
-          @media (min-width: 601px) {
-            .sp {
-              + .block {
-                padding-left: 0;
+          @include MQ(pc_xl) {
+            h3 {
+              .sp {
+                + .block {
+                  padding-left: 0;
+                }
               }
-            }
 
-            .block {
-              &:has(+ .sp) {
-                padding-right: 0;
+              .block {
+                &.sp {
+                  padding-right: 0;
+                }
               }
             }
           }
@@ -1833,6 +1913,18 @@
               &::before {
                 @include bgImgContain("/img/top/sp/section05_03.png");
               }
+
+              @include MQ(pc_xl) {
+                span {
+                  &.sp {
+                    padding-right: 0;
+
+                    + .block {
+                      padding-left: 0;
+                    }
+                  }
+                }
+              }
             }
 
             .flex {
@@ -1860,11 +1952,11 @@
         }
       }
 
-      @media (min-width: 601px) {
+      @include MQ(pc_xl) {
         .course__item {
           &:has(.left) {
-            padding-left: 128px;
-            padding-right: 384px;
+            padding-left: 115px;
+            padding-right: 368px;
 
             h3 {
               &::before {
@@ -1873,15 +1965,16 @@
               }
             }
           }
+
           &:has(.right) {
-            padding-left: 384px;
-            padding-right: 128px;
+            padding-left: 368px;
+            padding-right: 115px;
 
             h3 {
               &::before {
                 top: -49px;
                 left: auto;
-                right: -123px;
+                right: -115px;
               }
             }
           }
@@ -1893,7 +1986,7 @@
         position: relative;
         margin-bottom: 30px;
 
-        @media (max-width: 600px) {
+        @include MQ(pc_sm) {
           display: flex;
           flex-direction: column;
           margin-bottom: 0;
@@ -1905,7 +1998,7 @@
           height: 98px;
           top: 50px;
 
-          @media (max-width: 600px) {
+          @include MQ(pc_sm) {
             top: 0;
           }
         }
@@ -1915,20 +2008,23 @@
           color: $white_01;
           display: inline-block;
           margin-bottom: 5px;
-          font-size: 18px;
-          letter-spacing: 0.025em;
-          line-height: 1.5;
 
-          @media (min-width: 601px) {
+          @include MQ(pc_xl) {
             padding: 3px 15px;
             font-size: 28px;
             line-height: 1.57;
             letter-spacing: 0.05em;
           }
+
+          @include MQ(pc_sm) {
+            font-size: 18px;
+            letter-spacing: 0.025em;
+            line-height: 1.5;
+          }
         }
 
         &.left {
-          @media (max-width: 600px) {
+          @include MQ(pc_sm) {
             margin-left: -2.5rem;
             align-items: flex-start;
           }
@@ -1941,7 +2037,7 @@
           span {
             text-align: left;
 
-            @media (max-width: 600px) {
+            @include MQ(pc_sm) {
               padding-left: 2.5rem;
               padding-right: 3px;
             }
@@ -1951,7 +2047,7 @@
         &.right {
           text-align: right;
 
-          @media (max-width: 600px) {
+          @include MQ(pc_sm) {
             margin-right: -2.5rem;
             align-items: flex-end;
           }
@@ -1964,7 +2060,7 @@
           span {
             text-align: right;
 
-            @media (max-width: 600px) {
+            @include MQ(pc_sm) {
               padding-right: 2.5rem;
               padding-left: 3px;
             }
@@ -1976,7 +2072,7 @@
         font-size: 14px;
         line-height: 1.64;
 
-        @media (max-width: 600px) {
+        @include MQ(pc_sm) {
           font-size: 13px;
           line-height: 1.76;
         }
@@ -1990,7 +2086,7 @@
         flex-direction: column;
         align-items: center;
 
-        @media (max-width: 600px) {
+        @include MQ(pc_sm) {
           position: static;
         }
 
@@ -2063,7 +2159,7 @@
         margin-top: 22px;
         text-align: left;
 
-        @media (max-width: 600px) {
+        @include MQ(pc_sm) {
           text-align: center;
         }
 
@@ -2095,12 +2191,17 @@
 
     &_06 {
       &__inner {
-        @media (min-width: 601px) {
-          text-align: center;
+        text-align: center;
+
+        @include MQ(pc) {
           width: 47.5%;
           margin: 0 auto;
           padding-top: 80px;
           padding-bottom: 80px;
+        }
+
+        @include MQ(sm) {
+          text-align: left;
         }
 
         h3 {
@@ -2112,8 +2213,12 @@
           padding-bottom: 20px;
           margin-bottom: 30px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
+            font-size: 20px;
             margin-top: 30px;
+          }
+
+          @include MQ(sm) {
             letter-spacing: 0.006em;
             padding-bottom: 5px;
             margin-bottom: 15px;
@@ -2134,7 +2239,7 @@
           text-align: center;
           padding-top: 60px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             margin-top: 30px;
             padding-top: 25px;
             padding-bottom: 33px;
@@ -2158,7 +2263,7 @@
             width: 83.7%;
             margin: 0 auto;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               width: 100%;
               padding-left: 30px;
               padding-right: 30px;
@@ -2174,8 +2279,8 @@
               background-color: $white_01;
               height: 574px;
 
-              @media (max-width: 600px) {
-                height: 540px;
+              @include MQ(tab) {
+                height: auto;
               }
 
               h4 {
@@ -2235,7 +2340,7 @@
       &__inner {
         padding-bottom: 30px;
 
-        @media (min-width: 601px) {
+        @include MQ(pc) {
           display: flex;
           flex-wrap: wrap;
           width: 77.9%;
@@ -2257,7 +2362,7 @@
             width: 23px;
           }
 
-          @media (min-width: 601px) {
+          @include MQ(pc) {
             width: calc(50% - 30px);
 
             &:nth-child(odd) {
@@ -2274,7 +2379,11 @@
             letter-spacing: 0.05em;
             line-height: 1.28;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
+              font-size: 22px;
+            }
+
+            @include MQ(sm) {
               font-size: 18px;
               line-height: 1.11;
               letter-spacing: 0.025em;
@@ -2290,7 +2399,7 @@
               height: 58px;
               margin-right: 30px;
 
-              @media (max-width: 600px) {
+              @include MQ(sm) {
                 width: 36px;
                 height: 36px;
                 margin-right: 15px;
@@ -2299,7 +2408,7 @@
               img {
                 width: 36px;
 
-                @media (max-width: 600px) {
+                @include MQ(sm) {
                   width: 24px;
                 }
               }
@@ -2313,7 +2422,7 @@
               background-color: $blue_05;
               width: calc(100% - 89px);
 
-              @media (max-width: 600px) {
+              @include MQ(sm) {
                 width: calc(100% - 50px);
               }
             }
@@ -2323,7 +2432,7 @@
             color: $black_01;
             margin-top: 15px;
 
-            @media (min-width: 601px) {
+            @include MQ(pc) {
               font-size: 14px;
               line-height: 1.64;
               padding-left: 89px;
@@ -2386,11 +2495,12 @@
         &_01 {
           position: relative;
           width: 100%;
+          max-width: 100%;
           background-color: $yellow_01;
           padding-top: 80px;
           padding-bottom: 20px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             padding-top: 30px;
             padding-bottom: 12px;
           }
@@ -2400,6 +2510,10 @@
             margin: 0 auto;
             text-align: center;
 
+            @include MQ(sm) {
+              width: 92%;
+            }
+
             h3 {
               font-size: 28px;
               letter-spacing: 0.05em;
@@ -2407,7 +2521,11 @@
               color: $blue_01;
               margin-bottom: 46px;
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
+                font-size: 20px;
+              }
+
+              @include MQ(sm) {
                 font-size: 18px;
                 margin-bottom: 20px;
               }
@@ -2423,7 +2541,7 @@
           position: relative;
           padding-bottom: 50px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             padding-bottom: 15px;
           }
 
@@ -2435,8 +2553,10 @@
             border-top: 80px solid $yellow_01;
             border-left: 50vw solid transparent;
             border-right: 50vw solid transparent;
+            height: 0 !important;
+            margin-top: 0 !important;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               border-top-width: 30px;
             }
           }
@@ -2449,9 +2569,13 @@
             letter-spacing: 0.05em;
             line-height: 1.5;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               padding-top: 45px;
               margin-bottom: 30px;
+              font-size: 20px;
+            }
+
+            @include MQ(sm) {
               font-size: 18px;
               letter-spacing: 0.006em;
               line-height: 1.66;
@@ -2462,7 +2586,7 @@
             flex-wrap: wrap;
             align-items: stretch;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               display: block;
             }
           }
@@ -2474,12 +2598,12 @@
             position: relative;
             padding-bottom: 137px;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               width: 100%;
               margin-bottom: 15px;
             }
 
-            @media (min-width: 601px) {
+            @include MQ(pc) {
               &:nth-child(odd) {
                 margin-right: 30px;
               }
@@ -2492,7 +2616,7 @@
               padding-top: 19px;
               padding-bottom: 17px;
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
                 font-size: 16px;
                 line-height: 1.56;
                 padding: 7px;
@@ -2503,7 +2627,7 @@
             &__inner {
               padding: 30px;
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
                 padding: 30px 15px 35px;
               }
 
@@ -2513,7 +2637,7 @@
                 margin-top: 30px;
                 margin-bottom: 27px;
 
-                @media (max-width: 600px) {
+                @include MQ(tab) {
                   font-size: 13px;
                   margin-top: 15px;
                   margin-bottom: 30px;
@@ -2546,7 +2670,7 @@
                   padding-left: 22px;
                   margin-bottom: 14px;
 
-                  @media (max-width: 600px) {
+                  @include MQ(tab) {
                     font-size: 13px;
                     line-height: 1.76;
                     padding-left: 17px;
@@ -2569,7 +2693,7 @@
                   font-size: 14px;
                   line-height: 1.64;
 
-                  @media (max-width: 600px) {
+                  @include MQ(tab) {
                     font-size: 13px;
                     line-height: 1.76;
                   }
@@ -2608,7 +2732,7 @@
         padding-top: 20px;
         padding-bottom: 80px;
 
-        @media (max-width: 600px) {
+        @include MQ(sm) {
           padding-top: 30px;
           padding-bottom: 30px;
         }
@@ -2624,7 +2748,11 @@
           letter-spacing: 0.05em;
           line-height: 1.28;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
+            font-size: 20px;
+          }
+
+          @include MQ(sm) {
             padding-left: 78px;
             margin-left: 0;
             font-size: 18px;
@@ -2649,7 +2777,7 @@
             height: 75px;
             @include bgImgContain("/img/top/diamond_01.png");
 
-            @media (max-width: 600px) {
+            @include MQ(sm) {
               left: 0;
               width: 63px;
               height: 63px;
@@ -2663,7 +2791,7 @@
             height: 26px;
             left: -60px;
 
-            @media (max-width: 600px) {
+            @include MQ(sm) {
               width: 26px;
               height: 22px;
               left: 32px;
@@ -2676,7 +2804,7 @@
           line-height: 1.76;
           margin-left: 98px;
 
-          @media (max-width: 600px) {
+          @include MQ(sm) {
             margin-left: 0;
           }
         }
@@ -2685,7 +2813,7 @@
           border: 1px solid $blue_01;
           margin-top: 30px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             margin-top: 15px;
             margin-bottom: 30px;
           }
@@ -2697,7 +2825,7 @@
             line-height: 1.59;
             padding: 9px;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               font-size: 16px;
               line-height: 1.56;
             }
@@ -2708,7 +2836,7 @@
             flex-wrap: wrap;
             padding: 30px 30px 26px;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               padding: 27px 15px;
             }
 
@@ -2722,7 +2850,12 @@
               line-height: 1.94;
               font-family: $font_01;
 
-              @media (max-width: 600px) {
+              @include MQ(pc_sm) {
+                width: 33.33%;
+                font-size: 15px;
+              }
+
+              @include MQ(tab) {
                 font-size: 13px;
                 line-height: 1.76;
                 width: 50%;
@@ -2744,7 +2877,7 @@
           &__inner {
             padding: 30px;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               padding: 30px 15px;
             }
 
@@ -2753,7 +2886,7 @@
                 display: block !important;
               }
 
-              @media (min-width: 601px) {
+              @include MQ(pc) {
                 &:not(.open) {
                   display: block !important;
                 }
@@ -2762,7 +2895,7 @@
               > dl {
                 margin-top: 27px;
 
-                @media (max-width: 600px) {
+                @include MQ(tab) {
                   margin-top: 30px;
                 }
 
@@ -2778,7 +2911,7 @@
                   color: $blue_01;
                   font-weight: bold;
 
-                  @media (max-width: 600px) {
+                  @include MQ(tab) {
                     font-size: 13px;
                     line-height: 1.76;
                   }
@@ -2799,7 +2932,7 @@
                   margin-top: 14px;
                   line-height: 1.64;
 
-                  @media (max-width: 600px) {
+                  @include MQ(tab) {
                     font-size: 13px;
                     line-height: 1.76;
                     margin-top: 10px;
@@ -2821,7 +2954,7 @@
               text-align: center;
               display: none;
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
                 display: block;
               }
 
@@ -2855,7 +2988,7 @@
         }
 
         .point_row {
-          @media (min-width: 601px) {
+          @include MQ(xl) {
             margin-top: 78px;
           }
 
@@ -2870,7 +3003,7 @@
               width: 61.2%;
               margin: 30px auto 60px;
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
                 width: 100%;
                 margin-top: 15px;
                 margin-bottom: 30px;
@@ -2889,7 +3022,7 @@
               width: 83.1%;
               margin: 0 auto;
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
                 width: 100%;
                 display: block;
               }
@@ -2898,7 +3031,7 @@
                 &:first-child {
                   margin-right: 30px;
 
-                  @media (max-width: 600px) {
+                  @include MQ(tab) {
                     margin-right: 0;
                   }
                 }
@@ -2929,7 +3062,7 @@
           border-left: 50vw solid transparent;
           border-right: 50vw solid transparent;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             border-top-width: 30px;
           }
         }
@@ -2944,7 +3077,7 @@
           font-weight: bold;
           font-size: 22px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             font-size: 16px;
           }
         }
@@ -2961,7 +3094,7 @@
           font-size: 28px;
           line-height: 1.5;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             padding-top: 50px;
             letter-spacing: 0.006em;
             display: inline-block;
@@ -2975,11 +3108,12 @@
           font-size: 14px;
           line-height: 1.64;
           margin-top: 30px;
-          margin-bottom: 0;
+          margin-bottom: 30px;
           text-align: left;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             margin-top: 15px;
+            margin-bottom: 0;
             font-size: 13px;
             line-height: 1.76;
           }
@@ -2987,14 +3121,30 @@
 
         &_01 {
           background-color: $yellow_01;
+
+          .float_text {
+            top: 18px;
+
+            @include MQ(tab) {
+              top: 0;
+            }
+          }
+
+          .section__inner {
+            width: 60.6%;
+
+            @include MQ(tab) {
+              width: 76%;
+            }
+          }
         }
 
         &_02 {
           @include bgImgCover("/img/top/sp/dali_stone_bg.png");
           padding-bottom: 90px;
 
-          @media (max-width: 600px) {
-            padding-bottom: 17px;
+          @include MQ(tab) {
+            padding-bottom: 22px;
           }
 
           &::before {
@@ -3004,7 +3154,7 @@
           }
 
           p {
-            @media (max-width: 600px) {
+            @include MQ(sm) {
               text-align: center;
             }
           }
@@ -3016,7 +3166,7 @@
             background-color: $blue_03;
             position: relative;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               padding-top: 42px;
             }
 
@@ -3029,18 +3179,18 @@
               border-left: 50vw solid transparent;
               border-right: 50vw solid transparent;
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
                 border-top-width: 30px;
               }
             }
 
             span {
               position: absolute;
-              top: 100%;
+              top: calc(100% - 5px);
               left: 50%;
               transform: translate(-50%, 29px);
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
                 top: 100%;
                 transform: translate(-50%, -5px);
               }
@@ -3050,7 +3200,7 @@
           .section__inner {
             width: 60.6%;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               width: 76%;
             }
           }
@@ -3067,20 +3217,20 @@
       }
 
       &__inner {
-        padding-top: 80px;
+        padding-top: 35px;
         padding-bottom: 14px;
 
-        @media (min-width: 601px) {
-          width: 65.8%;
+        @include MQ(pc) {
+          width: 75.9%;
         }
 
-        @media (max-width: 600px) {
+        @include MQ(tab) {
           padding-top: 24px;
           padding-bottom: 0;
         }
 
         &_01 {
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             position: relative;
           }
 
@@ -3096,7 +3246,7 @@
             top: 145px;
             left: -115px;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               top: 12px;
               left: auto;
               right: -71px;
@@ -3113,7 +3263,7 @@
             height: 352px;
             @include bgImgContain("/img/top/pc/section10_01_bg02.png");
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               width: 89px;
               height: 89px;
               top: 193px;
@@ -3129,7 +3279,7 @@
             margin-bottom: 10px;
             position: relative;
 
-            @media (min-width: 601px) {
+            @include MQ(pc) {
               text-align: right;
               padding-right: 20px;
               width: 345px;
@@ -3148,7 +3298,7 @@
               display: inline-block;
               margin-bottom: 5px;
 
-              @media (min-width: 601px) {
+              @include MQ(pc) {
                 padding: 5px 15px;
                 font-size: 28px;
                 line-height: 1.14;
@@ -3157,7 +3307,7 @@
               }
             }
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               &.left {
                 margin-left: -2.15rem;
                 align-items: flex-start;
@@ -3201,7 +3351,7 @@
             display: table;
             margin-bottom: 70px;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               display: block;
             }
 
@@ -3210,7 +3360,7 @@
               display: table-cell;
               vertical-align: top;
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
                 display: flex;
               }
             }
@@ -3220,14 +3370,18 @@
 
       .box {
         padding-top: 25px;
-        padding-bottom: 40px;
+        padding-bottom: 66px;
         background-color: $blue_02;
+
+        @include MQ(tab) {
+          padding-bottom: 40px;
+        }
 
         h3 {
           text-align: center;
           margin-bottom: 40px;
 
-          @media (max-width: 600px) {
+          @include MQ(sm) {
             margin-bottom: 13px;
           }
 
@@ -3239,7 +3393,7 @@
             letter-spacing: 0.025em;
             line-height: 1.4;
 
-            @media (max-width: 600px) {
+            @include MQ(sm) {
               font-size: 18px;
               line-height: 1.38;
               padding-bottom: 5px;
@@ -3254,7 +3408,7 @@
               bottom: 0;
               transform: translateX(-50%);
 
-              @media (max-width: 600px) {
+              @include MQ(sm) {
                 width: 100%;
               }
             }
@@ -3265,12 +3419,12 @@
           &:not(:last-child) {
             margin-bottom: 30px;
 
-            @media (max-width: 600px) {
+            @include MQ(sm) {
               margin-bottom: 8px;
             }
           }
 
-          @media (min-width: 601px) {
+          @include MQ(xl) {
             &:nth-of-type(2) {
               dl {
                 &:first-child {
@@ -3291,7 +3445,11 @@
             font-family: $font_01;
             padding: 18px;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
+              font-size: 18px;
+            }
+
+            @include MQ(sm) {
               font-size: 13px;
               padding: 9px;
             }
@@ -3306,7 +3464,7 @@
               transform: translateY(-50%);
               @include bgImgContain("/img/top/plus_02.png");
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
                 right: 15px;
                 width: 12px;
               }
@@ -3326,13 +3484,17 @@
             flex-wrap: wrap;
             border: 1px solid $blue_01;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               padding: 15px 15px 22px;
               display: block;
             }
 
             &.open {
               display: flex !important;
+
+              @include MQ(tab) {
+                display: block !important;
+              }
             }
 
             > dl,
@@ -3349,7 +3511,7 @@
                 font-weight: bold;
                 font-family: $font_01;
 
-                @media (max-width: 600px) {
+                @include MQ(tab) {
                   font-size: 12px;
                 }
               }
@@ -3359,7 +3521,7 @@
                 line-height: 1.76;
                 font-family: $font_01;
 
-                @media (max-width: 600px) {
+                @include MQ(tab) {
                   font-size: 13px;
                 }
 
@@ -3371,7 +3533,7 @@
                   font-family: $font_01;
                   letter-spacing: 0.025em;
 
-                  @media (max-width: 600px) {
+                  @include MQ(tab) {
                     font-size: 13px;
                     line-height: 1.76;
                   }
@@ -3383,11 +3545,15 @@
               width: calc(50% - 15px);
               margin-bottom: 30px;
 
-              @media (min-width: 601px) {
+              @include MQ(pc) {
                 &:first-child {
                   margin-right: 30px;
                   margin-bottom: 27px;
                 }
+              }
+
+              @include MQ(tab) {
+                width: 100%;
               }
             }
 
@@ -3398,7 +3564,7 @@
                 &:first-child {
                   margin-right: 37px;
 
-                  @media (max-width: 600px) {
+                  @include MQ(tab) {
                     margin-right: 17px;
                   }
                 }
@@ -3413,7 +3579,7 @@
               dl {
                 width: calc(50% - 15px);
 
-                @media (min-width: 601px) {
+                @include MQ(pc) {
                   &:nth-child(odd) {
                     margin-right: 30px;
                   }
@@ -3423,7 +3589,7 @@
                   }
                 }
 
-                @media (max-width: 600px) {
+                @include MQ(tab) {
                   width: 100%;
                 }
 
@@ -3464,7 +3630,7 @@
         position: relative;
         background-color: $white_01;
 
-        @media (max-width: 600px) {
+        @include MQ(tab) {
           padding-top: 30px;
           padding-bottom: 26px;
         }
@@ -3473,7 +3639,7 @@
           // width: 67.3%;
           width: 84%;
 
-          @media (min-width: 601px) {
+          @include MQ(pc) {
             width: 920px;
           }
         }
@@ -3487,7 +3653,7 @@
           border-left: 50vw solid transparent;
           border-right: 50vw solid transparent;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             border-top-width: 30px;
           }
         }
@@ -3502,7 +3668,7 @@
           font-size: 28px;
           color: $blue_01;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             font-size: 18px;
             letter-spacing: 0.025em;
             margin-left: -10px;
@@ -3518,7 +3684,7 @@
             height: 14px;
             background-color: $blue_01;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               left: 0;
               width: 10px;
               height: 10px;
@@ -3528,7 +3694,7 @@
           &::after {
             content: none;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               @include pseudoElement;
               transform: translateY(-50%);
               top: calc(50% + 2px);
@@ -3545,7 +3711,7 @@
           font-size: 16px;
           line-height: 1.625;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             font-size: 13px;
             line-height: 1.76;
             margin-top: 15px;
@@ -3563,7 +3729,7 @@
           top: 0;
           right: 143px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             position: static;
           }
         }
@@ -3572,7 +3738,7 @@
           position: relative;
           margin-bottom: 30px;
 
-          @media (min-width: 601px) {
+          @include MQ(pc) {
             padding-left: 30px;
             padding-right: 475px;
 
@@ -3609,7 +3775,7 @@
               @include bgImgContain("/img/top/sp/step_01.png");
             }
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               h3 {
                 &::after {
                   @include bgImgContain("/img/top/sp/step_01.png");
@@ -3623,7 +3789,7 @@
               @include bgImgContain("/img/top/sp/step_02.png");
             }
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               h3 {
                 &::after {
                   @include bgImgContain("/img/top/sp/step_02.png");
@@ -3637,7 +3803,7 @@
               @include bgImgContain("/img/top/sp/step_03.png");
             }
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               h3 {
                 &::after {
                   @include bgImgContain("/img/top/sp/step_03.png");
@@ -3651,7 +3817,7 @@
               @include bgImgContain("/img/top/sp/step_04.png");
             }
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               h3 {
                 &::after {
                   @include bgImgContain("/img/top/sp/step_04.png");
@@ -3667,13 +3833,13 @@
         padding-top: 155px;
         padding-bottom: 80px;
 
-        @media (max-width: 600px) {
+        @include MQ(tab) {
           padding-top: 60px;
           padding-bottom: 30px;
         }
 
         .section__inner {
-          @media (min-width: 601px) {
+          @include MQ(pc) {
             width: 64%;
           }
         }
@@ -3685,7 +3851,7 @@
           color: $white_01;
           padding: 9px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             font-size: 16px;
           }
         }
@@ -3701,7 +3867,7 @@
           margin-bottom: 29px;
           position: relative;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             display: none;
           }
 
@@ -3721,7 +3887,7 @@
           padding: 30px;
           border: 1px solid $red_01;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             padding: 30px 15px;
           }
 
@@ -3734,7 +3900,7 @@
             border-bottom: 1px solid $blue_05;
             display: none;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               display: block;
             }
           }
@@ -3743,7 +3909,7 @@
             display: flex;
             flex-wrap: wrap;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               display: block;
             }
 
@@ -3757,7 +3923,11 @@
               width: 50%;
               font-family: $font_01;
 
-              @media (max-width: 600px) {
+              @include MQ(pc_sm) {
+                font-size: 14px;
+              }
+
+              @include MQ(tab) {
                 width: 100%;
                 font-size: 13px;
               }
@@ -3785,13 +3955,13 @@
         padding-bottom: 100px;
         text-align: center;
 
-        @media (max-width: 600px) {
+        @include MQ(tab) {
           padding-top: 30px;
           padding-bottom: 26px;
         }
 
         .section__inner {
-          @media (min-width: 601px) {
+          @include MQ(pc) {
             width: 60.6%;
           }
         }
@@ -3803,7 +3973,7 @@
           border-bottom: 1px solid $blue_05;
           padding-bottom: 20px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             font-size: 20px;
             display: inline-block;
             padding-bottom: 5px;
@@ -3818,7 +3988,7 @@
           line-height: 1.64;
           font-size: 14px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             font-size: 13px;
             line-height: 1.76;
             margin-top: 15px;
@@ -3832,7 +4002,7 @@
         padding-top: 80px;
         padding-bottom: 20px;
 
-        @media (max-width: 600px) {
+        @include MQ(sm) {
           padding-top: 25px;
         }
 
@@ -3845,7 +4015,11 @@
           border-bottom: 1px solid $blue_01;
           padding: 10px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
+            font-size: 20px;
+          }
+
+          @include MQ(sm) {
             font-size: 18px;
             letter-spacing: 0.025em;
             line-height: 1.5;
@@ -3860,7 +4034,7 @@
           line-height: 1.64;
           margin-bottom: 60px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             margin-top: 15px;
             font-size: 13px;
             line-height: 1.76;
@@ -3874,7 +4048,7 @@
         padding-top: 15px;
         padding-bottom: 80px;
 
-        @media (max-width: 600px) {
+        @include MQ(sm) {
           padding-bottom: 30px;
         }
 
@@ -3882,17 +4056,17 @@
           display: flex;
           align-items: stretch;
 
-          @media (min-width: 601px) {
+          @include MQ(pc) {
             width: 57.1%;
           }
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             display: block;
           }
         }
 
         &__item {
-          @media (min-width: 601px) {
+          @include MQ(pc) {
             width: calc(50% - 15px);
 
             &:first-child {
@@ -3913,7 +4087,7 @@
             margin-top: 15px;
             font-family: $font_01;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               font-size: 16px;
               line-height: 1.25;
             }
@@ -3926,7 +4100,7 @@
             border: 1px solid $blue_01;
             margin-top: 10px;
 
-            @media (max-width: 600px) {
+            @include MQ(sm) {
               padding: 30px 15px 25px;
             }
 
@@ -3942,7 +4116,7 @@
                 letter-spacing: 0.025em;
                 margin-top: 25px;
 
-                @media (max-width: 600px) {
+                @include MQ(tab) {
                   font-size: 13px;
                   margin-top: 15px;
                   padding-left: 17px;
@@ -4009,7 +4183,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
 
-        @media (max-width: 600px) {
+        @include MQ(tab) {
           display: block;
           padding-top: 15px;
           padding-bottom: 30px;
@@ -4020,7 +4194,7 @@
           margin-top: 15px;
           width: calc(50% - 15px);
 
-          @media (min-width: 601px) {
+          @include MQ(pc) {
             margin-top: 30px;
 
             &:last-of-type {
@@ -4029,7 +4203,7 @@
             }
           }
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             width: 100%;
           }
 
@@ -4042,7 +4216,7 @@
             text-align: center;
             padding: 19px;
 
-            @media (max-width: 600px) {
+            @include MQ(sm) {
               font-size: 16px;
               line-height: 1.56;
               padding: 7px;
@@ -4054,7 +4228,7 @@
             line-height: 1.64;
             padding: 30px;
 
-            @media (max-width: 600px) {
+            @include MQ(sm) {
               font-size: 13px;
               line-height: 1.76;
               padding: 30px 15px;
@@ -4069,14 +4243,14 @@
       overflow: hidden;
       @include bgImgCover("/img/top/sp/dali_stone_bg.png");
 
-      @media (min-width: 601px) {
+      @include MQ(pc) {
         padding-bottom: 80px;
       }
 
       .message {
         position: relative;
 
-        @media (max-width: 600px) {
+        @include MQ(tab) {
           @include bgImgCover("/img/top/sp/section14_item01.png");
         }
 
@@ -4088,7 +4262,7 @@
           width: 431px;
           height: 502px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             @include bgImgContain("/img/top/sp/text_message.png");
             width: 47px;
             height: 317px;
@@ -4106,7 +4280,7 @@
           color: $blue_01;
           margin-bottom: 0;
 
-          @media (min-width: 601px) {
+          @include MQ(pc) {
             position: absolute;
             top: 42px;
             left: 38%;
@@ -4122,11 +4296,11 @@
         padding: 30px;
         padding-left: 536px;
 
-        @media (min-width: 601px) {
+        @include MQ(pc) {
           width: 80%;
         }
 
-        @media (max-width: 600px) {
+        @include MQ(tab) {
           padding: 0;
           padding-top: 15px;
           padding-bottom: 40px;
@@ -4147,7 +4321,11 @@
           border-bottom: 1px solid $blue_03;
           margin-bottom: 30px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
+            font-size: 20px;
+          }
+
+          @include MQ(sm) {
             font-size: 18px;
             letter-spacing: 0.006em;
             padding-bottom: 5px;
@@ -4160,7 +4338,7 @@
           line-height: 1.64;
           margin-bottom: 0;
 
-          @media (max-width: 600px) {
+          @include MQ(sm) {
             font-size: 13px;
             line-height: 1.76;
           }
@@ -4175,7 +4353,7 @@
             font-weight: normal;
             margin-top: 30px;
 
-            @media (max-width: 600px) {
+            @include MQ(sm) {
               margin-top: 0;
             }
 
@@ -4198,7 +4376,7 @@
           padding-bottom: 60px;
           position: relative;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             padding-top: 12px;
             padding-bottom: 12px;
             background-image: url("/img/top/sp/section15_bg.png");
@@ -4211,7 +4389,7 @@
             margin-top: 12px;
             padding: 60px;
 
-            @media (max-width: 600px) {
+            @include MQ(sm) {
               padding: 18px 15px;
             }
 
@@ -4225,7 +4403,11 @@
               border-bottom: 1px solid $blue_05;
               margin-bottom: 30px;
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
+                font-size: 20px;
+              }
+
+              @include MQ(sm) {
                 font-size: 18px;
                 padding-bottom: 5px;
                 margin-bottom: 15px;
@@ -4236,7 +4418,7 @@
               font-size: 14px;
               line-height: 1.64;
 
-              @media (max-width: 600px) {
+              @include MQ(sm) {
                 font-size: 13px;
                 line-height: 1.76;
                 margin: 0;
@@ -4247,7 +4429,7 @@
           .swiper {
             margin-top: 30px;
 
-            @media (max-width: 600px) {
+            @include MQ(sm) {
               margin-top: 13px;
             }
           }
@@ -4258,17 +4440,19 @@
           padding-top: 80px;
           padding-bottom: 80px;
 
-          @media (max-width: 600px) {
+          @include MQ(sm) {
             padding-top: 30px;
             padding-bottom: 36px;
           }
 
           &__inner {
-            @media (min-width: 601px) {
+            @include MQ(pc) {
               width: 64%;
             }
 
             .front {
+              border: 1px solid $red_01;
+
               h3 {
                 @include bgImgCover("/img/top/sp/title_bg_01.png");
                 color: $white_01;
@@ -4277,7 +4461,8 @@
                 letter-spacing: 0.025em;
                 line-height: 1.56;
                 padding: 9px;
-                @media (max-width: 600px) {
+
+                @include MQ(tab) {
                   font-size: 18px;
                 }
               }
@@ -4288,7 +4473,7 @@
                 display: flex;
                 flex-wrap: wrap;
 
-                @media (max-width: 600px) {
+                @include MQ(tab) {
                   display: block;
                   padding: 30px 15px;
                 }
@@ -4303,8 +4488,15 @@
                   margin-bottom: 5px;
                   width: 50%;
 
-                  @media (max-width: 600px) {
+                  @include MQ(pc_sm) {
+                    font-size: 14px;
+                  }
+
+                  @include MQ(tab) {
                     width: 100%;
+                  }
+
+                  @include MQ(sm) {
                     font-size: 13px;
                     line-height: 1.53;
                   }
@@ -4317,7 +4509,7 @@
                     height: 12px;
                     background-color: $red_01;
 
-                    @media (max-width: 600px) {
+                    @include MQ(sm) {
                       top: 5px;
                     }
                   }
@@ -4331,7 +4523,7 @@
               text-align: center;
               position: relative;
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
                 margin-top: 20px;
                 padding-top: 53px;
               }
@@ -4359,7 +4551,11 @@
                 border-bottom: 1px solid $blue_05;
                 margin: 0;
 
-                @media (max-width: 600px) {
+                @include MQ(pc_sm) {
+                  font-size: 24px;
+                }
+
+                @include MQ(tab) {
                   border: none;
                   font-size: 20px;
                   letter-spacing: 0.006em;
@@ -4374,11 +4570,15 @@
 
       .cta_box {
         > * {
-          width: 60%;
+          width: 790px;
           margin: 0 auto;
           color: $white_01;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
+            width: 84.4%;
+          }
+
+          @include MQ(sm) {
             width: 100%;
           }
         }
@@ -4396,7 +4596,7 @@
             width: 472px;
             background-color: $white_01;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               width: calc(100% - 30px);
               left: 0;
               transform: translateY(-50%);
@@ -4413,7 +4613,11 @@
             padding-left: 16px;
             padding-right: 16px;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
+              font-size: 20px;
+            }
+
+            @include MQ(sm) {
               font-size: 13px;
             }
           }
@@ -4427,7 +4631,7 @@
           line-height: 1.5;
           position: relative;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             padding-bottom: 15px;
             margin-bottom: 15px;
             font-size: 20px;
@@ -4444,7 +4648,7 @@
             height: 1px;
             background-color: rgba(255, 255, 255, 0.3);
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               width: 200px;
             }
           }
@@ -4456,7 +4660,7 @@
           text-align: left;
           margin-bottom: 30px;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             font-size: 13px;
             line-height: 1.76;
           }
@@ -4468,13 +4672,21 @@
           justify-content: center;
           flex-wrap: nowrap;
 
-          @media (max-width: 600px) {
+          @include MQ(tab) {
             display: block;
           }
 
           div {
+            @include MQ(tab) {
+              width: 350px;
+              max-width: 100%;
+              margin: 0 auto;
+            }
+
             &:first-of-type {
-              margin-right: 30px;
+              @include MQ(pc) {
+                margin-right: 30px;
+              }
 
               p {
                 color: $red_01;
@@ -4510,7 +4722,7 @@
           }
 
           a {
-            @media (min-width: 601px) {
+            @include MQ(pc) {
               margin: 0;
             }
 
@@ -4525,11 +4737,11 @@
     &_16 {
       &__inner {
         padding-top: 80px;
-        padding-bottom: 80px;
+        padding-bottom: 20px;
 
-        @media (max-width: 600px) {
+        @include MQ(sm) {
           padding-top: 30px;
-          padding-bottom: 15px;
+          padding-bottom: 0;
         }
 
         .row_box {
@@ -4545,7 +4757,7 @@
               letter-spacing: 0.05em;
               line-height: 1.63;
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
                 padding-bottom: 15px;
                 font-size: 18px;
               }
@@ -4575,7 +4787,7 @@
                   background-color: $blue_01;
                   margin-right: 30px;
 
-                  @media (max-width: 600px) {
+                  @include MQ(tab) {
                     width: 36px;
                     height: 36px;
                     margin-right: 15px;
@@ -4585,7 +4797,7 @@
                     width: 16px;
                     height: 19px;
 
-                    @media (max-width: 600px) {
+                    @include MQ(tab) {
                       width: 14px;
                       height: 16px;
                     }
@@ -4598,7 +4810,7 @@
                   border-bottom: 1px solid $blue_05;
                   width: calc(100% - 51px);
 
-                  @media (max-width: 600px) {
+                  @include MQ(tab) {
                     padding-bottom: 5px;
                   }
                 }
@@ -4611,7 +4823,7 @@
               line-height: 1.69;
               margin-left: 71px;
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
                 margin-left: 0;
               }
 
@@ -4626,22 +4838,25 @@
 
     &_17 {
       &__inner {
-        padding-bottom: 30px;
+        padding-top: 50px;
+        padding-bottom: 80px;
         display: flex;
         justify-content: center;
 
-        @media (min-width: 601px) {
+        @include MQ(pc) {
           width: 57.1%;
         }
 
-        @media (max-width: 600px) {
+        @include MQ(tab) {
+          padding-top: 0;
+          padding-bottom: 45px;
           display: block;
         }
 
         .row_box {
           margin-top: 30px;
 
-          @media (min-width: 601px) {
+          @include MQ(pc) {
             width: calc(50% - 15px);
 
             &:first-child {
@@ -4660,7 +4875,7 @@
             margin-bottom: 10px;
             font-family: $font_01;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               font-size: 16px;
               line-height: 1.25;
               padding: 6px 16px 4px;
@@ -4672,7 +4887,7 @@
             padding-top: 49.8%;
             position: relative;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               padding-top: 71.1%;
             }
 
@@ -4691,7 +4906,7 @@
             padding: 30px;
             margin-top: 10px;
 
-            @media (max-width: 600px) {
+            @include MQ(tab) {
               padding: 30px 15px;
             }
 
@@ -4705,7 +4920,7 @@
                 font-family: $font_01;
                 font-weight: bold;
 
-                @media (max-width: 600px) {
+                @include MQ(tab) {
                   font-size: 13px;
                   padding-left: 17px;
                 }
@@ -4735,354 +4950,12 @@
               color: $blue_03;
               padding-left: 27px;
 
-              @media (max-width: 600px) {
+              @include MQ(tab) {
                 padding-left: 0;
               }
             }
           }
         }
-      }
-    }
-  }
-
-  article {
-    max-width: 35rem;
-
-    h2 {
-      &::before,
-      .subTitle {
-        color: $c_2;
-        margin-bottom: 0.1em;
-        letter-spacing: 0.2em;
-        font-size: 0.5em;
-        display: block;
-        content: attr(data-subtitle);
-        pointer-events: none;
-      }
-    }
-
-    p {
-      margin-bottom: 1.5em;
-    }
-  }
-
-  .more {
-    ul {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-      // margin-bottom: .2rem;
-      margin-top: 1rem;
-      margin-bottom: 1.5rem;
-
-      li {
-        font-size: 1rem;
-
-        a {
-          color: $c_2;
-        }
-      }
-    }
-  }
-}
-
-.top {
-  max-width: 1000px;
-  margin: auto;
-  margin-top: calc(81px + 2.3rem);
-  margin-bottom: 2.7rem;
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2) inset, 0 0 10px rgba(0, 0, 0, 0.3),
-    0 0 20px rgba(0, 0, 0, 0.1);
-
-  @media (min-width: 1000px) {
-    border-radius: 0.5rem;
-    overflow: hidden;
-
-    > * {
-      border-radius: 0.5rem;
-      overflow: hidden;
-    }
-  }
-
-  @include MQ(xl) {
-    text-align: center;
-  }
-
-  @include MQ() {
-    margin-top: 59px;
-  }
-}
-
-.topImg {
-  h2,
-  h3 {
-    @include MQ() {
-      padding-left: 1rem;
-    }
-
-    word-break: keep-all;
-    overflow-wrap: break-word;
-    color: #fff;
-    text-shadow: rgba(#000, 0.7) 1px 1px 10px, rgba(#000, 0.7) -1px 1px 10px,
-      rgba(#000, 0.7) 1px -1px 10px, rgba(#000, 0.7) -1px -1px 10px;
-  }
-
-  h3 {
-    font-weight: normal;
-  }
-
-  .messageH2 {
-    font-size: 2.3em;
-  }
-
-  height: 400px;
-
-  @include MQ() {
-    height: 330px;
-  }
-
-  display: grid;
-  place-items: center;
-  position: relative;
-
-  .bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-  }
-}
-
-.card {
-  padding: 1.7rem 2.5rem;
-  margin: 0 -2.5rem;
-
-  &.bg {
-    background-color: #fff;
-  }
-
-  h2 {
-    margin-top: 0;
-
-    &::before,
-    .subTitle {
-      color: $c_2;
-      margin-bottom: 0.1em;
-    }
-  }
-
-  &.news {
-    background-color: lighten($c_2, 50);
-
-    .more ul {
-      margin-bottom: 0;
-    }
-
-    @include MQ() {
-      width: 100vw;
-      margin-right: calc(50% - 50vw);
-      margin-left: calc(50% - 50vw);
-      padding: 1.7rem calc(50vw - 50%);
-    }
-  }
-
-  &.marginBottom {
-    margin-bottom: 2rem;
-  }
-}
-
-.courseAndClasstype {
-  .wrap {
-    position: relative;
-
-    &::after {
-      font-family: sans-serif;
-      font-size: 0.8125rem;
-      line-height: 1em;
-      content: "> あなたの組み合わせを見る";
-      color: #fff;
-      background-color: $c_2;
-      padding: 0.45em 0.6em;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      display: block;
-    }
-  }
-
-  &:hover {
-    * {
-      opacity: 1;
-    }
-
-    .wrap {
-      position: relative;
-
-      &::after {
-        opacity: 0.5;
-      }
-    }
-  }
-
-  select {
-    pointer-events: none;
-  }
-}
-
-.curriculum {
-  background-color: #fff;
-  padding: 1vw;
-  position: relative;
-
-  @include MQ() {
-    padding: 0.5rem;
-    padding-bottom: 1.3rem;
-    width: 100vw;
-    margin: 0 calc(50% - 50vw);
-  }
-
-  svg {
-    font-family: sans-serif;
-  }
-
-  &::after {
-    font-weight: bold;
-    font-family: sans-serif;
-    font-size: 0.8125rem;
-    line-height: 1em;
-    content: "> レベル別カリキュラム(PDF)を見る";
-    color: #fff;
-    background-color: $c_2;
-    padding: 0.45em 0.6em;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    display: block;
-  }
-
-  &:hover {
-    opacity: 1;
-
-    &::after {
-      opacity: 0.7;
-    }
-  }
-}
-
-.teacherList {
-  ul {
-    display: flex;
-    gap: 1rem;
-    height: 13rem;
-
-    .teacher {
-      flex-shrink: 0;
-      width: 180px;
-    }
-  }
-}
-
-.gallery {
-  margin-top: 1rem;
-  display: flex;
-  gap: 1rem;
-
-  li {
-    img {
-      min-width: 200px;
-    }
-  }
-}
-
-.courseBox {
-  // width: 80%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 1.5rem;
-
-  @include MQ() {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-.experiencesArea {
-  position: relative;
-  background: linear-gradient(to bottom, rgba(#fff, 0), rgba(#fff, 1));
-  width: 100%;
-  // overflow: hidden;
-
-  .experiencesLink {
-    color: initial;
-    padding: 0;
-    border: 0;
-
-    &:hover {
-      opacity: 1;
-
-      // .experiencesBox {
-      // 	opacity: .6;
-      // }
-
-      .experiencesButton {
-        background: linear-gradient(
-          to bottom,
-          $c_2,
-          darken($c_2, 5%)
-        ) !important;
-        box-shadow: 0px 0px 2px rgba(0, 0, 0, 1) !important;
-        // opacity: .6;
-      }
-    }
-
-    .experiencesBox {
-      display: flex;
-      font-size: 0.8rem;
-      gap: 2.5rem;
-      // pointer-events: none;
-      // transition: opacity .2s;
-
-      .experienceBox {
-        margin-top: -10px;
-        min-width: 430px;
-      }
-    }
-
-    .experiencesLinkArea {
-      font-family: sans-serif;
-      font-weight: bold;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 20%;
-      display: grid;
-      place-items: center;
-
-      .experiencesButton {
-        color: #fff;
-        background: linear-gradient(to bottom, $c_1, darken($c_1, 5%));
-        border: 0;
-        border-radius: 999px;
-        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8);
-        padding: 0.5em 1.5em;
-        transition: background 0.2s, box-shadow 2s;
-
-        a {
-          color: #fff;
-          display: block;
-        }
-
-        // &:hover {
-        // 	background-color: $c_2;
-        // }
       }
     }
   }

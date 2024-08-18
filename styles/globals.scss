@@ -168,8 +168,10 @@ main {
   gap: 3vw;
 
   &:has(.nav_true) {
-    position: relative;
-    z-index: 9998;
+    @media (max-width: 600px) {
+      position: relative;
+      z-index: 9998;
+    }
   }
 
   &.marginTop0 {

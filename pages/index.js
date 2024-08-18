@@ -14,8 +14,8 @@ import Header from "components/header";
 import Footer from "components/footer";
 import Nav from "components/nav";
 import LinkList from "components/widget/LinkList";
+import Cta from "components/Cta/Cta";
 // import TopSlideshow from "components/TopSlideshow/TopSlideshow";
-import TopSwiperSlide from "components/TopSwiperSlide/TopSwiperSlide";
 import LoopCarousel from "components/widget/LoopCarousel";
 import Button from "components/Button/Button";
 import ContactButton from "components/ContactButton/ContactButton";
@@ -720,8 +720,6 @@ export default function Page({
         breadcrumb={[["トップページ", ""]]}
       />
 
-      {/* <TopSlideshow /> */}
-
       <main className={css_index.main}>
         <div className={css_index.fv}>
           <div className={css_index.fv__inner}>
@@ -874,7 +872,7 @@ export default function Page({
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               breakpoints={{
-                601: {
+                961: {
                   slidesPerView: 3,
                 },
               }}
@@ -957,7 +955,7 @@ export default function Page({
           <h2 className={css_index.title_blue}>
             <span>
               難関大学合格を確実にする
-              <br className={css_index.sp} />
+              <br className={css_index.tab} />
               秋谷アカデミィで
               <br className={css_index.sp} />
               後悔しない塾選びを
@@ -1109,12 +1107,12 @@ export default function Page({
           <h2>
             <span>
               秋谷光子アカデミィでは
-              <br className={css_index.sp} />
+              <br className={css_index.tab} />
               上記のような課題を解決するため
               <br />
               <span className={css_index.text_red}>一人ひとり塾長面談</span>
               を行った上で、
-              <br className={css_index.sp} />
+              <br className={css_index.tab} />
               <span className={css_index.text_red}>
                 最適なカリキュラムと学習法
               </span>
@@ -1216,28 +1214,7 @@ export default function Page({
             </div>
           </div>
 
-          <div className={css_index.cta_box}>
-            <h2>
-              <span className={css_index.balloon}>
-                最短距離で目標達成できる
-              </span>
-              <br />
-              <span className={css_index.block}>カリキュラムをご案内</span>
-            </h2>
-
-            <div className={css_index.cta}>
-              <p>
-                まずは
-                <span className={css_index.red_box}>無料体験レッスン</span>
-                <span className={css_index.red_box}>資料請求</span>
-                から
-              </p>
-              <a href={`/contact`}>
-                お問い合わせ・<span>無料体験レッスンを申し込む</span>
-              </a>
-              <a href={`/contact`}>資料を請求する</a>
-            </div>
-          </div>
+          <Cta />
         </section>
 
         <section
@@ -1326,10 +1303,12 @@ export default function Page({
                 className={`${css_index.course__item} ${css_index.course__item_02}`}
               >
                 <h3 className={css_index.right}>
-                  <span className={css_index.block}>
+                  <span className={`${css_index.block} ${css_index.sp}`}>
                     レベル別カリキュラムで
                   </span>
-                  <span className={css_index.block}>試験合格だけでなく、</span>
+                  <span className={`${css_index.block}`}>
+                    試験合格だけでなく、
+                  </span>
                   <span className={css_index.block}>
                     社会で使える実用英語へ
                   </span>
@@ -1339,54 +1318,6 @@ export default function Page({
                   ①基礎力をつけたい小学生～学校英語成績を上げたい中学・高校生、②医学部受験や最難関大学を始めとする大学や大学院受験、③英検、④TOEFL・IELTS等の留学対策、⑤TOEIC・TOEIC
                   Bridge・TEAP・GTEC等、すべての英語指導で実績を出しています。
                 </p>
-
-                <div className={css_index.circle}>
-                  <div className={css_index.circle__item}>
-                    <dl>
-                      <dt>1対1個人指導</dt>
-                      <dd>
-                        <span className={css_index.block}>
-                          個別マンツーマンの
-                        </span>
-                        <span className={css_index.block}>
-                          オリジナルカリキュラム
-                        </span>
-                      </dd>
-                    </dl>
-                  </div>
-                  <div className={css_index.flex}>
-                    <div className={css_index.circle__item}>
-                      <dl>
-                        <dt>グループ指導</dt>
-                        <dd>
-                          同じ目標に向けて
-                          <br />
-                          レベルをそろえた
-                          <br />
-                          6人までの少人数クラス
-                        </dd>
-                      </dl>
-                    </div>
-                    <div className={css_index.circle__item}>
-                      <dl>
-                        <dt>
-                          <span>*</span>
-                          個別
-                          <br />
-                          グループ指導
-                        </dt>
-                        <dd>
-                          担当講師が約3人の生徒を
-                          <br />
-                          各自のカリキュラムで
-                          <br />
-                          個別指導
-                          <small>※グループ指導と同料金</small>
-                        </dd>
-                      </dl>
-                    </div>
-                  </div>
-                </div>
 
                 <div className={css_index.center}>
                   <a href="#curriculum">
@@ -1401,7 +1332,9 @@ export default function Page({
                 className={`${css_index.course__item} ${css_index.course__item_03}`}
               >
                 <h3 className={css_index.left}>
-                  <span className={css_index.block}>英検1級講師42名の</span>
+                  <span className={`${css_index.block} ${css_index.sp}`}>
+                    英検1級講師42名の
+                  </span>
                   <span className={css_index.block}>直接指導による</span>
                   <span className={css_index.block}>圧倒的な英検合格実績</span>
                 </h3>
@@ -1488,7 +1421,7 @@ export default function Page({
                 className={`${css_index.course__item} ${css_index.course__item_04}`}
               >
                 <h3 className={css_index.right}>
-                  <span className={css_index.block}>
+                  <span className={`${css_index.block} ${css_index.sp}`}>
                     最上級の学習環境で指導。
                   </span>
                   <span className={css_index.block}>自習室も完備</span>
@@ -1509,7 +1442,7 @@ export default function Page({
               // breakpoints={slideSettings}
               slidesPerView={2.2}
               breakpoints={{
-                601: {
+                961: {
                   slidesPerView: 3.5,
                 },
               }}
@@ -1616,7 +1549,7 @@ export default function Page({
                 modules={[Navigation, Pagination, Autoplay]}
                 slidesPerView={1}
                 breakpoints={{
-                  601: {
+                  961: {
                     slidesPerView: 3,
                   },
                 }}
@@ -1791,14 +1724,14 @@ export default function Page({
             <p>
               これらの問題は、
               <span className={css_index.red}>生徒の学習経験</span>や、
-              <br className={css_index.sp} />
+              <br className={css_index.tab} />
               問題の程度を考慮した
               <br />
               <span className={css_index.red}>効果的な学習方法</span>
               （適切な指導と
-              <br className={css_index.sp} />
+              <br className={css_index.tab} />
               定期的な実践・フィードバック）を
-              <br className={css_index.sp} />
+              <br className={css_index.tab} />
               通じて<span className={css_index.red}>克服可能</span>です。
             </p>
           </div>
@@ -1839,11 +1772,11 @@ export default function Page({
             <div className={`${css_index.box}`}>
               <h3>
                 レベル別・目的別に最適で
-                <br className={css_index.sp} />
+                <br className={css_index.tab} />
                 特化型のカリキュラムを
                 <br />
                 提供しているため
-                <br className={css_index.sp} />
+                <br className={css_index.tab} />
                 <span className={css_index.red}>
                   より効率的な学習を進められます
                 </span>
@@ -2050,7 +1983,7 @@ export default function Page({
               <span className={css_index.red}>
                 求められる以上のスコアを獲得できる
               </span>
-              <br className={css_index.sp} />
+              <br className={css_index.tab} />
               ご指導をいたします。
             </p>
           </div>
@@ -2186,28 +2119,7 @@ export default function Page({
             </div>
           </div>
 
-          <div className={css_index.cta_box}>
-            <h2>
-              <span className={css_index.balloon}>
-                最短距離で目標達成できる
-              </span>
-              <br />
-              <span className={css_index.block}>カリキュラムをご案内</span>
-            </h2>
-
-            <div className={css_index.cta}>
-              <p>
-                まずは
-                <span className={css_index.red_box}>無料体験レッスン</span>
-                <span className={css_index.red_box}>資料請求</span>
-                から
-              </p>
-              <a href={`/contact`}>
-                お問い合わせ・<span>無料体験レッスンを申し込む</span>
-              </a>
-              <a href={`/contact`}>資料を請求する</a>
-            </div>
-          </div>
+          <Cta />
         </section>
 
         <section className={`${css_index.section} ${css_index.section_10}`}>
@@ -2278,28 +2190,7 @@ export default function Page({
             </div>
           </div>
 
-          <div className={css_index.cta_box}>
-            <h2>
-              <span className={css_index.balloon}>
-                最短距離で目標達成できる
-              </span>
-              <br />
-              <span className={css_index.block}>カリキュラムをご案内</span>
-            </h2>
-
-            <div className={css_index.cta}>
-              <p>
-                まずは
-                <span className={css_index.red_box}>無料体験レッスン</span>
-                <span className={css_index.red_box}>資料請求</span>
-                から
-              </p>
-              <a href={`/contact`}>
-                お問い合わせ・<span>無料体験レッスンを申し込む</span>
-              </a>
-              <a href={`/contact`}>資料を請求する</a>
-            </div>
-          </div>
+          <Cta />
         </section>
 
         <section
@@ -2424,28 +2315,7 @@ export default function Page({
             </div>
           </div>
 
-          <div className={css_index.cta_box}>
-            <h2>
-              <span className={css_index.balloon}>
-                最短距離で目標達成できる
-              </span>
-              <br />
-              <span className={css_index.block}>カリキュラムをご案内</span>
-            </h2>
-
-            <div className={css_index.cta}>
-              <p>
-                まずは
-                <span className={css_index.red_box}>無料体験レッスン</span>
-                <span className={css_index.red_box}>資料請求</span>
-                から
-              </p>
-              <a href={`/contact`}>
-                お問い合わせ・<span>無料体験レッスンを申し込む</span>
-              </a>
-              <a href={`/contact`}>資料を請求する</a>
-            </div>
-          </div>
+          <Cta />
         </section>
 
         <section
@@ -2591,7 +2461,7 @@ export default function Page({
           <h2 className={css_index.title_blue}>
             <span>
               難関大学に多数合格者を輩出する
-              <br className={css_index.sp} />
+              <br className={css_index.tab} />
               秋谷光子アカデミィの特徴
             </span>
           </h2>
@@ -2643,28 +2513,7 @@ export default function Page({
             </div>
           </div>
 
-          <div className={css_index.cta_box}>
-            <h2>
-              <span className={css_index.balloon}>
-                最短距離で目標達成できる
-              </span>
-              <br />
-              <span className={css_index.block}>カリキュラムをご案内</span>
-            </h2>
-
-            <div className={css_index.cta}>
-              <p>
-                まずは
-                <span className={css_index.red_box}>無料体験レッスン</span>
-                <span className={css_index.red_box}>資料請求</span>
-                から
-              </p>
-              <a href={`/contact`}>
-                お問い合わせ・<span>無料体験レッスンを申し込む</span>
-              </a>
-              <a href={`/contact`}>資料を請求する</a>
-            </div>
-          </div>
+          <Cta />
         </section>
 
         <section
@@ -2739,7 +2588,7 @@ export default function Page({
                 modules={[Navigation, Pagination, Autoplay]}
                 slidesPerView={2.2}
                 breakpoints={{
-                  601: {
+                  961: {
                     slidesPerView: 3.5,
                   },
                 }}

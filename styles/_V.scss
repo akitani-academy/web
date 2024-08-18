@@ -1,6 +1,12 @@
 $breakpoints: (
+  "sp_sm": "screen and (max-width: 374px)",
   "sm": "screen and (max-width: 600px)",
-  "xl": "screen and (min-width: 600px)",
+  "xl": "screen and (min-width: 601px)",
+  "tab": "screen and (max-width: 960px)",
+  "pc": "screen and (min-width: 961px)",
+  "pc_sm": "screen and (max-width: 1365px)",
+  "pc_md": "screen and (max-width: 1365px) and (min-width: 961px)",
+  "pc_xl": "screen and (min-width: 1366px)",
 ) !default;
 @mixin MQ($breakpoint: sm) {
   @media #{map-get($breakpoints, $breakpoint)} {
@@ -74,6 +80,10 @@ $sp_inner: 84%;
         text-align: center;
         font-weight: bold;
 
+        @include MQ(sp_sm) {
+          font-size: 12px;
+        }
+
         &::before,
         &::after {
           @include pseudoElement;
@@ -111,6 +121,7 @@ $sp_inner: 84%;
     padding-left: 15px;
     padding-right: 40px;
     position: relative;
+    font-family: $font_01;
 
     &:first-of-type {
       background-image: url("/img/top/cta_red.png");
