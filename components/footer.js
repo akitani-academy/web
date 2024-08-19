@@ -7,8 +7,8 @@ import css from "styles/footer.module.scss";
 function Page() {
   let fA = [
     ["/contact", "問い合わせはこちら"],
-    ["/", "資料請求はこちら"],
-    ["/", "無料体験レッスンを受ける"],
+    ["/contact", "資料請求はこちら"],
+    ["/contact", "無料体験レッスンを受ける"],
   ];
   return (
     <>

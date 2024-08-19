@@ -65,8 +65,16 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(51, 51, 51, 0.9);
-  z-index: 10000;
+  z-index: 9999;
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.9);
+  }
 
   .close {
     position: fixed;
@@ -77,7 +85,7 @@
     align-items: center;
     transition: 0.15s background;
     display: none;
-    z-index: 10001;
+    z-index: 10000;
     background-color: $red_01;
     width: 60px;
     height: 60px;
@@ -183,8 +191,30 @@
         height: calc(100% - 62px);
       }
 
-      &__item {
-        dl {
+      .row_box {
+        h5,
+        ul li {
+          font-family: $font_01;
+        }
+
+        h5 {
+          font-size: 18px;
+          letter-spacing: 0.025em;
+          line-height: 1.5;
+          color: $blue_01;
+          font-weight: bold;
+          width: 100%;
+          padding-bottom: 2px;
+          margin-bottom: 15px;
+          border-bottom: 1px solid $blue_05;
+
+          @include MQ(sm) {
+            font-size: 16px;
+            line-height: 1.68;
+          }
+        }
+
+        ul {
           display: flex;
           flex-wrap: wrap;
           margin-bottom: 43px;
@@ -194,29 +224,7 @@
             margin-bottom: 28px;
           }
 
-          dt,
-          dd {
-            font-family: $font_01;
-          }
-
-          dt {
-            font-size: 18px;
-            letter-spacing: 0.025em;
-            line-height: 1.5;
-            color: $blue_01;
-            font-weight: bold;
-            width: 100%;
-            padding-bottom: 2px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid $blue_05;
-
-            @include MQ(sm) {
-              font-size: 16px;
-              line-height: 1.68;
-            }
-          }
-
-          dd {
+          li {
             width: 33%;
             font-size: 14px;
             line-height: 1.64;
@@ -243,7 +251,7 @@
   background-color: $white_01;
 
   @include MQ(sm) {
-    margin-top: 18vw;
+    margin-top: 60px;
   }
 
   b {
@@ -371,10 +379,11 @@
     &::before {
       @include pseudoElement;
       height: 128px;
-      width: 104%;
+      width: 1422px;
       @include bgImgContain("/img/top/pc/cta_text.png");
-      top: 65px;
-      left: -28px;
+      top: 33px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     h2 {
@@ -602,6 +611,10 @@
       > p {
         margin-bottom: 34px;
 
+        @include MQ(tab) {
+          margin-bottom: 10px;
+        }
+
         span {
           font-size: 18px;
           font-weight: bold;
@@ -686,12 +699,14 @@
   }
 
   .cta {
-    margin-top: 17px;
+    margin-top: 72px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    text-align: center;
 
     @include MQ(tab) {
+      margin-top: 17px;
       margin-bottom: 26px;
     }
 
@@ -700,11 +715,64 @@
       margin-bottom: 18px;
       font-size: 25px;
       letter-spacing: -0.05em;
+      line-height: 1;
 
       @include MQ(sm) {
         margin-bottom: 7px;
         font-size: 15px;
         line-height: 1.26;
+      }
+
+      span {
+        &.red_balloon {
+          position: relative;
+          color: $red_01;
+          font-size: 25px;
+          letter-spacing: -0.05em;
+          text-align: center;
+          font-weight: bold;
+
+          @include MQ(tab) {
+            font-size: 15px;
+          }
+
+          @include MQ(sp_sm) {
+            font-size: 12px;
+          }
+
+          &::before,
+          &::after {
+            @include pseudoElement;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 14px;
+            height: 25px;
+            background: center / contain no-repeat
+              url("/img/top/border_red.png");
+
+            @include MQ(tab) {
+              width: 9px;
+              height: 16px;
+            }
+          }
+
+          &::before {
+            left: -35px;
+
+            @include MQ(tab) {
+              left: -15px;
+            }
+          }
+
+          &::after {
+            right: -35px;
+            transform: translateY(-50%) scaleX(-1);
+
+            @include MQ(tab) {
+              right: -15px;
+            }
+          }
+        }
       }
     }
 
@@ -713,6 +781,22 @@
       font-size: 18px;
       letter-spacing: 0.02em;
       line-height: 1.33;
+      height: 70px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      font-weight: bold;
+      color: $white_01;
+      background: center / cover no-repeat;
+      padding-left: 15px;
+      padding-right: 40px;
+      position: relative;
+      font-family: $font_01;
+
+      @include MQ(tab) {
+        height: 60px;
+      }
 
       @include MQ(sm) {
         width: 100%;
@@ -722,16 +806,33 @@
 
       &:first-of-type {
         margin-right: 30px;
+        background-image: url("/img/top/cta_red.png");
+        margin-bottom: 5px;
 
         @include MQ(tab) {
           margin-right: 0;
         }
       }
+
+      &:last-child {
+        background-image: url("/img/top/cta_blue.png");
+      }
+
+      &::after {
+        @include pseudoElement;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        width: 23px;
+        height: 3.6px;
+        @include bgImgContain("/img/top/arrow01.png");
+      }
     }
   }
 
   .section {
-    h2 {
+    > h2,
+    .section__inner > h2 {
       &.title_blue {
         font-size: 30px;
         letter-spacing: 0.025em;
@@ -766,6 +867,12 @@
           }
         }
       }
+
+      &:not(.title_blue) {
+        &:not(.text_red) {
+          color: $black_01;
+        }
+      }
     }
 
     h3 {
@@ -784,7 +891,7 @@
 
     &_01 {
       background-color: $yellow_01;
-      padding: 45px 0 80px;
+      padding: 90px 0 80px;
 
       @include MQ(sm) {
         padding: 44px 0 30px;
@@ -805,7 +912,7 @@
           line-height: 1.5;
           text-align: center;
           letter-spacing: 0.05em;
-          margin-bottom: 50px;
+          margin-bottom: 60px;
           width: 100%;
 
           @include MQ(tab) {
@@ -906,9 +1013,11 @@
         .box {
           display: flex;
           justify-content: center;
+          width: 829px;
 
           @include MQ(tab) {
             display: block;
+            width: 100%;
           }
 
           h4 {
@@ -947,58 +1056,18 @@
               }
             }
 
-            ul {
+            .cont {
               padding: 12px;
 
-              li {
+              @include MQ(sp_sm) {
+                padding: 6px;
+              }
+
+              &__item {
                 font-size: 15px;
                 font-family: $font_01;
-              }
-            }
-
-            &_01 {
-              ul {
-                li {
-                  width: calc(50% - 15px);
-                }
-              }
-            }
-
-            &_02 {
-              ul {
-                li {
-                  width: calc(33.333% - 15px);
-
-                  @include MQ(tab) {
-                    width: calc(33.333% - 13px);
-                  }
-
-                  &:nth-child(4),
-                  &:nth-child(5) {
-                    width: calc(50% - 15px);
-
-                    @include MQ(tab) {
-                      width: auto;
-                      margin-top: 5px;
-                    }
-                  }
-
-                  @include MQ(tab) {
-                    &:nth-child(-n + 2) {
-                      margin-right: 19px;
-                    }
-                  }
-                }
-              }
-            }
-
-            ul {
-              display: flex;
-              justify-content: center;
-              flex-wrap: wrap;
-
-              li {
-                position: relative;
+                display: flex;
+                justify-content: center;
                 text-align: center;
                 font-size: 13px;
                 font-weight: bold;
@@ -1009,27 +1078,57 @@
                   font-weight: bold;
                 }
 
-                > span {
-                  @include positionCenter;
-                  font-size: 13px;
-                  letter-spacing: 0.025em;
-                  line-height: 1.61;
-                  margin-top: -5px;
+                &_01 {
+                  div {
+                    position: relative;
 
-                  .block {
-                    display: block;
-                  }
+                    img {
+                      width: 81px;
+                      height: 95px;
+                    }
 
-                  .red {
-                    color: $red_01;
-                    font-size: 30px;
-                    line-height: 1;
+                    > span {
+                      @include positionCenter;
+                      font-size: 13px;
+                      letter-spacing: 0.025em;
+                      line-height: 1.61;
+                      margin-top: -5px;
+
+                      .block {
+                        display: block;
+                      }
+
+                      .red {
+                        color: $red_01;
+                        font-size: 30px;
+                        line-height: 1;
+                      }
+                    }
+
+                    &:first-child {
+                      margin-right: 20px;
+                    }
                   }
                 }
 
-                img {
-                  width: 81px;
-                  height: 95px;
+                &_02 {
+                  margin-top: 5px;
+
+                  ul {
+                    display: flex;
+                  }
+                }
+              }
+
+              &_02 {
+                .cont__item {
+                  &_01 {
+                    div {
+                      &:nth-child(2) {
+                        margin-right: 20px;
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -1288,6 +1387,8 @@
                 li {
                   font-size: 14px;
                   line-height: 1.64;
+                  font-family: $font_01;
+                  font-feature-settings: "palt";
 
                   @include MQ(tab) {
                     font-size: 13px;
@@ -1319,13 +1420,31 @@
               @include MQ(tab) {
                 padding: 11px;
                 width: 240px;
+                max-width: calc(100% - 22px);
                 margin-top: 25px;
               }
             }
 
-            &_04 {
+            &:nth-child(4) {
               .row_box {
                 width: 100%;
+
+                ul {
+                  display: flex;
+                  flex-wrap: wrap;
+
+                  @include MQ(tab) {
+                    display: block;
+                  }
+
+                  li {
+                    width: 50%;
+
+                    @include MQ(tab) {
+                      width: 100%;
+                    }
+                  }
+                }
               }
             }
           }
@@ -1354,6 +1473,7 @@
           text-align: center;
           margin-top: 80px;
           margin-bottom: 60px;
+          color: $black_01;
 
           @include MQ(tab) {
             font-size: 18px;
@@ -1368,6 +1488,11 @@
         ul {
           display: flex;
           flex-wrap: wrap;
+
+          @include MQ(pc) {
+            width: 81.1%;
+            margin: 0 auto;
+          }
 
           li {
             background-color: $white_01;
@@ -1617,7 +1742,7 @@
             background-color: $blue_01;
 
             @include MQ(tab) {
-              width: calc(100% - 30px);
+              width: 285px;
             }
           }
 
@@ -1641,6 +1766,11 @@
           letter-spacing: 0.025em;
           line-height: 1.8;
           margin-bottom: 30px;
+
+          @include MQ(tab) {
+            font-size: 18px;
+            line-height: 1.5;
+          }
         }
 
         .box {
@@ -1651,7 +1781,10 @@
           margin-bottom: 20px;
 
           @include MQ(tab) {
-            margin-bottom: 0;
+            width: 315px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 17px;
           }
 
           @include MQ(sp_sm) {
@@ -1667,7 +1800,7 @@
             // border: 1px solid $blue_01;
             @include bgImgContain("/img/top/pc/section04_border.png");
 
-            @include MQ(sm) {
+            @include MQ(tab) {
               @include bgImgContain("/img/top/sp/section04_border.png");
               background-position: center bottom;
               width: 153px;
@@ -1683,35 +1816,18 @@
               }
             }
 
-            @include MQ(pc) {
-              &:not(:nth-child(3)) {
-                margin-right: 30px;
-              }
-            }
-
-            @include MQ(tab) {
-              &:nth-child(even) {
-                margin-left: 15px;
-
-                @include MQ(sp_sm) {
-                  margin-left: auto;
-                }
-              }
-            }
-
             @include MQ(sp_sm) {
               margin-left: auto;
               margin-right: auto;
             }
 
             h5 {
-              font-size: 14px;
-              line-height: 1.5;
+              font-size: 22px;
+              line-height: 1.4;
               text-align: center;
               padding: 3px 0;
               background-color: $blue_01;
               color: $white_01;
-              height: 54px;
               display: flex;
               align-items: center;
               justify-content: center;
@@ -1719,6 +1835,12 @@
               white-space: nowrap;
               height: 76px;
               font-family: $font_01;
+
+              @include MQ(tab) {
+                font-size: 14px;
+                line-height: 1.5;
+                height: 54px;
+              }
 
               @include MQ(sm) {
                 height: 54px;
@@ -1738,12 +1860,37 @@
               position: relative;
               padding: 30px;
 
-              @include MQ(sm) {
+              @include MQ(tab) {
                 padding: 8px 5px 10px;
                 // height: 24vw;
                 font-size: 13px;
                 line-height: 1.2;
                 font-feature-settings: "palt";
+              }
+            }
+
+            @include MQ(pc) {
+              &:nth-child(1) {
+                order: 1;
+                margin-right: 30px;
+              }
+
+              &:nth-child(2) {
+                order: 4;
+                margin-right: 30px;
+              }
+
+              &:nth-child(3) {
+                order: 2;
+                margin-right: 30px;
+              }
+
+              &:nth-child(4) {
+                order: 3;
+              }
+
+              &:nth-child(5) {
+                order: 5;
               }
             }
           }
@@ -1792,6 +1939,10 @@
           width: 84%;
           margin: 0 auto;
 
+          @include MQ(pc) {
+            width: 58.7%;
+          }
+
           &__item {
             h3 {
               font-family: $font_02;
@@ -1826,6 +1977,11 @@
                   font-family: $font_01;
                   display: inline-block;
                   margin-right: 30px;
+
+                  @include MQ(pc) {
+                    margin-bottom: 15px;
+                    letter-spacing: 0.025em;
+                  }
 
                   @include MQ(tab) {
                     display: block;
@@ -1868,10 +2024,6 @@
         &__item {
           margin-bottom: 60px;
 
-          @include MQ(tab) {
-            margin-bottom: 30px;
-          }
-
           @include MQ(pc_xl) {
             h3 {
               .sp {
@@ -1905,6 +2057,10 @@
 
             .center {
               text-align: right;
+
+              @include MQ(tab) {
+                text-align: center;
+              }
             }
           }
 
@@ -1943,6 +2099,10 @@
           }
 
           &_04 {
+            @include MQ(tab) {
+              margin-bottom: 0;
+            }
+
             h3 {
               &::before {
                 @include bgImgContain("/img/top/sp/section05_04.png");
@@ -1989,7 +2149,7 @@
         @include MQ(pc_sm) {
           display: flex;
           flex-direction: column;
-          margin-bottom: 0;
+          margin-bottom: 12px;
         }
 
         &::before {
@@ -2160,6 +2320,7 @@
         text-align: left;
 
         @include MQ(pc_sm) {
+          margin-top: 0;
           text-align: center;
         }
 
@@ -2215,7 +2376,6 @@
 
           @include MQ(tab) {
             font-size: 20px;
-            margin-top: 30px;
           }
 
           @include MQ(sm) {
@@ -2235,6 +2395,7 @@
 
         &__02 {
           width: 100%;
+          max-width: 100%;
           background-color: $blue_02;
           text-align: center;
           padding-top: 60px;
@@ -2254,8 +2415,11 @@
             position: relative;
 
             &_wrapper {
-              padding-bottom: 52px;
               align-items: stretch;
+
+              @include MQ(pc) {
+                padding-bottom: 52px;
+              }
             }
           }
 
@@ -2355,11 +2519,16 @@
 
           &::before {
             @include pseudoElement;
-            top: 50%;
+            top: 0;
+            transform: none;
             right: 0;
-            transform: translateY(-50%);
             height: 81px;
             width: 23px;
+
+            @include MQ(tab) {
+              top: 50%;
+              transform: translateY(-50%);
+            }
           }
 
           @include MQ(pc) {
@@ -2437,55 +2606,99 @@
               line-height: 1.64;
               padding-left: 89px;
             }
+
+            @include MQ(tab) {
+              margin-bottom: 0;
+            }
           }
 
           &_01 {
             &::before {
-              @include bgImgContain("/img/top/sp/section07_case01.png");
+              @include bgImgContain("/img/top/pc/section07_case01.png");
+
+              @include MQ(tab) {
+                @include bgImgContain("/img/top/sp/section07_case01.png");
+              }
             }
           }
 
           &_02 {
             &::before {
-              @include bgImgContain("/img/top/sp/section07_case02.png");
+              @include bgImgContain("/img/top/pc/section07_case02.png");
+
+              @include MQ(tab) {
+                @include bgImgContain("/img/top/sp/section07_case02.png");
+              }
             }
           }
 
           &_03 {
             &::before {
-              @include bgImgContain("/img/top/sp/section07_case03.png");
+              @include bgImgContain("/img/top/pc/section07_case03.png");
+
+              @include MQ(tab) {
+                @include bgImgContain("/img/top/sp/section07_case03.png");
+              }
             }
           }
 
           &_04 {
             &::before {
-              @include bgImgContain("/img/top/sp/section07_case04.png");
+              @include bgImgContain("/img/top/pc/section07_case04.png");
+
+              @include MQ(tab) {
+                @include bgImgContain("/img/top/sp/section07_case04.png");
+              }
             }
           }
 
           &_05 {
             &::before {
-              @include bgImgContain("/img/top/sp/section07_case05.png");
+              @include bgImgContain("/img/top/pc/section07_case05.png");
+
+              @include MQ(tab) {
+                @include bgImgContain("/img/top/sp/section07_case05.png");
+              }
             }
           }
 
           &_06 {
             &::before {
-              @include bgImgContain("/img/top/sp/section07_case06.png");
+              @include bgImgContain("/img/top/pc/section07_case06.png");
+
+              @include MQ(tab) {
+                @include bgImgContain("/img/top/sp/section07_case06.png");
+              }
             }
           }
 
           &_07 {
             &::before {
-              @include bgImgContain("/img/top/sp/section07_case07.png");
+              @include bgImgContain("/img/top/pc/section07_case07.png");
+
+              @include MQ(tab) {
+                @include bgImgContain("/img/top/sp/section07_case07.png");
+              }
             }
           }
 
           &_08 {
             &::before {
-              @include bgImgContain("/img/top/sp/section07_case08.png");
+              @include bgImgContain("/img/top/pc/section07_case08.png");
+
+              @include MQ(tab) {
+                @include bgImgContain("/img/top/sp/section07_case08.png");
+              }
             }
           }
+        }
+      }
+
+      .stone_bg {
+        margin-bottom: 30px;
+
+        @include MQ(tab) {
+          margin-bottom: 15px;
         }
       }
     }
@@ -2540,6 +2753,10 @@
         &_02 {
           position: relative;
           padding-bottom: 50px;
+
+          @include MQ(pc) {
+            width: 76.1%;
+          }
 
           @include MQ(tab) {
             padding-bottom: 15px;
@@ -2657,6 +2874,7 @@
                   dt,
                   dd {
                     text-align: left;
+                    font-family: $font_01;
                   }
                 }
               }
@@ -2669,6 +2887,8 @@
                   letter-spacing: 0.025em;
                   padding-left: 22px;
                   margin-bottom: 14px;
+                  color: $blue_01;
+                  font-weight: bold;
 
                   @include MQ(tab) {
                     font-size: 13px;
@@ -2710,6 +2930,7 @@
                 display: inline-block;
                 border-bottom: 1px solid $blue_05;
                 padding-bottom: 5px;
+                color: $blue_01;
 
                 &::after {
                   @include pseudoElement;
@@ -2723,6 +2944,14 @@
               }
             }
           }
+        }
+      }
+
+      .stone_bg {
+        margin-bottom: 30px;
+
+        @include MQ(tab) {
+          margin-bottom: 15px;
         }
       }
     }
@@ -2837,6 +3066,10 @@
             padding: 30px 30px 26px;
 
             @include MQ(tab) {
+              padding: 27px 30px;
+            }
+
+            @include MQ(sp_sm) {
               padding: 27px 15px;
             }
 
@@ -2896,7 +3129,7 @@
                 margin-top: 27px;
 
                 @include MQ(tab) {
-                  margin-top: 30px;
+                  margin-top: 15px;
                 }
 
                 dt,
@@ -3093,6 +3326,7 @@
           padding-bottom: 20px;
           font-size: 28px;
           line-height: 1.5;
+          color: $black_01;
 
           @include MQ(tab) {
             padding-top: 50px;
@@ -3225,13 +3459,18 @@
         }
 
         @include MQ(tab) {
-          padding-top: 24px;
+          padding-top: 0;
           padding-bottom: 0;
         }
 
         &_01 {
+          padding-top: 80px;
+          padding-bottom: 10px;
+
           @include MQ(tab) {
             position: relative;
+            padding-top: 24px;
+            padding-bottom: 0;
           }
 
           &::before,
@@ -3952,7 +4191,7 @@
       .bottom {
         @include bgImgCover("/img/top/sp/dali_stone_bg.png");
         padding-top: 80px;
-        padding-bottom: 100px;
+        padding-bottom: 80px;
         text-align: center;
 
         @include MQ(tab) {
@@ -4002,6 +4241,10 @@
         padding-top: 80px;
         padding-bottom: 20px;
 
+        @include MQ(pc) {
+          width: 70.2%;
+        }
+
         @include MQ(sm) {
           padding-top: 25px;
         }
@@ -4045,10 +4288,11 @@
 
       .box {
         background-color: $blue_02;
-        padding-top: 15px;
+        padding-top: 65px;
         padding-bottom: 80px;
 
         @include MQ(sm) {
+          padding-top: 15px;
           padding-bottom: 30px;
         }
 
@@ -4082,14 +4326,15 @@
             line-height: 1.36;
             text-align: center;
             display: inline-block;
-            padding: 6px 16px 4px;
+            padding: 14px 30px;
             margin-bottom: 10px;
             margin-top: 15px;
-            font-family: $font_01;
 
             @include MQ(tab) {
               font-size: 16px;
               line-height: 1.25;
+              padding: 6px 16px 4px;
+              font-family: $font_01;
             }
           }
 
@@ -4241,10 +4486,13 @@
     &_14 {
       position: relative;
       overflow: hidden;
-      @include bgImgCover("/img/top/sp/dali_stone_bg.png");
 
       @include MQ(pc) {
         padding-bottom: 80px;
+      }
+
+      @include MQ(tab) {
+        @include bgImgCover("/img/top/sp/dali_stone_bg.png");
       }
 
       .message {
@@ -4298,6 +4546,7 @@
 
         @include MQ(pc) {
           width: 80%;
+          @include bgImgCover("/img/top/sp/dali_stone_bg.png");
         }
 
         @include MQ(tab) {
@@ -4320,6 +4569,10 @@
           padding-bottom: 20px;
           border-bottom: 1px solid $blue_03;
           margin-bottom: 30px;
+
+          @include MQ(pc_sm) {
+            font-size: 26px;
+          }
 
           @include MQ(tab) {
             font-size: 20px;
@@ -4373,7 +4626,7 @@
         &_01 {
           @include bgImgCover("/img/top/pc/section15_bg.png");
           padding-top: 60px;
-          padding-bottom: 60px;
+          padding-bottom: 30px;
           position: relative;
 
           @include MQ(tab) {
@@ -4569,6 +4822,14 @@
       }
 
       .cta_box {
+        @include MQ(pc) {
+          padding-top: 80px;
+        }
+
+        @include MQ(tab) {
+          padding: 18px 15px;
+        }
+
         > * {
           width: 790px;
           margin: 0 auto;
@@ -4585,27 +4846,15 @@
 
         h2 {
           position: relative;
-          margin-bottom: 22px;
+          display: inline-block;
+          margin-bottom: 66px;
 
-          &::before {
-            @include pseudoElement;
-            top: calc(50% + 4px);
-            left: 50%;
-            transform: translate(-50%, -50%);
-            height: 1px;
-            width: 472px;
-            background-color: $white_01;
-
-            @include MQ(tab) {
-              width: calc(100% - 30px);
-              left: 0;
-              transform: translateY(-50%);
-            }
+          @include MQ(tab) {
+            margin-bottom: 22px;
           }
 
           span {
             position: relative;
-            background-color: $red_01;
             font-size: 25px;
             letter-spacing: 0.025em;
             line-height: 1.53;
@@ -4615,10 +4864,42 @@
 
             @include MQ(tab) {
               font-size: 20px;
+              padding: 0;
             }
 
             @include MQ(sm) {
               font-size: 13px;
+            }
+
+            &::before,
+            &::after {
+              @include pseudoElement;
+              top: calc(50% + 4px);
+              width: 88px;
+              height: 1px;
+              background-color: $white_01;
+              transform: translateY(-50%);
+
+              @include MQ(tab) {
+                top: 50%;
+                width: 61px;
+              }
+            }
+
+            &::before {
+              left: -108px;
+
+              @include MQ(tab) {
+                left: -77px;
+              }
+            }
+
+            &::after {
+              right: -108px;
+
+              @include MQ(tab) {
+                right: -77px;
+              }
             }
           }
         }
@@ -4663,6 +4944,8 @@
           @include MQ(tab) {
             font-size: 13px;
             line-height: 1.76;
+            padding-left: 15px;
+            padding-right: 15px;
           }
         }
 
@@ -4738,6 +5021,10 @@
       &__inner {
         padding-top: 80px;
         padding-bottom: 20px;
+
+        @include MQ(pc) {
+          width: 68.3%;
+        }
 
         @include MQ(sm) {
           padding-top: 30px;
@@ -4818,17 +5105,24 @@
             }
 
             dd {
-              font-size: 13px;
+              font-size: 14px;
               letter-spacing: 0.015em;
               line-height: 1.69;
               margin-left: 71px;
+              font-family: $font_01;
 
               @include MQ(tab) {
                 margin-left: 0;
+                font-size: 13px;
               }
 
               &.open {
                 display: block !important;
+              }
+
+              a {
+                color: $blue_01;
+                text-decoration: underline;
               }
             }
           }

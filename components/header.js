@@ -78,12 +78,12 @@ function Page() {
               </a>
             </Link> */}
             <div className={css.links}>
-              <a>
+              <a href="/contact">
                 お問い合わせ
                 <br />
                 無料体験レッスン
               </a>
-              <a>資料を請求</a>
+              <a href="/contact">資料を請求</a>
             </div>
             <div className={css.meta}>
               <div

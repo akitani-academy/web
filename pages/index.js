@@ -36,6 +36,7 @@ function Modal({ isOpen, onClose, item }) {
 
   return (
     <div className={css_index.modal}>
+      <div className={css_index.overlay} onClick={onClose}></div>
       <div className={css_index.close} onClick={onClose}>
         <div>
           <span></span>
@@ -279,16 +280,89 @@ export default function Page({
     },
   ];
 
+  //よくある質問
   const accordionData02 = [
     {
-      title: "講師の資格と経験は？",
-      content:
-        "当アカデミィの講師はグループ指導・個別指導ともに、英検1級・TOEIC950以上の合格実績豊富なベテラン講師が指導いたします。東大卒や東京外語大卒等の各々得意な指導分野と指導実績豊富なバイリンガル講師に、Native講師が英会話・speaking・英文添削・英文監修を担当して合格に導きます。大学生などの学生講師はおりません。",
+      title: "カリキュラムの内容は？",
+      content: (
+        <div>
+          当アカデミィでは、基礎から応用まで幅広いカリキュラムを提供しています。生徒のニーズや目標に合わせたカスタマイズも可能で、大学受験からTOEIC・TOEFL対策、小学生の英検対策まで、幅広くカリキュラムを提供しています。
+        </div>
+      ),
     },
     {
-      title: "講師の資格と経験は？",
-      content:
-        "当アカデミィの講師はグループ指導・個別指導ともに、英検1級・TOEIC950以上の合格実績豊富なベテラン講師が指導いたします。東大卒や東京外語大卒等の各々得意な指導分野と指導実績豊富なバイリンガル講師に、Native講師が英会話・speaking・英文添削・英文監修を担当して合格に導きます。大学生などの学生講師はおりません。",
+      title: "クラスのサイズはどのくらいですか？",
+      content: (
+        <div>
+          効果的な学習を確保するために、レベルをそろえた6人までの少人数クラスを採用しています。個別指導（1対1）や個別指導クラス（3対1）のクラスもご用意しています。
+        </div>
+      ),
+    },
+    {
+      title: "成果はどのように測定されますか？",
+      content: (
+        <div>
+          定期的なテストや模擬試験、個別面談を通じて、生徒の進捗を客観的に評価します。さらに、授業ごとのフィードバックや宿題のチェックを行い、個々の課題に対応した指導を行います。
+        </div>
+      ),
+    },
+    {
+      title: "コース料金はどのくらいですか？",
+      content: (
+        <div>
+          コース料金は、コースの種類により異なります。詳細な料金については、お問い合わせいただくか、当アカデミィの
+          <a href="/pricing">入学金・授業料について</a>をご覧ください。
+        </div>
+      ),
+    },
+    {
+      title: "受講スケジュールを教えて下さい",
+      content: (
+        <div>
+          平日は午後3時から9時30分まで、土曜日は午前10時から午後9時30分まで授業を行っています。生徒のスケジュールに合わせて、柔軟にクラスを選ぶことができます。詳細なスケジュールはお問い合わせください。
+        </div>
+      ),
+    },
+    {
+      title: "オンライン授業と対面授業はどちらもありますか？",
+      content: (
+        <div>
+          はい、当アカデミィではオンライン授業と対面授業の両方を提供しています。生徒のライフスタイルや学習スタイルに合わせて選択できるため、ぜひご相談くださいませ。
+        </div>
+      ),
+    },
+    {
+      title: "どのようなサポート体制が整っていますか？",
+      content: (
+        <div>
+          生徒一人ひとりの学習状況に応じて、個別のカウンセリングや追加の補習クラスを提供しています。また、英検やTOEICなどの資格試験対策も充実しており、目標達成をサポートします。
+        </div>
+      ),
+    },
+    {
+      title: "成功事例や過去の実績はありますか？",
+      content: (
+        <div>
+          多くの生徒が英検やTOEICの高得点を取得し、志望校に合格しています。具体的な成功事例や過去の実績については、
+          <a href="/experiences">合格実績 と 体験記</a>をご覧ください。
+        </div>
+      ),
+    },
+    {
+      title: "見学や体験レッスンは可能ですか？",
+      content: (
+        <div>
+          はい、見学や体験レッスンは随時受け付けております。お気軽にお問い合わせいただき、ご希望の日程をお知らせください。実際の授業を体験することで、当アカデミィの雰囲気や指導方法を実感していただけます。
+        </div>
+      ),
+    },
+    {
+      title: "どのくらいで成果が出ますか？",
+      content: (
+        <div>
+          生徒の学習ペースや目標によりますが、一般的には3ヶ月から6ヶ月で効果を実感することができます。継続的な学習と努力が重要ですが、当アカデミィの効果的なカリキュラムとサポート体制により、確実に成果を上げることができます。
+        </div>
+      ),
     },
   ];
 
@@ -401,64 +475,64 @@ export default function Page({
         </div>,
       ],
       modalContent: [
-        <div className={css_index.box__item}>
-          <dl>
-            <dt>1級（8名）</dt>
-            <dd>横浜市立日吉台西中学校 1年</dd>
-            <dd>フェリス女学院高校 1年</dd>
-            <dd>桜蔭学園高校 1年</dd>
-            <dd>慶応義塾高校 3年</dd>
-            <dd>慶應大学 3年</dd>
-            <dd>システムエンジニア</dd>
-            <dd>外資系法人勤務</dd>
-            <dd>英語講師</dd>
-          </dl>
+        <div className={css_index.row_box}>
+          <h5>1級（8名）</h5>
+          <ul>
+            <li>横浜市立日吉台西中学校 1年</li>
+            <li>フェリス女学院高校 1年</li>
+            <li>桜蔭学園高校 1年</li>
+            <li>慶応義塾高校 3年</li>
+            <li>慶應大学 3年</li>
+            <li>システムエンジニア</li>
+            <li>外資系法人勤務</li>
+            <li>英語講師</li>
+          </ul>
         </div>,
-        <div className={css_index.box__item}>
-          <dl>
-            <dt>準1級（15名）</dt>
-            <dd>雙葉学園小学校 6年</dd>
-            <dd>田園調布雙葉中学校 3年</dd>
-            <dd>慶応湘南藤沢高等部 1年</dd>
-            <dd>神奈川県立神奈川総合高校 2年</dd>
-            <dd>カリタス女子高校 2年</dd>
-            <dd>横浜雙葉高校 2年</dd>
-            <dd>武相高校 2年</dd>
-            <dd>東洋英和女学院高等部 2年</dd>
-            <dd>実践女子学園高校 2年</dd>
-            <dd>東京都立国際高校 2年</dd>
-            <dd>法政大学第二高校 2年</dd>
-            <dd>青陵高校 3年</dd>
-            <dd>山手学院高校 3年</dd>
-            <dd>東京女学館高校 3年</dd>
-            <dd>桐蔭学園高校 卒</dd>
-          </dl>
+        <div className={css_index.row_box}>
+          <h5>準1級（15名）</h5>
+          <ul>
+            <li>雙葉学園小学校 6年</li>
+            <li>田園調布雙葉中学校 3年</li>
+            <li>慶応湘南藤沢高等部 1年</li>
+            <li>神奈川県立神奈川総合高校 2年</li>
+            <li>カリタス女子高校 2年</li>
+            <li>横浜雙葉高校 2年</li>
+            <li>武相高校 2年</li>
+            <li>東洋英和女学院高等部 2年</li>
+            <li>実践女子学園高校 2年</li>
+            <li>東京都立国際高校 2年</li>
+            <li>法政大学第二高校 2年</li>
+            <li>青陵高校 3年</li>
+            <li>山手学院高校 3年</li>
+            <li>東京女学館高校 3年</li>
+            <li>桐蔭学園高校 卒</li>
+          </ul>
         </div>,
-        <div className={css_index.box__item}>
-          <dl>
-            <dt>2級（36名）</dt>
-            <dd>サレジアン国際学園世田谷中学校 2年</dd>
-            <dd>慶応普通部 3年</dd>
-            <dd>学習院中等科 3年</dd>
-            <dd>清泉女学院中学校 3年</dd>
-            <dd>白百合学園中学校 3年</dd>
-            <dd>神奈川県立希望ヶ丘高校 1年</dd>
-            <dd>田園調布学園高等部 1年</dd>
-            <dd>足洗学園高校 1年</dd>
-            <dd>横浜共立学園高校 1年</dd>
-            <dd>東京都立小山台高校 1年</dd>
-            <dd>サレジオ学院高校 2年</dd>
-            <dd>慶応湘南藤沢高等部 3年</dd>
-            <dd>サレジアン国際学園世田谷高校 2年</dd>
-            <dd>神奈川学園高校 3年</dd>
-            <dd>立教女学院高校 3年</dd>
-            <dd>白鸚女子高校 3年</dd>
-            <dd>文教大学附属高校 3年</dd>
-            <dd>清泉女学院高校</dd>
-            <dd>捜真女学校高等部 3年</dd>
-            <dd>青陵高校 卒</dd>
-            <dd>青山学院 1年 他</dd>
-          </dl>
+        <div className={css_index.row_box}>
+          <h5>2級（36名）</h5>
+          <ul>
+            <li>サレジアン国際学園世田谷中学校 2年</li>
+            <li>慶応普通部 3年</li>
+            <li>学習院中等科 3年</li>
+            <li>清泉女学院中学校 3年</li>
+            <li>白百合学園中学校 3年</li>
+            <li>神奈川県立希望ヶ丘高校 1年</li>
+            <li>田園調布学園高等部 1年</li>
+            <li>足洗学園高校 1年</li>
+            <li>横浜共立学園高校 1年</li>
+            <li>東京都立小山台高校 1年</li>
+            <li>サレジオ学院高校 2年</li>
+            <li>慶応湘南藤沢高等部 3年</li>
+            <li>サレジアン国際学園世田谷高校 2年</li>
+            <li>神奈川学園高校 3年</li>
+            <li>立教女学院高校 3年</li>
+            <li>白鸚女子高校 3年</li>
+            <li>文教大学附属高校 3年</li>
+            <li>清泉女学院高校</li>
+            <li>捜真女学校高等部 3年</li>
+            <li>青陵高校 卒</li>
+            <li>青山学院 1年 他</li>
+          </ul>
         </div>,
       ],
     },
@@ -485,64 +559,21 @@ export default function Page({
         </div>,
       ],
       modalContent: [
-        <div className={css_index.box__item}>
-          <dl>
-            <dt>1級（8名）</dt>
-            <dd>横浜市立日吉台西中学校 1年</dd>
-            <dd>フェリス女学院高校 1年</dd>
-            <dd>桜蔭学園高校 1年</dd>
-            <dd>慶応義塾高校 3年</dd>
-            <dd>慶應大学 3年</dd>
-            <dd>システムエンジニア</dd>
-            <dd>外資系法人勤務</dd>
-            <dd>英語講師</dd>
-          </dl>
+        <div className={css_index.row_box}>
+          <h5>2023年大学合格実績</h5>
+          <ul>
+            <li>東京大学 理科Ⅱ類 合格（開成高校）</li>
+            <li>東京工業大学 生命理工学院 合格（麻布高校）</li>
+            <li>一橋大学 法学部 合格（豊島岡女子高校）</li>
+            <li>横浜国立大学 理工学部 合格（桐光学園高校）</li>
+          </ul>
         </div>,
-        <div className={css_index.box__item}>
-          <dl>
-            <dt>準1級（15名）</dt>
-            <dd>雙葉学園小学校 6年</dd>
-            <dd>田園調布雙葉中学校 3年</dd>
-            <dd>慶応湘南藤沢高等部 1年</dd>
-            <dd>神奈川県立神奈川総合高校 2年</dd>
-            <dd>カリタス女子高校 2年</dd>
-            <dd>横浜雙葉高校 2年</dd>
-            <dd>武相高校 2年</dd>
-            <dd>東洋英和女学院高等部 2年</dd>
-            <dd>実践女子学園高校 2年</dd>
-            <dd>東京都立国際高校 2年</dd>
-            <dd>法政大学第二高校 2年</dd>
-            <dd>青陵高校 3年</dd>
-            <dd>山手学院高校 3年</dd>
-            <dd>東京女学館高校 3年</dd>
-            <dd>桐蔭学園高校 卒</dd>
-          </dl>
-        </div>,
-        <div className={css_index.box__item}>
-          <dl>
-            <dt>2級（36名）</dt>
-            <dd>サレジアン国際学園世田谷中学校 2年</dd>
-            <dd>慶応普通部 3年</dd>
-            <dd>学習院中等科 3年</dd>
-            <dd>清泉女学院中学校 3年</dd>
-            <dd>白百合学園中学校 3年</dd>
-            <dd>神奈川県立希望ヶ丘高校 1年</dd>
-            <dd>田園調布学園高等部 1年</dd>
-            <dd>足洗学園高校 1年</dd>
-            <dd>横浜共立学園高校 1年</dd>
-            <dd>東京都立小山台高校 1年</dd>
-            <dd>サレジオ学院高校 2年</dd>
-            <dd>慶応湘南藤沢高等部 3年</dd>
-            <dd>サレジアン国際学園世田谷高校 2年</dd>
-            <dd>神奈川学園高校 3年</dd>
-            <dd>立教女学院高校 3年</dd>
-            <dd>白鸚女子高校 3年</dd>
-            <dd>文教大学附属高校 3年</dd>
-            <dd>清泉女学院高校</dd>
-            <dd>捜真女学校高等部 3年</dd>
-            <dd>青陵高校 卒</dd>
-            <dd>青山学院 1年 他</dd>
-          </dl>
+        <div className={css_index.row_box}>
+          <h5>内進を含む主な合格大学</h5>
+          <ul>
+            <li>慶応大学 合格（10名）</li>
+            <li>早稲田大学 合格（2名）</li>
+          </ul>
         </div>,
       ],
     },
@@ -569,64 +600,21 @@ export default function Page({
         </div>,
       ],
       modalContent: [
-        <div className={css_index.box__item}>
-          <dl>
-            <dt>1級（8名）</dt>
-            <dd>横浜市立日吉台西中学校 1年</dd>
-            <dd>フェリス女学院高校 1年</dd>
-            <dd>桜蔭学園高校 1年</dd>
-            <dd>慶応義塾高校 3年</dd>
-            <dd>慶應大学 3年</dd>
-            <dd>システムエンジニア</dd>
-            <dd>外資系法人勤務</dd>
-            <dd>英語講師</dd>
-          </dl>
+        <div className={css_index.row_box}>
+          <h5>IBT （120点満点）</h5>
+          <ul>
+            <li>105 慶応大学2年</li>
+            <li>102 医師</li>
+            <li>90 国家公務員</li>
+            <li>90 慶應義塾高校3年</li>
+          </ul>
         </div>,
-        <div className={css_index.box__item}>
-          <dl>
-            <dt>準1級（15名）</dt>
-            <dd>雙葉学園小学校 6年</dd>
-            <dd>田園調布雙葉中学校 3年</dd>
-            <dd>慶応湘南藤沢高等部 1年</dd>
-            <dd>神奈川県立神奈川総合高校 2年</dd>
-            <dd>カリタス女子高校 2年</dd>
-            <dd>横浜雙葉高校 2年</dd>
-            <dd>武相高校 2年</dd>
-            <dd>東洋英和女学院高等部 2年</dd>
-            <dd>実践女子学園高校 2年</dd>
-            <dd>東京都立国際高校 2年</dd>
-            <dd>法政大学第二高校 2年</dd>
-            <dd>青陵高校 3年</dd>
-            <dd>山手学院高校 3年</dd>
-            <dd>東京女学館高校 3年</dd>
-            <dd>桐蔭学園高校 卒</dd>
-          </dl>
-        </div>,
-        <div className={css_index.box__item}>
-          <dl>
-            <dt>2級（36名）</dt>
-            <dd>サレジアン国際学園世田谷中学校 2年</dd>
-            <dd>慶応普通部 3年</dd>
-            <dd>学習院中等科 3年</dd>
-            <dd>清泉女学院中学校 3年</dd>
-            <dd>白百合学園中学校 3年</dd>
-            <dd>神奈川県立希望ヶ丘高校 1年</dd>
-            <dd>田園調布学園高等部 1年</dd>
-            <dd>足洗学園高校 1年</dd>
-            <dd>横浜共立学園高校 1年</dd>
-            <dd>東京都立小山台高校 1年</dd>
-            <dd>サレジオ学院高校 2年</dd>
-            <dd>慶応湘南藤沢高等部 3年</dd>
-            <dd>サレジアン国際学園世田谷高校 2年</dd>
-            <dd>神奈川学園高校 3年</dd>
-            <dd>立教女学院高校 3年</dd>
-            <dd>白鸚女子高校 3年</dd>
-            <dd>文教大学附属高校 3年</dd>
-            <dd>清泉女学院高校</dd>
-            <dd>捜真女学校高等部 3年</dd>
-            <dd>青陵高校 卒</dd>
-            <dd>青山学院 1年 他</dd>
-          </dl>
+        <div className={css_index.row_box}>
+          <h5>ITP （677点満点）</h5>
+          <ul>
+            <li>610 慶應大学3年</li>
+            <li>601 横浜国立大学3年</li>
+          </ul>
         </div>,
       ],
     },
@@ -648,64 +636,16 @@ export default function Page({
         </div>,
       ],
       modalContent: [
-        <div className={css_index.box__item}>
-          <dl>
-            <dt>1級（8名）</dt>
-            <dd>横浜市立日吉台西中学校 1年</dd>
-            <dd>フェリス女学院高校 1年</dd>
-            <dd>桜蔭学園高校 1年</dd>
-            <dd>慶応義塾高校 3年</dd>
-            <dd>慶應大学 3年</dd>
-            <dd>システムエンジニア</dd>
-            <dd>外資系法人勤務</dd>
-            <dd>英語講師</dd>
-          </dl>
-        </div>,
-        <div className={css_index.box__item}>
-          <dl>
-            <dt>準1級（15名）</dt>
-            <dd>雙葉学園小学校 6年</dd>
-            <dd>田園調布雙葉中学校 3年</dd>
-            <dd>慶応湘南藤沢高等部 1年</dd>
-            <dd>神奈川県立神奈川総合高校 2年</dd>
-            <dd>カリタス女子高校 2年</dd>
-            <dd>横浜雙葉高校 2年</dd>
-            <dd>武相高校 2年</dd>
-            <dd>東洋英和女学院高等部 2年</dd>
-            <dd>実践女子学園高校 2年</dd>
-            <dd>東京都立国際高校 2年</dd>
-            <dd>法政大学第二高校 2年</dd>
-            <dd>青陵高校 3年</dd>
-            <dd>山手学院高校 3年</dd>
-            <dd>東京女学館高校 3年</dd>
-            <dd>桐蔭学園高校 卒</dd>
-          </dl>
-        </div>,
-        <div className={css_index.box__item}>
-          <dl>
-            <dt>2級（36名）</dt>
-            <dd>サレジアン国際学園世田谷中学校 2年</dd>
-            <dd>慶応普通部 3年</dd>
-            <dd>学習院中等科 3年</dd>
-            <dd>清泉女学院中学校 3年</dd>
-            <dd>白百合学園中学校 3年</dd>
-            <dd>神奈川県立希望ヶ丘高校 1年</dd>
-            <dd>田園調布学園高等部 1年</dd>
-            <dd>足洗学園高校 1年</dd>
-            <dd>横浜共立学園高校 1年</dd>
-            <dd>東京都立小山台高校 1年</dd>
-            <dd>サレジオ学院高校 2年</dd>
-            <dd>慶応湘南藤沢高等部 3年</dd>
-            <dd>サレジアン国際学園世田谷高校 2年</dd>
-            <dd>神奈川学園高校 3年</dd>
-            <dd>立教女学院高校 3年</dd>
-            <dd>白鸚女子高校 3年</dd>
-            <dd>文教大学附属高校 3年</dd>
-            <dd>清泉女学院高校</dd>
-            <dd>捜真女学校高等部 3年</dd>
-            <dd>青陵高校 卒</dd>
-            <dd>青山学院 1年 他</dd>
-          </dl>
+        <div className={css_index.row_box}>
+          <h5>TOEIC （990点満点）</h5>
+          <ul>
+            <li>985 メーカー勤務</li>
+            <li>975 IT企業勤務</li>
+            <li>960 外資系企業勤務</li>
+            <li>935 慶応大学3年</li>
+            <li>905 早稲田大学4年</li>
+            <li>900 塾講師</li>
+          </ul>
         </div>,
       ],
     },
@@ -794,54 +734,74 @@ export default function Page({
                 className={`${css_index.box__item} ${css_index.box__item_01}`}
               >
                 <h4>国立大学</h4>
-                <ul>
-                  <li>
-                    <img src="./img/top/medal.png" />
-                    <span>
-                      <span className={css_index.block}>東京大学</span>
-                      <span className={css_index.red}>1</span>名
-                    </span>
-                  </li>
-                  <li>
-                    <img src="./img/top/medal.png" />
-                    <span>
-                      <span className={css_index.block}>一橋大学</span>
-                      <span className={css_index.red}>1</span>名
-                    </span>
-                  </li>
-                  <li>・東京工業大学（1名）</li>
-                  <li>・横浜国立大学（1名）</li>
-                </ul>
+                <div className={`${css_index.cont} ${css_index.cont_01}`}>
+                  <div
+                    className={`${css_index.cont__item} ${css_index.cont__item_01}`}
+                  >
+                    <div>
+                      <img src="./img/top/medal.png" />
+                      <span>
+                        <span className={css_index.block}>東京大学</span>
+                        <span className={css_index.red}>1</span>名
+                      </span>
+                    </div>
+                    <div>
+                      <img src="./img/top/medal.png" />
+                      <span>
+                        <span className={css_index.block}>一橋大学</span>
+                        <span className={css_index.red}>1</span>名
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    className={`${css_index.cont__item} ${css_index.cont__item_02}`}
+                  >
+                    <ul>
+                      <li>・東京工業大学（1名）</li>
+                      <li>・横浜国立大学（1名）</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
               <div
                 className={`${css_index.box__item} ${css_index.box__item_02}`}
               >
                 <h4>私立大学</h4>
-                <ul>
-                  <li>
-                    <img src="./img/top/medal.png" />
-                    <span>
-                      <span className={css_index.block}>早稲田大学</span>
-                      <span className={css_index.red}>4</span>名
-                    </span>
-                  </li>
-                  <li>
-                    <img src="./img/top/medal.png" />
-                    <span>
-                      <span className={css_index.block}>慶応大学</span>
-                      <span className={css_index.red}>12</span>名
-                    </span>
-                  </li>
-                  <li>
-                    <img src="./img/top/medal.png" />
-                    <span>
-                      <span className={css_index.block}>上智大学</span>
-                      <span className={css_index.red}>1</span>名
-                    </span>
-                  </li>
-                  <li>・青山学院大学（2名）</li>
-                  <li>・明治大学（1名）</li>
-                </ul>
+                <div className={`${css_index.cont} ${css_index.cont_02}`}>
+                  <div
+                    className={`${css_index.cont__item} ${css_index.cont__item_01}`}
+                  >
+                    <div>
+                      <img src="./img/top/medal.png" />
+                      <span>
+                        <span className={css_index.block}>早稲田大学</span>
+                        <span className={css_index.red}>4</span>名
+                      </span>
+                    </div>
+                    <div>
+                      <img src="./img/top/medal.png" />
+                      <span>
+                        <span className={css_index.block}>慶応大学</span>
+                        <span className={css_index.red}>12</span>名
+                      </span>
+                    </div>
+                    <div>
+                      <img src="./img/top/medal.png" />
+                      <span>
+                        <span className={css_index.block}>上智大学</span>
+                        <span className={css_index.red}>1</span>名
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    className={`${css_index.cont__item} ${css_index.cont__item_02}`}
+                  >
+                    <ul>
+                      <li>・青山学院大学（2名）</li>
+                      <li>・明治大学（1名）</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -927,13 +887,10 @@ export default function Page({
           >
             <div className={css_index.box}>
               {actuals.map((item, index) => (
-                <div
-                  key={item.id}
-                  className={`${css_index.box__item} ${css_index.box__item_01}`}
-                >
+                <div key={item.id} className={`${css_index.box__item}`}>
                   <h4>
                     {item.title}
-                    <span>{item.subtitle}</span>
+                    {item.subtitle && <span>{item.subtitle}</span>}
                   </h4>
 
                   <div
@@ -1320,7 +1277,7 @@ export default function Page({
                 </p>
 
                 <div className={css_index.center}>
-                  <a href="#curriculum">
+                  <a href="/pdf/レベル別カリキュラム.pdf" target="_blank">
                     レベル別カリキュラムを
                     <br />
                     詳しく見る
@@ -1344,54 +1301,6 @@ export default function Page({
                   <br />
                   大学生のアルバイト講師は在籍しておらず、1対1個別指導も英検1級講師が担任として指導いたします。
                 </p>
-
-                <div className={css_index.circle}>
-                  <div className={css_index.circle__item}>
-                    <dl>
-                      <dt>1対1個人指導</dt>
-                      <dd>
-                        <span className={css_index.block}>
-                          個別マンツーマンの
-                        </span>
-                        <span className={css_index.block}>
-                          オリジナルカリキュラム
-                        </span>
-                      </dd>
-                    </dl>
-                  </div>
-                  <div className={css_index.flex}>
-                    <div className={css_index.circle__item}>
-                      <dl>
-                        <dt>グループ指導</dt>
-                        <dd>
-                          同じ目標に向けて
-                          <br />
-                          レベルをそろえた
-                          <br />
-                          6人までの少人数クラス
-                        </dd>
-                      </dl>
-                    </div>
-                    <div className={css_index.circle__item}>
-                      <dl>
-                        <dt>
-                          <span>*</span>
-                          個別
-                          <br />
-                          グループ指導
-                        </dt>
-                        <dd>
-                          担当講師が約3人の生徒を
-                          <br />
-                          各自のカリキュラムで
-                          <br />
-                          個別指導
-                          <small>※グループ指導と同料金</small>
-                        </dd>
-                      </dl>
-                    </div>
-                  </div>
-                </div>
 
                 <div className={`${css_index.center} ${css_index.flex}`}>
                   <picture>
@@ -2408,10 +2317,11 @@ export default function Page({
                   <a
                     href="https://maps.app.goo.gl/KuYMWDhQv9mjAf2v8"
                     className={css_index.map}
+                    target="_blank"
                   >
                     Google Mapで見る
                   </a>
-                  <a href="#" className={css_index.detail}>
+                  <a href="/access/tsunashima" className={css_index.detail}>
                     詳細をみる
                   </a>
                 </div>
@@ -2445,10 +2355,14 @@ export default function Page({
                       東急東横線・目黒線 田園調布駅より徒歩1分
                     </li>
                   </ul>
-                  <a href="#" className={css_index.map}>
+                  <a
+                    href="https://maps.app.goo.gl/HgcNRZGu6G2BPAwt5"
+                    className={css_index.map}
+                    target="_blank"
+                  >
                     Google Mapで見る
                   </a>
-                  <a href="#" className={css_index.detail}>
+                  <a href="/access/denenchofu" className={css_index.detail}>
                     詳細をみる
                   </a>
                 </div>
