@@ -1,10 +1,10 @@
-const _V = require("./_V.js");
+const _V = require("./_V_lp.js");
 import UseSWR from "swr";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import Button from "components/Button/Button"
+import Button from "components/Button/Button";
 
-import css from "styles/nav.module.scss";
+import css from "styles/lp_nav.module.scss";
 
 function navSate() {
   const { data, mutate } = UseSWR("state", () => window.count);
@@ -26,11 +26,18 @@ function Page() {
 
   return (
     <>
+      <div className="overlay" onClick={handleInc}></div>
       <nav className={css.nav + " nav_" + url[1] + " nav_" + String(data)}>
-        <section className={css.inner}>
-          <div className="navClose" onClick={handleInc}></div>
+        <section className={css.lp_inner}>
+          <div className="hamburger" onClick={handleInc}>
+            <div>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
           <section className={css.main}>
-            <ul className={css.addr}>
+            {/* <ul className={css.addr}>
               {_V.access.map((e, i) => (
                 <li key={i}>
                   <a href={"tel:" + e.tel}>
@@ -40,11 +47,14 @@ function Page() {
                   </a>
                 </li>
               ))}
-            </ul>
-            <Button href={`/experiences`} fill="true">
-              <span>実績と体験記</span><br />
-              英検や大学受験など<br />合格とスコアUPの声
-            </Button>
+            </ul> */}
+            {/* <Button href={`/experiences`} fill="true">
+              <span>実績と体験記</span>
+              <br />
+              英検や大学受験など
+              <br />
+              合格とスコアUPの声
+            </Button> */}
             {_V.menu.map((e1, i1) => (
               <>
                 {(() => {
@@ -66,6 +76,13 @@ function Page() {
                 </ul>
               </>
             ))}
+
+            <div className={css.cta}>
+              <Link href={`/contact`}>
+                お問い合わせ・<span>無料体験レッスンを申し込む</span>
+              </Link>
+              <Link href={`/contact`}>資料を請求する</Link>
+            </div>
           </section>
         </section>
       </nav>

@@ -118,30 +118,6 @@ body {
   @media (max-width: 600px) {
     overflow-x: hidden;
   }
-
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9997;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(51, 51, 51, 0.9);
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.15s;
-
-    @media (max-width: 600px) {
-      display: none;
-    }
-  }
-
-  &:has(.nav_true) {
-    .overlay {
-      opacity: 1 !important;
-      visibility: visible !important;
-    }
-  }
 }
 
 h1,
@@ -158,7 +134,7 @@ p {
 }
 
 main {
-  width: 950px;
+  // width: 950px;
   max-width: 950px;
   margin: auto;
   margin-top: 80px;
@@ -166,13 +142,6 @@ main {
   display: flex;
   justify-content: center;
   gap: 3vw;
-
-  &:has(.nav_true) {
-    @media (max-width: 600px) {
-      position: relative;
-      z-index: 9998;
-    }
-  }
 
   &.marginTop0 {
     margin-top: 0;
@@ -262,72 +231,22 @@ main {
 }
 
 .navClose {
-  // flex: 1;
-  // background: rgba(#000, 0.5);
-  // backdrop-filter: blur(2px);
-  // opacity: 0;
-  // transition: opacity 0.1s;
-  @include MQ(xl) {
-    width: 93px;
-    height: 80px;
-    background-color: $red_01;
-  }
-
+  flex: 1;
+  background: rgba(#000, 0.5);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.1s;
   cursor: pointer;
-  background-color: $red_01;
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  transition: 0.15s background;
-
-  div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 33px;
-    height: 14px;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-
-    span {
-      background-color: $white_01;
-      position: absolute;
-      left: 0;
-      width: 33px;
-      height: 1px;
-
-      &:first-child {
-        top: 50%;
-        transform: translateY(-50%) rotate(30deg);
-      }
-
-      &:nth-child(2) {
-        visibility: hidden;
-        opacity: 0;
-      }
-
-      &:last-child {
-        top: 50%;
-        transform: translateY(-50%) rotate(-30deg);
-        bottom: auto;
-      }
-    }
-  }
 }
 
 .nav_true {
-  // @media (max-width: 600px) {
-  // transform: translateX(-100%);
-  right: 0 !important;
+  @media (max-width: 600px) {
+    transform: translateX(-100%);
 
-  .navClose {
-    opacity: 1 !important;
+    .navClose {
+      opacity: 1 !important;
+    }
   }
-  // }
 }
 
 h3 {

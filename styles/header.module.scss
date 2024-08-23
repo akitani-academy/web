@@ -1,277 +1,162 @@
 .header {
-  width: 100vw;
-  background-color: #fff;
-  position: fixed;
-  top: 0;
-  z-index: 9996;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.16);
+    width: 100vw;
 
-  @media (min-width: 600px) {
-    //   padding: min(3vw, 0.7rem);
-  }
+    @media (min-width: 600px) {
+        padding: min(3vw, .7rem);
+    }
 
-  @media (max-width: 600px) {
-    z-index: 9999;
-    font-size: 0.8em;
-    height: 60px;
-  }
+    @media (max-width: 600px) {
+        font-size: .8em;
+    }
+
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    border-bottom: solid 6px $c_3;
+    z-index: 999;
 }
 
 .inner {
-  // max-width: 1000px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  padding-left: 30px;
-
-  @media (min-width: 601px) {
-    align-items: center;
-  }
-
-  .title {
-    color: $black_01;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    font-weight: bold;
-    font-family: $font_02;
-    font-size: 21px;
-    letter-spacing: 0.03em;
-    line-height: 1.42;
-
-    @include MQ(tab) {
-      font-size: 18px;
-      line-height: 1.44;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-
-    small {
-      display: block;
-      font-weight: normal;
-      font-size: 14px;
-      letter-spacing: 0.05em;
-      line-height: 1.42;
-
-      @include MQ(tab) {
-        font-size: 12px;
-        letter-spacing: 0.005em;
-        line-height: 1.41;
-        margin-bottom: -2px;
-      }
-    }
-  }
-}
-
-.links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media (max-width: 600px) {
-    display: none;
-  }
-
-  a {
+    max-width: 1000px;
+    height: 53px;
+    margin: auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 121px;
-    height: calc(100% + 2px);
-    font-size: 12px;
-    letter-spacing: 0.02em;
-    line-height: 1.5;
-    color: $white_01;
 
-    &:first-child {
-      background-color: $red_01;
+    @media (min-width: 600px) {
+        align-items: center;
     }
 
-    &:last-child {
-      background-color: $blue_01;
+    justify-content:space-between;
+
+    .title {
+        color: #000;
+        font-weight: bold;
+        font-size: 1.375em;
+        line-height: 1em;
+        margin-right: 1rem;
+        margin-bottom: .3em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: 600px) {
+            margin: 3vw;
+        }
+
+        small {
+            font-size: 0.875rem;
+            display: block;
+        }
     }
-  }
 }
 
 .menu {
-  display: flex;
-  font-family: sans-serif;
-  font-weight: bold;
+    display: flex;
+    font-family: sans-serif;
+    font-weight: bold;
 }
 
 .addr {
-  height: 100%;
-  display: flex;
-  gap: 1em;
-  margin-right: 0.65em;
-  text-align: center;
-
-  @media (max-width: 760px) {
-    &::after,
-    &::before {
-      content: "";
-    }
-
-    gap: 0.4em;
-    margin-right: 0.4rem;
-    flex-flow: column;
-    justify-content: center;
-    align-items: flex-end;
-    line-height: 1em;
-  }
-
-  li {
+    height: 100%;
     display: flex;
-    flex-flow: column;
-  }
-
-  .name {
-    font-size: 0.75em;
-    border: solid 1px #000;
-  }
-
-  .tel {
-    font-size: 1.2rem;
+    gap: 1em;
+    margin-right: .65em;
+    text-align: center;
 
     @media (max-width: 760px) {
-      display: none;
-    }
-  }
 
-  @media (min-width: 760px) {
-    display: flex;
-  }
+        &::after,
+        &::before {
+            content: "";
+        }
+
+        gap: .4em;
+        margin-right: .4rem;
+        flex-flow: column;
+        justify-content:center;
+        align-items: flex-end;
+        line-height: 1em;
+    }
+
+    li {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .name {
+        font-size: 0.75em;
+        border: solid 1px #000;
+    }
+
+    .tel {
+        font-size: 1.2rem;
+
+        @media (max-width: 760px) {
+            display: none;
+        }
+    }
+
+    @media (min-width: 760px) {
+        display: flex;
+    }
 }
 
 .meta {
-  color: $black_01;
-  display: flex;
-  justify-content: space-between;
-
-  > div {
-    cursor: pointer;
-
-    > * {
-      font-size: 0.8em;
-
-      @media (max-width: 600px) {
-        width: fit-content;
-        padding: 0 0.5rem;
-      }
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-
-  .contact {
-    text-align: center;
-    background: $red_01;
-    height: 100%;
-  }
-
-  .spMENU {
-    @include MQ(xl) {
-      width: 93px;
-      height: 80px;
-      background-color: $white_01;
-    }
-
-    position: relative;
+    color: $c_0;
     display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    transition: 0.15s background;
+    justify-content: space-between;
 
-    @media (max-width: 600px) {
-      // width: 93px;
-      width: 60px;
-      height: 100%;
-      background: $red_01;
+    li {
+        cursor: pointer;
+
+        >* {
+            font-size: .8em;
+
+            @media (max-width: 600px) {
+                width: fit-content;
+                padding: 0 0.5rem;
+            }
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 
-    div {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 33px;
-      height: 14px;
-      transform: translate(-50%, -50%);
-
-      @media (max-width: 600px) {
-        padding: 0;
-        width: 25px;
-      }
-
-      span {
-        background-color: $black_01;
-        position: absolute;
-        left: 0;
-        width: 33px;
-        height: 1px;
-
-        @media (max-width: 600px) {
-          width: 25px;
-          background-color: $white_01;
-        }
-
-        &:first-child {
-          top: 0;
-        }
-
-        &:nth-child(2) {
-          top: 50%;
-          transform: translateY(-50%);
-        }
-
-        &:last-child {
-          bottom: 0;
-        }
-      }
+    .contact {
+        text-align: center;
+        background: $c_2;
+        height: 100%;
     }
 
-    &.close {
-      background-color: $red_01;
-      opacity: 0;
-      visibility: hidden;
-
-      @media (max-width: 600px) {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      div {
-        span {
-          background-color: $white_01;
-
-          &:first-child {
-            top: 50%;
-            transform: translateY(-50%) rotate(30deg);
-          }
-
-          &:nth-child(2) {
-            visibility: hidden;
-            opacity: 0;
-          }
-
-          &:last-child {
-            top: 50%;
-            transform: translateY(-50%) rotate(-30deg);
-            bottom: auto;
-          }
+    .spMENU {
+        @include MQ(xl) {
+            display: none;
         }
-      }
+
+        width: 15vw;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        background: $c_2;
+        transition: .15s background;
+
+        &.close {
+            background: $c_1;
+        }
+
+        svg {
+            width: 80%;
+        }
     }
-  }
 }
 
 .backButton {
-  color: #fff;
-  background-color: $c_2;
-  position: fixed;
-  top: 75px;
-  left: 25px;
-  padding: 0.2em 0.7em;
+    color: #fff;
+    background-color: $c_2;
+    position: fixed;
+    top: 75px;
+    left: 25px;
+    padding: .2em .7em;
 }
