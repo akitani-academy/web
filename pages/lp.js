@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 // const _V = require("components/_V");
 import { useState } from "react";
+import { GraphQLClient, gql } from "graphql-request";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -62,12 +63,35 @@ export default function Page({
   teacherList,
   experiencesData,
   experiencesPostData,
+  resultsPostData,
 }) {
   // TASK: 先生のカードリストのオートスクロールを実装予定
   // let teacherListOdd = teacherList.filter(num => Number(num) % 2 !== 0);
   // let teacherListEven = teacherList.filter(num => Number(num) % 2 === 0);
 
-  console.log(experiencesData);
+  const ResultsValues = [];
+
+  let i = 0;
+  Object.entries(resultsPostData.results).forEach((e1) => {
+    e1[1].forEach((e2) => {
+      Object.entries(e2).forEach((e3) => {
+        ResultsValues.push(e3[1]);
+        ++i;
+      });
+    });
+  });
+
+  const ResultsCustomValues = [];
+
+  ResultsValues.map((e, i) => (
+    <>
+      {
+        (ResultsCustomValues[i] = {
+          student: experiencesPostData[i].student,
+        })
+      }
+    </>
+  ));
 
   const [activeIndex01, setactiveIndex01] = useState(null);
 
@@ -882,9 +906,8 @@ export default function Page({
               navigation
               className={css_index.swiper_wrapper}
             >
-              {experiencesPostData
-                // .filter((data) => data.title)
-                .map((e, i) => (
+              {ResultsValues.map((e, i) => (
+                <>
                   <SwiperSlide id={i} key={i} className={css_index.college}>
                     {e.title && (
                       <h4>
@@ -895,25 +918,28 @@ export default function Page({
                         />
                       </h4>
                     )}
-                    {e.student && (
+                    {ResultsCustomValues[i].student && (
                       <h3>
                         <div
                           dangerouslySetInnerHTML={{
-                            __html: parser.translateHTMLString(e.student),
+                            __html: parser.translateHTMLString(
+                              ResultsCustomValues[i].student
+                            ),
                           }}
                         />
                         {/* <span>合格</span> */}
                       </h3>
                     )}
-                    {e.experience && (
+                    {e.excerpt && (
                       <div
                         dangerouslySetInnerHTML={{
-                          __html: parser.translateHTMLString(e.experience),
+                          __html: e.excerpt,
                         }}
                       />
                     )}
                   </SwiperSlide>
-                ))}
+                </>
+              ))}
             </Swiper>
           </div>
 
@@ -2868,6 +2894,32 @@ export async function getStaticProps() {
   ).then((res) => res.json());
   teacherList = teacherList.sort((a, b) => a.infoCount - b.infoCount).reverse();
 
+  const endpoint = "https://yoshikitam.wpx.jp/akitani/graphql";
+  const graphQLClient = new GraphQLClient(endpoint);
+
+  const query = gql`
+    {
+      results(
+        where: {
+          categoryId: 29
+          status: PUBLISH
+          orderby: { field: DATE, order: DESC }
+        }
+        first: 10
+      ) {
+        edges {
+          node {
+            excerpt
+            id
+            title
+          }
+        }
+      }
+    }
+  `;
+
+  const resultsPostData = await graphQLClient.request(query);
+
   return {
     props: {
       top,
@@ -2879,6 +2931,7 @@ export async function getStaticProps() {
       experiencesData,
       experiencesPostData,
       teacherList,
+      resultsPostData: resultsPostData,
     },
   };
 }
