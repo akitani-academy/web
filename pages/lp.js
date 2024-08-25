@@ -71,12 +71,10 @@ export default function Page({
 
   const ResultsValues = [];
 
-  let i = 0;
-  Object.entries(resultsPostData.results).forEach((e1) => {
-    e1[1].forEach((e2) => {
-      Object.entries(e2).forEach((e3) => {
+  Object.entries(resultsPostData.results).forEach((e1, i1) => {
+    e1[1].forEach((e2, i2) => {
+      Object.entries(e2).forEach((e3, i3) => {
         ResultsValues.push(e3[1]);
-        ++i;
       });
     });
   });
@@ -167,14 +165,12 @@ export default function Page({
               <b>4級〜準2級/GTEC</b>
             </dd>
           </dl>
-          ,
           <dl>
             <dt>中1生</dt>
             <dd>
               <b>導入〜準2級/GTEC</b>
             </dd>
           </dl>
-          ,
         </div>,
         <div className={css_index.course}>
           <dl>
@@ -398,7 +394,7 @@ export default function Page({
       image: [
         <picture>
           <source
-            srcset="/img/top/sp/section09_item01.png"
+            srcSet="/img/top/sp/section09_item01.png"
             media="(max-width: 600px)"
           />
           <img src="/img/top/pc/section09_item01.png" />
@@ -439,7 +435,7 @@ export default function Page({
       image: [
         <picture>
           <source
-            srcset="/img/top/sp/section09_item02.png"
+            srcSet="/img/top/sp/section09_item02.png"
             media="(max-width: 600px)"
           />
           <img src="/img/top/pc/section09_item02.png" />
@@ -739,7 +735,7 @@ export default function Page({
             <div className={css_index.success}>
               <picture>
                 <source
-                  srcset="./img/top/sp/success_01.png"
+                  srcSet="./img/top/sp/success_01.png"
                   media="(max-width: 600px)"
                 />
                 <img
@@ -749,7 +745,7 @@ export default function Page({
               </picture>
               <picture>
                 <source
-                  srcset="./img/top/sp/success_02.png"
+                  srcSet="./img/top/sp/success_02.png"
                   media="(max-width: 600px)"
                 />
                 <img
@@ -908,7 +904,7 @@ export default function Page({
             >
               {ResultsValues.map((e, i) => (
                 <>
-                  <SwiperSlide id={i} key={i} className={css_index.college}>
+                  <SwiperSlide key={e.id} className={css_index.college}>
                     {e.title && (
                       <h4>
                         <div
@@ -1033,7 +1029,7 @@ export default function Page({
                 <div className={css_index.image}>
                   <picture>
                     <source
-                      srcset="./img/top/sp/section03_item01.png"
+                      srcSet="./img/top/sp/section03_item01.png"
                       media="(max-width: 600px)"
                     />
                     <img src="./img/top/pc/section03_item01.png" />
@@ -1055,7 +1051,7 @@ export default function Page({
                 <div className={css_index.image}>
                   <picture>
                     <source
-                      srcset="./img/top/sp/section03_item02.png"
+                      srcSet="./img/top/sp/section03_item02.png"
                       media="(max-width: 600px)"
                     />
                     <img src="./img/top/pc/section03_item02.png" />
@@ -1079,7 +1075,7 @@ export default function Page({
                 <div className={css_index.image}>
                   <picture>
                     <source
-                      srcset="./img/top/sp/section03_item03.png"
+                      srcSet="./img/top/sp/section03_item03.png"
                       media="(max-width: 600px)"
                     />
                     <img src="./img/top/pc/section03_item03.png" />
@@ -1100,7 +1096,7 @@ export default function Page({
                 <div className={css_index.image}>
                   <picture>
                     <source
-                      srcset="./img/top/sp/section03_item04.png"
+                      srcSet="./img/top/sp/section03_item04.png"
                       media="(max-width: 600px)"
                     />
                     <img src="./img/top/pc/section03_item04.png" />
@@ -1366,7 +1362,7 @@ export default function Page({
                 <div className={`${css_index.center} ${css_index.flex}`}>
                   <picture>
                     <source
-                      srcset="./img/top/sp/success_01.png"
+                      srcSet="./img/top/sp/success_01.png"
                       media="(max-width: 600px)"
                     />
                     <img
@@ -1376,7 +1372,7 @@ export default function Page({
                   </picture>
                   <picture>
                     <source
-                      srcset="./img/top/sp/success_02.png"
+                      srcSet="./img/top/sp/success_02.png"
                       media="(max-width: 600px)"
                     />
                     <img
@@ -1428,7 +1424,7 @@ export default function Page({
               <SwiperSlide>
                 <picture>
                   <source
-                    srcset="./img/top/sp/section15_item01.png"
+                    srcSet="./img/top/sp/section15_item01.png"
                     media="(max-width: 600px)"
                   />
                   <img src="./img/top/pc/section15_item01.png" alt="" />
@@ -1437,7 +1433,7 @@ export default function Page({
               <SwiperSlide>
                 <picture>
                   <source
-                    srcset="./img/top/sp/section15_item02.png"
+                    srcSet="./img/top/sp/section15_item02.png"
                     media="(max-width: 600px)"
                   />
                   <img src="./img/top/pc/section15_item02.png" alt="" />
@@ -1446,7 +1442,7 @@ export default function Page({
               <SwiperSlide>
                 <picture>
                   <source
-                    srcset="./img/top/sp/section15_item03.png"
+                    srcSet="./img/top/sp/section15_item03.png"
                     media="(max-width: 600px)"
                   />
                   <img src="./img/top/pc/section15_item03.png" alt="" />
@@ -1455,7 +1451,7 @@ export default function Page({
               <SwiperSlide>
                 <picture>
                   <source
-                    srcset="./img/top/sp/section15_item04.png"
+                    srcSet="./img/top/sp/section15_item04.png"
                     media="(max-width: 600px)"
                   />
                   <img src="./img/top/pc/section15_item04.png" alt="" />
@@ -1464,7 +1460,7 @@ export default function Page({
               <SwiperSlide>
                 <picture>
                   <source
-                    srcset="./img/top/sp/section15_item05.png"
+                    srcSet="./img/top/sp/section15_item05.png"
                     media="(max-width: 600px)"
                   />
                   <img src="./img/top/pc/section15_item05.png" alt="" />
@@ -1473,7 +1469,7 @@ export default function Page({
               <SwiperSlide>
                 <picture>
                   <source
-                    srcset="./img/top/sp/section15_item06.png"
+                    srcSet="./img/top/sp/section15_item06.png"
                     media="(max-width: 600px)"
                   />
                   <img src="./img/top/pc/section15_item06.png" alt="" />
@@ -1533,7 +1529,7 @@ export default function Page({
                 className={`${css_index.swiper_wrapper} ${css_index.teacher}`}
               >
                 {teacherList.map((e, i) => (
-                  <SwiperSlide className={css_index.teacher__item}>
+                  <SwiperSlide className={css_index.teacher__item} key={i}>
                     <h4>
                       <div
                         dangerouslySetInnerHTML={{
@@ -1725,7 +1721,7 @@ export default function Page({
               </h3>
               <picture>
                 <source
-                  srcset="/img/top/sp/section08_item01.png"
+                  srcSet="/img/top/sp/section08_item01.png"
                   media="(max-width: 600px)"
                 />
                 <img
@@ -1758,7 +1754,7 @@ export default function Page({
                   <div className={css_index.card_box__inner}>
                     <picture>
                       <source
-                        srcset="/img/top/sp/section08_2_item01.png"
+                        srcSet="/img/top/sp/section08_2_item01.png"
                         media="(max-width: 600px)"
                       />
                       <img src="/img/top/pc/section08_2_item01.png" />
@@ -1787,7 +1783,7 @@ export default function Page({
                   <div className={css_index.card_box__inner}>
                     <picture>
                       <source
-                        srcset="/img/top/sp/section08_2_item02.png"
+                        srcSet="/img/top/sp/section08_2_item02.png"
                         media="(max-width: 600px)"
                       />
                       <img src="/img/top/pc/section08_2_item02.png" />
@@ -1816,7 +1812,7 @@ export default function Page({
                   <div className={css_index.card_box__inner}>
                     <picture>
                       <source
-                        srcset="/img/top/sp/section08_2_item03.png"
+                        srcSet="/img/top/sp/section08_2_item03.png"
                         media="(max-width: 600px)"
                       />
                       <img src="/img/top/pc/section08_2_item03.png" />
@@ -1848,7 +1844,7 @@ export default function Page({
                   <div className={css_index.card_box__inner}>
                     <picture>
                       <source
-                        srcset="/img/top/sp/section08_2_item04.png"
+                        srcSet="/img/top/sp/section08_2_item04.png"
                         media="(max-width: 600px)"
                       />
                       <img src="/img/top/pc/section08_2_item04.png" />
@@ -1886,7 +1882,7 @@ export default function Page({
                   <div className={css_index.card_box__inner}>
                     <picture>
                       <source
-                        srcset="/img/top/sp/section08_2_item05.png"
+                        srcSet="/img/top/sp/section08_2_item05.png"
                         media="(max-width: 600px)"
                       />
                       <img src="/img/top/pc/section08_2_item05.png" />
@@ -1918,7 +1914,7 @@ export default function Page({
                   <div className={css_index.card_box__inner}>
                     <picture>
                       <source
-                        srcset="/img/top/sp/section08_2_item06.png"
+                        srcSet="/img/top/sp/section08_2_item06.png"
                         media="(max-width: 600px)"
                       />
                       <img src="/img/top/pc/section08_2_item06.png" />
@@ -2183,7 +2179,7 @@ export default function Page({
 
                 <picture>
                   <source
-                    srcset="/img/top/sp/section11_item01.png"
+                    srcSet="/img/top/sp/section11_item01.png"
                     media="(max-width: 600px)"
                   />
                   <img src="/img/top/pc/section11_item01.png" />
@@ -2199,7 +2195,7 @@ export default function Page({
 
                 <picture>
                   <source
-                    srcset="/img/top/sp/section11_item02.png"
+                    srcSet="/img/top/sp/section11_item02.png"
                     media="(max-width: 600px)"
                   />
                   <img src="/img/top/pc/section11_item02.png" />
@@ -2214,7 +2210,7 @@ export default function Page({
 
                 <picture>
                   <source
-                    srcset="/img/top/sp/section11_item03.png"
+                    srcSet="/img/top/sp/section11_item03.png"
                     media="(max-width: 600px)"
                   />
                   <img src="/img/top/pc/section11_item03.png" />
@@ -2229,7 +2225,7 @@ export default function Page({
 
                 <picture>
                   <source
-                    srcset="/img/top/sp/section11_item04.png"
+                    srcSet="/img/top/sp/section11_item04.png"
                     media="(max-width: 600px)"
                   />
                   <img src="/img/top/pc/section11_item04.png" />
@@ -2348,7 +2344,7 @@ export default function Page({
                 <h3>横浜・綱島本部校</h3>
                 <picture>
                   <source
-                    srcset="/img/top/sp/section12_item01.png"
+                    srcSet="/img/top/sp/section12_item01.png"
                     media="(max-width: 600px)"
                   />
                   <img src="/img/top/pc/section12_item01.png" />
@@ -2391,7 +2387,7 @@ export default function Page({
                 <h3>自由が丘・田園調布校</h3>
                 <picture>
                   <source
-                    srcset="/img/top/sp/section12_item02.png"
+                    srcSet="/img/top/sp/section12_item02.png"
                     media="(max-width: 600px)"
                   />
                   <img src="/img/top/pc/section12_item02.png" />
@@ -2579,7 +2575,7 @@ export default function Page({
                 <SwiperSlide>
                   <picture>
                     <source
-                      srcset="./img/top/sp/section15_item01.png"
+                      srcSet="./img/top/sp/section15_item01.png"
                       media="(max-width: 600px)"
                     />
                     <img src="./img/top/pc/section15_item01.png" alt="" />
@@ -2588,7 +2584,7 @@ export default function Page({
                 <SwiperSlide>
                   <picture>
                     <source
-                      srcset="./img/top/sp/section15_item02.png"
+                      srcSet="./img/top/sp/section15_item02.png"
                       media="(max-width: 600px)"
                     />
                     <img src="./img/top/pc/section15_item02.png" alt="" />
@@ -2597,7 +2593,7 @@ export default function Page({
                 <SwiperSlide>
                   <picture>
                     <source
-                      srcset="./img/top/sp/section15_item03.png"
+                      srcSet="./img/top/sp/section15_item03.png"
                       media="(max-width: 600px)"
                     />
                     <img src="./img/top/pc/section15_item03.png" alt="" />
@@ -2606,7 +2602,7 @@ export default function Page({
                 <SwiperSlide>
                   <picture>
                     <source
-                      srcset="./img/top/sp/section15_item04.png"
+                      srcSet="./img/top/sp/section15_item04.png"
                       media="(max-width: 600px)"
                     />
                     <img src="./img/top/pc/section15_item04.png" alt="" />
@@ -2615,7 +2611,7 @@ export default function Page({
                 <SwiperSlide>
                   <picture>
                     <source
-                      srcset="./img/top/sp/section15_item05.png"
+                      srcSet="./img/top/sp/section15_item05.png"
                       media="(max-width: 600px)"
                     />
                     <img src="./img/top/pc/section15_item05.png" alt="" />
@@ -2624,7 +2620,7 @@ export default function Page({
                 <SwiperSlide>
                   <picture>
                     <source
-                      srcset="./img/top/sp/section15_item06.png"
+                      srcSet="./img/top/sp/section15_item06.png"
                       media="(max-width: 600px)"
                     />
                     <img src="./img/top/pc/section15_item06.png" alt="" />
@@ -2749,9 +2745,8 @@ export default function Page({
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3246.7447074111483!2d139.63106607640356!3d35.53530597263475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185f16c0014351%3A0xde8eb46e6d163758!2z6Iux6Kqe5aG-IOeni-iwt-WFieWtkOOCouOCq-ODh-ODn-OCoyDmqKrmtZzjg7vntrHls7bmnKzpg6jmoKE!5e0!3m2!1sja!2sjp!4v1722923650295!5m2!1sja!2sjp"
                   style={{ border: 0 }}
-                  allowfullscreen=""
                   loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
+                  referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
 
@@ -2792,9 +2787,8 @@ export default function Page({
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3244.254540026972!2d139.6638798764057!3d35.59678727261457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f516c42ab6df%3A0xfc211c6ee5dd3fb7!2z6Iux6Kqe5aG-IOeni-iwt-WFieWtkOOCouOCq-ODh-ODn-OCoyDoh6rnlLHjgYzkuJjjg7vnlLDlnJLoqr_luIPmoKE!5e0!3m2!1sja!2sjp!4v1722925335679!5m2!1sja!2sjp"
                   style={{ border: 0 }}
-                  allowfullscreen=""
                   loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
+                  referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
 
