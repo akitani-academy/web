@@ -1,0 +1,33 @@
+.LinkList {
+	@include MQ(xl) {
+		width: 80%;
+	}
+
+	font-family: sans-serif;
+	font-weight: bold;
+	display: flex;
+	flex-wrap: wrap;
+	gap: .7em;
+	margin-bottom: 1.5rem;
+
+	li {
+		a {
+			color: $c_2 ;
+			display: inline-flex;
+			place-items: center;
+			// gap: .1rem;
+
+			svg {
+				height: 1.3em;
+
+				path {
+					stroke: $c_2;
+				}
+			}
+		}
+	}
+
+	&.vertical {
+		flex-direction: column;
+	}
+}

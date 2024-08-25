@@ -1,0 +1,52 @@
+.teacherList {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem 1rem;
+
+    li {
+        font-size: 0.8125rem;
+        width: calc(50% - .5rem);
+
+        @media (max-width: 320px) {
+            width: 100%;
+        }
+
+        border-bottom: solid 1px $c_1;
+        padding-bottom: 1rem;
+
+        p {
+            margin: 0;
+            font-size: inherit;
+        }
+
+        h2 {
+            margin: 0;
+            margin-bottom: 1rem;
+            display: flex;
+            line-height: 1em;
+
+            &::after {
+                flex: 1;
+                content: "";
+                width: 100%;
+                margin-left: .5rem;
+                border-bottom: solid 1px $c_1;
+            }
+        }
+
+        h3 {
+            color: $c_2;
+            font-family: sans-serif;
+            font-size: 0.8125rem;
+            margin-top: 1em;
+        }
+    }
+}
+
+.img {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: .7rem;
+}

@@ -1,0 +1,319 @@
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+iframe {
+  border: none;
+}
+
+summary {
+  display: block;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+input[type="radio"],
+input[type="submit"],
+select,
+label,
+summary {
+  cursor: pointer;
+}
+
+a,
+summary,
+label,
+input,
+select {
+  &:hover {
+    opacity: 0.6;
+
+    // * {
+    //   opacity: .7;
+    // }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  font-weight: bold;
+}
+
+img {
+  height: auto;
+}
+
+::placeholder {
+  opacity: 0.4;
+}
+
+textarea {
+  display: block;
+}
+
+input,
+textarea {
+  max-width: 100%;
+}
+
+// input:not([type="submit"]) {
+//   width: 15em;
+// }
+
+.spOnly {
+  @include MQ(xl) {
+    display: none;
+  }
+}
+
+.pcOnly {
+  @include MQ() {
+    display: none;
+  }
+}
+
+.Gmap {
+  aspect-ratio: 8 / 5;
+
+  @include MQ() {
+    width: 100%;
+  }
+}
+
+.p-country-name,
+.honeypot {
+  display: none;
+}
+
+.nav_course {
+  a {
+    border-color: $c_2 !important;
+  }
+}
+
+h6.nav_course {
+  color: $c_2;
+}
+
+html {
+  font-family: "Shippori Mincho", serif;
+}
+
+body {
+  color: $c_1;
+  background: $c_0;
+
+  @media (max-width: 600px) {
+    overflow-x: hidden;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000;
+}
+
+p {
+  font-size: 15px;
+}
+
+main {
+  // width: 950px;
+  max-width: 950px;
+  margin: auto;
+  margin-top: 80px;
+  padding: 4vw;
+  display: flex;
+  justify-content: center;
+  gap: 3vw;
+
+  &.marginTop0 {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  h1,
+  h2,
+  .h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+    letter-spacing: 0.05em;
+
+    & + .LinkList {
+      margin-top: -3rem;
+    }
+
+    &::before,
+    small,
+    .subTitle {
+      letter-spacing: 0.2em;
+      font-size: 0.5em;
+      color: $c_3;
+      display: block;
+      content: attr(data-subtitle);
+      pointer-events: none;
+    }
+
+    &.marginTop0 {
+      margin-top: 0;
+    }
+  }
+
+  h1 {
+    color: $c_2;
+    font-size: 1.875rem;
+    margin-bottom: 0.3em;
+  }
+
+  h2,
+  .h2 {
+    font-size: 1.4rem;
+    margin-top: 1.5em;
+    margin-bottom: 0.7em;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+  }
+
+  p {
+    font-family: sans-serif;
+    // letter-spacing: .05em;
+    line-height: 1.7em;
+    margin-bottom: 0.8em;
+  }
+
+  > article {
+    width: 100%;
+
+    > *:first-child {
+      margin-top: 0;
+    }
+
+    a {
+      color: $c_2;
+      border-bottom: dashed 1px $c_2;
+      padding: 0 0.05em;
+    }
+  }
+}
+
+.nav_course_and_classtype {
+  @media (min-width: 600px) {
+    position: unset !important;
+  }
+
+  .nav_course {
+    visibility: hidden;
+    height: 0;
+  }
+}
+
+.navClose {
+  flex: 1;
+  background: rgba(#000, 0.5);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.1s;
+  cursor: pointer;
+}
+
+.nav_true {
+  @media (max-width: 600px) {
+    transform: translateX(-100%);
+
+    .navClose {
+      opacity: 1 !important;
+    }
+  }
+}
+
+h3 {
+  margin-top: 0.7em;
+}
+
+input {
+  &[type="text"] {
+    border-bottom: $c_3 solid 1px;
+    padding: 0.2em 0;
+  }
+
+  &[type="submit"] {
+    margin-top: 0.5rem;
+    color: #fff;
+    padding: 0.2em 0.5rem;
+    background-color: $c_2;
+  }
+}
+
+textarea {
+  border: $c_3 solid 1px;
+  padding: 0.3em;
+}
+
+// #skip-silence-bar {
+//   display: none;
+// }
+
+.header_method {
+  border-color: $c_2 !important;
+}
+
+.thumbnail {
+  height: 300px;
+  position: relative;
+  // width: 100vw;
+  margin: 0 -2.5rem;
+  margin-bottom: 1.5rem;
+  margin-top: -1.7rem;
+  // padding: 0 calc(50vw - 50%);
+}
+
+.bg {
+  background-color: #fff;
+}
+
+// ジャンプリンクずれ修正
+* {
+  &[id]:not(
+      .splide,
+      .splide__slide,
+      .splide__list,
+      .splide__track,
+      #skip-silence-bar
+    ) {
+    &::before {
+      pointer-events: none;
+      display: block;
+      height: 12rem;
+      margin-top: -12rem;
+      content: "";
+      order: 0;
+    }
+  }
+}
+
+* {
+  min-width: 0; //flexアイテムがはみ出さないように
+}

@@ -1,0 +1,17 @@
+.tmb {
+  min-width: 100%;
+  margin: 0 -2.5rem;
+  margin-bottom: 1.5rem;
+  margin-top: -1.7rem;
+
+  height: auto;
+  overflow: hidden;
+  position: relative;
+
+  @include MQ() {
+    width: 100vw;
+    margin: 0 calc(50% - 50vw);
+    margin-top: -70px !important;
+    margin-bottom: .8rem;
+  }
+}
