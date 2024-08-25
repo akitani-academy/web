@@ -10,9 +10,9 @@ export default function MyApp({ Component, pageProps }) {
 
   require("../styles/globals.scss");
 
-  // if (router.pathname === "/lp") {
-  //   require("../styles/lp_globals.scss");
-  // }
+  if (router.pathname === "/lp") {
+    require("../styles/lp_globals.scss");
+  }
 
   return getLayout(
     <>
