@@ -1,4 +1,4 @@
-const _V = require("./_V_lp.js");
+const _V = require("./_V.js");
 import UseSWR from "swr";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -23,6 +23,22 @@ function Page() {
 
   const { data, mutate } = navSate();
   const handleInc = () => mutate(!data);
+
+  const menu = [
+    {
+      class: "nav_page",
+      content: [
+        ["大学受験・英検合格者の声", "/#nav_01"],
+        ["英検や大学試験に強い理由", "/#nav_02"],
+        ["志望校へ導く徹底した試験対策", "/#nav_03"],
+        ["秋谷光子アカデミィの学習ポイント", "/#nav_04"],
+        ["大学受験英語のカリキュラムについて", "/#nav_05"],
+        ["秋谷光子アカデミィ入塾までの流れ", "/#nav_06"],
+        ["秋谷光子アカデミィについて", "/#nav_07"],
+        ["塾長からのメッセージ", "/#nav_08"],
+      ],
+    },
+  ];
 
   return (
     <>
@@ -55,7 +71,7 @@ function Page() {
               <br />
               合格とスコアUPの声
             </Button> */}
-            {_V.menu.map((e1, i1) => (
+            {menu.map((e1, i1) => (
               <>
                 {(() => {
                   if (e1.title) {

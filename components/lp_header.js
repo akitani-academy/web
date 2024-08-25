@@ -1,4 +1,4 @@
-const _V = require("./_V_lp.js");
+const _V = require("./_V.js");
 import { useRouter } from "next/router";
 import Link from "next/link";
 import UseSWR from "swr";
