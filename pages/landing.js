@@ -12,9 +12,9 @@ import { loadDefaultJapaneseParser } from "budoux";
 const parser = loadDefaultJapaneseParser();
 
 import Head from "components/head";
-import Header from "components/lp_header";
-import Footer from "components/lp_footer";
-import Nav from "components/lp_nav";
+// import Header from "components/lp_header";
+// import Footer from "components/lp_footer";
+// import Nav from "components/lp_nav";
 // import Cta from "components/Cta/Cta";
 // import Modal from "components/Modal/Modal";
 
@@ -2436,7 +2436,7 @@ export default function Page(
             </div>
           </div>
         </section>
-        <Nav />
+        {/* <Nav /> */}
 
         {/* <Modal
           isOpen={isModalOpen}
@@ -2467,9 +2467,9 @@ export default function Page(
 Page.getLayout = function getLayout(children) {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
