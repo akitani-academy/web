@@ -332,15 +332,15 @@ export default function Page(
   );
 }
 
-Page.getLayout = function getLayout(children) {
-  return (
-    <>
-      {/* <Header /> */}
-      {children}
-      {/* <Footer /> */}
-    </>
-  );
-};
+// Page.getLayout = function getLayout(children) {
+//   return (
+//     <>
+//       {/* <Header /> */}
+//       {children}
+//       {/* <Footer /> */}
+//     </>
+//   );
+// };
 
 export async function getStaticProps() {
   // let experiencesData = await fetch(
