@@ -38,9 +38,7 @@ export const accordionData01 = [
           <b>3級〜2級/GTEC/TOEIC Bridge/TOEFL</b>
         </dd>
       </dl>
-      <div className=` +
-        css_index.flex +
-        `>
+      <div>
         <dl>
           <dt>中2生</dt>
           <dd>
@@ -54,9 +52,7 @@ export const accordionData01 = [
           </dd>
         </dl>
       </div>
-      <div className=` +
-        css_index.course +
-        `>
+      <div>
         <dl>
           <dt>アドバンスコース</dt>
           <dd>

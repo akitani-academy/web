@@ -3138,59 +3138,62 @@
                   display: block !important;
                 }
               }
+              > div {
+                > span {
+                  > dl {
+                    margin-top: 27px;
 
-              > dl {
-                margin-top: 27px;
+                    @include MQ(tab) {
+                      margin-top: 15px;
+                    }
 
-                @include MQ(tab) {
-                  margin-top: 15px;
-                }
+                    dt,
+                    dd {
+                      font-family: $font_01;
+                    }
 
-                dt,
-                dd {
-                  font-family: $font_01;
-                }
+                    > dt {
+                      position: relative;
+                      padding-left: 17px;
+                      font-size: 18px;
+                      color: $blue_01;
+                      font-weight: bold;
 
-                > dt {
-                  position: relative;
-                  padding-left: 17px;
-                  font-size: 18px;
-                  color: $blue_01;
-                  font-weight: bold;
+                      @include MQ(tab) {
+                        font-size: 13px;
+                        line-height: 1.76;
+                      }
 
-                  @include MQ(tab) {
-                    font-size: 13px;
-                    line-height: 1.76;
-                  }
+                      &::before {
+                        @include pseudoElement;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                        width: 12px;
+                        height: 12px;
+                        background-color: $blue_01;
+                      }
+                    }
 
-                  &::before {
-                    @include pseudoElement;
-                    top: 50%;
-                    left: 0;
-                    transform: translateY(-50%);
-                    width: 12px;
-                    height: 12px;
-                    background-color: $blue_01;
-                  }
-                }
+                    > dd {
+                      font-size: 14px;
+                      margin-top: 14px;
+                      line-height: 1.64;
 
-                > dd {
-                  font-size: 14px;
-                  margin-top: 14px;
-                  line-height: 1.64;
+                      @include MQ(tab) {
+                        font-size: 13px;
+                        line-height: 1.76;
+                        margin-top: 10px;
+                      }
 
-                  @include MQ(tab) {
-                    font-size: 13px;
-                    line-height: 1.76;
-                    margin-top: 10px;
-                  }
-
-                  dt {
-                    font-weight: bold;
-                    text-decoration: underline;
-                    margin-bottom: 15px;
-                    font-size: 15px;
-                    line-height: 1.66;
+                      dt {
+                        font-weight: bold;
+                        text-decoration: underline;
+                        margin-bottom: 15px;
+                        font-size: 15px;
+                        line-height: 1.66;
+                      }
+                    }
                   }
                 }
               }
@@ -3677,12 +3680,119 @@
             }
           }
 
-          @include MQ(xl) {
-            &:nth-of-type(2) {
-              dl {
-                &:first-child {
-                  width: auto;
-                  margin-right: 54px;
+          &:nth-of-type(2) {
+            margin-bottom: 38px;
+
+            dl {
+              &:first-child {
+                margin-right: 37px;
+                width: auto;
+
+                @include MQ(tab) {
+                  margin-right: 17px;
+                }
+              }
+            }
+
+            .content {
+              > div {
+                > span {
+                  > div {
+                    &:first-of-type {
+                      display: flex;
+
+                      > dl {
+                        > dt {
+                          font-size: 15px;
+                          letter-spacing: 0.025em;
+                          line-height: 1.66;
+                          padding: 0 8px;
+                          border: 1px solid $black_01;
+                          display: inline-block;
+                          color: $blue_01;
+                          margin-bottom: 15px;
+                          font-weight: bold;
+                          font-family: $font_01;
+
+                          @include MQ(tab) {
+                            font-size: 12px;
+                          }
+                        }
+
+                        dd {
+                          font-size: 18px;
+                          line-height: 1.76;
+                          font-family: $font_01;
+
+                          @include MQ(tab) {
+                            font-size: 13px;
+                          }
+
+                          dt {
+                            margin-bottom: 15px;
+                            font-size: 18px;
+                            line-height: 1.5;
+                            font-weight: bold;
+                            font-family: $font_01;
+                            letter-spacing: 0.025em;
+
+                            @include MQ(tab) {
+                              font-size: 13px;
+                              line-height: 1.76;
+                            }
+                          }
+                        }
+                      }
+                    }
+
+                    &:nth-of-type(2) {
+                      width: 100%;
+                      display: flex;
+                      flex-wrap: wrap;
+
+                      dl {
+                        width: calc(50% - 15px);
+
+                        @include MQ(pc) {
+                          &:nth-child(odd) {
+                            margin-right: 30px;
+                          }
+
+                          &:nth-child(even) {
+                            margin-right: 0;
+                          }
+                        }
+
+                        @include MQ(tab) {
+                          width: 100%;
+                        }
+
+                        &:not(:last-child) {
+                          margin-bottom: 28px;
+                        }
+
+                        dt,
+                        dd {
+                          font-family: $font_01;
+                        }
+
+                        dt {
+                          font-weight: bold;
+                          font-size: 15px;
+                          letter-spacing: 0.025em;
+                          line-height: 1.6;
+                          padding-bottom: 5px;
+                          border-bottom: 1px solid $black_01;
+                          margin-bottom: 10px;
+                        }
+
+                        dd {
+                          font-size: 13px;
+                          line-height: 1.76;
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -3733,8 +3843,6 @@
           .content {
             padding: 30px;
             background-color: $white_01;
-            display: flex;
-            flex-wrap: wrap;
             border: 1px solid $blue_01;
 
             @include MQ(tab) {
@@ -3743,131 +3851,81 @@
             }
 
             &.open {
-              display: flex !important;
+              display: block !important;
 
-              @include MQ(tab) {
-                display: block !important;
+              > div {
+                > span {
+                  display: flex !important;
+
+                  @include MQ(tab) {
+                    display: block !important;
+                  }
+                }
               }
             }
 
-            > dl,
-            .flex > dl {
-              > dt {
-                font-size: 15px;
-                letter-spacing: 0.025em;
-                line-height: 1.66;
-                padding: 0 8px;
-                border: 1px solid $black_01;
-                display: inline-block;
-                color: $blue_01;
-                margin-bottom: 15px;
-                font-weight: bold;
-                font-family: $font_01;
+            > div {
+              > span {
+                display: flex;
+                flex-wrap: wrap;
 
-                @include MQ(tab) {
-                  font-size: 12px;
-                }
-              }
+                > dl {
+                  > dt {
+                    font-size: 15px;
+                    letter-spacing: 0.025em;
+                    line-height: 1.66;
+                    padding: 0 8px;
+                    border: 1px solid $black_01;
+                    display: inline-block;
+                    color: $blue_01;
+                    margin-bottom: 15px;
+                    font-weight: bold;
+                    font-family: $font_01;
 
-              dd {
-                font-size: 18px;
-                line-height: 1.76;
-                font-family: $font_01;
+                    @include MQ(tab) {
+                      font-size: 12px;
+                    }
+                  }
 
-                @include MQ(tab) {
-                  font-size: 13px;
-                }
-
-                dt {
-                  margin-bottom: 15px;
-                  font-size: 18px;
-                  line-height: 1.5;
-                  font-weight: bold;
-                  font-family: $font_01;
-                  letter-spacing: 0.025em;
-
-                  @include MQ(tab) {
-                    font-size: 13px;
+                  dd {
+                    font-size: 18px;
                     line-height: 1.76;
+                    font-family: $font_01;
+
+                    @include MQ(tab) {
+                      font-size: 13px;
+                    }
+
+                    dt {
+                      margin-bottom: 15px;
+                      font-size: 18px;
+                      line-height: 1.5;
+                      font-weight: bold;
+                      font-family: $font_01;
+                      letter-spacing: 0.025em;
+
+                      @include MQ(tab) {
+                        font-size: 13px;
+                        line-height: 1.76;
+                      }
+                    }
                   }
                 }
-              }
-            }
 
-            > dl {
-              width: calc(50% - 15px);
-              margin-bottom: 30px;
+                > dl {
+                  width: calc(50% - 15px);
+                  margin-bottom: 30px;
 
-              @include MQ(pc) {
-                &:first-child {
-                  margin-right: 30px;
-                  margin-bottom: 27px;
-                }
-              }
-
-              @include MQ(tab) {
-                width: 100%;
-              }
-            }
-
-            .flex {
-              margin-bottom: 38px;
-
-              dl {
-                &:first-child {
-                  margin-right: 37px;
+                  @include MQ(pc) {
+                    &:first-child {
+                      margin-right: 30px;
+                      margin-bottom: 27px;
+                    }
+                  }
 
                   @include MQ(tab) {
-                    margin-right: 17px;
+                    width: 100%;
                   }
-                }
-              }
-            }
-
-            .course {
-              width: 100%;
-              display: flex;
-              flex-wrap: wrap;
-
-              dl {
-                width: calc(50% - 15px);
-
-                @include MQ(pc) {
-                  &:nth-child(odd) {
-                    margin-right: 30px;
-                  }
-
-                  &:nth-child(even) {
-                    margin-right: 0;
-                  }
-                }
-
-                @include MQ(tab) {
-                  width: 100%;
-                }
-
-                &:not(:last-child) {
-                  margin-bottom: 28px;
-                }
-
-                dt,
-                dd {
-                  font-family: $font_01;
-                }
-
-                dt {
-                  font-weight: bold;
-                  font-size: 15px;
-                  letter-spacing: 0.025em;
-                  line-height: 1.6;
-                  padding-bottom: 5px;
-                  border-bottom: 1px solid $black_01;
-                  margin-bottom: 10px;
-                }
-
-                dd {
-                  font-size: 13px;
-                  line-height: 1.76;
                 }
               }
             }

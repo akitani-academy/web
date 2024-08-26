@@ -15,7 +15,7 @@ import Head from "components/head";
 import Header from "components/lp_header";
 import Footer from "components/lp_footer";
 import Nav from "components/lp_nav";
-// import Cta from "components/Cta/Cta";
+import Cta from "components/Cta/Cta";
 // import Modal from "components/Modal/Modal";
 
 import css_index from "styles/lp.module.scss";
@@ -839,7 +839,7 @@ export default function Page({
             </div>
           </div>
 
-          {/* <Cta /> */}
+          <Cta />
         </section>
 
         <section
@@ -1704,7 +1704,7 @@ export default function Page({
             </div>
           </div>
 
-          {/* <Cta /> */}
+          <Cta />
         </section>
 
         <section className={`${css_index.section} ${css_index.section_10}`}>
@@ -1779,7 +1779,7 @@ export default function Page({
             </div>
           </div>
 
-          {/* <Cta /> */}
+          <Cta />
         </section>
 
         <section
@@ -1904,7 +1904,7 @@ export default function Page({
             </div>
           </div>
 
-          {/* <Cta /> */}
+          <Cta />
         </section>
 
         <section
@@ -2107,7 +2107,7 @@ export default function Page({
             </div>
           </div>
 
-          {/* <Cta /> */}
+          <Cta />
         </section>
 
         <section
