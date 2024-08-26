@@ -347,7 +347,7 @@ export default function Page(
               <span>全ての進路を可能にする英語力を育てます。</span>
             </p>
             <div className={css_index.success}>
-              <picture>
+              {/* <picture>
                 <source
                   srcSet="./img/top/sp/success_01.png"
                   media="(max-width: 600px)"
@@ -366,7 +366,7 @@ export default function Page(
                   src="./img/top/pc/success_02.png"
                   alt="英検1級合格 合計 42名 在籍"
                 />
-              </picture>
+              </picture> */}
             </div>
             <div className={css_index.cta}>
               <p>
@@ -374,10 +374,10 @@ export default function Page(
                   最短で目標達成できるカリキュラムをご案内
                 </span>
               </p>
-              <Link href={`/contact`}>
+              {/* <Link href={`/contact`}>
                 お問い合わせ・<span>無料体験レッスンを申し込む</span>
               </Link>
-              <Link href={`/contact`}>資料を請求する</Link>
+              <Link href={`/contact`}>資料を請求する</Link> */}
             </div>
           </div>
         </div>
@@ -408,14 +408,14 @@ export default function Page(
                     className={`${css_index.cont__item} ${css_index.cont__item_01}`}
                   >
                     <div>
-                      <img src="./img/top/medal.png" />
+                      {/* <img src="./img/top/medal.png" /> */}
                       <span>
                         <span className={css_index.block}>東京大学</span>
                         <span className={css_index.red}>1</span>名
                       </span>
                     </div>
                     <div>
-                      <img src="./img/top/medal.png" />
+                      {/* <img src="./img/top/medal.png" /> */}
                       <span>
                         <span className={css_index.block}>一橋大学</span>
                         <span className={css_index.red}>1</span>名
@@ -441,21 +441,21 @@ export default function Page(
                     className={`${css_index.cont__item} ${css_index.cont__item_01}`}
                   >
                     <div>
-                      <img src="./img/top/medal.png" />
+                      {/* <img src="./img/top/medal.png" /> */}
                       <span>
                         <span className={css_index.block}>早稲田大学</span>
                         <span className={css_index.red}>4</span>名
                       </span>
                     </div>
                     <div>
-                      <img src="./img/top/medal.png" />
+                      {/* <img src="./img/top/medal.png" /> */}
                       <span>
                         <span className={css_index.block}>慶応大学</span>
                         <span className={css_index.red}>12</span>名
                       </span>
                     </div>
                     <div>
-                      <img src="./img/top/medal.png" />
+                      {/* <img src="./img/top/medal.png" /> */}
                       <span>
                         <span className={css_index.block}>上智大学</span>
                         <span className={css_index.red}>1</span>名
@@ -640,13 +640,13 @@ export default function Page(
             <div className={css_index.box}>
               <div className={css_index.box__item}>
                 <div className={css_index.image}>
-                  <picture>
+                  {/* <picture>
                     <source
                       srcSet="./img/top/sp/section03_item01.png"
                       media="(max-width: 600px)"
                     />
                     <img src="./img/top/pc/section03_item01.png" />
-                  </picture>
+                  </picture> */}
                 </div>
                 <p>
                   <span>
@@ -662,13 +662,13 @@ export default function Page(
               </div>
               <div className={css_index.box__item}>
                 <div className={css_index.image}>
-                  <picture>
+                  {/* <picture>
                     <source
                       srcSet="./img/top/sp/section03_item02.png"
                       media="(max-width: 600px)"
                     />
                     <img src="./img/top/pc/section03_item02.png" />
-                  </picture>
+                  </picture> */}
                 </div>
                 <p>
                   <span>
@@ -686,13 +686,13 @@ export default function Page(
               </div>
               <div className={css_index.box__item}>
                 <div className={css_index.image}>
-                  <picture>
+                  {/* <picture>
                     <source
                       srcSet="./img/top/sp/section03_item03.png"
                       media="(max-width: 600px)"
                     />
                     <img src="./img/top/pc/section03_item03.png" />
-                  </picture>
+                  </picture> */}
                 </div>
                 <p>
                   <span>
@@ -707,13 +707,13 @@ export default function Page(
               </div>
               <div className={css_index.box__item}>
                 <div className={css_index.image}>
-                  <picture>
+                  {/* <picture>
                     <source
                       srcSet="./img/top/sp/section03_item04.png"
                       media="(max-width: 600px)"
                     />
                     <img src="./img/top/pc/section03_item04.png" />
-                  </picture>
+                  </picture> */}
                 </div>
                 <p>
                   <span>
@@ -922,7 +922,7 @@ export default function Page(
                 </div>
 
                 <div className={css_index.center}>
-                  <Link href="/#4">コース一覧はこちら</Link>
+                  {/* <Link href="/#4">コース一覧はこちら</Link> */}
                 </div>
               </div>
 
@@ -947,11 +947,11 @@ export default function Page(
                 </p>
 
                 <div className={css_index.center}>
-                  <Link href="/pdf/レベル別カリキュラム.pdf" target="_blank">
+                  {/* <Link href="/pdf/レベル別カリキュラム.pdf" target="_blank">
                     レベル別カリキュラムを
                     <br />
                     詳しく見る
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
 
@@ -973,7 +973,7 @@ export default function Page(
                 </p>
 
                 <div className={`${css_index.center} ${css_index.flex}`}>
-                  <picture>
+                  {/* <picture>
                     <source
                       srcSet="./img/top/sp/success_01.png"
                       media="(max-width: 600px)"
@@ -992,7 +992,7 @@ export default function Page(
                       src="./img/top/pc/success_02.png"
                       alt="英検1級合格 合計 42名 在籍"
                     />
-                  </picture>
+                  </picture> */}
                 </div>
               </div>
 
@@ -1204,9 +1204,7 @@ export default function Page(
           >
             <div className={`${css_index.row} ${css_index.row_01}`}>
               <h3>
-                <span>
-                  <img src="/img/top/text_01.png" />
-                </span>
+                <span>{/* <img src="/img/top/text_01.png" /> */}</span>
                 基礎知識の不足
               </h3>
               <p>
@@ -1216,9 +1214,7 @@ export default function Page(
 
             <div className={`${css_index.row} ${css_index.row_02}`}>
               <h3>
-                <span>
-                  <img src="/img/top/text_02.png" />
-                </span>
+                <span>{/* <img src="/img/top/text_02.png" /> */}</span>
                 リスニングスキルの欠如
               </h3>
               <p>
@@ -1228,9 +1224,7 @@ export default function Page(
 
             <div className={`${css_index.row} ${css_index.row_03}`}>
               <h3>
-                <span>
-                  <img src="/img/top/text_03.png" />
-                </span>
+                <span>{/* <img src="/img/top/text_03.png" /> */}</span>
                 スピーキングの機会不足
               </h3>
               <p>
@@ -1240,9 +1234,7 @@ export default function Page(
 
             <div className={`${css_index.row} ${css_index.row_04}`}>
               <h3>
-                <span>
-                  <img src="/img/top/text_04.png" />
-                </span>
+                <span>{/* <img src="/img/top/text_04.png" /> */}</span>
                 読解力の問題
               </h3>
               <p>
@@ -1252,9 +1244,7 @@ export default function Page(
 
             <div className={`${css_index.row} ${css_index.row_05}`}>
               <h3>
-                <span>
-                  <img src="/img/top/text_05.png" />
-                </span>
+                <span>{/* <img src="/img/top/text_05.png" /> */}</span>
                 ライティングの難しさ
               </h3>
               <p>
@@ -1264,9 +1254,7 @@ export default function Page(
 
             <div className={`${css_index.row} ${css_index.row_06}`}>
               <h3>
-                <span>
-                  <img src="/img/top/text_06.png" />
-                </span>
+                <span>{/* <img src="/img/top/text_06.png" /> */}</span>
                 モチベーションの維持
               </h3>
               <p>
@@ -1276,9 +1264,7 @@ export default function Page(
 
             <div className={`${css_index.row} ${css_index.row_07}`}>
               <h3>
-                <span>
-                  <img src="/img/top/text_07.png" />
-                </span>
+                <span>{/* <img src="/img/top/text_07.png" /> */}</span>
                 適切な教材や指導の不足
               </h3>
               <p>
@@ -1288,9 +1274,7 @@ export default function Page(
 
             <div className={`${css_index.row} ${css_index.row_08}`}>
               <h3>
-                <span>
-                  <img src="/img/top/text_08.png" />
-                </span>
+                <span>{/* <img src="/img/top/text_08.png" /> */}</span>
                 発音の問題
               </h3>
               <p>
@@ -1332,7 +1316,7 @@ export default function Page(
                 <br />
                 あらゆる英語資格試験で圧倒的実績
               </h3>
-              <picture>
+              {/* <picture>
                 <source
                   srcSet="/img/top/sp/section08_item01.png"
                   media="(max-width: 600px)"
@@ -1341,7 +1325,7 @@ export default function Page(
                   src="/img/top/pc/section08_item01.png"
                   alt="英検1級合格 累計178名 東大・早慶・上智大など第一志望校に9割以上合格"
                 />
-              </picture>
+              </picture> */}
             </div>
           </div>
           <div
@@ -1365,13 +1349,13 @@ export default function Page(
                 <div className={css_index.card_box}>
                   <h4 className={css_index.blue_slash}>医学部受験対策</h4>
                   <div className={css_index.card_box__inner}>
-                    <picture>
+                    {/* <picture>
                       <source
                         srcSet="/img/top/sp/section08_2_item01.png"
                         media="(max-width: 600px)"
                       />
                       <img src="/img/top/pc/section08_2_item01.png" />
-                    </picture>
+                    </picture> */}
                     <p>
                       <b>医学部合格の決め手は、英語力</b>
                       であると言われています。しかし医学部受験でも、受験対策は他学部を受験する場合とあまり大きく変わりません。本質的な英語力が求められいているだけです。本校では求められる本質的な英語力を効率良く高めるために、
@@ -1386,7 +1370,7 @@ export default function Page(
                       </dl>
 
                       <div className={css_index.center}>
-                        <Link href="./method/medical-school">詳細をみる</Link>
+                        {/* <Link href="./method/medical-school">詳細をみる</Link> */}
                       </div>
                     </div>
                   </div>
@@ -1394,13 +1378,13 @@ export default function Page(
                 <div className={css_index.card_box}>
                   <h4 className={css_index.blue_slash}>国公立大学受験対策</h4>
                   <div className={css_index.card_box__inner}>
-                    <picture>
+                    {/* <picture>
                       <source
                         srcSet="/img/top/sp/section08_2_item02.png"
                         media="(max-width: 600px)"
                       />
                       <img src="/img/top/pc/section08_2_item02.png" />
-                    </picture>
+                    </picture> */}
                     <p>
                       国公立個別試験は、大学入学共通テストのマーク式問題とは異なり、「
                       <b>記述力</b>
@@ -1415,7 +1399,7 @@ export default function Page(
                       </dl>
 
                       <div className={css_index.center}>
-                        <Link href="./method/national-uni">詳細をみる</Link>
+                        {/* <Link href="./method/national-uni">詳細をみる</Link> */}
                       </div>
                     </div>
                   </div>
@@ -1423,13 +1407,13 @@ export default function Page(
                 <div className={css_index.card_box}>
                   <h4 className={css_index.blue_slash}>難関私立大学受験対策</h4>
                   <div className={css_index.card_box__inner}>
-                    <picture>
+                    {/* <picture>
                       <source
                         srcSet="/img/top/sp/section08_2_item03.png"
                         media="(max-width: 600px)"
                       />
                       <img src="/img/top/pc/section08_2_item03.png" />
-                    </picture>
+                    </picture> */}
                     <p>
                       私立大学の対策指導では、各大学の個別入試（一般入試）に加え、学校推薦型選抜や総合型選抜（旧AO入試）等の推薦入試対策もいたします。現在では入学者の50%以上が一般入試ではなく推薦入試で入学しています。推薦型が主流になりつつあるので、
                       <b>
@@ -1447,7 +1431,7 @@ export default function Page(
                       </dl>
 
                       <div className={css_index.center}>
-                        <Link href="./method/prestigious-uni">詳細をみる</Link>
+                        {/* <Link href="./method/prestigious-uni">詳細をみる</Link> */}
                       </div>
                     </div>
                   </div>
@@ -1455,13 +1439,13 @@ export default function Page(
                 <div className={css_index.card_box}>
                   <h4 className={css_index.blue_slash}>GMARCH受験対策</h4>
                   <div className={css_index.card_box__inner}>
-                    <picture>
+                    {/* <picture>
                       <source
                         srcSet="/img/top/sp/section08_2_item04.png"
                         media="(max-width: 600px)"
                       />
                       <img src="/img/top/pc/section08_2_item04.png" />
-                    </picture>
+                    </picture> */}
                     <p>
                       GMARCH対策では自分の弱点がどこかをしっかりと見極め、
                       <b>基礎力の徹底</b>
@@ -1483,7 +1467,7 @@ export default function Page(
                       </dl>
 
                       <div className={css_index.center}>
-                        <Link href="./method/gmarch">詳細をみる</Link>
+                        {/* <Link href="./method/gmarch">詳細をみる</Link> */}
                       </div>
                     </div>
                   </div>
@@ -1493,13 +1477,13 @@ export default function Page(
                     大学入学共通テスト対策
                   </h4>
                   <div className={css_index.card_box__inner}>
-                    <picture>
+                    {/* <picture>
                       <source
                         srcSet="/img/top/sp/section08_2_item05.png"
                         media="(max-width: 600px)"
                       />
                       <img src="/img/top/pc/section08_2_item05.png" />
-                    </picture>
+                    </picture> */}
                     <p>
                       実施された過去問や数多くの予想問題・模擬テストの中から、レベルを上げながらできるだけ多くの問題を解いていきます。多くの英文にあたることによって設問ごとに必要な情報選別力をつけ、
                       <b>
@@ -1515,9 +1499,9 @@ export default function Page(
                       </dl>
 
                       <div className={css_index.center}>
-                        <Link href="./method/common-first-stage-test">
+                        {/* <Link href="./method/common-first-stage-test">
                           詳細をみる
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -1525,13 +1509,13 @@ export default function Page(
                 <div className={css_index.card_box}>
                   <h4 className={css_index.blue_slash}>高校生コース</h4>
                   <div className={css_index.card_box__inner}>
-                    <picture>
+                    {/* <picture>
                       <source
                         srcSet="/img/top/sp/section08_2_item06.png"
                         media="(max-width: 600px)"
                       />
                       <img src="/img/top/pc/section08_2_item06.png" />
-                    </picture>
+                    </picture> */}
                     <p>
                       高校生コースでは<b>文法と4技能をバランス良く</b>
                       育て、多読→速読→精読で読解力をさらに強化して、難関大学合格、内部進学、留学など
@@ -1546,7 +1530,7 @@ export default function Page(
                       </dl>
 
                       <div className={css_index.center}>
-                        <Link href="./method/high">詳細をみる</Link>
+                        {/* <Link href="./method/high">詳細をみる</Link> */}
                       </div>
                     </div>
                   </div>
@@ -1790,13 +1774,13 @@ export default function Page(
               <div className={`${css_index.row_box} ${css_index.row_box_01}`}>
                 <h3>お問い合わせ・資料請求</h3>
 
-                <picture>
+                {/* <picture>
                   <source
                     srcSet="/img/top/sp/section11_item01.png"
                     media="(max-width: 600px)"
                   />
                   <img src="/img/top/pc/section11_item01.png" />
-                </picture>
+                </picture> */}
 
                 <p>
                   まずは<span>お問い合わせフォーム</span>
@@ -1806,13 +1790,13 @@ export default function Page(
               <div className={`${css_index.row_box} ${css_index.row_box_02}`}>
                 <h3>塾長による面談カウンセリング</h3>
 
-                <picture>
+                {/* <picture>
                   <source
                     srcSet="/img/top/sp/section11_item02.png"
                     media="(max-width: 600px)"
                   />
                   <img src="/img/top/pc/section11_item02.png" />
-                </picture>
+                </picture> */}
 
                 <p>
                   入塾前に塾長が面談カウンセリングを行い、ご要望を細かくお伺いしたうえで生徒さんの英語力を正確に把握し、学習法などをできる限りアドバイスさせていただきます。英語をさらに得意科目にして、最短距離で目標達成できるカリキュラムをご案内いたします。
@@ -1821,13 +1805,13 @@ export default function Page(
               <div className={`${css_index.row_box} ${css_index.row_box_03}`}>
                 <h3>無料体験レッスン申し込み</h3>
 
-                <picture>
+                {/* <picture>
                   <source
                     srcSet="/img/top/sp/section11_item03.png"
                     media="(max-width: 600px)"
                   />
                   <img src="/img/top/pc/section11_item03.png" />
-                </picture>
+                </picture> */}
 
                 <p>
                   秋谷光子アカデミィでは無料体験レッスンを受けることができます。入塾前にレッスンの雰囲気や指導方法を体験できますのでご希望の方はご相談ください。
@@ -1836,13 +1820,13 @@ export default function Page(
               <div className={`${css_index.row_box} ${css_index.row_box_04}`}>
                 <h3>入塾</h3>
 
-                <picture>
+                {/* <picture>
                   <source
                     srcSet="/img/top/sp/section11_item04.png"
                     media="(max-width: 600px)"
                   />
                   <img src="/img/top/pc/section11_item04.png" />
-                </picture>
+                </picture> */}
 
                 <p>
                   秋谷光子アカデミィへようこそ。目標達成に向けてカリキュラムをご案内し、本格的にレッスンを開始いたします。初回レッスンまでに入学金など諸経費についてお支払いいただきます。
@@ -1955,13 +1939,13 @@ export default function Page(
             <div className={css_index.section__inner}>
               <div className={css_index.box__item}>
                 <h3>横浜・綱島本部校</h3>
-                <picture>
+                {/* <picture>
                   <source
                     srcSet="/img/top/sp/section12_item01.png"
                     media="(max-width: 600px)"
                   />
                   <img src="/img/top/pc/section12_item01.png" />
-                </picture>
+                </picture> */}
                 <div className={css_index.text}>
                   <ul>
                     <li>
@@ -1984,7 +1968,7 @@ export default function Page(
                       東急新横浜線 新綱島駅より徒歩5分
                     </li>
                   </ul>
-                  <Link
+                  {/* <Link
                     href="https://maps.app.goo.gl/KuYMWDhQv9mjAf2v8"
                     className={css_index.map}
                     target="_blank"
@@ -1993,7 +1977,7 @@ export default function Page(
                   </Link>
                   <Link href="/access/tsunashima" className={css_index.detail}>
                     詳細をみる
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
               <div className={css_index.box__item}>
@@ -2025,7 +2009,7 @@ export default function Page(
                       東急東横線・目黒線 田園調布駅より徒歩1分
                     </li>
                   </ul>
-                  <Link
+                  {/* <Link
                     href="https://maps.app.goo.gl/HgcNRZGu6G2BPAwt5"
                     className={css_index.map}
                     target="_blank"
@@ -2034,7 +2018,7 @@ export default function Page(
                   </Link>
                   <Link href="/access/denenchofu" className={css_index.detail}>
                     詳細をみる
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>
@@ -2294,13 +2278,13 @@ export default function Page(
             <div className={css_index.cta}>
               <div>
                 <p>学習方法含めてアドバイスをもらう</p>
-                <Link href={`/contact`}>
+                {/* <Link href={`/contact`}>
                   お問い合わせ・<span>無料体験レッスンを申し込む</span>
-                </Link>
+                </Link> */}
               </div>
               <div>
                 <p>塾の概要や料金を知りたい</p>
-                <Link href={`/contact`}>資料を請求する</Link>
+                {/* <Link href={`/contact`}>資料を請求する</Link> */}
               </div>
             </div>
           </div>
@@ -2355,12 +2339,12 @@ export default function Page(
             <div className={css_index.row_box}>
               <h3>横浜・綱島本部校</h3>
               <div className={css_index.map}>
-                <iframe
+                {/* <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3246.7447074111483!2d139.63106607640356!3d35.53530597263475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185f16c0014351%3A0xde8eb46e6d163758!2z6Iux6Kqe5aG-IOeni-iwt-WFieWtkOOCouOCq-ODh-ODn-OCoyDmqKrmtZzjg7vntrHls7bmnKzpg6jmoKE!5e0!3m2!1sja!2sjp!4v1722923650295!5m2!1sja!2sjp"
                   style={{ border: 0 }}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
+                ></iframe> */}
               </div>
 
               <div className={css_index.box}>
@@ -2386,23 +2370,23 @@ export default function Page(
                   </li>
                 </ul>
 
-                <Link
+                {/* <Link
                   href="https://maps.app.goo.gl/U5xW9LwdH1pRPF7j9"
                   target="_blank"
                 >
                   Google Mapで見る
-                </Link>
+                </Link> */}
               </div>
             </div>
             <div className={css_index.row_box}>
               <h3>自由が丘・田園調布校</h3>
               <div className={css_index.map}>
-                <iframe
+                {/* <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3244.254540026972!2d139.6638798764057!3d35.59678727261457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f516c42ab6df%3A0xfc211c6ee5dd3fb7!2z6Iux6Kqe5aG-IOeni-iwt-WFieWtkOOCouOCq-ODh-ODn-OCoyDoh6rnlLHjgYzkuJjjg7vnlLDlnJLoqr_luIPmoKE!5e0!3m2!1sja!2sjp!4v1722925335679!5m2!1sja!2sjp"
                   style={{ border: 0 }}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
+                ></iframe> */}
               </div>
 
               <div className={css_index.box}>
@@ -2426,12 +2410,12 @@ export default function Page(
                   </li>
                 </ul>
 
-                <Link
+                {/* <Link
                   href="https://maps.app.goo.gl/HgcNRZGu6G2BPAwt5"
                   target="_blank"
                 >
                   Google Mapで見る
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
