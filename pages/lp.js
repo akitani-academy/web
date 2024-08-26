@@ -1613,14 +1613,22 @@ export default function Page({
                       key={index}
                       className={`${css_index.box__inner} ${css_index.ac_wrap}`}
                     >
-                      {item.image}
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: parser.translateHTMLString(item.image),
+                        }}
+                      />
 
                       <div
                         className={`${css_index.ac_cont} ${
                           activeIndex03 === index ? css_index.open : ""
                         }`}
                       >
-                        {item.content}
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: parser.translateHTMLString(item.content),
+                          }}
+                        />
                       </div>
 
                       <div
@@ -1760,7 +1768,11 @@ export default function Page({
                       activeIndex01 === index ? css_index.open : ""
                     }`}
                   >
-                    {item.content}
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: parser.translateHTMLString(item.content),
+                      }}
+                    />
                   </div>
                 </div>
               ))}
@@ -2334,7 +2346,11 @@ export default function Page({
                       activeIndex02 === index ? css_index.open : ""
                     }`}
                   >
-                    {item.content}
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: parser.translateHTMLString(item.content),
+                      }}
+                    />
                   </dd>
                 </dl>
               </div>
