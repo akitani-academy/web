@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { GraphQLClient, gql } from "graphql-request";
-import {
-  accordionData01,
-  accordionData02,
-  accordionData03,
-} from "../components/Accordion/Accordion";
+// import {
+//   accordionData01,
+//   accordionData02,
+//   accordionData03,
+// } from "../components/Accordion/Accordion";
 
 import Link from "next/link";
+
+import { loadDefaultJapaneseParser } from "budoux";
+const parser = loadDefaultJapaneseParser();
 
 import Head from "components/head";
 import Header from "components/lp_header";
@@ -82,238 +85,238 @@ export default function Page({
     setModalOpen(false);
   };
 
-  //2023年度大学合格実績
-  const actuals_college = [];
-  experiencesData
-    .filter((item) => item.id === 29)
-    .map((e, i) => {
-      e.child_list.map((e1, i1) => {
-        e1.post
-          .filter((data) => {
-            const match = data.date.match(/\d{4}/);
-            return match && parseInt(match[0], 10) === 2023;
-          })
-          .map((e2, i2) => {
-            actuals_college.push(
-              <li key={i2}>
-                {e2.student}
-                {e2.title && <span>（{e2.title}）</span>}
-              </li>
-            );
-          });
-      });
-    });
+  // //2023年度大学合格実績
+  // const actuals_college = [];
+  // experiencesData
+  //   .filter((item) => item.id === 29)
+  //   .map((e, i) => {
+  //     e.child_list.map((e1, i1) => {
+  //       e1.post
+  //         .filter((data) => {
+  //           const match = data.date.match(/\d{4}/);
+  //           return match && parseInt(match[0], 10) === 2023;
+  //         })
+  //         .map((e2, i2) => {
+  //           actuals_college.push(
+  //             <li key={i2}>
+  //               {e2.student}
+  //               {e2.title && <span>（{e2.title}）</span>}
+  //             </li>
+  //           );
+  //         });
+  //     });
+  //   });
 
-  const actuals = [
-    {
-      id: 1,
-      title: "英検合格実績",
-      subtitle: "過去1年間（2022年第3回〜2023年第2回）",
-      content: [
-        <div className={css_index.row_box}>
-          <h5>1級（8名）</h5>
-          <ul>
-            <li>横浜市立日吉台西中学校 1年</li>
-            <li>フェリス女学院高校 1年</li>
-            <li>桜蔭学園高校 1年</li>
-            <li>慶応義塾高校 3年</li>
-          </ul>
-        </div>,
-        <div className={css_index.row_box}>
-          <h5>準1級（15名）</h5>
-          <ul>
-            <li>雙葉学園小学校 6年</li>
-            <li>田園調布雙葉中学校 3年</li>
-          </ul>
-        </div>,
-      ],
-      modalContent: [
-        <div className={css_index.row_box}>
-          <h5>1級（8名）</h5>
-          <ul>
-            <li>横浜市立日吉台西中学校 1年</li>
-            <li>フェリス女学院高校 1年</li>
-            <li>桜蔭学園高校 1年</li>
-            <li>慶応義塾高校 3年</li>
-            <li>慶應大学 3年</li>
-            <li>システムエンジニア</li>
-            <li>外資系法人勤務</li>
-            <li>英語講師</li>
-          </ul>
-        </div>,
-        <div className={css_index.row_box}>
-          <h5>準1級（15名）</h5>
-          <ul>
-            <li>雙葉学園小学校 6年</li>
-            <li>田園調布雙葉中学校 3年</li>
-            <li>慶応湘南藤沢高等部 1年</li>
-            <li>神奈川県立神奈川総合高校 2年</li>
-            <li>カリタス女子高校 2年</li>
-            <li>横浜雙葉高校 2年</li>
-            <li>武相高校 2年</li>
-            <li>東洋英和女学院高等部 2年</li>
-            <li>実践女子学園高校 2年</li>
-            <li>東京都立国際高校 2年</li>
-            <li>法政大学第二高校 2年</li>
-            <li>青陵高校 3年</li>
-            <li>山手学院高校 3年</li>
-            <li>東京女学館高校 3年</li>
-            <li>桐蔭学園高校 卒</li>
-          </ul>
-        </div>,
-        <div className={css_index.row_box}>
-          <h5>2級（36名）</h5>
-          <ul>
-            <li>サレジアン国際学園世田谷中学校 2年</li>
-            <li>慶応普通部 3年</li>
-            <li>学習院中等科 3年</li>
-            <li>清泉女学院中学校 3年</li>
-            <li>白百合学園中学校 3年</li>
-            <li>神奈川県立希望ヶ丘高校 1年</li>
-            <li>田園調布学園高等部 1年</li>
-            <li>足洗学園高校 1年</li>
-            <li>横浜共立学園高校 1年</li>
-            <li>東京都立小山台高校 1年</li>
-            <li>サレジオ学院高校 2年</li>
-            <li>慶応湘南藤沢高等部 3年</li>
-            <li>サレジアン国際学園世田谷高校 2年</li>
-            <li>神奈川学園高校 3年</li>
-            <li>立教女学院高校 3年</li>
-            <li>白鸚女子高校 3年</li>
-            <li>文教大学附属高校 3年</li>
-            <li>清泉女学院高校</li>
-            <li>捜真女学校高等部 3年</li>
-            <li>青陵高校 卒</li>
-            <li>青山学院 1年 他</li>
-          </ul>
-        </div>,
-      ],
-    },
-    {
-      id: 2,
-      title: "2023年大学合格実績",
-      subtitle: "",
-      content: [
-        <div className={css_index.row_box}>
-          <h5>2023年大学合格実績</h5>
-          <ul>
-            <li>東京大学 理科Ⅱ類 合格（開成高校）</li>
-            <li>東京工業大学 生命理工学院 合格（麻布高校）</li>
-            <li>一橋大学 法学部 合格（豊島岡女子高校）</li>
-            <li>横浜国立大学 理工学部 合格（桐光学園高校）</li>
-          </ul>
-        </div>,
-        <div className={css_index.row_box}>
-          <h5>内進を含む主な合格大学</h5>
-          <ul>
-            <li>慶応大学 合格（10名）</li>
-            <li>早稲田大学 合格（2名）</li>
-          </ul>
-        </div>,
-      ],
-      modalContent: [
-        <div className={css_index.row_box}>
-          <h5>2023年大学合格実績</h5>
-          <ul>{actuals_college}</ul>
-        </div>,
-        <div className={css_index.row_box}>
-          <h5>内進を含む主な合格大学</h5>
-          <ul>
-            <li>慶応大学 合格（10名）</li>
-            <li>早稲田大学 合格（2名）</li>
-            <li>青山学院大学 合格（2名）</li>
-            <li>立命館アジア太平洋大学 合格（2名）</li>
-            <li>関西外国語大学 合格（2名）</li>
-            <li>津田塾大学 合格（2名）</li>
-            <li>東京大学 合格（1名）</li>
-            <li>明治大学 合格（1名）</li>
-            <li>日本大学 合格（1名）</li>
-            <li>東京工業大学 合格（1名）</li>
-            <li>一橋大学 合格（1名）</li>
-            <li>横浜国立大学 合格（1名）</li>
-            <li>上智大学 合格（1名）</li>
-            <li>東京理科大学 合格（1名）</li>
-            <li>北里大学 合格（1名）</li>
-            <li>日本獣医生命科学大学 合格（1名）</li>
-            <li>神田外語大学 合格（1名）</li>
-            <li>東京女子大学 合格（1名）</li>
-          </ul>
-        </div>,
-      ],
-    },
-    {
-      id: 3,
-      title: "TOEFL実績",
-      subtitle: "過去2年間",
-      content: [
-        <div className={css_index.row_box}>
-          <h5>IBT （120点満点）</h5>
-          <ul>
-            <li>105 慶応大学2年</li>
-            <li>102 医師</li>
-            <li>90 国家公務員</li>
-            <li>90 慶應義塾高校3年</li>
-          </ul>
-        </div>,
-        <div className={css_index.row_box}>
-          <h5>ITP （677点満点）</h5>
-          <ul>
-            <li>610 慶應大学3年</li>
-            <li>601 横浜国立大学3年</li>
-          </ul>
-        </div>,
-      ],
-      modalContent: [
-        <div className={css_index.row_box}>
-          <h5>IBT （120点満点）</h5>
-          <ul>
-            <li>105 慶応大学2年</li>
-            <li>102 医師</li>
-            <li>90 国家公務員</li>
-            <li>90 慶應義塾高校3年</li>
-          </ul>
-        </div>,
-        <div className={css_index.row_box}>
-          <h5>ITP （677点満点）</h5>
-          <ul>
-            <li>610 慶應大学3年</li>
-            <li>601 横浜国立大学3年</li>
-          </ul>
-        </div>,
-      ],
-    },
-    {
-      id: 4,
-      title: "TOEIC実績",
-      subtitle: "過去2年間",
-      content: [
-        <div className={css_index.row_box}>
-          <h5>TOEIC （990点満点）</h5>
-          <ul>
-            <li>985 メーカー勤務</li>
-            <li>975 IT企業勤務</li>
-            <li>960 外資系企業勤務</li>
-            <li>935 慶応大学3年</li>
-            <li>905 早稲田大学4年</li>
-            <li>900 塾講師</li>
-          </ul>
-        </div>,
-      ],
-      modalContent: [
-        <div className={css_index.row_box}>
-          <h5>TOEIC （990点満点）</h5>
-          <ul>
-            <li>985 メーカー勤務</li>
-            <li>975 IT企業勤務</li>
-            <li>960 外資系企業勤務</li>
-            <li>935 慶応大学3年</li>
-            <li>905 早稲田大学4年</li>
-            <li>900 塾講師</li>
-          </ul>
-        </div>,
-      ],
-    },
-  ];
+  // const actuals = [
+  //   {
+  //     id: 1,
+  //     title: "英検合格実績",
+  //     subtitle: "過去1年間（2022年第3回〜2023年第2回）",
+  //     content: [
+  //       <div className={css_index.row_box}>
+  //         <h5>1級（8名）</h5>
+  //         <ul>
+  //           <li>横浜市立日吉台西中学校 1年</li>
+  //           <li>フェリス女学院高校 1年</li>
+  //           <li>桜蔭学園高校 1年</li>
+  //           <li>慶応義塾高校 3年</li>
+  //         </ul>
+  //       </div>,
+  //       <div className={css_index.row_box}>
+  //         <h5>準1級（15名）</h5>
+  //         <ul>
+  //           <li>雙葉学園小学校 6年</li>
+  //           <li>田園調布雙葉中学校 3年</li>
+  //         </ul>
+  //       </div>,
+  //     ],
+  //     modalContent: [
+  //       <div className={css_index.row_box}>
+  //         <h5>1級（8名）</h5>
+  //         <ul>
+  //           <li>横浜市立日吉台西中学校 1年</li>
+  //           <li>フェリス女学院高校 1年</li>
+  //           <li>桜蔭学園高校 1年</li>
+  //           <li>慶応義塾高校 3年</li>
+  //           <li>慶應大学 3年</li>
+  //           <li>システムエンジニア</li>
+  //           <li>外資系法人勤務</li>
+  //           <li>英語講師</li>
+  //         </ul>
+  //       </div>,
+  //       <div className={css_index.row_box}>
+  //         <h5>準1級（15名）</h5>
+  //         <ul>
+  //           <li>雙葉学園小学校 6年</li>
+  //           <li>田園調布雙葉中学校 3年</li>
+  //           <li>慶応湘南藤沢高等部 1年</li>
+  //           <li>神奈川県立神奈川総合高校 2年</li>
+  //           <li>カリタス女子高校 2年</li>
+  //           <li>横浜雙葉高校 2年</li>
+  //           <li>武相高校 2年</li>
+  //           <li>東洋英和女学院高等部 2年</li>
+  //           <li>実践女子学園高校 2年</li>
+  //           <li>東京都立国際高校 2年</li>
+  //           <li>法政大学第二高校 2年</li>
+  //           <li>青陵高校 3年</li>
+  //           <li>山手学院高校 3年</li>
+  //           <li>東京女学館高校 3年</li>
+  //           <li>桐蔭学園高校 卒</li>
+  //         </ul>
+  //       </div>,
+  //       <div className={css_index.row_box}>
+  //         <h5>2級（36名）</h5>
+  //         <ul>
+  //           <li>サレジアン国際学園世田谷中学校 2年</li>
+  //           <li>慶応普通部 3年</li>
+  //           <li>学習院中等科 3年</li>
+  //           <li>清泉女学院中学校 3年</li>
+  //           <li>白百合学園中学校 3年</li>
+  //           <li>神奈川県立希望ヶ丘高校 1年</li>
+  //           <li>田園調布学園高等部 1年</li>
+  //           <li>足洗学園高校 1年</li>
+  //           <li>横浜共立学園高校 1年</li>
+  //           <li>東京都立小山台高校 1年</li>
+  //           <li>サレジオ学院高校 2年</li>
+  //           <li>慶応湘南藤沢高等部 3年</li>
+  //           <li>サレジアン国際学園世田谷高校 2年</li>
+  //           <li>神奈川学園高校 3年</li>
+  //           <li>立教女学院高校 3年</li>
+  //           <li>白鸚女子高校 3年</li>
+  //           <li>文教大学附属高校 3年</li>
+  //           <li>清泉女学院高校</li>
+  //           <li>捜真女学校高等部 3年</li>
+  //           <li>青陵高校 卒</li>
+  //           <li>青山学院 1年 他</li>
+  //         </ul>
+  //       </div>,
+  //     ],
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "2023年大学合格実績",
+  //     subtitle: "",
+  //     content: [
+  //       <div className={css_index.row_box}>
+  //         <h5>2023年大学合格実績</h5>
+  //         <ul>
+  //           <li>東京大学 理科Ⅱ類 合格（開成高校）</li>
+  //           <li>東京工業大学 生命理工学院 合格（麻布高校）</li>
+  //           <li>一橋大学 法学部 合格（豊島岡女子高校）</li>
+  //           <li>横浜国立大学 理工学部 合格（桐光学園高校）</li>
+  //         </ul>
+  //       </div>,
+  //       <div className={css_index.row_box}>
+  //         <h5>内進を含む主な合格大学</h5>
+  //         <ul>
+  //           <li>慶応大学 合格（10名）</li>
+  //           <li>早稲田大学 合格（2名）</li>
+  //         </ul>
+  //       </div>,
+  //     ],
+  //     modalContent: [
+  //       <div className={css_index.row_box}>
+  //         <h5>2023年大学合格実績</h5>
+  //         <ul>{actuals_college}</ul>
+  //       </div>,
+  //       <div className={css_index.row_box}>
+  //         <h5>内進を含む主な合格大学</h5>
+  //         <ul>
+  //           <li>慶応大学 合格（10名）</li>
+  //           <li>早稲田大学 合格（2名）</li>
+  //           <li>青山学院大学 合格（2名）</li>
+  //           <li>立命館アジア太平洋大学 合格（2名）</li>
+  //           <li>関西外国語大学 合格（2名）</li>
+  //           <li>津田塾大学 合格（2名）</li>
+  //           <li>東京大学 合格（1名）</li>
+  //           <li>明治大学 合格（1名）</li>
+  //           <li>日本大学 合格（1名）</li>
+  //           <li>東京工業大学 合格（1名）</li>
+  //           <li>一橋大学 合格（1名）</li>
+  //           <li>横浜国立大学 合格（1名）</li>
+  //           <li>上智大学 合格（1名）</li>
+  //           <li>東京理科大学 合格（1名）</li>
+  //           <li>北里大学 合格（1名）</li>
+  //           <li>日本獣医生命科学大学 合格（1名）</li>
+  //           <li>神田外語大学 合格（1名）</li>
+  //           <li>東京女子大学 合格（1名）</li>
+  //         </ul>
+  //       </div>,
+  //     ],
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "TOEFL実績",
+  //     subtitle: "過去2年間",
+  //     content: [
+  //       <div className={css_index.row_box}>
+  //         <h5>IBT （120点満点）</h5>
+  //         <ul>
+  //           <li>105 慶応大学2年</li>
+  //           <li>102 医師</li>
+  //           <li>90 国家公務員</li>
+  //           <li>90 慶應義塾高校3年</li>
+  //         </ul>
+  //       </div>,
+  //       <div className={css_index.row_box}>
+  //         <h5>ITP （677点満点）</h5>
+  //         <ul>
+  //           <li>610 慶應大学3年</li>
+  //           <li>601 横浜国立大学3年</li>
+  //         </ul>
+  //       </div>,
+  //     ],
+  //     modalContent: [
+  //       <div className={css_index.row_box}>
+  //         <h5>IBT （120点満点）</h5>
+  //         <ul>
+  //           <li>105 慶応大学2年</li>
+  //           <li>102 医師</li>
+  //           <li>90 国家公務員</li>
+  //           <li>90 慶應義塾高校3年</li>
+  //         </ul>
+  //       </div>,
+  //       <div className={css_index.row_box}>
+  //         <h5>ITP （677点満点）</h5>
+  //         <ul>
+  //           <li>610 慶應大学3年</li>
+  //           <li>601 横浜国立大学3年</li>
+  //         </ul>
+  //       </div>,
+  //     ],
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "TOEIC実績",
+  //     subtitle: "過去2年間",
+  //     content: [
+  //       <div className={css_index.row_box}>
+  //         <h5>TOEIC （990点満点）</h5>
+  //         <ul>
+  //           <li>985 メーカー勤務</li>
+  //           <li>975 IT企業勤務</li>
+  //           <li>960 外資系企業勤務</li>
+  //           <li>935 慶応大学3年</li>
+  //           <li>905 早稲田大学4年</li>
+  //           <li>900 塾講師</li>
+  //         </ul>
+  //       </div>,
+  //     ],
+  //     modalContent: [
+  //       <div className={css_index.row_box}>
+  //         <h5>TOEIC （990点満点）</h5>
+  //         <ul>
+  //           <li>985 メーカー勤務</li>
+  //           <li>975 IT企業勤務</li>
+  //           <li>960 外資系企業勤務</li>
+  //           <li>935 慶応大学3年</li>
+  //           <li>905 早稲田大学4年</li>
+  //           <li>900 塾講師</li>
+  //         </ul>
+  //       </div>,
+  //     ],
+  //   },
+  // ];
 
   return (
     <>
@@ -518,7 +521,7 @@ export default function Page({
                       <h4>
                         <div
                           dangerouslySetInnerHTML={{
-                            __html: e.title,
+                            __html: parser.translateHTMLString(e.title),
                           }}
                         />
                       </h4>
@@ -527,7 +530,9 @@ export default function Page({
                       <h3>
                         <div
                           dangerouslySetInnerHTML={{
-                            __html: ResultsCustomValues[i].student,
+                            __html: parser.translateHTMLString(
+                              ResultsCustomValues[i].student
+                            ),
                           }}
                         />
                         {/* <span>合格</span> */}
@@ -550,7 +555,7 @@ export default function Page({
             className={`${css_index.section__inner} ${css_index.section_02__inner}`}
           >
             <div className={css_index.box}>
-              {actuals.map((item, index) => (
+              {/* {actuals.map((item, index) => (
                 <div key={item.id} className={`${css_index.box__item}`}>
                   <h4>
                     {item.title}
@@ -567,7 +572,7 @@ export default function Page({
                     さらに見る
                   </button>
                 </div>
-              ))}
+              ))} */}
             </div>
           </div>
         </section>
@@ -1602,7 +1607,7 @@ export default function Page({
                 学習目的やご要望を伺い、「グループ指導」「1対1個別指導（オンライン可）」「個別グループ指導」の中から、最も効率良くマスターできるカリキュラムと学習法をご提案いたします。
               </p>
               <div className={css_index.flex}>
-                {accordionData03.map((item, index) => (
+                {/* {accordionData03.map((item, index) => (
                   <div className={css_index.box}>
                     <h4 className={css_index.blue_slash}>{item.title}</h4>
                     <div
@@ -1631,7 +1636,7 @@ export default function Page({
                       </div>
                     </div>
                   </div>
-                ))}
+                ))} */}
               </div>
             </div>
             <div className={`${css_index.point_row} ${css_index.point_row_03}`}>
@@ -1737,7 +1742,7 @@ export default function Page({
                 <span>カリキュラム一覧</span>
               </h3>
 
-              {accordionData01.map((item, index) => (
+              {/* {accordionData01.map((item, index) => (
                 <div
                   key={index}
                   className={`${css_index.box__item} ${css_index.ac_wrap}`}
@@ -1759,7 +1764,7 @@ export default function Page({
                     {item.content}
                   </div>
                 </div>
-              ))}
+              ))} */}
             </div>
           </div>
 
@@ -2308,7 +2313,7 @@ export default function Page({
           <div
             className={`${css_index.section__inner} ${css_index.section_16__inner}`}
           >
-            {accordionData02.map((item, index) => (
+            {/* {accordionData02.map((item, index) => (
               <div
                 key={index}
                 className={`${css_index.row_box} ${css_index.ac_wrap}`}
@@ -2334,7 +2339,7 @@ export default function Page({
                   </dd>
                 </dl>
               </div>
-            ))}
+            ))} */}
           </div>
         </section>
 
