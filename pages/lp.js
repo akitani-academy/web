@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   accordionData01,
   accordionData02,
-  accordionData03,
+  // accordionData03,
 } from "../components/Accordion/Accordion";
 
 import Link from "next/link";
@@ -1606,7 +1606,7 @@ export default function Page({
                 学習目的やご要望を伺い、「グループ指導」「1対1個別指導（オンライン可）」「個別グループ指導」の中から、最も効率良くマスターできるカリキュラムと学習法をご提案いたします。
               </p>
               <div className={css_index.flex}>
-                {accordionData03.map((item, index) => (
+                {/* {accordionData03.map((item, index) => (
                   <div className={css_index.box}>
                     <h4 className={css_index.blue_slash}>{item.title}</h4>
                     <div
@@ -1635,7 +1635,7 @@ export default function Page({
                       </div>
                     </div>
                   </div>
-                ))}
+                ))} */}
               </div>
             </div>
             <div className={`${css_index.point_row} ${css_index.point_row_03}`}>
@@ -1760,7 +1760,11 @@ export default function Page({
                       activeIndex01 === index ? css_index.open : ""
                     }`}
                   >
-                    {item.content}
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: item.content,
+                      }}
+                    />
                   </div>
                 </div>
               ))}
@@ -2334,7 +2338,11 @@ export default function Page({
                       activeIndex02 === index ? css_index.open : ""
                     }`}
                   >
-                    {item.content}
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: item.content,
+                      }}
+                    />
                   </dd>
                 </dl>
               </div>
