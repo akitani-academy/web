@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import { GraphQLClient, gql } from "graphql-request";
+import { GraphQLClient, gql } from "graphql-request";
 import {
   accordionData01,
   accordionData02,
@@ -33,27 +33,27 @@ export default function Page({
   experiencesPostData,
   resultsPostData,
 }) {
-  // const ResultsValues = [];
+  const ResultsValues = [];
 
-  // Object.entries(resultsPostData.results).forEach((e1, i1) => {
-  //   e1[1].forEach((e2, i2) => {
-  //     Object.entries(e2).forEach((e3, i3) => {
-  //       ResultsValues.push(e3[1]);
-  //     });
-  //   });
-  // });
+  Object.entries(resultsPostData.results).forEach((e1, i1) => {
+    e1[1].forEach((e2, i2) => {
+      Object.entries(e2).forEach((e3, i3) => {
+        ResultsValues.push(e3[1]);
+      });
+    });
+  });
 
-  // const ResultsCustomValues = [];
+  const ResultsCustomValues = [];
 
-  // ResultsValues.map((e, i) => (
-  //   <>
-  //     {
-  //       (ResultsCustomValues[i] = {
-  //         student: experiencesPostData[i].student,
-  //       })
-  //     }
-  //   </>
-  // ));
+  ResultsValues.map((e, i) => (
+    <>
+      {
+        (ResultsCustomValues[i] = {
+          student: experiencesPostData[i].student,
+        })
+      }
+    </>
+  ));
 
   const [activeIndex01, setactiveIndex01] = useState(null);
 
@@ -496,7 +496,7 @@ export default function Page({
           </h3>
 
           <div className={css_index[`swiper`]}>
-            {/* <Swiper
+            <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               breakpoints={{
                 961: {
@@ -547,7 +547,7 @@ export default function Page({
                   </SwiperSlide>
                 </>
               ))}
-            </Swiper> */}
+            </Swiper>
           </div>
 
           <div
@@ -2506,38 +2506,38 @@ export async function getStaticProps() {
   ).then((res) => res.json());
   teacherList = teacherList.sort((a, b) => a.infoCount - b.infoCount).reverse();
 
-  // const endpoint = "https://yoshikitam.wpx.jp/akitani/graphql";
-  // const graphQLClient = new GraphQLClient(endpoint);
+  const endpoint = "https://yoshikitam.wpx.jp/akitani/graphql";
+  const graphQLClient = new GraphQLClient(endpoint);
 
-  // const query = gql`
-  //   {
-  //     results(
-  //       where: {
-  //         categoryId: 29
-  //         status: PUBLISH
-  //         orderby: { field: DATE, order: DESC }
-  //       }
-  //       first: 10
-  //     ) {
-  //       edges {
-  //         node {
-  //           excerpt
-  //           id
-  //           title
-  //         }
-  //       }
-  //     }
-  //   }
-  // `;
+  const query = gql`
+    {
+      results(
+        where: {
+          categoryId: 29
+          status: PUBLISH
+          orderby: { field: DATE, order: DESC }
+        }
+        first: 10
+      ) {
+        edges {
+          node {
+            excerpt
+            id
+            title
+          }
+        }
+      }
+    }
+  `;
 
-  // const resultsPostData = await graphQLClient.request(query);
+  const resultsPostData = await graphQLClient.request(query);
 
   return {
     props: {
       experiencesData,
       experiencesPostData,
       teacherList,
-      // resultsPostData: resultsPostData,
+      resultsPostData: resultsPostData,
     },
   };
 }
