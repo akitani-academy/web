@@ -1,29 +1,21 @@
-/* eslint-disable react/no-unknown-property */
-// const _V = require("components/_V");
 import { useState } from "react";
 import { GraphQLClient, gql } from "graphql-request";
+import {
+  accordionData01,
+  accordionData02,
+  accordionData03,
+} from "../components/Accordion/Accordion";
 
-import Image from "next/image";
 import Link from "next/link";
-
-import classNames from "classnames";
-import { loadDefaultJapaneseParser } from "budoux";
-const parser = loadDefaultJapaneseParser();
 
 import Head from "components/head";
 import Header from "components/lp_header";
 import Footer from "components/lp_footer";
 import Nav from "components/lp_nav";
-import LinkList from "components/widget/LinkList";
 import Cta from "components/Cta/Cta";
-// import TopSlideshow from "components/TopSlideshow/TopSlideshow";
-import LoopCarousel from "components/widget/LoopCarousel";
-import Button from "components/Button/Button";
-import ContactButton from "components/ContactButton/ContactButton";
+import Modal from "components/Modal/Modal";
 
 import css_index from "styles/lp.module.scss";
-
-import Logo from "/public/curriculum.svg";
 
 // swiper
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
@@ -32,64 +24,33 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-function Modal({ isOpen, onClose, item }) {
-  if (!isOpen) return null;
-
-  return (
-    <div className={css_index.modal}>
-      <div className={css_index.overlay} onClick={onClose}></div>
-      <div className={css_index.close} onClick={onClose}>
-        <div>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-      <div className={css_index.modal__inner}>
-        <h3>
-          {item.title}
-          <small>{item.subtitle}</small>
-        </h3>
-        <div className={css_index.box}>{item.modalContent}</div>
-      </div>
-    </div>
-  );
-}
-
 export default function Page({
-  top,
-  courseData,
-  classtypeData,
   teacherList,
   experiencesData,
   experiencesPostData,
-  // resultsPostData,
+  resultsPostData,
 }) {
-  // TASK: 先生のカードリストのオートスクロールを実装予定
-  // let teacherListOdd = teacherList.filter(num => Number(num) % 2 !== 0);
-  // let teacherListEven = teacherList.filter(num => Number(num) % 2 === 0);
-
   const ResultsValues = [];
 
-  // Object.entries(resultsPostData.results).forEach((e1, i1) => {
-  //   e1[1].forEach((e2, i2) => {
-  //     Object.entries(e2).forEach((e3, i3) => {
-  //       ResultsValues.push(e3[1]);
-  //     });
-  //   });
-  // });
+  Object.entries(resultsPostData.results).forEach((e1, i1) => {
+    e1[1].forEach((e2, i2) => {
+      Object.entries(e2).forEach((e3, i3) => {
+        ResultsValues.push(e3[1]);
+      });
+    });
+  });
 
-  // const ResultsCustomValues = [];
+  const ResultsCustomValues = [];
 
-  // ResultsValues.map((e, i) => (
-  //   <>
-  //     {
-  //       (ResultsCustomValues[i] = {
-  //         student: experiencesPostData[i].student,
-  //       })
-  //     }
-  //   </>
-  // ));
+  ResultsValues.map((e, i) => (
+    <>
+      {
+        (ResultsCustomValues[i] = {
+          student: experiencesPostData[i].student,
+        })
+      }
+    </>
+  ));
 
   const [activeIndex01, setactiveIndex01] = useState(null);
 
@@ -120,358 +81,6 @@ export default function Page({
   const handleCloseModal = () => {
     setModalOpen(false);
   };
-
-  const accordionData01 = [
-    {
-      title: "小学生",
-      content: [
-        <dl>
-          <dt>小4・5・6生</dt>
-          <dd>
-            <dl>
-              <dt>導入〜準2級</dt>
-              <dd>
-                小学校でも、英語の授業時間が増えるにつれ、より高度な英語力が求められるようになっています。ネイティブ講師とバイリンガル講師の指導で、読む・書く・聞く・話す力を総合的につけ、英検の合格級も上げて対策指導いたします。帰国枠受験にも対応。
-              </dd>
-            </dl>
-          </dd>
-        </dl>,
-        <dl>
-          <dt>小1・2・3生Kids英会話</dt>
-          <dd>
-            <dl>
-              <dt>導入〜3級</dt>
-              <dd>
-                ABCの初歩から、スペリングと音との関係をフォニックスでマスターし、初めて見たスペルも発音でき、初めて聞いた発音もスペルアウトできるようにしていきます。ネイティブ講師と日本人バイリンガル講師の指導で、英検1級につながる基礎力を視野に、英語で考えて話す英語脳を楽しく育てます。
-              </dd>
-            </dl>
-          </dd>
-        </dl>,
-      ],
-    },
-    {
-      title: "中学生",
-      content: [
-        <dl>
-          <dt>高校受験生 中3生</dt>
-          <dd>
-            <b>3級〜2級/GTEC/TOEIC Bridge/TOEFL</b>
-          </dd>
-        </dl>,
-        <div className={css_index.flex}>
-          <dl>
-            <dt>中2生</dt>
-            <dd>
-              <b>4級〜準2級/GTEC</b>
-            </dd>
-          </dl>
-          <dl>
-            <dt>中1生</dt>
-            <dd>
-              <b>導入〜準2級/GTEC</b>
-            </dd>
-          </dl>
-        </div>,
-        <div className={css_index.course}>
-          <dl>
-            <dt>アドバンスコース</dt>
-            <dd>
-              中3末までに英検2級以上・中堅大学合格以上のレベルまでマスターし、難関校合格や留学にも対応する、英語スペシャリスト養成コース。
-            </dd>
-          </dl>
-          <dl>
-            <dt>ベイシックコース</dt>
-            <dd>
-              学校の英語成績アップを主な目的に、トレジャー・プログレス等の教科書を完璧にマスターし、中3末までの英検2級合格を目指します。
-            </dd>
-          </dl>
-          <dl>
-            <dt>リーディング</dt>
-            <dd>
-              高校基礎文法までを完璧にマスターし、多読と精読両面で読解力の基礎を築きます。
-            </dd>
-          </dl>
-          <dl>
-            <dt>ライティング</dt>
-            <dd>
-              マスターした文法と構文を使って、より自然な英作文ができるよう添削指導します。
-            </dd>
-          </dl>
-          <dl>
-            <dt>リスニング</dt>
-            <dd>
-              音と読解力の両面を発音練習と速読で鍛え、「耳に入る順」に聞き取り、理解できるようにします。
-            </dd>
-          </dl>
-          <dl>
-            <dt>スピーキング</dt>
-            <dd>
-              簡単な単語や単文から話し始めて、状況に応じて言い替えて話せるようにトレーニングしていきます。
-            </dd>
-          </dl>
-        </div>,
-      ],
-    },
-    {
-      title: "高校生以上",
-      content: [
-        <dl>
-          <dt>英検</dt>
-          <dd>
-            <dl>
-              <dt>準2級〜1級</dt>
-              <dd>
-                秋谷アカデミィでは、求められるスキルを各級毎に細分化してマスターし、英検1級も毎年10名以上の方が合格しています。スピーキングとライティングはシミュレーションと添削を重ねることで、多くの方が満点を獲得しています。
-              </dd>
-            </dl>
-          </dd>
-        </dl>,
-        <dl>
-          <dt>TOEIC</dt>
-          <dd>
-            <dl>
-              <dt>TOIEC500〜990</dt>
-              <dd>
-                目標スコアに応じて900・800・730・650点と細かくクラス分けし、初級者むけの基礎文法から、上級者のスコアアップに必要な受験スキル・解法テクニックまで指導いたします。リスニング・リーディングそれぞれの出題傾向を、パートごとに対策指導し、スコアアップにつなげます。
-              </dd>
-            </dl>
-          </dd>
-        </dl>,
-        <dl>
-          <dt>TOEFL IELTS</dt>
-          <dd>
-            <dl>
-              <dt>TOEFL40〜120/IELTS4〜9</dt>
-              <dd>
-                初めて受験する方から、さらにスコアアップを目指す方まで、レベルに応じて４技能を網羅した対策指導をいたします。特に苦手な方が多いスピーキングとライティングは、多くの問題をこなすことで実践力をつけ、ネイティブ講師が設問に応じた答え方を特訓して、目標以上のスコアを獲得しています。
-              </dd>
-            </dl>
-          </dd>
-        </dl>,
-      ],
-    },
-    {
-      title: "高校生・大学受験",
-      content: [
-        <dl>
-          <dt>大学受験生/高3生</dt>
-          <dd>
-            <dl>
-              <dt>
-                2級〜準1級/IELTS GTEC TEAP/TOEIC
-                <br />
-                /TOEIC Bridge/TOEFL
-              </dt>
-              <dd>
-                大学入学共通テストや各大学の個別試験等、変化し続ける受験英語に完璧な対策指導を致します。共通テストはリーディングの総語数が更に増加して長文化し、リスニングは1回読みで解答が求められます。根幹になる正確な速読力をつけて、長文読解、リスニング特訓、英作文や小論文の添削を重ねて合格を確実に致します。学校推薦や総合型選抜対策も万全で、今年も第一志望校に85％以上が合格。
-              </dd>
-            </dl>
-          </dd>
-        </dl>,
-        <dl>
-          <dt>高2生</dt>
-          <dd>
-            <dl>
-              <dt>
-                2級〜準1級/IELTS GTEC TEAP/TOEIC
-                <br />
-                /TOEIC Bridge/TOEFL
-              </dt>
-              <dd>
-                単語・熟語・文法の力をつけながら、多読と精読両面からアプローチして正確に早く読解できるようにします。英語力の土台となる長文読解力をつけてリスニング力も伸ばし、英作文は添削指導を重ねて英検と新入試での大学受験合格力をつけていきます。
-              </dd>
-            </dl>
-          </dd>
-        </dl>,
-        <dl>
-          <dt>高1生</dt>
-          <dd>
-            <dl>
-              <dt>
-                準2級〜準1級/GTEC TEAP/TOEIC Bridge
-                <br />
-                /TOEFL
-              </dt>
-              <dd>
-                高校生の英語は文法→構文→長文読解→多読・速読→リスニング→英作文→英会話のプロセスで力がつきます。学習目的と習熟度に応じたカリキュラムで、不得意単元の克服と新単元マスターを徹底し、新形式の大学入試に対応した力をつけていきます。
-              </dd>
-            </dl>
-          </dd>
-        </dl>,
-      ],
-    },
-  ];
-
-  //よくある質問
-  const accordionData02 = [
-    {
-      title: "カリキュラムの内容は？",
-      content: (
-        <div>
-          当アカデミィでは、基礎から応用まで幅広いカリキュラムを提供しています。生徒のニーズや目標に合わせたカスタマイズも可能で、大学受験からTOEIC・TOEFL対策、小学生の英検対策まで、幅広くカリキュラムを提供しています。
-        </div>
-      ),
-    },
-    {
-      title: "クラスのサイズはどのくらいですか？",
-      content: (
-        <div>
-          効果的な学習を確保するために、レベルをそろえた6人までの少人数クラスを採用しています。個別指導（1対1）や個別指導クラス（3対1）のクラスもご用意しています。
-        </div>
-      ),
-    },
-    {
-      title: "成果はどのように測定されますか？",
-      content: (
-        <div>
-          定期的なテストや模擬試験、個別面談を通じて、生徒の進捗を客観的に評価します。さらに、授業ごとのフィードバックや宿題のチェックを行い、個々の課題に対応した指導を行います。
-        </div>
-      ),
-    },
-    {
-      title: "コース料金はどのくらいですか？",
-      content: (
-        <div>
-          コース料金は、コースの種類により異なります。詳細な料金については、お問い合わせいただくか、当アカデミィの
-          <Link href="/pricing">入学金・授業料について</Link>をご覧ください。
-        </div>
-      ),
-    },
-    {
-      title: "受講スケジュールを教えて下さい",
-      content: (
-        <div>
-          平日は午後3時から9時30分まで、土曜日は午前10時から午後9時30分まで授業を行っています。生徒のスケジュールに合わせて、柔軟にクラスを選ぶことができます。詳細なスケジュールはお問い合わせください。
-        </div>
-      ),
-    },
-    {
-      title: "オンライン授業と対面授業はどちらもありますか？",
-      content: (
-        <div>
-          はい、当アカデミィではオンライン授業と対面授業の両方を提供しています。生徒のライフスタイルや学習スタイルに合わせて選択できるため、ぜひご相談くださいませ。
-        </div>
-      ),
-    },
-    {
-      title: "どのようなサポート体制が整っていますか？",
-      content: (
-        <div>
-          生徒一人ひとりの学習状況に応じて、個別のカウンセリングや追加の補習クラスを提供しています。また、英検やTOEICなどの資格試験対策も充実しており、目標達成をサポートします。
-        </div>
-      ),
-    },
-    {
-      title: "成功事例や過去の実績はありますか？",
-      content: (
-        <div>
-          多くの生徒が英検やTOEICの高得点を取得し、志望校に合格しています。具体的な成功事例や過去の実績については、
-          <Link href="/experiences">合格実績 と 体験記</Link>をご覧ください。
-        </div>
-      ),
-    },
-    {
-      title: "見学や体験レッスンは可能ですか？",
-      content: (
-        <div>
-          はい、見学や体験レッスンは随時受け付けております。お気軽にお問い合わせいただき、ご希望の日程をお知らせください。実際の授業を体験することで、当アカデミィの雰囲気や指導方法を実感していただけます。
-        </div>
-      ),
-    },
-    {
-      title: "どのくらいで成果が出ますか？",
-      content: (
-        <div>
-          生徒の学習ペースや目標によりますが、一般的には3ヶ月から6ヶ月で効果を実感することができます。継続的な学習と努力が重要ですが、当アカデミィの効果的なカリキュラムとサポート体制により、確実に成果を上げることができます。
-        </div>
-      ),
-    },
-  ];
-
-  const accordionData03 = [
-    {
-      title: "グループ指導",
-      image: [
-        <picture>
-          <source
-            srcSet="/img/top/sp/section09_item01.png"
-            media="(max-width: 600px)"
-          />
-          <img src="/img/top/pc/section09_item01.png" />
-        </picture>,
-      ],
-      content: [
-        <dl>
-          <dt>指導内容</dt>
-          <dd>
-            学年と習熟度別に6人までの少人数グループに細かくクラス分けをして、英検1級の担任講師が確実にマスターさせていきます。英語の勉強の仕方から、内申点の向上、受験、英検、留学など、学習目的と習熟度に応じてご指導いたします。ネイティブ講師によるフリートークの受講と英作文の添削は無料で受講可能です。
-          </dd>
-        </dl>,
-        <dl>
-          <dt>指導時間</dt>
-          <dd>
-            <dl>
-              <dt>週1回／月4回</dt>
-              <dd>
-                小学生や基礎レベル：70分～
-                <br />
-                高校生や英検2級レベル以上：120分
-                <br />
-                ※受講クラスは学年とレベルに応じて変わりますのでご相談ください。
-              </dd>
-            </dl>
-          </dd>
-        </dl>,
-        <dl>
-          <dt>振替制度</dt>
-          <dd>
-            グループ指導を欠席した場合、振替制度を利用して欠席した授業内容をマスターできます。欠席した単元は、個別に指導する振替時間枠（3～4人対1人で英検1級講師がご指導）を設けておりますのでご相談ください。
-          </dd>
-        </dl>,
-      ],
-    },
-    {
-      title: "1対1個人指導",
-      image: [
-        <picture>
-          <source
-            srcSet="/img/top/sp/section09_item02.png"
-            media="(max-width: 600px)"
-          />
-          <img src="/img/top/pc/section09_item02.png" />
-        </picture>,
-      ],
-      content: [
-        <dl>
-          <dt>指導内容</dt>
-          <dd>
-            学年と習熟度別に6人までの少人数グループに細かくクラス分けをして、英検1級の担任講師が確実にマスターさせていきます。英語の勉強の仕方から、内申点の向上、受験、英検、留学など、学習目的と習熟度に応じてご指導いたします。ネイティブ講師によるフリートークの受講と英作文の添削は無料で受講可能です。
-          </dd>
-        </dl>,
-        <dl>
-          <dt>指導時間</dt>
-          <dd>
-            <dl>
-              <dt>週1回／月4回</dt>
-              <dd>
-                小学生や基礎レベル：70分～
-                <br />
-                高校生や英検2級レベル以上：120分
-                <br />
-                ※受講クラスは学年とレベルに応じて変わりますのでご相談ください。
-              </dd>
-            </dl>
-          </dd>
-        </dl>,
-        <dl>
-          <dt>振替制度</dt>
-          <dd>
-            グループ指導を欠席した場合、振替制度を利用して欠席した授業内容をマスターできます。欠席した単元は、個別に指導する振替時間枠（3～4人対1人で英検1級講師がご指導）を設けておりますのでご相談ください。
-          </dd>
-        </dl>,
-      ],
-    },
-  ];
 
   //2023年度大学合格実績
   const actuals_college = [];
@@ -710,9 +319,9 @@ export default function Page({
     <>
       <Head
         title="英語専門塾 秋谷光子アカデミィ - 英検1級176人合格の圧倒的な実績｜横浜,綱島,自由が丘,田園調布"
-        url=""
-        description={top.cfs.description}
-        breadcrumb={[["トップページ", ""]]}
+        url={`/lp`}
+        description="難関大学合格、内部進学、留学、全ての進路を可能にする英語力を育てます。"
+        breadcrumb={[["LP", "/lp"]]}
       />
 
       <main className={`${css_index.main} lp_main`}>
@@ -883,7 +492,7 @@ export default function Page({
             英検上位級・難関大学合格へ
           </h3>
 
-          {/* <div className={css_index[`swiper`]}>
+          <div className={css_index[`swiper`]}>
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               breakpoints={{
@@ -909,7 +518,7 @@ export default function Page({
                       <h4>
                         <div
                           dangerouslySetInnerHTML={{
-                            __html: parser.translateHTMLString(e.title),
+                            __html: e.title,
                           }}
                         />
                       </h4>
@@ -918,11 +527,10 @@ export default function Page({
                       <h3>
                         <div
                           dangerouslySetInnerHTML={{
-                            __html: parser.translateHTMLString(
-                              ResultsCustomValues[i].student
-                            ),
+                            __html: ResultsCustomValues[i].student,
                           }}
                         />
+                        {/* <span>合格</span> */}
                       </h3>
                     )}
                     {e.excerpt && (
@@ -936,7 +544,7 @@ export default function Page({
                 </>
               ))}
             </Swiper>
-          </div> */}
+          </div>
 
           <div
             className={`${css_index.section__inner} ${css_index.section_02__inner}`}
@@ -1532,7 +1140,7 @@ export default function Page({
                     <h4>
                       <div
                         dangerouslySetInnerHTML={{
-                          __html: parser.translateHTMLString(e.name),
+                          __html: e.name,
                         }}
                       />
                     </h4>
@@ -1549,7 +1157,7 @@ export default function Page({
                           <dd>
                             <div
                               dangerouslySetInnerHTML={{
-                                __html: parser.translateHTMLString(e.license),
+                                __html: e.license,
                               }}
                             />
                           </dd>
@@ -1562,7 +1170,7 @@ export default function Page({
                           <dd>
                             <div
                               dangerouslySetInnerHTML={{
-                                __html: parser.translateHTMLString(e.career),
+                                __html: e.career,
                               }}
                             />
                           </dd>
@@ -2861,19 +2469,6 @@ Page.getLayout = function getLayout(children) {
 };
 
 export async function getStaticProps() {
-  const courseData = await fetch(
-    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/course?per_page=100"
-  ).then((res) => res.json());
-
-  // const classtypeData = await fetch(
-  // 	"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/class_type?per_page=100&"
-  // ).then((res) => res.json());
-
-  let top = await fetch(
-    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages/7284"
-  ).then((res) => res.json());
-  top.feature = Object.values(top.feature);
-
   let experiencesData = await fetch(
     "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
   ).then((res) => res.json());
@@ -2887,44 +2482,38 @@ export async function getStaticProps() {
   ).then((res) => res.json());
   teacherList = teacherList.sort((a, b) => a.infoCount - b.infoCount).reverse();
 
-  // const endpoint = "https://yoshikitam.wpx.jp/akitani/graphql";
-  // const graphQLClient = new GraphQLClient(endpoint);
+  const endpoint = "https://yoshikitam.wpx.jp/akitani/graphql";
+  const graphQLClient = new GraphQLClient(endpoint);
 
-  // const query = gql`
-  //   {
-  //     results(
-  //       where: {
-  //         categoryId: 29
-  //         status: PUBLISH
-  //         orderby: { field: DATE, order: DESC }
-  //       }
-  //       first: 10
-  //     ) {
-  //       edges {
-  //         node {
-  //           excerpt
-  //           id
-  //           title
-  //         }
-  //       }
-  //     }
-  //   }
-  // `;
+  const query = gql`
+    {
+      results(
+        where: {
+          categoryId: 29
+          status: PUBLISH
+          orderby: { field: DATE, order: DESC }
+        }
+        first: 10
+      ) {
+        edges {
+          node {
+            excerpt
+            id
+            title
+          }
+        }
+      }
+    }
+  `;
 
-  // const resultsPostData = await graphQLClient.request(query);
+  const resultsPostData = await graphQLClient.request(query);
 
   return {
     props: {
-      top,
-      // experiences: await fetch(
-      // 	"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
-      // ).then((res) => res.json()),
-      courseData: courseData.reverse(),
-      // classtypeData: classtypeData.reverse(),
       experiencesData,
       experiencesPostData,
       teacherList,
-      // resultsPostData: resultsPostData,
+      resultsPostData: resultsPostData,
     },
   };
 }
