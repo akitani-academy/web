@@ -1982,13 +1982,13 @@ export default function Page(
               </div>
               <div className={css_index.box__item}>
                 <h3>自由が丘・田園調布校</h3>
-                <picture>
+                {/* <picture>
                   <source
                     srcSet="/img/top/sp/section12_item02.png"
                     media="(max-width: 600px)"
                   />
                   <img src="/img/top/pc/section12_item02.png" />
-                </picture>
+                </picture> */}
                 <div className={css_index.text}>
                   <ul>
                     <li>
