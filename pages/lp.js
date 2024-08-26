@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { GraphQLClient, gql } from "graphql-request";
+// import { GraphQLClient, gql } from "graphql-request";
 import {
   accordionData01,
   accordionData02,
@@ -20,12 +20,12 @@ import Modal from "components/Modal/Modal";
 
 import css_index from "styles/lp.module.scss";
 
-// swiper
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+// // swiper
+// import { Autoplay, Navigation, Pagination } from "swiper/modules";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
 
 export default function Page({
   teacherList,
@@ -33,27 +33,27 @@ export default function Page({
   experiencesPostData,
   resultsPostData,
 }) {
-  const ResultsValues = [];
+  // const ResultsValues = [];
 
-  Object.entries(resultsPostData.results).forEach((e1, i1) => {
-    e1[1].forEach((e2, i2) => {
-      Object.entries(e2).forEach((e3, i3) => {
-        ResultsValues.push(e3[1]);
-      });
-    });
-  });
+  // Object.entries(resultsPostData.results).forEach((e1, i1) => {
+  //   e1[1].forEach((e2, i2) => {
+  //     Object.entries(e2).forEach((e3, i3) => {
+  //       ResultsValues.push(e3[1]);
+  //     });
+  //   });
+  // });
 
-  const ResultsCustomValues = [];
+  // const ResultsCustomValues = [];
 
-  ResultsValues.map((e, i) => (
-    <>
-      {
-        (ResultsCustomValues[i] = {
-          student: experiencesPostData[i].student,
-        })
-      }
-    </>
-  ));
+  // ResultsValues.map((e, i) => (
+  //   <>
+  //     {
+  //       (ResultsCustomValues[i] = {
+  //         student: experiencesPostData[i].student,
+  //       })
+  //     }
+  //   </>
+  // ));
 
   const [activeIndex01, setactiveIndex01] = useState(null);
 
@@ -2465,7 +2465,7 @@ export default function Page({
 
       {/* <ContactButton /> */}
 
-      <style jsx>{`
+      {/* <style jsx>{`
         h2 {
           font-size: 1.875rem;
         }
@@ -2477,7 +2477,7 @@ export default function Page({
             font-size: 1.5rem;
           }
         }
-      `}</style>
+      `}</style> */}
     </>
   );
 }
@@ -2506,38 +2506,38 @@ export async function getStaticProps() {
   ).then((res) => res.json());
   teacherList = teacherList.sort((a, b) => a.infoCount - b.infoCount).reverse();
 
-  const endpoint = "https://yoshikitam.wpx.jp/akitani/graphql";
-  const graphQLClient = new GraphQLClient(endpoint);
+  // const endpoint = "https://yoshikitam.wpx.jp/akitani/graphql";
+  // const graphQLClient = new GraphQLClient(endpoint);
 
-  const query = gql`
-    {
-      results(
-        where: {
-          categoryId: 29
-          status: PUBLISH
-          orderby: { field: DATE, order: DESC }
-        }
-        first: 10
-      ) {
-        edges {
-          node {
-            excerpt
-            id
-            title
-          }
-        }
-      }
-    }
-  `;
+  // const query = gql`
+  //   {
+  //     results(
+  //       where: {
+  //         categoryId: 29
+  //         status: PUBLISH
+  //         orderby: { field: DATE, order: DESC }
+  //       }
+  //       first: 10
+  //     ) {
+  //       edges {
+  //         node {
+  //           excerpt
+  //           id
+  //           title
+  //         }
+  //       }
+  //     }
+  //   }
+  // `;
 
-  const resultsPostData = await graphQLClient.request(query);
+  // const resultsPostData = await graphQLClient.request(query);
 
   return {
     props: {
       experiencesData,
       experiencesPostData,
       teacherList,
-      resultsPostData: resultsPostData,
+      // resultsPostData: resultsPostData,
     },
   };
 }

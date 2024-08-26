@@ -1,6 +1,3 @@
-import { loadDefaultJapaneseParser } from "budoux";
-const parser = loadDefaultJapaneseParser();
-
 import css_index from "../../styles/lp.module.scss";
 
 export default function ModalBox({ isOpen, onClose, item }) {
