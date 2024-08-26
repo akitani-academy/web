@@ -27,12 +27,14 @@ import css_index from "styles/lp.module.scss";
 // import "swiper/css/navigation";
 // import "swiper/css/pagination";
 
-export default function Page({
-  teacherList,
-  experiencesData,
-  experiencesPostData,
-  resultsPostData,
-}) {
+export default function Page(
+  {
+    // teacherList,
+    // experiencesData,
+    // experiencesPostData,
+    // resultsPostData,
+  }
+) {
   // const ResultsValues = [];
 
   // Object.entries(resultsPostData.results).forEach((e1, i1) => {
@@ -322,9 +324,9 @@ export default function Page({
     <>
       <Head
         title="英語専門塾 秋谷光子アカデミィ - 英検1級176人合格の圧倒的な実績｜横浜,綱島,自由が丘,田園調布"
-        url={`/lp`}
+        url={`/landing`}
         description="難関大学合格、内部進学、留学、全ての進路を可能にする英語力を育てます。"
-        breadcrumb={[["LP", "/lp"]]}
+        breadcrumb={[["LP", "/landing"]]}
       />
 
       <main className={`${css_index.main} lp_main`}>
@@ -2473,18 +2475,18 @@ Page.getLayout = function getLayout(children) {
 };
 
 export async function getStaticProps() {
-  let experiencesData = await fetch(
-    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
-  ).then((res) => res.json());
+  // let experiencesData = await fetch(
+  //   "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
+  // ).then((res) => res.json());
 
-  let experiencesPostData = await fetch(
-    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/results?categories=29"
-  ).then((res) => res.json());
+  // let experiencesPostData = await fetch(
+  //   "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/results?categories=29"
+  // ).then((res) => res.json());
 
-  let teacherList = await fetch(
-    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/teacher?per_page=100"
-  ).then((res) => res.json());
-  teacherList = teacherList.sort((a, b) => a.infoCount - b.infoCount).reverse();
+  // let teacherList = await fetch(
+  //   "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/teacher?per_page=100"
+  // ).then((res) => res.json());
+  // teacherList = teacherList.sort((a, b) => a.infoCount - b.infoCount).reverse();
 
   // const endpoint = "https://yoshikitam.wpx.jp/akitani/graphql";
   // const graphQLClient = new GraphQLClient(endpoint);
@@ -2514,10 +2516,10 @@ export async function getStaticProps() {
 
   return {
     props: {
-      experiencesData,
-      experiencesPostData,
-      teacherList,
-      resultsPostData: resultsPostData,
+      // experiencesData,
+      // experiencesPostData,
+      // teacherList,
+      // resultsPostData: resultsPostData,
     },
   };
 }
