@@ -1,10 +1,10 @@
 import { useState } from "react";
 // import { GraphQLClient, gql } from "graphql-request";
-// import {
-//   accordionData01,
-//   accordionData02,
-//   accordionData03,
-// } from "../components/Accordion/Accordion";
+import {
+  accordionData01,
+  accordionData02,
+  accordionData03,
+} from "../components/Accordion/Accordion";
 
 import Link from "next/link";
 
@@ -55,23 +55,23 @@ export default function Page({
   //   </>
   // ));
 
-  // const [activeIndex01, setactiveIndex01] = useState(null);
+  const [activeIndex01, setactiveIndex01] = useState(null);
 
-  // const toggleAccordion01 = (index) => {
-  //   setactiveIndex01(activeIndex01 === index ? null : index);
-  // };
+  const toggleAccordion01 = (index) => {
+    setactiveIndex01(activeIndex01 === index ? null : index);
+  };
 
-  // const [activeIndex02, setactiveIndex02] = useState(null);
+  const [activeIndex02, setactiveIndex02] = useState(null);
 
-  // const toggleAccordion02 = (index) => {
-  //   setactiveIndex02(activeIndex02 === index ? null : index);
-  // };
+  const toggleAccordion02 = (index) => {
+    setactiveIndex02(activeIndex02 === index ? null : index);
+  };
 
-  // const [activeIndex03, setactiveIndex03] = useState(null);
+  const [activeIndex03, setactiveIndex03] = useState(null);
 
-  // const toggleAccordion03 = (index) => {
-  //   setactiveIndex03(activeIndex03 === index ? null : index);
-  // };
+  const toggleAccordion03 = (index) => {
+    setactiveIndex03(activeIndex03 === index ? null : index);
+  };
 
   // const [selectedItem, setSelectedItem] = useState(null);
   // const [isModalOpen, setModalOpen] = useState(false);
@@ -1606,7 +1606,7 @@ export default function Page({
                 学習目的やご要望を伺い、「グループ指導」「1対1個別指導（オンライン可）」「個別グループ指導」の中から、最も効率良くマスターできるカリキュラムと学習法をご提案いたします。
               </p>
               <div className={css_index.flex}>
-                {/* {accordionData03.map((item, index) => (
+                {accordionData03.map((item, index) => (
                   <div className={css_index.box}>
                     <h4 className={css_index.blue_slash}>{item.title}</h4>
                     <div
@@ -1635,7 +1635,7 @@ export default function Page({
                       </div>
                     </div>
                   </div>
-                ))} */}
+                ))}
               </div>
             </div>
             <div className={`${css_index.point_row} ${css_index.point_row_03}`}>
@@ -1741,7 +1741,7 @@ export default function Page({
                 <span>カリキュラム一覧</span>
               </h3>
 
-              {/* {accordionData01.map((item, index) => (
+              {accordionData01.map((item, index) => (
                 <div
                   key={index}
                   className={`${css_index.box__item} ${css_index.ac_wrap}`}
@@ -1763,7 +1763,7 @@ export default function Page({
                     {item.content}
                   </div>
                 </div>
-              ))} */}
+              ))}
             </div>
           </div>
 
@@ -2312,7 +2312,7 @@ export default function Page({
           <div
             className={`${css_index.section__inner} ${css_index.section_16__inner}`}
           >
-            {/* {accordionData02.map((item, index) => (
+            {accordionData02.map((item, index) => (
               <div
                 key={index}
                 className={`${css_index.row_box} ${css_index.ac_wrap}`}
@@ -2338,7 +2338,7 @@ export default function Page({
                   </dd>
                 </dl>
               </div>
-            ))} */}
+            ))}
           </div>
         </section>
 
