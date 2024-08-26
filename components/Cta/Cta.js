@@ -1,7 +1,3 @@
-import Link from "next/link";
-
-import classNames from "classnames";
-
 import css from "./cta.module.scss";
 
 export default function CtaBox() {
