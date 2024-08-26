@@ -20,12 +20,12 @@ import Modal from "components/Modal/Modal";
 
 import css_index from "styles/lp.module.scss";
 
-// // swiper
-// import { Autoplay, Navigation, Pagination } from "swiper/modules";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
+// swiper
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export default function Page({
   teacherList,
@@ -1018,7 +1018,7 @@ export default function Page({
           </div>
 
           <div className={`${css_index.swiper} ${css_index.constancy}`}>
-            {/* <Swiper
+            <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               // breakpoints={slideSettings}
               slidesPerView={2.2}
@@ -1090,7 +1090,7 @@ export default function Page({
                   <img src="./img/top/pc/section15_item06.png" alt="" />
                 </picture>
               </SwiperSlide>
-            </Swiper> */}
+            </Swiper>
           </div>
         </section>
 
@@ -1126,7 +1126,7 @@ export default function Page({
             <h3>講師紹介</h3>
 
             <div className={`${css_index[`swiper`]}`}>
-              {/* <Swiper
+              <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 slidesPerView={1}
                 breakpoints={{
@@ -1187,7 +1187,7 @@ export default function Page({
                     </div>
                   </SwiperSlide>
                 ))}
-              </Swiper> */}
+              </Swiper>
             </div>
           </div>
         </section>
@@ -2182,7 +2182,7 @@ export default function Page({
             </div>
 
             <div className={`${css_index.swiper} ${css_index.constancy}`}>
-              {/* <Swiper
+              <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 slidesPerView={2.2}
                 breakpoints={{
@@ -2253,7 +2253,7 @@ export default function Page({
                     <img src="./img/top/pc/section15_item06.png" alt="" />
                   </picture>
                 </SwiperSlide>
-              </Swiper> */}
+              </Swiper>
             </div>
           </div>
 
