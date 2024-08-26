@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { GraphQLClient, gql } from "graphql-request";
+// import { GraphQLClient, gql } from "graphql-request";
 // import {
 //   accordionData01,
 //   accordionData02,
@@ -15,17 +15,17 @@ import Head from "components/head";
 import Header from "components/lp_header";
 import Footer from "components/lp_footer";
 import Nav from "components/lp_nav";
-import Cta from "components/Cta/Cta";
-import Modal from "components/Modal/Modal";
+// import Cta from "components/Cta/Cta";
+// import Modal from "components/Modal/Modal";
 
 import css_index from "styles/lp.module.scss";
 
-// swiper
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+// // swiper
+// import { Autoplay, Navigation, Pagination } from "swiper/modules";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
 
 export default function Page({
   teacherList,
@@ -33,57 +33,57 @@ export default function Page({
   experiencesPostData,
   resultsPostData,
 }) {
-  const ResultsValues = [];
+  // const ResultsValues = [];
 
-  Object.entries(resultsPostData.results).forEach((e1, i1) => {
-    e1[1].forEach((e2, i2) => {
-      Object.entries(e2).forEach((e3, i3) => {
-        ResultsValues.push(e3[1]);
-      });
-    });
-  });
+  // Object.entries(resultsPostData.results).forEach((e1, i1) => {
+  //   e1[1].forEach((e2, i2) => {
+  //     Object.entries(e2).forEach((e3, i3) => {
+  //       ResultsValues.push(e3[1]);
+  //     });
+  //   });
+  // });
 
-  const ResultsCustomValues = [];
+  // const ResultsCustomValues = [];
 
-  ResultsValues.map((e, i) => (
-    <>
-      {
-        (ResultsCustomValues[i] = {
-          student: experiencesPostData[i].student,
-        })
-      }
-    </>
-  ));
+  // ResultsValues.map((e, i) => (
+  //   <>
+  //     {
+  //       (ResultsCustomValues[i] = {
+  //         student: experiencesPostData[i].student,
+  //       })
+  //     }
+  //   </>
+  // ));
 
-  const [activeIndex01, setactiveIndex01] = useState(null);
+  // const [activeIndex01, setactiveIndex01] = useState(null);
 
-  const toggleAccordion01 = (index) => {
-    setactiveIndex01(activeIndex01 === index ? null : index);
-  };
+  // const toggleAccordion01 = (index) => {
+  //   setactiveIndex01(activeIndex01 === index ? null : index);
+  // };
 
-  const [activeIndex02, setactiveIndex02] = useState(null);
+  // const [activeIndex02, setactiveIndex02] = useState(null);
 
-  const toggleAccordion02 = (index) => {
-    setactiveIndex02(activeIndex02 === index ? null : index);
-  };
+  // const toggleAccordion02 = (index) => {
+  //   setactiveIndex02(activeIndex02 === index ? null : index);
+  // };
 
-  const [activeIndex03, setactiveIndex03] = useState(null);
+  // const [activeIndex03, setactiveIndex03] = useState(null);
 
-  const toggleAccordion03 = (index) => {
-    setactiveIndex03(activeIndex03 === index ? null : index);
-  };
+  // const toggleAccordion03 = (index) => {
+  //   setactiveIndex03(activeIndex03 === index ? null : index);
+  // };
 
-  const [selectedItem, setSelectedItem] = useState(null);
-  const [isModalOpen, setModalOpen] = useState(false);
+  // const [selectedItem, setSelectedItem] = useState(null);
+  // const [isModalOpen, setModalOpen] = useState(false);
 
-  const handleItemClick = (item) => {
-    setSelectedItem(item);
-    setModalOpen(true);
-  };
+  // const handleItemClick = (item) => {
+  //   setSelectedItem(item);
+  //   setModalOpen(true);
+  // };
 
-  const handleCloseModal = () => {
-    setModalOpen(false);
-  };
+  // const handleCloseModal = () => {
+  //   setModalOpen(false);
+  // };
 
   // //2023年度大学合格実績
   // const actuals_college = [];
@@ -496,7 +496,7 @@ export default function Page({
           </h3>
 
           <div className={css_index[`swiper`]}>
-            <Swiper
+            {/* <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               breakpoints={{
                 961: {
@@ -535,7 +535,6 @@ export default function Page({
                             ),
                           }}
                         />
-                        {/* <span>合格</span> */}
                       </h3>
                     )}
                     {e.excerpt && (
@@ -548,7 +547,7 @@ export default function Page({
                   </SwiperSlide>
                 </>
               ))}
-            </Swiper>
+            </Swiper> */}
           </div>
 
           <div
@@ -840,7 +839,7 @@ export default function Page({
             </div>
           </div>
 
-          <Cta />
+          {/* <Cta /> */}
         </section>
 
         <section
@@ -1015,7 +1014,7 @@ export default function Page({
           </div>
 
           <div className={`${css_index.swiper} ${css_index.constancy}`}>
-            <Swiper
+            {/* <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               // breakpoints={slideSettings}
               slidesPerView={2.2}
@@ -1087,7 +1086,7 @@ export default function Page({
                   <img src="./img/top/pc/section15_item06.png" alt="" />
                 </picture>
               </SwiperSlide>
-            </Swiper>
+            </Swiper> */}
           </div>
         </section>
 
@@ -1123,7 +1122,7 @@ export default function Page({
             <h3>講師紹介</h3>
 
             <div className={`${css_index[`swiper`]}`}>
-              <Swiper
+              {/* <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 slidesPerView={1}
                 breakpoints={{
@@ -1184,7 +1183,7 @@ export default function Page({
                     </div>
                   </SwiperSlide>
                 ))}
-              </Swiper>
+              </Swiper> */}
             </div>
           </div>
         </section>
@@ -1697,7 +1696,7 @@ export default function Page({
             </div>
           </div>
 
-          <Cta />
+          {/* <Cta /> */}
         </section>
 
         <section className={`${css_index.section} ${css_index.section_10}`}>
@@ -1768,7 +1767,7 @@ export default function Page({
             </div>
           </div>
 
-          <Cta />
+          {/* <Cta /> */}
         </section>
 
         <section
@@ -1893,7 +1892,7 @@ export default function Page({
             </div>
           </div>
 
-          <Cta />
+          {/* <Cta /> */}
         </section>
 
         <section
@@ -2096,7 +2095,7 @@ export default function Page({
             </div>
           </div>
 
-          <Cta />
+          {/* <Cta /> */}
         </section>
 
         <section
@@ -2167,7 +2166,7 @@ export default function Page({
             </div>
 
             <div className={`${css_index.swiper} ${css_index.constancy}`}>
-              <Swiper
+              {/* <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 slidesPerView={2.2}
                 breakpoints={{
@@ -2238,7 +2237,7 @@ export default function Page({
                     <img src="./img/top/pc/section15_item06.png" alt="" />
                   </picture>
                 </SwiperSlide>
-              </Swiper>
+              </Swiper> */}
             </div>
           </div>
 
@@ -2437,16 +2436,16 @@ export default function Page({
         </section>
         <Nav />
 
-        <Modal
+        {/* <Modal
           isOpen={isModalOpen}
           onClose={handleCloseModal}
           item={selectedItem}
-        />
+        /> */}
       </main>
 
       {/* <ContactButton /> */}
 
-      <style jsx>{`
+      {/* <style jsx>{`
         h2 {
           font-size: 1.875rem;
         }
@@ -2458,7 +2457,7 @@ export default function Page({
             font-size: 1.5rem;
           }
         }
-      `}</style>
+      `}</style> */}
     </>
   );
 }
@@ -2487,31 +2486,31 @@ export async function getStaticProps() {
   ).then((res) => res.json());
   teacherList = teacherList.sort((a, b) => a.infoCount - b.infoCount).reverse();
 
-  const endpoint = "https://yoshikitam.wpx.jp/akitani/graphql";
-  const graphQLClient = new GraphQLClient(endpoint);
+  // const endpoint = "https://yoshikitam.wpx.jp/akitani/graphql";
+  // const graphQLClient = new GraphQLClient(endpoint);
 
-  const query = gql`
-    {
-      results(
-        where: {
-          categoryId: 29
-          status: PUBLISH
-          orderby: { field: DATE, order: DESC }
-        }
-        first: 10
-      ) {
-        edges {
-          node {
-            excerpt
-            id
-            title
-          }
-        }
-      }
-    }
-  `;
+  // const query = gql`
+  //   {
+  //     results(
+  //       where: {
+  //         categoryId: 29
+  //         status: PUBLISH
+  //         orderby: { field: DATE, order: DESC }
+  //       }
+  //       first: 10
+  //     ) {
+  //       edges {
+  //         node {
+  //           excerpt
+  //           id
+  //           title
+  //         }
+  //       }
+  //     }
+  //   }
+  // `;
 
-  const resultsPostData = await graphQLClient.request(query);
+  // const resultsPostData = await graphQLClient.request(query);
 
   return {
     props: {
