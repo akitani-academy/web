@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { GraphQLClient, gql } from "graphql-request";
 import {
   accordionData01,
   accordionData02,
@@ -30,7 +29,7 @@ import "swiper/css/pagination";
 export default function Page({
   teacherList,
   experiencesData,
-  experiencesPostData,
+  // experiencesPostData,
 }) {
   const [activeIndex01, setactiveIndex01] = useState(null);
 
@@ -2458,9 +2457,9 @@ export async function getStaticProps() {
     "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
   ).then((res) => res.json());
 
-  let experiencesPostData = await fetch(
-    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/results?categories=29"
-  ).then((res) => res.json());
+  // let experiencesPostData = await fetch(
+  //   "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/results?categories=29"
+  // ).then((res) => res.json());
 
   let teacherList = await fetch(
     "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/teacher?per_page=100"
@@ -2469,9 +2468,9 @@ export async function getStaticProps() {
 
   return {
     props: {
-      experiencesData,
-      experiencesPostData,
       teacherList,
+      experiencesData,
+      // experiencesPostData,
     },
   };
 }
