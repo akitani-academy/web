@@ -511,14 +511,18 @@ export default function Page({
                         />
                       </h3>
                     )}
-                    {e.description && (
-                      <p>
-                        <div
-                          dangerouslySetInnerHTML={{
-                            __html: e.description,
-                          }}
-                        />
-                      </p>
+                    {e.description ? (
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: e.description,
+                        }}
+                      />
+                    ) : (
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: e.excerpt,
+                        }}
+                      />
                     )}
                   </SwiperSlide>
                 </>
