@@ -472,7 +472,7 @@ export default function Page({
             英検上位級・難関大学合格へ
           </h3>
 
-          <div className={css_index.swiper}>
+          {/* <div className={css_index.swiper}>
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               breakpoints={{
@@ -525,7 +525,7 @@ export default function Page({
                 </>
               ))}
             </Swiper>
-          </div>
+          </div> */}
 
           <div
             className={`${css_index.section__inner} ${css_index.section_02__inner}`}
