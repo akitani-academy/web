@@ -31,22 +31,7 @@ export default function Page({
   teacherList,
   experiencesData,
   experiencesPostData,
-  resultsPostData,
 }) {
-  // let ResultsValues = [];
-
-  // Object.entries(resultsPostData.results).forEach((e1, i1) => {
-  //   e1[1].forEach((e2, i2) => {
-  //     Object.entries(e2).forEach((e3, i3) => {
-  //       ResultsValues.push(e3[1]);
-  //     });
-  //   });
-  // });
-
-  // experiencesPostData.map((e, i) => (
-  //   <>{(ResultsValues[i].student = e.student)}</>
-  // ));
-
   const [activeIndex01, setactiveIndex01] = useState(null);
 
   const toggleAccordion01 = (index) => {
@@ -488,7 +473,7 @@ export default function Page({
           </h3>
 
           <div className={css_index.swiper}>
-            {/* <Swiper
+            <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               breakpoints={{
                 961: {
@@ -506,7 +491,7 @@ export default function Page({
               navigation
               className={css_index.swiper_wrapper}
             >
-              {ResultsValues.map((e, i) => (
+              {experiencesPostData.map((e, i) => (
                 <>
                   <SwiperSlide key={e.id} className={css_index.college}>
                     {e.title && (
@@ -527,17 +512,19 @@ export default function Page({
                         />
                       </h3>
                     )}
-                    {e.excerpt && (
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: e.excerpt,
-                        }}
-                      />
+                    {e.description && (
+                      <p>
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: e.description,
+                          }}
+                        />
+                      </p>
                     )}
                   </SwiperSlide>
                 </>
               ))}
-            </Swiper> */}
+            </Swiper>
           </div>
 
           <div
@@ -2480,38 +2467,11 @@ export async function getStaticProps() {
   ).then((res) => res.json());
   teacherList = teacherList.sort((a, b) => a.infoCount - b.infoCount).reverse();
 
-  const endpoint = "https://yoshikitam.wpx.jp/akitani/graphql";
-  const graphQLClient = new GraphQLClient(endpoint);
-
-  const query = gql`
-    {
-      results(
-        where: {
-          categoryId: 29
-          status: PUBLISH
-          orderby: { field: DATE, order: DESC }
-        }
-        first: 10
-      ) {
-        edges {
-          node {
-            excerpt
-            id
-            title
-          }
-        }
-      }
-    }
-  `;
-
-  const resultsPostData = await graphQLClient.request(query);
-
   return {
     props: {
       experiencesData,
       experiencesPostData,
       teacherList,
-      resultsPostData: resultsPostData,
     },
   };
 }
