@@ -49,6 +49,7 @@
 
         @include MQ(sm) {
           font-size: 16px;
+          font-family: $font_02;
         }
 
         &::before,

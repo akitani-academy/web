@@ -2013,6 +2013,8 @@
 
                   @include MQ(tab) {
                     display: block;
+                    font-size: 13px;
+                    letter-spacing: 0.025em;
                   }
 
                   &::before {
@@ -2022,6 +2024,10 @@
                     background-color: $red_01;
                     top: 8px;
                     left: 0;
+
+                    @include MQ(tab) {
+                      top: 4px;
+                    }
                   }
                 }
               }
@@ -2332,6 +2338,7 @@
               font-size: 12px;
               line-height: 1.33;
               font-feature-settings: "palt";
+              font-family: $font_01;
 
               small {
                 display: block;
@@ -3391,7 +3398,7 @@
             top: 18px;
 
             @include MQ(tab) {
-              top: 0;
+              top: 2px;
             }
           }
 
@@ -3695,8 +3702,6 @@
           }
 
           &:nth-of-type(2) {
-            margin-bottom: 38px;
-
             dl {
               &:first-child {
                 margin-right: 37px;
@@ -3711,11 +3716,21 @@
             .content {
               > div {
                 > span {
+                  > dl {
+                    @include MQ(tab) {
+                      margin-bottom: 20px;
+                    }
+                  }
+
                   > div {
                     &:first-of-type {
                       display: flex;
 
                       > dl {
+                        @include MQ(tab) {
+                          margin-bottom: 37px;
+                        }
+
                         > dt {
                           font-size: 15px;
                           letter-spacing: 0.025em;
@@ -4476,8 +4491,13 @@
                 letter-spacing: 0.015em;
                 line-height: 1.69;
                 font-weight: bold;
-                color: $blue_01;
+                color: $black_01;
                 margin-top: 17px;
+                padding-left: 22px;
+
+                @include MQ(tab) {
+                  padding-left: 17px;
+                }
               }
 
               &:not(.map) {
@@ -5124,15 +5144,15 @@
             dt {
               display: flex;
               align-items: center;
-              padding-bottom: 30px;
               position: relative;
               font-size: 22px;
               letter-spacing: 0.05em;
               line-height: 1.63;
 
               @include MQ(tab) {
-                padding-bottom: 15px;
                 font-size: 18px;
+                line-height: 1.27;
+                letter-spacing: 0.025em;
               }
 
               &::before {
@@ -5149,6 +5169,12 @@
               }
 
               &.active {
+                padding-bottom: 30px;
+
+                @include MQ(tab) {
+                  padding-bottom: 15px;
+                }
+
                 &::before {
                   @include bgImgContain("/img/top/minus.png");
                 }
@@ -5333,11 +5359,16 @@
               letter-spacing: 0.015em;
               line-height: 1.69;
               text-decoration: underline;
-              color: $blue_03;
-              padding-left: 27px;
+              padding-left: 22px;
+              font-weight: bold;
 
               @include MQ(tab) {
-                padding-left: 0;
+                padding-left: 17px;
+              }
+
+              &:hover {
+                color: $blue_03;
+                opacity: 1;
               }
             }
           }
