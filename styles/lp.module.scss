@@ -191,7 +191,7 @@
         height: calc(100% - 62px);
       }
 
-      .row_box {
+      div {
         h5,
         ul li {
           font-family: $font_01;
@@ -1359,23 +1359,30 @@
               padding: 12px 15px 25px;
 
               @include MQ(xl) {
-                display: flex;
-                flex-wrap: wrap;
                 padding: 27px 36px 20px;
               }
 
-              .row_box {
-                width: calc(50% - 15px);
+              > div {
+                width: 100%;
 
-                @include MQ(tab) {
-                  width: 100%;
+                @include MQ(xl) {
+                  display: flex;
+                  flex-wrap: wrap;
                 }
 
-                &:first-child {
-                  margin-right: 30px;
+                > div {
+                  width: calc(50% - 15px);
 
                   @include MQ(tab) {
-                    margin-right: 0;
+                    width: 100%;
+                  }
+
+                  &:first-child {
+                    margin-right: 30px;
+
+                    @include MQ(tab) {
+                      margin-right: 0;
+                    }
                   }
                 }
               }
@@ -1386,6 +1393,7 @@
                 color: $blue_01;
                 border-bottom: 1px solid rgba(157, 127, 68, 0.3);
                 margin-top: 17px;
+                padding-bottom: 17px;
                 margin-bottom: 20px;
                 font-size: 18px;
                 font-family: $font_01;
@@ -1393,6 +1401,7 @@
                 @include MQ(tab) {
                   font-size: 16px;
                   margin-top: 18px;
+                  padding-bottom: 2px;
                   margin-bottom: 15px;
                 }
               }
@@ -1440,22 +1449,27 @@
             }
 
             &:nth-child(4) {
-              .row_box {
-                width: 100%;
+              .box__item__content {
+                > div {
+                  > div {
+                    width: 100%;
+                    margin-right: 0;
 
-                ul {
-                  display: flex;
-                  flex-wrap: wrap;
+                    ul {
+                      display: flex;
+                      flex-wrap: wrap;
 
-                  @include MQ(tab) {
-                    display: block;
-                  }
+                      @include MQ(tab) {
+                        display: block;
+                      }
 
-                  li {
-                    width: 50%;
+                      li {
+                        width: 50%;
 
-                    @include MQ(tab) {
-                      width: 100%;
+                        @include MQ(tab) {
+                          width: 100%;
+                        }
+                      }
                     }
                   }
                 }
