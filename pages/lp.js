@@ -506,7 +506,7 @@ export default function Page({
                       <h3>
                         <div
                           dangerouslySetInnerHTML={{
-                            __html: parser.translateHTMLString(e.student),
+                            __html: e.student,
                           }}
                         />
                       </h3>

@@ -1272,7 +1272,12 @@
 
             @include MQ(tab) {
               padding: 0 50px 5px;
+              word-break: keep-all;
               line-height: 1.38;
+            }
+
+            @include MQ(sm) {
+              word-break: break-all;
             }
 
             span {
