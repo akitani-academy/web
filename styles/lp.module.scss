@@ -1272,14 +1272,12 @@
 
             @include MQ(tab) {
               padding: 0 50px 5px;
-              word-break: keep-all;
               line-height: 1.38;
             }
 
             span {
               font-size: 16px;
               letter-spacing: 0.025em;
-              word-break: break-all;
 
               @include MQ(pc) {
                 padding: 0 10px;
