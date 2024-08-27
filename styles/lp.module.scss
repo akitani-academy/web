@@ -1279,7 +1279,11 @@
             span {
               font-size: 16px;
               letter-spacing: 0.025em;
-              padding: 0 10px;
+              word-break: break-all;
+
+              @include MQ(pc) {
+                padding: 0 10px;
+              }
             }
           }
 
