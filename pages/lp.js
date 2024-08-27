@@ -33,27 +33,19 @@ export default function Page({
   experiencesPostData,
   resultsPostData,
 }) {
-  const ResultsValues = [];
+  // let ResultsValues = [];
 
-  Object.entries(resultsPostData.results).forEach((e1, i1) => {
-    e1[1].forEach((e2, i2) => {
-      Object.entries(e2).forEach((e3, i3) => {
-        ResultsValues.push(e3[1]);
-      });
-    });
-  });
+  // Object.entries(resultsPostData.results).forEach((e1, i1) => {
+  //   e1[1].forEach((e2, i2) => {
+  //     Object.entries(e2).forEach((e3, i3) => {
+  //       ResultsValues.push(e3[1]);
+  //     });
+  //   });
+  // });
 
-  const ResultsCustomValues = [];
-
-  ResultsValues.map((e, i) => (
-    <>
-      {
-        (ResultsCustomValues[i] = {
-          student: experiencesPostData[i].student,
-        })
-      }
-    </>
-  ));
+  // experiencesPostData.map((e, i) => (
+  //   <>{(ResultsValues[i].student = e.student)}</>
+  // ));
 
   const [activeIndex01, setactiveIndex01] = useState(null);
 
@@ -495,8 +487,8 @@ export default function Page({
             英検上位級・難関大学合格へ
           </h3>
 
-          <div className={css_index[`swiper`]}>
-            <Swiper
+          <div className={css_index.swiper}>
+            {/* <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               breakpoints={{
                 961: {
@@ -526,13 +518,11 @@ export default function Page({
                         />
                       </h4>
                     )}
-                    {ResultsCustomValues[i].student && (
+                    {e.student && (
                       <h3>
                         <div
                           dangerouslySetInnerHTML={{
-                            __html: parser.translateHTMLString(
-                              ResultsCustomValues[i].student
-                            ),
+                            __html: parser.translateHTMLString(e.student),
                           }}
                         />
                       </h3>
@@ -547,7 +537,7 @@ export default function Page({
                   </SwiperSlide>
                 </>
               ))}
-            </Swiper>
+            </Swiper> */}
           </div>
 
           <div
@@ -2462,22 +2452,6 @@ export default function Page({
           item={selectedItem}
         />
       </main>
-
-      {/* <ContactButton /> */}
-
-      {/* <style jsx>{`
-        h2 {
-          font-size: 1.875rem;
-        }
-        h2 span {
-          display: inline-block;
-        }
-        @media (max-width: 600px) {
-          h2 {
-            font-size: 1.5rem;
-          }
-        }
-      `}</style> */}
     </>
   );
 }
