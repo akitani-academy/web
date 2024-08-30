@@ -2921,7 +2921,7 @@
               padding: 30px;
 
               @include MQ(tab) {
-                padding: 30px 15px 35px;
+                padding: 30px 15px 0;
               }
 
               p {

@@ -1695,7 +1695,11 @@ export default function Page({
 
         <section className={`${css_index.section} ${css_index.section_10}`}>
           <h2 className={css_index.title_blue}>
-            <span>大学受験英語のカリキュラムについて</span>
+            <span>
+              大学受験英語の
+              <br className={css_index.sp} />
+              カリキュラムについて
+            </span>
           </h2>
           <div
             className={`${css_index.section__inner} ${css_index.section_10__inner}  ${css_index.section_10__inner_01}`}
