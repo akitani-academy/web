@@ -1274,6 +1274,7 @@
               padding: 10px 50px 5px;
               word-break: keep-all;
               line-height: 1.38;
+              font-size: 18px;
             }
 
             @include MQ(sm) {
@@ -1292,6 +1293,7 @@
 
           p {
             padding: 30px;
+            font-size: 14px;
 
             @include MQ(tab) {
               padding: 0;
@@ -1354,6 +1356,7 @@
                 font-weight: normal;
                 width: 100%;
                 margin-top: 3px;
+                font-family: $font_01;
 
                 @include MQ(tab) {
                   margin-top: 0;
@@ -2000,8 +2003,9 @@
             div {
               background-color: $white_01;
               padding: 30px;
+              padding-right: 0;
 
-              @include MQ(sm) {
+              @include MQ(tab) {
                 padding: 30px 15px 22px;
               }
 
@@ -2024,6 +2028,8 @@
                     display: block;
                     font-size: 13px;
                     letter-spacing: 0.025em;
+                    line-height: 1.53;
+                    margin-right: 0;
                   }
 
                   &::before {
@@ -2036,6 +2042,14 @@
 
                     @include MQ(tab) {
                       top: 4px;
+                    }
+                  }
+
+                  &:not(:last-child) {
+                    margin-bottom: 15px;
+
+                    @include MQ(tab) {
+                      margin-bottom: 10px;
                     }
                   }
                 }
@@ -2432,10 +2446,14 @@
         }
 
         p {
-          font-size: 13px;
+          font-size: 14px;
           line-height: 1.76;
           margin-bottom: 0;
           text-align: left;
+
+          @include MQ(tab) {
+            font-size: 13px;
+          }
         }
 
         &__02 {
@@ -2493,12 +2511,16 @@
 
               h4 {
                 font-family: $font_03;
-                font-size: 15px;
+                font-size: 18px;
                 line-height: 1.53;
                 color: $white_01;
                 background-color: $blue_01;
                 padding-top: 12px;
                 padding-bottom: 9px;
+
+                @include MQ(tab) {
+                  font-size: 15px;
+                }
               }
 
               .box {
@@ -2523,9 +2545,13 @@
                   dt,
                   dd {
                     text-align: left;
-                    font-size: 13px;
+                    font-size: 15px;
                     line-height: 1.76;
                     font-family: $font_03;
+
+                    @include MQ(tab) {
+                      font-size: 13px;
+                    }
                   }
 
                   dt {
@@ -2535,6 +2561,11 @@
                   }
 
                   dd {
+                    font-size: 14px;
+
+                    @include MQ(tab) {
+                      font-size: 13px;
+                    }
                   }
                 }
               }
@@ -3077,12 +3108,13 @@
         }
 
         p {
-          font-size: 13px;
+          font-size: 14px;
           line-height: 1.76;
           margin-left: 98px;
 
           @include MQ(sm) {
             margin-left: 0;
+            font-size: 13px;
           }
         }
 
@@ -3646,6 +3678,7 @@
 
             @include MQ(tab) {
               display: block;
+              margin-bottom: 24px;
             }
 
             h3,
@@ -3823,17 +3856,25 @@
 
                         dt {
                           font-weight: bold;
-                          font-size: 15px;
+                          font-size: 18px;
                           letter-spacing: 0.025em;
                           line-height: 1.6;
                           padding-bottom: 5px;
                           border-bottom: 1px solid $black_01;
                           margin-bottom: 10px;
+
+                          @include MQ(tab) {
+                            font-size: 15px;
+                          }
                         }
 
                         dd {
-                          font-size: 13px;
+                          font-size: 14px;
                           line-height: 1.76;
+
+                          @include MQ(tab) {
+                            font-size: 13px;
+                          }
                         }
                       }
                     }
@@ -3952,6 +3993,7 @@
                       @include MQ(tab) {
                         font-size: 13px;
                         line-height: 1.76;
+                        margin-bottom: 5px;
                       }
                     }
                   }
@@ -4296,10 +4338,18 @@
                 background-color: $red_01;
                 top: 5px;
                 left: 0;
+
+                @include MQ(tab) {
+                  top: 3px;
+                }
               }
 
               &:not(:last-child) {
                 margin-bottom: 15px;
+
+                @include MQ(tab) {
+                  margin-bottom: 5px;
+                }
               }
             }
           }
@@ -4465,7 +4515,7 @@
             margin-top: 10px;
 
             @include MQ(sm) {
-              padding: 30px 15px 25px;
+              padding: 15px 15px 25px;
             }
 
             ul {
@@ -4515,6 +4565,7 @@
 
                 @include MQ(tab) {
                   padding-left: 17px;
+                  margin-top: 5px;
                 }
               }
 
@@ -4524,7 +4575,7 @@
                 width: 212px;
                 margin: 0 auto;
                 margin-top: 30px;
-                border-bottom: 1px solid $blue_01;
+                border-bottom: 1px solid $blue_05;
                 padding-bottom: 5px;
                 position: relative;
                 color: $blue_01;
@@ -4651,6 +4702,7 @@
           font-weight: bold;
           color: $blue_01;
           margin-bottom: 0;
+          text-shadow: 0 0 10px $white_01;
 
           @include MQ(pc) {
             position: absolute;
@@ -5352,6 +5404,7 @@
                 line-height: 1.69;
                 font-family: $font_01;
                 font-weight: bold;
+                // color: $blue_01;
 
                 @include MQ(tab) {
                   font-size: 13px;
@@ -5369,6 +5422,10 @@
 
                 &:not(:last-child) {
                   margin-bottom: 15px;
+
+                  @include MQ(tab) {
+                    margin-bottom: 5px;
+                  }
                 }
               }
             }
@@ -5382,6 +5439,7 @@
               text-decoration: underline;
               padding-left: 22px;
               font-weight: bold;
+              // color: $blue_01;
 
               @include MQ(tab) {
                 padding-left: 17px;

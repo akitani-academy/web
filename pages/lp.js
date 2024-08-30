@@ -31,7 +31,6 @@ export default function Page({
   experiencesData,
   experiencesPostData,
 }) {
-  console.log(teacherList);
   const [activeIndex01, setactiveIndex01] = useState(null);
 
   const toggleAccordion01 = (index) => {

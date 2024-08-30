@@ -16,6 +16,8 @@
     @media (max-width: 600px) {
       width: 20px;
       height: 271px;
+      top: 0;
+      transform: none;
       background-image: url("/img/footer_text01-sp.png");
     }
   }
@@ -81,6 +83,7 @@
 
           a {
             color: $blue_01;
+            font-family: $font_01;
           }
         }
       }
@@ -90,6 +93,8 @@
           font-size: 12px;
           letter-spacing: 0.015em;
           line-height: 1.66;
+          font-family: $font_01;
+          color: $blue_01;
         }
       }
     }
