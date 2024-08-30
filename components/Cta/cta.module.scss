@@ -45,11 +45,10 @@
         font-size: 25px;
         letter-spacing: 0.015em;
         position: relative;
-        font-family: $font_01;
+        font-family: $font_02;
 
         @include MQ(sm) {
           font-size: 16px;
-          font-family: $font_02;
         }
 
         &::before,

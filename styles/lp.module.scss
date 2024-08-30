@@ -1267,11 +1267,11 @@
             letter-spacing: 0.025em;
             line-height: 1.59;
             text-align: center;
-            padding-bottom: 20px;
+            padding: 14px 20px 20px;
             border-bottom: 1px solid $blue_05;
 
             @include MQ(tab) {
-              padding: 0 50px 5px;
+              padding: 10px 50px 5px;
               word-break: keep-all;
               line-height: 1.38;
             }
@@ -1758,6 +1758,7 @@
 
           @include MQ(tab) {
             font-size: 20px;
+            color: $black_01;
           }
 
           @include MQ(sm) {
@@ -1778,6 +1779,7 @@
 
             @include MQ(tab) {
               width: 285px;
+              background-color: $black_01;
             }
           }
 
@@ -2912,6 +2914,10 @@
                 padding: 0 30px;
                 text-align: center;
 
+                @include MQ(tab) {
+                  padding: 0 15px;
+                }
+
                 dl {
                   dt,
                   dd {
@@ -3242,6 +3248,9 @@
                 border-bottom: 1px solid $blue_05;
                 cursor: pointer;
                 line-height: 1;
+                font-family: $font_01;
+                font-weight: bold;
+                color: $blue_01;
 
                 &::after {
                   @include pseudoElement;
@@ -4246,6 +4255,7 @@
             margin-bottom: 16px;
             border-bottom: 1px solid $blue_05;
             display: none;
+            font-family: $font_01;
 
             @include MQ(tab) {
               display: block;
@@ -4319,6 +4329,7 @@
           line-height: 1.5;
           border-bottom: 1px solid $blue_05;
           padding-bottom: 20px;
+          font-weight: bold;
 
           @include MQ(tab) {
             font-size: 20px;
@@ -4716,8 +4727,9 @@
             font-family: $font_02;
             text-align: right;
             display: block;
-            font-weight: normal;
             margin-top: 30px;
+            color: $black_01;
+            font-weight: bold;
 
             @include MQ(sm) {
               margin-top: 0;
@@ -4853,6 +4865,7 @@
                   font-weight: bold;
                   margin-bottom: 5px;
                   width: 50%;
+                  font-family: $font_01;
 
                   @include MQ(pc_sm) {
                     font-size: 14px;
@@ -4974,6 +4987,7 @@
             z-index: 1;
             padding-left: 16px;
             padding-right: 16px;
+            font-family: $font_01;
 
             @include MQ(tab) {
               font-size: 20px;

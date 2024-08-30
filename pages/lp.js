@@ -31,6 +31,7 @@ export default function Page({
   experiencesData,
   experiencesPostData,
 }) {
+  console.log(teacherList);
   const [activeIndex01, setactiveIndex01] = useState(null);
 
   const toggleAccordion01 = (index) => {
@@ -1109,6 +1110,7 @@ export default function Page({
               <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 slidesPerView={1}
+                // initialSlide={1}
                 breakpoints={{
                   961: {
                     slidesPerView: 3,
@@ -1694,11 +1696,7 @@ export default function Page({
 
         <section className={`${css_index.section} ${css_index.section_10}`}>
           <h2 className={css_index.title_blue}>
-            <span>
-              秋谷光子アカデミィが
-              <br className={css_index.sp} />
-              英検や大学受験に強い理由
-            </span>
+            <span>大学受験英語のカリキュラムについて</span>
           </h2>
           <div
             className={`${css_index.section__inner} ${css_index.section_10__inner}  ${css_index.section_10__inner_01}`}
@@ -2469,7 +2467,24 @@ export async function getStaticProps() {
   let teacherList = await fetch(
     "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/teacher?per_page=100"
   ).then((res) => res.json());
-  teacherList = teacherList.sort((a, b) => a.infoCount - b.infoCount).reverse();
+  teacherList = teacherList
+    .sort((a, b) => {
+      // ID順に並べ替え
+      if (a.infoCount !== b.infoCount) return a.infoCount - b.infoCount;
+
+      // 画像URLがあるデータを優先
+      if (a.img && !b.img) return -1;
+      if (!a.img && b.img) return 1;
+      return 0;
+    })
+    .reverse();
+
+  teacherList = teacherList.sort((a, b) => {
+    // 優先表示
+    if (a.infoCount === 11111) return -1;
+    if (b.infoCount === 11111) return 1;
+    return 0;
+  });
 
   return {
     props: {
