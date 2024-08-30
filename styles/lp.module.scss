@@ -608,6 +608,7 @@
 
         @include MQ(tab) {
           font-size: 34px;
+          margin-bottom: 7px;
         }
 
         span {
@@ -929,7 +930,7 @@
           width: 100%;
 
           @include MQ(tab) {
-            line-height: 1.4;
+            line-height: 1;
             margin-bottom: 27px;
             width: auto;
           }
