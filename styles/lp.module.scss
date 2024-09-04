@@ -38,6 +38,12 @@
   }
 }
 
+.b_none {
+  &::before {
+    content: none !important;
+  }
+}
+
 .font_02 {
   font-family: $font_02;
 }

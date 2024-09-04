@@ -828,7 +828,7 @@ export default function Page({
 
         <section
           id="nav_02"
-          className={`${css_index.section} ${css_index.section_05}`}
+          className={`${css_index.section} ${css_index.section_05} ${css_index.b_none}`}
         >
           <h2 className={css_index.title_blue}>
             <span>
@@ -1119,7 +1119,7 @@ export default function Page({
                 loop={true}
                 speed={1500}
                 autoplay={{
-                  delay: 3000,
+                  delay: 6000,
                 }}
                 navigation
                 className={`${css_index.swiper_wrapper} ${css_index.teacher}`}
@@ -1795,7 +1795,10 @@ export default function Page({
                 </picture>
 
                 <p>
-                  まずは<span>お問い合わせフォーム</span>
+                  まずは
+                  <Link href="/contact">
+                    <span>お問い合わせフォーム</span>
+                  </Link>
                   から面談カウンセリングの予約や当アカデミィへのご質問、資料請求などお問い合わせください。無料体験レッスンも受付中ですので希望される方は是非ご相談ください。
                 </p>
               </div>
