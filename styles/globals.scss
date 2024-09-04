@@ -33,7 +33,7 @@ label,
 input,
 select {
   &:hover {
-    opacity: .6;
+    opacity: 0.6;
 
     // * {
     //   opacity: .7;
@@ -56,7 +56,7 @@ img {
 }
 
 ::placeholder {
-  opacity: .4;
+  opacity: 0.4;
 }
 
 textarea {
@@ -71,7 +71,6 @@ textarea {
 // input:not([type="submit"]) {
 //   width: 15em;
 // }
-
 
 .spOnly {
   @include MQ(xl) {
@@ -109,7 +108,7 @@ h6.nav_course {
 }
 
 html {
-  font-family: 'Shippori Mincho', serif;
+  font-family: "Shippori Mincho", serif;
 }
 
 body {
@@ -135,7 +134,6 @@ p {
 }
 
 main {
-
   // width: 950px;
   max-width: 950px;
   margin: auto;
@@ -158,17 +156,17 @@ main {
   h5,
   h6 {
     font-weight: bold;
-    letter-spacing: .05em;
+    letter-spacing: 0.05em;
 
-    &+.LinkList {
+    & + .LinkList {
       margin-top: -3rem;
     }
 
     &::before,
     small,
     .subTitle {
-      letter-spacing: .2em;
-      font-size: .5em;
+      letter-spacing: 0.2em;
+      font-size: 0.5em;
       color: $c_3;
       display: block;
       content: attr(data-subtitle);
@@ -183,14 +181,14 @@ main {
   h1 {
     color: $c_2;
     font-size: 1.875rem;
-    margin-bottom: .3em;
+    margin-bottom: 0.3em;
   }
 
   h2,
   .h2 {
     font-size: 1.4rem;
     margin-top: 1.5em;
-    margin-bottom: .7em;
+    margin-bottom: 0.7em;
   }
 
   h3 {
@@ -203,20 +201,20 @@ main {
     font-family: sans-serif;
     // letter-spacing: .05em;
     line-height: 1.7em;
-    margin-bottom: .8em;
+    margin-bottom: 0.8em;
   }
 
-  >article {
+  > article {
     width: 100%;
 
-    >*:first-child {
+    > *:first-child {
       margin-top: 0;
     }
 
     a {
       color: $c_2;
       border-bottom: dashed 1px $c_2;
-      padding: 0 .05em;
+      padding: 0 0.05em;
     }
   }
 }
@@ -234,10 +232,10 @@ main {
 
 .navClose {
   flex: 1;
-  background: rgba(#000, .5);
+  background: rgba(#000, 0.5);
   backdrop-filter: blur(2px);
   opacity: 0;
-  transition: opacity .1s;
+  transition: opacity 0.1s;
   cursor: pointer;
 }
 
@@ -252,26 +250,26 @@ main {
 }
 
 h3 {
-  margin-top: .7em;
+  margin-top: 0.7em;
 }
 
 input {
   &[type="text"] {
     border-bottom: $c_3 solid 1px;
-    padding: .2em 0;
+    padding: 0.2em 0;
   }
 
   &[type="submit"] {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     color: #fff;
-    padding: .2em .5rem;
+    padding: 0.2em 0.5rem;
     background-color: $c_2;
   }
 }
 
 textarea {
   border: $c_3 solid 1px;
-  padding: .3em;
+  padding: 0.3em;
 }
 
 // #skip-silence-bar {
@@ -298,8 +296,13 @@ textarea {
 
 // ジャンプリンクずれ修正
 * {
-
-  &[id]:not(.splide, .splide__slide, .splide__list, .splide__track, #skip-silence-bar) {
+  &[id]:not(
+      .splide,
+      .splide__slide,
+      .splide__list,
+      .splide__track,
+      #skip-silence-bar
+    ) {
     &::before {
       pointer-events: none;
       display: block;

@@ -1,6 +1,12 @@
 $breakpoints: (
+  "sp_sm": "screen and (max-width: 374px)",
   "sm": "screen and (max-width: 600px)",
-  "xl": "screen and (min-width: 600px)",
+  "xl": "screen and (min-width: 601px)",
+  "tab": "screen and (max-width: 960px)",
+  "pc": "screen and (min-width: 961px)",
+  "pc_sm": "screen and (max-width: 1365px)",
+  "pc_md": "screen and (max-width: 1365px) and (min-width: 961px)",
+  "pc_xl": "screen and (min-width: 1366px)",
 ) !default;
 @mixin MQ($breakpoint: sm) {
   @media #{map-get($breakpoints, $breakpoint)} {
@@ -43,11 +49,18 @@ $white_01: #fff;
 
 $blue_01: #263552;
 $blue_02: #e7e9eb;
+$blue_03: #6d8094;
+$blue_04: #546688;
+$blue_05: rgba(38, 53, 82, 0.3);
+$blue_06: #dcdfe2;
 
 $red_01: #af342c;
 
 $yellow_01: #fff6e5;
 
 $gray_01: #dcdddf;
+$gray_02: rgba(51, 51, 51, 0.3);
 
 $black_01: #333333;
+
+$sp_inner: 84%;

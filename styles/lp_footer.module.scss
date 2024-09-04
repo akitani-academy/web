@@ -1,0 +1,118 @@
+.footer {
+  position: relative;
+  background-color: $blue_02;
+  overflow: hidden;
+
+  &::before {
+    @include pseudoElement;
+    @include bgImgContain("/img/footer_text01.png");
+    width: 100%;
+    height: 101px;
+    top: 100%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    @media (max-width: 600px) {
+      width: 20px;
+      height: 271px;
+      top: 0;
+      transform: none;
+      background-image: url("/img/footer_text01-sp.png");
+    }
+  }
+
+  .front {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    &__inner {
+      width: 84%;
+      margin: 0 auto;
+
+      a {
+        font-family: $font_02;
+        font-weight: bold;
+        font-size: 18px;
+        letter-spacing: 0.03em;
+        line-height: 1.44;
+        color: $blue_01;
+
+        small {
+          font-size: 12px;
+          letter-spacing: 0.005em;
+          line-height: 1.41;
+          display: block;
+          margin-bottom: -2px;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    position: relative;
+    background-color: $blue_06;
+    padding-bottom: 15px;
+
+    &__inner {
+      width: 84%;
+      margin: 0 auto;
+      padding-top: 30px;
+
+      ul {
+        margin-bottom: 30px;
+
+        li {
+          position: relative;
+          padding-left: 21px;
+          font-size: 14px;
+          letter-spacing: 0.015em;
+          line-height: 1.42;
+          margin-bottom: 15px;
+
+          &::before {
+            @include pseudoElement;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 11px;
+            height: 8px;
+            @include bgImgContain("/img/arrow_01.png");
+          }
+
+          a {
+            color: $blue_01;
+            font-family: $font_01;
+          }
+        }
+      }
+
+      p {
+        small {
+          font-size: 12px;
+          letter-spacing: 0.015em;
+          line-height: 1.66;
+          font-family: $font_01;
+          color: $blue_01;
+        }
+      }
+    }
+  }
+}
+
+.page_top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 96px;
+  height: 96px;
+  z-index: 9997;
+
+  @media (max-width: 600px) {
+    width: 66px;
+    height: 66px;
+    right: 10px;
+    bottom: 10px;
+  }
+}
