@@ -48,7 +48,7 @@ export default function Page({ wpDATA, experiencesData }) {
           }}
         />
 
-        <div className={css_news.content}>
+        {/* <div className={css_news.content}>
           <h2>お申し込みまでの流れ</h2>
 
           <ul className={css_news.flow}>
@@ -261,7 +261,7 @@ export default function Page({ wpDATA, experiencesData }) {
               </div>
             </div>
           </section>
-        </div>
+        </div> */}
 
         {/* <ExperiencesListBox
           data={experiencesData}
