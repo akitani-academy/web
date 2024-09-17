@@ -37,7 +37,7 @@ export default function Page({
   return (
     <>
       <Head
-        title="英語専門塾 秋谷光子アカデミィ - 英検1級176人合格の圧倒的な実績｜横浜,綱島,自由が丘,田園調布"
+        title="英語専門塾 秋谷光子アカデミィ - 英検1級180人合格の圧倒的な実績｜横浜,綱島,自由が丘,田園調布"
         url=""
         description={top.cfs.description}
         breadcrumb={[["トップページ", ""]]}
