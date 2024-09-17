@@ -6,8 +6,8 @@ const parser = loadDefaultJapaneseParser();
 import Layout from "components/layout";
 import Head from "components/head";
 import LinkList from "components/widget/LinkList";
-import Contact from "components/widget/Contact"
-import ContactButton from "components/ContactButton/ContactButton"
+import Contact from "components/widget/Contact";
+import ContactButton from "components/ContactButton/ContactButton";
 
 import css_experiences from "styles/experiences.module.scss";
 import css_contact from "styles/contact.module.scss";
@@ -26,13 +26,17 @@ export default function Page({ post }) {
       />
       <h2 data-subTitle="秋谷光子アカデミィの">合格体験記</h2>
       <p>
-        秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計176人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。圧倒的な実績に合わせて合格体験記を数多く掲載しております。
+        秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計180人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。圧倒的な実績に合わせて合格体験記を数多く掲載しております。
       </p>
       <LinkList data={[["その他の合格体験記を見る", "/experiences"]]} />
       <article className={css_experiences.article}>
         <h1>{post.title}</h1>
         <h2>{post.student}</h2>
-        <div dangerouslySetInnerHTML={{ __html: parser.translateHTMLString(post.content) }} />
+        <div
+          dangerouslySetInnerHTML={{
+            __html: parser.translateHTMLString(post.content),
+          }}
+        />
       </article>
       <aside className={css_contact.contact}>
         <Contact short="true" />
@@ -60,7 +64,7 @@ export async function getStaticPaths() {
     posts = posts.concat(postsData);
   }
 
-  posts = posts.filter(item => item.title !== "");
+  posts = posts.filter((item) => item.title !== "");
 
   const paths = posts.map((post) => ({
     params: { id: String(post.id) },
