@@ -61,6 +61,8 @@ export default function Page({
     setModalOpen(false);
   };
 
+  console.log(experiencesPostData);
+
   //2023年度大学合格実績
   let actuals_college = ``;
   experiencesData
@@ -2466,8 +2468,18 @@ export async function getStaticProps() {
     "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
   ).then((res) => res.json());
 
+  let page_ids = "&include[]=7948";
+  page_ids += "&include[]=8472";
+  page_ids += "&include[]=8470";
+  page_ids += "&include[]=6298";
+  page_ids += "&include[]=5794";
+  page_ids += "&include[]=7973";
+  page_ids += "&include[]=7972";
+  page_ids += "&include[]=7976";
+
   let experiencesPostData = await fetch(
-    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/results?categories=29"
+    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/results?categories=29" +
+      page_ids
   ).then((res) => res.json());
 
   let teacherList = await fetch(
