@@ -4556,7 +4556,7 @@
               }
             }
 
-            a {
+            > a {
               display: block;
 
               &.map {
@@ -5437,7 +5437,7 @@
               }
             }
 
-            a {
+            > a {
               margin-top: 10px;
               font-family: $font_01;
               font-size: 13px;

@@ -1964,9 +1964,11 @@ export default function Page({
                 <div className={css_index.text}>
                   <ul>
                     <li>
-                      TEL：
-                      <br className={css_index.pc} />
-                      045-544-6756
+                      <Link href="tel:045-544-6756">
+                        TEL：
+                        <br className={css_index.pc} />
+                        045-544-6756
+                      </Link>
                     </li>
                     <li>
                       住所：
@@ -2007,9 +2009,11 @@ export default function Page({
                 <div className={css_index.text}>
                   <ul>
                     <li>
-                      TEL：
-                      <br className={css_index.pc} />
-                      03-5483-5025
+                      <Link href="tel:03-5483-5025">
+                        TEL：
+                        <br className={css_index.pc} />
+                        03-5483-5025
+                      </Link>
                     </li>
                     <li>
                       住所：
@@ -2369,9 +2373,11 @@ export default function Page({
               <div className={css_index.box}>
                 <ul>
                   <li>
-                    TEL：
-                    <br className={css_index.pc} />
-                    045-544-6756
+                    <Link href="tel:045-544-6756">
+                      TEL：
+                      <br className={css_index.pc} />
+                      045-544-6756
+                    </Link>
                   </li>
                   <li>
                     住所：
@@ -2411,9 +2417,11 @@ export default function Page({
               <div className={css_index.box}>
                 <ul>
                   <li>
-                    TEL：
-                    <br className={css_index.pc} />
-                    03-5483-5025
+                    <Link href="tel:03-5483-5025">
+                      TEL：
+                      <br className={css_index.pc} />
+                      03-5483-5025
+                    </Link>
                   </li>
                   <li>
                     住所：
