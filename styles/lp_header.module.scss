@@ -66,29 +66,43 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1em;
+  margin-right: 0.65em;
+
+  @include MQ(tab) {
+    margin-right: 0.55em;
+  }
 
   @media (max-width: 600px) {
     display: none;
   }
 
   a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
-    width: 121px;
     height: calc(100% + 2px);
-    font-size: 12px;
     letter-spacing: 0.02em;
     line-height: 1.5;
-    color: $white_01;
+    display: inline-flex;
+    flex-flow: column;
+    justify-content: center;
 
-    &:first-child {
-      background-color: $red_01;
-    }
+    span {
+      &:first-child {
+        font-size: 12px;
+        border: 1px solid #000;
 
-    &:last-child {
-      background-color: $blue_01;
+        @include MQ(tab) {
+          font-size: 11px;
+        }
+      }
+
+      &:last-child {
+        font-size: 20px;
+
+        @include MQ(tab) {
+          font-size: 18px;
+        }
+      }
     }
   }
 }
