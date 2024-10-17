@@ -111,7 +111,7 @@
   align-items: center;
   justify-content: center;
   background-color: $white_01;
-  z-index: 9999;
+  z-index: 9997;
 
   @include MQ(xl) {
     display: none;
