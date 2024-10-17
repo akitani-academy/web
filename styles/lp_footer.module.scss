@@ -2,7 +2,6 @@
   position: relative;
   background-color: $blue_02;
   overflow: hidden;
-  padding-bottom: 60px;
 
   &::before {
     @include pseudoElement;
@@ -96,77 +95,6 @@
           line-height: 1.66;
           font-family: $font_01;
           color: $blue_01;
-        }
-      }
-    }
-  }
-}
-
-.fixed_btn {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: $white_01;
-  z-index: 9999;
-
-  @include MQ(xl) {
-    display: none;
-  }
-
-  a {
-    text-align: center;
-    height: calc(100% + 2px);
-    font-size: 12px;
-    letter-spacing: 0.02em;
-    line-height: 1.5;
-    display: flex;
-    flex-flow: column;
-    width: 50%;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid $black_01;
-    padding: 5px;
-
-    &:first-child {
-      border-right: 0;
-    }
-
-    span {
-      font-family: $font_01;
-      font-weight: bold;
-      font-size: 11px;
-
-      &:first-child {
-        font-size: 18px;
-        color: #f8953e;
-
-        @include MQ(sp_sm) {
-          font-size: 11px;
-        }
-
-        img {
-          margin-right: 5px;
-        }
-      }
-
-      &:last-child {
-        font-size: 9px;
-        line-height: 1;
-      }
-
-      img {
-        width: 20px;
-
-        @include MQ(sm) {
-          width: 15px;
-        }
-
-        @include MQ(sp_sm) {
-          width: 13px;
         }
       }
     }

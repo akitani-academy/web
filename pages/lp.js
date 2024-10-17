@@ -61,6 +61,8 @@ export default function Page({
     setModalOpen(false);
   };
 
+  console.log(experiencesPostData);
+
   //2023年度大学合格実績
   let actuals_college = ``;
   experiencesData

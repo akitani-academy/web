@@ -78,20 +78,12 @@ function Page() {
               </a>
             </Link> */}
             <div className={css.links}>
-              <Link href={`tel:045-544-6756`}>
-                <span class="">横浜・綱島本部校</span>
-                <span class="">045-544-6756</span>
-              </Link>
-              <Link href={`tel:03-5483-5025`}>
-                <span class="">自由が丘・田園調布校</span>
-                <span class="">03-5483-5025</span>
-              </Link>
-              {/* <Link href="/contact">
+              <Link href="/contact">
                 お問い合わせ
                 <br />
                 無料体験レッスン
               </Link>
-              <Link href="/contact">資料を請求</Link> */}
+              <Link href="/contact">資料を請求</Link>
             </div>
             <div className={css.meta}>
               <div
