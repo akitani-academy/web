@@ -73,7 +73,7 @@
     margin-right: 0.55em;
   }
 
-  @include MQ(sm) {
+  @media (max-width: 600px) {
     display: none;
   }
 

@@ -181,10 +181,10 @@
   height: 96px;
   z-index: 9997;
 
-  @include MQ(sm) {
+  @media (max-width: 600px) {
     width: 66px;
     height: 66px;
     right: 10px;
-    bottom: 70px;
+    bottom: 10px;
   }
 }
