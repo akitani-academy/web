@@ -73,10 +73,10 @@ export default function Page({
               className={classNames(
                 css_index.card,
                 { [css_index.bg]: e.title },
-                { [css_index.none]: e.option == "news" },
+                // { [css_index.news]: e.option == "news" },
                 {
                   [css_index.marginBottom]: [
-                    "news",
+                    // "news",
                     "experiences",
                     "experiences2",
                     "experiences3",

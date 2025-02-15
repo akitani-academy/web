@@ -16,7 +16,6 @@ import css_contact from "styles/contact.module.scss";
 import css_news from "styles/news1.module.scss";
 export default function Page({ wpDATA, experiencesData, newsArchiveData }) {
 
-
   return (
     <>
       <Head
@@ -46,7 +45,7 @@ export default function Page({ wpDATA, experiencesData, newsArchiveData }) {
         <h2 className={css_news.title}>過去のニュース</h2>
         {newsArchiveData.map((e, i) => (
           <>
-            <div className={css_news.row}>
+            <div className={css_news.item}>
               <Link href={"/news-archive/" + e.slug} className={css_news.link}>
                     {e.title}
               </Link>

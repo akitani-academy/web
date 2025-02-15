@@ -145,10 +145,6 @@
     }
   }
 
-  &.none {
-    display: none;
-  }
-
   &.news {
     background-color: lighten($c_2, 50);
     margin-bottom: 2rem;
