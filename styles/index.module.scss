@@ -57,7 +57,9 @@
   margin: auto;
   margin-top: calc(81px + 2.3rem);
   margin-bottom: 2.7rem;
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2) inset, 0 0 10px rgba(0, 0, 0, 0.3),
+  box-shadow:
+    0 0 10px 1px rgba(0, 0, 0, 0.2) inset,
+    0 0 10px rgba(0, 0, 0, 0.3),
     0 0 20px rgba(0, 0, 0, 0.1);
 
   @media (min-width: 1000px) {
@@ -89,8 +91,11 @@
     word-break: keep-all;
     overflow-wrap: break-word;
     color: #fff;
-    text-shadow: rgba(#000, 0.7) 1px 1px 10px, rgba(#000, 0.7) -1px 1px 10px,
-      rgba(#000, 0.7) 1px -1px 10px, rgba(#000, 0.7) -1px -1px 10px;
+    text-shadow:
+      rgba(#000, 0.7) 1px 1px 10px,
+      rgba(#000, 0.7) -1px 1px 10px,
+      rgba(#000, 0.7) 1px -1px 10px,
+      rgba(#000, 0.7) -1px -1px 10px;
   }
 
   h3 {
@@ -140,8 +145,13 @@
     }
   }
 
+  &.none {
+    display: none;
+  }
+
   &.news {
     background-color: lighten($c_2, 50);
+    margin-bottom: 2rem;
 
     .more ul {
       margin-bottom: 0;
@@ -152,6 +162,29 @@
       margin-right: calc(50% - 50vw);
       margin-left: calc(50% - 50vw);
       padding: 1.7rem calc(50vw - 50%);
+    }
+
+    .breakingNews {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+
+      a {
+        display: inline-flex;
+        place-items: center;
+        color: #be2522;
+        font-weight: bold;
+        font-family: sans-serif;
+
+        svg {
+          height: 1.3em;
+          color: #be2522;
+
+          path {
+            stroke: #be2522;
+          }
+        }
+      }
     }
   }
 
@@ -301,11 +334,7 @@
       // }
 
       .experiencesButton {
-        background: linear-gradient(
-          to bottom,
-          $c_2,
-          darken($c_2, 5%)
-        ) !important;
+        background: linear-gradient(to bottom, $c_2, darken($c_2, 5%)) !important;
         box-shadow: 0px 0px 2px rgba(0, 0, 0, 1) !important;
         // opacity: .6;
       }
@@ -342,7 +371,9 @@
         border-radius: 999px;
         box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8);
         padding: 0.5em 1.5em;
-        transition: background 0.2s, box-shadow 2s;
+        transition:
+          background 0.2s,
+          box-shadow 2s;
 
         a {
           color: #fff;

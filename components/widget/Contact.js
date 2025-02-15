@@ -1,6 +1,8 @@
 const _V = require("/components/_V.js");
 import Script from "next/script";
 
+import AddressForm from "components/AddressForm/AddressForm";
+
 import LinkList from "components/widget/LinkList";
 
 import css from "styles/contact.module.scss";
@@ -50,10 +52,34 @@ export default function Page({ short }) {
 				method="post"
 				className={"h-adr " + css.contact}
 			>
-				<h6>お名前</h6>
+				<h6>問い合わせ内容　<span>*必須</span></h6>
+				<div className={css.contactCheck}>
+					{(() => {
+						let items = [];
+						["面談・訪問の予約", "資料請求", "当アカデミーへのご質問"].map(
+							(e, i) => {
+								items.push(
+									<>
+										<input
+											type="checkbox"
+											id={e}
+											name={"$" + e}
+											key={i}
+											value={"問い合わせ項目：" + e}
+										/>
+										<label htmlFor={e}>{e}</label>
+									</>
+								);
+							}
+						);
+						return <>{items}</>;
+					})()}
+				</div>
+
+				<h6>お名前　*必須</h6>
 				<input type="text" name="name" placeholder="田中 太郎" required />
 				{!short && (<>
-					<h6>ふりがな</h6>
+					<h6>ふりがな　<span>*必須</span></h6>
 					<input
 						type="text"
 						name="$ふりがな"
@@ -62,7 +88,7 @@ export default function Page({ short }) {
 					/>
 				</>)}
 
-				<h6>メールアドレス</h6>
+				<h6>メールアドレス　<span>*必須</span></h6>
 				<input
 					type="text"
 					name="email"
@@ -70,30 +96,13 @@ export default function Page({ short }) {
 					required
 				/>
 
-				<h6>お電話番号</h6>
+				<h6>お電話番号　<span>*必須</span></h6>
 				<input type="text" name="phone" placeholder="01-2345-6789" required />
 				{!short && (<>
-					<h6>郵便番号</h6>
-					<input
-						type="text"
-						name="$郵便番号"
-						className="p-postal-code"
-						maxLength="9"
-						placeholder="100-8111"
-						required
-					/>
-					<h6>ご住所</h6>
-					<span className="p-country-name">Japan</span>
-					<input
-						type="text"
-						name="$住所"
-						className="p-region p-locality p-street-address p-extended-address"
-						placeholder="東京都千代田区千代田1-1"
-						required
-					/>
+					<AddressForm />
 				</>)}
 
-				<h6>学年</h6>
+				<h6>学年　<span>（学生ではない場合は「学生ではない」を選択してください。）</span></h6>
 				<div className={css.select}>
 					<select name="$学年">
 						<option disabled selected>
@@ -133,29 +142,6 @@ export default function Page({ short }) {
 					</select>
 				</div>
 
-				<h6>問い合わせ</h6>
-				<div className={css.contactCheck}>
-					{(() => {
-						let items = [];
-						["面談・訪問の予約", "資料請求", "当アカデミーへのご質問"].map(
-							(e, i) => {
-								items.push(
-									<>
-										<input
-											type="checkbox"
-											id={e}
-											name={"$" + e}
-											key={i}
-											value={"問い合わせ項目：" + e}
-										/>
-										<label htmlFor={e}>{e}</label>
-									</>
-								);
-							}
-						);
-						return <>{items}</>;
-					})()}
-				</div>
 				<textarea
 					name="$問い合わせ"
 					placeholder="その他、ご自由にご記入ください。"
@@ -173,7 +159,7 @@ export default function Page({ short }) {
 					name="accessKey"
 					value="8a391357-1cc5-48c1-a8d0-0771ffb6732a"
 				/>
-				<input type="submit" value="送信" />
+				<input type="submit" value="送信する" />
 			</form>
 
 			<h2>電話でのお問い合わせ</h2>
@@ -187,7 +173,7 @@ export default function Page({ short }) {
 				))}
 			</ul>
 
-			<h2>合格へのHowTo</h2>
+			{/* <h2>合格へのHowTo</h2>
 			<p>
 				秋谷光子アカデミィの各対策と勉強方法を公開していますので、ご活用ください。
 			</p>
@@ -199,7 +185,7 @@ export default function Page({ short }) {
 					["TOEFL", "/method"],
 					["その他", "/method"],
 				]}
-			/>
+			/> */}
 		</>
 	);
 }

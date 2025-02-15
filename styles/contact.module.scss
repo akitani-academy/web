@@ -14,7 +14,6 @@
         &:first-child {
             margin-top: 0;
         }
-
     }
 
     h3 {
@@ -27,15 +26,15 @@
         margin-top: 1.6rem;
     }
 
-    *+h6 {
-        margin-top: .8rem;
+    * + h6 {
+        margin-top: 0.8rem;
     }
 
     h6 {
         color: $c_2;
         font-family: sans-serif;
         font-size: 0.8125rem;
-        margin-bottom: -.3rem;
+        margin-bottom: -0.3rem;
     }
 
     form {
@@ -44,28 +43,46 @@
     }
 
     input:not([type="submit"]) {
-        width: 15rem
+        width: 15rem;
+    }
+
+    input[type="submit"] {
+        padding: 3px 28px;
     }
 
     textarea {
         width: 100%;
         height: 10rem;
+        margin-top: 0.8rem;
+    }
+
+    .getAddress {
+        margin-top: 0.8rem;
+    }
+
+    .setAddress {
+        margin-top: 0.8rem;
+
+        button {
+            border: 1px solid #688096;
+            padding: 5px 22px;
+        }
     }
 }
 
 .select {
     width: 10rem;
     border-bottom: $c_3 solid 1px;
-    padding: .2em 0;
+    padding: 0.2em 0;
     position: relative;
 
     &::after {
         content: "";
-        width: .6rem;
-        height: .6rem;
-        border-top: .1rem solid $c_3;
-        border-right: .1rem solid $c_3;
-        transform: rotate(135deg) translate(.33rem, -.33rem);
+        width: 0.6rem;
+        height: 0.6rem;
+        border-top: 0.1rem solid $c_3;
+        border-right: 0.1rem solid $c_3;
+        transform: rotate(135deg) translate(0.33rem, -0.33rem);
         display: block;
         position: absolute;
         top: 0;
@@ -79,16 +96,16 @@
 }
 
 .contactCheck {
-    font-size: .9em;
+    font-size: 0.9em;
     display: flex;
-    gap: .2rem;
+    gap: 0.2rem;
     flex-wrap: wrap;
-    margin: .3em 0;
+    margin: 0.3em 0;
 
     input {
         display: none;
 
-        &:checked+label {
+        &:checked + label {
             color: #fff;
             background-color: $c_3;
         }
@@ -96,7 +113,7 @@
 
     label {
         border: 1px solid $c_3;
-        padding: .2em .5em;
+        padding: 0.2em 0.5em;
         display: block;
     }
 }

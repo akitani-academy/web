@@ -29,6 +29,7 @@ export default function Page({
   classtypeData,
   teacherList,
   experiencesData,
+  newsArchiveData,
 }) {
   // TASK: 先生のカードリストのオートスクロールを実装予定
   // let teacherListOdd = teacherList.filter(num => Number(num) % 2 !== 0);
@@ -47,6 +48,24 @@ export default function Page({
 
       <main className={css_index.main}>
         <article>
+          <div className={`${css_index.news} ${css_index.card}`}>
+            <div className={css_index.box}>
+              <h2>
+                <div className={css_index.subTitle}>NEWS</div>
+                <div>{newsArchiveData.title}</div>
+              </h2>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: parser.translateHTMLString(newsArchiveData.content),
+                }}></div>
+              <div className={css_index.breakingNews}>
+                <Link href={"/news1"}>
+                  <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.25813 3.51613L8.742 7L5.25813 10.4839" stroke="white" stroke-width="1.16129" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  {newsArchiveData.title + "を見る"}
+                </Link>
+              </div>
+            </div>
+          </div>
           {top.feature.map((e, i) => (
             <div
               id={i}
@@ -54,7 +73,7 @@ export default function Page({
               className={classNames(
                 css_index.card,
                 { [css_index.bg]: e.title },
-                { [css_index.news]: e.option == "news" },
+                { [css_index.none]: e.option == "news" },
                 {
                   [css_index.marginBottom]: [
                     "news",
@@ -138,59 +157,6 @@ export default function Page({
                         </Button>
                       ))}
                     </div>
-
-                    {/* <Link legacyBehavior href={"/course_and_classtype"}>
-											<a className={css_index.courseAndClasstype}>
-												<section
-													className={
-														course_and_classtype.slect +
-														" " +
-														css_index.wrap +
-														" selectArea"
-													}
-												>
-													<div className={course_and_classtype.child}>
-														<div className={course_and_classtype.main}>
-															<div className={course_and_classtype.inputTitle}>コース</div>
-															<Select data={courseData} name={"course"} />
-														</div>
-														<ul>
-															{courseData.map((e, i) => (
-																<li key={`${e}-${i}`}>
-																	<input
-																		id={e.id}
-																		type="radio"
-																		name={"courseR"}
-																		value={e.title}
-																	/>
-																	<label htmlFor={e.id}>{e.title}</label>
-																</li>
-															))}
-														</ul>
-													</div>
-													<img src="x.svg" width={"26px"} height={"26px"} alt="掛け算のアイコン" />
-													<div className={course_and_classtype.child}>
-														<div className={course_and_classtype.main}>
-															<div className={course_and_classtype.inputTitle}>授業形態</div>
-															<Select data={classtypeData} name={"classtype"} />
-														</div>
-														<ul>
-															{classtypeData.map((e, i) => (
-																<li key={i}>
-																	<input
-																		id={e.id}
-																		type="radio"
-																		name={"classtypeR"}
-																		value={e.title}
-																	/>
-																	<label htmlFor={e.id}>{e.title}</label>
-																</li>
-															))}
-														</ul>
-													</div>
-												</section>
-											</a>
-										</Link> */}
                   </>
                 )}
                 {e.option == "curriculum" && (
@@ -205,62 +171,6 @@ export default function Page({
                     </a>
                   </Link>
                 )}
-                {/* {e.option == "teacher" && (
-								<>
-									<LoopCarousel>
-										<div className={css_index.teacherList}>
-											<ul>
-												{teacherListOdd.map((e, i) => (
-													<li key={i} className={css_index.teacher}>
-														{e.img && (
-															<div>
-																<Image
-																	src={e.img}
-																	alt={e.name + "先生の写真"}
-																	layout="responsive"
-																	width={6240}
-																	height={4160}
-																></Image>
-															</div>
-														)}
-														<div>{e.name}</div>
-														{e.license}
-														{e.other && (
-															<>
-																<p>{e.other}</p>
-															</>
-														)}
-													</li>
-												))}
-											</ul>
-											<ul>
-												{teacherListEven.map((e, i) => (
-													<li key={i} className={css_index.teacher}>
-														{e.img && (
-															<div>
-																<Image
-																	src={e.img}
-																	alt={e.name + "先生の写真"}
-																	layout="responsive"
-																	width={6240}
-																	height={4160}
-																></Image>
-															</div>
-														)}
-														<div>{e.name}</div>
-														{e.license}
-														{e.other && (
-															<>
-																<p>{e.other}</p>
-															</>
-														)}
-													</li>
-												))}
-											</ul>
-										</div>
-									</LoopCarousel>
-								</>
-							)} */}
                 {e.gallery && (
                   <LoopCarousel>
                     <ul className={css_index.gallery}>
@@ -333,12 +243,15 @@ export async function getStaticProps() {
     "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
   ).then((res) => res.json());
 
-  // console.log(experiencesData)
-
   // let teacherList = await fetch(
   // 	"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/teacher?per_page=100"
   // ).then((res) => res.json());
   // teacherList = teacherList.sort((a, b) => a.infoCount - b.infoCount).reverse();
+
+  let newsArchiveData = await fetch(
+    "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/news-archive"
+  ).then((res) => res.json());
+  newsArchiveData = newsArchiveData[0];
 
   return {
     props: {
@@ -350,6 +263,7 @@ export async function getStaticProps() {
       // classtypeData: classtypeData.reverse(),
       experiencesData,
       // teacherList
+      newsArchiveData,
     },
   };
 }
