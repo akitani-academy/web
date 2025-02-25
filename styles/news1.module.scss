@@ -1,6 +1,6 @@
 main:has(.card) {
-  padding-top: 0;
-  padding-bottom: 0;
+  // padding-top: 0;
+  // padding-bottom: 0;
 
   @media (max-width: 600px) {
     margin-top: 59px;
@@ -217,5 +217,33 @@ main:has(.card) {
         }
       }
     }
+  }
+}
+
+.past {
+  .title {
+    background-color: #b42320;
+    color: #fff;
+    font-size: 25px;
+    padding: 13px 20px 20px;
+    line-height: 1;
+    margin-bottom: 0;
+    margin-right: -2.5rem;
+    margin-left: -2.5rem;
+
+    @media (max-width: 600px) {
+      line-height: 1.2;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .item {
+    padding: 0 20px;
+  }
+
+  .link {
+    display: inline-block;
+    margin-top: 20px;
   }
 }

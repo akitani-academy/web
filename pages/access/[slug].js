@@ -17,7 +17,7 @@ export default function Page() {
 
   // slugで指定されたidのタイトルを変数に取得
   const _V_access = _V.access.find(item => item.id === slug);
-  console.log(_V_access.meoScript)
+  // console.log(_V_access.meoScript)
 
   return (
     <>
