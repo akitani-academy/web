@@ -28,7 +28,7 @@ export default function AddressForm() {
 
   return (
     <div className={css.getAddress}>
-        <h6>郵便番号</h6>
+        <h6>郵便番号　<span>*必須</span></h6>
         <input
             type="text"
             name="$郵便番号"
@@ -40,14 +40,14 @@ export default function AddressForm() {
             required
         />
         <div className={css.setAddress}><button type="button" onClick={fetchAddress} disabled={isLoading}>郵便番号から住所自動入力</button></div>
-        <h6>ご住所</h6>
+        <h6>ご住所　<span>*必須</span></h6>
         <span className="p-country-name">Japan</span>
         <input
             type="text"
             name="$住所"
             className="p-region p-locality p-street-address p-extended-address"
             value={address}
-            placeholder="東京都千代田区千代田1-1"
+            placeholder="東京都千代田区千代田"
             required
         />
     </div>
