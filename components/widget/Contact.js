@@ -102,6 +102,9 @@ export default function Page({ short }) {
 					<AddressForm />
 				</>)}
 
+				<h6>ご住所（番地）　<span>*必須</span></h6>
+				<input type="text" name="$番地" placeholder="1-1" required />
+
 				<h6>学年　<span>（学生ではない場合は「学生ではない」を選択してください。）</span></h6>
 				<div className={css.select}>
 					<select name="$学年">
