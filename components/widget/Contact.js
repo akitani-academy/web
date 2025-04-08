@@ -52,6 +52,18 @@ export default function Page({ short }) {
 				method="post"
 				className={"h-adr " + css.contact}
 			>
+				<input type="hidden" name="apiKey" value="sf_lgbnf0h8hb0j2k34dnkcl65d"/>
+
+				<input type="hidden" name="replyTo" value="@" />
+
+				<input
+					type="text"
+					name="honeypot"
+					className="honeypot"
+					tabindex="-1"
+					autocomplete="off"
+				/>
+
 				<h6>問い合わせ内容　<span>*必須</span></h6>
 				<div className={css.contactCheck}>
 					{(() => {
@@ -150,23 +162,23 @@ export default function Page({ short }) {
 					placeholder="その他、ご自由にご記入ください。"
 				></textarea>
 
-				<input type="text" name="honeypot" className="honeypot" />
-				<input type="hidden" name="replyTo" value="@" />
-				<input
-					type="hidden"
-					name="redirectTo"
-					value="https://akitani-academy.jp/contact/done"
-				/>
 				{/* <input
 					type="hidden"
 					name="accessKey"
 					value="8a391357-1cc5-48c1-a8d0-0771ffb6732a"
 				/> */}
-  				<input type="hidden" name="apiKey" value="sf_bjdhhlkdjlh9legi0hl5be9n" />
-				<div class="g-recaptcha" data-sitekey="6LcuQP8qAAAAAAQhGb12BeFIzcPUuzltvpb9P3r_"></div>
+				<input
+					type="hidden"
+					name="redirectTo"
+					value="https://akitani-academy.jp/contact/done"
+				/>
+
+				<input type="submit" value="送信する" />
+
+				
+				<div class="g-recaptcha" data-sitekey="6LcYP_8qAAAAAEWt6Xuv4_lWH5iwvl4VfSGohRWp"></div>
   				<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 				
-				<input type="submit" value="送信する" />
 			</form>
 
 			<h2>電話でのお問い合わせ</h2>
