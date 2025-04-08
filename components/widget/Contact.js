@@ -157,11 +157,15 @@ export default function Page({ short }) {
 					name="redirectTo"
 					value="https://akitani-academy.jp/contact/done"
 				/>
-				<input
+				{/* <input
 					type="hidden"
 					name="accessKey"
 					value="8a391357-1cc5-48c1-a8d0-0771ffb6732a"
-				/>
+				/> */}
+  				<input type="hidden" name="apiKey" value="sf_bjdhhlkdjlh9legi0hl5be9n" />
+				<div class="g-recaptcha" data-sitekey="6LcuQP8qAAAAAAQhGb12BeFIzcPUuzltvpb9P3r_"></div>
+  				<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+				
 				<input type="submit" value="送信する" />
 			</form>
 
