@@ -48,13 +48,19 @@
 
     input[type="submit"] {
         padding: 3px 28px;
-        margin-bottom: 20px;
+        margin-top: 0.8rem;
+
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
     }
 
     textarea {
         width: 100%;
         height: 10rem;
         margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
     }
 
     .getAddress {
@@ -63,6 +69,7 @@
 
     .setAddress {
         margin-top: 0.8rem;
+        cursor: pointer;
 
         button {
             border: 1px solid #688096;

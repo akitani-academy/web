@@ -10,7 +10,6 @@ function Page({
   url = undefined,
   breadcrumb,
 }) {
-  // console.log(children)
 
   if (title) {
     if (!title.includes("アカデミィ")) {
@@ -81,6 +80,12 @@ function Page({
         </>
       )}
       {children}
+
+      {url === "/contact" && (
+        <>
+          <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        </>
+      )}
     </Head>
   );
 }

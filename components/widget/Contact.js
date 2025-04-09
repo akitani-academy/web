@@ -9,6 +9,8 @@ import css from "styles/contact.module.scss";
 
 export default function Page({ short }) {
 	short = JSON.parse(short)
+	
+	let actionKey = "mC0jMxjm5";
 	return (
 		<>
 			<Script
@@ -48,22 +50,10 @@ export default function Page({ short }) {
 
 			<h2 id="contact">メールでのお問い合わせ</h2>
 			<form
-				action="https://api.staticforms.xyz/submit"
+				action={"https://submit-form.com/" + actionKey}
 				method="post"
 				className={"h-adr " + css.contact}
 			>
-				<input type="hidden" name="apiKey" value="sf_lgbnf0h8hb0j2k34dnkcl65d"/>
-
-				<input type="hidden" name="replyTo" value="@" />
-
-				<input
-					type="text"
-					name="honeypot"
-					className="honeypot"
-					tabindex="-1"
-					autocomplete="off"
-				/>
-
 				<h6>問い合わせ内容　<span>*必須</span></h6>
 				<div className={css.contactCheck}>
 					{(() => {
@@ -162,24 +152,44 @@ export default function Page({ short }) {
 					placeholder="その他、ご自由にご記入ください。"
 				></textarea>
 
-				{/* <input
-					type="hidden"
-					name="accessKey"
-					value="8a391357-1cc5-48c1-a8d0-0771ffb6732a"
-				/> */}
+				{/* <input type="text" name="honeypot" className="honeypot" />
+				<input type="hidden" name="replyTo" value="@" />
 				<input
 					type="hidden"
 					name="redirectTo"
 					value="https://akitani-academy.jp/contact/done"
 				/>
-
-				<input type="submit" value="送信する" />
-
+				<input
+					type="hidden"
+					name="accessKey"
+					value="8a391357-1cc5-48c1-a8d0-0771ffb6732a"
+				/> */}
+				{/* <input type="submit" value="送信する" /> */}
 				
-				<div class="g-recaptcha" data-sitekey="6LcYP_8qAAAAAEWt6Xuv4_lWH5iwvl4VfSGohRWp"></div>
-  				<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+				<div
+					class="g-recaptcha"
+					data-sitekey="6LdeaQ4rAAAAABHJ5xfslhgUzRPFOw2PH2auUkk8"
+					data-callback="callback"
+				></div>
 				
+				<input
+					type="hidden"
+					name="_redirect"
+					value="https://akitani-academy.jp/contact/done"
+				/>
+
+				<input id="submit-button" type="submit" value="送信する" disabled />
 			</form>
+			<Script
+				id="custom-script"
+				strategy="afterInteractive"
+			>
+				{`
+			function callback() {
+				const submitButton = document.getElementById("submit-button");
+				submitButton.removeAttribute("disabled");
+			}`}
+			</Script>
 
 			<h2>電話でのお問い合わせ</h2>
 			<ul>
