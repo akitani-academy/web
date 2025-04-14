@@ -9,6 +9,8 @@ import css from "styles/contact.module.scss";
 
 export default function Page({ short }) {
 	short = JSON.parse(short)
+	
+	let actionKey = "mC0jMxjm5";
 	return (
 		<>
 			<Script
@@ -48,7 +50,7 @@ export default function Page({ short }) {
 
 			<h2 id="contact">メールでのお問い合わせ</h2>
 			<form
-				action="https://api.staticforms.xyz/submit"
+				action={"https://submit-form.com/" + actionKey}
 				method="post"
 				className={"h-adr " + css.contact}
 			>
@@ -150,7 +152,7 @@ export default function Page({ short }) {
 					placeholder="その他、ご自由にご記入ください。"
 				></textarea>
 
-				<input type="text" name="honeypot" className="honeypot" />
+				{/* <input type="text" name="honeypot" className="honeypot" />
 				<input type="hidden" name="replyTo" value="@" />
 				<input
 					type="hidden"
@@ -161,9 +163,33 @@ export default function Page({ short }) {
 					type="hidden"
 					name="accessKey"
 					value="8a391357-1cc5-48c1-a8d0-0771ffb6732a"
+				/> */}
+				{/* <input type="submit" value="送信する" /> */}
+				
+				<div
+					class="g-recaptcha"
+					data-sitekey="6LdeaQ4rAAAAABHJ5xfslhgUzRPFOw2PH2auUkk8"
+					data-callback="callback"
+				></div>
+				
+				<input
+					type="hidden"
+					name="_redirect"
+					value="https://akitani-academy.jp/contact/done"
 				/>
-				<input type="submit" value="送信する" />
+
+				<input id="submit-button" type="submit" value="送信する" disabled />
 			</form>
+			<Script
+				id="custom-script"
+				strategy="afterInteractive"
+			>
+				{`
+			function callback() {
+				const submitButton = document.getElementById("submit-button");
+				submitButton.removeAttribute("disabled");
+			}`}
+			</Script>
 
 			<h2>電話でのお問い合わせ</h2>
 			<ul>
