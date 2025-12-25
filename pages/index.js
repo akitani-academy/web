@@ -38,7 +38,7 @@ export default function Page({
     return (
         <>
             <Head
-                title="英語専門塾 秋谷光子アカデミィ - 英検1級183人合格の圧倒的な実績｜横浜,綱島,自由が丘,田園調布"
+                title="英語専門塾 秋谷光子アカデミィ - 英検1級187人合格の圧倒的な実績｜横浜,綱島,自由が丘,田園調布"
                 url=""
                 description={top.cfs.description}
                 breadcrumb={[["トップページ", ""]]}
@@ -48,39 +48,50 @@ export default function Page({
 
             <main className={css_index.main}>
                 <article>
-                    <div className={`${css_index.news} ${css_index.card}`}>
-                        <div className={css_index.box}>
-                            <h2>
-                                <div className={css_index.subTitle}>NEWS</div>
-                                <div>{newsArchiveData.title}</div>
-                            </h2>
-                            <div
-                                dangerouslySetInnerHTML={{
-                                    __html: parser.translateHTMLString(
-                                        newsArchiveData.content
-                                    ),
-                                }}
-                            ></div>
-                            <div className={css_index.breakingNews}>
-                                <Link href={"/news1"}>
-                                    <svg
-                                        viewBox="0 0 14 14"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M5.25813 3.51613L8.742 7L5.25813 10.4839"
-                                            stroke="white"
-                                            stroke-width="1.16129"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        ></path>
-                                    </svg>
-                                    {newsArchiveData.title + "を見る"}
-                                </Link>
+                    {newsArchiveData.map((news) => (
+                        <div
+                            key={news.id}
+                            className={`${css_index.news} ${css_index.card}`}
+                        >
+                            <div className={css_index.box}>
+                                <h2>
+                                    <div className={css_index.subTitle}>
+                                        NEWS
+                                    </div>
+                                    <div>{news.title}</div>
+                                </h2>
+
+                                <div
+                                    dangerouslySetInnerHTML={{
+                                        __html: parser.translateHTMLString(
+                                            news.content
+                                        ),
+                                    }}
+                                />
+                                {news.top_news_link && (
+                                    <div className={css_index.breakingNews}>
+                                        <Link href={news.top_news_link}>
+                                            <svg
+                                                viewBox="0 0 14 14"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M5.25813 3.51613L8.742 7L5.25813 10.4839"
+                                                    stroke="white"
+                                                    strokeWidth="1.16129"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                            </svg>
+                                            {news.title + "を見る"}
+                                        </Link>
+                                    </div>
+                                )}
                             </div>
                         </div>
-                    </div>
+                    ))}
+
                     {top.feature.map((e, i) => (
                         <div
                             id={i}
@@ -281,7 +292,10 @@ export async function getStaticProps() {
     let newsArchiveData = await fetch(
         "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/news-archive"
     ).then((res) => res.json());
-    newsArchiveData = newsArchiveData[0];
+    newsArchiveData = newsArchiveData.filter(
+        (item) => item.top_display === "show"
+    );
+    // newsArchiveData = newsArchiveData[0];
 
     return {
         props: {
