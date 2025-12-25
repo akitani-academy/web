@@ -35,7 +35,6 @@ export default function Page({
     // let teacherListOdd = teacherList.filter(num => Number(num) % 2 !== 0);
     // let teacherListEven = teacherList.filter(num => Number(num) % 2 === 0);
 
-    console.log(newsArchiveData);
     return (
         <>
             <Head
@@ -281,10 +280,6 @@ export async function getStaticProps() {
         "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/course?per_page=100"
     ).then((res) => res.json());
 
-    // const classtypeData = await fetch(
-    // 	"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/class_type?per_page=100&"
-    // ).then((res) => res.json());
-
     let top = await fetch(
         "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages/7284"
     ).then((res) => res.json());
@@ -293,11 +288,6 @@ export async function getStaticProps() {
     let experiencesData = await fetch(
         "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
     ).then((res) => res.json());
-
-    // let teacherList = await fetch(
-    // 	"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/teacher?per_page=100"
-    // ).then((res) => res.json());
-    // teacherList = teacherList.sort((a, b) => a.infoCount - b.infoCount).reverse();
 
     let newsArchiveData = await fetch(
         "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/news-archive"
@@ -310,13 +300,8 @@ export async function getStaticProps() {
     return {
         props: {
             top,
-            // experiences: await fetch(
-            // 	"https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
-            // ).then((res) => res.json()),
             courseData: courseData.reverse(),
-            // classtypeData: classtypeData.reverse(),
             experiencesData,
-            // teacherList
             newsArchiveData,
         },
     };
