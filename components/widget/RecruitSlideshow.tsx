@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import classNames from "classnames";
-import styles from "styles/Slideshow.module.scss";
+import styles from "styles/RecruitSlideshow.module.scss";
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
@@ -24,13 +24,14 @@ export default function RecruitSlideshow({ images, seconds }: any) {
 
     useEffect(() => {
         if (isMobile === null) return;
+        if (!images?.length) return;
 
         const intervalId = setInterval(() => {
             setCurrentIndex((prev: number) => (prev + 1) % images.length);
         }, seconds * 1000);
 
         return () => clearInterval(intervalId);
-    }, [seconds, images.length, isMobile]);
+    }, [seconds, images, isMobile]);
 
     if (isMobile === null) return null;
 

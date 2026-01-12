@@ -5,6 +5,7 @@ import Nav from "components/nav";
 import Head from "components/head";
 import LinkList from "components/widget/LinkList";
 import ContactButton from "components/ContactButton/ContactButton";
+// import RecruitSlideshow from "components/RecruitSlideshow/RecruitSlideshow";
 import RecruitSlideshow from "components/RecruitSlideshow/RecruitSlideshow";
 import RecruitSwiper from "components/RecruitSwiper/RecruitSwiper";
 import RecruitClassRoom from "components/RecruitClassRoom/RecruitClassRoom";

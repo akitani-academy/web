@@ -2,10 +2,10 @@ import Slideshow from "components/widget/RecruitSlideshow"
 
 import css from "./style.module.scss";
 
-export default function Button() {
+export default function RecruitSlideshow() {
     return (
       <section className={css.recruit}>
-        <section className={css.recruitImg}>
+        <div className={css.recruitImg}>
           <div className={css.bg}>
             <Slideshow
               images={[
@@ -63,7 +63,7 @@ export default function Button() {
             </h2>
             <h3>確かな成果が生まれる環境で、あなたの指導力を発揮しませんか。</h3>
           </div>
-        </section>
+        </div>
       </section>
     );
 }
