@@ -1,0 +1,81 @@
+.swiper {
+    position: relative;
+
+    .box__text {
+        border-width: 2px;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.02rem;
+        margin-top: 23px;
+
+        > img {
+            // aspect-ratio: 214 / 352;
+            object-fit: cover;
+            width: 40.3%;
+        }
+
+        h3 {
+            font-size: 1.12em;
+            margin-top: 0;
+            margin-bottom: 6px;
+
+            .subTitle {
+                font-size: 0.83em;
+                color: #be2522;
+            }
+        }
+
+        &__item {
+            width: 59%;
+
+            p {
+                color: #333333;
+                font-family: "Shippori Mincho", serif;
+                padding-top: 6px;
+                font-size: 0.93em;
+                line-height: 1.46;
+            }
+        }
+    }
+
+    .swiper_wrapper {
+        width: calc(100% - 2.4rem);
+        margin: 0 auto;
+    }
+
+    .swiper_button {
+        width: 25px;
+        height: 75px;
+        background-image: url("/img/recruit/slide_btn.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        &::after {
+            display: none;
+        }
+
+        &.swiper_button_prev {
+            transform: rotate(180deg);
+            left: 0;
+        }
+
+        &.swiper_button_next {
+            right: 0;
+        }
+    }
+
+    > div {
+        > div {
+            &:not(:first-child) {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}

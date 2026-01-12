@@ -1,0 +1,85 @@
+.mainSlide {
+    display: flex;
+    justify-content: center;
+}
+
+.mainImg {
+    width: 100%;
+    // height: clamp(240px, 45vw, 520px);
+    aspect-ratio: 579 / 325;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.thumbsWrap {
+    margin: 0 auto;
+    margin-top: 21px;
+    display: grid;
+    grid-template-columns: 14px 1fr 14px;
+    align-items: center;
+    gap: 6px;
+}
+
+.thumbs {
+    width: 100%;
+}
+
+.thumbs :global(.swiper-slide-thumb-active) {
+    opacity: 1;
+}
+
+.thumbSlide {
+    // opacity: 0.55;
+    // transition:
+    //     opacity 0.25s ease,
+    //     transform 0.25s ease;
+}
+
+.thumbImg {
+    aspect-ratio: 165 / 93;
+    width: 100%;
+    height: 93px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.navBtn {
+    position: relative;
+    width: 25px;
+    height: 75px;
+    background-image: url("/img/recruit/slide_btn.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &::after {
+        display: none;
+    }
+
+    &.prev {
+        transform: rotate(180deg) translateY(50%);
+        left: -14px;
+    }
+
+    &.next {
+        right: -6px;
+    }
+}
+
+.scrollbar {
+    position: static !important;
+    background: #ffe5e5;
+    height: 5px;
+    border-radius: 3px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.swiper_scrollbar_drag {
+    background: #be2522;
+    border-radius: 3px;
+    width: 17.3% !important;
+    height: 100%;
+}

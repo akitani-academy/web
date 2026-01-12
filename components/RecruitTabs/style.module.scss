@@ -1,0 +1,37 @@
+.tab_buttons {
+    display: flex;
+    gap: 8px;
+    font-size: 0.81em;
+
+    button {
+        cursor: pointer;
+        border-radius: 8px 8px 0 0;
+        text-align: center;
+        width: 25%;
+        padding: 4px 0 1px;
+        background: #fff2f2;
+        font-weight: bold;
+
+        &.is_active {
+            color: #f5f5f5;
+            background: #be2522;
+        }
+
+        span {
+            display: block;
+        }
+    }
+}
+
+.tab_contents {
+    padding: 12px 14px;
+    border: 1.5px solid #be2522;
+    border-radius: 0 0 8px 8px;
+    margin-bottom: 18px;
+
+    p {
+        color: #333333;
+        font-size: 0.93em;
+        font-family: "Shippori Mincho", serif;
+    }
+}
