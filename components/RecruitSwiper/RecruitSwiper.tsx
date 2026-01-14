@@ -63,7 +63,18 @@ export default function RecruitSwiper() {
                     // key={i}
                 >
                     <div className={css.row}>
-                        <img src="./img/recruit/staff_01.png" />
+                            <figure>
+                                <picture>
+                                    <source
+                                        srcSet="/img/recruit/staff_01-sp.png"
+                                        media="(max-width:960px)"
+                                    />
+                                    <img
+                                        src="/img/recruit/staff_01.png"
+                                        alt=""
+                                    />
+                                </picture>
+                            </figure>
                         <div className={css.row__item}>
                             <div className={css.box__text}>
                                 <h3>
@@ -108,7 +119,18 @@ export default function RecruitSwiper() {
                     // key={i}
                 >
                     <div className={css.row}>
-                        <img src="./img/recruit/staff_02.png" />
+                            <figure>
+                                <picture>
+                                    <source
+                                        srcSet="/img/recruit/staff_02-sp.png"
+                                        media="(max-width:960px)"
+                                    />
+                                    <img
+                                        src="/img/recruit/staff_02.png"
+                                        alt=""
+                                    />
+                                </picture>
+                            </figure>
                         <div className={css.row__item}>
                             <div className={css.box__text}>
                                 <h3>
@@ -152,7 +174,18 @@ export default function RecruitSwiper() {
                     // key={i}
                 >
                     <div className={css.row}>
-                        <img src="./img/recruit/staff_03.png" />
+                            <figure>
+                                <picture>
+                                    <source
+                                        srcSet="/img/recruit/staff_03-sp.png"
+                                        media="(max-width:960px)"
+                                    />
+                                    <img
+                                        src="/img/recruit/staff_03.png"
+                                        alt=""
+                                    />
+                                </picture>
+                            </figure>
                         <div className={css.row__item}>
                             <div className={css.box__text}>
                                 <h3>

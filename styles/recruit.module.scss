@@ -1,10 +1,27 @@
+.tab {
+    display: none;
+
+    @include MQ(tab) {
+        display: block;
+    }
+}
+
 .main {
     gap: 20px;
+
+    @include MQ(tab) {
+        padding-left: 0;
+        padding-right: 0;
+    }
 
     &__inner {
         display: flex;
         flex-direction: column;
         gap: 24px;
+    }
+
+    :global(#skip-silence-bar) {
+        display: none;
     }
 }
 
@@ -30,6 +47,10 @@
 .h2_2 {
     margin-top: 0;
 
+    @include MQ(tab) {
+        margin-bottom: 1.25rem;
+    }
+
     .subTitle {
         color: $c_2;
         margin-bottom: 10px;
@@ -38,20 +59,43 @@
         content: attr(data-subtitle);
         pointer-events: none;
         text-transform: uppercase;
+
+        @include MQ(tab) {
+            font-size: 0.75rem;
+            margin-bottom: 1.43em;
+        }
     }
 
     .title {
         letter-spacing: normal;
         line-height: 1.5;
+
+        @include MQ(tab) {
+            font-size: 1.5rem;
+        }
+
+        // span {
+        //     @include MQ(tab) {
+        //         display: block;
+        //     }
+        // }
     }
 }
 
 .h2 {
     font-size: 1.875em;
 
+    @include MQ(tab) {
+        width: 92%;
+    }
+
     .title {
         padding-left: 6px;
         position: relative;
+
+        @include MQ(tab) {
+            padding-left: 0;
+        }
 
         &::before {
             content: "";
@@ -62,6 +106,11 @@
             width: 2px;
             transform: translateY(-50%);
             background: #be2522;
+
+            @include MQ(tab) {
+                left: -5px;
+                height: 79.1%;
+            }
         }
     }
 }
@@ -70,12 +119,20 @@
     .title {
         margin-top: 18px;
 
+        @include MQ(tab) {
+            margin-top: 8px;
+        }
+
         &__inner {
             border-top: 1px solid #be2522;
             border-bottom: 1px solid #be2522;
             padding-top: 3px;
             padding-bottom: 3px;
             position: relative;
+
+            @include MQ(tab) {
+                font-size: 1.12rem;
+            }
 
             &::before,
             &::after {
@@ -109,6 +166,10 @@
     background: #ffffff;
     padding: 1.7rem 2.5rem;
 
+    @include MQ(tab) {
+        padding: 1rem 1rem 1.75rem;
+    }
+
     ul:last-child {
         margin-bottom: 0;
     }
@@ -117,6 +178,10 @@
     &.staff {
         .box__text {
             border-width: 2px;
+
+            @include MQ(tab) {
+                border-width: 1px;
+            }
         }
 
         .row {
@@ -125,10 +190,18 @@
             gap: 1.02rem;
             margin-top: 23px;
 
+            @include MQ(tab) {
+                display: block;
+            }
+
             > img {
                 aspect-ratio: 214 / 352;
                 object-fit: cover;
                 width: 36.8%;
+
+                @include MQ(tab) {
+                    width: 100%;
+                }
             }
 
             h3 {
@@ -136,14 +209,26 @@
                 margin-top: 0;
                 margin-bottom: 6px;
 
+                @include MQ(tab) {
+                    margin-bottom: 1rem;
+                }
+
                 .subTitle {
                     font-size: 0.83em;
                     color: #be2522;
+
+                    @include MQ(tab) {
+                        font-size: 0.93rem;
+                    }
                 }
             }
 
             &__item {
                 width: 59%;
+
+                @include MQ(tab) {
+                    width: 100%;
+                }
 
                 p {
                     color: #333333;
@@ -151,6 +236,11 @@
                     padding-top: 6px;
                     font-size: 0.93em;
                     line-height: 1.46;
+
+                    @include MQ(tab) {
+                        padding-top: 1rem;
+                        margin-bottom: 1rem;
+                    }
                 }
             }
         }
@@ -159,6 +249,11 @@
     &.staff {
         padding-left: 0.68rem;
         padding-right: 0.68rem;
+
+        @include MQ(tab) {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
     }
 
     &.flow {
@@ -170,8 +265,18 @@
                 gap: 3.4rem;
                 padding-bottom: 18px;
 
+                @include MQ(tab) {
+                    padding-bottom: 1rem;
+                    gap: 1rem;
+                }
+
                 &.read {
+                    padding-bottom: 0;
                     margin-bottom: 18px;
+
+                    @include MQ(tab) {
+                        margin-bottom: 1rem;
+                    }
                 }
 
                 .row {
@@ -182,6 +287,13 @@
                     text-align: center;
                     padding: 8px;
                     position: relative;
+                    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
+
+                    @include MQ(sm) {
+                        width: 100%;
+                        padding: 8px 1.5em;
+                        padding-right: 6.93em;
+                    }
 
                     &::after {
                         content: "";
@@ -193,6 +305,10 @@
                         background: center / contain no-repeat url("/img/recruit/arrow.png");
                         width: 20px;
                         height: 20px;
+
+                        @include MQ(sm) {
+                            content: none;
+                        }
                     }
 
                     &:nth-child(3),
@@ -205,11 +321,19 @@
                     h3 {
                         font-size: 0.93em;
 
+                        @include MQ(sm) {
+                            margin-bottom: 0.5em;
+                        }
+
                         .subTitle {
                             font-size: 0.8em;
                             background: #be2522;
                             color: #fff;
                             border-radius: 38px;
+
+                            @include MQ(tab) {
+                                font-size: 0.75em;
+                            }
                         }
 
                         .title {
@@ -220,11 +344,30 @@
                     .img {
                         text-align: center;
 
+                        @include MQ(sm) {
+                            position: absolute;
+                            top: 50%;
+                            right: 1.87em;
+                            transform: translateY(-50%);
+                        }
+
                         img {
                             width: 57px;
                         }
                     }
+
+                    p {
+                        @include MQ(tab) {
+                            font-size: 0.75rem;
+                        }
+                    }
                 }
+            }
+        }
+
+        .link {
+            @include MQ(sm) {
+                display: none;
             }
         }
     }
@@ -309,17 +452,42 @@
                 align-items: center;
                 gap: 7px;
 
+                @include MQ(tab) {
+                    font-size: 0.75rem;
+                    flex-wrap: wrap;
+                    gap: 0;
+                    column-gap: 6px;
+                    margin-bottom: 0;
+                }
+
                 span {
-                    font-size: 10px;
-                    font-family: $font_03;
-                    background: #ffe5e5;
-                    padding: 0 5px;
+                    &.eng {
+                        @include MQ(tab) {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+
+                    &:not(.eng) {
+                        font-size: 10px;
+                        font-family: $font_03;
+                        background: #ffe5e5;
+                        padding: 0 5px;
+
+                        @include MQ(tab) {
+                            margin-top: 8px;
+                        }
+                    }
                 }
             }
         }
 
         .row {
             margin-top: 12px;
+
+            @include MQ(tab) {
+                margin-top: 20px;
+            }
 
             h3 {
                 display: flex;
@@ -339,13 +507,28 @@
             h4 {
                 padding-left: 28px;
 
+                @include MQ(tab) {
+                    padding-left: 0;
+                    font-size: 0.93rem;
+                }
+
                 + p {
                     padding-left: 42px;
+
+                    @include MQ(tab) {
+                        padding-left: 0;
+                    }
                 }
             }
 
             p {
                 padding-left: 18px;
+
+                @include MQ(tab) {
+                    padding-left: 0;
+                    margin-bottom: 16px;
+                    font-size: 0.93rem;
+                }
             }
         }
     }
@@ -393,6 +576,10 @@
                 padding-left: 18px;
                 font-family: "Shippori Mincho", serif;
                 color: #333333;
+
+                @include MQ(tab) {
+                    padding-left: 0;
+                }
             }
 
             .map {
@@ -401,35 +588,70 @@
                 gap: 21px;
                 margin-bottom: 24px;
 
+                @include MQ(tab) {
+                    flex-direction: column;
+                    gap: 16px;
+                }
+
                 img,
                 iframe {
                     width: 50%;
                     aspect-ratio: 280 / 160;
+
+                    @include MQ(tab) {
+                        width: 100%;
+                        aspect-ratio: 343 / 196;
+                    }
                 }
             }
 
             .tel {
-                display: block;
+                font-size: 0.93em;
+                color: #be2522;
+                font-weight: bold;
+                font-family: "Shippori Mincho", serif;
+                display: inline-block;
+                line-height: 1.46;
+                border-bottom: 1px solid;
+                border-image: repeating-linear-gradient(to right, #be2522 0 6px, transparent 6px 8px) 1;
 
-                .button {
-                    font-size: 0.93em;
-                    color: #be2522;
-                    font-weight: bold;
-                    font-family: "Shippori Mincho", serif;
-                    display: inline-block;
-                    line-height: 1.46;
-                    border-bottom: 1px solid;
-                    border-image: repeating-linear-gradient(to right, #be2522 0 6px, transparent 6px 8px) 1;
+                @include MQ(tab) {
                 }
             }
         }
     }
 
     &.company {
+        @include MQ(tab) {
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 1rem;
+        }
+
+        .h2_2 {
+            @include MQ(tab) {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+
         .table {
             border-top: 1px solid #be2522;
             border-bottom: 1px solid #be2522;
             padding-bottom: 12px;
+
+            @include MQ(tab) {
+                table,
+                tbody,
+                tr,
+                td {
+                    display: block;
+                }
+
+                td {
+                    width: 100%;
+                }
+            }
 
             table {
                 tr {
@@ -443,13 +665,25 @@
                         font-weight: bold;
                         font-family: $font_03;
                         white-space: nowrap;
+
+                        @include MQ(tab) {
+                            padding-left: 1rem;
+                        }
                     }
 
                     td {
+                        @include MQ(tab) {
+                            padding-right: 1rem;
+                            background: #fff2f2;
+                        }
                     }
 
                     &:nth-child(even) {
                         background: #fff2f2;
+
+                        @include MQ(tab) {
+                            background: #fff;
+                        }
                     }
                 }
             }
@@ -459,6 +693,21 @@
     &__text {
         border-bottom: 1px solid;
         border-image: repeating-linear-gradient(to right, #be2522 0 6px, transparent 6px 8px) 1;
+
+        h3 {
+            @include MQ(tab) {
+                font-size: 1rem;
+            }
+        }
+
+        p {
+            font-family: "Shippori Mincho", serif;
+
+            @include MQ(tab) {
+                font-size: 0.93em;
+                margin-bottom: 1.25em;
+            }
+        }
     }
 
     .link {
@@ -514,18 +763,23 @@
 }
 
 .lead_text {
+    @include MQ(tab) {
+        margin-bottom: 22.5px;
+    }
+
     > span {
         display: block;
         max-width: 1200px;
         margin: 0 auto;
 
         @include MQ(tab) {
-            width: 92%;
+            width: 100%;
         }
 
         p {
             font-size: 0.93em;
             line-height: 1.46;
+            font-family: "Shippori Mincho", serif;
         }
     }
 }

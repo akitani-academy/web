@@ -28,12 +28,28 @@
 }
 
 .recruitImg {
+    height: 400px;
+
+    @include MQ() {
+        height: 330px;
+    }
+
+    display: grid;
+    place-items: center;
+    position: relative;
+
+    height: 400px;
+
+    @include MQ() {
+        height: 330px;
+    }
+
+    display: grid;
+    place-items: center;
+    position: relative;
+
     h2,
     h3 {
-        @include MQ() {
-            padding-left: 1rem;
-        }
-
         word-break: keep-all;
         overflow-wrap: break-word;
         color: #fff;
@@ -48,13 +64,16 @@
         font-weight: normal;
         line-height: 1.5;
         margin-top: 9px;
+        text-align: center;
+        font-size: 1em;
     }
 
     .messageH2 {
-        font-size: 2.3em;
+        font-size: 1.87em;
         line-height: 1.5;
         @include MQ() {
-            font-size: 1.9em;
+            // font-size: 1.9em;
+            text-align: center;
         }
 
         span {
@@ -63,18 +82,15 @@
             @include MQ() {
                 font-size: 1em;
             }
+
+            &.people {
+                font-size: 1.2em;
+
+                @include MQ() {
+                }
+            }
         }
     }
-
-    height: 400px;
-
-    @include MQ() {
-        height: 330px;
-    }
-
-    display: grid;
-    place-items: center;
-    position: relative;
 
     .bg {
         position: absolute;

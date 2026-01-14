@@ -38,7 +38,8 @@ export default function Page({ wpDATA, faq }) {
                         <h2 className={css.h2}>
                             <div className={css.subTitle}>RECRUIT</div>
                             <div className={css.title}>
-                                英語専門塾 秋谷光子アカデミィ採用情報
+                                英語専門塾 秋谷光子アカデミィ
+                                <span>採用情報</span>
                             </div>
                         </h2>
                         <article
@@ -82,7 +83,9 @@ export default function Page({ wpDATA, faq }) {
                         </div>
                         <div className={css.box__text}>
                             <h3>
-                                あなたのライフスタイルに合わせて勤務できます
+                                あなたのライフスタイルに合わせて
+                                <br className={css.tab} />
+                                勤務できます
                             </h3>
                             <p>
                                 英語教育に情熱を持つ講師を募集しております。
@@ -170,7 +173,7 @@ export default function Page({ wpDATA, faq }) {
                     <div className={`${css.box} ${css.box_2}`}>
                         <h2 className={css.h2_2}>
                             <div className={css.subTitle}>
-                                TEACHER
+                                <span className={css.eng}>TEACHER</span>
                                 <span>研修制度あり</span>
                                 <span>1講座OK</span>
                                 <span>個別指導または少人数指導</span>
@@ -226,9 +229,11 @@ export default function Page({ wpDATA, faq }) {
                                 <p>
                                     英語専門塾 秋谷光子アカデミィ
                                     <br />
+                                    <br className={css.tab} />
                                     神奈川 ／ 綱島本部校（東急東横線
                                     綱島駅から徒歩1～2分）
                                     <br />
+                                    <br className={css.tab} />
                                     東京都 ／ 田園調布校（東急東横線
                                     田園調布駅から徒歩1～2分）
                                     <br />
@@ -320,7 +325,7 @@ export default function Page({ wpDATA, faq }) {
                     <div className={`${css.box} ${css.box_2}`}>
                         <h2 className={css.h2_2}>
                             <div className={css.subTitle}>
-                                TEACHER
+                                <span className={css.eng}>TEACHER</span>
                                 <span>研修制度あり</span>
                                 <span>シフト制</span>
                                 <span>正社員登用あり</span>
@@ -367,9 +372,11 @@ export default function Page({ wpDATA, faq }) {
                                 <p>
                                     英語専門塾 秋谷光子アカデミィ
                                     <br />
+                                    <br className={css.tab} />
                                     神奈川 ／ 綱島本部校（東急東横線
                                     綱島駅から徒歩1～2分）
                                     <br />
+                                    <br className={css.tab} />
                                     東京都 ／ 田園調布校（東急東横線
                                     田園調布駅から徒歩1～2分）
                                     <br />
@@ -492,7 +499,18 @@ export default function Page({ wpDATA, faq }) {
                             </div>
                         </h2>
                         <div className={css.row}>
-                            <img src="/img/recruit/principal.png" />
+                            <figure>
+                                <picture>
+                                    <source
+                                        srcSet="/img/recruit/principal-sp.png"
+                                        media="(max-width:960px)"
+                                    />
+                                    <img
+                                        src="/img/recruit/principal.png"
+                                        alt=""
+                                    />
+                                </picture>
+                            </figure>
                             <div className={css.row__item}>
                                 <div className={css.box__text}>
                                     <h3>
@@ -677,7 +695,7 @@ export default function Page({ wpDATA, faq }) {
                         </h2>
                         <ol className={css.ol}>
                             {faq.map((e, i) => (
-                                <li key={i}>
+                                <li key={e.id}>
                                     <details>
                                         <summary>
                                             {e.question}
@@ -695,14 +713,14 @@ export default function Page({ wpDATA, faq }) {
                                                     <line
                                                         id="線_1"
                                                         data-name="線 1"
-                                                        class="cls-1"
+                                                        className={css.cls_1}
                                                         y1="10"
                                                         transform="translate(9.521 0)"
                                                     />
                                                     <line
                                                         id="線_2"
                                                         data-name="線 2"
-                                                        class="cls-1"
+                                                        className={css.cls_1}
                                                         x2="10"
                                                         transform="translate(0 0.479)"
                                                     />
@@ -778,12 +796,14 @@ export default function Page({ wpDATA, faq }) {
                                         </h4>
                                         <p>
                                             {e.address}
-                                            <a
-                                                href={"tel:" + e.tel}
-                                                className="tel"
-                                            >
-                                                {e.tel}
-                                            </a>
+                                            <div>
+                                                <a
+                                                    href={"tel:" + e.tel}
+                                                    className={css.tel}
+                                                >
+                                                    {e.tel}
+                                                </a>
+                                            </div>
                                         </p>
                                     </div>
                                     <div className={css.row}>
@@ -858,6 +878,7 @@ export default function Page({ wpDATA, faq }) {
                                         <th>企業理念</th>
                                         <td>
                                             英語教育を通して、社会で活躍できる人材を育てる
+                                            <br />
                                             一隅の光であり続けること
                                         </td>
                                     </tr>

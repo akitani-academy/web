@@ -2,7 +2,8 @@
     position: relative;
 
     .box__text {
-        border-width: 2px;
+        border-bottom: 1px solid;
+        border-image: repeating-linear-gradient(to right, #be2522 0 6px, transparent 6px 8px) 1;
     }
 
     .row {
@@ -12,10 +13,17 @@
         gap: 1.02rem;
         margin-top: 23px;
 
+        @include MQ(tab) {
+            display: block;
+        }
+
         > img {
-            // aspect-ratio: 214 / 352;
             object-fit: cover;
             width: 40.3%;
+
+            @include MQ(tab) {
+                width: 100%;
+            }
         }
 
         h3 {
@@ -23,14 +31,29 @@
             margin-top: 0;
             margin-bottom: 6px;
 
+            @include MQ(tab) {
+                padding-left: 0.87rem;
+                padding-right: 0.87rem;
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+            }
+
             .subTitle {
                 font-size: 0.83em;
                 color: #be2522;
+
+                @include MQ(tab) {
+                    font-size: 0.93rem;
+                }
             }
         }
 
         &__item {
             width: 59%;
+
+            @include MQ(tab) {
+                width: 100%;
+            }
 
             p {
                 color: #333333;
@@ -38,6 +61,11 @@
                 padding-top: 6px;
                 font-size: 0.93em;
                 line-height: 1.46;
+
+                @include MQ(tab) {
+                    padding-top: 1rem;
+                    margin-bottom: 1rem;
+                }
             }
         }
     }
@@ -45,6 +73,10 @@
     .swiper_wrapper {
         width: calc(100% - 2.4rem);
         margin: 0 auto;
+
+        @include MQ(sm) {
+            width: 100%;
+        }
     }
 
     .swiper_button {
@@ -54,6 +86,12 @@
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
+
+        @include MQ(sm) {
+            top: calc(50vw + 65px);
+            width: 15px;
+            height: 45px;
+        }
 
         &::after {
             display: none;

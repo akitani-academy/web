@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/scrollbar"; // ✅ 追加（必須）
+import "swiper/css/scrollbar";
 
 import css from "./style.module.scss";
 
@@ -66,12 +66,17 @@ export default function RecruitSwiper() {
 
         <div className={css.thumbsArea}>
             <Swiper
+                observer
+                observeParents
                 modules={[Navigation, Thumbs, Scrollbar]}
+                breakpoints={{
+                  0:   { spaceBetween: 14 },
+                  961: { spaceBetween: 23 },
+                }}
                 onSwiper={setThumbsSwiper}
                 watchSlidesProgress
                 loop={false}
                 speed={500}
-                spaceBetween={23}
                 slidesPerView={3}
                 centeredSlides
                 slideActiveClass={css.active}

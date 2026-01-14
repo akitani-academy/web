@@ -57,7 +57,7 @@ export default function RecruitSlideshow() {
             <h2 className={css.messageH2}>
               英検1級
               <wbr />
-              累計187名合格
+              累計<span className={css.people}>187</span>名合格
               <br />
               開塾<span>36</span>年
             </h2>
