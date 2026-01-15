@@ -42,6 +42,7 @@
     height: 93px;
     object-fit: cover;
     border-radius: 2px;
+    cursor: pointer;
 
     @include MQ(tab) {
         aspect-ratio: unset;
@@ -57,7 +58,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    top: 50%;
+    top: 40px;
     transform: translateY(-50%);
 
     @include MQ(tab) {
