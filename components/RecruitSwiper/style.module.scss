@@ -16,6 +16,7 @@
         @include MQ(tab) {
             flex-direction: column;
             gap: 1rem;
+            margin-top: 0;
         }
 
         figure {

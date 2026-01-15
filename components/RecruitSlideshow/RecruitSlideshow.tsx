@@ -10,44 +10,44 @@ export default function RecruitSlideshow() {
             <Slideshow
               images={[
                 {
-                  pc: { src: "/img/recruit/RecruitSlide01.jpg", width: 2449, height: 683, alt: "pc1" },
-                  sp: { src: "/img/recruit/RecruitSlide01-sp.jpg", width: 750, height: 1000, alt: "sp1" },
+                  pc: { src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2026/01/RecruitSlide01-e1768460327567.jpg", width: 2449, height: 683, alt: "" },
+                  sp: { src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2026/01/RecruitSlide01-sp.jpg", width: 750, height: 1000, alt: "" },
                 },
                 {
-                  pc: { src: "/img/recruit/RecruitSlide02.jpg", width: 2449, height: 683, alt: "pc1" },
-                  sp: { src: "/img/recruit/RecruitSlide02-sp.jpg", width: 750, height: 1000, alt: "sp1" },
+                  pc: { src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2026/01/RecruitSlide02.jpg", width: 2449, height: 683, alt: "" },
+                  sp: { src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2026/01/RecruitSlide02-sp.jpg", width: 750, height: 1000, alt: "" },
                 },
                 {
-                  pc: { src: "/img/recruit/RecruitSlide03.jpg", width: 2449, height: 683, alt: "pc1" },
-                  sp: { src: "/img/recruit/RecruitSlide03-sp.jpg", width: 750, height: 1000, alt: "sp1" },
+                  pc: { src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2026/01/RecruitSlide03.jpg", width: 2449, height: 683, alt: "" },
+                  sp: { src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2026/01/RecruitSlide03-sp.jpg", width: 750, height: 1000, alt: "" },
                 },
                 {
-                  pc: { src: "/img/recruit/RecruitSlide04.jpg", width: 2449, height: 683, alt: "pc1" },
-                  sp: { src: "/img/recruit/RecruitSlide04-sp.jpg", width: 750, height: 1000, alt: "sp1" },
+                  pc: { src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2026/01/RecruitSlide04.jpg", width: 2449, height: 683, alt: "" },
+                  sp: { src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2026/01/RecruitSlide04-sp.jpg", width: 750, height: 1000, alt: "" },
                 },
                 {
-                  pc: { src: "/img/recruit/RecruitSlide05.jpg", width: 2449, height: 683, alt: "pc1" },
-                  sp: { src: "/img/recruit/RecruitSlide05-sp.jpg", width: 750, height: 1000, alt: "sp1" },
+                  pc: { src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2026/01/RecruitSlide05.jpg", width: 2449, height: 683, alt: "" },
+                  sp: { src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2026/01/RecruitSlide05-sp.jpg", width: 750, height: 1000, alt: "" },
                 },
                 {
-                  pc: { src: "/img/recruit/RecruitSlide06.jpg", width: 2449, height: 683, alt: "pc1" },
-                  sp: { src: "/img/recruit/RecruitSlide06-sp.jpg", width: 750, height: 1000, alt: "sp1" },
+                  pc: { src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2026/01/RecruitSlide06.jpg", width: 2449, height: 683, alt: "" },
+                  sp: { src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2026/01/RecruitSlide06-sp.jpg", width: 750, height: 1000, alt: "" },
                 },
                 {
-                  pc: { src: "/img/recruit/RecruitSlide07.jpg", width: 2449, height: 683, alt: "pc1" },
-                  sp: { src: "/img/recruit/RecruitSlide07-sp.jpg", width: 750, height: 1000, alt: "sp1" },
+                  pc: { src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2026/01/RecruitSlide07.jpg", width: 2449, height: 683, alt: "" },
+                  sp: { src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2026/01/RecruitSlide07-sp.jpg", width: 750, height: 1000, alt: "" },
                 },
                 {
-                  pc: { src: "/img/recruit/RecruitSlide08.jpg", width: 2449, height: 683, alt: "pc1" },
-                  sp: { src: "/img/recruit/RecruitSlide08-sp.jpg", width: 750, height: 1000, alt: "sp1" },
+                  pc: { src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2026/01/RecruitSlide08.jpg", width: 2449, height: 683, alt: "" },
+                  sp: { src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2026/01/RecruitSlide08-sp.jpg", width: 750, height: 1000, alt: "" },
                 },
                 {
-                  pc: { src: "/img/recruit/RecruitSlide09.jpg", width: 2449, height: 683, alt: "pc1" },
-                  sp: { src: "/img/recruit/RecruitSlide09-sp.jpg", width: 750, height: 1000, alt: "sp1" },
+                  pc: { src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2026/01/RecruitSlide09.jpg", width: 2449, height: 683, alt: "" },
+                  sp: { src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2026/01/RecruitSlide09-sp.jpg", width: 750, height: 1000, alt: "" },
                 },
                 {
-                  pc: { src: "/img/recruit/RecruitSlide10.jpg", width: 2449, height: 683, alt: "pc1" },
-                  sp: { src: "/img/recruit/RecruitSlide10-sp.jpg", width: 750, height: 1000, alt: "sp1" },
+                  pc: { src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2026/01/RecruitSlide10.jpg", width: 2449, height: 683, alt: "" },
+                  sp: { src: "https://yoshikitam.wpx.jp/akitani/wp-content/uploads/2026/01/RecruitSlide10-sp.jpg", width: 750, height: 1000, alt: "" },
                 },
               ]}
               seconds={4}

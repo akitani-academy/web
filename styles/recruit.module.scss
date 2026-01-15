@@ -318,6 +318,12 @@
                 padding-left: 0;
                 padding-right: 0;
             }
+
+            .title {
+                @include MQ(sp_sm) {
+                    letter-spacing: -0.05em;
+                }
+            }
         }
     }
 

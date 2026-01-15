@@ -66,11 +66,17 @@
         margin-top: 9px;
         text-align: center;
         font-size: 1em;
+        max-width: 100%;
+
+        @include MQ(sm) {
+            padding: 0 1rem;
+        }
     }
 
     .messageH2 {
         font-size: 1.87em;
         line-height: 1.5;
+
         @include MQ() {
             // font-size: 1.9em;
             text-align: center;
