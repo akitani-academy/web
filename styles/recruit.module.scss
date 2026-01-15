@@ -797,9 +797,9 @@
 
         p {
             font-family: "Shippori Mincho", serif;
+            font-size: 0.75rem;
 
             @include MQ(tab) {
-                font-size: 0.93em;
                 margin-bottom: 1.25em;
             }
         }
