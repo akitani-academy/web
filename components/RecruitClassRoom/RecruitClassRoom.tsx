@@ -34,8 +34,8 @@ export default function RecruitSwiper() {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
   const thumbsRef = useRef<SwiperType | null>(null);
 
-  const prevRef = useRef<HTMLButtonElement | null>(null);
-  const nextRef = useRef<HTMLButtonElement | null>(null);
+  const prevRef = useRef<HTMLDivElement | null>(null);
+  const nextRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (!thumbsRef.current) return;
