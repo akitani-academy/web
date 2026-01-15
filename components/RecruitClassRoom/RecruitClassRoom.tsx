@@ -1,12 +1,11 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
-import { Autoplay, Navigation, Scrollbar, Thumbs } from "swiper/modules";
+import { Autoplay, Scrollbar, Thumbs } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 
 import css from "./style.module.scss";
@@ -34,31 +33,11 @@ export default function RecruitSwiper() {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
   const thumbsRef = useRef<SwiperType | null>(null);
 
-  const prevRef = useRef<HTMLDivElement | null>(null);
-  const nextRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (!thumbsRef.current) return;
-    if (!prevRef.current || !nextRef.current) return;
-
-    const swiper = thumbsRef.current;
-
-    swiper.params.navigation = {
-      prevEl: prevRef.current,
-      nextEl: nextRef.current,
-    };
-
-    swiper.navigation.destroy();
-    swiper.navigation.init();
-    swiper.navigation.update();
-  }, []);
-
   return (
     <div className={css.root}>
       <Swiper
         modules={[Thumbs, Autoplay]}
         slidesPerView={1}
-        loop={false}
         speed={800}
         autoplay={{ delay: 3500, disableOnInteraction: false }}
         thumbs={{
@@ -67,7 +46,7 @@ export default function RecruitSwiper() {
         className={css.main}
       >
         {IMAGES.map((src, i) => (
-          <SwiperSlide key={`${src}-${i}`} className={css.mainSlide}>
+          <SwiperSlide key={i}>
             <img src={src} alt="" className={css.mainImg} />
           </SwiperSlide>
         ))}
@@ -75,49 +54,38 @@ export default function RecruitSwiper() {
 
       <div className={css.thumbsWrap}>
         <div
-          ref={prevRef}
           className={`swiper-button-prev ${css.navBtn} ${css.prev}`}
+          onClick={() => thumbsRef.current?.slidePrev()}
+          role="button"
           aria-label="prev"
         />
 
         <div className={css.thumbsArea}>
-            <Swiper
-                observer
-                observeParents
-                modules={[Navigation, Thumbs, Scrollbar]}
-                breakpoints={{
-                  0:   { spaceBetween: 14 },
-                  961: { spaceBetween: 23 },
-                }}
-                onSwiper={setThumbsSwiper}
-                watchSlidesProgress
-                loop={false}
-                speed={500}
-                slidesPerView={3}
-                centeredSlides
-                slideActiveClass={css.active}
-                navigation={{
-                    enabled: true,
-                    prevEl: prevRef.current,
-                    nextEl: nextRef.current,
-                }}
-                onBeforeInit={(swiper) => {
-                    const nav = swiper.params.navigation;
-                    if (!nav || typeof nav === "boolean") return;
-                    nav.prevEl = prevRef.current;
-                    nav.nextEl = nextRef.current;
-                }}
-                scrollbar={{
-                    el: `.${css.scrollbar}`,
-                    draggable: false,
-                    hide: false,
-                    dragClass: css.swiper_scrollbar_drag,
-                }}
-                className={css.thumbs}
-            >
-
+          <Swiper
+            observer
+            observeParents
+            modules={[Thumbs, Scrollbar]}
+            breakpoints={{
+              0: { spaceBetween: 14 },
+              961: { spaceBetween: 23 },
+            }}
+            onSwiper={(swiper) => {
+              thumbsRef.current = swiper;
+              setThumbsSwiper(swiper);
+            }}
+            watchSlidesProgress
+            speed={500}
+            slidesPerView={3}
+            centeredSlides
+            slideActiveClass={css.active}
+            scrollbar={{
+              el: `.${css.scrollbar}`,
+              hide: false,
+            }}
+            className={css.thumbs}
+          >
             {IMAGES.map((src, i) => (
-              <SwiperSlide key={`thumb-${src}-${i}`} className={css.thumbSlide}>
+              <SwiperSlide key={i} className={css.thumbSlide}>
                 <img src={src} alt="" className={css.thumbImg} />
               </SwiperSlide>
             ))}
@@ -127,8 +95,9 @@ export default function RecruitSwiper() {
         </div>
 
         <div
-          ref={nextRef}
-          className={`swiper-button-next ${css.navBtn} ${css.next}`}
+          className={`swiper-button-next ${css.navBtn}  ${css.next}`}
+          onClick={() => thumbsRef.current?.slideNext()}
+          role="button"
           aria-label="next"
         />
       </div>
