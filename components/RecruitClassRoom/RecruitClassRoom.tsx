@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { Autoplay, Navigation, Scrollbar, Thumbs } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -32,9 +32,26 @@ const IMAGES = [
 
 export default function RecruitSwiper() {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
+  const thumbsRef = useRef<SwiperType | null>(null);
 
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    if (!thumbsRef.current) return;
+    if (!prevRef.current || !nextRef.current) return;
+
+    const swiper = thumbsRef.current;
+
+    swiper.params.navigation = {
+      prevEl: prevRef.current,
+      nextEl: nextRef.current,
+    };
+
+    swiper.navigation.destroy();
+    swiper.navigation.init();
+    swiper.navigation.update();
+  }, []);
 
   return (
     <div className={css.root}>
@@ -57,11 +74,10 @@ export default function RecruitSwiper() {
       </Swiper>
 
       <div className={css.thumbsWrap}>
-        <button
+        <div
           ref={prevRef}
           className={`swiper-button-prev ${css.navBtn} ${css.prev}`}
           aria-label="prev"
-          type="button"
         />
 
         <div className={css.thumbsArea}>
@@ -110,11 +126,10 @@ export default function RecruitSwiper() {
           <div className={`swiper-scrollbar ${css.scrollbar}`} />
         </div>
 
-        <button
+        <div
           ref={nextRef}
           className={`swiper-button-next ${css.navBtn} ${css.next}`}
           aria-label="next"
-          type="button"
         />
       </div>
     </div>

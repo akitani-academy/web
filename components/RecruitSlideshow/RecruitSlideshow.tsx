@@ -61,7 +61,7 @@ export default function RecruitSlideshow() {
               <br />
               開塾<span>36</span>年
             </h2>
-            <h3>確かな成果が生まれる環境で、あなたの指導力を発揮しませんか。</h3>
+            <h3>確かな成果が生まれる環境で、<br className={css.tab} />あなたの指導力を発揮しませんか。</h3>
           </div>
         </div>
       </section>

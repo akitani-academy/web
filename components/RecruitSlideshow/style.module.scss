@@ -1,3 +1,27 @@
+.pc {
+    display: block;
+
+    @include MQ(tab) {
+        display: none;
+    }
+}
+
+.tab {
+    display: none;
+
+    @include MQ(tab) {
+        display: block;
+    }
+}
+
+.sp {
+    display: none;
+
+    @include MQ(sm) {
+        display: block;
+    }
+}
+
 .recruit {
     max-width: 1000px;
     margin: auto;

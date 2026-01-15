@@ -47,12 +47,11 @@ export default function RecruitSlideshow({ images, seconds }: any) {
                     [styles.hidden]: index !== currentIndex,
                     })}
                 >
-                    <Image
+                    <img
                     src={img.src}
                     alt={img.alt}
                     width={img.width}
                     height={img.height}
-                    sizes={isMobile ? "100vw" : "(max-width: 1000px) 100vw, 1000px"}
                     />
                 </div>
                 );
