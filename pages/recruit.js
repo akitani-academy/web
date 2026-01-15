@@ -34,7 +34,7 @@ export default function Page({ wpDATA, faq }) {
 
             <main className={css.main}>
                 <div className={css.main__inner}>
-                    <div className={css.box}>
+                    <div className={`${css.box} ${css.recruit}`}>
                         <h2 className={css.h2}>
                             <div className={css.subTitle}>RECRUIT</div>
                             <div className={css.title}>
@@ -50,15 +50,16 @@ export default function Page({ wpDATA, faq }) {
                                 ),
                             }}
                         />
-                        <LinkList
-                            className={css.link_list}
-                            data={[
-                                ["英語講師", "#0"],
-                                ["事務運営スタッフ", "#1"],
-                            ]}
-                        />
+                        <div className={css.link_list}>
+                            <LinkList
+                                data={[
+                                    ["英語講師", "#0"],
+                                    ["事務運営スタッフ", "#1"],
+                                ]}
+                            />
+                        </div>
                     </div>
-                    <div className={css.box}>
+                    <div className={`${css.box} ${css.overview}`}>
                         <h2 className={css.h2_2}>
                             <div className={css.subTitle}>OVERVIEW</div>
                             <div className={css.title}>
@@ -115,61 +116,6 @@ export default function Page({ wpDATA, faq }) {
                             </p>
                         </div>
                     </div>
-                    <div className={css.box}>
-                        <h2 className={css.h2_2}>
-                            <div className={css.subTitle}>OVERVIEW</div>
-                            <div className={css.title}>
-                                <span className={css.title__inner}>
-                                    秋谷光子アカデミィの特徴・勤務環境
-                                </span>
-                            </div>
-                        </h2>
-                        <div className={css.box__text}>
-                            <p>
-                                秋谷光子アカデミィは、学校で習う英語を完璧にマスターして、国際社会で通用する正統な実用英語にまで高めること、
-                                学校英語と実用英語の融合を教育理念としています。
-                            </p>
-                            <p>
-                                小・中・高校生の英語指導はもとより、大学生や社会人への指導も行い、
-                                受験英語・英検・TOEIC・TOEFL・IELTS・SLEP
-                                等各英語資格試験の実績も伸ばし続けています。
-                            </p>
-                            <p>
-                                文法・構文・読解・速読・Listening・Speaking・英会話の英語教育に、情熱を持って真剣に取り組んでくださる講師を募集しています。
-                            </p>
-                        </div>
-                        <div className={css.box__text}>
-                            <h3>
-                                あなたのライフスタイルに合わせて勤務できます
-                            </h3>
-                            <p>
-                                英語教育に情熱を持つ講師を募集しております。
-                                <br />
-                                勤務時間はあなたのライフスタイルに合わせてご相談させていただきますので、
-                                短い勤務時間から、徐々に広げて行くことも可能です。
-                                <br />
-                                ・得意な英語力を生かして自己実現したい方
-                                <br />
-                                ・英語力に自信は有るが教えた経験が無い方
-                                <br />
-                                ・元英語教師の方
-                                <br />
-                                ・海外生活が長く、さらに英語力を磨きたい方
-                                <br />
-                                など、幅広く募集しています。
-                                <br />
-                                当アカデミィで英語指導の研修を受け、
-                                指導しながら英検1級・TOEIC930以上を取得なさった講師の方も多数いらっしゃいます。
-                                <br />
-                                あなたの英語力UPにもお役に立ちたいと思っております。
-                            </p>
-                            <p>
-                                また、30代以上の講師・事務運営スタッフが多く活躍し、未経験の方でも無理なく、
-                                教材製作などからお教えします。除々に慣れていって下さい。
-                                長期勤務できる方を優遇します。
-                            </p>
-                        </div>
-                    </div>
                     <div className={`${css.box} ${css.box_2}`}>
                         <h2 className={css.h2_2}>
                             <div className={css.subTitle}>
@@ -188,7 +134,9 @@ export default function Page({ wpDATA, faq }) {
                         <div className={css.box__text}>
                             <p>
                                 基礎英語から難関大学受験英語、英語資格まで、
+                                <br className={css.pc} />
                                 文法・構文・読解を重視した英語指導の講師業務と、
+                                <br className={css.pc} />
                                 学習プランの立案や講師のマネジメントなど、室長候補としての業務です。
                                 <br />
                                 ※土・夜間に勤務できる方は、特に優遇いたします。
@@ -325,7 +273,7 @@ export default function Page({ wpDATA, faq }) {
                     <div className={`${css.box} ${css.box_2}`}>
                         <h2 className={css.h2_2}>
                             <div className={css.subTitle}>
-                                <span className={css.eng}>TEACHER</span>
+                                <span className={css.eng}>STAFF</span>
                                 <span>研修制度あり</span>
                                 <span>シフト制</span>
                                 <span>正社員登用あり</span>
@@ -610,7 +558,11 @@ export default function Page({ wpDATA, faq }) {
                                     <img src="/img/recruit/step_icon_03.png" />
                                 </div>
                                 <p>
-                                    教室にお越しいただき、これまでのご経験やご希望の働き方をお伺いします。
+                                    教室にお越しいただき、
+                                    <br className={css.sp} />
+                                    これまでのご経験や
+                                    <br className={css.sp} />
+                                    ご希望の働き方をお伺いします。
                                 </p>
                             </div>
                             <div className={css.row}>
@@ -627,6 +579,7 @@ export default function Page({ wpDATA, faq }) {
                                 </div>
                                 <p>
                                     教材の指導法の確認、
+                                    <br className={css.sp} />
                                     他講師の授業見学などを実施します。
                                 </p>
                             </div>
@@ -643,7 +596,9 @@ export default function Page({ wpDATA, faq }) {
                                     <img src="/img/recruit/step_icon_05.png" />
                                 </div>
                                 <p>
-                                    勤務地、日程の調整をして、勤務スタートとなります。
+                                    勤務地、日程の調整をして、
+                                    <br className={css.sp} />
+                                    勤務スタートとなります。
                                 </p>
                             </div>
                         </div>
@@ -794,16 +749,13 @@ export default function Page({ wpDATA, faq }) {
                                             <img src="/img/recruit/detail_icon_08.png" />
                                             住所・電話番号
                                         </h4>
-                                        <p>
+                                        <p className={css.tel}>
                                             {e.address}
-                                            <div>
-                                                <a
-                                                    href={"tel:" + e.tel}
-                                                    className={css.tel}
-                                                >
+                                            <span>
+                                                <a href={"tel:" + e.tel}>
                                                     {e.tel}
                                                 </a>
-                                            </div>
+                                            </span>
                                         </p>
                                     </div>
                                     <div className={css.row}>

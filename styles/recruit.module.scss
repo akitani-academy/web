@@ -1,7 +1,23 @@
+.pc {
+    display: block;
+
+    @include MQ(tab) {
+        display: none;
+    }
+}
+
 .tab {
     display: none;
 
     @include MQ(tab) {
+        display: block;
+    }
+}
+
+.sp {
+    display: none;
+
+    @include MQ(sm) {
         display: block;
     }
 }
@@ -18,6 +34,10 @@
         display: flex;
         flex-direction: column;
         gap: 24px;
+
+        @include MQ(pc_xl) {
+            min-width: 660px;
+        }
     }
 
     :global(#skip-silence-bar) {
@@ -73,12 +93,6 @@
         @include MQ(tab) {
             font-size: 1.5rem;
         }
-
-        // span {
-        //     @include MQ(tab) {
-        //         display: block;
-        //     }
-        // }
     }
 }
 
@@ -86,7 +100,6 @@
     font-size: 1.875em;
 
     @include MQ(tab) {
-        width: 92%;
     }
 
     .title {
@@ -116,6 +129,14 @@
 }
 
 .h2_2 {
+    .subTitle {
+        font-size: 0.93rem;
+
+        @include MQ(tab) {
+            font-size: 0.75rem;
+        }
+    }
+
     .title {
         margin-top: 18px;
 
@@ -162,9 +183,22 @@
     margin-top: 1em;
 }
 
+.link_list {
+    a {
+        background-image: repeating-linear-gradient(to right, #be2522 0 5px, transparent 5px 6px);
+        background-size: 100% 1px;
+        background-position: left bottom;
+        background-repeat: no-repeat;
+
+        svg {
+            margin-left: -5px;
+        }
+    }
+}
+
 .box {
     background: #ffffff;
-    padding: 1.7rem 2.5rem;
+    padding: 1.7rem 2.5rem 1.5rem;
 
     @include MQ(tab) {
         padding: 1rem 1rem 1.75rem;
@@ -172,6 +206,16 @@
 
     ul:last-child {
         margin-bottom: 0;
+    }
+
+    &.overview {
+        .box__text {
+            h3 {
+                @include MQ(tab) {
+                    margin-top: 1rem;
+                }
+            }
+        }
     }
 
     &.message,
@@ -188,19 +232,29 @@
             display: flex;
             align-items: center;
             gap: 1.02rem;
-            margin-top: 23px;
 
             @include MQ(tab) {
                 display: block;
             }
 
-            > img {
-                aspect-ratio: 214 / 352;
+            figure {
                 object-fit: cover;
+                aspect-ratio: 214 / 352;
                 width: 36.8%;
 
                 @include MQ(tab) {
                     width: 100%;
+                    aspect-ratio: unset;
+                    margin-bottom: 1rem;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+
+                    @include MQ(tab) {
+                    }
                 }
             }
 
@@ -246,13 +300,24 @@
         }
     }
 
-    &.staff {
-        padding-left: 0.68rem;
-        padding-right: 0.68rem;
+    &.message {
+        .row {
+            margin-top: 23px;
+        }
+    }
 
-        @include MQ(tab) {
-            padding-left: 1rem;
-            padding-right: 1rem;
+    &.staff {
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        h2 {
+            padding-left: 1em;
+            padding-right: 1em;
+
+            @include MQ(sm) {
+                padding-left: 0;
+                padding-right: 0;
+            }
         }
     }
 
@@ -262,7 +327,7 @@
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 3.4rem;
+                gap: 1.12rem 3.4rem;
                 padding-bottom: 18px;
 
                 @include MQ(tab) {
@@ -289,7 +354,7 @@
                     position: relative;
                     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
 
-                    @include MQ(sm) {
+                    @include MQ(tab) {
                         width: 100%;
                         padding: 8px 1.5em;
                         padding-right: 6.93em;
@@ -306,7 +371,7 @@
                         width: 20px;
                         height: 20px;
 
-                        @include MQ(sm) {
+                        @include MQ(tab) {
                             content: none;
                         }
                     }
@@ -321,8 +386,13 @@
                     h3 {
                         font-size: 0.93em;
 
-                        @include MQ(sm) {
+                        @include MQ(tab) {
+                            margin-top: 0;
                             margin-bottom: 0.5em;
+                            max-width: 208px;
+                            width: 100%;
+                            margin-left: auto;
+                            margin-right: auto;
                         }
 
                         .subTitle {
@@ -344,7 +414,7 @@
                     .img {
                         text-align: center;
 
-                        @include MQ(sm) {
+                        @include MQ(tab) {
                             position: absolute;
                             top: 50%;
                             right: 1.87em;
@@ -359,6 +429,7 @@
                     p {
                         @include MQ(tab) {
                             font-size: 0.75rem;
+                            margin-bottom: 0;
                         }
                     }
                 }
@@ -482,11 +553,25 @@
             }
         }
 
+        img {
+            + .box__text {
+                margin-top: 1rem;
+            }
+        }
+
         .row {
             margin-top: 12px;
 
             @include MQ(tab) {
                 margin-top: 20px;
+            }
+
+            &:last-child {
+                margin-bottom: 1.5rem;
+
+                @include MQ(tab) {
+                    margin-bottom: 1.25rem;
+                }
             }
 
             h3 {
@@ -591,6 +676,7 @@
                 @include MQ(tab) {
                     flex-direction: column;
                     gap: 16px;
+                    margin-bottom: 1rem;
                 }
 
                 img,
@@ -606,16 +692,24 @@
             }
 
             .tel {
-                font-size: 0.93em;
-                color: #be2522;
-                font-weight: bold;
-                font-family: "Shippori Mincho", serif;
-                display: inline-block;
-                line-height: 1.46;
-                border-bottom: 1px solid;
-                border-image: repeating-linear-gradient(to right, #be2522 0 6px, transparent 6px 8px) 1;
+                word-break: keep-all;
 
-                @include MQ(tab) {
+                span {
+                    display: block;
+
+                    a {
+                        font-size: 0.93em;
+                        color: #be2522;
+                        font-weight: bold;
+                        font-family: "Shippori Mincho", serif;
+                        display: inline-block;
+                        line-height: 1.46;
+                        border-bottom: 1px solid;
+                        border-image: repeating-linear-gradient(to right, #be2522 0 6px, transparent 6px 8px) 1;
+
+                        @include MQ(tab) {
+                        }
+                    }
                 }
             }
         }
@@ -659,22 +753,23 @@
                     td {
                         padding: 12px;
                         font-size: 0.93em;
-                    }
-
-                    th {
-                        font-weight: bold;
-                        font-family: $font_03;
-                        white-space: nowrap;
 
                         @include MQ(tab) {
                             padding-left: 1rem;
                         }
                     }
 
+                    th {
+                        font-weight: bold;
+                        font-family: $font_03;
+                        white-space: nowrap;
+                    }
+
                     td {
                         @include MQ(tab) {
                             padding-right: 1rem;
                             background: #fff2f2;
+                            word-break: keep-all;
                         }
                     }
 
