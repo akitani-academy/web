@@ -24,6 +24,8 @@
 
 .main {
     gap: 20px;
+    width: auto;
+    max-width: 950px;
 
     @include MQ(tab) {
         padding-left: 0;

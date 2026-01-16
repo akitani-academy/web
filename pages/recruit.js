@@ -116,7 +116,7 @@ export default function Page({ wpDATA, faq }) {
                             </p>
                         </div>
                     </div>
-                    <div className={`${css.box} ${css.box_2}`}>
+                    <div id="0" className={`${css.box} ${css.box_2}`}>
                         <h2 className={css.h2_2}>
                             <div className={css.subTitle}>
                                 <span className={css.eng}>TEACHER</span>
@@ -270,7 +270,7 @@ export default function Page({ wpDATA, faq }) {
                             </Link>
                         </div>
                     </div>
-                    <div className={`${css.box} ${css.box_2}`}>
+                    <div id="1" className={`${css.box} ${css.box_2}`}>
                         <h2 className={css.h2_2}>
                             <div className={css.subTitle}>
                                 <span className={css.eng}>STAFF</span>
