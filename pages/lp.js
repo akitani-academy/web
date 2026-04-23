@@ -536,46 +536,44 @@ export default function Page({
                             className={css_index.swiper_wrapper}
                         >
                             {experiencesPostData.map((e, i) => (
-                                <>
-                                    <SwiperSlide
-                                        key={e.id}
-                                        className={css_index.college}
-                                    >
-                                        {e.title && (
-                                            <h4>
-                                                <div
-                                                    dangerouslySetInnerHTML={{
-                                                        __html: parser.translateHTMLString(
-                                                            e.title
-                                                        ),
-                                                    }}
-                                                />
-                                            </h4>
-                                        )}
-                                        {e.student && (
-                                            <h3>
-                                                <div
-                                                    dangerouslySetInnerHTML={{
-                                                        __html: e.student,
-                                                    }}
-                                                />
-                                            </h3>
-                                        )}
-                                        {e.description ? (
-                                            <p
-                                                dangerouslySetInnerHTML={{
-                                                    __html: e.description,
-                                                }}
-                                            />
-                                        ) : (
+                                <SwiperSlide
+                                    key={e.id}
+                                    className={css_index.college}
+                                >
+                                    {e.title && (
+                                        <h4>
                                             <div
                                                 dangerouslySetInnerHTML={{
-                                                    __html: e.excerpt,
+                                                    __html: parser.translateHTMLString(
+                                                        e.title,
+                                                    ),
                                                 }}
                                             />
-                                        )}
-                                    </SwiperSlide>
-                                </>
+                                        </h4>
+                                    )}
+                                    {e.student && (
+                                        <h3>
+                                            <div
+                                                dangerouslySetInnerHTML={{
+                                                    __html: e.student,
+                                                }}
+                                            />
+                                        </h3>
+                                    )}
+                                    {e.description ? (
+                                        <p
+                                            dangerouslySetInnerHTML={{
+                                                __html: e.description,
+                                            }}
+                                        />
+                                    ) : (
+                                        <div
+                                            dangerouslySetInnerHTML={{
+                                                __html: e.excerpt,
+                                            }}
+                                        />
+                                    )}
+                                </SwiperSlide>
                             ))}
                         </Swiper>
                     </div>
@@ -1784,7 +1782,7 @@ export default function Page({
                                             <div
                                                 dangerouslySetInnerHTML={{
                                                     __html: parser.translateHTMLString(
-                                                        item.image
+                                                        item.image,
                                                     ),
                                                 }}
                                             />
@@ -1801,7 +1799,7 @@ export default function Page({
                                                 <div
                                                     dangerouslySetInnerHTML={{
                                                         __html: parser.translateHTMLString(
-                                                            item.content
+                                                            item.content,
                                                         ),
                                                     }}
                                                 />
@@ -1972,7 +1970,7 @@ export default function Page({
                                         <div
                                             dangerouslySetInnerHTML={{
                                                 __html: parser.translateHTMLString(
-                                                    item.content
+                                                    item.content,
                                                 ),
                                             }}
                                         />
@@ -2629,7 +2627,7 @@ export default function Page({
                                         <div
                                             dangerouslySetInnerHTML={{
                                                 __html: parser.translateHTMLString(
-                                                    item.content
+                                                    item.content,
                                                 ),
                                             }}
                                         />
@@ -2762,7 +2760,7 @@ Page.getLayout = function getLayout(children) {
 
 export async function getStaticProps() {
     let experiencesData = await fetch(
-        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
+        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories",
     ).then((res) => res.json());
 
     let page_ids = "&include[]=7948";
@@ -2776,11 +2774,11 @@ export async function getStaticProps() {
 
     let experiencesPostData = await fetch(
         "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/results?categories=29" +
-            page_ids
+            page_ids,
     ).then((res) => res.json());
 
     let teacherList = await fetch(
-        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/teacher?per_page=100"
+        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/teacher?per_page=100",
     ).then((res) => res.json());
     teacherList = teacherList
         .sort((a, b) => {

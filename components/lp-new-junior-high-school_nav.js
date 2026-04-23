@@ -29,14 +29,31 @@ function Page() {
         {
             class: "nav_page",
             content: [
-                ["大学受験・英検合格者の声", "/lp/#nav_01"],
-                ["英検や大学試験に強い理由", "/lp/#nav_02"],
-                ["志望校へ導く徹底した試験対策", "/lp/#nav_03"],
-                ["秋谷光子アカデミィの学習ポイント", "/lp/#nav_04"],
-                ["大学受験英語のカリキュラムについて", "/lp/#nav_05"],
-                ["秋谷光子アカデミィ入塾までの流れ", "/lp/#nav_06"],
-                ["秋谷光子アカデミィについて", "/lp/#nav_07"],
-                ["塾長からのメッセージ", "/lp/#nav_08"],
+                [
+                    "新中学1年生コース受講者の声",
+                    "/lp-new-junior-high-school/#nav_01",
+                ],
+                [
+                    "秋谷光子アカデミィの新中学1年生コース",
+                    "/lp-new-junior-high-school/#nav_02",
+                ],
+                [
+                    "秋谷光子アカデミィが中学英語に強い理由",
+                    "/lp-new-junior-high-school/#nav_03",
+                ],
+                [
+                    "秋谷光子アカデミィの学習ポイント",
+                    "/lp-new-junior-high-school/#nav_04",
+                ],
+                [
+                    "秋谷光子アカデミィ入塾までの流れ",
+                    "/lp-new-junior-high-school/#nav_05",
+                ],
+                ["塾長からのメッセージ", "/lp-new-junior-high-school/#nav_06"],
+                [
+                    "新中学1年生コースでよくある質問",
+                    "/lp-new-junior-high-school/#nav_07",
+                ],
             ],
         },
     ];
@@ -61,7 +78,6 @@ function Page() {
                                 {e1.title && (
                                     <div className={e1.class}>{e1.title}</div>
                                 )}
-
                                 <ul className={e1.class}>
                                     {e1.content.map((e2, i2) => (
                                         <li key={i2}>
