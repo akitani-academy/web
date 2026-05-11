@@ -83,7 +83,7 @@ export default function Button() {
               <wbr />
               英検合格実績
               <br />
-              英検１級 合格累計187人
+              英検１級 合格累計188人
             </h2>
             <h3>
               小学校で3級、

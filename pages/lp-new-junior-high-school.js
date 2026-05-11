@@ -299,7 +299,7 @@ export default function Page({
     return (
         <>
             <Head
-                title="英語専門塾 秋谷光子アカデミィ - 英検1級187人合格の圧倒的な実績｜横浜,綱島,自由が丘,田園調布"
+                title="英語専門塾 秋谷光子アカデミィ - 英検1級188人合格の圧倒的な実績｜横浜,綱島,自由が丘,田園調布"
                 url={`/lp`}
                 description="難関大学合格、内部進学、留学、全ての進路を可能にする英語力を育てます。"
                 breadcrumb={[["LP", "/lp"]]}
@@ -337,7 +337,7 @@ export default function Page({
                                 />
                                 <img
                                     src="./img/top/pc/success_01.png"
-                                    alt="英検1級合格 累計 187名"
+                                    alt="英検1級合格 累計 188名"
                                 />
                             </picture>
                             <picture>
@@ -1256,7 +1256,7 @@ export default function Page({
                                         />
                                         <img
                                             src="./img/top/pc/success_01.png"
-                                            alt="英検1級合格 累計 178名"
+                                            alt="英検1級合格 累計 188名"
                                         />
                                     </picture>
                                     <picture>
@@ -1539,7 +1539,7 @@ export default function Page({
                             圧倒的な英検合格実績
                         </h3>
                         <p>
-                            秋谷光子アカデミィは英語専門塾として開塾37年、英検1級合格累計178人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。
+                            秋谷光子アカデミィは英語専門塾として開塾37年、英検1級合格累計188人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。
                             <br className={css_index.sp} />
                             講師はグループ指導・個別指導ともに、
                             <b>

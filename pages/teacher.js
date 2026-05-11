@@ -21,7 +21,7 @@ export default function Page({ faq }) {
             />
             <h1>講師紹介</h1>
             <p>
-                秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計187人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。
+                秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計188人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。
             </p>
             <p>
                 講師はグループ指導・個別指導ともに、英検1級・TOEIC950以上の合格実績豊富なベテラン講師が指導いたします。東大卒や東京外語大卒等の各々得意な指導分野と指導実績豊富なバイリンガル講師に、Native講師が英会話・speaking・英文添削・英文監修を担当して合格に導きます。大学生のアルバイト講師はおりません。
@@ -75,7 +75,7 @@ Page.getLayout = function getLayout(page) {
 
 export async function getStaticProps() {
     let faq = await fetch(
-        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/teacher?per_page=100"
+        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/teacher?per_page=100",
     ).then((res) => res.json());
 
     faq = faq.sort((a, b) => a.infoCount - b.infoCount).reverse();

@@ -29,14 +29,14 @@ export default function Page({
                     ["トップページ", ""],
                     ["合格への授業方針", "/method"],
                 ]}
-                description="秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計187人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。圧倒的な実績をもとにノウハウを合格への当塾の指導方針を公開しています。"
+                description="秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計188人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。圧倒的な実績をもとにノウハウを合格への当塾の指導方針を公開しています。"
             />
             <article className={classNames(css_index.card, css_index.bg)}>
                 <h1>{paragraph.subTitle}</h1>
                 <div
                     dangerouslySetInnerHTML={{
                         __html: parser.translateHTMLString(
-                            paragraph.cfs.header
+                            paragraph.cfs.header,
                         ),
                     }}
                 />
@@ -55,7 +55,7 @@ export default function Page({
                 <div
                     dangerouslySetInnerHTML={{
                         __html: parser.translateHTMLString(
-                            paragraph.cfs.footer
+                            paragraph.cfs.footer,
                         ),
                     }}
                 />
@@ -71,7 +71,7 @@ Page.getLayout = function getLayout(page) {
 
 export async function getStaticProps() {
     var paragraph = await fetch(
-        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages/8291"
+        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages/8291",
     ).then((res) => res.json());
 
     // console.log(paragraph)
@@ -91,7 +91,7 @@ export async function getStaticProps() {
 async function getPost(catID) {
     var data = await fetch(
         "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/posts?per_page=100&categories=" +
-            catID
+            catID,
     ).then((res) => res.json());
     data = data.map((e, i) => [e.listTitle, "/method/" + e.slug]).reverse();
     return data;
