@@ -38,7 +38,7 @@ export default function Page({
     return (
         <>
             <Head
-                title="英語専門塾 秋谷光子アカデミィ - 英検1級187人合格の圧倒的な実績｜横浜,綱島,自由が丘,田園調布"
+                title="英語専門塾 秋谷光子アカデミィ - 英検1級188人合格の圧倒的な実績｜横浜,綱島,自由が丘,田園調布"
                 url=""
                 description={top.cfs.description}
                 breadcrumb={[["トップページ", ""]]}
@@ -64,7 +64,7 @@ export default function Page({
                                 <div
                                     dangerouslySetInnerHTML={{
                                         __html: parser.translateHTMLString(
-                                            news.content
+                                            news.content,
                                         ),
                                     }}
                                 />
@@ -107,7 +107,7 @@ export default function Page({
                                         "experiences2",
                                         "experiences3",
                                     ].includes(e.option),
-                                }
+                                },
                             )}
                         >
                             <div className={css_index.box}>
@@ -117,14 +117,14 @@ export default function Page({
                                             className={css_index.subTitle}
                                             dangerouslySetInnerHTML={{
                                                 __html: parser.translateHTMLString(
-                                                    e.subTitle
+                                                    e.subTitle,
                                                 ),
                                             }}
                                         />
                                         <div
                                             dangerouslySetInnerHTML={{
                                                 __html: parser.translateHTMLString(
-                                                    e.title
+                                                    e.title,
                                                 ),
                                             }}
                                         />
@@ -133,7 +133,7 @@ export default function Page({
                                 <div
                                     dangerouslySetInnerHTML={{
                                         __html: parser.translateHTMLString(
-                                            e.body
+                                            e.body,
                                         ),
                                     }}
                                 ></div>
@@ -234,7 +234,7 @@ export default function Page({
                                                             height={"300"}
                                                         ></Image>
                                                     </li>
-                                                )
+                                                ),
                                             )}
                                         </ul>
                                     </LoopCarousel>
@@ -277,23 +277,23 @@ Page.getLayout = function getLayout(children) {
 
 export async function getStaticProps() {
     const courseData = await fetch(
-        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/course?per_page=100"
+        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/course?per_page=100",
     ).then((res) => res.json());
 
     let top = await fetch(
-        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages/7284"
+        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages/7284",
     ).then((res) => res.json());
     top.feature = Object.values(top.feature);
 
     let experiencesData = await fetch(
-        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
+        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories",
     ).then((res) => res.json());
 
     let newsArchiveData = await fetch(
-        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/news-archive"
+        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/news-archive",
     ).then((res) => res.json());
     newsArchiveData = newsArchiveData.filter(
-        (item) => item.top_display === "show"
+        (item) => item.top_display === "show",
     );
     // newsArchiveData = newsArchiveData[0];
 

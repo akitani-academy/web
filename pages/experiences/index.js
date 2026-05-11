@@ -11,16 +11,16 @@ export default function Page({ data }) {
         <>
             <Head
                 url={`/experiences`}
-                title="英検1級187人/東大早慶上智9割以上の合格実績と体験記"
+                title="英検1級188人/東大早慶上智9割以上の合格実績と体験記"
                 breadcrumb={[
                     ["トップページ", ""],
                     ["実績", "/experiences"],
                 ]}
-                description="秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計187人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。圧倒的な実績に合わせて合格体験記を数多く掲載しております。"
+                description="秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計188人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。圧倒的な実績に合わせて合格体験記を数多く掲載しております。"
             />
             <h1>合格実績 と 体験記</h1>
             <p>
-                秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計187人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。圧倒的な実績に合わせて合格体験記を数多く掲載しております。
+                秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計188人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。圧倒的な実績に合わせて合格体験記を数多く掲載しております。
             </p>
             <List data={data.map((e, i) => [e.name, "#" + e.slug])} />
             {data.map((e, i) => (
@@ -41,7 +41,7 @@ export default function Page({ data }) {
                         (e1, i) =>
                             0 < e1.post.length && (
                                 <ExperiencesList data={e1} key={i} />
-                            )
+                            ),
                     )}
                 </>
             ))}
@@ -56,7 +56,7 @@ Page.getLayout = function getLayout(page) {
 
 export async function getStaticProps() {
     let data = await fetch(
-        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories"
+        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/categories",
     ).then((res) => res.json());
 
     return {

@@ -26,7 +26,7 @@ export default function Page({ post }) {
             />
             <h2 data-subTitle="秋谷光子アカデミィの">合格体験記</h2>
             <p>
-                秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計187人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。圧倒的な実績に合わせて合格体験記を数多く掲載しております。
+                秋谷光子アカデミィは英語専門塾として開塾36年、英検1級合格累計188人、東大を始め早慶・上智大など第一志望校に9割以上合格しました。圧倒的な実績に合わせて合格体験記を数多く掲載しております。
             </p>
             <LinkList data={[["その他の合格体験記を見る", "/experiences"]]} />
             <article className={css_experiences.article}>
@@ -75,7 +75,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     const post = await fetch(
-        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/results/" + params.id
+        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/results/" + params.id,
     ).then((res) => res.json());
 
     return { props: { post } };
