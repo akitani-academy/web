@@ -61,6 +61,9 @@ export default function Page({ short }) {
                 method="post"
                 className={"h-adr " + css.contact}
             >
+                {/* gclid */}
+                <input type="hidden" name="gclid" id="gclid" value="" />
+
                 <h6>
                     問い合わせ内容　<span>*必須</span>
                 </h6>
@@ -73,22 +76,20 @@ export default function Page({ short }) {
                             "当アカデミーへのご質問",
                         ].map((e, i) => {
                             items.push(
-                                <>
+                                <div key={e}>
                                     <input
                                         type="checkbox"
                                         id={e}
                                         name={"$" + e}
-                                        key={i}
                                         value={"問い合わせ項目：" + e}
                                     />
                                     <label htmlFor={e}>{e}</label>
-                                </>
+                                </div>
                             );
                         });
                         return <>{items}</>;
                     })()}
                 </div>
-
                 <h6>お名前　*必須</h6>
                 <input
                     type="text"
@@ -109,7 +110,6 @@ export default function Page({ short }) {
                         />
                     </>
                 )}
-
                 <h6>
                     メールアドレス　<span>*必須</span>
                 </h6>
@@ -119,7 +119,6 @@ export default function Page({ short }) {
                     placeholder="mail@example.com"
                     required
                 />
-
                 <h6>
                     お電話番号　<span>*必須</span>
                 </h6>
@@ -134,12 +133,10 @@ export default function Page({ short }) {
                         <AddressForm />
                     </>
                 )}
-
                 <h6>
                     ご住所（番地）　<span>*必須</span>
                 </h6>
                 <input type="text" name="$番地" placeholder="1-1" required />
-
                 <h6>
                     学年　
                     <span>
@@ -187,12 +184,10 @@ export default function Page({ short }) {
                         })()}
                     </select>
                 </div>
-
                 <textarea
                     name="$問い合わせ"
                     placeholder="その他、ご自由にご記入ください。"
                 ></textarea>
-
                 {/* <input type="text" name="honeypot" className="honeypot" />
 				<input type="hidden" name="replyTo" value="@" />
 				<input
@@ -206,7 +201,6 @@ export default function Page({ short }) {
 					value="8a391357-1cc5-48c1-a8d0-0771ffb6732a"
 				/> */}
                 {/* <input type="submit" value="送信する" /> */}
-
                 <div
                     className="cf-turnstile"
                     data-sitekey={TURNSTILE_SITEKEY}
@@ -215,13 +209,11 @@ export default function Page({ short }) {
                     data-expired-callback="turnstileExpired"
                     data-error-callback="turnstileError"
                 />
-
                 <input
                     type="hidden"
                     name="_redirect"
                     value="https://akitani-academy.jp/contact/done"
                 />
-
                 <input
                     id="submit-button"
                     type="submit"
@@ -254,6 +246,44 @@ export default function Page({ short }) {
 
 					// 初期状態は必ず無効
 					setSubmitEnabled(false);
+
+                    // ===== gclid =====
+                    const GCLID_KEY = "tracking_gclid";
+
+					  function getParam(name) {
+						try {
+						  const params = new URLSearchParams(window.location.search);
+						  const v = params.get(name);
+						  return (v && v.trim()) ? v.trim() : "";
+						} catch (e) {
+						  return "";
+						}
+					  }
+
+					  function setHiddenGclid(value) {
+						const el = document.getElementById("gclid");
+						if (!el) return;
+						el.value = value || "";
+					  }
+
+					  function initGclid() {
+						const fromUrl = getParam("gclid");
+
+						// URLにあれば保存
+						if (fromUrl) {
+						  try { localStorage.setItem(GCLID_KEY, fromUrl); } catch (e) {}
+						  setHiddenGclid(fromUrl);
+						  return;
+						}
+
+						// なければ保存済みから復元
+						try {
+						  const saved = localStorage.getItem(GCLID_KEY);
+						  if (saved) setHiddenGclid(saved);
+						} catch (e) {}
+					  }
+
+					  initGclid();
 					})();
 				`}
             </Script>

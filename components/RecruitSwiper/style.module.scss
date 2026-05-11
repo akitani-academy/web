@@ -1,0 +1,130 @@
+.swiper {
+    position: relative;
+
+    .box__text {
+        border-bottom: 1px solid;
+        border-image: repeating-linear-gradient(to right, #be2522 0 6px, transparent 6px 8px) 1;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 23px;
+
+        @include MQ(tab) {
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 0;
+        }
+
+        figure {
+            object-fit: cover;
+            width: 40.3%;
+
+            @include MQ(tab) {
+                width: 100%;
+            }
+        }
+
+        h3 {
+            font-size: 1.12em;
+            margin-top: 0;
+            margin-bottom: 6px;
+
+            @include MQ(tab) {
+                padding-left: 0.87rem;
+                padding-right: 0.87rem;
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+            }
+
+            .subTitle {
+                font-size: 0.83em;
+                color: #be2522;
+
+                @include MQ(tab) {
+                    font-size: 0.93rem;
+                }
+            }
+        }
+
+        &__item {
+            width: 59%;
+            min-width: 59%;
+
+            @include MQ(tab) {
+                width: 100%;
+            }
+
+            p {
+                color: #333333;
+                font-family: "Shippori Mincho", serif;
+                padding-top: 6px;
+                font-size: 0.93em;
+                line-height: 1.46;
+
+                @include MQ(tab) {
+                    padding-top: 1rem;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+
+    .swiper_wrapper {
+        width: calc(100% - 2.4rem);
+        margin: 0 auto;
+
+        @include MQ(sm) {
+            width: 100%;
+        }
+    }
+
+    .swiper_button {
+        width: 25px;
+        height: 75px;
+        background-image: url("/img/recruit/slide_btn.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        @include MQ(sm) {
+            top: calc(50vw + 70px);
+            width: 15px;
+            height: 45px;
+        }
+
+        &::after {
+            display: none;
+        }
+
+        &.swiper_button_prev {
+            transform: rotate(180deg);
+            left: -0.62rem;
+
+            @include MQ(sm) {
+                left: 0;
+            }
+        }
+
+        &.swiper_button_next {
+            right: -0.62rem;
+
+            @include MQ(sm) {
+                right: 0;
+            }
+        }
+    }
+
+    > div {
+        > div {
+            &:not(:first-child) {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
