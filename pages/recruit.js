@@ -46,7 +46,7 @@ export default function Page({ wpDATA, faq }) {
                             className={css.lead_text}
                             dangerouslySetInnerHTML={{
                                 __html: parser.translateHTMLString(
-                                    "<p>" + wpDATA.cfs.donyu + "</p>"
+                                    "<p>" + wpDATA.cfs.donyu + "</p>",
                                 ),
                             }}
                         />
@@ -366,7 +366,7 @@ export default function Page({ wpDATA, faq }) {
                                 </p>
                                 <h4>パート</h4>
                                 <p>
-                                    時給 1,700円以上（研修期間は1,500円以上）
+                                    時給 1,800円以上（研修期間は1,600円以上）
                                     <br />
                                     昇給あり
                                 </p>
@@ -932,12 +932,12 @@ Page.getLayout = function getLayout(page) {
 
 export async function getStaticProps() {
     let wpDATA = await fetch(
-        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages?slug=recruit"
+        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/pages?slug=recruit",
     ).then((res) => res.json());
     wpDATA = wpDATA[0];
 
     let faq = await fetch(
-        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/faq?per_page=100&"
+        "https://yoshikitam.wpx.jp/akitani/wp-json/wp/v2/faq?per_page=100&",
     ).then((res) => res.json());
     faq = faq.reverse();
 

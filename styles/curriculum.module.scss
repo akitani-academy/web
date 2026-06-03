@@ -1,0 +1,414 @@
+.pc {
+    display: block;
+
+    @include MQ(tab) {
+        display: none;
+    }
+}
+
+.tab {
+    display: none;
+
+    @include MQ(tab) {
+        display: block;
+    }
+}
+
+.sp {
+    display: none;
+
+    @include MQ(sm) {
+        display: block;
+    }
+}
+
+.main {
+    gap: 20px;
+    width: auto;
+    max-width: 950px;
+    margin-top: 0;
+    padding-top: 0;
+
+    @include MQ(tab) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        @include MQ(pc_xl) {
+            min-width: 660px;
+        }
+    }
+
+    :global(#skip-silence-bar) {
+        display: none;
+    }
+}
+
+/* ==========================================
+   見出しスタイル
+========================================== */
+.h2,
+.h2_2 {
+    margin-top: 0;
+
+    @include MQ(tab) {
+        margin-bottom: 1.25rem;
+    }
+
+    .title {
+        letter-spacing: normal;
+        line-height: 1.5;
+
+        @include MQ(tab) {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.h2 {
+    font-size: 1.875em;
+
+    .title {
+        color: $c_2;
+
+        @include MQ(tab) {
+            padding-left: 0;
+        }
+    }
+}
+
+.h2_2 {
+    .title {
+        margin-top: 18px;
+
+        @include MQ(tab) {
+            margin-top: 8px;
+        }
+    }
+}
+
+/* ==========================================
+   共通ボックス・テキスト
+========================================== */
+.box {
+    background: #ffffff;
+    padding: 1.7rem 2.5rem 1.5rem;
+
+    @include MQ(tab) {
+        padding: 1rem 1rem 1.75rem;
+    }
+
+    ul:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.lead_text {
+    @include MQ(tab) {
+        margin-bottom: 22.5px;
+    }
+
+    > span {
+        display: block;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @include MQ(tab) {
+            width: 100%;
+        }
+
+        p {
+            font-size: 0.93em;
+            line-height: 1.46;
+            font-family: "Shippori Mincho", serif;
+        }
+    }
+}
+
+/* ==========================================
+   カリキュラムページ専用スタイル
+========================================== */
+
+/* カード型レイアウト */
+.card_list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 1rem;
+}
+
+.card {
+    display: flex;
+    gap: 15px;
+
+    @include MQ(tab) {
+        flex-direction: column;
+    }
+
+    &__left {
+        border: 1px solid $c_2;
+        background: #f8f8f8;
+        flex: 0 0 160px;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include MQ(tab) {
+            flex-direction: row;
+            border-bottom: 1px solid $c_2;
+            flex: auto;
+            padding: 16px;
+        }
+    }
+
+    &__name {
+        font-size: 1.12rem;
+        font-weight: 500;
+        color: #333;
+        line-height: 1.4;
+        margin: 0;
+
+        @include MQ(tab) {
+            align-self: center;
+        }
+    }
+
+    &__badge {
+        font-size: 0.8rem;
+        color: #666;
+        text-align: right;
+        margin-top: 15px;
+        line-height: 1.4;
+
+        @include MQ(tab) {
+            margin-top: 0;
+            align-self: center;
+        }
+    }
+
+    &__right {
+        flex: 1;
+        align-self: center;
+
+        p {
+            line-height: 1.8;
+            font-size: 14px;
+            font-family: "Shippori Mincho", serif;
+            margin: 0;
+        }
+    }
+}
+
+/* 中学生 3ボックス */
+.grade_boxes {
+    display: flex;
+    gap: 15px;
+    margin-top: 1rem;
+    margin-bottom: 25px;
+
+    @include MQ(tab) {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
+
+.grade_box {
+    display: flex;
+    align-items: center;
+    border: 1px solid $c_2;
+    padding: 8px;
+    gap: 12px;
+    background: #f8f8f8;
+
+    &__title {
+        font-size: 18px;
+        font-weight: 500;
+        color: #333;
+    }
+
+    &__desc {
+        font-size: 0.8rem;
+        color: #666;
+        line-height: 1.5;
+        margin: 0;
+    }
+}
+
+.section__desc {
+    font-family: "Shippori Mincho", serif;
+    font-size: 0.93rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* 中学生 コースリスト */
+.course_list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.course_item {
+    display: flex;
+    border-left: 4px solid #ff9494;
+    gap: 30px;
+
+    @include MQ(tab) {
+        flex-direction: column;
+        gap: 8px;
+        border-left: none;
+    }
+
+    &__name {
+        flex: 0 0 128px;
+        font-weight: 700;
+        text-align: center;
+        align-self: center;
+        justify-self: left;
+        font-size: 1rem;
+        line-height: 1.4;
+
+        @include MQ(tab) {
+            flex: auto;
+            text-align: left;
+            align-self: flex-start;
+            padding-left: 6px;
+            margin-left: -6px;
+            border-left: 4px solid #ff9494;
+        }
+    }
+
+    &__text {
+        flex: 1;
+        font-size: 0.93rem;
+        line-height: 1.8;
+        font-family: "Shippori Mincho", serif;
+    }
+}
+
+/* ==================
+   対比表（テーブル）
+================== */
+.table_wrapper {
+    margin-top: 1.5rem;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 15px;
+}
+
+/* 幅を指定するための colgroup クラス */
+.col_base {
+    width: 88px;
+}
+.col_eiken {
+    width: 132px;
+}
+
+.score_table {
+    table-layout: fixed;
+    width: 1056px;
+    min-width: 1056px;
+    border-collapse: collapse;
+    text-align: center;
+    background: #fff;
+    font-family: "Shippori Mincho", serif;
+
+    th,
+    td {
+        border: 1px solid #999;
+        vertical-align: middle;
+        line-height: 1;
+        color: #333;
+        box-sizing: border-box;
+    }
+
+    td {
+        height: 60px;
+        font-size: 0.9rem;
+
+        span {
+            font-size: 0.65rem;
+            color: #666;
+            display: inline-block;
+            margin-top: 4px;
+            letter-spacing: -0.05em;
+        }
+
+        .grade {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #333;
+            margin-top: 0;
+            letter-spacing: normal;
+        }
+    }
+
+    th[rowspan="2"] {
+        height: 90px;
+    }
+
+    th {
+        font-weight: normal;
+        height: 30px;
+
+        span {
+            font-size: 0.7rem;
+            color: #666;
+            display: inline-block;
+            margin-top: 4px;
+        }
+    }
+
+    /* 破線と実線の制御 */
+    .border_dashed_right {
+        border-right: 1px dashed #999 !important;
+
+        & + th,
+        & + td {
+            border-left: none !important;
+        }
+    }
+
+    .border_dashed_bottom {
+        border-bottom: 1px dashed #999 !important;
+    }
+
+    .border_none_top {
+        border-top: none !important;
+    }
+
+    .split_inner {
+        border-right: 1px solid #999;
+    }
+
+    .bg_gray_row {
+        td {
+            background-color: #f8f8f8 !important;
+        }
+    }
+}
+
+.row_a2 {
+    td {
+        height: 90px;
+    }
+}
+
+.table_notes {
+    margin-top: 20px;
+
+    p {
+        font-size: 0.8rem;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 5px;
+        font-family: "Shippori Mincho", serif;
+    }
+}
