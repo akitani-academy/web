@@ -38,7 +38,7 @@ export default function Page({
     return (
         <>
             <Head
-                title="英語専門塾 秋谷光子アカデミィ - 英検1級188人合格の圧倒的な実績｜横浜,綱島,自由が丘,田園調布"
+                title="英語専門塾 秋谷光子アカデミィ - 英検1級187人合格の圧倒的な実績｜横浜,綱島,自由が丘,田園調布"
                 url=""
                 description={top.cfs.description}
                 breadcrumb={[["トップページ", ""]]}
@@ -201,21 +201,41 @@ export default function Page({
                                     </>
                                 )}
                                 {e.option == "curriculum" && (
-                                    <Link
-                                        legacyBehavior
-                                        href={"/レベル別カリキュラム.pdf"}
-                                    >
-                                        <a
-                                            target="_blank"
-                                            aria-label="秋谷光子アカデミィのレベル別カリキュラムについて"
+                                    <>
+                                        {/* ▼ 既存のPDFへのリンク */}
+                                        <Link
+                                            legacyBehavior
+                                            href={"/レベル別カリキュラム.pdf"}
                                         >
-                                            <div
-                                                className={css_index.curriculum}
+                                            <a
+                                                target="_blank"
+                                                aria-label="秋谷光子アカデミィのレベル別カリキュラムについて"
                                             >
-                                                <Logo />
-                                            </div>
-                                        </a>
-                                    </Link>
+                                                <div
+                                                    className={
+                                                        css_index.curriculum
+                                                    }
+                                                >
+                                                    <Logo />
+                                                </div>
+                                            </a>
+                                        </Link>
+
+                                        {/* ▼ 新しく追加する赤い破線のリンク（LinkListを使用） */}
+                                        <div
+                                            className={css_index.more}
+                                            style={{ marginTop: "30px" }}
+                                        >
+                                            <LinkList
+                                                data={[
+                                                    [
+                                                        "レベル別カリキュラムの詳細をみる",
+                                                        "/curriculum",
+                                                    ],
+                                                ]}
+                                            />
+                                        </div>
+                                    </>
                                 )}
                                 {e.gallery && (
                                     <LoopCarousel>
