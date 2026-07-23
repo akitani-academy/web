@@ -410,7 +410,8 @@ export default function Page() {
                                         >
                                             iBT
                                             <br />
-                                            <span>満点120</span>
+                                            <span>満点6.0</span>
+                                            <span>(旧スコア満点120)</span>
                                         </th>
                                         <th
                                             className={`${css.border_dashed_right} ${css.border_none_top}`}
@@ -429,6 +430,27 @@ export default function Page() {
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {/* C2 */}
+                                    <tr>
+                                        <td>C2</td>
+                                        <td colSpan="2"></td>
+                                        <td
+                                            className={css.border_dashed_right}
+                                        ></td>
+                                        <td></td>
+                                        <td className={css.border_dashed_right}>
+                                            6.0
+                                            <br />
+                                            <span>(旧114～120)</span>
+                                        </td>
+                                        <td
+                                            className={css.border_dashed_right}
+                                        ></td>
+                                        <td></td>
+                                        <td>8.5〜9.0</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
                                     {/* C1 */}
                                     <tr className={css.bg_gray_row}>
                                         <td>C1</td>
@@ -444,19 +466,17 @@ export default function Page() {
                                         </td>
                                         <td></td>
                                         <td className={css.border_dashed_right}>
-                                            95〜120
+                                            5.0〜5.5
+                                            <br />
+                                            <span>(旧95〜113)</span>
                                         </td>
                                         <td className={css.border_dashed_right}>
                                             620〜677
                                         </td>
                                         <td></td>
-                                        <td>7.0〜9.0</td>
+                                        <td>7.0〜8.0</td>
                                         <td>375〜400</td>
-                                        <td>
-                                            1350〜1400
-                                            <br />
-                                            <span>*CBT満点1400</span>
-                                        </td>
+                                        <td></td>
                                     </tr>
                                     {/* B2 */}
                                     <tr>
@@ -473,7 +493,9 @@ export default function Page() {
                                         </td>
                                         <td></td>
                                         <td className={css.border_dashed_right}>
-                                            72〜94
+                                            4.0～4.5
+                                            <br />
+                                            <span>(旧72〜94)</span>
                                         </td>
                                         <td className={css.border_dashed_right}>
                                             543〜619
@@ -482,7 +504,7 @@ export default function Page() {
                                         <td>5.5〜6.5</td>
                                         <td>309〜374</td>
                                         <td>
-                                            1190〜1349
+                                            1190〜1280
                                             <br />
                                             <span>Advanced満点1280</span>
                                         </td>
@@ -502,7 +524,9 @@ export default function Page() {
                                         </td>
                                         <td>84〜100</td>
                                         <td className={css.border_dashed_right}>
-                                            43〜71
+                                            3.0～3.5
+                                            <br />
+                                            <span>(旧43〜71)</span>
                                         </td>
                                         <td className={css.border_dashed_right}>
                                             433〜542
@@ -599,8 +623,8 @@ export default function Page() {
                                 <br />
                                 TOEFL ITP、TOEFL Junior
                                 <br />
-                                (※GTEC
-                                CBTは2025年度をもって試験終了。2025年度の成績は2026年3月末まで有効。)
+                                (※TOEFL
+                                iBTは2026年1月21日より新形式に変更されました。1.0～6.0の0.5刻みのバンドスコアで評価されます。)
                             </p>
                         </div>
                     </div>
