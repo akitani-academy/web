@@ -526,7 +526,7 @@ export default function Page() {
                                         <td className={css.border_dashed_right}>
                                             3.0～3.5
                                             <br />
-                                            <span>(旧43〜71)</span>
+                                            <span>(旧44〜71)</span>
                                         </td>
                                         <td className={css.border_dashed_right}>
                                             433〜542
@@ -619,7 +619,7 @@ export default function Page() {
                                 TOEIC L&R、TOEIC Bridge
                             </p>
                             <p>
-                                3セクション試験（リスニング・文法・語彙・リーディング）：
+                                3セクション試験（リスニングと文法・語彙とリーディング）：
                                 <br />
                                 TOEFL ITP、TOEFL Junior
                                 <br />
